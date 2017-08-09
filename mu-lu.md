@@ -1,50 +1,46 @@
-\#\#\# Java
+## Java
 
-- Java基础
+* Java基础
 
-- Java并发
+* Java并发
 
-- Java虚拟机
+* Java虚拟机
 
+## Android
 
+* Android基础
 
-\#\#\# Android
+* Android进阶
 
-- Android基础
+* 开源框架
 
-- Android进阶
+## 数据结构
 
-- 开源框架
+* 线性表
 
+* 栈和队
 
+* 链表
 
-\#\#\# 数据结构
+* 树
 
-- 线性表
+* 图
 
-- 栈和队
+* 散列查找
 
-- 链表
+* 排序
 
-- 树
+* 海量数据处理
 
-- 图
+## 算法
 
-- 散列查找
+* 剑指offer
 
-- 排序
-
-- 海量数据处理
-
-
-
-\#\#\# 算法
-
-- 剑指offer
-
-- LeetCode
+* LeetCode
 
 ---
 
 ---
+
+
 
