@@ -1,11 +1,9 @@
 # Summary
 
-## [Introduction](#)
-
 ## Java
 
-* [Java基础](java/javaji-chu.md)
-  * Java集合
+* [Java基础](README.md)
+
 * [Java并发](java/javabing-fa.md)
 * Java虚拟机
 
