@@ -2,8 +2,6 @@
 
 ## 前言
 
-* [Introduction](README.md)
-
 ## Java
 
 * [Java基础](java/javaji-chu.md)
@@ -48,4 +46,6 @@
 * 概述
 * 进程与线程
 * 内存管理
+
+
 
