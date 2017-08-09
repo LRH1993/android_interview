@@ -2,9 +2,10 @@
 
 ## Java
 
-* [Java基础](README.md)
+* Java基础
 
-* [Java并发](java/javabing-fa.md)
+* Java并发
+
 * Java虚拟机
 
 ## Android
