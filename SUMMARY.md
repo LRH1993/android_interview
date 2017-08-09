@@ -4,7 +4,7 @@
 
 ## Java
 
-* [Java基础](java/javaji-chu.md)
+* Java基础
 * Java并发
 * Java虚拟机
 
