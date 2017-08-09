@@ -2,9 +2,11 @@
 
 ## 前言
 
+* [Introduction](README.md)
+
 ## Java
 
-* Java基础
+* [Java基础](java/javaji-chu.md)
 * Java并发
 * Java虚拟机
 
@@ -46,6 +48,4 @@
 * 概述
 * 进程与线程
 * 内存管理
-
-
 
