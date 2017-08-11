@@ -43,12 +43,12 @@
   * [适配器模式](/design mode/Structural Patterns/Adapter Pattern.md)
   * [外观模式](/design mode/Structural Patterns/Facade Pattern.md)
   * [装饰者模式](/design mode/Structural Patterns/Decorator Pattern.md)
-* [行为型模式](design mode/xing-wei-xing-mo-shi.md)
-  * [命令模式](design mode/xing-wei-xing-mo-shi/ming-ling-mo-shi.md)
-  * [迭代器模式](design mode/xing-wei-xing-mo-shi/die-dai-qi-mo-shi.md)
-  * [观察者模式](design mode/xing-wei-xing-mo-shi/guan-cha-zhe-mo-shi.md)
-  * [策略模式](design mode/xing-wei-xing-mo-shi/ce-lve-mo-shi.md)
-  * [模板方法模式](design mode/xing-wei-xing-mo-shi/mo-ban-fang-fa-mo-shi.md)
+* [行为型模式](/design mode/Behavioral Pattern.md)
+  * [命令模式](/design mode/Behavioral Pattern/Command Pattern.md)
+  * [迭代器模式](/design mode/Behavioral Pattern/Iterator Pattern.md)
+  * [观察者模式](/design mode/Behavioral Pattern/Observer Pattern.md)
+  * [策略模式](/design mode/Behavioral Pattern/Strategy Pattern.md)
+  * [模板方法模式](/design mode/Behavioral Pattern/Template Method.md)
 
 ## 计算机网络
 
@@ -60,4 +60,6 @@
 * 概述
 * 进程与线程
 * 内存管理
+
+
 
