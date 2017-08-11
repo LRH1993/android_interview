@@ -42,6 +42,7 @@
 * [结构型模式](design mode/jie-gou-xing-mo-shi.md)
   * [适配器模式](design mode/jie-gou-xing-mo-shi/shi-pei-qi-mo-shi.md)
   * [外观模式](design mode/jie-gou-xing-mo-shi/wai-guan-mo-shi.md)
+  * [装饰者模式](design mode/jie-gou-xing-mo-shi/zhuang-shi-zhe-mo-shi.md)
 * 行为型模式
 
 ## 计算机网络
