@@ -6,17 +6,17 @@
 
 ## Java
 
-* [Java基础](java/javaji-chu.md)
-  * [Java泛型](java/basis/genericity.md)
+* [Java基础](/java/javaji-chu.md)
+  * [Java泛型](/java/basis/genericity.md)
 * Java并发
 * Java虚拟机
 
 ## Android
 
-* [Android基础](android/basis.md)
-  * [Activity全方位解析](android/basis/activity.md)
-  * [Service全方位解析](android/basis/service.md)
-  * [Android消息机制](android/basis/message mechanism.md)
+* [Android基础](/android/basis.md)
+  * [Activity全方位解析](/android/basis/activity.md)
+  * [Service全方位解析](/android/basis/service.md)
+  * [Android消息机制](/android/basis/message mechanism.md)
 * Android进阶
 * 开源框架
 
@@ -27,7 +27,7 @@
 * 链表
 * 树
 * 图
-* [散列查找](data structure/san-lie-cha-zhao.md)
+* [散列查找](/data structure/san-lie-cha-zhao.md)
 * [排序](///data structure/sort.md)
 * [海量数据处理](/data structure/mass data processing.md)
 
