@@ -10,6 +10,7 @@
   * [Java泛型](/java/basis/genericity.md)
   * [Java反射\(一\)](java/basis/javafan-she.md)
   * [Java反射\(二\)](java/basis/javafan-5c0428-4e8c29.md)
+  * [Java反射\(三\)](java/basis/javafan-5c0428-4e0929.md)
 * Java并发
 * Java虚拟机
 
