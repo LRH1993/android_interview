@@ -36,8 +36,9 @@
 
 * [创建型模式](/design mode/Builder Pattern.md)
   * [简单工厂模式](/design mode/Builder Pattern/Simple Factory.md)
+  * [抽象工厂模式](#)
+
   * [工厂方法模式](design mode/Builder Pattern/gong-chang-fang-fa-mo-shi.md)
-  * [抽象工厂模式](design mode/Builder Pattern/chou-xiang-gong-chang-mo-shi.md)
 * 结构型模式
 * 行为型模式
 
@@ -51,4 +52,6 @@
 * 概述
 * 进程与线程
 * 内存管理
+
+
 
