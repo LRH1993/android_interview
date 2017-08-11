@@ -88,7 +88,6 @@ Type[] interfaceTypes = class1.getGenericInterfaces();//获取class对象的所�
 
 **获取class对象的信息**
 
-  
 比较多。
 
 ```java
