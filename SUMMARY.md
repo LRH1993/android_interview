@@ -45,6 +45,7 @@
   * [装饰者模式](/design mode/Structural Patterns/Decorator Pattern.md)
 * [行为型模式](design mode/xing-wei-xing-mo-shi.md)
   * [命令模式](design mode/xing-wei-xing-mo-shi/ming-ling-mo-shi.md)
+  * [迭代器模式](design mode/xing-wei-xing-mo-shi/die-dai-qi-mo-shi.md)
 
 ## 计算机网络
 
