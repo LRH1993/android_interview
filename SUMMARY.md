@@ -53,7 +53,7 @@
 ## 计算机网络
 
 * [TCP/IP](ji-suan-ji-wang-luo/tcpip.md)
-* HTTP
+* [HTTP](ji-suan-ji-wang-luo/http.md)
 
 ## 操作系统
 
