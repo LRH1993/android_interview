@@ -52,12 +52,14 @@
 
 ## 计算机网络
 
-* [TCP/IP](ji-suan-ji-wang-luo/tcpip.md)
-* [HTTP](ji-suan-ji-wang-luo/http.md)
+* [TCP/IP](/computer networks/tcpip.md)
+* [HTTP](/computer networks/http.md)
 
 ## 操作系统
 
 * 概述
 * 进程与线程
 * 内存管理
+
+
 
