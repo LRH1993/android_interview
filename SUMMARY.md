@@ -39,10 +39,10 @@
   * [工厂方法模式](/design mode/Builder Pattern/Factory Method.md)
   * [抽象工厂模式](/design mode/Builder Pattern/Abstract Factory.md)
   * [单例模式](design mode/Builder Pattern/dan-li-mo-shi.md)
-* [结构型模式](design mode/jie-gou-xing-mo-shi.md)
-  * [适配器模式](design mode/jie-gou-xing-mo-shi/shi-pei-qi-mo-shi.md)
-  * [外观模式](design mode/jie-gou-xing-mo-shi/wai-guan-mo-shi.md)
-  * [装饰者模式](design mode/jie-gou-xing-mo-shi/zhuang-shi-zhe-mo-shi.md)
+* [结构型模式](/design mode/Structural Patterns.md)
+  * [适配器模式](/design mode/Structural Patterns/Adapter Pattern.md)
+  * [外观模式](/design mode/Structural Patterns/Facade Pattern.md)
+  * [装饰者模式](/design mode/Structural Patterns/Decorator Pattern.md)
 * 行为型模式
 
 ## 计算机网络
@@ -55,4 +55,6 @@
 * 概述
 * 进程与线程
 * 内存管理
+
+
 
