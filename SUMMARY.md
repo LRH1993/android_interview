@@ -28,8 +28,8 @@
 * 树
 * 图
 * 散列查找
-* [排序](/data structure/sort.md)
-* [海量数据处理](/data structure/mass_data_processing.md)
+* [排序](/data-structure/sort.md)
+* [海量数据处理](/data-structure/mass_data_processing.md)
 
 ## 算法
 
