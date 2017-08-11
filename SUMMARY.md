@@ -12,10 +12,10 @@
 
 ## Android
 
-* [Android基础](android/androidji-chu.md)
-  * [Activity全方位解析](android/androidji-chu/si-da-zu-jian-2014-2014-activity.md)
-  * [Service全方位解析](android/androidji-chu/servicequan-fang-wei-jie-xi.md)
-  * [Android消息机制](android/androidji-chu/androidxiao-xi-ji-zhi.md)
+* [Android基础](/android/basis.md)
+  * [Activity全方位解析](/android/basis/activity.md)
+  * [Service全方位解析](/android/basis/service.md)
+  * [Android消息机制](/android/basis/message mechanism.md)
 * Android进阶
 * 开源框架
 
@@ -63,4 +63,6 @@
 * 概述
 * 进程与线程
 * 内存管理
+
+
 
