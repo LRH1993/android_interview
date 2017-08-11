@@ -39,7 +39,7 @@
   * [工厂方法模式](/design mode/Builder Pattern/Factory Method.md)
   * [抽象工厂模式](/design mode/Builder Pattern/Abstract Factory.md)
   * [单例模式](design mode/Builder Pattern/dan-li-mo-shi.md)
-* 结构型模式
+* [结构型模式](design mode/jie-gou-xing-mo-shi.md)
 * 行为型模式
 
 ## 计算机网络
