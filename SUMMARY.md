@@ -34,7 +34,8 @@
 
 ## 设计模式
 
-* 创建型模式
+* [创建型模式](/design mode/builder pattern)
+  * [单例模式](/design mode/builder pattern/singleton pattern.md)
 * 结构型模式
 * 行为型模式
 
