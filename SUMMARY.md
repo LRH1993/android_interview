@@ -24,7 +24,7 @@
 * 树
 * 图
 * 散列查找
-* [排序](shu-ju-jie-gou/pai-xu.md)
+* [data structure/sort.md](//data structure/sort.md "排序")
 * 海量数据处理
 
 ## 算法
@@ -48,4 +48,6 @@
 * 概述
 * 进程与线程
 * 内存管理
+
+
 
