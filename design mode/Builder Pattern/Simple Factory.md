@@ -14,10 +14,7 @@
 
 ##### 1.模式结构
 
-![](http://upload-images.jianshu.io/upload_images/3985563-5e3b5da5f25c51a6.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
-
-  
-
+![](http://upload-images.jianshu.io/upload_images/3985563-5e3b5da5f25c51a6.png?imageMogr2/auto-orient/strip|imageView2/2/w/1240)
 
 简单工厂模式包含如下角色：
 
@@ -32,12 +29,8 @@
 
 ###### 2.时序图
 
-![](http://upload-images.jianshu.io/upload_images/3985563-1e2ced2ec4865bce.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+![](http://upload-images.jianshu.io/upload_images/3985563-1e2ced2ec4865bce.png?imageMogr2/auto-orient/strip|imageView2/2/w/1240)
 
-  
-
-
-  
 ①先调用工厂类中的静态方法createProduct\(\)
 
 ②根据传入产品类型参数，获得具体的产品对象
@@ -46,18 +39,13 @@
 
 ### 三、简单工厂的使用实例
 
-以登录功能来说，假如应用系统需要支持多种登录方式如：口令认证、域认证（口令认证通常是去数据库中验证用户，而域认证则是需要到微软的域中验证用户）。那么自然的做法就是建立一个各种登录方式都适用的接口，如下图所示：  
+以登录功能来说，假如应用系统需要支持多种登录方式如：口令认证、域认证（口令认证通常是去数据库中验证用户，而域认证则是需要到微软的域中验证用户）。那么自然的做法就是建立一个各种登录方式都适用的接口，如下图所示：
 
+![](http://upload-images.jianshu.io/upload_images/3985563-c40f9e18f891d00a.png?imageMogr2/auto-orient/strip|imageView2/2/w/1240)
 
-![](http://upload-images.jianshu.io/upload_images/3985563-c40f9e18f891d00a.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
-
-  
-
-
-  
 **抽象产品Login**
 
-```
+```java
 public interface Login {
     //登录验证
     public boolean verify(String name , String password);
@@ -66,7 +54,7 @@ public interface Login {
 
 **具体产品DomainLogin**
 
-```
+```java
 public class DomainLogin implements Login {
 
     @Override
@@ -82,7 +70,7 @@ public class DomainLogin implements Login {
 
 **具体产品PasswordLogin**
 
-```
+```java
 public class PasswordLogin implements Login {
 
     @Override
@@ -99,7 +87,7 @@ public class PasswordLogin implements Login {
 **工厂类LoginManager**  
 根据调用者不同的要求，创建出不同的登录对象并返回。而如果碰到不合法的要求，会返回一个Runtime异常。
 
-```
+```java
 public class LoginManager {
     public static Login factory(String type){
         if(type.equals("password")){
@@ -122,7 +110,7 @@ public class LoginManager {
 
 **测试调用**
 
-```
+```java
 public class Test {
     public static void main(String[] args) {
         String loginType = "password";
@@ -145,7 +133,7 @@ public class Test {
 
 假如不使用简单工厂模式则验证登录Servlet代码如下：
 
-```
+```java
 public class Test {
     public static void main(String[] args) {
         // TODO Auto-generated method stub
@@ -219,7 +207,7 @@ public class Test {
 
 ①JDK类库中广泛使用了简单工厂模式，如工具类java.text.DateFormat，它用于格式化一个本地日期或者时间。
 
-```
+```java
 public final static DateFormat getDateInstance();
 public final static DateFormat getDateInstance(int style);
 public final static DateFormat getDateInstance(int style,Locale
@@ -229,16 +217,15 @@ locale);
 ②Java加密技术  
 获取不同加密算法的密钥生成器:
 
-```
+```java
 KeyGenerator keyGen=KeyGenerator.getInstance("DESede");
 ```
 
 创建密码器:
 
-```
+```java
 Cipher cp=Cipher.getInstance("DESede");
 ```
 
-  
 
 
