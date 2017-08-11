@@ -35,15 +35,11 @@
 ## 设计模式
 
 * [创建型模式](/design mode/Builder Pattern.md)
-
   * [简单工厂模式](/design mode/Builder Pattern/Simple Factory.md)
-
   * [工厂方法模式](/design mode/Builder Pattern/Factory Method.md)
-
   * [抽象工厂模式](/design mode/Builder Pattern/Abstract Factory.md)
-
+  * [单例模式](design mode/Builder Pattern/dan-li-mo-shi.md)
 * 结构型模式
-
 * 行为型模式
 
 ## 计算机网络
@@ -56,6 +52,4 @@
 * 概述
 * 进程与线程
 * 内存管理
-
-
 
