@@ -43,7 +43,8 @@
   * [适配器模式](/design mode/Structural Patterns/Adapter Pattern.md)
   * [外观模式](/design mode/Structural Patterns/Facade Pattern.md)
   * [装饰者模式](/design mode/Structural Patterns/Decorator Pattern.md)
-* 行为型模式
+* [行为型模式](design mode/xing-wei-xing-mo-shi.md)
+  * [命令模式](design mode/xing-wei-xing-mo-shi/ming-ling-mo-shi.md)
 
 ## 计算机网络
 
@@ -55,6 +56,4 @@
 * 概述
 * 进程与线程
 * 内存管理
-
-
 
