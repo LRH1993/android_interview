@@ -6,7 +6,8 @@
 
 ## Java
 
-* Java基础
+* [Java基础](java/javaji-chu.md)
+  * [Java泛型](java/javaji-chu/javafan-xing.md)
 * Java并发
 * Java虚拟机
 
@@ -63,6 +64,4 @@
 * 概述
 * 进程与线程
 * 内存管理
-
-
 
