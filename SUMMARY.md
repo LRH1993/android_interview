@@ -47,6 +47,7 @@
   * [命令模式](design mode/xing-wei-xing-mo-shi/ming-ling-mo-shi.md)
   * [迭代器模式](design mode/xing-wei-xing-mo-shi/die-dai-qi-mo-shi.md)
   * [观察者模式](design mode/xing-wei-xing-mo-shi/guan-cha-zhe-mo-shi.md)
+  * [策略模式](design mode/xing-wei-xing-mo-shi/ce-lve-mo-shi.md)
 
 ## 计算机网络
 
