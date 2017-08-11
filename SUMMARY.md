@@ -12,7 +12,8 @@
 
 ## Android
 
-* Android基础
+* [Android基础](android/androidji-chu.md)
+  * [Activity全方位解析](android/androidji-chu/si-da-zu-jian-2014-2014-activity.md)
 * Android进阶
 * 开源框架
 
@@ -23,7 +24,7 @@
 * 链表
 * 树
 * 图
-* 散列查找
+* [散列查找](data structure/san-lie-cha-zhao.md)
 * [排序](///data structure/sort.md)
 * [海量数据处理](/data structure/mass data processing.md)
 
@@ -60,6 +61,4 @@
 * 概述
 * 进程与线程
 * 内存管理
-
-
 
