@@ -47,33 +47,18 @@ public class Activity extends android.app.Activity {
 
 ##### 3.消息机制的架构
 
-**消息机制的运行流程：**在子线程执行完耗时操作，当Handler发送消息时，将会调用`MessageQueue.enqueueMessage`，向消息队列中添加消息。当通过`Looper.loop`开启循环后，会不断地从线程池中读取消息，即调用`MessageQueue.next`，然后调用目标Handler（即发送该消息的Handler）的`dispatchMessage`方法传递消息，然后返回到Handler所在线程，目标Handler收到消息，调用`handleMessage`方法，接收消息，处理消息。  
+**消息机制的运行流程：**在子线程执行完耗时操作，当Handler发送消息时，将会调用`MessageQueue.enqueueMessage`，向消息队列中添加消息。当通过`Looper.loop`开启循环后，会不断地从线程池中读取消息，即调用`MessageQueue.next`，然后调用目标Handler（即发送该消息的Handler）的`dispatchMessage`方法传递消息，然后返回到Handler所在线程，目标Handler收到消息，调用`handleMessage`方法，接收消息，处理消息。
 
+![](http://upload-images.jianshu.io/upload_images/3985563-d7da4f5ba49f6887.png?imageMogr2/auto-orient/strip|imageView2/2/w/1240)
 
-![](http://upload-images.jianshu.io/upload_images/3985563-d7da4f5ba49f6887.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+**MessageQueue，Handler和Looper三者之间的关系：**每个线程中只能存在一个Looper，Looper是保存在ThreadLocal中的。主线程（UI线程）已经创建了一个Looper，所以在主线程中不需要再创建Looper，但是在其他线程中需要创建Looper。每个线程中可以有多个Handler，即一个Looper可以处理来自多个Handler的消息。 Looper中维护一个MessageQueue，来维护消息队列，消息队列中的Message可以来自不同的Handler。
 
-  
+![](http://upload-images.jianshu.io/upload_images/3985563-88a27b5906166c63.png?imageMogr2/auto-orient/strip|imageView2/2/w/1240)
 
+下面是消息机制的整体架构图，接下来我们将慢慢解剖整个架构。
 
-  
-**MessageQueue，Handler和Looper三者之间的关系：**每个线程中只能存在一个Looper，Looper是保存在ThreadLocal中的。主线程（UI线程）已经创建了一个Looper，所以在主线程中不需要再创建Looper，但是在其他线程中需要创建Looper。每个线程中可以有多个Handler，即一个Looper可以处理来自多个Handler的消息。 Looper中维护一个MessageQueue，来维护消息队列，消息队列中的Message可以来自不同的Handler。  
+![](http://upload-images.jianshu.io/upload_images/3985563-6c25004471646c1f.png?imageMogr2/auto-orient/strip|imageView2/2/w/1240)
 
-
-![](http://upload-images.jianshu.io/upload_images/3985563-88a27b5906166c63.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
-
-  
-
-
-  
-下面是消息机制的整体架构图，接下来我们将慢慢解剖整个架构。  
-
-
-![](http://upload-images.jianshu.io/upload_images/3985563-6c25004471646c1f.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
-
-  
-
-
-  
 从中我们可以看出：  
 Looper有一个MessageQueue消息队列；  
 MessageQueue有一组待处理的Message；  
@@ -123,29 +108,17 @@ public static void loop() {
 
         Printer logging = me.mLogging;  //默认为null，可通过setMessageLogging()方法来指定输出，用于debug功能
         if (logging != null) {
-            logging.println("
->
->
->
->
->
- Dispatching to " + msg.target + " " +
+            logging.println(">>>>> Dispatching to " + msg.target + " " +
                     msg.callback + ": " + msg.what);
         }
         msg.target.dispatchMessage(msg); //获取msg的目标Handler，然后用于分发Message 
         if (logging != null) {
-            logging.println("
-<
-<
-<
-<
-<
- Finished to " + msg.target + " " + msg.callback);
+            logging.println("<<<<< Finished to " + msg.target + " " + msg.callback);
         }
 
         final long newIdent = Binder.clearCallingIdentity();
         if (ident != newIdent) {
-
+         
         }
         msg.recycleUnchecked(); 
     }
@@ -158,7 +131,7 @@ loop\(\)进入循环模式，不断重复下面的操作，直到消息为空时
 
 **当next\(\)取出下一条消息时，队列中已经没有消息时，next\(\)会无限循环，产生阻塞。等待MessageQueue中加入消息，然后重新唤醒。**
 
-**主线程中不需要自己创建Looper，这是由于在程序启动的时候，系统已经帮我们自动调用了`Looper.prepare()`方法。查看ActivityThread中的`main()`方法，代码如下所示：**
+**主线程中不需要自己创建Looper，这是由于在程序启动的时候，系统已经帮我们自动调用了**`Looper.prepare()`**方法。查看ActivityThread中的**`main()`**方法，代码如下所示：**
 
 ```java
   public static void main(String[] args) {
@@ -247,9 +220,7 @@ public final boolean sendEmptyMessageDelayed(int what, long delayMillis) {
     }
  public final boolean sendMessageDelayed(Message msg, long delayMillis)
     {
-        if (delayMillis 
-<
- 0) {
+        if (delayMillis < 0) {
             delayMillis = 0;
         }
         return sendMessageAtTime(msg, SystemClock.uptimeMillis() + delayMillis);
@@ -321,9 +292,7 @@ boolean enqueueMessage(Message msg, long when) {
         msg.when = when;
         Message p = mMessages;
         boolean needWake;
-        if (p == null || when == 0 || when 
-<
- p.when) {
+        if (p == null || when == 0 || when < p.when) {
             //p为null(代表MessageQueue没有消息） 或者msg的触发时间是队列中最早的， 则进入该该分支
             msg.next = p;
             mMessages = msg;
@@ -331,26 +300,15 @@ boolean enqueueMessage(Message msg, long when) {
         } else {
             //将消息按时间顺序插入到MessageQueue。一般地，不需要唤醒事件队列，除非
             //消息队头存在barrier，并且同时Message是队列中最早的异步消息。
-            needWake = mBlocked 
-&
-&
- p.target == null 
-&
-&
- msg.isAsynchronous();
+            needWake = mBlocked && p.target == null && msg.isAsynchronous();
             Message prev;
             for (;;) {
                 prev = p;
                 p = p.next;
-                if (p == null || when 
-<
- p.when) {
+                if (p == null || when < p.when) {
                     break;
                 }
-                if (needWake 
-&
-&
- p.isAsynchronous()) {
+                if (needWake && p.isAsynchronous()) {
                     needWake = false;
                 }
             }
@@ -390,23 +348,15 @@ Message next() {
             final long now = SystemClock.uptimeMillis();
             Message prevMsg = null;
             Message msg = mMessages;
-            if (msg != null 
-&
-&
- msg.target == null) {
+            if (msg != null && msg.target == null) {
                 //当消息Handler为空时，查询MessageQueue中的下一条异步消息msg，为空则退出循环。
                 do {
                     prevMsg = msg;
                     msg = msg.next;
-                } while (msg != null 
-&
-&
- !msg.isAsynchronous());
+                } while (msg != null && !msg.isAsynchronous());
             }
             if (msg != null) {
-                if (now 
-<
- msg.when) {
+                if (now < msg.when) {
                     //当异步消息触发时间大于当前时间，则设置下一次轮询的超时时长
                     nextPollTimeoutMillis = (int) Math.min(msg.when - now, Integer.MAX_VALUE);
                 } else {
@@ -483,14 +433,7 @@ Handler的默认方法：`Handler.handleMessage(msg)`，优先级最低。
 
 ### 三、总结
 
-以上便是消息机制的原理，以及从源码角度来解析消息机制的运行过程。可以简单地用下图来理解。  
+以上便是消息机制的原理，以及从源码角度来解析消息机制的运行过程。可以简单地用下图来理解。
 
-
-![](http://upload-images.jianshu.io/upload_images/3985563-b3295b67a2b0477f.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
-
-  
-
-
-  
-
+![](http://upload-images.jianshu.io/upload_images/3985563-b3295b67a2b0477f.png?imageMogr2/auto-orient/strip|imageView2/2/w/1240)
 
