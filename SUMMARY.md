@@ -24,7 +24,7 @@
 * 树
 * 图
 * 散列查找
-* [data structure/sort.md](//data structure/sort.md "排序")
+* [排序](///data structure/sort.md)
 * 海量数据处理
 
 ## 算法
