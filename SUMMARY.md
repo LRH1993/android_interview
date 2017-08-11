@@ -34,8 +34,8 @@
 
 ## 设计模式
 
-* [创建型模式](she-ji-mo-shi/chuang-jian-xing-mo-shi.md)
-  * 单例模式
+* [创建型模式](/design mode/Builder Pattern.md)
+  * [简单工厂模式](design mode/Builder Pattern/jian-dan-gong-chang-mo-shi.md)
 * 结构型模式
 * 行为型模式
 
