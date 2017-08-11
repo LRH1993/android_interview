@@ -6,7 +6,7 @@
 
 ## Java
 
-* [Java基础](/java/javaji-chu.md)
+* [Java基础](/java/basis.md)
   * [Java泛型](/java/basis/genericity.md)
 * Java并发
 * Java虚拟机
@@ -16,7 +16,7 @@
 * [Android基础](/android/basis.md)
   * [Activity全方位解析](/android/basis/activity.md)
   * [Service全方位解析](/android/basis/service.md)
-  * [Android消息机制](/android/basis/message mechanism.md)
+  * [Android消息机制](/android/basis/message-mechanism.md)
 * Android进阶
 * 开源框架
 
@@ -27,9 +27,9 @@
 * 链表
 * 树
 * 图
-* [散列查找](/data structure/san-lie-cha-zhao.md)
-* [排序](///data structure/sort.md)
-* [海量数据处理](/data structure/mass data processing.md)
+* 散列查找
+* [排序](/data structure/sort.md)
+* [海量数据处理](/data structure/mass_data_processing.md)
 
 ## 算法
 
@@ -38,7 +38,7 @@
 
 ## 设计模式
 
-* [创建型模式](/design mode/Builder Pattern.md)
+* 创建型模式
   * [简单工厂模式](/design mode/Builder Pattern/Simple Factory.md)
   * [工厂方法模式](/design mode/Builder Pattern/Factory Method.md)
   * [抽象工厂模式](/design mode/Builder Pattern/Abstract Factory.md)
