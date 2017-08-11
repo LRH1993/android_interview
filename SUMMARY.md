@@ -38,26 +38,26 @@
 
 ## 设计模式
 
-* [创建型模式](/design mode/Builder-Pattern.md)
-  * [简单工厂模式](/design mode/Builder Pattern/Simple-Factory.md)
-  * [工厂方法模式](/design mode/Builder Pattern/Factory-Method.md)
-  * [抽象工厂模式](/design mode/Builder Pattern/Abstract-Factory.md)
-  * [单例模式](/design mode/Builder Pattern/Singleton-Pattern.md)
-* [结构型模式](/design mode/Structural Patterns.md)
-  * [适配器模式](/design mode/Structural Patterns/Adapter Pattern.md)
-  * [外观模式](/design mode/Structural Patterns/Facade Pattern.md)
-  * [装饰者模式](/design mode/Structural Patterns/Decorator Pattern.md)
-* [行为型模式](/design mode/Behavioral Pattern.md)
-  * [命令模式](/design mode/Behavioral Pattern/Command Pattern.md)
-  * [迭代器模式](/design mode/Behavioral Pattern/Iterator Pattern.md)
-  * [观察者模式](/design mode/Behavioral Pattern/Observer Pattern.md)
-  * [策略模式](/design mode/Behavioral Pattern/Strategy Pattern.md)
-  * [模板方法模式](/design mode/Behavioral Pattern/Template Method.md)
+* [创建型模式](/design-mode/Builder-Pattern.md)
+  * [简单工厂模式](/design-mode/Builder-Pattern/Simple-Factory.md)
+  * [工厂方法模式](/design-mode/Builder-Pattern/Factory-Method.md)
+  * [抽象工厂模式](/design-mode/Builder-Pattern/Abstract-Factory.md)
+  * [单例模式](/design-mode/Builder-Pattern/Singleton-Pattern.md)
+* [结构型模式](/design-mode/Structural-Patterns.md)
+  * [适配器模式](/design-mode/Structural-Patterns/Adapter-Pattern.md)
+  * [外观模式](/design-mode/Structural-Patterns/Facade-Pattern.md)
+  * [装饰者模式](/design-mode/Structural-Patterns/Decorator-Pattern.md)
+* [行为型模式](/design-mode/Behavioral-Pattern.md)
+  * [命令模式](/design-mode/Behavioral-Pattern/Command-Pattern.md)
+  * [迭代器模式](/design-mode/Behavioral-Pattern/Iterator-Pattern.md)
+  * [观察者模式](/design-mode/Behavioral-Pattern/Observer-Pattern.md)
+  * [策略模式](/design-mode/Behavioral-Pattern/Strategy-Pattern.md)
+  * [模板方法模式](/design-mode/Behavioral-Pattern/Template-Method.md)
 
 ## 计算机网络
 
-* [TCP/IP](/computer networks/tcpip.md)
-* [HTTP](/computer networks/http.md)
+* [TCP/IP](/computer-networks/tcpip.md)
+* [HTTP](/computer-networks/http.md)
 
 ## 操作系统
 
