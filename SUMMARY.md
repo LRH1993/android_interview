@@ -15,6 +15,7 @@
   * [Java IO\(一\)](/java/basis/java-io1.md)
   * [Java IO\(二\)](/java/basis/java-io2.md)
   * [RandomAccessFile](/java/basis/randomaccessfile.md)
+  * [Java NIO](java/basis/java-nio.md)
 * Java并发
 * Java虚拟机
 
@@ -71,6 +72,4 @@
 * 概述
 * 进程与线程
 * 内存管理
-
-
 
