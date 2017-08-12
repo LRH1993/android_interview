@@ -16,7 +16,7 @@
   * [Java IO\(二\)](/java/basis/java-io2.md)
   * [RandomAccessFile](/java/basis/randomaccessfile.md)
   * [Java NIO](java/basis/java-nio.md)
-* Java并发
+* [Java并发](/java/concurrence.md)
 * Java虚拟机
 
 ## Android
@@ -72,4 +72,6 @@
 * 概述
 * 进程与线程
 * 内存管理
+
+
 
