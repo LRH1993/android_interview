@@ -19,6 +19,7 @@
 * [Java并发](/java/concurrence.md)
   * [Java线程池](/java/concurrence/thread-pool.md)
   * [死锁](/java/concurrence/deadlock.md)
+  * [Synchronized/ReentrantLock](/java/concurrence/synchronized-reentrantlock.md)
 * Java虚拟机
 
 ## Android
