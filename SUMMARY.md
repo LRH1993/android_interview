@@ -18,6 +18,7 @@
   * [Java NIO](java/basis/java-nio.md)
 * [Java并发](/java/concurrence.md)
   * [Java线程池](/java/concurrence/thread-pool.md)
+  * [死锁](java/concurrence/si-suo.md)
 * Java虚拟机
 
 ## Android
@@ -73,6 +74,4 @@
 * 概述
 * 进程与线程
 * 内存管理
-
-
 
