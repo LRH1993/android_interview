@@ -20,7 +20,7 @@
   * [Java线程池](/java/concurrence/thread-pool.md)
   * [死锁](/java/concurrence/deadlock.md)
   * [Synchronized/ReentrantLock](/java/concurrence/synchronized-reentrantlock.md)
-  * [生产者/消费者模式](java/concurrence/sheng-chan-8005-xiao-fei-zhe-mo-shi.md)
+  * [生产者/消费者模式](/java/concurrence/producer-consumer.md)
 * Java虚拟机
 
 ## Android
@@ -76,4 +76,6 @@
 * 概述
 * 进程与线程
 * 内存管理
+
+
 
