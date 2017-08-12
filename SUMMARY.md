@@ -14,6 +14,7 @@
   * [Java注解](/java/basis/annotation.md)
   * [Java IO\(一\)](/java/basis/java-io1.md)
   * [Java IO\(二\)](/java/basis/java-io2.md)
+  * [RandomAccessFile](/java/basis/randomaccessfile.md)
 * Java并发
 * Java虚拟机
 
