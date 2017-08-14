@@ -7,6 +7,7 @@
 ## Java
 
 * [Java基础](/java/basis.md)
+  * [Java集合——HashMap](/java/basis/hashmap.md)
   * [Java泛型](/java/basis/genericity.md)
   * [Java反射\(一\)](/java/basis/reflection1.md)
   * [Java反射\(二\)](/java/basis/reflection2.md)
@@ -82,6 +83,8 @@
 * 概述
 * 进程与线程
 * 内存管理
+
+## 致谢
 
 
 
