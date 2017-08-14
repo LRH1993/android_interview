@@ -1,4 +1,4 @@
-### 1. 概述 {#1-_概述}
+### 一、概述 {#1-_概述}
 
 从本文你可以学习到：
 
@@ -10,10 +10,21 @@
 
 当我们执行下面的操作时：
 
-| 123456789101112 | HashMap&lt;String, Integer&gt; map = new HashMap&lt;String, Integer&gt;\(\);map.put\("语文", 1\);map.put\("数学", 2\);map.put\("英语", 3\);map.put\("历史", 4\);map.put\("政治", 5\);map.put\("地理", 6\);map.put\("生物", 7\);map.put\("化学", 8\);for\(Entry&lt;String, Integer&gt; entry : map.entrySet\(\)\) {    System.out.println\(entry.getKey\(\) + ": " + entry.getValue\(\)\);} |
-| :--- | :--- |
+```
+HashMap<String, Integer> map = new HashMap<String, Integer>();
+map.put("语文", 1);
+map.put("数学", 2);
+map.put("英语", 3);
+map.put("历史", 4);
+map.put("政治", 5);
+map.put("地理", 6);
+map.put("生物", 7);
+map.put("化学", 8);
+for(Entry<String, Integer> entry : map.entrySet()) {
+    System.out.println(entry.getKey() + ": " + entry.getValue());
+}
 
-
+```
 运行结果是
 
 > 政治: 5  
@@ -72,9 +83,9 @@ put函数大致的思路为：
 
 1. bucket里的第一个节点，直接命中；
 2. 如果有冲突，则通过key.equals\(k\)去查找对应的entry
- 
+
    若为树，则在树中通过key.equals\(k\)查找，O\(logn\)；
- 
+
    若为链表，则在链表中通过key.equals\(k\)查找，O\(n\)。
 
 具体代码的实现如下：
