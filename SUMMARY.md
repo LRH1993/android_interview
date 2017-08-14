@@ -45,8 +45,10 @@
 
 ## 算法
 
-* 剑指offer
-* LeetCode
+* [剑指offer](/algorithm/For-offer.md)
+  * [01.二维数组中的查找](/algorithm/For-offer/01.md)
+  * [02.替换空格](/algorithm/For-offer/02.md)
+* [LeetCode](algorithm/leetcode.md)
 
 ## 设计模式
 
@@ -76,6 +78,4 @@
 * 概述
 * 进程与线程
 * 内存管理
-
-
 
