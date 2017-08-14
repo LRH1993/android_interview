@@ -49,6 +49,7 @@
   * [01.二维数组中的查找](/algorithm/For-offer/01.md)
   * [02.替换空格](/algorithm/For-offer/02.md)
   * [03.从尾到头打印链表](/algorithm/For-offer/03.md)
+  * [04.重建二叉树](/algorithm/For-offer/04.md)
 * [LeetCode](algorithm/leetcode.md)
 
 ## 设计模式
