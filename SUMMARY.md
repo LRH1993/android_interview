@@ -54,6 +54,7 @@
   * [05.用两个栈实现队列](/algorithm/For-offer/05.md)
   * [06.旋转数组的最小数字](/algorithm/For-offer/06.md)
   * [07.斐波那契数列](/algorithm/For-offer/07.md)
+  * [08.二进制中1的个数](/algorithm/For-offer/08.md)
 * [LeetCode](algorithm/leetcode.md)
 
 ## 设计模式
