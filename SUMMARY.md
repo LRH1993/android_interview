@@ -55,6 +55,7 @@
   * [06.旋转数组的最小数字](/algorithm/For-offer/06.md)
   * [07.斐波那契数列](/algorithm/For-offer/07.md)
   * [08.二进制中1的个数](/algorithm/For-offer/08.md)
+  * [09.数值的整数次方](/algorithm/For-offer/09.md)
 * [LeetCode](algorithm/leetcode.md)
 
 ## 设计模式
