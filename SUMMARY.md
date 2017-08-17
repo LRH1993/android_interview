@@ -61,6 +61,7 @@
   * [11.调整数组顺序使奇数位于偶数前面](/algorithm/For-offer/11.md)
   * [12.链表中倒数第K个节点](/algorithm/For-offer/12.md)
   * [13.反转链表](/algorithm/For-offer/13.md)
+  * [14.合并两个排序的链表](/algorithm/For-offer/14.md)
 * [LeetCode](algorithm/leetcode.md)
 
 ## 设计模式
