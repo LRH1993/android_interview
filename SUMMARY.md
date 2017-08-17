@@ -63,6 +63,7 @@
   * [13.反转链表](/algorithm/For-offer/13.md)
   * [14.合并两个排序的链表](/algorithm/For-offer/14.md)
   * [15.树的子结构](/algorithm/For-offer/15.md)
+  * [16.二叉树的镜像](/algorithm/For-offer/16.md)
 * [LeetCode](algorithm/leetcode.md)
 
 ## 设计模式
