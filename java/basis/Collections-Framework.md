@@ -28,7 +28,7 @@ Iterator接口经常被称作迭代器，它是Collection接口的父接口。�
 Iterator接口中主要定义了2个方法：
 ![](http://upload-images.jianshu.io/upload_images/3985563-63737a2d81713a47.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
 下面程序简单示范了通过Iterator对象逐个获取元素的逻辑。
-```
+```java
 public class IteratorExample {
 	public static void main(String[] args){
 		//创建集合，添加元素  
@@ -51,7 +51,7 @@ public class IteratorExample {
 **注意：**当使用Iterator对集合元素进行迭代时，Iterator并不是把集合元素本身传给了迭代变量，而是把集合元素的值传给了迭代变量（就如同参数传递是值传递，基本数据类型传递的是值，引用类型传递的仅仅是对象的引用变量），所以修改迭代变量的值对集合元素本身没有任何影响。
 
 下面的程序演示了这一点：
-```
+```java
 public class IteratorExample {
 	public static void main(String[] args){
 		List<String> list =Arrays.asList("java语言","C语言","C++语言");
@@ -118,7 +118,7 @@ Map用户保存具有映射关系的数据，因此Map集合里保存着两组�
 Map中还包括一个内部类Entry，该类封装了一个key-value对。Entry包含如下三个方法：
 ![](http://upload-images.jianshu.io/upload_images/3985563-ecedd1880af9d40a.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
 Map集合最典型的用法就是成对地添加、删除key-value对，然后就是判断该Map中是否包含指定key，是否包含指定value，也可以通过Map提供的keySet()方法获取所有key组成的集合，然后使用foreach循环来遍历Map的所有key，根据key即可遍历所有的value。下面程序代码示范Map的一些基本功能：
-```
+```java
 public class MapTest {
 	public static void main(String[] args){
 		Day day1 = new Day(1, 2, 3);
