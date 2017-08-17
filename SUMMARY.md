@@ -7,6 +7,7 @@
 ## Java
 
 * [Java基础](/java/basis.md)
+  * [Java集合框架](/java/basis/Collections-Framework.md)
   * [Java集合——HashMap](/java/basis/hashmap.md)
   * [Java泛型](/java/basis/genericity.md)
   * [Java反射\(一\)](/java/basis/reflection1.md)
