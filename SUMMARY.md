@@ -26,6 +26,7 @@
   * [死锁](/java/concurrence/deadlock.md)
   * [Synchronized/ReentrantLock](/java/concurrence/synchronized-reentrantlock.md)
   * [生产者/消费者模式](/java/concurrence/producer-consumer.md)
+  * [volatile关键字](/java/concurrence/volatile.md)
 * [Java虚拟机](/java/virtual-machine.md)
   * [对象的创建、内存布局和访问定位](/java/virtual-machine/object.md)
   * [Java内存区域与内存模型](/java/virtual-machine/memory.md)
