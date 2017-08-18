@@ -26,7 +26,7 @@
   * [死锁](/java/concurrence/deadlock.md)
   * [Synchronized/ReentrantLock](/java/concurrence/synchronized-reentrantlock.md)
   * [生产者/消费者模式](/java/concurrence/producer-consumer.md)
-* Java虚拟机
+* [Java虚拟机](/java/virtual-machine.md)
 
 ## Android
 

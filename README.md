@@ -6,13 +6,13 @@
 
 * [Java基础](/java/basis.md)
 * [Java并发](/java/concurrence.md)
-* Java虚拟机
+* [Java虚拟机](/java/virtual-machine.md)
 
 ## Android
 
 * [Android基础](/android/basis.md)
 * Android进阶
-* 开源框架
+* [开源框架](/android/open-source-framework.md)
 
 ## 数据结构
 
@@ -27,7 +27,7 @@
 
 ## 算法
 
-* 剑指offer
+* [剑指offer](/algorighm/For-offer.md)
 * LeetCode
 
 ## 设计模式
@@ -54,3 +54,4 @@ YiKun——Java集合
 DERRANTCM——剑指offer
 
 [设计模式](https://github.com/simple-android-framework-exchange/android_design_patterns_analysis)
+
