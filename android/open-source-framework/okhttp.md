@@ -100,22 +100,10 @@ String run(String url) throws IOException {
 
 这里我们做了 4 件事：
 
-1. 检查这个 call 是否已经被执行了，每个 call 只能被执行一次，如果想要一个完全一样的 call，可以利用
-   `call#clone`
-   方法进行克隆。
-2. 利用
-   `client.dispatcher().executed(this)`
-   来进行实际执行，
-   `dispatcher`
-   是刚才看到的
-   `OkHttpClient.Builder`
-   的成员之一，它的文档说自己是异步 HTTP 请求的执行策略，现在看来，同步请求它也有掺和。
-3. 调用
-   `getResponseWithInterceptorChain()`
-   函数获取 HTTP 返回结果，从函数名可以看出，这一步还会进行一系列“拦截”操作。
-4. 最后还要通知
-   `dispatcher`
-   自己已经执行完毕。
+1. 检查这个 call 是否已经被执行了，每个 call 只能被执行一次，如果想要一个完全一样的 call，可以利用`call#clone`方法进行克隆。
+2. 利用`client.dispatcher().executed(this)`来进行实际执行`dispatcher`是刚才看到的`OkHttpClient.Builder`的成员之一，它的文档说自己是异步 HTTP 请求的执行策略，现在看来，同步请求它也有掺和。
+3. 调用`getResponseWithInterceptorChain()`函数获取 HTTP 返回结果，从函数名可以看出，这一步还会进行一系列“拦截”操作。
+4. 最后还要通知`dispatcher`自己已经执行完毕。
 
 dispatcher 这里我们不过度关注，在同步执行的流程中，涉及到 dispatcher 的内容只不过是告知它我们的执行状态，比如开始执行了（调用`executed`），比如执行完毕了（调用`finished`），在异步执行流程中它会有更多的参与。
 
@@ -139,7 +127,8 @@ private Response getResponseWithInterceptorChain() throws IOException {
   Interceptor.Chain chain = new RealInterceptorChain(
       interceptors, null, null, null, 0, originalRequest);
   return chain.proceed(originalRequest);
-}```
+}
+```
 
 在[OkHttp 开发者之一介绍 OkHttp 的文章里面](https://publicobject.com/2016/07/03/the-last-httpurlconnection/)，作者讲到：
 
@@ -147,35 +136,17 @@ private Response getResponseWithInterceptorChain() throws IOException {
 
 可见`Interceptor`是 OkHttp 最核心的一个东西，不要误以为它只负责拦截请求进行一些额外的处理（例如 cookie），**实际上它把实际的网络请求、缓存、透明压缩等功能都统一了起来**，每一个功能都只是一个`Interceptor`，它们再连接成一个`Interceptor.Chain`，环环相扣，最终圆满完成一次网络请求。
 
-从`getResponseWithInterceptorChain`函数我们可以看到，`Interceptor.Chain`的分布依次是：
+从`getResponseWithInterceptorChain`函数我们可以看到`Interceptor.Chain`的分布依次是：
 
 ![](https://blog.piasy.com/img/201607/okhttp_interceptors.png "okhttp\_interceptors")
 
-1. 在配置
-   `OkHttpClient`
-   时设置的
-   `interceptors`
-   ；
-2. 负责失败重试以及重定向的
-   `RetryAndFollowUpInterceptor`
-   ；
-3. 负责把用户构造的请求转换为发送到服务器的请求、把服务器返回的响应转换为用户友好的响应的
-   `BridgeInterceptor`
-   ；
-4. 负责读取缓存直接返回、更新缓存的
-   `CacheInterceptor`
-   ；
-5. 负责和服务器建立连接的
-   `ConnectInterceptor`
-   ；
-6. 配置
-   `OkHttpClient`
-   时设置的
-   `networkInterceptors`
-   ；
-7. 负责向服务器发送请求数据、从服务器读取响应数据的
-   `CallServerInterceptor`
-   。
+1. 在配置`OkHttpClient`时设置的`interceptors`；
+2. 负责失败重试以及重定向的`RetryAndFollowUpInterceptor`；
+3. 负责把用户构造的请求转换为发送到服务器的请求、把服务器返回的响应转换为用户友好的响应的`BridgeInterceptor`；
+4. 负责读取缓存直接返回、更新缓存的`CacheInterceptor`；
+5. 负责和服务器建立连接的`ConnectInterceptor`；
+6. 配置`OkHttpClient`时设置的`networkInterceptors`；
+7. 负责向服务器发送请求数据、从服务器读取响应数据`CallServerInterceptor`。
 
 在这里，位置决定了功能，最后一个 Interceptor 一定是负责和服务器实际通讯的，重定向、缓存等一定是在实际通讯之前的。
 
@@ -212,7 +183,7 @@ private Response getResponseWithInterceptorChain() throws IOException {
 
 而创建`HttpCodec`对象的过程涉及到`StreamAllocation`、`RealConnection`，代码较长，这里就不展开，这个过程概括来说，就是找到一个可用的`RealConnection`，再利用`RealConnection`的输入输出（`BufferedSource`和`BufferedSink`）创建`HttpCodec`对象，供后续步骤使用。
 
-##### 2.2.1.2.发送和接收数据：`CallServerInterceptor` 
+##### 2.2.1.2.发送和接收数据：`CallServerInterceptor`
 
 ```java
 @Override public Response intercept(Chain chain) throws IOException {
@@ -260,12 +231,8 @@ private Response getResponseWithInterceptorChain() throws IOException {
 
 1. 向服务器发送 request header；
 2. 如果有 request body，就向服务器发送；
-3. 读取 response header，先构造一个
-   `Response`
-   对象；
-4. 如果有 response body，就在 3 的基础上加上 body 构造一个新的
-   `Response`
-   对象；
+3. 读取 response header，先构造一个`Response`对象；
+4. 如果有 response body，就在 3 的基础上加上 body 构造一个新的`Response`对象；
 
 这里我们可以看到，核心工作都由`HttpCodec`对象完成，而`HttpCodec`实际上利用的是 Okio，而 Okio 实际上还是用的`Socket`，所以没什么神秘的，只不过一层套一层，层数有点多。
 
@@ -350,7 +317,7 @@ public Cache(File directory, long maxSize);
 
 而如果我们对 OkHttp 内置的`Cache`类不满意，我们可以自行实现`InternalCache`接口，在构造`OkHttpClient`时进行设置，这样就可以使用我们自定义的缓存策略了。
 
-## 3.总结
+## 三、总结
 
 OkHttp 还有很多细节部分没有在本文展开，例如 HTTP2/HTTPS 的支持等，但建立一个清晰的概览非常重要。对整体有了清晰认识之后，细节部分如有需要，再单独深入将更加容易。
 
@@ -358,33 +325,9 @@ OkHttp 还有很多细节部分没有在本文展开，例如 HTTP2/HTTPS 的支
 
 ![](https://blog.piasy.com/img/201607/okhttp_full_process.png "okhttp\_full\_process")
 
-* `OkHttpClient`
-  实现
-  `Call.Factory`
-  ，负责为
-  `Request`
-  创建
-  `Call`
-  ；
-* `RealCall`
-  为具体的
-  `Call`
-  实现，其
-  `enqueue()`
-  异步接口通过
-  `Dispatcher`
-  利用
-  `ExecutorService`
-  实现，而最终进行网络请求时和同步
-  `execute()`
-  接口一致，都是通过
-  `getResponseWithInterceptorChain()`
-  函数实现；
-* `getResponseWithInterceptorChain()`
-  中利用
-  `Interceptor`
-  链条，分层实现缓存、透明压缩、网络 IO 等功能；
+* `OkHttpClient`实现`Call.Factory`，负责为`Request`创建`Call`；
+* `RealCall`为具体的`Call`实现，其`enqueue()`异步接口通过`Dispatcher`利用`ExecutorService`实现，而最终进行网络请求时和同步`execute()`接口一致，都是通过`getResponseWithInterceptorChain()`函数实现；
+* `getResponseWithInterceptorChain()`中利用`Interceptor`链条，分层实现缓存、透明压缩、网络 IO 等功能；
 
-  
 
 
