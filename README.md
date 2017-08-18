@@ -27,7 +27,7 @@
 
 ## 算法
 
-* [剑指offer](/algorighm/For-offer.md)
+* 剑指offer
 * LeetCode
 
 ## 设计模式
