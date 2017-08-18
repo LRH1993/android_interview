@@ -27,6 +27,7 @@
   * [Synchronized/ReentrantLock](/java/concurrence/synchronized-reentrantlock.md)
   * [生产者/消费者模式](/java/concurrence/producer-consumer.md)
 * [Java虚拟机](/java/virtual-machine.md)
+  * [对象的创建、内存布局和访问定位](/java/virtual-machine/object.md)
 
 ## Android
 
