@@ -11,6 +11,7 @@
   * [Java集合——ArrayList](/java/basis/arraylist.md)
   * [Java集合——LinkedList](/java/basis/linkedlist.md)
   * [Java集合——HashMap](/java/basis/hashmap.md)
+  * [Java集合——TreeMap](/java/basis/treemap.md)
   * [Java泛型](/java/basis/genericity.md)
   * [Java反射\(一\)](/java/basis/reflection1.md)
   * [Java反射\(二\)](/java/basis/reflection2.md)
