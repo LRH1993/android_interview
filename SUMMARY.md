@@ -31,6 +31,7 @@
   * [Java内存区域与内存模型](/java/virtual-machine/memory.md)
   * [Java类加载机制及类加载器详解](/java/virtual-machine/classloader.md)
   * [JVM中垃圾收集算法及垃圾收集器详解](/java/virtual-machine/Garbage-Collector.md)
+  * [JVM怎么判断对象是否已死？](/java/virtual-machine/life-cycle.md)
 
 ## Android
 
