@@ -22,6 +22,7 @@
   * [RandomAccessFile](/java/basis/randomaccessfile.md)
   * [Java NIO](java/basis/java-nio.md)
 * [Java并发](/java/concurrence.md)
+  * [Java创建线程的三种方式](/java/concurrence/CreateThread.md)
   * [Java线程池](/java/concurrence/thread-pool.md)
   * [死锁](/java/concurrence/deadlock.md)
   * [Synchronized/ReentrantLock](/java/concurrence/synchronized-reentrantlock.md)
