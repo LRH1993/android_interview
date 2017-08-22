@@ -41,11 +41,11 @@
 * [TCP/IP](/computer-networks/tcpip.md)
 * [HTTP](/computer-networks/http.md)
 
-## 操作系统
+## [操作系统](/operating-system/operating-system.md)
 
-* 概述
-* 进程与线程
-* 内存管理
+- [概述](/operating-system/summarize.md)
+- [进程与线程](/operating-system/process-thread.md)
+- [内存管理](/operating-system/memory-management.md)
 
 ## 致谢
 
