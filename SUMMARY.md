@@ -80,6 +80,8 @@
   * [19.栈的压入、弹出序列](/algorithm/For-offer/19.md)
   * [20.从上往下打印二叉树](/algorithm/For-offer/20.md)
   * [21.二叉搜索树的后序遍历序列](/algorithm/For-offer/21.md)
+  * [22.二叉树中和为某一值得路径](/algorithm/For-offer/22.md)
+  * [23.复杂链表的复制](/algorithm/For-offer/23.md)
 * [LeetCode](algorithm/leetcode.md)
 
 ## 设计模式
