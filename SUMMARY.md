@@ -78,7 +78,8 @@
   * [17.顺时针打印矩阵](/algorithm/For-offer/17.md)
   * [18.包含min函数的栈](/algorithm/For-offer/18.md)
   * [19.栈的压入、弹出序列](/algorithm/For-offer/19.md)
-  * 20.从上往下打印二叉树
+  * [20.从上往下打印二叉树](/algorithm/For-offer/20.md)
+  * [21.二叉搜索树的后序遍历序列](/algorithm/For-offer/21.md)
 * [LeetCode](algorithm/leetcode.md)
 
 ## 设计模式
