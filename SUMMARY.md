@@ -83,6 +83,9 @@
   * [21.二叉搜索树的后序遍历序列](/algorithm/For-offer/21.md)
   * [22.二叉树中和为某一值得路径](/algorithm/For-offer/22.md)
   * [23.复杂链表的复制](/algorithm/For-offer/23.md)
+  * [24.二叉搜索树与双向链表](/algorithm/For-offer/24.md)
+  * [25.字符串的排列](/algorithm/For-offer/25.md)
+  * [26.数组中出现次数超过一半的数字](/algorithm/For-offer/26.md)
 * [LeetCode](algorithm/leetcode.md)
 
 ## 设计模式
