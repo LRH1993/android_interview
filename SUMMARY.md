@@ -44,6 +44,7 @@
   * [BroadcastReceiver全方位解析](/android/basis/broadcastreceiver.md)
   * [ContentProvider全方位解析](/android/basis/ContentProvider.md)
   * [Android消息机制](/android/basis/message-mechanism.md)
+  * [LruCache原理解析](/android/basis/lrucache.md)
 * Android进阶
 * [开源框架](/android/open-source-framework.md)
   * [OkHttp解析](/android/open-source-framework/okhttp.md)
