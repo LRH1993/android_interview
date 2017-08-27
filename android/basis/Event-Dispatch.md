@@ -695,10 +695,6 @@ public void setOnTouchListener(OnTouchListener l) {
 
 接下来，我们继续看：**onTouchEvent(event)**的源码分析
 
-> 1. 详情请看注释
-> 2. Android 5.0后View的onTouchEvent()的源码发生了变化（更加复杂），但原理相同；
-> 3. 本文为了让读者更好理解onTouchEvent()源码分析，所以采用Android 5.0前的版本
-
 ```java
 public boolean onTouchEvent(MotionEvent event) {  
     final int viewFlags = mViewFlags;  
