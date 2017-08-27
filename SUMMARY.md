@@ -98,6 +98,7 @@
   * [28.连续子数组的最大和](/algorithm/For-offer/28.md)
   * [29.求从1到n的整数中1出现的次数](/algorithm/For-offer/29.md)
   * [30.把数组排成最小的数](/algorithm/For-offer/30.md)
+  * [31.丑数](/algorithm/For-offer/31.md)
 * [LeetCode](algorithm/leetcode.md)
 
 ## 设计模式
