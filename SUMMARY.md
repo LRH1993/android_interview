@@ -46,6 +46,7 @@
   * [Android消息机制](/android/basis/message-mechanism.md)
   * [Android事件分发机制](/android/basis/Event-Dispatch.md)
   * [LruCache原理解析](/android/basis/lrucache.md)
+  * [Window、Activity、DecorView以及ViewRoot之间的关系](/android/basis/decorview.md)
   * [View测量、布局及绘制原理](/android/basis/custom_view.md)
 * Android进阶
 * [开源框架](/android/open-source-framework.md)
