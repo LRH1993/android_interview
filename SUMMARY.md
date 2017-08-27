@@ -91,6 +91,7 @@
   * [24.二叉搜索树与双向链表](/algorithm/For-offer/24.md)
   * [25.字符串的排列](/algorithm/For-offer/25.md)
   * [26.数组中出现次数超过一半的数字](/algorithm/For-offer/26.md)
+  * [27.最小的k个数](/algorithm/For-offer/27.md)
 * [LeetCode](algorithm/leetcode.md)
 
 ## 设计模式
