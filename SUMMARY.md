@@ -93,6 +93,7 @@
   * [26.数组中出现次数超过一半的数字](/algorithm/For-offer/26.md)
   * [27.最小的k个数](/algorithm/For-offer/27.md)
   * [28.连续子数组的最大和](/algorithm/For-offer/28.md)
+  * [29.求从1到n的整数中1出现的次数](/algorithm/For-offer/29.md)
 * [LeetCode](algorithm/leetcode.md)
 
 ## 设计模式
