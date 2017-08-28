@@ -102,6 +102,7 @@
   * [31.丑数](/algorithm/For-offer/31.md)
   * [32.第一个只出现一次的字符](/algorithm/For-offer/32.md)
   * [33.数组中的逆序对](/algorithm/For-offer/33.md)
+  * [34.两个链表的第一个公共结点](/algorithm/For-offer/34.md)
 * [LeetCode](algorithm/leetcode.md)
 
 ## 设计模式
