@@ -45,6 +45,7 @@
   * [ContentProvider全方位解析](/android/basis/ContentProvider.md)
   * [Android消息机制](/android/basis/message-mechanism.md)
   * [Android事件分发机制](/android/basis/Event-Dispatch.md)
+  * [AsyncTask详解](/android/basis/asynctask.md)
   * [LruCache原理解析](/android/basis/lrucache.md)
   * [Window、Activity、DecorView以及ViewRoot之间的关系](/android/basis/decorview.md)
   * [View测量、布局及绘制原理](/android/basis/custom_view.md)
