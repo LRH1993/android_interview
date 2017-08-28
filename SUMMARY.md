@@ -100,6 +100,7 @@
   * [29.求从1到n的整数中1出现的次数](/algorithm/For-offer/29.md)
   * [30.把数组排成最小的数](/algorithm/For-offer/30.md)
   * [31.丑数](/algorithm/For-offer/31.md)
+  * [32.第一个只出现一次的字符](/algorithm/For-offer/32.md)
 * [LeetCode](algorithm/leetcode.md)
 
 ## 设计模式
