@@ -61,5 +61,7 @@ Piasy——Android开源框架分析
 
 Zane——AbstractQueuedSynchronizer
 
+占小狼——ConcurrentHashMap
+
 [设计模式](https://github.com/simple-android-framework-exchange/android_design_patterns_analysis)
 

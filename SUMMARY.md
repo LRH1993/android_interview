@@ -34,6 +34,7 @@
   * [深入理解ReentrantLock](/java/concurrence/ReentrantLock.md)
   * [Java并发集合——ArrayBlockingQueue](/java/concurrence/ArrayBlockingQueue.md)
   * [Java并发集合——LinkedBlockingQueue](/java/concurrence/LinkedBlockingQueue.md)
+  * [Java并发集合——ConcurrentHashMap](/java/concurrence/ConcurrentHashMap.md)
 * [Java虚拟机](/java/virtual-machine.md)
   * [对象的创建、内存布局和访问定位](/java/virtual-machine/object.md)
   * [Java内存区域与内存模型](/java/virtual-machine/memory.md)
