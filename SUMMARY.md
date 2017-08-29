@@ -116,6 +116,7 @@
   * [36.二叉树的深度](/algorithm/For-offer/36.md)
   * [37.判断平衡二叉树](/algorithm/For-offer/37.md)
   * [38.数组中只出现一次的数字](/algorithm/For-offer/38.md)
+  * [39.和为s的两个数字](/algorithm/For-offer/39.md)
 * [LeetCode](algorithm/leetcode.md)
 
 ## 设计模式
