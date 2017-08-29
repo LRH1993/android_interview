@@ -120,6 +120,7 @@ public class MainActivity extends AppCompatActivity {
 ```
 
 **运行以上测试代码，将可以看到如下效果图(例子不太恰当，主要使用场景是在handleMessage中执行耗时操作)**
+
 ![img](http://upload-images.jianshu.io/upload_images/2050203-a1ee8856b13b5368.gif?imageMogr2/auto-orient/strip)
 
 

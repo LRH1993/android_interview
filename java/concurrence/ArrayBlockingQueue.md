@@ -2,7 +2,7 @@
 
   本文的主要详细分析ArrayBlockingQueue的实现原理，由于该并发集合其底层是使用了java.util.ReentrantLock和java.util.Condition来完成并发控制的，我们可以通过JDK的源代码更好的学习这些并发控制类的使用，同时该类也是所有并发集合中最简单的一个，分析该类的源码也是为之后分析其他并发集合做好基础。
 
-------
+
 
 ## 一、Queue接口和BlockingQueue接口回顾
 

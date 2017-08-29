@@ -1,14 +1,15 @@
-### 前言
+## 前言
 
 在前面的文章ArrayBlockingQueue中，已经对JDK中的BlockingQueue中的做了一个回顾，同时对ArrayBlockingQueue中的核心方法作了说明，而LinkedBlockingQueue作为JDK中BlockingQueue家族系列中一员，由于其作为固定大小线程池(Executors.newFixedThreadPool())底层所使用的阻塞队列，分析它的目的主要在于2点：
-(1) 与ArrayBlockingQueue进行类比学习，加深各种数据结构的理解
-(2) 了解底层实现，能够更好地理解每一种阻塞队列对线程池性能的影响，做到真正的知其然，且知其所以然
+
+1. 与ArrayBlockingQueue进行类比学习，加深各种数据结构的理解
+2. 了解底层实现，能够更好地理解每一种阻塞队列对线程池性能的影响，做到真正的知其然，且知其所以然
 
 - 源码分析LinkedBlockingQueue的实现
 - 与ArrayBlockingQueue进行比较
 - 说明为什么选择LinkedBlockingQueue作为固定大小的线程池的阻塞队列
 
-## 一、LinkedBlockingQueue深入分析
+## LinkedBlockingQueue深入分析
 
 LinkedBlockingQueue，见名之意，它是由一个基于链表的阻塞队列，首先看一下的核心组成：
 
@@ -376,7 +377,7 @@ BlockingQueue还定义了一个限时等待插入操作，即在等待一定的�
 
 对于LinkedBlockingQueue的源码分析就到这里，下面让我们将LinkedBlockingQueue与ArrayBlockingQueue进行一个比较。
 
-## 二、LinkedBlockingQueue与ArrayBlockingQueue的比较
+## LinkedBlockingQueue与ArrayBlockingQueue的比较
 
 ArrayBlockingQueue由于其底层基于数组，并且在创建时指定存储的大小，在完成后就会立即在内存分配固定大小容量的数组元素，因此其存储通常有限，故其是一个**“有界“**的阻塞队列；
 
@@ -384,7 +385,7 @@ ArrayBlockingQueue由于其底层基于数组，并且在创建时指定存储�
 
 其次，ArrayBlockingQueue中在入队列和出队列操作过程中，使用的是同一个lock，所以即使在多核CPU的情况下，其读取和操作的都无法做到并行，而LinkedBlockingQueue的读取和插入操作所使用的锁是两个不同的lock，它们之间的操作互相不受干扰，因此两种操作可以并行完成，故LinkedBlockingQueue的吞吐量要高于ArrayBlockingQueue。
 
-## 三、选择LinkedBlockingQueue的理由
+## 选择LinkedBlockingQueue的理由
 
 ```java
     /**
