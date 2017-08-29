@@ -113,6 +113,8 @@
   * [33.数组中的逆序对](/algorithm/For-offer/33.md)
   * [34.两个链表的第一个公共结点](/algorithm/For-offer/34.md)
   * [35.在排序数组中出现的次数](/algorithm/For-offer/35.md)
+  * [36.二叉树的深度](/algorithm/For-offer/36.md)
+  * [37.判断平衡二叉树](/algorithm/For-offer/37.md)
 * [LeetCode](algorithm/leetcode.md)
 
 ## 设计模式
