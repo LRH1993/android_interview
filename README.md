@@ -57,5 +57,7 @@ Carson_Ho——Android基础
 
 Piasy——Android开源框架分析
 
+码农一枚——BlockingQueue
+
 [设计模式](https://github.com/simple-android-framework-exchange/android_design_patterns_analysis)
 
