@@ -59,5 +59,7 @@ Piasy——Android开源框架分析
 
 码农一枚——BlockingQueue
 
+Zane——AbstractQueuedSynchronizer
+
 [设计模式](https://github.com/simple-android-framework-exchange/android_design_patterns_analysis)
 

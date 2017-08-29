@@ -30,6 +30,7 @@
   * [生产者/消费者模式](/java/concurrence/producer-consumer.md)
   * [volatile关键字](/java/concurrence/volatile.md)
   * [CAS原子操作](/java/concurrence/CAS.md)
+  * [AbstractQueuedSynchronizer详解](/java/concurrence/AbstractQueuedSynchronizer.md)
   * [Java并发集合——ArrayBlockingQueue](/java/concurrence/ArrayBlockingQueue.md)
   * [Java并发集合——LinkedBlockingQueue](/java/concurrence/LinkedBlockingQueue.md)
 * [Java虚拟机](/java/virtual-machine.md)
