@@ -119,6 +119,8 @@
   * [39.和为s的两个数字](/algorithm/For-offer/39.md)
   * [40.和为s的连续正数序列](/algorithm/For-offer/40.md)
   * [41.翻转单词顺序](/algorithm/For-offer/41.md)
+  * [42.左旋转字符串](/algorithm/For-offer/42.md)
+  * [43.n个骰子的点数](/algorithm/For-offer/43.md)
 * [LeetCode](algorithm/leetcode.md)
 
 ## 设计模式
