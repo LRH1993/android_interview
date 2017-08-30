@@ -118,6 +118,7 @@
   * [38.数组中只出现一次的数字](/algorithm/For-offer/38.md)
   * [39.和为s的两个数字](/algorithm/For-offer/39.md)
   * [40.和为s的连续正数序列](/algorithm/For-offer/40.md)
+  * [41.翻转单词顺序](/algorithm/For-offer/41.md)
 * [LeetCode](algorithm/leetcode.md)
 
 ## 设计模式
