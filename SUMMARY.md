@@ -60,6 +60,7 @@
   * [View测量、布局及绘制原理](/android/basis/custom_view.md)
   * [Android虚拟机及编译过程](/android/basis/dalvik-art.md)
 * [Android进阶](/android/advance.md)
+  - [Android多线程断点续传](/android/advance/breakpoint.md)
 * [开源框架](/android/open-source-framework.md)
   * [OkHttp解析](/android/open-source-framework/okhttp.md)
   * [Retrofit解析](/android/open-source-framework/Retrofit.md)
