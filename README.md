@@ -63,5 +63,7 @@ Zane——AbstractQueuedSynchronizer
 
 占小狼——ConcurrentHashMap
 
+AriaLyy——多线程断点续传
+
 [设计模式](https://github.com/simple-android-framework-exchange/android_design_patterns_analysis)
 
