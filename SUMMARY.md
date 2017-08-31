@@ -125,6 +125,7 @@
   * [43.n个骰子的点数](/algorithm/For-offer/43.md)
   * [44.扑克牌的顺子](/algorithm/For-offer/44.md)
   * [45.约瑟夫环问题](/algorithm/For-offer/45.md)
+  * [46.不用加减乘除做加法](/algorithm/For-offer/46.md)
 * [LeetCode](algorithm/leetcode.md)
 
 ## 设计模式
