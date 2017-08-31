@@ -123,6 +123,8 @@
   * [41.翻转单词顺序](/algorithm/For-offer/41.md)
   * [42.左旋转字符串](/algorithm/For-offer/42.md)
   * [43.n个骰子的点数](/algorithm/For-offer/43.md)
+  * [44.扑克牌的顺子](/algorithm/For-offer/44.md)
+  * [45.约瑟夫环问题](/algorithm/For-offer/45.md)
 * [LeetCode](algorithm/leetcode.md)
 
 ## 设计模式
