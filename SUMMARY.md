@@ -127,7 +127,9 @@
   * [45.约瑟夫环问题](/algorithm/For-offer/45.md)
   * [46.不用加减乘除做加法](/algorithm/For-offer/46.md)
   * [47.把字符串转换成整数](/algorithm/For-offer/47.md)
-  * [48.树种两个结点的最低公共结点](/algorithm/For-offer/48.md)
+  * [48.树中两个结点的最低公共结点](/algorithm/For-offer/48.md)
+  * [49.数组中重复的数字](/algorithm/For-offer/49.md)
+  * [50.构建乘积数组](/algorithm/For-offer/50.md)
 * [LeetCode](algorithm/leetcode.md)
 
 ## 设计模式
