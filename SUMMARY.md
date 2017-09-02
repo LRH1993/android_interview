@@ -62,6 +62,7 @@
   * [Android进程间通信方式](/android/basis/ipc.md)
 * [Android进阶](/android/advance.md)
   - [Android多线程断点续传](/android/advance/breakpoint.md)
+  - [Android Binder机制及AIDL使用](/android/advance/binder.md)
 * [开源框架](/android/open-source-framework.md)
   * [OkHttp解析](/android/open-source-framework/okhttp.md)
   * [Retrofit解析](/android/open-source-framework/Retrofit.md)
