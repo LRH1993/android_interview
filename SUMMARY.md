@@ -59,6 +59,7 @@
   * [Window、Activity、DecorView以及ViewRoot之间的关系](/android/basis/decorview.md)
   * [View测量、布局及绘制原理](/android/basis/custom_view.md)
   * [Android虚拟机及编译过程](/android/basis/dalvik-art.md)
+  * [Android进程间通信方式](/android/basis/ipc.md)
 * [Android进阶](/android/advance.md)
   - [Android多线程断点续传](/android/advance/breakpoint.md)
 * [开源框架](/android/open-source-framework.md)
