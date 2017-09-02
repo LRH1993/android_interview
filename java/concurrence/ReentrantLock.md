@@ -223,8 +223,6 @@ public class ConditionObject implements Condition, java.io.Serializable {
 先看一个condition在生产者消费者的应用场景：
 
 ```java
-import java.util.LinkedList;
-import java.util.List;
 import java.util.concurrent.locks.Condition;
 import java.util.concurrent.locks.Lock;
 import java.util.concurrent.locks.ReentrantLock;
