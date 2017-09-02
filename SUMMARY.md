@@ -65,6 +65,7 @@
   - [Android Binder机制及AIDL使用](/android/advance/binder.md)
   - [一个APP从启动到主页面显示经历了哪些过程？](/android/advance/app-launch.md)
   - [Android性能优化总结](/android/advance/performance-optimization.md)
+  - [Android 内存泄漏总结](/android/advance/memory-leak.md)
 * [开源框架](/android/open-source-framework.md)
   * [OkHttp解析](/android/open-source-framework/okhttp.md)
   * [Retrofit解析](/android/open-source-framework/Retrofit.md)
