@@ -76,8 +76,7 @@
 ## 数据结构
 
 * [线性表](/data-structure/linear-list.md)
-* 栈和队
-* 链表
+* [栈和队](/data-structure/stack-queue.md)
 * 树
 * 图
 * 散列查找
