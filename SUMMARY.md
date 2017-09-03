@@ -75,7 +75,7 @@
 
 ## 数据结构
 
-* 线性表
+* [线性表](/data-structure/linear-list.md)
 * 栈和队
 * 链表
 * 树
