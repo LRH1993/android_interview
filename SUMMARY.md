@@ -60,6 +60,7 @@
   * [View测量、布局及绘制原理](/android/basis/custom_view.md)
   * [Android虚拟机及编译过程](/android/basis/dalvik-art.md)
   * [Android进程间通信方式](/android/basis/ipc.md)
+  * [Android Bitmap压缩策略](/android/basis/bitmap.md)
 * [Android进阶](/android/advance.md)
   - [Android多线程断点续传](/android/advance/breakpoint.md)
   - [Android Binder机制及AIDL使用](/android/advance/binder.md)
