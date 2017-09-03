@@ -139,6 +139,7 @@
   * [52.表示数值的字符串](/algorithm/For-offer/52.md)
   * [53.字符流中第一个不重复的字符](/algorithm/For-offer/53.md)
 * [LeetCode](algorithm/leetcode.md)
+  -   [Distinct Subsequences](/algorithm/LeetCode/Distinct-Subsequences.md)
 
 ## 设计模式
 
