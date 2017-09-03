@@ -67,5 +67,7 @@ AriaLyy——多线程断点续传
 
 haohao——Android进程间通信
 
+Sunny——布局优化
+
 [设计模式](https://github.com/simple-android-framework-exchange/android_design_patterns_analysis)
 
