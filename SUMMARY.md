@@ -78,7 +78,8 @@
 * [线性表](/data-structure/linear-list.md)
 * [栈和队](/data-structure/stack-queue.md)
 * [树](/data-structure/tree.md)
-  - [树的基础](/data-structure/tree/tree-introduction.md)  
+  - [树的基础](/data-structure/tree/tree-introduction.md)
+  - [其他常见的树](/data-structure/tree/other-tree.md)
 * 图
 * 散列查找
 * [排序](/data-structure/sort.md)
