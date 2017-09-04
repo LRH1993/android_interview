@@ -155,6 +155,7 @@
   * [53.字符流中第一个不重复的字符](/algorithm/For-offer/53.md)
 * [LeetCode](algorithm/leetcode.md)
   -   [Distinct Subsequences](/algorithm/LeetCode/Distinct-Subsequences.md)
+  -   [Longest Common Subsequence](/algorithm/LeetCode/Longest-Common-Subsequence.md)
 
 ## 设计模式
 

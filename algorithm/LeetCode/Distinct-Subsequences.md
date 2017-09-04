@@ -49,6 +49,3 @@ public int numDistincts(String S, String T)
   return table[S.length()][T.length()];
 }
 ```
-
-
-
