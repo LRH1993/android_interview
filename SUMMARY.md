@@ -81,6 +81,7 @@
   - [树的基础](/data-structure/tree/tree-introduction.md)
   - [其他常见的树](/data-structure/tree/other-tree.md)
   - [并查集](/data-structure/tree/Union-Find.md)
+  - [B-树，B+树，B*树](/data-structure/tree/b-tree.md)
 * 图
 * 散列查找
 * [排序](/data-structure/sort.md)
