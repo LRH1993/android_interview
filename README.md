@@ -72,5 +72,9 @@ Sunny——布局优化
 
 hapjin——并查集
 
+寒江独钓——散列表
+
+Hongyang——热修复和插件化
+
 [设计模式](https://github.com/simple-android-framework-exchange/android_design_patterns_analysis)
 
