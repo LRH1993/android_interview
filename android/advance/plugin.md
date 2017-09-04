@@ -89,21 +89,37 @@ DroidPlugin是张勇实现的一套插件化方案，它的原理是Hook客户�
 ## 四、Dynamic-load-apk详解
 
 [Android插件化学习之路（一）之动态加载综述](http://blog.csdn.net/u012124438/article/details/53234223)
+
 [Android插件化学习之路（二）之ClassLoader完全解析](http://blog.csdn.net/u012124438/article/details/53235848)
+
 [Android插件化学习之路（三）之调用外部.dex文件中的代码](http://blog.csdn.net/u012124438/article/details/53236472)
+
 [Android插件化学习之路（四）之使用插件中的R资源](http://blog.csdn.net/u012124438/article/details/53236723)
+
 [Android插件化学习之路（五）之代理Activity](http://blog.csdn.net/u012124438/article/details/53239370)
+
 [Android插件化学习之路（六）之动态创建Activity](http://blog.csdn.net/u012124438/article/details/53239497)
+
 [Android插件化学习之路（七）之DL插件开发该注意的坑](http://blog.csdn.net/u012124438/article/details/53240585)
-[Android插件化学习之路（八）之DynamicLoadApk 源码解析（上）](http://blog.csdn.net/u012124438/article/details/53241755) [Android插件化学习之路（九）之DynamicLoadApk 源码解析（下）](http://blog.csdn.net/u012124438/article/details/53242838)
+
+[Android插件化学习之路（八）之DynamicLoadApk 源码解析（上）](http://blog.csdn.net/u012124438/article/details/53241755)
+
+ [Android插件化学习之路（九）之DynamicLoadApk 源码解析（下）](http://blog.csdn.net/u012124438/article/details/53242838)
 
 ## 五、DroidPlugin详解
 
 [Hook机制之动态代理](http://weishu.me/2016/01/28/understand-plugin-framework-proxy-hook/)
+
 [Hook机制之Binder Hook](http://weishu.me/2016/02/16/understand-plugin-framework-binder-hook/)
+
 [Hook机制之AMS&PMS](http://weishu.me/2016/03/07/understand-plugin-framework-ams-pms-hook/)
+
 [Activity生命周期管理](http://weishu.me/2016/03/21/understand-plugin-framework-activity-management/)
+
 [插件加载机制](http://weishu.me/2016/04/05/understand-plugin-framework-classloader/)
+
 [广播的管理](http://weishu.me/2016/04/12/understand-plugin-framework-receiver/)
+
 [Service的插件化](http://weishu.me/2016/05/11/understand-plugin-framework-service/)
+
 [ContentProvider的插件化](http://weishu.me/2016/07/12/understand-plugin-framework-content-provider/)
