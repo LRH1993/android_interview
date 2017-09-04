@@ -84,6 +84,7 @@
   - [B-树，B+树，B*树](/data-structure/tree/b-tree.md)
 * [图](/data-structure/graph.md)
   - [图的基础](/data-structure/graph/graph-introduction.md)
+  - [拓扑排序](/data-structure/graph/topology.md)
 * 散列查找
 * [排序](/data-structure/sort.md)
 * [海量数据处理](/data-structure/mass_data_processing.md)
