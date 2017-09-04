@@ -71,6 +71,7 @@
   - [Android权限处理](/android/advance/permission.md)
   - [Android热修复原理](/android/advance/hotfix.md)
   - [Android插件化入门指南](/android/advance/plugin.md)
+  - [VirtualApk解析](/android/advance/virtualapk.md)
 * [开源框架](/android/open-source-framework.md)
   * [OkHttp解析](/android/open-source-framework/okhttp.md)
   * [Retrofit解析](/android/open-source-framework/Retrofit.md)
