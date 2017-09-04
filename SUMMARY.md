@@ -87,6 +87,7 @@
   - [拓扑排序](/data-structure/graph/topology.md)
   - [Kruskal算法](/data-structure/graph/Kruskal.md)
   - [Prim算法](/data-structure/graph/Prim.md)
+  - [Dijkstra算法](/data-structure/graph/Dijkstra.md)
 * 散列查找
 * [排序](/data-structure/sort.md)
 * [海量数据处理](/data-structure/mass_data_processing.md)
