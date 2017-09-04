@@ -19,8 +19,8 @@
 * [线性表](/data-structure/linear-list.md)
 * [栈和队](/data-structure/stack-queue.md)
 * [树](/data-structure/tree.md)
-* 图
-* 散列查找
+* [图](/data-structure/graph.md)
+* [散列查找](/data-structure/hash.md)
 * [排序](/data-structure/sort.md)
 * [海量数据处理](/data-structure/mass_data_processing.md)
 
