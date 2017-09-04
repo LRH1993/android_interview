@@ -16,9 +16,9 @@
 
 ## 数据结构
 
-* 线性表
-* 栈和队
-* 树
+* [线性表](/data-structure/linear-list.md)
+* [栈和队](/data-structure/stack-queue.md)
+* [树](/data-structure/tree.md)
 * 图
 * 散列查找
 * [排序](/data-structure/sort.md)
@@ -69,6 +69,8 @@ AriaLyy——多线程断点续传
 haohao——Android进程间通信
 
 Sunny——布局优化
+
+hapjin——并查集
 
 [设计模式](https://github.com/simple-android-framework-exchange/android_design_patterns_analysis)
 
