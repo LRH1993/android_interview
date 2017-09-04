@@ -85,6 +85,7 @@
 * [图](/data-structure/graph.md)
   - [图的基础](/data-structure/graph/graph-introduction.md)
   - [拓扑排序](/data-structure/graph/topology.md)
+  - [Kruskal算法](/data-structure/graph/Kruskal.md)
 * 散列查找
 * [排序](/data-structure/sort.md)
 * [海量数据处理](/data-structure/mass_data_processing.md)
