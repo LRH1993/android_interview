@@ -68,6 +68,7 @@
   - [Android性能优化总结](/android/advance/performance-optimization.md)
   - [Android 内存泄漏总结](/android/advance/memory-leak.md)
   - [Android布局优化之include、merge、ViewStub的使用](/android/advance/layout-optimization.md)
+  - [Android权限处理](/android/advance/permission.md)
 * [开源框架](/android/open-source-framework.md)
   * [OkHttp解析](/android/open-source-framework/okhttp.md)
   * [Retrofit解析](/android/open-source-framework/Retrofit.md)
