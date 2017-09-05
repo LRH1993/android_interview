@@ -76,5 +76,9 @@ hapjin——并查集
 
 Hongyang——热修复和插件化
 
+尸情化异——ButterKnife解析
+
+朱祁林——https原理解析
+
 [设计模式](https://github.com/simple-android-framework-exchange/android_design_patterns_analysis)
 
