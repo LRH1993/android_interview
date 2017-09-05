@@ -154,6 +154,7 @@
   * [51.正则表达式匹配](/algorithm/For-offer/51.md)
   * [52.表示数值的字符串](/algorithm/For-offer/52.md)
   * [53.字符流中第一个不重复的字符](/algorithm/For-offer/53.md)
+  * [54.链表中环的入口结点](/algorithm/For-offer/54.md)
 * [LeetCode](algorithm/leetcode.md)
   -   [Distinct Subsequences](/algorithm/LeetCode/Distinct-Subsequences.md)
   -   [Longest Common Subsequence](/algorithm/LeetCode/Longest-Common-Subsequence.md)
