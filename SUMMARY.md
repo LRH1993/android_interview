@@ -157,6 +157,7 @@
 * [LeetCode](algorithm/leetcode.md)
   -   [Distinct Subsequences](/algorithm/LeetCode/Distinct-Subsequences.md)
   -   [Longest Common Subsequence](/algorithm/LeetCode/Longest-Common-Subsequence.md)
+  -   [Longest Increasing Subsequence](/algorithm/LeetCode/Longest-Increasing-Subsequence.md)
 
 ## 设计模式
 
