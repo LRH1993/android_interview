@@ -164,6 +164,7 @@
   * [56.二叉树的下一个结点](/algorithm/For-offer/56.md)
   * [57.对称的二叉树](/algorithm/For-offer/57.md)
   * [58.把二叉树打印出多行](/algorithm/For-offer/58.md)
+  * [59.按之字形顺序打印二叉树](/algorithm/For-offer/59.md)
 * [LeetCode](algorithm/leetcode.md)
   -   [Distinct Subsequences](/algorithm/LeetCode/Distinct-Subsequences.md)
   -   [Longest Common Subsequence](/algorithm/LeetCode/Longest-Common-Subsequence.md)
