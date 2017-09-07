@@ -172,6 +172,7 @@
   -   [Best Time to Buy and Sell Stock](/algorithm/LeetCode/stock.md)
   -   [Maximum Subarray](/algorithm/LeetCode/Maximum-Subarray.md)
   -   [Maximum Product Subarray](/algorithm/LeetCode/Maxmimum-Product-Subarray.md)
+  -   [Longest Palindromic Substring](/algorithm/LeetCode/Longest-Palindromic-Substring.md)
 
 ## 设计模式
 
