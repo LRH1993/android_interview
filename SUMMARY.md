@@ -25,6 +25,7 @@
   * [Java抽象类和接口的区别](/java/basis/abstract_interface.md)
   * [Java深拷贝和浅拷贝](/java/basis/copy.md)
   * [Java transient关键字](/java/basis/transient.md)
+  * [Java finally与return执行顺序](/java/basis/finally-return.md)
 * [Java并发](/java/concurrence.md)
   * [Java创建线程的三种方式](/java/concurrence/CreateThread.md)
   * [Java线程池](/java/concurrence/thread-pool.md)

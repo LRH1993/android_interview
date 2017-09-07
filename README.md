@@ -80,5 +80,9 @@ Hongyang——热修复和插件化
 
 朱祁林——https原理解析
 
+Alexia——Java transient关键字和finally return 执行顺序
+
+JackieYeah——Java深拷贝和浅拷贝
+
 [设计模式](https://github.com/simple-android-framework-exchange/android_design_patterns_analysis)
 
