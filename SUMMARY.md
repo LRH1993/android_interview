@@ -169,6 +169,7 @@
   -   [Distinct Subsequences](/algorithm/LeetCode/Distinct-Subsequences.md)
   -   [Longest Common Subsequence](/algorithm/LeetCode/Longest-Common-Subsequence.md)
   -   [Longest Increasing Subsequence](/algorithm/LeetCode/Longest-Increasing-Subsequence.md)
+  -   [Best Time to Buy and Sell Stock](/algorithm/LeetCode/stock.md)
 
 ## 设计模式
 
