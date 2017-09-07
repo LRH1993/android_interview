@@ -23,6 +23,7 @@
   * [RandomAccessFile](/java/basis/randomaccessfile.md)
   * [Java NIO](/java/basis/java-nio.md)
   * [Java抽象类和接口的区别](/java/basis/abstract_interface.md)
+  * [Java深拷贝和浅拷贝](/java/basis/copy.md)
 * [Java并发](/java/concurrence.md)
   * [Java创建线程的三种方式](/java/concurrence/CreateThread.md)
   * [Java线程池](/java/concurrence/thread-pool.md)
