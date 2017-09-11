@@ -86,5 +86,3 @@ JackieYeah——Java深拷贝和浅拷贝
 
 IAM四十二——Android动画总结
 
-[设计模式](https://github.com/simple-android-framework-exchange/android_design_patterns_analysis)
-
