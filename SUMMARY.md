@@ -168,6 +168,7 @@
   * [60.二叉搜索树的第k个结点](/algorithm/For-offer/60.md)
   * [61.数据流中的中位数](/algorithm/For-offer/61.md)
   * [62.滑动窗口的最大值](/algorithm/For-offer/62.md)
+  * [63.矩阵中的路径](/algorithm/For-offer/63.md)
 * [LeetCode](algorithm/leetcode.md)
   -   [Distinct Subsequences](/algorithm/LeetCode/Distinct-Subsequences.md)
   -   [Longest Common Subsequence](/algorithm/LeetCode/Longest-Common-Subsequence.md)
