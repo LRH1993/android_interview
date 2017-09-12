@@ -63,6 +63,6 @@
 | 码农一枚         | BlockingQueue | Alexia     | Java transien和finally return |
 | AriaLyy      | 多线程断点续传       | JackieYeah | Java深拷贝和浅拷贝                  |
 | ZHANG_L      | Android进程优先级  | 尹star      | Android Context详解            |
-| HELLO丶GUY    | Fragment详解    |            |                              |
+| HELLO丶GUY    | Fragment详解    | Shawon     | Android推送技术                  |
 
 持续更新，仍有更多内容尚未完善，欢迎大家投稿。
