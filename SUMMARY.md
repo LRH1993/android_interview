@@ -54,6 +54,7 @@
   * [Service全方位解析](/android/basis/service.md)
   * [BroadcastReceiver全方位解析](/android/basis/broadcastreceiver.md)
   * [ContentProvider全方位解析](/android/basis/ContentProvider.md)
+  * [Fragment详解](/android/basis/Fragment.md)
   * [Android消息机制](/android/basis/message-mechanism.md)
   * [Android事件分发机制](/android/basis/Event-Dispatch.md)
   * [AsyncTask详解](/android/basis/asynctask.md)
