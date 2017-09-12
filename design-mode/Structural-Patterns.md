@@ -1,4 +1,6 @@
-## 结构型模式
+## 一、前言
+
+### 结构型模式
 
 结构型模式\(Structural Pattern\)描述如何将类或者对 象结合在一起形成更大的结构，就像搭积木，可以通过 简单积木的组合形成复杂的、功能更为强大的结构。
 
@@ -8,7 +10,7 @@
 
 * 对象结构型模式关心类与对象的组合，通过关联关系使得在一 个类中定义另一个类的实例对象，然后通过该对象调用其方法。 根据“合成复用原则”，在系统中尽量使用关联关系来替代继 承关系，因此大部分结构型模式都是对象结构型模式。
 
-## **包含模式**
+### **包含模式**
 
 * **适配器模式\(Adapter\)**
 * **桥接模式\(Bridge\)**
@@ -19,4 +21,11 @@
 * **代理模式\(Proxy\)**
 
 
+## 二、目录
 
+本部分没有包含以上所有模式，仅介绍了几种常用的。
+
+- [适配器模式](/design-mode/Structural-Patterns/Adapter-Pattern.md)
+- [外观模式](/design-mode/Structural-Patterns/Facade-Pattern.md)
+- [装饰者模式](/design-mode/Structural-Patterns/Decorator-Pattern.md)
+- [代理模式](/design-mode/Structural-Patterns/Proxy-Pattern.md)

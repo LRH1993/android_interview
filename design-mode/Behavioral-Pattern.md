@@ -1,4 +1,6 @@
-## 行为型模式
+## 一、前言
+
+### 行为型模式
 
 行为型模式\(Behavioral Pattern\)是对在不同的对象之间划分责任和算法的抽象化。
 
@@ -11,7 +13,7 @@
 * 类行为型模式：类的行为型模式使用继承关系在几个类之间分配行为，类行为型模式主要通过多态等方式来分配父类与子类的职责。
 * 对象行为型模式：对象的行为型模式则使用对象的聚合关联关系来分配行为，对象行为型模式主要是通过对象关联等方式来分配两个或多个类的职责。根据“合成复用原则”，系统中要尽量使用关联关系来取代继承关系，因此大部分行为型设计模式都属于对象行为型设计模式。
 
-## **包含模式**
+### 包含模式
 
 * **职责链模式\(Chain of Responsibility\)**
 * **命令模式\(Command\)**
@@ -26,4 +28,13 @@
 * **访问者模式\(Visitor\)**
 
 
+## 二、目录
+
+本部分没有包含以上所有模式，仅介绍了几种常用的。
+
+- [命令模式](/design-mode/Behavioral-Pattern/Command-Pattern.md)
+- [迭代器模式](/design-mode/Behavioral-Pattern/Iterator-Pattern.md)
+- [观察者模式](/design-mode/Behavioral-Pattern/Observer-Pattern.md)
+- [策略模式](/design-mode/Behavioral-Pattern/Strategy-Pattern.md)
+- [模板方法模式](/design-mode/Behavioral-Pattern/Template-Method.md)
 
