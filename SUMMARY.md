@@ -192,6 +192,7 @@
   * [适配器模式](/design-mode/Structural-Patterns/Adapter-Pattern.md)
   * [外观模式](/design-mode/Structural-Patterns/Facade-Pattern.md)
   * [装饰者模式](/design-mode/Structural-Patterns/Decorator-Pattern.md)
+  * [代理模式](/design-mode/Structural-Patterns/Proxy-Pattern.md)
 * [行为型模式](/design-mode/Behavioral-Pattern.md)
   * [命令模式](/design-mode/Behavioral-Pattern/Command-Pattern.md)
   * [迭代器模式](/design-mode/Behavioral-Pattern/Iterator-Pattern.md)
