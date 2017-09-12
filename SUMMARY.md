@@ -66,6 +66,7 @@
   * [Android进程间通信方式](/android/basis/ipc.md)
   * [Android Bitmap压缩策略](/android/basis/bitmap.md)
   * [Android动画总结](/android/basis/animator.md)
+  * [Android进程优先级](/android/basis/process-priority.md)
 * [Android进阶](/android/advance.md)
   - [Android多线程断点续传](/android/advance/breakpoint.md)
   - [Android MVP模式详解](/android/advance/mvp.md)
@@ -179,6 +180,7 @@
   -   [Maximum Subarray](/algorithm/LeetCode/Maximum-Subarray.md)
   -   [Maximum Product Subarray](/algorithm/LeetCode/Maxmimum-Product-Subarray.md)
   -   [Longest Palindromic Substring](/algorithm/LeetCode/Longest-Palindromic-Substring.md)
+  -   [BackPack](/algorithm/LeetCode/backpack.md)
 
 ## 设计模式
 
