@@ -176,14 +176,15 @@
   * [63.矩阵中的路径](/algorithm/For-offer/63.md)
   * [64.机器人的运动范围](/algorithm/For-offer/64.md)
 * [LeetCode](algorithm/leetcode.md)
-  -   [Distinct Subsequences](/algorithm/LeetCode/Distinct-Subsequences.md)
-  -   [Longest Common Subsequence](/algorithm/LeetCode/Longest-Common-Subsequence.md)
-  -   [Longest Increasing Subsequence](/algorithm/LeetCode/Longest-Increasing-Subsequence.md)
-  -   [Best Time to Buy and Sell Stock](/algorithm/LeetCode/stock.md)
-  -   [Maximum Subarray](/algorithm/LeetCode/Maximum-Subarray.md)
-  -   [Maximum Product Subarray](/algorithm/LeetCode/Maxmimum-Product-Subarray.md)
-  -   [Longest Palindromic Substring](/algorithm/LeetCode/Longest-Palindromic-Substring.md)
-  -   [BackPack](/algorithm/LeetCode/backpack.md)
+  - [Dynamic Programming](/algorithm/LeetCode/Dynamic-Programming.md)
+    - [Distinct Subsequences](/algorithm/LeetCode/Dynamic-Programming/Distinct-Subsequences.md)
+    - [Longest Common Subsequence](/algorithm/LeetCode/Dynamic-Programming/Longest-Common-Subsequence.md)
+    - [Longest Increasing Subsequence](/algorithm/LeetCode/Dynamic-Programming/Longest-Increasing-Subsequence.md)
+    - [Best Time to Buy and Sell Stock](/algorithm/LeetCode/Dynamic-Programming/stock.md)
+    - [Maximum Subarray](/algorithm/LeetCode/Dynamic-Programming/Maximum-Subarray.md)
+    - [Maximum Product Subarray](/algorithm/LeetCode/Dynamic-Programming/Maxmimum-Product-Subarray.md)
+    - [Longest Palindromic Substring](/algorithm/LeetCode/Dynamic-Programming/Longest-Palindromic-Substring.md)
+    - [BackPack](/algorithm/LeetCode/Dynamic-Programming/backpack.md)
 
 ## 设计模式
 
