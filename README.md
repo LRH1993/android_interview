@@ -65,8 +65,8 @@
 | ZHANG_L      | Android进程优先级  | 尹star      | Android Context详解            |
 | HELLO丶GUY    | Fragment详解    | Shawon     | Android推送技术                  |
 
-| 贡献者     | 贡献内容 | 贡献者  | 贡献内容 |
-| ------- | ---- | ---- | ---- |
-| 徐凯强Andy | 动态规划 |      |      |
+| 贡献者     | 贡献内容 | 贡献者      | 贡献内容                |
+| ------- | ---- | -------- | ------------------- |
+| 徐凯强Andy | 动态规划 | aaronice | LeetCode/LintCode题解 |
 
 持续更新，仍有更多内容尚未完善，欢迎大家投稿。
