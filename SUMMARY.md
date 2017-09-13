@@ -75,6 +75,7 @@
   - [Android全局异常处理](/android/advance/exception.md)
   - [Android MVP模式详解](/android/advance/mvp.md)
   - [Android Binder机制及AIDL使用](/android/advance/binder.md)
+  - [Android Parcelable和Serializable的区别](/android/advance/serializable.md)
   - [一个APP从启动到主页面显示经历了哪些过程？](/android/advance/app-launch.md)
   - [Android性能优化总结](/android/advance/performance-optimization.md)
   - [Android 内存泄漏总结](/android/advance/memory-leak.md)
