@@ -189,6 +189,7 @@
     - [Stone Game](/algorithm/LeetCode/Dynamic-Programming/Stone-Game.md)
   - [Array](/algorithm/LeetCode/Array.md)
     - [Partition Array](/algorithm/LeetCode/Array/Partition-Array.md)
+    - [Subarray Sum](/algorithm/LeetCode/Array/Subarray-Sum.md) 
 
 ## 设计模式
 
