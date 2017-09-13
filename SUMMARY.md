@@ -187,6 +187,8 @@
     - [BackPack](/algorithm/LeetCode/Dynamic-Programming/backpack.md)
     - [Maximal Square](/algorithm/LeetCode/Dynamic-Programming/Maximal-Square.md)
     - [Stone Game](/algorithm/LeetCode/Dynamic-Programming/Stone-Game.md)
+  - [Array](/algorithm/LeetCode/Array.md)
+    - [Partition Array](/algorithm/LeetCode/Array/Partition-Array.md)
 
 ## 设计模式
 
