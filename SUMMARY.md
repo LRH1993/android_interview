@@ -186,6 +186,7 @@
     - [Longest Palindromic Substring](/algorithm/LeetCode/Dynamic-Programming/Longest-Palindromic-Substring.md)
     - [BackPack](/algorithm/LeetCode/Dynamic-Programming/backpack.md)
     - [Maximal Square](/algorithm/LeetCode/Dynamic-Programming/Maximal-Square.md)
+    - [Stone Game](/algorithm/LeetCode/Dynamic-Programming/Stone-Game.md)
 
 ## 设计模式
 
