@@ -53,13 +53,13 @@
 
 ## 致谢
 
-| 贡献者          | 贡献内容          | 贡献者    | 贡献内容                       |
-| ------------ | ------------- | ------ | -------------------------- |
-| YiKun        | Java集合        | Zane   | AbstractQueuedSynchronizer |
-| DERRANTCM    | 剑指offer       | 占小狼    | ConcurrentHashMap          |
-| skywang12345 | 数据结构          | IAM四十二 | Android动画总结                |
-| Carson_Ho    | Android基础     | 尸情化异   | ButterKnife解析              |
-| Piasy        | Android开源框架分析 | 朱祁林    | https原理解析                  |
+| 贡献者          | 贡献内容        | 贡献者    | 贡献内容                       |
+| ------------ | ----------- | ------ | -------------------------- |
+| YiKun        | Java集合      | Zane   | AbstractQueuedSynchronizer |
+| DERRANTCM    | 剑指offer     | 占小狼    | ConcurrentHashMap          |
+| skywang12345 | 数据结构        | IAM四十二 | Android动画总结                |
+| Carson_Ho    | Android基础   | 尸情化异   | ButterKnife解析              |
+| Piasy        | Android开源框架 | 朱祁林    | https原理解析                  |
 
 | 贡献者       | 贡献内容          | 贡献者        | 贡献内容                         |
 | --------- | ------------- | ---------- | ---------------------------- |
