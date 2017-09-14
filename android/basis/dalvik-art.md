@@ -59,7 +59,9 @@ dex格式文件使用共享的、特定类型的常量池机制来节省内存�
 1.Java编译器对工程本身的java代码进行编译，这些java代码有三个来源：app的源代码，由资源文件生成的R文件(aapt工具)，以及有aidl文件生成的java接口文件(aidl工具)。产出为.class文件。
 
 ①.用AAPT编译R.java文件
+
 ②编译AIDL的java文件
+
 ③把java文件编译成class文件
 
 2..class文件和依赖的三方库文件通过dex工具生成Delvik虚拟机可执行的.dex文件，包含了所有的class信息，包括项目自身的class和依赖的class。产出为.dex文件。
