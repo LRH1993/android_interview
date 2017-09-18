@@ -193,6 +193,8 @@
   - [Array](/algorithm/LeetCode/Array.md)
     - [Partition Array](/algorithm/LeetCode/Array/Partition-Array.md)
     - [Subarray Sum](/algorithm/LeetCode/Array/Subarray-Sum.md) 
+  - [String](/algorithm/LeetCode/String.md)
+    - [Restore IP Addresses](/algorithm/LeetCode/String/ip.md)
 
 ## 设计模式
 
