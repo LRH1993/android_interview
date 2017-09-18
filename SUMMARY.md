@@ -192,7 +192,8 @@
     - [Stone Game](/algorithm/LeetCode/Dynamic-Programming/Stone-Game.md)
   - [Array](/algorithm/LeetCode/Array.md)
     - [Partition Array](/algorithm/LeetCode/Array/Partition-Array.md)
-    - [Subarray Sum](/algorithm/LeetCode/Array/Subarray-Sum.md) 
+    - [Subarray Sum](/algorithm/LeetCode/Array/Subarray-Sum.md)
+    - [Plus One](/algorithm/LeetCode/Array/plus-one.md) 
   - [String](/algorithm/LeetCode/String.md)
     - [Restore IP Addresses](/algorithm/LeetCode/String/ip.md)
 
