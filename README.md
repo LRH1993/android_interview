@@ -60,14 +60,15 @@
 | skywang12345 | 数据结构        | IAM四十二 | Android动画总结                |
 | Carson_Ho    | Android基础   | 尸情化异   | ButterKnife解析              |
 | Piasy        | Android开源框架 | 朱祁林    | https原理解析                  |
+| stormzhang   | Android全局异常 | Trinea | Parcelable和Serializable    |
 
-| 贡献者        | 贡献内容          | 贡献者        | 贡献内容                         |
-| ---------- | ------------- | ---------- | ---------------------------- |
-| AriaLyy    | 多线程断点续传       | JackieYeah | Java深拷贝和浅拷贝                  |
-| ZHANG_L    | Android进程优先级  | 尹star      | Android Context详解            |
-| HELLO丶GUY  | Fragment详解    | Shawon     | Android推送技术                  |
-| 徐凯强Andy    | 动态规划          | aaronice   | LeetCode/LintCode题解          |
-| 码农一枚       | BlockingQueue | Alexia     | Java transien和finally return |
-| stormzhang | Android全局异常   | Trinea     | Parcelable和Serializable      |
+| 贡献者       | 贡献内容            | 贡献者        | 贡献内容                         |
+| --------- | --------------- | ---------- | ---------------------------- |
+| AriaLyy   | 多线程断点续传         | JackieYeah | Java深拷贝和浅拷贝                  |
+| ZHANG_L   | Android进程优先级    | 尹star      | Android Context详解            |
+| HELLO丶GUY | Fragment详解      | Shawon     | Android推送技术                  |
+| 徐凯强Andy   | 动态规划            | aaronice   | LeetCode/LintCode题解          |
+| 码农一枚      | BlockingQueue   | Alexia     | Java transien和finally return |
+| 朔野        | Android Apk安装过程 |            |                              |
 
 持续更新，仍有更多内容尚未完善，欢迎大家投稿。
