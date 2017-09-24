@@ -69,6 +69,6 @@
 | HELLO丶GUY | Fragment详解      | Shawon     | Android推送技术                  |
 | 徐凯强Andy   | 动态规划            | aaronice   | LeetCode/LintCode题解          |
 | 码农一枚      | BlockingQueue   | Alexia     | Java transien和finally return |
-| 朔野        | Android Apk安装过程 |            |                              |
+| 朔野        | Android Apk安装过程 | 黑泥卡        | Dialog和PopupWindow           |
 
 持续更新，仍有更多内容尚未完善，欢迎大家投稿。
