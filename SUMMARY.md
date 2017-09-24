@@ -85,6 +85,7 @@
   - [Android插件化入门指南](/android/advance/plugin.md)
   - [VirtualApk解析](/android/advance/virtualapk.md)
   - [Android推送技术解析](/android/advance/push.md)
+  - [Android Apk安装过程](/android/advance/apk-install.md)
 * [开源框架](/android/open-source-framework.md)
   * [OkHttp解析](/android/open-source-framework/okhttp.md)
   * [Retrofit解析](/android/open-source-framework/Retrofit.md)
