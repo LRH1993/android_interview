@@ -200,6 +200,7 @@
     - [Two Sum](/algorithm/LeetCode/Array/Two-Sum.md)
   - [String](/algorithm/LeetCode/String.md)
     - [Restore IP Addresses](/algorithm/LeetCode/String/ip.md)
+    - [Rotate String](/algorithm/LeetCode/String/Rotate-String.md)
 
 ## 设计模式
 
