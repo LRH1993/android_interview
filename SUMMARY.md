@@ -196,6 +196,7 @@
     - [Partition Array](/algorithm/LeetCode/Array/Partition-Array.md)
     - [Subarray Sum](/algorithm/LeetCode/Array/Subarray-Sum.md)
     - [Plus One](/algorithm/LeetCode/Array/plus-one.md) 
+    - [Palindrome Number](/algorithm/LeetCode/Array/Palindrome-Number.md)
   - [String](/algorithm/LeetCode/String.md)
     - [Restore IP Addresses](/algorithm/LeetCode/String/ip.md)
 
