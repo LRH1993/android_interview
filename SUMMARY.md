@@ -197,6 +197,7 @@
     - [Subarray Sum](/algorithm/LeetCode/Array/Subarray-Sum.md)
     - [Plus One](/algorithm/LeetCode/Array/plus-one.md) 
     - [Palindrome Number](/algorithm/LeetCode/Array/Palindrome-Number.md)
+    - [Two Sum](/algorithm/LeetCode/Array/Two-Sum.md)
   - [String](/algorithm/LeetCode/String.md)
     - [Restore IP Addresses](/algorithm/LeetCode/String/ip.md)
 
