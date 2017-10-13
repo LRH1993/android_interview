@@ -202,6 +202,7 @@
     - [Restore IP Addresses](/algorithm/LeetCode/String/ip.md)
     - [Rotate String](/algorithm/LeetCode/String/Rotate-String.md)
     - [Valid Palindrome](/algorithm/LeetCode/String/Valid-Palindrome.md)
+    - [Length of Last Word](/algorithm/LeetCode/String/Length-of-Last-Word.md)
 
 ## 设计模式
 
