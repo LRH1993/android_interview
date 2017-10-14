@@ -204,6 +204,7 @@
     - [Valid Palindrome](/algorithm/LeetCode/String/Valid-Palindrome.md)
     - [Length of Last Word](/algorithm/LeetCode/String/Length-of-Last-Word.md)
   - [Linked List](/algorithm/LeetCode/Linked-List.md)
+    - [Remove Duplicates from Sorted List](/algorithm/LeetCode/Linked-List/Remove-Duplicates-from-Sorted-List.md)
 
 ## 设计模式
 
