@@ -206,6 +206,7 @@
   - [Linked List](/algorithm/LeetCode/Linked-List.md)
     - [Remove Duplicates from Sorted List](/algorithm/LeetCode/Linked-List/Remove-Duplicates-from-Sorted-List.md)
     - [Partition List](/algorithm/LeetCode/Linked-List/Partition-List.md)
+    - [Merge Two Sorted Lists](/algorithm/LeetCode/Linked-List/Merge-Two-Sorted-Lists.md)
 
 ## 设计模式
 
