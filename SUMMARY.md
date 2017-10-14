@@ -209,6 +209,8 @@
     - [Merge Two Sorted Lists](/algorithm/LeetCode/Linked-List/Merge-Two-Sorted-Lists.md)
     - [LRU Cache](/algorithm/LeetCode/Linked-List/LRU-Cache.md)
     - [Remove Linked List Elements](/algorithm/LeetCode/Linked-List/Remove-Linked-List-Elements.md)
+  - [Greedy](/algorithm/LeetCode/Greedy.md)
+    - [Jump Game](/algorithm/LeetCode/Greedy/Jump-Game.md)
 
 ## 设计模式
 
