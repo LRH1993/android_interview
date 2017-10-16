@@ -58,7 +58,7 @@
 | YiKun        | Java集合      | Zane   | AbstractQueuedSynchronizer |
 | DERRANTCM    | 剑指offer     | 占小狼    | ConcurrentHashMap          |
 | skywang12345 | 数据结构        | IAM四十二 | Android动画总结                |
-| Carson_Ho    | Android基础   | 尸情化异   | ButterKnife解析              |
+| Carson_Ho    | Android基础   | me115  | 图解设计模式                     |
 | Piasy        | Android开源框架 | 朱祁林    | https原理解析                  |
 | stormzhang   | Android全局异常 | Trinea | Parcelable和Serializable    |
 
