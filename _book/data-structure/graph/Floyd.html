@@ -69,6 +69,10 @@
                 
             
                 
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
                 <link rel="stylesheet" href="../../gitbook/gitbook-plugin-fontsettings/website.css">
                 
             
@@ -3725,59 +3729,59 @@
 <h2 id="&#x4E09;&#x3001;&#x5F17;&#x6D1B;&#x4F0A;&#x5FB7;&#x7B97;&#x6CD5;&#x7684;&#x4EE3;&#x7801;&#x8BF4;&#x660E;"><a name="&#x4E09;&#x3001;&#x5F17;&#x6D1B;&#x4F0A;&#x5FB7;&#x7B97;&#x6CD5;&#x7684;&#x4EE3;&#x7801;&#x8BF4;&#x660E;" class="anchor-navigation-ex-anchor" href="#&#x4E09;&#x3001;&#x5F17;&#x6D1B;&#x4F0A;&#x5FB7;&#x7B97;&#x6CD5;&#x7684;&#x4EE3;&#x7801;&#x8BF4;&#x660E;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x4E09;&#x3001;&#x5F17;&#x6D1B;&#x4F0A;&#x5FB7;&#x7B97;&#x6CD5;&#x7684;&#x4EE3;&#x7801;&#x8BF4;&#x660E;</h2>
 <p>&#x4EE5;&quot;&#x90BB;&#x63A5;&#x77E9;&#x9635;&quot;&#x4E3A;&#x4F8B;&#x5BF9;&#x5F17;&#x6D1B;&#x4F0A;&#x5FB7;&#x7B97;&#x6CD5;&#x8FDB;&#x884C;&#x8BF4;&#x660E;&#xFF0C;&#x5BF9;&#x4E8E;&quot;&#x90BB;&#x63A5;&#x8868;&quot;&#x5B9E;&#x73B0;&#x7684;&#x56FE;&#x5728;&#x540E;&#x9762;&#x4F1A;&#x7ED9;&#x51FA;&#x76F8;&#x5E94;&#x7684;&#x6E90;&#x7801;&#x3002;</p>
 <p><strong>1. &#x57FA;&#x672C;&#x5B9A;&#x4E49;</strong></p>
-<pre><code class="lang-java">public class MatrixUDG {
+<pre><code class="lang-java"><span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">MatrixUDG</span> </span>{
 
-    private int mEdgNum;        // &#x8FB9;&#x7684;&#x6570;&#x91CF;
-    private char[] mVexs;       // &#x9876;&#x70B9;&#x96C6;&#x5408;
-    private int[][] mMatrix;    // &#x90BB;&#x63A5;&#x77E9;&#x9635;
-    private static final int INF = Integer.MAX_VALUE;   // &#x6700;&#x5927;&#x503C;
+    <span class="hljs-keyword">private</span> <span class="hljs-keyword">int</span> mEdgNum;        <span class="hljs-comment">// &#x8FB9;&#x7684;&#x6570;&#x91CF;</span>
+    <span class="hljs-keyword">private</span> <span class="hljs-keyword">char</span>[] mVexs;       <span class="hljs-comment">// &#x9876;&#x70B9;&#x96C6;&#x5408;</span>
+    <span class="hljs-keyword">private</span> <span class="hljs-keyword">int</span>[][] mMatrix;    <span class="hljs-comment">// &#x90BB;&#x63A5;&#x77E9;&#x9635;</span>
+    <span class="hljs-keyword">private</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">final</span> <span class="hljs-keyword">int</span> INF = Integer.MAX_VALUE;   <span class="hljs-comment">// &#x6700;&#x5927;&#x503C;</span>
 
     ...
 }
 </code></pre>
 <p>MatrixUDG&#x662F;&#x90BB;&#x63A5;&#x77E9;&#x9635;&#x5BF9;&#x5E94;&#x7684;&#x7ED3;&#x6784;&#x4F53;&#x3002;mVexs&#x7528;&#x4E8E;&#x4FDD;&#x5B58;&#x9876;&#x70B9;&#xFF0C;mEdgNum&#x7528;&#x4E8E;&#x4FDD;&#x5B58;&#x8FB9;&#x6570;&#xFF0C;mMatrix&#x5219;&#x662F;&#x7528;&#x4E8E;&#x4FDD;&#x5B58;&#x77E9;&#x9635;&#x4FE1;&#x606F;&#x7684;&#x4E8C;&#x7EF4;&#x6570;&#x7EC4;&#x3002;&#x4F8B;&#x5982;&#xFF0C;mMatrix[i][j]=1&#xFF0C;&#x5219;&#x8868;&#x793A;&quot;&#x9876;&#x70B9;i(&#x5373;mVexs[i])&quot;&#x548C;&quot;&#x9876;&#x70B9;j(&#x5373;mVexs[j])&quot;&#x662F;&#x90BB;&#x63A5;&#x70B9;&#xFF1B;mMatrix[i][j]=0&#xFF0C;&#x5219;&#x8868;&#x793A;&#x5B83;&#x4EEC;&#x4E0D;&#x662F;&#x90BB;&#x63A5;&#x70B9;&#x3002;</p>
 <p><strong>2. &#x5F17;&#x6D1B;&#x4F0A;&#x5FB7;&#x7B97;&#x6CD5;</strong></p>
-<pre><code class="lang-java">/*
+<pre><code class="lang-java"><span class="hljs-comment">/*
  * floyd&#x6700;&#x77ED;&#x8DEF;&#x5F84;&#x3002;
  * &#x5373;&#xFF0C;&#x7EDF;&#x8BA1;&#x56FE;&#x4E2D;&#x5404;&#x4E2A;&#x9876;&#x70B9;&#x95F4;&#x7684;&#x6700;&#x77ED;&#x8DEF;&#x5F84;&#x3002;
  *
  * &#x53C2;&#x6570;&#x8BF4;&#x660E;&#xFF1A;
  *     path -- &#x8DEF;&#x5F84;&#x3002;path[i][j]=k&#x8868;&#x793A;&#xFF0C;&quot;&#x9876;&#x70B9;i&quot;&#x5230;&quot;&#x9876;&#x70B9;j&quot;&#x7684;&#x6700;&#x77ED;&#x8DEF;&#x5F84;&#x4F1A;&#x7ECF;&#x8FC7;&#x9876;&#x70B9;k&#x3002;
  *     dist -- &#x957F;&#x5EA6;&#x6570;&#x7EC4;&#x3002;&#x5373;&#xFF0C;dist[i][j]=sum&#x8868;&#x793A;&#xFF0C;&quot;&#x9876;&#x70B9;i&quot;&#x5230;&quot;&#x9876;&#x70B9;j&quot;&#x7684;&#x6700;&#x77ED;&#x8DEF;&#x5F84;&#x7684;&#x957F;&#x5EA6;&#x662F;sum&#x3002;
- */
-public void floyd(int[][] path, int[][] dist) {
+ */</span>
+<span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">floyd</span><span class="hljs-params">(<span class="hljs-keyword">int</span>[][] path, <span class="hljs-keyword">int</span>[][] dist)</span> </span>{
 
-    // &#x521D;&#x59CB;&#x5316;
-    for (int i = 0; i &lt; mVexs.length; i++) {
-        for (int j = 0; j &lt; mVexs.length; j++) {
-            dist[i][j] = mMatrix[i][j];    // &quot;&#x9876;&#x70B9;i&quot;&#x5230;&quot;&#x9876;&#x70B9;j&quot;&#x7684;&#x8DEF;&#x5F84;&#x957F;&#x5EA6;&#x4E3A;&quot;i&#x5230;j&#x7684;&#x6743;&#x503C;&quot;&#x3002;
-            path[i][j] = j;                // &quot;&#x9876;&#x70B9;i&quot;&#x5230;&quot;&#x9876;&#x70B9;j&quot;&#x7684;&#x6700;&#x77ED;&#x8DEF;&#x5F84;&#x662F;&#x7ECF;&#x8FC7;&#x9876;&#x70B9;j&#x3002;
+    <span class="hljs-comment">// &#x521D;&#x59CB;&#x5316;</span>
+    <span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> i = <span class="hljs-number">0</span>; i &lt; mVexs.length; i++) {
+        <span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> j = <span class="hljs-number">0</span>; j &lt; mVexs.length; j++) {
+            dist[i][j] = mMatrix[i][j];    <span class="hljs-comment">// &quot;&#x9876;&#x70B9;i&quot;&#x5230;&quot;&#x9876;&#x70B9;j&quot;&#x7684;&#x8DEF;&#x5F84;&#x957F;&#x5EA6;&#x4E3A;&quot;i&#x5230;j&#x7684;&#x6743;&#x503C;&quot;&#x3002;</span>
+            path[i][j] = j;                <span class="hljs-comment">// &quot;&#x9876;&#x70B9;i&quot;&#x5230;&quot;&#x9876;&#x70B9;j&quot;&#x7684;&#x6700;&#x77ED;&#x8DEF;&#x5F84;&#x662F;&#x7ECF;&#x8FC7;&#x9876;&#x70B9;j&#x3002;</span>
         }
     }
 
-    // &#x8BA1;&#x7B97;&#x6700;&#x77ED;&#x8DEF;&#x5F84;
-    for (int k = 0; k &lt; mVexs.length; k++) {
-        for (int i = 0; i &lt; mVexs.length; i++) {
-            for (int j = 0; j &lt; mVexs.length; j++) {
+    <span class="hljs-comment">// &#x8BA1;&#x7B97;&#x6700;&#x77ED;&#x8DEF;&#x5F84;</span>
+    <span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> k = <span class="hljs-number">0</span>; k &lt; mVexs.length; k++) {
+        <span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> i = <span class="hljs-number">0</span>; i &lt; mVexs.length; i++) {
+            <span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> j = <span class="hljs-number">0</span>; j &lt; mVexs.length; j++) {
 
-                // &#x5982;&#x679C;&#x7ECF;&#x8FC7;&#x4E0B;&#x6807;&#x4E3A;k&#x9876;&#x70B9;&#x8DEF;&#x5F84;&#x6BD4;&#x539F;&#x4E24;&#x70B9;&#x95F4;&#x8DEF;&#x5F84;&#x66F4;&#x77ED;&#xFF0C;&#x5219;&#x66F4;&#x65B0;dist[i][j]&#x548C;path[i][j]
-                int tmp = (dist[i][k]==INF || dist[k][j]==INF) ? INF : (dist[i][k] + dist[k][j]);
-                if (dist[i][j] &gt; tmp) {
-                    // &quot;i&#x5230;j&#x6700;&#x77ED;&#x8DEF;&#x5F84;&quot;&#x5BF9;&#x5E94;&#x7684;&#x503C;&#x8BBE;&#xFF0C;&#x4E3A;&#x66F4;&#x5C0F;&#x7684;&#x4E00;&#x4E2A;(&#x5373;&#x7ECF;&#x8FC7;k)
+                <span class="hljs-comment">// &#x5982;&#x679C;&#x7ECF;&#x8FC7;&#x4E0B;&#x6807;&#x4E3A;k&#x9876;&#x70B9;&#x8DEF;&#x5F84;&#x6BD4;&#x539F;&#x4E24;&#x70B9;&#x95F4;&#x8DEF;&#x5F84;&#x66F4;&#x77ED;&#xFF0C;&#x5219;&#x66F4;&#x65B0;dist[i][j]&#x548C;path[i][j]</span>
+                <span class="hljs-keyword">int</span> tmp = (dist[i][k]==INF || dist[k][j]==INF) ? INF : (dist[i][k] + dist[k][j]);
+                <span class="hljs-keyword">if</span> (dist[i][j] &gt; tmp) {
+                    <span class="hljs-comment">// &quot;i&#x5230;j&#x6700;&#x77ED;&#x8DEF;&#x5F84;&quot;&#x5BF9;&#x5E94;&#x7684;&#x503C;&#x8BBE;&#xFF0C;&#x4E3A;&#x66F4;&#x5C0F;&#x7684;&#x4E00;&#x4E2A;(&#x5373;&#x7ECF;&#x8FC7;k)</span>
                     dist[i][j] = tmp;
-                    // &quot;i&#x5230;j&#x6700;&#x77ED;&#x8DEF;&#x5F84;&quot;&#x5BF9;&#x5E94;&#x7684;&#x8DEF;&#x5F84;&#xFF0C;&#x7ECF;&#x8FC7;k
+                    <span class="hljs-comment">// &quot;i&#x5230;j&#x6700;&#x77ED;&#x8DEF;&#x5F84;&quot;&#x5BF9;&#x5E94;&#x7684;&#x8DEF;&#x5F84;&#xFF0C;&#x7ECF;&#x8FC7;k</span>
                     path[i][j] = path[i][k];
                 }
             }
         }
     }
 
-    // &#x6253;&#x5370;floyd&#x6700;&#x77ED;&#x8DEF;&#x5F84;&#x7684;&#x7ED3;&#x679C;
-    System.out.printf(&quot;floyd: \n&quot;);
-    for (int i = 0; i &lt; mVexs.length; i++) {
-        for (int j = 0; j &lt; mVexs.length; j++)
-            System.out.printf(&quot;%2d  &quot;, dist[i][j]);
-        System.out.printf(&quot;\n&quot;);
+    <span class="hljs-comment">// &#x6253;&#x5370;floyd&#x6700;&#x77ED;&#x8DEF;&#x5F84;&#x7684;&#x7ED3;&#x679C;</span>
+    System.out.printf(<span class="hljs-string">&quot;floyd: \n&quot;</span>);
+    <span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> i = <span class="hljs-number">0</span>; i &lt; mVexs.length; i++) {
+        <span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> j = <span class="hljs-number">0</span>; j &lt; mVexs.length; j++)
+            System.out.printf(<span class="hljs-string">&quot;%2d  &quot;</span>, dist[i][j]);
+        System.out.printf(<span class="hljs-string">&quot;\n&quot;</span>);
     }
 }
 </code></pre>
@@ -3826,7 +3830,7 @@ public void floyd(int[][] path, int[][] dist) {
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"Floyd算法","level":"4.4.6","depth":2,"next":{"title":"散列查找","level":"4.5","depth":1,"path":"data-structure/hash.md","ref":"data-structure/hash.md","articles":[]},"previous":{"title":"Dijkstra算法","level":"4.4.5","depth":2,"path":"data-structure/graph/Dijkstra.md","ref":"data-structure/graph/Dijkstra.md","articles":[]},"dir":"ltr"},"config":{"plugins":["-lunr","-search","-highlight","-livereload","search-plus@^0.0.11","simple-page-toc@^0.1.1","github@^2.0.0","github-buttons@2.1.0","edit-link@^2.0.2","advanced-emoji@^0.2.1","anchors@^0.7.1","include-codeblock@^3.0.2","ace@^0.3.2","emphasize@^1.1.0","katex@^1.1.3","splitter@^0.0.8","tbfed-pagefooter@^0.0.1","expandable-chapters-small@^0.1.7","sectionx@^3.1.0","local-video@^1.0.1","anchor-navigation-ex@0.1.8","favicon@^0.0.2"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"tbfed-pagefooter":{"copyright":"Copyright © ruheng.com 2017","modify_label":"该文件修订时间：","modify_format":"YYYY-MM-DD HH:mm:ss"},"emphasize":{},"ace":{},"github":{"url":"https://github.com/LRH1993/android_interview"},"simple-page-toc":{"maxDepth":3,"skipFirstH1":true},"splitter":{},"katex":{},"fontsettings":{"theme":"white","family":"sans","size":2},"sectionx":{"tag":"b"},"anchor-navigation-ex":{"isRewritePageTitle":false,"tocLevel1Icon":"fa fa-hand-o-right","tocLevel2Icon":"fa fa-hand-o-right","tocLevel3Icon":"fa fa-hand-o-right"},"favicon":{"shortcut":"favicon.ico","bookmark":"favicon.ico"},"github-buttons":{"repo":"LRH1993/android_interview","types":["star"],"size":"small"},"expandable-chapters-small":{},"local-video":{},"advanced-emoji":{"embedEmojis":false},"include-codeblock":{"check":false,"edit":true,"fixlang":false,"lang":"","template":"ace","theme":"chrome","unindent":true},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":true,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"edit-link":{"label":"Edit This Page","base":"https://github.com/LRH1993/android_interview/edit/master"},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":true},"anchors":{},"search-plus":{}},"theme":"default","author":"ruheng","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"Android校招面试指南","language":"zh-hans","output.name":"site","links":{"sidebar":{"Home":"http://lruheng.com/"}},"gitbook":"3.2.3","description":"Android面试必备，记录自己的秋招之路"},"file":{"path":"data-structure/graph/Floyd.md","mtime":"2017-09-04T06:32:55.000Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2017-10-16T12:05:21.906Z"},"basePath":"../..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"Floyd算法","level":"4.4.6","depth":2,"next":{"title":"散列查找","level":"4.5","depth":1,"path":"data-structure/hash.md","ref":"data-structure/hash.md","articles":[]},"previous":{"title":"Dijkstra算法","level":"4.4.5","depth":2,"path":"data-structure/graph/Dijkstra.md","ref":"data-structure/graph/Dijkstra.md","articles":[]},"dir":"ltr"},"config":{"plugins":["-lunr","-search","-livereload","search-plus@^0.0.11","simple-page-toc@^0.1.1","github@^2.0.0","github-buttons@2.1.0","edit-link@^2.0.2","advanced-emoji@^0.2.1","anchors@^0.7.1","include-codeblock@^3.0.2","ace@^0.3.2","emphasize@^1.1.0","katex@^1.1.3","splitter@^0.0.8","tbfed-pagefooter@^0.0.1","expandable-chapters-small@^0.1.7","sectionx@^3.1.0","local-video@^1.0.1","anchor-navigation-ex@0.1.8","favicon@^0.0.2"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"tbfed-pagefooter":{"copyright":"Copyright © ruheng.com 2017","modify_label":"该文件修订时间：","modify_format":"YYYY-MM-DD HH:mm:ss"},"emphasize":{},"ace":{},"github":{"url":"https://github.com/LRH1993/android_interview"},"simple-page-toc":{"maxDepth":3,"skipFirstH1":true},"splitter":{},"katex":{},"fontsettings":{"theme":"white","family":"sans","size":2},"sectionx":{"tag":"b"},"highlight":{},"anchor-navigation-ex":{"isRewritePageTitle":false,"tocLevel1Icon":"fa fa-hand-o-right","tocLevel2Icon":"fa fa-hand-o-right","tocLevel3Icon":"fa fa-hand-o-right"},"favicon":{"shortcut":"favicon.ico","bookmark":"favicon.ico"},"github-buttons":{"repo":"LRH1993/android_interview","types":["star"],"size":"small"},"expandable-chapters-small":{},"local-video":{},"advanced-emoji":{"embedEmojis":false},"include-codeblock":{"check":false,"edit":false,"fixlang":false,"lang":"","template":"default","theme":"chrome","unindent":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":true,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"edit-link":{"label":"Edit This Page","base":"https://github.com/LRH1993/android_interview/edit/master"},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":true},"anchors":{},"search-plus":{}},"theme":"default","author":"ruheng","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"Android校招面试指南","language":"zh-hans","output.name":"site","links":{"sidebar":{"Home":"http://lruheng.com/"}},"gitbook":"3.2.3","description":"Android面试必备，记录自己的秋招之路"},"file":{"path":"data-structure/graph/Floyd.md","mtime":"2017-09-04T06:32:55.000Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2017-10-16T13:00:43.989Z"},"basePath":"../..","book":{"language":""}});
         });
     </script>
 </div>

@@ -69,6 +69,10 @@
                 
             
                 
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
                 <link rel="stylesheet" href="../../gitbook/gitbook-plugin-fontsettings/website.css">
                 
             
@@ -3716,44 +3720,44 @@
 <p>&#x5728;JAVA&#x7F16;&#x7A0B;&#x4E2D;&#xFF0C;&#x6709;3&#x79CD;&#x5178;&#x578B;&#x7684;&#x6B7B;&#x9501;&#x7C7B;&#x578B;&#xFF1A;<br>&#x9759;&#x6001;&#x7684;&#x9501;&#x987A;&#x5E8F;&#x6B7B;&#x9501;&#xFF0C;&#x52A8;&#x6001;&#x7684;&#x9501;&#x987A;&#x5E8F;&#x6B7B;&#x9501;&#xFF0C;&#x534F;&#x4F5C;&#x5BF9;&#x8C61;&#x4E4B;&#x95F4;&#x53D1;&#x751F;&#x7684;&#x6B7B;&#x9501;&#x3002;</p>
 <h3 id="&#x4E8C;&#x3001;&#x9759;&#x6001;&#x7684;&#x9501;&#x987A;&#x5E8F;&#x6B7B;&#x9501;"><a name="&#x4E8C;&#x3001;&#x9759;&#x6001;&#x7684;&#x9501;&#x987A;&#x5E8F;&#x6B7B;&#x9501;" class="anchor-navigation-ex-anchor" href="#&#x4E8C;&#x3001;&#x9759;&#x6001;&#x7684;&#x9501;&#x987A;&#x5E8F;&#x6B7B;&#x9501;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x4E8C;&#x3001;&#x9759;&#x6001;&#x7684;&#x9501;&#x987A;&#x5E8F;&#x6B7B;&#x9501;</h3>
 <p>a&#x548C;b&#x4E24;&#x4E2A;&#x65B9;&#x6CD5;&#x90FD;&#x9700;&#x8981;&#x83B7;&#x5F97;A&#x9501;&#x548C;B&#x9501;&#x3002;&#x4E00;&#x4E2A;&#x7EBF;&#x7A0B;&#x6267;&#x884C;a&#x65B9;&#x6CD5;&#x4E14;&#x5DF2;&#x7ECF;&#x83B7;&#x5F97;&#x4E86;A&#x9501;&#xFF0C;&#x5728;&#x7B49;&#x5F85;B&#x9501;&#xFF1B;&#x53E6;&#x4E00;&#x4E2A;&#x7EBF;&#x7A0B;&#x6267;&#x884C;&#x4E86;b&#x65B9;&#x6CD5;&#x4E14;&#x5DF2;&#x7ECF;&#x83B7;&#x5F97;&#x4E86;B&#x9501;&#xFF0C;&#x5728;&#x7B49;&#x5F85;A&#x9501;&#x3002;&#x8FD9;&#x79CD;&#x72B6;&#x6001;&#xFF0C;&#x5C31;&#x662F;&#x53D1;&#x751F;&#x4E86;&#x9759;&#x6001;&#x7684;&#x9501;&#x987A;&#x5E8F;&#x6B7B;&#x9501;&#x3002;</p>
-<pre><code class="lang-java">//&#x53EF;&#x80FD;&#x53D1;&#x751F;&#x9759;&#x6001;&#x9501;&#x987A;&#x5E8F;&#x6B7B;&#x9501;&#x7684;&#x4EE3;&#x7801;  
-class StaticLockOrderDeadLock{  
-    private final Object lockA=new Object();  
-    private final Object lockB=new Object();  
-    public void a(){  
-        synchronized (lockA) {  
-            synchronized (lockB) {  
-                System.out.println(&quot;function a&quot;);  
+<pre><code class="lang-java"><span class="hljs-comment">//&#x53EF;&#x80FD;&#x53D1;&#x751F;&#x9759;&#x6001;&#x9501;&#x987A;&#x5E8F;&#x6B7B;&#x9501;&#x7684;&#x4EE3;&#x7801;  </span>
+<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">StaticLockOrderDeadLock</span></span>{  
+    <span class="hljs-keyword">private</span> <span class="hljs-keyword">final</span> Object lockA=<span class="hljs-keyword">new</span> Object();  
+    <span class="hljs-keyword">private</span> <span class="hljs-keyword">final</span> Object lockB=<span class="hljs-keyword">new</span> Object();  
+    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">a</span><span class="hljs-params">()</span></span>{  
+        <span class="hljs-keyword">synchronized</span> (lockA) {  
+            <span class="hljs-keyword">synchronized</span> (lockB) {  
+                System.out.println(<span class="hljs-string">&quot;function a&quot;</span>);  
             }  
         }  
     }  
 
-    public void b(){  
-        synchronized (lockB) {  
-            synchronized (lockA) {  
-                System.out.println(&quot;function b&quot;);  
+    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">b</span><span class="hljs-params">()</span></span>{  
+        <span class="hljs-keyword">synchronized</span> (lockB) {  
+            <span class="hljs-keyword">synchronized</span> (lockA) {  
+                System.out.println(<span class="hljs-string">&quot;function b&quot;</span>);  
             }  
         }  
     }  
 }
 </code></pre>
 <p><strong>&#x89E3;&#x51B3;&#x9759;&#x6001;&#x7684;&#x9501;&#x987A;&#x5E8F;&#x6B7B;&#x9501;&#x7684;&#x65B9;&#x6CD5;&#x5C31;&#x662F;&#xFF1A;&#x6240;&#x6709;&#x9700;&#x8981;&#x591A;&#x4E2A;&#x9501;&#x7684;&#x7EBF;&#x7A0B;&#xFF0C;&#x90FD;&#x8981;&#x4EE5;&#x76F8;&#x540C;&#x7684;&#x987A;&#x5E8F;&#x6765;&#x83B7;&#x5F97;&#x9501;&#x3002; </strong></p>
-<pre><code class="lang-java">//&#x6B63;&#x786E;&#x7684;&#x4EE3;&#x7801;  
-class StaticLockOrderDeadLock{  
-    private final Object lockA=new Object();  
-    private final Object lockB=new Object();  
-    public void a(){  
-        synchronized (lockA) {  
-            synchronized (lockB) {  
-                System.out.println(&quot;function a&quot;);  
+<pre><code class="lang-java"><span class="hljs-comment">//&#x6B63;&#x786E;&#x7684;&#x4EE3;&#x7801;  </span>
+<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">StaticLockOrderDeadLock</span></span>{  
+    <span class="hljs-keyword">private</span> <span class="hljs-keyword">final</span> Object lockA=<span class="hljs-keyword">new</span> Object();  
+    <span class="hljs-keyword">private</span> <span class="hljs-keyword">final</span> Object lockB=<span class="hljs-keyword">new</span> Object();  
+    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">a</span><span class="hljs-params">()</span></span>{  
+        <span class="hljs-keyword">synchronized</span> (lockA) {  
+            <span class="hljs-keyword">synchronized</span> (lockB) {  
+                System.out.println(<span class="hljs-string">&quot;function a&quot;</span>);  
             }  
         }  
     }  
 
-    public void b(){  
-        synchronized (lockA) {  
-            synchronized (lockB) {  
-                System.out.println(&quot;function b&quot;);  
+    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">b</span><span class="hljs-params">()</span></span>{  
+        <span class="hljs-keyword">synchronized</span> (lockA) {  
+            <span class="hljs-keyword">synchronized</span> (lockB) {  
+                System.out.println(<span class="hljs-string">&quot;function b&quot;</span>);  
             }  
         }  
     }  
@@ -3761,53 +3765,53 @@ class StaticLockOrderDeadLock{
 </code></pre>
 <h3 id="&#x4E09;&#x3001;&#x52A8;&#x6001;&#x7684;&#x9501;&#x987A;&#x5E8F;&#x6B7B;&#x9501;&#xFF1A;"><a name="&#x4E09;&#x3001;&#x52A8;&#x6001;&#x7684;&#x9501;&#x987A;&#x5E8F;&#x6B7B;&#x9501;&#xFF1A;" class="anchor-navigation-ex-anchor" href="#&#x4E09;&#x3001;&#x52A8;&#x6001;&#x7684;&#x9501;&#x987A;&#x5E8F;&#x6B7B;&#x9501;&#xFF1A;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x4E09;&#x3001;&#x52A8;&#x6001;&#x7684;&#x9501;&#x987A;&#x5E8F;&#x6B7B;&#x9501;&#xFF1A;</h3>
 <p>&#x52A8;&#x6001;&#x7684;&#x9501;&#x987A;&#x5E8F;&#x6B7B;&#x9501;&#x662F;&#x6307;&#x4E24;&#x4E2A;&#x7EBF;&#x7A0B;&#x8C03;&#x7528;&#x540C;&#x4E00;&#x4E2A;&#x65B9;&#x6CD5;&#x65F6;&#xFF0C;&#x4F20;&#x5165;&#x7684;&#x53C2;&#x6570;&#x98A0;&#x5012;&#x9020;&#x6210;&#x7684;&#x6B7B;&#x9501;&#x3002;&#x5982;&#x4E0B;&#x4EE3;&#x7801;&#xFF0C;&#x4E00;&#x4E2A;&#x7EBF;&#x7A0B;&#x8C03;&#x7528;&#x4E86;transferMoney&#x65B9;&#x6CD5;&#x5E76;&#x4F20;&#x5165;&#x53C2;&#x6570;accountA,accountB&#xFF1B;&#x53E6;&#x4E00;&#x4E2A;&#x7EBF;&#x7A0B;&#x8C03;&#x7528;&#x4E86;transferMoney&#x65B9;&#x6CD5;&#x5E76;&#x4F20;&#x5165;&#x53C2;&#x6570;accountB,accountA&#x3002;&#x6B64;&#x65F6;&#x5C31;&#x53EF;&#x80FD;&#x53D1;&#x751F;&#x5728;&#x9759;&#x6001;&#x7684;&#x9501;&#x987A;&#x5E8F;&#x6B7B;&#x9501;&#x4E2D;&#x5B58;&#x5728;&#x7684;&#x95EE;&#x9898;&#xFF0C;&#x5373;&#xFF1A;&#x7B2C;&#x4E00;&#x4E2A;&#x7EBF;&#x7A0B;&#x83B7;&#x5F97;&#x4E86;accountA&#x9501;&#x5E76;&#x7B49;&#x5F85;accountB&#x9501;&#xFF0C;&#x7B2C;&#x4E8C;&#x4E2A;&#x7EBF;&#x7A0B;&#x83B7;&#x5F97;&#x4E86;accountB&#x9501;&#x5E76;&#x7B49;&#x5F85;accountA&#x9501;&#x3002;</p>
-<pre><code class="lang-java">//&#x53EF;&#x80FD;&#x53D1;&#x751F;&#x52A8;&#x6001;&#x9501;&#x987A;&#x5E8F;&#x6B7B;&#x9501;&#x7684;&#x4EE3;&#x7801;  
-class DynamicLockOrderDeadLock{  
-    public void transefMoney(Account fromAccount,Account toAccount,Double amount){  
-        synchronized (fromAccount) {  
-            synchronized (toAccount) {  
-                //...  
+<pre><code class="lang-java"><span class="hljs-comment">//&#x53EF;&#x80FD;&#x53D1;&#x751F;&#x52A8;&#x6001;&#x9501;&#x987A;&#x5E8F;&#x6B7B;&#x9501;&#x7684;&#x4EE3;&#x7801;  </span>
+<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">DynamicLockOrderDeadLock</span></span>{  
+    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">transefMoney</span><span class="hljs-params">(Account fromAccount,Account toAccount,Double amount)</span></span>{  
+        <span class="hljs-keyword">synchronized</span> (fromAccount) {  
+            <span class="hljs-keyword">synchronized</span> (toAccount) {  
+                <span class="hljs-comment">//...  </span>
                 fromAccount.minus(amount);  
                 toAccount.add(amount);  
-                //...  
+                <span class="hljs-comment">//...  </span>
             }  
         }  
     }  
 }
 </code></pre>
 <p><strong>&#x52A8;&#x6001;&#x7684;&#x9501;&#x987A;&#x5E8F;&#x6B7B;&#x9501;&#x89E3;&#x51B3;&#x65B9;&#x6848;&#x5982;&#x4E0B;&#xFF1A;&#x4F7F;&#x7528;System.identifyHashCode&#x6765;&#x5B9A;&#x4E49;&#x9501;&#x7684;&#x987A;&#x5E8F;&#x3002;&#x786E;&#x4FDD;&#x6240;&#x6709;&#x7684;&#x7EBF;&#x7A0B;&#x90FD;&#x4EE5;&#x76F8;&#x540C;&#x7684;&#x987A;&#x5E8F;&#x83B7;&#x5F97;&#x9501; </strong></p>
-<pre><code class="lang-java">//&#x6B63;&#x786E;&#x7684;&#x4EE3;&#x7801;  
-class DynamicLockOrderDeadLock{  
-    private final Object myLock=new Object();  
-    public void transefMoney(final Account fromAccount,final Account toAccount,final Double amount){  
-        class Helper{  
-            public void transfer(){  
-                //...  
+<pre><code class="lang-java"><span class="hljs-comment">//&#x6B63;&#x786E;&#x7684;&#x4EE3;&#x7801;  </span>
+<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">DynamicLockOrderDeadLock</span></span>{  
+    <span class="hljs-keyword">private</span> <span class="hljs-keyword">final</span> Object myLock=<span class="hljs-keyword">new</span> Object();  
+    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">transefMoney</span><span class="hljs-params">(<span class="hljs-keyword">final</span> Account fromAccount,<span class="hljs-keyword">final</span> Account toAccount,<span class="hljs-keyword">final</span> Double amount)</span></span>{  
+        <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Helper</span></span>{  
+            <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">transfer</span><span class="hljs-params">()</span></span>{  
+                <span class="hljs-comment">//...  </span>
                 fromAccount.minus(amount);  
                 toAccount.add(amount);  
-                //...  
+                <span class="hljs-comment">//...  </span>
             }  
         }  
-        int  fromHash=System.identityHashCode(fromAccount);  
-        int  toHash=System.identityHashCode(toAccount);  
+        <span class="hljs-keyword">int</span>  fromHash=System.identityHashCode(fromAccount);  
+        <span class="hljs-keyword">int</span>  toHash=System.identityHashCode(toAccount);  
 
-        if(fromHash&lt;toHash){  
-            synchronized (fromAccount) {  
-                synchronized (toAccount) {  
-                    new Helper().transfer();  
+        <span class="hljs-keyword">if</span>(fromHash&lt;toHash){  
+            <span class="hljs-keyword">synchronized</span> (fromAccount) {  
+                <span class="hljs-keyword">synchronized</span> (toAccount) {  
+                    <span class="hljs-keyword">new</span> Helper().transfer();  
                 }  
             }  
-        }else if(fromHash&gt;toHash){  
-            synchronized (toAccount) {  
-                synchronized (fromAccount) {  
-                    new Helper().transfer();  
+        }<span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span>(fromHash&gt;toHash){  
+            <span class="hljs-keyword">synchronized</span> (toAccount) {  
+                <span class="hljs-keyword">synchronized</span> (fromAccount) {  
+                    <span class="hljs-keyword">new</span> Helper().transfer();  
                 }  
             }  
-        }else{  
-            synchronized (myLock) {  
-                synchronized (fromAccount) {  
-                    synchronized (toAccount) {  
-                        new Helper().transfer();  
+        }<span class="hljs-keyword">else</span>{  
+            <span class="hljs-keyword">synchronized</span> (myLock) {  
+                <span class="hljs-keyword">synchronized</span> (fromAccount) {  
+                    <span class="hljs-keyword">synchronized</span> (toAccount) {  
+                        <span class="hljs-keyword">new</span> Helper().transfer();  
                     }  
                 }  
             }  
@@ -3818,81 +3822,81 @@ class DynamicLockOrderDeadLock{
 </code></pre>
 <h3 id="&#x56DB;&#x3001;&#x534F;&#x4F5C;&#x5BF9;&#x8C61;&#x4E4B;&#x95F4;&#x53D1;&#x751F;&#x7684;&#x6B7B;&#x9501;&#xFF1A;"><a name="&#x56DB;&#x3001;&#x534F;&#x4F5C;&#x5BF9;&#x8C61;&#x4E4B;&#x95F4;&#x53D1;&#x751F;&#x7684;&#x6B7B;&#x9501;&#xFF1A;" class="anchor-navigation-ex-anchor" href="#&#x56DB;&#x3001;&#x534F;&#x4F5C;&#x5BF9;&#x8C61;&#x4E4B;&#x95F4;&#x53D1;&#x751F;&#x7684;&#x6B7B;&#x9501;&#xFF1A;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x56DB;&#x3001;&#x534F;&#x4F5C;&#x5BF9;&#x8C61;&#x4E4B;&#x95F4;&#x53D1;&#x751F;&#x7684;&#x6B7B;&#x9501;&#xFF1A;</h3>
 <p>&#x6709;&#x65F6;&#xFF0C;&#x6B7B;&#x9501;&#x5E76;&#x4E0D;&#x4F1A;&#x90A3;&#x4E48;&#x660E;&#x663E;&#xFF0C;&#x6BD4;&#x5982;&#x4E24;&#x4E2A;&#x76F8;&#x4E92;&#x534F;&#x4F5C;&#x7684;&#x7C7B;&#x4E4B;&#x95F4;&#x7684;&#x6B7B;&#x9501;&#xFF0C;&#x6BD4;&#x5982;&#x4E0B;&#x9762;&#x7684;&#x4EE3;&#x7801;&#xFF1A;&#x4E00;&#x4E2A;&#x7EBF;&#x7A0B;&#x8C03;&#x7528;&#x4E86;Taxi&#x5BF9;&#x8C61;&#x7684;setLocation&#x65B9;&#x6CD5;&#xFF0C;&#x53E6;&#x4E00;&#x4E2A;&#x7EBF;&#x7A0B;&#x8C03;&#x7528;&#x4E86;Dispatcher&#x5BF9;&#x8C61;&#x7684;getImage&#x65B9;&#x6CD5;&#x3002;&#x6B64;&#x65F6;&#x53EF;&#x80FD;&#x4F1A;&#x53D1;&#x751F;&#xFF0C;&#x7B2C;&#x4E00;&#x4E2A;&#x7EBF;&#x7A0B;&#x6301;&#x6709;Taxi&#x5BF9;&#x8C61;&#x9501;&#x5E76;&#x7B49;&#x5F85;Dispatcher&#x5BF9;&#x8C61;&#x9501;&#xFF0C;&#x53E6;&#x4E00;&#x4E2A;&#x7EBF;&#x7A0B;&#x6301;&#x6709;Dispatcher&#x5BF9;&#x8C61;&#x9501;&#x5E76;&#x7B49;&#x5F85;Taxi&#x5BF9;&#x8C61;&#x9501;&#x3002;</p>
-<pre><code class="lang-java">//&#x53EF;&#x80FD;&#x53D1;&#x751F;&#x6B7B;&#x9501;  
-class Taxi{  
-    private Point location,destination;  
-    private final Dispatcher dispatcher;  
-    public Taxi(Dispatcher dispatcher) {  
-        this.dispatcher=dispatcher;  
+<pre><code class="lang-java"><span class="hljs-comment">//&#x53EF;&#x80FD;&#x53D1;&#x751F;&#x6B7B;&#x9501;  </span>
+<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Taxi</span></span>{  
+    <span class="hljs-keyword">private</span> Point location,destination;  
+    <span class="hljs-keyword">private</span> <span class="hljs-keyword">final</span> Dispatcher dispatcher;  
+    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-title">Taxi</span><span class="hljs-params">(Dispatcher dispatcher)</span> </span>{  
+        <span class="hljs-keyword">this</span>.dispatcher=dispatcher;  
     }  
-    public synchronized Point getLocation(){  
-        return location;  
+    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">synchronized</span> Point <span class="hljs-title">getLocation</span><span class="hljs-params">()</span></span>{  
+        <span class="hljs-keyword">return</span> location;  
     }  
-    public synchronized void setLocation(Point location){  
-        this.location=location;  
-        if(location.equals(destination))  
-            dispatcher.notifyAvailable(this);//&#x5916;&#x90E8;&#x8C03;&#x7528;&#x65B9;&#x6CD5;&#xFF0C;&#x53EF;&#x80FD;&#x7B49;&#x5F85;Dispatcher&#x5BF9;&#x8C61;&#x9501;  
+    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">synchronized</span> <span class="hljs-keyword">void</span> <span class="hljs-title">setLocation</span><span class="hljs-params">(Point location)</span></span>{  
+        <span class="hljs-keyword">this</span>.location=location;  
+        <span class="hljs-keyword">if</span>(location.equals(destination))  
+            dispatcher.notifyAvailable(<span class="hljs-keyword">this</span>);<span class="hljs-comment">//&#x5916;&#x90E8;&#x8C03;&#x7528;&#x65B9;&#x6CD5;&#xFF0C;&#x53EF;&#x80FD;&#x7B49;&#x5F85;Dispatcher&#x5BF9;&#x8C61;&#x9501;  </span>
     }  
 }  
-class Dispatcher{  
-    private final Set&lt;Taxi&gt; taxis;  
-    private final Set&lt;Taxi&gt; availableTaxis;  
-    public Dispatcher(){  
-        taxis=new HashSet&lt;Taxi&gt;();  
-        availableTaxis=new HashSet&lt;Taxi&gt;();  
+<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Dispatcher</span></span>{  
+    <span class="hljs-keyword">private</span> <span class="hljs-keyword">final</span> Set&lt;Taxi&gt; taxis;  
+    <span class="hljs-keyword">private</span> <span class="hljs-keyword">final</span> Set&lt;Taxi&gt; availableTaxis;  
+    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-title">Dispatcher</span><span class="hljs-params">()</span></span>{  
+        taxis=<span class="hljs-keyword">new</span> HashSet&lt;Taxi&gt;();  
+        availableTaxis=<span class="hljs-keyword">new</span> HashSet&lt;Taxi&gt;();  
     }  
-    public synchronized void notifyAvailable(Taxi taxi){  
+    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">synchronized</span> <span class="hljs-keyword">void</span> <span class="hljs-title">notifyAvailable</span><span class="hljs-params">(Taxi taxi)</span></span>{  
         availableTaxis.add(taxi);  
     }  
-    public synchronized Image getImage(){  
-        Image image=new Image();  
-        for(Taxi t:taxis)  
-            image.drawMarker(t.getLocation());//&#x5916;&#x90E8;&#x8C03;&#x7528;&#x65B9;&#x6CD5;&#xFF0C;&#x53EF;&#x80FD;&#x7B49;&#x5F85;Taxi&#x5BF9;&#x8C61;&#x9501;  
-        return image;  
+    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">synchronized</span> Image <span class="hljs-title">getImage</span><span class="hljs-params">()</span></span>{  
+        Image image=<span class="hljs-keyword">new</span> Image();  
+        <span class="hljs-keyword">for</span>(Taxi t:taxis)  
+            image.drawMarker(t.getLocation());<span class="hljs-comment">//&#x5916;&#x90E8;&#x8C03;&#x7528;&#x65B9;&#x6CD5;&#xFF0C;&#x53EF;&#x80FD;&#x7B49;&#x5F85;Taxi&#x5BF9;&#x8C61;&#x9501;  </span>
+        <span class="hljs-keyword">return</span> image;  
     }  
 }
 </code></pre>
 <p>&#x4E0A;&#x9762;&#x7684;&#x4EE3;&#x7801;&#x4E2D;&#xFF0C;<strong>&#x6211;&#x4EEC;&#x5728;&#x6301;&#x6709;&#x9501;&#x7684;&#x60C5;&#x51B5;&#x4E0B;&#x8C03;&#x7528;&#x4E86;&#x5916;&#x90E8;&#x7684;&#x65B9;&#x6CD5;&#xFF0C;&#x8FD9;&#x662F;&#x975E;&#x5E38;&#x5371;&#x9669;&#x7684;&#xFF08;&#x53EF;&#x80FD;&#x53D1;&#x751F;&#x6B7B;&#x9501;&#xFF09;&#x3002;&#x4E3A;&#x4E86;&#x907F;&#x514D;&#x8FD9;&#x79CD;&#x5371;&#x9669;&#x7684;&#x60C5;&#x51B5;&#x53D1;&#x751F;&#xFF0C;</strong>&#x6211;&#x4EEC;&#x4F7F;&#x7528;&#x5F00;&#x653E;&#x8C03;&#x7528;&#x3002;&#x5982;&#x679C;&#x8C03;&#x7528;&#x67D0;&#x4E2A;&#x5916;&#x90E8;&#x65B9;&#x6CD5;&#x65F6;&#x4E0D;&#x9700;&#x8981;&#x6301;&#x6709;&#x9501;&#xFF0C;&#x6211;&#x4EEC;&#x79F0;&#x4E4B;&#x4E3A;&#x5F00;&#x653E;&#x8C03;&#x7528;&#x3002;</p>
 <p><strong>&#x89E3;&#x51B3;&#x534F;&#x4F5C;&#x5BF9;&#x8C61;&#x4E4B;&#x95F4;&#x53D1;&#x751F;&#x7684;&#x6B7B;&#x9501;&#xFF1A;&#x9700;&#x8981;&#x4F7F;&#x7528;&#x5F00;&#x653E;&#x8C03;&#x7528;&#xFF0C;&#x5373;&#x907F;&#x514D;&#x5728;&#x6301;&#x6709;&#x9501;&#x7684;&#x60C5;&#x51B5;&#x4E0B;&#x8C03;&#x7528;&#x5916;&#x90E8;&#x7684;&#x65B9;&#x6CD5;&#x3002; </strong></p>
-<pre><code class="lang-java">//&#x6B63;&#x786E;&#x7684;&#x4EE3;&#x7801;  
-class Taxi{  
-    private Point location,destination;  
-    private final Dispatcher dispatcher;  
-    public Taxi(Dispatcher dispatcher) {  
-        this.dispatcher=dispatcher;  
+<pre><code class="lang-java"><span class="hljs-comment">//&#x6B63;&#x786E;&#x7684;&#x4EE3;&#x7801;  </span>
+<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Taxi</span></span>{  
+    <span class="hljs-keyword">private</span> Point location,destination;  
+    <span class="hljs-keyword">private</span> <span class="hljs-keyword">final</span> Dispatcher dispatcher;  
+    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-title">Taxi</span><span class="hljs-params">(Dispatcher dispatcher)</span> </span>{  
+        <span class="hljs-keyword">this</span>.dispatcher=dispatcher;  
     }  
-    public synchronized Point getLocation(){  
-        return location;  
+    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">synchronized</span> Point <span class="hljs-title">getLocation</span><span class="hljs-params">()</span></span>{  
+        <span class="hljs-keyword">return</span> location;  
     }  
-    public void setLocation(Point location){  
-        boolean flag=false;  
-        synchronized (this) {  
-            this.location=location;  
+    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">setLocation</span><span class="hljs-params">(Point location)</span></span>{  
+        <span class="hljs-keyword">boolean</span> flag=<span class="hljs-keyword">false</span>;  
+        <span class="hljs-keyword">synchronized</span> (<span class="hljs-keyword">this</span>) {  
+            <span class="hljs-keyword">this</span>.location=location;  
             flag=location.equals(destination);            
         }  
-        if(flag)  
-            dispatcher.notifyAvailable(this);//&#x4F7F;&#x7528;&#x5F00;&#x653E;&#x8C03;&#x7528;  
+        <span class="hljs-keyword">if</span>(flag)  
+            dispatcher.notifyAvailable(<span class="hljs-keyword">this</span>);<span class="hljs-comment">//&#x4F7F;&#x7528;&#x5F00;&#x653E;&#x8C03;&#x7528;  </span>
     }  
 }  
-class Dispatcher{  
-    private final Set&lt;Taxi&gt; taxis;  
-    private final Set&lt;Taxi&gt; availableTaxis;  
-    public Dispatcher(){  
-        taxis=new HashSet&lt;Taxi&gt;();  
-        availableTaxis=new HashSet&lt;Taxi&gt;();  
+<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Dispatcher</span></span>{  
+    <span class="hljs-keyword">private</span> <span class="hljs-keyword">final</span> Set&lt;Taxi&gt; taxis;  
+    <span class="hljs-keyword">private</span> <span class="hljs-keyword">final</span> Set&lt;Taxi&gt; availableTaxis;  
+    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-title">Dispatcher</span><span class="hljs-params">()</span></span>{  
+        taxis=<span class="hljs-keyword">new</span> HashSet&lt;Taxi&gt;();  
+        availableTaxis=<span class="hljs-keyword">new</span> HashSet&lt;Taxi&gt;();  
     }  
-    public synchronized void notifyAvailable(Taxi taxi){  
+    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">synchronized</span> <span class="hljs-keyword">void</span> <span class="hljs-title">notifyAvailable</span><span class="hljs-params">(Taxi taxi)</span></span>{  
         availableTaxis.add(taxi);  
     }  
-    public Image getImage(){  
+    <span class="hljs-function"><span class="hljs-keyword">public</span> Image <span class="hljs-title">getImage</span><span class="hljs-params">()</span></span>{  
         Set&lt;Taxi&gt; copy;  
-        synchronized (this) {  
-            copy=new HashSet&lt;Taxi&gt;(taxis);  
+        <span class="hljs-keyword">synchronized</span> (<span class="hljs-keyword">this</span>) {  
+            copy=<span class="hljs-keyword">new</span> HashSet&lt;Taxi&gt;(taxis);  
         }  
-        Image image=new Image();  
-        for(Taxi t:copy)  
-            image.drawMarker(t.getLocation());//&#x4F7F;&#x7528;&#x5F00;&#x653E;&#x8C03;&#x7528;  
-        return image;  
+        Image image=<span class="hljs-keyword">new</span> Image();  
+        <span class="hljs-keyword">for</span>(Taxi t:copy)  
+            image.drawMarker(t.getLocation());<span class="hljs-comment">//&#x4F7F;&#x7528;&#x5F00;&#x653E;&#x8C03;&#x7528;  </span>
+        <span class="hljs-keyword">return</span> image;  
     }  
 }
 </code></pre>
@@ -3943,7 +3947,7 @@ class Dispatcher{
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"死锁","level":"2.2.3","depth":2,"next":{"title":"Synchronized/ReentrantLock","level":"2.2.4","depth":2,"path":"java/concurrence/synchronized-reentrantlock.md","ref":"java/concurrence/synchronized-reentrantlock.md","articles":[]},"previous":{"title":"Java线程池","level":"2.2.2","depth":2,"path":"java/concurrence/thread-pool.md","ref":"java/concurrence/thread-pool.md","articles":[]},"dir":"ltr"},"config":{"plugins":["-lunr","-search","-highlight","-livereload","search-plus@^0.0.11","simple-page-toc@^0.1.1","github@^2.0.0","github-buttons@2.1.0","edit-link@^2.0.2","advanced-emoji@^0.2.1","anchors@^0.7.1","include-codeblock@^3.0.2","ace@^0.3.2","emphasize@^1.1.0","katex@^1.1.3","splitter@^0.0.8","tbfed-pagefooter@^0.0.1","expandable-chapters-small@^0.1.7","sectionx@^3.1.0","local-video@^1.0.1","anchor-navigation-ex@0.1.8","favicon@^0.0.2"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"tbfed-pagefooter":{"copyright":"Copyright © ruheng.com 2017","modify_label":"该文件修订时间：","modify_format":"YYYY-MM-DD HH:mm:ss"},"emphasize":{},"ace":{},"github":{"url":"https://github.com/LRH1993/android_interview"},"simple-page-toc":{"maxDepth":3,"skipFirstH1":true},"splitter":{},"katex":{},"fontsettings":{"theme":"white","family":"sans","size":2},"sectionx":{"tag":"b"},"anchor-navigation-ex":{"isRewritePageTitle":false,"tocLevel1Icon":"fa fa-hand-o-right","tocLevel2Icon":"fa fa-hand-o-right","tocLevel3Icon":"fa fa-hand-o-right"},"favicon":{"shortcut":"favicon.ico","bookmark":"favicon.ico"},"github-buttons":{"repo":"LRH1993/android_interview","types":["star"],"size":"small"},"expandable-chapters-small":{},"local-video":{},"advanced-emoji":{"embedEmojis":false},"include-codeblock":{"check":false,"edit":true,"fixlang":false,"lang":"","template":"ace","theme":"chrome","unindent":true},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":true,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"edit-link":{"label":"Edit This Page","base":"https://github.com/LRH1993/android_interview/edit/master"},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":true},"anchors":{},"search-plus":{}},"theme":"default","author":"ruheng","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"Android校招面试指南","language":"zh-hans","output.name":"site","links":{"sidebar":{"Home":"http://lruheng.com/"}},"gitbook":"3.2.3","description":"Android面试必备，记录自己的秋招之路"},"file":{"path":"java/concurrence/deadlock.md","mtime":"2017-08-22T07:53:58.000Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2017-10-16T12:05:21.906Z"},"basePath":"../..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"死锁","level":"2.2.3","depth":2,"next":{"title":"Synchronized/ReentrantLock","level":"2.2.4","depth":2,"path":"java/concurrence/synchronized-reentrantlock.md","ref":"java/concurrence/synchronized-reentrantlock.md","articles":[]},"previous":{"title":"Java线程池","level":"2.2.2","depth":2,"path":"java/concurrence/thread-pool.md","ref":"java/concurrence/thread-pool.md","articles":[]},"dir":"ltr"},"config":{"plugins":["-lunr","-search","-livereload","search-plus@^0.0.11","simple-page-toc@^0.1.1","github@^2.0.0","github-buttons@2.1.0","edit-link@^2.0.2","advanced-emoji@^0.2.1","anchors@^0.7.1","include-codeblock@^3.0.2","ace@^0.3.2","emphasize@^1.1.0","katex@^1.1.3","splitter@^0.0.8","tbfed-pagefooter@^0.0.1","expandable-chapters-small@^0.1.7","sectionx@^3.1.0","local-video@^1.0.1","anchor-navigation-ex@0.1.8","favicon@^0.0.2"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"tbfed-pagefooter":{"copyright":"Copyright © ruheng.com 2017","modify_label":"该文件修订时间：","modify_format":"YYYY-MM-DD HH:mm:ss"},"emphasize":{},"ace":{},"github":{"url":"https://github.com/LRH1993/android_interview"},"simple-page-toc":{"maxDepth":3,"skipFirstH1":true},"splitter":{},"katex":{},"fontsettings":{"theme":"white","family":"sans","size":2},"sectionx":{"tag":"b"},"highlight":{},"anchor-navigation-ex":{"isRewritePageTitle":false,"tocLevel1Icon":"fa fa-hand-o-right","tocLevel2Icon":"fa fa-hand-o-right","tocLevel3Icon":"fa fa-hand-o-right"},"favicon":{"shortcut":"favicon.ico","bookmark":"favicon.ico"},"github-buttons":{"repo":"LRH1993/android_interview","types":["star"],"size":"small"},"expandable-chapters-small":{},"local-video":{},"advanced-emoji":{"embedEmojis":false},"include-codeblock":{"check":false,"edit":false,"fixlang":false,"lang":"","template":"default","theme":"chrome","unindent":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":true,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"edit-link":{"label":"Edit This Page","base":"https://github.com/LRH1993/android_interview/edit/master"},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":true},"anchors":{},"search-plus":{}},"theme":"default","author":"ruheng","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"Android校招面试指南","language":"zh-hans","output.name":"site","links":{"sidebar":{"Home":"http://lruheng.com/"}},"gitbook":"3.2.3","description":"Android面试必备，记录自己的秋招之路"},"file":{"path":"java/concurrence/deadlock.md","mtime":"2017-08-22T07:53:58.000Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2017-10-16T13:00:43.989Z"},"basePath":"../..","book":{"language":""}});
         });
     </script>
 </div>

@@ -69,6 +69,10 @@
                 
             
                 
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
                 <link rel="stylesheet" href="../../gitbook/gitbook-plugin-fontsettings/website.css">
                 
             
@@ -3707,17 +3711,17 @@
                                 
                                 <h2 id="&#x4E00;&#x3001;-&#x6982;&#x8FF0;"><a name="&#x4E00;&#x3001;-&#x6982;&#x8FF0;" class="anchor-navigation-ex-anchor" href="#&#x4E00;&#x3001;-&#x6982;&#x8FF0;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x4E00;&#x3001; &#x6982;&#x8FF0;</h2>
 <p>&#x5728;&#x7406;&#x89E3;&#x4E86;HashMap&#x540E;&#xFF0C;&#x6211;&#x4EEC;&#x6765;&#x5B66;&#x4E60;LinkedHashMap&#x7684;&#x5DE5;&#x4F5C;&#x539F;&#x7406;&#x53CA;&#x5B9E;&#x73B0;&#x3002;&#x9996;&#x5148;&#x8FD8;&#x662F;&#x7C7B;&#x4F3C;&#x7684;&#xFF0C;&#x6211;&#x4EEC;&#x5199;&#x4E00;&#x4E2A;&#x7B80;&#x5355;&#x7684;LinkedHashMap&#x7684;&#x7A0B;&#x5E8F;&#xFF1A;</p>
-<pre><code class="lang-Java">LinkedHashMap&lt;String, Integer&gt; lmap = new LinkedHashMap&lt;String, Integer&gt;();
-lmap.put(&quot;&#x8BED;&#x6587;&quot;, 1);
-lmap.put(&quot;&#x6570;&#x5B66;&quot;, 2);
-lmap.put(&quot;&#x82F1;&#x8BED;&quot;, 3);
-lmap.put(&quot;&#x5386;&#x53F2;&quot;, 4);
-lmap.put(&quot;&#x653F;&#x6CBB;&quot;, 5);
-lmap.put(&quot;&#x5730;&#x7406;&quot;, 6);
-lmap.put(&quot;&#x751F;&#x7269;&quot;, 7);
-lmap.put(&quot;&#x5316;&#x5B66;&quot;, 8);
-for(Entry&lt;String, Integer&gt; entry : lmap.entrySet()) {
-    System.out.println(entry.getKey() + &quot;: &quot; + entry.getValue());
+<pre><code class="lang-Java">LinkedHashMap&lt;String, Integer&gt; lmap = <span class="hljs-keyword">new</span> LinkedHashMap&lt;String, Integer&gt;();
+lmap.put(<span class="hljs-string">&quot;&#x8BED;&#x6587;&quot;</span>, <span class="hljs-number">1</span>);
+lmap.put(<span class="hljs-string">&quot;&#x6570;&#x5B66;&quot;</span>, <span class="hljs-number">2</span>);
+lmap.put(<span class="hljs-string">&quot;&#x82F1;&#x8BED;&quot;</span>, <span class="hljs-number">3</span>);
+lmap.put(<span class="hljs-string">&quot;&#x5386;&#x53F2;&quot;</span>, <span class="hljs-number">4</span>);
+lmap.put(<span class="hljs-string">&quot;&#x653F;&#x6CBB;&quot;</span>, <span class="hljs-number">5</span>);
+lmap.put(<span class="hljs-string">&quot;&#x5730;&#x7406;&quot;</span>, <span class="hljs-number">6</span>);
+lmap.put(<span class="hljs-string">&quot;&#x751F;&#x7269;&quot;</span>, <span class="hljs-number">7</span>);
+lmap.put(<span class="hljs-string">&quot;&#x5316;&#x5B66;&quot;</span>, <span class="hljs-number">8</span>);
+<span class="hljs-keyword">for</span>(Entry&lt;String, Integer&gt; entry : lmap.entrySet()) {
+    System.out.println(entry.getKey() + <span class="hljs-string">&quot;: &quot;</span> + entry.getValue());
 }
 </code></pre>
 <p>&#x8FD0;&#x884C;&#x7ED3;&#x679C;&#x662F;&#xFF1A;</p>
@@ -3740,31 +3744,31 @@ for(Entry&lt;String, Integer&gt; entry : lmap.entrySet()) {
 <p>LinkedHashMap&#x662F;Hash&#x8868;&#x548C;&#x94FE;&#x8868;&#x7684;&#x5B9E;&#x73B0;&#xFF0C;&#x5E76;&#x4E14;&#x4F9D;&#x9760;&#x7740;&#x53CC;&#x5411;&#x94FE;&#x8868;&#x4FDD;&#x8BC1;&#x4E86;&#x8FED;&#x4EE3;&#x987A;&#x5E8F;&#x662F;&#x63D2;&#x5165;&#x7684;&#x987A;&#x5E8F;&#x3002;</p>
 <h2 id="&#x4E8C;&#x3001;-&#x4E09;&#x4E2A;&#x91CD;&#x70B9;&#x5B9E;&#x73B0;&#x7684;&#x51FD;&#x6570;"><a name="&#x4E8C;&#x3001;-&#x4E09;&#x4E2A;&#x91CD;&#x70B9;&#x5B9E;&#x73B0;&#x7684;&#x51FD;&#x6570;" class="anchor-navigation-ex-anchor" href="#&#x4E8C;&#x3001;-&#x4E09;&#x4E2A;&#x91CD;&#x70B9;&#x5B9E;&#x73B0;&#x7684;&#x51FD;&#x6570;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x4E8C;&#x3001; &#x4E09;&#x4E2A;&#x91CD;&#x70B9;&#x5B9E;&#x73B0;&#x7684;&#x51FD;&#x6570;</h2>
 <p>&#x5728;HashMap&#x4E2D;&#x63D0;&#x5230;&#x4E86;&#x4E0B;&#x9762;&#x7684;&#x5B9A;&#x4E49;&#xFF1A;</p>
-<pre><code class="lang-Java">// Callbacks to allow LinkedHashMap post-actions
-void afterNodeAccess(Node&lt;K,V&gt; p) { }
-void afterNodeInsertion(boolean evict) { }
-void afterNodeRemoval(Node&lt;K,V&gt; p) { }
+<pre><code class="lang-Java"><span class="hljs-comment">// Callbacks to allow LinkedHashMap post-actions</span>
+<span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">afterNodeAccess</span><span class="hljs-params">(Node&lt;K,V&gt; p)</span> </span>{ }
+<span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">afterNodeInsertion</span><span class="hljs-params">(<span class="hljs-keyword">boolean</span> evict)</span> </span>{ }
+<span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">afterNodeRemoval</span><span class="hljs-params">(Node&lt;K,V&gt; p)</span> </span>{ }
 </code></pre>
 <p>LinkedHashMap&#x7EE7;&#x627F;&#x4E8E;HashMap&#xFF0C;&#x56E0;&#x6B64;&#x4E5F;&#x91CD;&#x65B0;&#x5B9E;&#x73B0;&#x4E86;&#x8FD9;3&#x4E2A;&#x51FD;&#x6570;&#xFF0C;&#x987E;&#x540D;&#x601D;&#x4E49;&#x8FD9;&#x4E09;&#x4E2A;&#x51FD;&#x6570;&#x7684;&#x4F5C;&#x7528;&#x5206;&#x522B;&#x662F;&#xFF1A;&#x8282;&#x70B9;&#x8BBF;&#x95EE;&#x540E;&#x3001;&#x8282;&#x70B9;&#x63D2;&#x5165;&#x540E;&#x3001;&#x8282;&#x70B9;&#x79FB;&#x9664;&#x540E;&#x505A;&#x4E00;&#x4E9B;&#x4E8B;&#x60C5;&#x3002;</p>
 <p><strong>afterNodeAccess&#x51FD;&#x6570;</strong></p>
-<pre><code class="lang-Java">void afterNodeAccess(Node&lt;K,V&gt; e) { // move node to last
+<pre><code class="lang-Java"><span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">afterNodeAccess</span><span class="hljs-params">(Node&lt;K,V&gt; e)</span> </span>{ <span class="hljs-comment">// move node to last</span>
     LinkedHashMap.Entry&lt;K,V&gt; last;
-    // &#x5982;&#x679C;&#x5B9A;&#x4E49;&#x4E86;accessOrder&#xFF0C;&#x90A3;&#x4E48;&#x5C31;&#x4FDD;&#x8BC1;&#x6700;&#x8FD1;&#x8BBF;&#x95EE;&#x8282;&#x70B9;&#x653E;&#x5230;&#x6700;&#x540E;
-    if (accessOrder &amp;&amp; (last = tail) != e) {
+    <span class="hljs-comment">// &#x5982;&#x679C;&#x5B9A;&#x4E49;&#x4E86;accessOrder&#xFF0C;&#x90A3;&#x4E48;&#x5C31;&#x4FDD;&#x8BC1;&#x6700;&#x8FD1;&#x8BBF;&#x95EE;&#x8282;&#x70B9;&#x653E;&#x5230;&#x6700;&#x540E;</span>
+    <span class="hljs-keyword">if</span> (accessOrder &amp;&amp; (last = tail) != e) {
         LinkedHashMap.Entry&lt;K,V&gt; p =
             (LinkedHashMap.Entry&lt;K,V&gt;)e, b = p.before, a = p.after;
-        p.after = null;
-        if (b == null)
+        p.after = <span class="hljs-keyword">null</span>;
+        <span class="hljs-keyword">if</span> (b == <span class="hljs-keyword">null</span>)
             head = a;
-        else
+        <span class="hljs-keyword">else</span>
             b.after = a;
-        if (a != null)
+        <span class="hljs-keyword">if</span> (a != <span class="hljs-keyword">null</span>)
             a.before = b;
-        else
+        <span class="hljs-keyword">else</span>
             last = b;
-        if (last == null)
+        <span class="hljs-keyword">if</span> (last == <span class="hljs-keyword">null</span>)
             head = p;
-        else {
+        <span class="hljs-keyword">else</span> {
             p.before = last;
             last.after = p;
         }
@@ -3775,29 +3779,29 @@ void afterNodeRemoval(Node&lt;K,V&gt; p) { }
 </code></pre>
 <p>&#x5C31;&#x662F;&#x8BF4;&#x5728;&#x8FDB;&#x884C;put&#x4E4B;&#x540E;&#x5C31;&#x7B97;&#x662F;&#x5BF9;&#x8282;&#x70B9;&#x7684;&#x8BBF;&#x95EE;&#x4E86;&#xFF0C;&#x90A3;&#x4E48;&#x8FD9;&#x4E2A;&#x65F6;&#x5019;&#x5C31;&#x4F1A;&#x66F4;&#x65B0;&#x94FE;&#x8868;&#xFF0C;&#x628A;&#x6700;&#x8FD1;&#x8BBF;&#x95EE;&#x7684;&#x653E;&#x5230;&#x6700;&#x540E;&#xFF0C;&#x4FDD;&#x8BC1;&#x94FE;&#x8868;&#x3002;</p>
 <p><strong>afterNodeInsertion&#x51FD;&#x6570;</strong></p>
-<pre><code class="lang-Java">void afterNodeInsertion(boolean evict) { // possibly remove eldest
+<pre><code class="lang-Java"><span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">afterNodeInsertion</span><span class="hljs-params">(<span class="hljs-keyword">boolean</span> evict)</span> </span>{ <span class="hljs-comment">// possibly remove eldest</span>
     LinkedHashMap.Entry&lt;K,V&gt; first;
-    // &#x5982;&#x679C;&#x5B9A;&#x4E49;&#x4E86;&#x6EA2;&#x51FA;&#x89C4;&#x5219;&#xFF0C;&#x5219;&#x6267;&#x884C;&#x76F8;&#x5E94;&#x7684;&#x6EA2;&#x51FA;
-    if (evict &amp;&amp; (first = head) != null &amp;&amp; removeEldestEntry(first)) {
+    <span class="hljs-comment">// &#x5982;&#x679C;&#x5B9A;&#x4E49;&#x4E86;&#x6EA2;&#x51FA;&#x89C4;&#x5219;&#xFF0C;&#x5219;&#x6267;&#x884C;&#x76F8;&#x5E94;&#x7684;&#x6EA2;&#x51FA;</span>
+    <span class="hljs-keyword">if</span> (evict &amp;&amp; (first = head) != <span class="hljs-keyword">null</span> &amp;&amp; removeEldestEntry(first)) {
         K key = first.key;
-        removeNode(hash(key), key, null, false, true);
+        removeNode(hash(key), key, <span class="hljs-keyword">null</span>, <span class="hljs-keyword">false</span>, <span class="hljs-keyword">true</span>);
     }
 }
 </code></pre>
 <p>&#x5982;&#x679C;&#x7528;&#x6237;&#x5B9A;&#x4E49;&#x4E86;<code>removeEldestEntry</code>&#x7684;&#x89C4;&#x5219;&#xFF0C;&#x90A3;&#x4E48;&#x4FBF;&#x53EF;&#x4EE5;&#x6267;&#x884C;&#x76F8;&#x5E94;&#x7684;&#x79FB;&#x9664;&#x64CD;&#x4F5C;&#x3002;</p>
 <p><strong>afterNodeRemoval&#x51FD;&#x6570;</strong></p>
-<pre><code class="lang-Java">void afterNodeRemoval(Node&lt;K,V&gt; e) { // unlink
-    // &#x4ECE;&#x94FE;&#x8868;&#x4E2D;&#x79FB;&#x9664;&#x8282;&#x70B9;
+<pre><code class="lang-Java"><span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">afterNodeRemoval</span><span class="hljs-params">(Node&lt;K,V&gt; e)</span> </span>{ <span class="hljs-comment">// unlink</span>
+    <span class="hljs-comment">// &#x4ECE;&#x94FE;&#x8868;&#x4E2D;&#x79FB;&#x9664;&#x8282;&#x70B9;</span>
     LinkedHashMap.Entry&lt;K,V&gt; p =
         (LinkedHashMap.Entry&lt;K,V&gt;)e, b = p.before, a = p.after;
-    p.before = p.after = null;
-    if (b == null)
+    p.before = p.after = <span class="hljs-keyword">null</span>;
+    <span class="hljs-keyword">if</span> (b == <span class="hljs-keyword">null</span>)
         head = a;
-    else
+    <span class="hljs-keyword">else</span>
         b.after = a;
-    if (a == null)
+    <span class="hljs-keyword">if</span> (a == <span class="hljs-keyword">null</span>)
         tail = b;
-    else
+    <span class="hljs-keyword">else</span>
         a.before = b;
 }
 </code></pre>
@@ -3805,13 +3809,13 @@ void afterNodeRemoval(Node&lt;K,V&gt; p) { }
 <p>&#x6211;&#x4EEC;&#x4ECE;&#x4E0A;&#x9762;3&#x4E2A;&#x51FD;&#x6570;&#x770B;&#x51FA;&#x6765;&#xFF0C;&#x57FA;&#x672C;&#x4E0A;&#x90FD;&#x662F;&#x4E3A;&#x4E86;<strong>&#x4FDD;&#x8BC1;&#x53CC;&#x5411;&#x94FE;&#x8868;&#x4E2D;&#x7684;&#x8282;&#x70B9;&#x6B21;&#x5E8F;&#x6216;&#x8005;&#x53CC;&#x5411;&#x94FE;&#x8868;&#x5BB9;&#x91CF;</strong>&#x6240;&#x505A;&#x7684;&#x4E00;&#x4E9B;&#x989D;&#x5916;&#x7684;&#x4E8B;&#x60C5;&#xFF0C;&#x76EE;&#x7684;&#x5C31;&#x662F;&#x4FDD;&#x6301;&#x53CC;&#x5411;&#x94FE;&#x8868;&#x4E2D;&#x8282;&#x70B9;&#x7684;&#x987A;&#x5E8F;&#x8981;&#x4ECE;eldest&#x5230;youngest&#x3002;</p>
 <h2 id="&#x4E09;&#x3001;-put&#x548C;get&#x51FD;&#x6570;"><a name="&#x4E09;&#x3001;-put&#x548C;get&#x51FD;&#x6570;" class="anchor-navigation-ex-anchor" href="#&#x4E09;&#x3001;-put&#x548C;get&#x51FD;&#x6570;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x4E09;&#x3001; put&#x548C;get&#x51FD;&#x6570;</h2>
 <p><code>put</code>&#x51FD;&#x6570;&#x5728;LinkedHashMap&#x4E2D;&#x672A;&#x91CD;&#x65B0;&#x5B9E;&#x73B0;&#xFF0C;&#x53EA;&#x662F;&#x5B9E;&#x73B0;&#x4E86;<code>afterNodeAccess</code>&#x548C;<code>afterNodeInsertion</code>&#x4E24;&#x4E2A;&#x56DE;&#x8C03;&#x51FD;&#x6570;&#x3002;<code>get</code>&#x51FD;&#x6570;&#x5219;&#x91CD;&#x65B0;&#x5B9E;&#x73B0;&#x5E76;&#x52A0;&#x5165;&#x4E86;<code>afterNodeAccess</code>&#x6765;&#x4FDD;&#x8BC1;&#x8BBF;&#x95EE;&#x987A;&#x5E8F;&#xFF0C;&#x4E0B;&#x9762;&#x662F;<code>get</code>&#x51FD;&#x6570;&#x7684;&#x5177;&#x4F53;&#x5B9E;&#x73B0;&#xFF1A;</p>
-<pre><code class="lang-Java">public V get(Object key) {
+<pre><code class="lang-Java"><span class="hljs-function"><span class="hljs-keyword">public</span> V <span class="hljs-title">get</span><span class="hljs-params">(Object key)</span> </span>{
     Node&lt;K,V&gt; e;
-    if ((e = getNode(hash(key), key)) == null)
-        return null;
-    if (accessOrder)
+    <span class="hljs-keyword">if</span> ((e = getNode(hash(key), key)) == <span class="hljs-keyword">null</span>)
+        <span class="hljs-keyword">return</span> <span class="hljs-keyword">null</span>;
+    <span class="hljs-keyword">if</span> (accessOrder)
         afterNodeAccess(e);
-    return e.value;
+    <span class="hljs-keyword">return</span> e.value;
 }
 </code></pre>
 <p>&#x503C;&#x5F97;&#x6CE8;&#x610F;&#x7684;&#x662F;&#xFF0C;&#x5728;accessOrder&#x6A21;&#x5F0F;&#x4E0B;&#xFF0C;&#x53EA;&#x8981;&#x6267;&#x884C;get&#x6216;&#x8005;put&#x7B49;&#x64CD;&#x4F5C;&#x7684;&#x65F6;&#x5019;&#xFF0C;&#x5C31;&#x4F1A;&#x4EA7;&#x751F;<code>structural modification</code>&#x3002;&#x5B98;&#x65B9;&#x6587;&#x6863;&#x662F;&#x8FD9;&#x4E48;&#x63CF;&#x8FF0;&#x7684;&#xFF1A;</p>
@@ -3864,7 +3868,7 @@ void afterNodeRemoval(Node&lt;K,V&gt; p) { }
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"Java集合——LinkedHashMap","level":"2.1.6","depth":2,"next":{"title":"Java泛型","level":"2.1.7","depth":2,"path":"java/basis/genericity.md","ref":"java/basis/genericity.md","articles":[]},"previous":{"title":"Java集合——TreeMap","level":"2.1.5","depth":2,"path":"java/basis/treemap.md","ref":"java/basis/treemap.md","articles":[]},"dir":"ltr"},"config":{"plugins":["-lunr","-search","-highlight","-livereload","search-plus@^0.0.11","simple-page-toc@^0.1.1","github@^2.0.0","github-buttons@2.1.0","edit-link@^2.0.2","advanced-emoji@^0.2.1","anchors@^0.7.1","include-codeblock@^3.0.2","ace@^0.3.2","emphasize@^1.1.0","katex@^1.1.3","splitter@^0.0.8","tbfed-pagefooter@^0.0.1","expandable-chapters-small@^0.1.7","sectionx@^3.1.0","local-video@^1.0.1","anchor-navigation-ex@0.1.8","favicon@^0.0.2"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"tbfed-pagefooter":{"copyright":"Copyright © ruheng.com 2017","modify_label":"该文件修订时间：","modify_format":"YYYY-MM-DD HH:mm:ss"},"emphasize":{},"ace":{},"github":{"url":"https://github.com/LRH1993/android_interview"},"simple-page-toc":{"maxDepth":3,"skipFirstH1":true},"splitter":{},"katex":{},"fontsettings":{"theme":"white","family":"sans","size":2},"sectionx":{"tag":"b"},"anchor-navigation-ex":{"isRewritePageTitle":false,"tocLevel1Icon":"fa fa-hand-o-right","tocLevel2Icon":"fa fa-hand-o-right","tocLevel3Icon":"fa fa-hand-o-right"},"favicon":{"shortcut":"favicon.ico","bookmark":"favicon.ico"},"github-buttons":{"repo":"LRH1993/android_interview","types":["star"],"size":"small"},"expandable-chapters-small":{},"local-video":{},"advanced-emoji":{"embedEmojis":false},"include-codeblock":{"check":false,"edit":true,"fixlang":false,"lang":"","template":"ace","theme":"chrome","unindent":true},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":true,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"edit-link":{"label":"Edit This Page","base":"https://github.com/LRH1993/android_interview/edit/master"},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":true},"anchors":{},"search-plus":{}},"theme":"default","author":"ruheng","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"Android校招面试指南","language":"zh-hans","output.name":"site","links":{"sidebar":{"Home":"http://lruheng.com/"}},"gitbook":"3.2.3","description":"Android面试必备，记录自己的秋招之路"},"file":{"path":"java/basis/LinkedHashMap.md","mtime":"2017-08-22T09:46:40.000Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2017-10-16T12:05:21.906Z"},"basePath":"../..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"Java集合——LinkedHashMap","level":"2.1.6","depth":2,"next":{"title":"Java泛型","level":"2.1.7","depth":2,"path":"java/basis/genericity.md","ref":"java/basis/genericity.md","articles":[]},"previous":{"title":"Java集合——TreeMap","level":"2.1.5","depth":2,"path":"java/basis/treemap.md","ref":"java/basis/treemap.md","articles":[]},"dir":"ltr"},"config":{"plugins":["-lunr","-search","-livereload","search-plus@^0.0.11","simple-page-toc@^0.1.1","github@^2.0.0","github-buttons@2.1.0","edit-link@^2.0.2","advanced-emoji@^0.2.1","anchors@^0.7.1","include-codeblock@^3.0.2","ace@^0.3.2","emphasize@^1.1.0","katex@^1.1.3","splitter@^0.0.8","tbfed-pagefooter@^0.0.1","expandable-chapters-small@^0.1.7","sectionx@^3.1.0","local-video@^1.0.1","anchor-navigation-ex@0.1.8","favicon@^0.0.2"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"tbfed-pagefooter":{"copyright":"Copyright © ruheng.com 2017","modify_label":"该文件修订时间：","modify_format":"YYYY-MM-DD HH:mm:ss"},"emphasize":{},"ace":{},"github":{"url":"https://github.com/LRH1993/android_interview"},"simple-page-toc":{"maxDepth":3,"skipFirstH1":true},"splitter":{},"katex":{},"fontsettings":{"theme":"white","family":"sans","size":2},"sectionx":{"tag":"b"},"highlight":{},"anchor-navigation-ex":{"isRewritePageTitle":false,"tocLevel1Icon":"fa fa-hand-o-right","tocLevel2Icon":"fa fa-hand-o-right","tocLevel3Icon":"fa fa-hand-o-right"},"favicon":{"shortcut":"favicon.ico","bookmark":"favicon.ico"},"github-buttons":{"repo":"LRH1993/android_interview","types":["star"],"size":"small"},"expandable-chapters-small":{},"local-video":{},"advanced-emoji":{"embedEmojis":false},"include-codeblock":{"check":false,"edit":false,"fixlang":false,"lang":"","template":"default","theme":"chrome","unindent":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":true,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"edit-link":{"label":"Edit This Page","base":"https://github.com/LRH1993/android_interview/edit/master"},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":true},"anchors":{},"search-plus":{}},"theme":"default","author":"ruheng","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"Android校招面试指南","language":"zh-hans","output.name":"site","links":{"sidebar":{"Home":"http://lruheng.com/"}},"gitbook":"3.2.3","description":"Android面试必备，记录自己的秋招之路"},"file":{"path":"java/basis/LinkedHashMap.md","mtime":"2017-08-22T09:46:40.000Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2017-10-16T13:00:43.989Z"},"basePath":"../..","book":{"language":""}});
         });
     </script>
 </div>

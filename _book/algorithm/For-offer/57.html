@@ -69,6 +69,10 @@
                 
             
                 
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
                 <link rel="stylesheet" href="../../gitbook/gitbook-plugin-fontsettings/website.css">
                 
             
@@ -3711,44 +3715,44 @@
 <p>&#x901A;&#x5E38;&#x6211;&#x4EEC;&#x6709;&#x4E09;&#x79CD;&#x4E0D;&#x540C;&#x7684;&#x4E8C;&#x53C9;&#x6811;&#x904D;&#x5386;&#x7B97;&#x6CD5;&#xFF0C;&#x5373;&#x524D;&#x5E8F;&#x904D;&#x5386;&#x3001;&#x4E2D;&#x5E8F;&#x904D;&#x5386;&#x548C;&#x540E;&#x5E8F;&#x904D;&#x5386;&#x3002;&#x5728;&#x8FD9;&#x4E09;&#x79CD;&#x904D;&#x5386;&#x7B97;&#x6CD5;&#x4E2D;&#xFF0C;&#x90FD;&#x662F;&#x5148;&#x904D;&#x5386;&#x5DE6;&#x5B50;&#x7ED3;&#x70B9;&#x518D;&#x904D;&#x5386;&#x53F3;&#x5B50;&#x7ED3;&#x70B9;&#x3002;&#x6211;&#x4EEC;&#x662F;&#x5426;&#x53EF;&#x4EE5;&#x5B9A;&#x4E49;&#x4E00;&#x79CD;&#x904D;&#x5386;&#x7B97;&#x6CD5;&#xFF0C;&#x5148;&#x904D;&#x5386;&#x53F3;&#x5B50;&#x7ED3;&#x70B9;&#x518D;&#x904D;&#x5386;&#x5DE6;&#x5B50;&#x7ED3;&#x70B9;&#xFF1F;&#x6BD4;&#x5982;&#x6211;&#x4EEC;&#x9488;&#x5BF9;&#x524D;&#x5E8F;&#x904D;&#x5386;&#x5B9A;&#x4E49;&#x4E00;&#x79CD;&#x5BF9;&#x79F0;&#x7684;&#x904D;&#x5386;&#x7B97;&#x6CD5;&#xFF0C;&#x5373;&#x5148;&#x904D;&#x5386;&#x7236;&#x8282;&#x70B9;&#xFF0C;&#x518D;&#x904D;&#x5386;&#x5B83;&#x7684;&#x53F3;&#x5B50;&#x7ED3;&#x70B9;&#xFF0C;&#x6700;&#x540E;&#x904D;&#x5386;&#x5B83;&#x7684;&#x5DE6;&#x5B50;&#x7ED3;&#x70B9;&#x3002; </p>
 <p>&#x6211;&#x4EEC;&#x53D1;&#x73B0;&#x53EF;&#x4EE5;&#x7528;&#x8FC7;&#x6BD4;&#x8F83;&#x4E8C;&#x53C9;&#x6811;&#x7684;&#x524D;&#x5E8F;&#x904D;&#x5386;&#x5E8F;&#x5217;&#x548C;&#x5BF9;&#x79F0;&#x524D;&#x5E8F;&#x904D;&#x5386;&#x5E8F;&#x5217;&#x6765;&#x5224;&#x65AD;&#x4E8C;&#x53C9;&#x6811;&#x662F;&#x4E0D;&#x662F;&#x5BF9;&#x79F0;&#x7684;&#x3002;&#x5982;&#x679C;&#x4E24;&#x4E2A;&#x5E8F;&#x5217;&#x4E00;&#x6837;&#xFF0C;&#x90A3;&#x4E48;&#x4E8C;&#x53C9;&#x6811;&#x5C31;&#x662F;&#x5BF9;&#x79F0;&#x7684;&#x3002;</p>
 <h2 id="&#x4E09;&#x3001;&#x89E3;&#x9898;&#x4EE3;&#x7801;"><a name="&#x4E09;&#x3001;&#x89E3;&#x9898;&#x4EE3;&#x7801;" class="anchor-navigation-ex-anchor" href="#&#x4E09;&#x3001;&#x89E3;&#x9898;&#x4EE3;&#x7801;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x4E09;&#x3001;&#x89E3;&#x9898;&#x4EE3;&#x7801;</h2>
-<pre><code class="lang-java">public class Test {
-    private static class BinaryTreeNode {
-        private int val;
-        private BinaryTreeNode left;
-        private BinaryTreeNode right;
+<pre><code class="lang-java"><span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Test</span> </span>{
+    <span class="hljs-keyword">private</span> <span class="hljs-keyword">static</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">BinaryTreeNode</span> </span>{
+        <span class="hljs-keyword">private</span> <span class="hljs-keyword">int</span> val;
+        <span class="hljs-keyword">private</span> BinaryTreeNode left;
+        <span class="hljs-keyword">private</span> BinaryTreeNode right;
 
-        public BinaryTreeNode() {
+        <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-title">BinaryTreeNode</span><span class="hljs-params">()</span> </span>{
         }
 
-        public BinaryTreeNode(int val) {
-            this.val = val;
+        <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-title">BinaryTreeNode</span><span class="hljs-params">(<span class="hljs-keyword">int</span> val)</span> </span>{
+            <span class="hljs-keyword">this</span>.val = val;
         }
 
-        @Override
-        public String toString() {
-            return val + &quot;&quot;;
+        <span class="hljs-meta">@Override</span>
+        <span class="hljs-function"><span class="hljs-keyword">public</span> String <span class="hljs-title">toString</span><span class="hljs-params">()</span> </span>{
+            <span class="hljs-keyword">return</span> val + <span class="hljs-string">&quot;&quot;</span>;
         }
     }
 
-    public static boolean isSymmetrical(BinaryTreeNode root) {
-        return isSymmetrical(root, root);
+    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">boolean</span> <span class="hljs-title">isSymmetrical</span><span class="hljs-params">(BinaryTreeNode root)</span> </span>{
+        <span class="hljs-keyword">return</span> isSymmetrical(root, root);
     }
 
-    private static boolean isSymmetrical(BinaryTreeNode left, BinaryTreeNode right) {
+    <span class="hljs-function"><span class="hljs-keyword">private</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">boolean</span> <span class="hljs-title">isSymmetrical</span><span class="hljs-params">(BinaryTreeNode left, BinaryTreeNode right)</span> </span>{
 
-        if (left == null &amp;&amp; right == null) {
-            return true;
+        <span class="hljs-keyword">if</span> (left == <span class="hljs-keyword">null</span> &amp;&amp; right == <span class="hljs-keyword">null</span>) {
+            <span class="hljs-keyword">return</span> <span class="hljs-keyword">true</span>;
         }
 
-        if (left == null || right == null) {
-            return false;
+        <span class="hljs-keyword">if</span> (left == <span class="hljs-keyword">null</span> || right == <span class="hljs-keyword">null</span>) {
+            <span class="hljs-keyword">return</span> <span class="hljs-keyword">false</span>;
         }
 
-        if (left.val != right.val ) {
-            return false;
+        <span class="hljs-keyword">if</span> (left.val != right.val ) {
+            <span class="hljs-keyword">return</span> <span class="hljs-keyword">false</span>;
         }
 
-        return isSymmetrical(left.left, right.right) &amp;&amp; isSymmetrical(left.right, right.left);
+        <span class="hljs-keyword">return</span> isSymmetrical(left.left, right.right) &amp;&amp; isSymmetrical(left.right, right.left);
     }
 }
 </code></pre>
@@ -3797,7 +3801,7 @@
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"57.对称的二叉树","level":"5.1.57","depth":2,"next":{"title":"58.把二叉树打印出多行","level":"5.1.58","depth":2,"path":"algorithm/For-offer/58.md","ref":"algorithm/For-offer/58.md","articles":[]},"previous":{"title":"56.二叉树的下一个结点","level":"5.1.56","depth":2,"path":"algorithm/For-offer/56.md","ref":"algorithm/For-offer/56.md","articles":[]},"dir":"ltr"},"config":{"plugins":["-lunr","-search","-highlight","-livereload","search-plus@^0.0.11","simple-page-toc@^0.1.1","github@^2.0.0","github-buttons@2.1.0","edit-link@^2.0.2","advanced-emoji@^0.2.1","anchors@^0.7.1","include-codeblock@^3.0.2","ace@^0.3.2","emphasize@^1.1.0","katex@^1.1.3","splitter@^0.0.8","tbfed-pagefooter@^0.0.1","expandable-chapters-small@^0.1.7","sectionx@^3.1.0","local-video@^1.0.1","anchor-navigation-ex@0.1.8","favicon@^0.0.2"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"tbfed-pagefooter":{"copyright":"Copyright © ruheng.com 2017","modify_label":"该文件修订时间：","modify_format":"YYYY-MM-DD HH:mm:ss"},"emphasize":{},"ace":{},"github":{"url":"https://github.com/LRH1993/android_interview"},"simple-page-toc":{"maxDepth":3,"skipFirstH1":true},"splitter":{},"katex":{},"fontsettings":{"theme":"white","family":"sans","size":2},"sectionx":{"tag":"b"},"anchor-navigation-ex":{"isRewritePageTitle":false,"tocLevel1Icon":"fa fa-hand-o-right","tocLevel2Icon":"fa fa-hand-o-right","tocLevel3Icon":"fa fa-hand-o-right"},"favicon":{"shortcut":"favicon.ico","bookmark":"favicon.ico"},"github-buttons":{"repo":"LRH1993/android_interview","types":["star"],"size":"small"},"expandable-chapters-small":{},"local-video":{},"advanced-emoji":{"embedEmojis":false},"include-codeblock":{"check":false,"edit":true,"fixlang":false,"lang":"","template":"ace","theme":"chrome","unindent":true},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":true,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"edit-link":{"label":"Edit This Page","base":"https://github.com/LRH1993/android_interview/edit/master"},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":true},"anchors":{},"search-plus":{}},"theme":"default","author":"ruheng","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"Android校招面试指南","language":"zh-hans","output.name":"site","links":{"sidebar":{"Home":"http://lruheng.com/"}},"gitbook":"3.2.3","description":"Android面试必备，记录自己的秋招之路"},"file":{"path":"algorithm/For-offer/57.md","mtime":"2017-09-07T02:47:33.000Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2017-10-16T12:05:21.906Z"},"basePath":"../..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"57.对称的二叉树","level":"5.1.57","depth":2,"next":{"title":"58.把二叉树打印出多行","level":"5.1.58","depth":2,"path":"algorithm/For-offer/58.md","ref":"algorithm/For-offer/58.md","articles":[]},"previous":{"title":"56.二叉树的下一个结点","level":"5.1.56","depth":2,"path":"algorithm/For-offer/56.md","ref":"algorithm/For-offer/56.md","articles":[]},"dir":"ltr"},"config":{"plugins":["-lunr","-search","-livereload","search-plus@^0.0.11","simple-page-toc@^0.1.1","github@^2.0.0","github-buttons@2.1.0","edit-link@^2.0.2","advanced-emoji@^0.2.1","anchors@^0.7.1","include-codeblock@^3.0.2","ace@^0.3.2","emphasize@^1.1.0","katex@^1.1.3","splitter@^0.0.8","tbfed-pagefooter@^0.0.1","expandable-chapters-small@^0.1.7","sectionx@^3.1.0","local-video@^1.0.1","anchor-navigation-ex@0.1.8","favicon@^0.0.2"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"tbfed-pagefooter":{"copyright":"Copyright © ruheng.com 2017","modify_label":"该文件修订时间：","modify_format":"YYYY-MM-DD HH:mm:ss"},"emphasize":{},"ace":{},"github":{"url":"https://github.com/LRH1993/android_interview"},"simple-page-toc":{"maxDepth":3,"skipFirstH1":true},"splitter":{},"katex":{},"fontsettings":{"theme":"white","family":"sans","size":2},"sectionx":{"tag":"b"},"highlight":{},"anchor-navigation-ex":{"isRewritePageTitle":false,"tocLevel1Icon":"fa fa-hand-o-right","tocLevel2Icon":"fa fa-hand-o-right","tocLevel3Icon":"fa fa-hand-o-right"},"favicon":{"shortcut":"favicon.ico","bookmark":"favicon.ico"},"github-buttons":{"repo":"LRH1993/android_interview","types":["star"],"size":"small"},"expandable-chapters-small":{},"local-video":{},"advanced-emoji":{"embedEmojis":false},"include-codeblock":{"check":false,"edit":false,"fixlang":false,"lang":"","template":"default","theme":"chrome","unindent":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":true,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"edit-link":{"label":"Edit This Page","base":"https://github.com/LRH1993/android_interview/edit/master"},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":true},"anchors":{},"search-plus":{}},"theme":"default","author":"ruheng","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"Android校招面试指南","language":"zh-hans","output.name":"site","links":{"sidebar":{"Home":"http://lruheng.com/"}},"gitbook":"3.2.3","description":"Android面试必备，记录自己的秋招之路"},"file":{"path":"algorithm/For-offer/57.md","mtime":"2017-09-07T02:47:33.000Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2017-10-16T13:00:43.989Z"},"basePath":"../..","book":{"language":""}});
         });
     </script>
 </div>

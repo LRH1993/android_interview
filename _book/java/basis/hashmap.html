@@ -69,6 +69,10 @@
                 
             
                 
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
                 <link rel="stylesheet" href="../../gitbook/gitbook-plugin-fontsettings/website.css">
                 
             
@@ -3717,17 +3721,17 @@
 </ol>
 </blockquote>
 <p>&#x5F53;&#x6211;&#x4EEC;&#x6267;&#x884C;&#x4E0B;&#x9762;&#x7684;&#x64CD;&#x4F5C;&#x65F6;&#xFF1A;</p>
-<pre><code class="lang-java">HashMap&lt;String, Integer&gt; map = new HashMap&lt;String, Integer&gt;();
-map.put(&quot;&#x8BED;&#x6587;&quot;, 1);
-map.put(&quot;&#x6570;&#x5B66;&quot;, 2);
-map.put(&quot;&#x82F1;&#x8BED;&quot;, 3);
-map.put(&quot;&#x5386;&#x53F2;&quot;, 4);
-map.put(&quot;&#x653F;&#x6CBB;&quot;, 5);
-map.put(&quot;&#x5730;&#x7406;&quot;, 6);
-map.put(&quot;&#x751F;&#x7269;&quot;, 7);
-map.put(&quot;&#x5316;&#x5B66;&quot;, 8);
-for(Entry&lt;String, Integer&gt; entry : map.entrySet()) {
-    System.out.println(entry.getKey() + &quot;: &quot; + entry.getValue());
+<pre><code class="lang-java">HashMap&lt;String, Integer&gt; map = <span class="hljs-keyword">new</span> HashMap&lt;String, Integer&gt;();
+map.put(<span class="hljs-string">&quot;&#x8BED;&#x6587;&quot;</span>, <span class="hljs-number">1</span>);
+map.put(<span class="hljs-string">&quot;&#x6570;&#x5B66;&quot;</span>, <span class="hljs-number">2</span>);
+map.put(<span class="hljs-string">&quot;&#x82F1;&#x8BED;&quot;</span>, <span class="hljs-number">3</span>);
+map.put(<span class="hljs-string">&quot;&#x5386;&#x53F2;&quot;</span>, <span class="hljs-number">4</span>);
+map.put(<span class="hljs-string">&quot;&#x653F;&#x6CBB;&quot;</span>, <span class="hljs-number">5</span>);
+map.put(<span class="hljs-string">&quot;&#x5730;&#x7406;&quot;</span>, <span class="hljs-number">6</span>);
+map.put(<span class="hljs-string">&quot;&#x751F;&#x7269;&quot;</span>, <span class="hljs-number">7</span>);
+map.put(<span class="hljs-string">&quot;&#x5316;&#x5B66;&quot;</span>, <span class="hljs-number">8</span>);
+<span class="hljs-keyword">for</span>(Entry&lt;String, Integer&gt; entry : map.entrySet()) {
+    System.out.println(entry.getKey() + <span class="hljs-string">&quot;: &quot;</span> + entry.getValue());
 }
 </code></pre>
 <p>&#x8FD0;&#x884C;&#x7ED3;&#x679C;&#x662F;</p>
@@ -3766,58 +3770,58 @@ before its capacity is automatically increased.</li>
 <li>&#x5982;&#x679C;bucket&#x6EE1;&#x4E86;(&#x8D85;&#x8FC7;load factor*current capacity)&#xFF0C;&#x5C31;&#x8981;resize&#x3002;</li>
 </ol>
 <p>&#x5177;&#x4F53;&#x4EE3;&#x7801;&#x7684;&#x5B9E;&#x73B0;&#x5982;&#x4E0B;&#xFF1A;</p>
-<pre><code class="lang-java">public V put(K key, V value) {
-    // &#x5BF9;key&#x7684;hashCode()&#x505A;hash
-    return putVal(hash(key), key, value, false, true);
+<pre><code class="lang-java"><span class="hljs-function"><span class="hljs-keyword">public</span> V <span class="hljs-title">put</span><span class="hljs-params">(K key, V value)</span> </span>{
+    <span class="hljs-comment">// &#x5BF9;key&#x7684;hashCode()&#x505A;hash</span>
+    <span class="hljs-keyword">return</span> putVal(hash(key), key, value, <span class="hljs-keyword">false</span>, <span class="hljs-keyword">true</span>);
 }
-final V putVal(int hash, K key, V value, boolean onlyIfAbsent,
-               boolean evict) {
-    Node&lt;K,V&gt;[] tab; Node&lt;K,V&gt; p; int n, i;
-    // tab&#x4E3A;&#x7A7A;&#x5219;&#x521B;&#x5EFA;
-    if ((tab = table) == null || (n = tab.length) == 0)
+<span class="hljs-function"><span class="hljs-keyword">final</span> V <span class="hljs-title">putVal</span><span class="hljs-params">(<span class="hljs-keyword">int</span> hash, K key, V value, <span class="hljs-keyword">boolean</span> onlyIfAbsent,
+               <span class="hljs-keyword">boolean</span> evict)</span> </span>{
+    Node&lt;K,V&gt;[] tab; Node&lt;K,V&gt; p; <span class="hljs-keyword">int</span> n, i;
+    <span class="hljs-comment">// tab&#x4E3A;&#x7A7A;&#x5219;&#x521B;&#x5EFA;</span>
+    <span class="hljs-keyword">if</span> ((tab = table) == <span class="hljs-keyword">null</span> || (n = tab.length) == <span class="hljs-number">0</span>)
         n = (tab = resize()).length;
-    // &#x8BA1;&#x7B97;index&#xFF0C;&#x5E76;&#x5BF9;null&#x505A;&#x5904;&#x7406;
-    if ((p = tab[i = (n - 1) &amp; hash]) == null)
-        tab[i] = newNode(hash, key, value, null);
-    else {
+    <span class="hljs-comment">// &#x8BA1;&#x7B97;index&#xFF0C;&#x5E76;&#x5BF9;null&#x505A;&#x5904;&#x7406;</span>
+    <span class="hljs-keyword">if</span> ((p = tab[i = (n - <span class="hljs-number">1</span>) &amp; hash]) == <span class="hljs-keyword">null</span>)
+        tab[i] = newNode(hash, key, value, <span class="hljs-keyword">null</span>);
+    <span class="hljs-keyword">else</span> {
         Node&lt;K,V&gt; e; K k;
-        // &#x8282;&#x70B9;&#x5B58;&#x5728;
-        if (p.hash == hash &amp;&amp;
-            ((k = p.key) == key || (key != null &amp;&amp; key.equals(k))))
+        <span class="hljs-comment">// &#x8282;&#x70B9;&#x5B58;&#x5728;</span>
+        <span class="hljs-keyword">if</span> (p.hash == hash &amp;&amp;
+            ((k = p.key) == key || (key != <span class="hljs-keyword">null</span> &amp;&amp; key.equals(k))))
             e = p;
-        // &#x8BE5;&#x94FE;&#x4E3A;&#x6811;
-        else if (p instanceof TreeNode)
-            e = ((TreeNode&lt;K,V&gt;)p).putTreeVal(this, tab, hash, key, value);
-        // &#x8BE5;&#x94FE;&#x4E3A;&#x94FE;&#x8868;
-        else {
-            for (int binCount = 0; ; ++binCount) {
-                if ((e = p.next) == null) {
-                    p.next = newNode(hash, key, value, null);
-                    if (binCount &gt;= TREEIFY_THRESHOLD - 1) // -1 for 1st
+        <span class="hljs-comment">// &#x8BE5;&#x94FE;&#x4E3A;&#x6811;</span>
+        <span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span> (p <span class="hljs-keyword">instanceof</span> TreeNode)
+            e = ((TreeNode&lt;K,V&gt;)p).putTreeVal(<span class="hljs-keyword">this</span>, tab, hash, key, value);
+        <span class="hljs-comment">// &#x8BE5;&#x94FE;&#x4E3A;&#x94FE;&#x8868;</span>
+        <span class="hljs-keyword">else</span> {
+            <span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> binCount = <span class="hljs-number">0</span>; ; ++binCount) {
+                <span class="hljs-keyword">if</span> ((e = p.next) == <span class="hljs-keyword">null</span>) {
+                    p.next = newNode(hash, key, value, <span class="hljs-keyword">null</span>);
+                    <span class="hljs-keyword">if</span> (binCount &gt;= TREEIFY_THRESHOLD - <span class="hljs-number">1</span>) <span class="hljs-comment">// -1 for 1st</span>
                         treeifyBin(tab, hash);
-                    break;
+                    <span class="hljs-keyword">break</span>;
                 }
-                if (e.hash == hash &amp;&amp;
-                    ((k = e.key) == key || (key != null &amp;&amp; key.equals(k))))
-                    break;
+                <span class="hljs-keyword">if</span> (e.hash == hash &amp;&amp;
+                    ((k = e.key) == key || (key != <span class="hljs-keyword">null</span> &amp;&amp; key.equals(k))))
+                    <span class="hljs-keyword">break</span>;
                 p = e;
             }
         }
-        // &#x5199;&#x5165;
-        if (e != null) { // existing mapping for key
+        <span class="hljs-comment">// &#x5199;&#x5165;</span>
+        <span class="hljs-keyword">if</span> (e != <span class="hljs-keyword">null</span>) { <span class="hljs-comment">// existing mapping for key</span>
             V oldValue = e.value;
-            if (!onlyIfAbsent || oldValue == null)
+            <span class="hljs-keyword">if</span> (!onlyIfAbsent || oldValue == <span class="hljs-keyword">null</span>)
                 e.value = value;
             afterNodeAccess(e);
-            return oldValue;
+            <span class="hljs-keyword">return</span> oldValue;
         }
     }
     ++modCount;
-    // &#x8D85;&#x8FC7;load factor*current capacity&#xFF0C;resize
-    if (++size &gt; threshold)
+    <span class="hljs-comment">// &#x8D85;&#x8FC7;load factor*current capacity&#xFF0C;resize</span>
+    <span class="hljs-keyword">if</span> (++size &gt; threshold)
         resize();
     afterNodeInsertion(evict);
-    return null;
+    <span class="hljs-keyword">return</span> <span class="hljs-keyword">null</span>;
 }
 </code></pre>
 <h2 id="&#x56DB;&#x3001;get&#x51FD;&#x6570;&#x7684;&#x5B9E;&#x73B0;"><a name="&#x56DB;&#x3001;get&#x51FD;&#x6570;&#x7684;&#x5B9E;&#x73B0;" class="anchor-navigation-ex-anchor" href="#&#x56DB;&#x3001;get&#x51FD;&#x6570;&#x7684;&#x5B9E;&#x73B0;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x56DB;&#x3001;get&#x51FD;&#x6570;&#x7684;&#x5B9E;&#x73B0;</h2>
@@ -3830,40 +3834,40 @@ final V putVal(int hash, K key, V value, boolean onlyIfAbsent,
 </li>
 </ol>
 <p>&#x5177;&#x4F53;&#x4EE3;&#x7801;&#x7684;&#x5B9E;&#x73B0;&#x5982;&#x4E0B;&#xFF1A;</p>
-<pre><code class="lang-java">public V get(Object key) {
+<pre><code class="lang-java"><span class="hljs-function"><span class="hljs-keyword">public</span> V <span class="hljs-title">get</span><span class="hljs-params">(Object key)</span> </span>{
     Node&lt;K,V&gt; e;
-    return (e = getNode(hash(key), key)) == null ? null : e.value;
+    <span class="hljs-keyword">return</span> (e = getNode(hash(key), key)) == <span class="hljs-keyword">null</span> ? <span class="hljs-keyword">null</span> : e.value;
 }
-final Node&lt;K,V&gt; getNode(int hash, Object key) {
-    Node&lt;K,V&gt;[] tab; Node&lt;K,V&gt; first, e; int n; K k;
-    if ((tab = table) != null &amp;&amp; (n = tab.length) &gt; 0 &amp;&amp;
-        (first = tab[(n - 1) &amp; hash]) != null) {
-        // &#x76F4;&#x63A5;&#x547D;&#x4E2D;
-        if (first.hash == hash &amp;&amp; // always check first node
-            ((k = first.key) == key || (key != null &amp;&amp; key.equals(k))))
-            return first;
-        // &#x672A;&#x547D;&#x4E2D;
-        if ((e = first.next) != null) {
-            // &#x5728;&#x6811;&#x4E2D;get
-            if (first instanceof TreeNode)
-                return ((TreeNode&lt;K,V&gt;)first).getTreeNode(hash, key);
-            // &#x5728;&#x94FE;&#x8868;&#x4E2D;get
+<span class="hljs-function"><span class="hljs-keyword">final</span> Node&lt;K,V&gt; <span class="hljs-title">getNode</span><span class="hljs-params">(<span class="hljs-keyword">int</span> hash, Object key)</span> </span>{
+    Node&lt;K,V&gt;[] tab; Node&lt;K,V&gt; first, e; <span class="hljs-keyword">int</span> n; K k;
+    <span class="hljs-keyword">if</span> ((tab = table) != <span class="hljs-keyword">null</span> &amp;&amp; (n = tab.length) &gt; <span class="hljs-number">0</span> &amp;&amp;
+        (first = tab[(n - <span class="hljs-number">1</span>) &amp; hash]) != <span class="hljs-keyword">null</span>) {
+        <span class="hljs-comment">// &#x76F4;&#x63A5;&#x547D;&#x4E2D;</span>
+        <span class="hljs-keyword">if</span> (first.hash == hash &amp;&amp; <span class="hljs-comment">// always check first node</span>
+            ((k = first.key) == key || (key != <span class="hljs-keyword">null</span> &amp;&amp; key.equals(k))))
+            <span class="hljs-keyword">return</span> first;
+        <span class="hljs-comment">// &#x672A;&#x547D;&#x4E2D;</span>
+        <span class="hljs-keyword">if</span> ((e = first.next) != <span class="hljs-keyword">null</span>) {
+            <span class="hljs-comment">// &#x5728;&#x6811;&#x4E2D;get</span>
+            <span class="hljs-keyword">if</span> (first <span class="hljs-keyword">instanceof</span> TreeNode)
+                <span class="hljs-keyword">return</span> ((TreeNode&lt;K,V&gt;)first).getTreeNode(hash, key);
+            <span class="hljs-comment">// &#x5728;&#x94FE;&#x8868;&#x4E2D;get</span>
             do {
-                if (e.hash == hash &amp;&amp;
-                    ((k = e.key) == key || (key != null &amp;&amp; key.equals(k))))
-                    return e;
-            } while ((e = e.next) != null);
+                <span class="hljs-keyword">if</span> (e.hash == hash &amp;&amp;
+                    ((k = e.key) == key || (key != <span class="hljs-keyword">null</span> &amp;&amp; key.equals(k))))
+                    <span class="hljs-keyword">return</span> e;
+            } <span class="hljs-keyword">while</span> ((e = e.next) != <span class="hljs-keyword">null</span>);
         }
     }
-    return null;
+    <span class="hljs-keyword">return</span> <span class="hljs-keyword">null</span>;
 }
 </code></pre>
 <h2 id="&#x4E94;&#x3001;hash&#x51FD;&#x6570;&#x7684;&#x5B9E;&#x73B0;"><a name="&#x4E94;&#x3001;hash&#x51FD;&#x6570;&#x7684;&#x5B9E;&#x73B0;" class="anchor-navigation-ex-anchor" href="#&#x4E94;&#x3001;hash&#x51FD;&#x6570;&#x7684;&#x5B9E;&#x73B0;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x4E94;&#x3001;hash&#x51FD;&#x6570;&#x7684;&#x5B9E;&#x73B0;</h2>
 <p>&#x5728;get&#x548C;put&#x7684;&#x8FC7;&#x7A0B;&#x4E2D;&#xFF0C;&#x8BA1;&#x7B97;&#x4E0B;&#x6807;&#x65F6;&#xFF0C;&#x5148;&#x5BF9;hashCode&#x8FDB;&#x884C;hash&#x64CD;&#x4F5C;&#xFF0C;&#x7136;&#x540E;&#x518D;&#x901A;&#x8FC7;hash&#x503C;&#x8FDB;&#x4E00;&#x6B65;&#x8BA1;&#x7B97;&#x4E0B;&#x6807;&#xFF0C;&#x5982;&#x4E0B;&#x56FE;&#x6240;&#x793A;&#xFF1A;<br><img src="https://cloud.githubusercontent.com/assets/1736354/6957712/293b52fc-d932-11e4-854d-cb47be67949a.png" alt="" title="hash"></p>
 <p>&#x5728;&#x5BF9;hashCode()&#x8BA1;&#x7B97;hash&#x65F6;&#x5177;&#x4F53;&#x5B9E;&#x73B0;&#x662F;&#x8FD9;&#x6837;&#x7684;&#xFF1A;</p>
-<pre><code class="lang-java">static final int hash(Object key) {
-    int h;
-    return (key == null) ? 0 : (h = key.hashCode()) ^ (h &gt;&gt;&gt; 16);
+<pre><code class="lang-java"><span class="hljs-function"><span class="hljs-keyword">static</span> <span class="hljs-keyword">final</span> <span class="hljs-keyword">int</span> <span class="hljs-title">hash</span><span class="hljs-params">(Object key)</span> </span>{
+    <span class="hljs-keyword">int</span> h;
+    <span class="hljs-keyword">return</span> (key == <span class="hljs-keyword">null</span>) ? <span class="hljs-number">0</span> : (h = key.hashCode()) ^ (h &gt;&gt;&gt; <span class="hljs-number">16</span>);
 }
 </code></pre>
 <p>&#x53EF;&#x4EE5;&#x770B;&#x5230;&#x8FD9;&#x4E2A;&#x51FD;&#x6570;&#x5927;&#x6982;&#x7684;&#x4F5C;&#x7528;&#x5C31;&#x662F;&#xFF1A;&#x9AD8;16bit&#x4E0D;&#x53D8;&#xFF0C;&#x4F4E;16bit&#x548C;&#x9AD8;16bit&#x505A;&#x4E86;&#x4E00;&#x4E2A;&#x5F02;&#x6216;&#x3002;&#x5176;&#x4E2D;&#x4EE3;&#x7801;&#x6CE8;&#x91CA;&#x662F;&#x8FD9;&#x6837;&#x5199;&#x7684;&#xFF1A;</p>
@@ -3871,7 +3875,7 @@ final Node&lt;K,V&gt; getNode(int hash, Object key) {
 <p>Computes key.hashCode() and spreads (XORs) higher bits of hash to lower. Because the table uses power-of-two masking, sets of hashes that vary only in bits above the current mask will always collide. (Among known examples are sets of Float keys holding consecutive whole numbers in small tables.) So we apply a transform that spreads the impact of higher bits downward. There is a tradeoff between<strong>speed, utility, and quality</strong>of bit-spreading. Because many common sets of hashes are already<strong>reasonably distributed</strong>(so don&#x2019;t benefit from spreading), and because<strong>we use trees to handle large sets of collisions in bins</strong>, we just XOR some shifted bits in the cheapest possible way to reduce systematic lossage, as well as to incorporate impact of the highest bits that would otherwise never be used in index calculations because of table bounds.</p>
 </blockquote>
 <p>&#x5728;&#x8BBE;&#x8BA1;hash&#x51FD;&#x6570;&#x65F6;&#xFF0C;&#x56E0;&#x4E3A;&#x76EE;&#x524D;&#x7684;table&#x957F;&#x5EA6;n&#x4E3A;2&#x7684;&#x5E42;&#xFF0C;&#x800C;&#x8BA1;&#x7B97;&#x4E0B;&#x6807;&#x7684;&#x65F6;&#x5019;&#xFF0C;&#x662F;&#x8FD9;&#x6837;&#x5B9E;&#x73B0;&#x7684;(&#x4F7F;&#x7528;<code>&amp;</code>&#x4F4D;&#x64CD;&#x4F5C;&#xFF0C;&#x800C;&#x975E;<code>%</code>&#x6C42;&#x4F59;)&#xFF1A;    </p>
-<pre><code class="lang-java">(n - 1) &amp; hash
+<pre><code class="lang-java">(n - <span class="hljs-number">1</span>) &amp; hash
 </code></pre>
 <p>&#x8BBE;&#x8BA1;&#x8005;&#x8BA4;&#x4E3A;&#x8FD9;&#x65B9;&#x6CD5;&#x5F88;&#x5BB9;&#x6613;&#x53D1;&#x751F;&#x78B0;&#x649E;&#x3002;&#x4E3A;&#x4EC0;&#x4E48;&#x8FD9;&#x4E48;&#x8BF4;&#x5462;&#xFF1F;&#x4E0D;&#x59A8;&#x601D;&#x8003;&#x4E00;&#x4E0B;&#xFF0C;&#x5728;n - 1&#x4E3A;15(0x1111)&#x65F6;&#xFF0C;&#x5176;&#x5B9E;&#x6563;&#x5217;&#x771F;&#x6B63;&#x751F;&#x6548;&#x7684;&#x53EA;&#x662F;&#x4F4E;4bit&#x7684;&#x6709;&#x6548;&#x4F4D;&#xFF0C;&#x5F53;&#x7136;&#x5BB9;&#x6613;&#x78B0;&#x649E;&#x4E86;&#x3002;</p>
 <p>&#x56E0;&#x6B64;&#xFF0C;&#x8BBE;&#x8BA1;&#x8005;&#x60F3;&#x4E86;&#x4E00;&#x4E2A;&#x987E;&#x5168;&#x5927;&#x5C40;&#x7684;&#x65B9;&#x6CD5;(&#x7EFC;&#x5408;&#x8003;&#x8651;&#x4E86;&#x901F;&#x5EA6;&#x3001;&#x4F5C;&#x7528;&#x3001;&#x8D28;&#x91CF;)&#xFF0C;&#x5C31;&#x662F;&#x628A;&#x9AD8;16bit&#x548C;&#x4F4E;16bit&#x5F02;&#x6216;&#x4E86;&#x4E00;&#x4E0B;&#x3002;&#x8BBE;&#x8BA1;&#x8005;&#x8FD8;&#x89E3;&#x91CA;&#x5230;&#x56E0;&#x4E3A;&#x73B0;&#x5728;&#x5927;&#x591A;&#x6570;&#x7684;hashCode&#x7684;&#x5206;&#x5E03;&#x5DF2;&#x7ECF;&#x5F88;&#x4E0D;&#x9519;&#x4E86;&#xFF0C;&#x5C31;&#x7B97;&#x662F;&#x53D1;&#x751F;&#x4E86;&#x78B0;&#x649E;&#x4E5F;&#x7528;<code>O(logn)</code>&#x7684;tree&#x53BB;&#x505A;&#x4E86;&#x3002;&#x4EC5;&#x4EC5;&#x5F02;&#x6216;&#x4E00;&#x4E0B;&#xFF0C;&#x65E2;&#x51CF;&#x5C11;&#x4E86;&#x7CFB;&#x7EDF;&#x7684;&#x5F00;&#x9500;&#xFF0C;&#x4E5F;&#x4E0D;&#x4F1A;&#x9020;&#x6210;&#x7684;&#x56E0;&#x4E3A;&#x9AD8;&#x4F4D;&#x6CA1;&#x6709;&#x53C2;&#x4E0E;&#x4E0B;&#x6807;&#x7684;&#x8BA1;&#x7B97;(table&#x957F;&#x5EA6;&#x6BD4;&#x8F83;&#x5C0F;&#x65F6;)&#xFF0C;&#x4ECE;&#x800C;&#x5F15;&#x8D77;&#x7684;&#x78B0;&#x649E;&#x3002;</p>
@@ -3897,86 +3901,86 @@ final Node&lt;K,V&gt; getNode(int hash, Object key) {
 <p>&#x56E0;&#x6B64;&#xFF0C;&#x6211;&#x4EEC;&#x5728;&#x6269;&#x5145;HashMap&#x7684;&#x65F6;&#x5019;&#xFF0C;&#x4E0D;&#x9700;&#x8981;&#x91CD;&#x65B0;&#x8BA1;&#x7B97;hash&#xFF0C;&#x53EA;&#x9700;&#x8981;&#x770B;&#x770B;&#x539F;&#x6765;&#x7684;hash&#x503C;&#x65B0;&#x589E;&#x7684;&#x90A3;&#x4E2A;bit&#x662F;1&#x8FD8;&#x662F;0&#x5C31;&#x597D;&#x4E86;&#xFF0C;&#x662F;0&#x7684;&#x8BDD;&#x7D22;&#x5F15;&#x6CA1;&#x53D8;&#xFF0C;&#x662F;1&#x7684;&#x8BDD;&#x7D22;&#x5F15;&#x53D8;&#x6210;&#x201C;&#x539F;&#x7D22;&#x5F15;+oldCap&#x201D;&#x3002;&#x53EF;&#x4EE5;&#x770B;&#x770B;&#x4E0B;&#x56FE;&#x4E3A;16&#x6269;&#x5145;&#x4E3A;32&#x7684;resize&#x793A;&#x610F;&#x56FE;&#xFF1A;<br><img src="https://cloud.githubusercontent.com/assets/1736354/6958677/d7acbad8-d941-11e4-9493-2c5e69d084c0.png" alt="" title="resize16-32"></p>
 <p>&#x8FD9;&#x4E2A;&#x8BBE;&#x8BA1;&#x786E;&#x5B9E;&#x975E;&#x5E38;&#x7684;&#x5DE7;&#x5999;&#xFF0C;&#x65E2;&#x7701;&#x53BB;&#x4E86;&#x91CD;&#x65B0;&#x8BA1;&#x7B97;hash&#x503C;&#x7684;&#x65F6;&#x95F4;&#xFF0C;&#x800C;&#x4E14;&#x540C;&#x65F6;&#xFF0C;&#x7531;&#x4E8E;&#x65B0;&#x589E;&#x7684;1bit&#x662F;0&#x8FD8;&#x662F;1&#x53EF;&#x4EE5;&#x8BA4;&#x4E3A;&#x662F;&#x968F;&#x673A;&#x7684;&#xFF0C;&#x56E0;&#x6B64;resize&#x7684;&#x8FC7;&#x7A0B;&#xFF0C;&#x5747;&#x5300;&#x7684;&#x628A;&#x4E4B;&#x524D;&#x7684;&#x51B2;&#x7A81;&#x7684;&#x8282;&#x70B9;&#x5206;&#x6563;&#x5230;&#x65B0;&#x7684;bucket&#x4E86;&#x3002;</p>
 <p>&#x4E0B;&#x9762;&#x662F;&#x4EE3;&#x7801;&#x7684;&#x5177;&#x4F53;&#x5B9E;&#x73B0;&#xFF1A;</p>
-<pre><code class="lang-java">final Node&lt;K,V&gt;[] resize() {
+<pre><code class="lang-java"><span class="hljs-keyword">final</span> Node&lt;K,V&gt;[] resize() {
     Node&lt;K,V&gt;[] oldTab = table;
-    int oldCap = (oldTab == null) ? 0 : oldTab.length;
-    int oldThr = threshold;
-    int newCap, newThr = 0;
-    if (oldCap &gt; 0) {
-        // &#x8D85;&#x8FC7;&#x6700;&#x5927;&#x503C;&#x5C31;&#x4E0D;&#x518D;&#x6269;&#x5145;&#x4E86;&#xFF0C;&#x5C31;&#x53EA;&#x597D;&#x968F;&#x4F60;&#x78B0;&#x649E;&#x53BB;&#x5427;
-        if (oldCap &gt;= MAXIMUM_CAPACITY) {
+    <span class="hljs-keyword">int</span> oldCap = (oldTab == <span class="hljs-keyword">null</span>) ? <span class="hljs-number">0</span> : oldTab.length;
+    <span class="hljs-keyword">int</span> oldThr = threshold;
+    <span class="hljs-keyword">int</span> newCap, newThr = <span class="hljs-number">0</span>;
+    <span class="hljs-keyword">if</span> (oldCap &gt; <span class="hljs-number">0</span>) {
+        <span class="hljs-comment">// &#x8D85;&#x8FC7;&#x6700;&#x5927;&#x503C;&#x5C31;&#x4E0D;&#x518D;&#x6269;&#x5145;&#x4E86;&#xFF0C;&#x5C31;&#x53EA;&#x597D;&#x968F;&#x4F60;&#x78B0;&#x649E;&#x53BB;&#x5427;</span>
+        <span class="hljs-keyword">if</span> (oldCap &gt;= MAXIMUM_CAPACITY) {
             threshold = Integer.MAX_VALUE;
-            return oldTab;
+            <span class="hljs-keyword">return</span> oldTab;
         }
-        // &#x6CA1;&#x8D85;&#x8FC7;&#x6700;&#x5927;&#x503C;&#xFF0C;&#x5C31;&#x6269;&#x5145;&#x4E3A;&#x539F;&#x6765;&#x7684;2&#x500D;
-        else if ((newCap = oldCap &lt;&lt; 1) &lt; MAXIMUM_CAPACITY &amp;&amp;
+        <span class="hljs-comment">// &#x6CA1;&#x8D85;&#x8FC7;&#x6700;&#x5927;&#x503C;&#xFF0C;&#x5C31;&#x6269;&#x5145;&#x4E3A;&#x539F;&#x6765;&#x7684;2&#x500D;</span>
+        <span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span> ((newCap = oldCap &lt;&lt; <span class="hljs-number">1</span>) &lt; MAXIMUM_CAPACITY &amp;&amp;
                  oldCap &gt;= DEFAULT_INITIAL_CAPACITY)
-            newThr = oldThr &lt;&lt; 1; // double threshold
+            newThr = oldThr &lt;&lt; <span class="hljs-number">1</span>; <span class="hljs-comment">// double threshold</span>
     }
-    else if (oldThr &gt; 0) // initial capacity was placed in threshold
+    <span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span> (oldThr &gt; <span class="hljs-number">0</span>) <span class="hljs-comment">// initial capacity was placed in threshold</span>
         newCap = oldThr;
-    else {               // zero initial threshold signifies using defaults
+    <span class="hljs-keyword">else</span> {               <span class="hljs-comment">// zero initial threshold signifies using defaults</span>
         newCap = DEFAULT_INITIAL_CAPACITY;
-        newThr = (int)(DEFAULT_LOAD_FACTOR * DEFAULT_INITIAL_CAPACITY);
+        newThr = (<span class="hljs-keyword">int</span>)(DEFAULT_LOAD_FACTOR * DEFAULT_INITIAL_CAPACITY);
     }
-    // &#x8BA1;&#x7B97;&#x65B0;&#x7684;resize&#x4E0A;&#x9650;
-    if (newThr == 0) {
-        float ft = (float)newCap * loadFactor;
-        newThr = (newCap &lt; MAXIMUM_CAPACITY &amp;&amp; ft &lt; (float)MAXIMUM_CAPACITY ?
-                  (int)ft : Integer.MAX_VALUE);
+    <span class="hljs-comment">// &#x8BA1;&#x7B97;&#x65B0;&#x7684;resize&#x4E0A;&#x9650;</span>
+    <span class="hljs-keyword">if</span> (newThr == <span class="hljs-number">0</span>) {
+        <span class="hljs-keyword">float</span> ft = (<span class="hljs-keyword">float</span>)newCap * loadFactor;
+        newThr = (newCap &lt; MAXIMUM_CAPACITY &amp;&amp; ft &lt; (<span class="hljs-keyword">float</span>)MAXIMUM_CAPACITY ?
+                  (<span class="hljs-keyword">int</span>)ft : Integer.MAX_VALUE);
     }
     threshold = newThr;
-    @SuppressWarnings({&quot;rawtypes&quot;,&quot;unchecked&quot;})
-        Node&lt;K,V&gt;[] newTab = (Node&lt;K,V&gt;[])new Node[newCap];
+    <span class="hljs-meta">@SuppressWarnings</span>({<span class="hljs-string">&quot;rawtypes&quot;</span>,<span class="hljs-string">&quot;unchecked&quot;</span>})
+        Node&lt;K,V&gt;[] newTab = (Node&lt;K,V&gt;[])<span class="hljs-keyword">new</span> Node[newCap];
     table = newTab;
-    if (oldTab != null) {
-        // &#x628A;&#x6BCF;&#x4E2A;bucket&#x90FD;&#x79FB;&#x52A8;&#x5230;&#x65B0;&#x7684;buckets&#x4E2D;
-        for (int j = 0; j &lt; oldCap; ++j) {
+    <span class="hljs-keyword">if</span> (oldTab != <span class="hljs-keyword">null</span>) {
+        <span class="hljs-comment">// &#x628A;&#x6BCF;&#x4E2A;bucket&#x90FD;&#x79FB;&#x52A8;&#x5230;&#x65B0;&#x7684;buckets&#x4E2D;</span>
+        <span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> j = <span class="hljs-number">0</span>; j &lt; oldCap; ++j) {
             Node&lt;K,V&gt; e;
-            if ((e = oldTab[j]) != null) {
-                oldTab[j] = null;
-                if (e.next == null)
-                    newTab[e.hash &amp; (newCap - 1)] = e;
-                else if (e instanceof TreeNode)
-                    ((TreeNode&lt;K,V&gt;)e).split(this, newTab, j, oldCap);
-                else { // preserve order
-                    Node&lt;K,V&gt; loHead = null, loTail = null;
-                    Node&lt;K,V&gt; hiHead = null, hiTail = null;
+            <span class="hljs-keyword">if</span> ((e = oldTab[j]) != <span class="hljs-keyword">null</span>) {
+                oldTab[j] = <span class="hljs-keyword">null</span>;
+                <span class="hljs-keyword">if</span> (e.next == <span class="hljs-keyword">null</span>)
+                    newTab[e.hash &amp; (newCap - <span class="hljs-number">1</span>)] = e;
+                <span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span> (e <span class="hljs-keyword">instanceof</span> TreeNode)
+                    ((TreeNode&lt;K,V&gt;)e).split(<span class="hljs-keyword">this</span>, newTab, j, oldCap);
+                <span class="hljs-keyword">else</span> { <span class="hljs-comment">// preserve order</span>
+                    Node&lt;K,V&gt; loHead = <span class="hljs-keyword">null</span>, loTail = <span class="hljs-keyword">null</span>;
+                    Node&lt;K,V&gt; hiHead = <span class="hljs-keyword">null</span>, hiTail = <span class="hljs-keyword">null</span>;
                     Node&lt;K,V&gt; next;
                     do {
                         next = e.next;
-                        // &#x539F;&#x7D22;&#x5F15;
-                        if ((e.hash &amp; oldCap) == 0) {
-                            if (loTail == null)
+                        <span class="hljs-comment">// &#x539F;&#x7D22;&#x5F15;</span>
+                        <span class="hljs-keyword">if</span> ((e.hash &amp; oldCap) == <span class="hljs-number">0</span>) {
+                            <span class="hljs-keyword">if</span> (loTail == <span class="hljs-keyword">null</span>)
                                 loHead = e;
-                            else
+                            <span class="hljs-keyword">else</span>
                                 loTail.next = e;
                             loTail = e;
                         }
-                        // &#x539F;&#x7D22;&#x5F15;+oldCap
-                        else {
-                            if (hiTail == null)
+                        <span class="hljs-comment">// &#x539F;&#x7D22;&#x5F15;+oldCap</span>
+                        <span class="hljs-keyword">else</span> {
+                            <span class="hljs-keyword">if</span> (hiTail == <span class="hljs-keyword">null</span>)
                                 hiHead = e;
-                            else
+                            <span class="hljs-keyword">else</span>
                                 hiTail.next = e;
                             hiTail = e;
                         }
-                    } while ((e = next) != null);
-                    // &#x539F;&#x7D22;&#x5F15;&#x653E;&#x5230;bucket&#x91CC;
-                    if (loTail != null) {
-                        loTail.next = null;
+                    } <span class="hljs-keyword">while</span> ((e = next) != <span class="hljs-keyword">null</span>);
+                    <span class="hljs-comment">// &#x539F;&#x7D22;&#x5F15;&#x653E;&#x5230;bucket&#x91CC;</span>
+                    <span class="hljs-keyword">if</span> (loTail != <span class="hljs-keyword">null</span>) {
+                        loTail.next = <span class="hljs-keyword">null</span>;
                         newTab[j] = loHead;
                     }
-                    // &#x539F;&#x7D22;&#x5F15;+oldCap&#x653E;&#x5230;bucket&#x91CC;
-                    if (hiTail != null) {
-                        hiTail.next = null;
+                    <span class="hljs-comment">// &#x539F;&#x7D22;&#x5F15;+oldCap&#x653E;&#x5230;bucket&#x91CC;</span>
+                    <span class="hljs-keyword">if</span> (hiTail != <span class="hljs-keyword">null</span>) {
+                        hiTail.next = <span class="hljs-keyword">null</span>;
                         newTab[j + oldCap] = hiHead;
                     }
                 }
             }
         }
     }
-    return newTab;
+    <span class="hljs-keyword">return</span> newTab;
 }
 </code></pre>
 <h2 id="&#x4E03;&#x3001;&#x603B;&#x7ED3;"><a name="&#x4E03;&#x3001;&#x603B;&#x7ED3;" class="anchor-navigation-ex-anchor" href="#&#x4E03;&#x3001;&#x603B;&#x7ED3;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x4E03;&#x3001;&#x603B;&#x7ED3;</h2>
@@ -4031,7 +4035,7 @@ final Node&lt;K,V&gt; getNode(int hash, Object key) {
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"Java集合——HashMap","level":"2.1.4","depth":2,"next":{"title":"Java集合——TreeMap","level":"2.1.5","depth":2,"path":"java/basis/treemap.md","ref":"java/basis/treemap.md","articles":[]},"previous":{"title":"Java集合——LinkedList","level":"2.1.3","depth":2,"path":"java/basis/linkedlist.md","ref":"java/basis/linkedlist.md","articles":[]},"dir":"ltr"},"config":{"plugins":["-lunr","-search","-highlight","-livereload","search-plus@^0.0.11","simple-page-toc@^0.1.1","github@^2.0.0","github-buttons@2.1.0","edit-link@^2.0.2","advanced-emoji@^0.2.1","anchors@^0.7.1","include-codeblock@^3.0.2","ace@^0.3.2","emphasize@^1.1.0","katex@^1.1.3","splitter@^0.0.8","tbfed-pagefooter@^0.0.1","expandable-chapters-small@^0.1.7","sectionx@^3.1.0","local-video@^1.0.1","anchor-navigation-ex@0.1.8","favicon@^0.0.2"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"tbfed-pagefooter":{"copyright":"Copyright © ruheng.com 2017","modify_label":"该文件修订时间：","modify_format":"YYYY-MM-DD HH:mm:ss"},"emphasize":{},"ace":{},"github":{"url":"https://github.com/LRH1993/android_interview"},"simple-page-toc":{"maxDepth":3,"skipFirstH1":true},"splitter":{},"katex":{},"fontsettings":{"theme":"white","family":"sans","size":2},"sectionx":{"tag":"b"},"anchor-navigation-ex":{"isRewritePageTitle":false,"tocLevel1Icon":"fa fa-hand-o-right","tocLevel2Icon":"fa fa-hand-o-right","tocLevel3Icon":"fa fa-hand-o-right"},"favicon":{"shortcut":"favicon.ico","bookmark":"favicon.ico"},"github-buttons":{"repo":"LRH1993/android_interview","types":["star"],"size":"small"},"expandable-chapters-small":{},"local-video":{},"advanced-emoji":{"embedEmojis":false},"include-codeblock":{"check":false,"edit":true,"fixlang":false,"lang":"","template":"ace","theme":"chrome","unindent":true},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":true,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"edit-link":{"label":"Edit This Page","base":"https://github.com/LRH1993/android_interview/edit/master"},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":true},"anchors":{},"search-plus":{}},"theme":"default","author":"ruheng","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"Android校招面试指南","language":"zh-hans","output.name":"site","links":{"sidebar":{"Home":"http://lruheng.com/"}},"gitbook":"3.2.3","description":"Android面试必备，记录自己的秋招之路"},"file":{"path":"java/basis/hashmap.md","mtime":"2017-08-22T07:53:58.000Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2017-10-16T12:05:21.906Z"},"basePath":"../..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"Java集合——HashMap","level":"2.1.4","depth":2,"next":{"title":"Java集合——TreeMap","level":"2.1.5","depth":2,"path":"java/basis/treemap.md","ref":"java/basis/treemap.md","articles":[]},"previous":{"title":"Java集合——LinkedList","level":"2.1.3","depth":2,"path":"java/basis/linkedlist.md","ref":"java/basis/linkedlist.md","articles":[]},"dir":"ltr"},"config":{"plugins":["-lunr","-search","-livereload","search-plus@^0.0.11","simple-page-toc@^0.1.1","github@^2.0.0","github-buttons@2.1.0","edit-link@^2.0.2","advanced-emoji@^0.2.1","anchors@^0.7.1","include-codeblock@^3.0.2","ace@^0.3.2","emphasize@^1.1.0","katex@^1.1.3","splitter@^0.0.8","tbfed-pagefooter@^0.0.1","expandable-chapters-small@^0.1.7","sectionx@^3.1.0","local-video@^1.0.1","anchor-navigation-ex@0.1.8","favicon@^0.0.2"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"tbfed-pagefooter":{"copyright":"Copyright © ruheng.com 2017","modify_label":"该文件修订时间：","modify_format":"YYYY-MM-DD HH:mm:ss"},"emphasize":{},"ace":{},"github":{"url":"https://github.com/LRH1993/android_interview"},"simple-page-toc":{"maxDepth":3,"skipFirstH1":true},"splitter":{},"katex":{},"fontsettings":{"theme":"white","family":"sans","size":2},"sectionx":{"tag":"b"},"highlight":{},"anchor-navigation-ex":{"isRewritePageTitle":false,"tocLevel1Icon":"fa fa-hand-o-right","tocLevel2Icon":"fa fa-hand-o-right","tocLevel3Icon":"fa fa-hand-o-right"},"favicon":{"shortcut":"favicon.ico","bookmark":"favicon.ico"},"github-buttons":{"repo":"LRH1993/android_interview","types":["star"],"size":"small"},"expandable-chapters-small":{},"local-video":{},"advanced-emoji":{"embedEmojis":false},"include-codeblock":{"check":false,"edit":false,"fixlang":false,"lang":"","template":"default","theme":"chrome","unindent":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":true,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"edit-link":{"label":"Edit This Page","base":"https://github.com/LRH1993/android_interview/edit/master"},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":true},"anchors":{},"search-plus":{}},"theme":"default","author":"ruheng","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"Android校招面试指南","language":"zh-hans","output.name":"site","links":{"sidebar":{"Home":"http://lruheng.com/"}},"gitbook":"3.2.3","description":"Android面试必备，记录自己的秋招之路"},"file":{"path":"java/basis/hashmap.md","mtime":"2017-08-22T07:53:58.000Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2017-10-16T13:00:43.989Z"},"basePath":"../..","book":{"language":""}});
         });
     </script>
 </div>

@@ -69,6 +69,10 @@
                 
             
                 
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
                 <link rel="stylesheet" href="../../gitbook/gitbook-plugin-fontsettings/website.css">
                 
             
@@ -3714,21 +3718,21 @@
 <p><img src="http://upload-images.jianshu.io/upload_images/1115031-b52487cb6b97f911.gif?imageMogr2/auto-orient/strip" alt=""></p>
 <p>&#x5982;&#x4E0A;&#x56FE;&#x4E2D;&#x7684;&#x4EAC;&#x4E1C;&#x52A0;&#x8F7D;&#x52A8;&#x753B;&#xFF0C;&#x4EE3;&#x7801;&#x8981;&#x505A;&#x7684;&#x4E8B;&#x60C5;&#x5C31;&#x662F;&#x628A;&#x4E00;&#x5E45;&#x5E45;&#x7684;&#x56FE;&#x7247;&#x6309;&#x987A;&#x5E8F;&#x663E;&#x793A;&#xFF0C;&#x9020;&#x6210;&#x52A8;&#x753B;&#x7684;&#x89C6;&#x89C9;&#x6548;&#x679C;&#x3002;</p>
 <p><strong>&#x4EAC;&#x4E1C;&#x52A8;&#x753B;&#x5B9E;&#x73B0;</strong></p>
-<pre><code class="lang-xml">&lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&gt;
-&lt;animation-list xmlns:android=&quot;http://schemas.android.com/apk/res/android&quot;&gt;
-    &lt;item
-        android:drawable=&quot;@drawable/a_0&quot;
-        android:duration=&quot;100&quot; /&gt;
-    &lt;item
-        android:drawable=&quot;@drawable/a_1&quot;
-        android:duration=&quot;100&quot; /&gt;
-    &lt;item
-        android:drawable=&quot;@drawable/a_2&quot;
-        android:duration=&quot;100&quot; /&gt;
-&lt;/animation-list&gt;
+<pre><code class="lang-xml"><span class="php"><span class="hljs-meta">&lt;?</span>xml version=<span class="hljs-string">&quot;1.0&quot;</span> encoding=<span class="hljs-string">&quot;utf-8&quot;</span><span class="hljs-meta">?&gt;</span></span>
+<span class="hljs-tag">&lt;<span class="hljs-name">animation-list</span> <span class="hljs-attr">xmlns:android</span>=<span class="hljs-string">&quot;http://schemas.android.com/apk/res/android&quot;</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">item</span>
+        <span class="hljs-attr">android:drawable</span>=<span class="hljs-string">&quot;@drawable/a_0&quot;</span>
+        <span class="hljs-attr">android:duration</span>=<span class="hljs-string">&quot;100&quot;</span> /&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">item</span>
+        <span class="hljs-attr">android:drawable</span>=<span class="hljs-string">&quot;@drawable/a_1&quot;</span>
+        <span class="hljs-attr">android:duration</span>=<span class="hljs-string">&quot;100&quot;</span> /&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">item</span>
+        <span class="hljs-attr">android:drawable</span>=<span class="hljs-string">&quot;@drawable/a_2&quot;</span>
+        <span class="hljs-attr">android:duration</span>=<span class="hljs-string">&quot;100&quot;</span> /&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">animation-list</span>&gt;</span>
 </code></pre>
-<pre><code class="lang-java">protected void onCreate(@Nullable Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
+<pre><code class="lang-java"><span class="hljs-function"><span class="hljs-keyword">protected</span> <span class="hljs-keyword">void</span> <span class="hljs-title">onCreate</span><span class="hljs-params">(@Nullable Bundle savedInstanceState)</span> </span>{
+        <span class="hljs-keyword">super</span>.onCreate(savedInstanceState);
         setContentView(R.layout.activity_frame_animation);
         ImageView animationImg1 = (ImageView) findViewById(R.id.animation1);
         animationImg1.setImageResource(R.drawable.frame_anim1);
@@ -3745,23 +3749,23 @@
 <h4 id="xml-&#x5B9E;&#x73B0;"><a name="xml-&#x5B9E;&#x73B0;" class="anchor-navigation-ex-anchor" href="#xml-&#x5B9E;&#x73B0;"><i class="fa fa-link" aria-hidden="true"></i></a>XML &#x5B9E;&#x73B0;</h4>
 <p>&#x9996;&#x5148;&#xFF0C;&#x5728;res/anim/ &#x6587;&#x4EF6;&#x5939;&#x4E0B;&#x5B9A;&#x4E49;&#x5982;&#x4E0B;&#x7684;&#x52A8;&#x753B;&#x5B9E;&#x73B0;&#x65B9;&#x5F0F;</p>
 <p><strong>alpha_anim.xml &#x52A8;&#x753B;&#x5B9E;&#x73B0;</strong></p>
-<pre><code class="lang-xml">&lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&gt;
-&lt;alpha xmlns:android=&quot;http://schemas.android.com/apk/res/android&quot;
-    android:duration=&quot;1000&quot;
-    android:fromAlpha=&quot;1.0&quot;
-    android:interpolator=&quot;@android:anim/accelerate_decelerate_interpolator&quot;
-    android:toAlpha=&quot;0.0&quot; /&gt;
+<pre><code class="lang-xml"><span class="php"><span class="hljs-meta">&lt;?</span>xml version=<span class="hljs-string">&quot;1.0&quot;</span> encoding=<span class="hljs-string">&quot;utf-8&quot;</span><span class="hljs-meta">?&gt;</span></span>
+<span class="hljs-tag">&lt;<span class="hljs-name">alpha</span> <span class="hljs-attr">xmlns:android</span>=<span class="hljs-string">&quot;http://schemas.android.com/apk/res/android&quot;</span>
+    <span class="hljs-attr">android:duration</span>=<span class="hljs-string">&quot;1000&quot;</span>
+    <span class="hljs-attr">android:fromAlpha</span>=<span class="hljs-string">&quot;1.0&quot;</span>
+    <span class="hljs-attr">android:interpolator</span>=<span class="hljs-string">&quot;@android:anim/accelerate_decelerate_interpolator&quot;</span>
+    <span class="hljs-attr">android:toAlpha</span>=<span class="hljs-string">&quot;0.0&quot;</span> /&gt;</span>
 </code></pre>
 <p><strong>scale.xml &#x52A8;&#x753B;&#x5B9E;&#x73B0;</strong></p>
-<pre><code class="lang-xml">&lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&gt;
-&lt;scale xmlns:android=&quot;http://schemas.android.com/apk/res/android&quot;
-    android:duration=&quot;1000&quot;
-    android:fromXScale=&quot;0.0&quot;
-    android:fromYScale=&quot;0.0&quot;
-    android:pivotX=&quot;50%&quot;
-    android:pivotY=&quot;50%&quot;
-    android:toXScale=&quot;1.0&quot;
-    android:toYScale=&quot;1.0&quot;/&gt;
+<pre><code class="lang-xml"><span class="php"><span class="hljs-meta">&lt;?</span>xml version=<span class="hljs-string">&quot;1.0&quot;</span> encoding=<span class="hljs-string">&quot;utf-8&quot;</span><span class="hljs-meta">?&gt;</span></span>
+<span class="hljs-tag">&lt;<span class="hljs-name">scale</span> <span class="hljs-attr">xmlns:android</span>=<span class="hljs-string">&quot;http://schemas.android.com/apk/res/android&quot;</span>
+    <span class="hljs-attr">android:duration</span>=<span class="hljs-string">&quot;1000&quot;</span>
+    <span class="hljs-attr">android:fromXScale</span>=<span class="hljs-string">&quot;0.0&quot;</span>
+    <span class="hljs-attr">android:fromYScale</span>=<span class="hljs-string">&quot;0.0&quot;</span>
+    <span class="hljs-attr">android:pivotX</span>=<span class="hljs-string">&quot;50%&quot;</span>
+    <span class="hljs-attr">android:pivotY</span>=<span class="hljs-string">&quot;50%&quot;</span>
+    <span class="hljs-attr">android:toXScale</span>=<span class="hljs-string">&quot;1.0&quot;</span>
+    <span class="hljs-attr">android:toYScale</span>=<span class="hljs-string">&quot;1.0&quot;</span>/&gt;</span>
 </code></pre>
 <p>&#x7136;&#x540E;&#xFF0C;&#x5728;Activity&#x4E2D; </p>
 <pre><code class="lang-java">Animation animation = AnimationUtils.loadAnimation(mContext, R.anim.alpha_anim);
@@ -3770,34 +3774,34 @@ img.startAnimation(animation);
 </code></pre>
 <p>&#x8FD9;&#x6837;&#x5C31;&#x53EF;&#x4EE5;&#x5B9E;&#x73B0;ImageView alpha &#x900F;&#x660E;&#x53D8;&#x5316;&#x7684;&#x52A8;&#x753B;&#x6548;&#x679C;&#x3002;</p>
 <p>&#x4E5F;&#x53EF;&#x4EE5;&#x4F7F;&#x7528;set &#x6807;&#x7B7E;&#x5C06;&#x591A;&#x4E2A;&#x52A8;&#x753B;&#x7EC4;&#x5408;&#xFF08;&#x4EE3;&#x7801;&#x6E90;&#x81EA;Android SDK API&#xFF09;</p>
-<pre><code class="lang-xml">&lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&gt;
-&lt;set xmlns:android=&quot;http://schemas.android.com/apk/res/android&quot;
-    android:interpolator=&quot;@[package:]anim/interpolator_resource&quot;
-    android:shareInterpolator=[&quot;true&quot; | &quot;false&quot;] &gt;
-    &lt;alpha
-        android:fromAlpha=&quot;float&quot;
-        android:toAlpha=&quot;float&quot; /&gt;
-    &lt;scale
-        android:fromXScale=&quot;float&quot;
-        android:toXScale=&quot;float&quot;
-        android:fromYScale=&quot;float&quot;
-        android:toYScale=&quot;float&quot;
-        android:pivotX=&quot;float&quot;
-        android:pivotY=&quot;float&quot; /&gt;
-    &lt;translate
-        android:fromXDelta=&quot;float&quot;
-        android:toXDelta=&quot;float&quot;
-        android:fromYDelta=&quot;float&quot;
-        android:toYDelta=&quot;float&quot; /&gt;
-    &lt;rotate
-        android:fromDegrees=&quot;float&quot;
-        android:toDegrees=&quot;float&quot;
-        android:pivotX=&quot;float&quot;
-        android:pivotY=&quot;float&quot; /&gt;
-    &lt;set&gt;
+<pre><code class="lang-xml"><span class="php"><span class="hljs-meta">&lt;?</span>xml version=<span class="hljs-string">&quot;1.0&quot;</span> encoding=<span class="hljs-string">&quot;utf-8&quot;</span><span class="hljs-meta">?&gt;</span></span>
+<span class="hljs-tag">&lt;<span class="hljs-name">set</span> <span class="hljs-attr">xmlns:android</span>=<span class="hljs-string">&quot;http://schemas.android.com/apk/res/android&quot;</span>
+    <span class="hljs-attr">android:interpolator</span>=<span class="hljs-string">&quot;@[package:]anim/interpolator_resource&quot;</span>
+    <span class="hljs-attr">android:shareInterpolator</span>=<span class="hljs-string">[&quot;true&quot;</span> | &quot;<span class="hljs-attr">false</span>&quot;] &gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">alpha</span>
+        <span class="hljs-attr">android:fromAlpha</span>=<span class="hljs-string">&quot;float&quot;</span>
+        <span class="hljs-attr">android:toAlpha</span>=<span class="hljs-string">&quot;float&quot;</span> /&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">scale</span>
+        <span class="hljs-attr">android:fromXScale</span>=<span class="hljs-string">&quot;float&quot;</span>
+        <span class="hljs-attr">android:toXScale</span>=<span class="hljs-string">&quot;float&quot;</span>
+        <span class="hljs-attr">android:fromYScale</span>=<span class="hljs-string">&quot;float&quot;</span>
+        <span class="hljs-attr">android:toYScale</span>=<span class="hljs-string">&quot;float&quot;</span>
+        <span class="hljs-attr">android:pivotX</span>=<span class="hljs-string">&quot;float&quot;</span>
+        <span class="hljs-attr">android:pivotY</span>=<span class="hljs-string">&quot;float&quot;</span> /&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">translate</span>
+        <span class="hljs-attr">android:fromXDelta</span>=<span class="hljs-string">&quot;float&quot;</span>
+        <span class="hljs-attr">android:toXDelta</span>=<span class="hljs-string">&quot;float&quot;</span>
+        <span class="hljs-attr">android:fromYDelta</span>=<span class="hljs-string">&quot;float&quot;</span>
+        <span class="hljs-attr">android:toYDelta</span>=<span class="hljs-string">&quot;float&quot;</span> /&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">rotate</span>
+        <span class="hljs-attr">android:fromDegrees</span>=<span class="hljs-string">&quot;float&quot;</span>
+        <span class="hljs-attr">android:toDegrees</span>=<span class="hljs-string">&quot;float&quot;</span>
+        <span class="hljs-attr">android:pivotX</span>=<span class="hljs-string">&quot;float&quot;</span>
+        <span class="hljs-attr">android:pivotY</span>=<span class="hljs-string">&quot;float&quot;</span> /&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">set</span>&gt;</span>
         ...
-    &lt;/set&gt;
-&lt;/set&gt;
+    <span class="hljs-tag">&lt;/<span class="hljs-name">set</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">set</span>&gt;</span>
 </code></pre>
 <p>&#x53EF;&#x4EE5;&#x770B;&#x5230;&#x7EC4;&#x5408;&#x52A8;&#x753B;&#x662F;&#x53EF;&#x4EE5;&#x5D4C;&#x5957;&#x4F7F;&#x7528;&#x7684;&#x3002;</p>
 <p>&#x5404;&#x4E2A;&#x52A8;&#x753B;&#x5C5E;&#x6027;&#x7684;&#x542B;&#x4E49;&#x7ED3;&#x5408;&#x52A8;&#x753B;&#x81EA;&#x8EAB;&#x7684;&#x7279;&#x70B9;&#x5E94;&#x8BE5;&#x5F88;&#x597D;&#x7406;&#x89E3;&#xFF0C;&#x5C31;&#x4E0D;&#x4E00;&#x4E00;&#x9610;&#x8FF0;&#x4E86;&#xFF1B;&#x8FD9;&#x91CC;&#x4E3B;&#x8981;&#x8BF4;&#x4E00;&#x4E0B;<strong>interpolator</strong> &#x548C; <strong>pivot</strong>&#x3002;</p>
@@ -3836,25 +3840,25 @@ img.startAnimation(animation);
 <p><img src="http://upload-images.jianshu.io/upload_images/1115031-743288fa3be134ea.gif?imageMogr2/auto-orient/strip" alt=""></p>
 <h4 id="java-code--&#x5B9E;&#x73B0;"><a name="java-code--&#x5B9E;&#x73B0;" class="anchor-navigation-ex-anchor" href="#java-code--&#x5B9E;&#x73B0;"><i class="fa fa-link" aria-hidden="true"></i></a>Java Code  &#x5B9E;&#x73B0;</h4>
 <p>&#x6709;&#x65F6;&#x5019;&#xFF0C;&#x52A8;&#x753B;&#x7684;&#x5C5E;&#x6027;&#x503C;&#x53EF;&#x80FD;&#x9700;&#x8981;&#x52A8;&#x6001;&#x7684;&#x8C03;&#x6574;&#xFF0C;&#x8FD9;&#x4E2A;&#x65F6;&#x5019;&#x4F7F;&#x7528;xml &#x5C31;&#x4E0D;&#x5408;&#x9002;&#x4E86;&#xFF0C;&#x9700;&#x8981;&#x4F7F;&#x7528;java&#x4EE3;&#x7801;&#x5B9E;&#x73B0;</p>
-<pre><code class="lang-java">private void RotateAnimation() {
-        animation = new RotateAnimation(-deValue, deValue, Animation.RELATIVE_TO_SELF,
+<pre><code class="lang-java"><span class="hljs-function"><span class="hljs-keyword">private</span> <span class="hljs-keyword">void</span> <span class="hljs-title">RotateAnimation</span><span class="hljs-params">()</span> </span>{
+        animation = <span class="hljs-keyword">new</span> RotateAnimation(-deValue, deValue, Animation.RELATIVE_TO_SELF,
                 pxValue, Animation.RELATIVE_TO_SELF, pyValue);
         animation.setDuration(timeValue);
 
-        if (keep.isChecked()) {
-            animation.setFillAfter(true);
-        } else {
-            animation.setFillAfter(false);
+        <span class="hljs-keyword">if</span> (keep.isChecked()) {
+            animation.setFillAfter(<span class="hljs-keyword">true</span>);
+        } <span class="hljs-keyword">else</span> {
+            animation.setFillAfter(<span class="hljs-keyword">false</span>);
         }
-        if (loop.isChecked()) {
-            animation.setRepeatCount(-1);
-        } else {
-            animation.setRepeatCount(0);
+        <span class="hljs-keyword">if</span> (loop.isChecked()) {
+            animation.setRepeatCount(-<span class="hljs-number">1</span>);
+        } <span class="hljs-keyword">else</span> {
+            animation.setRepeatCount(<span class="hljs-number">0</span>);
         }
 
-        if (reverse.isChecked()) {
+        <span class="hljs-keyword">if</span> (reverse.isChecked()) {
             animation.setRepeatMode(Animation.REVERSE);
-        } else {
+        } <span class="hljs-keyword">else</span> {
             animation.setRepeatMode(Animation.RESTART);
         }
         img.startAnimation(animation);
@@ -3866,33 +3870,33 @@ img.startAnimation(animation);
 <p>&#x5C5E;&#x6027;&#x52A8;&#x753B;&#xFF0C;&#x987E;&#x540D;&#x601D;&#x4E49;&#x5B83;&#x662F;&#x5BF9;&#x4E8E;&#x5BF9;&#x8C61;&#x5C5E;&#x6027;&#x7684;&#x52A8;&#x753B;&#x3002;&#x56E0;&#x6B64;&#xFF0C;&#x6240;&#x6709;&#x8865;&#x95F4;&#x52A8;&#x753B;&#x7684;&#x5185;&#x5BB9;&#xFF0C;&#x90FD;&#x53EF;&#x4EE5;&#x901A;&#x8FC7;&#x5C5E;&#x6027;&#x52A8;&#x753B;&#x5B9E;&#x73B0;&#x3002;</p>
 <h3 id="&#x5C5E;&#x6027;&#x52A8;&#x753B;&#x5165;&#x95E8;"><a name="&#x5C5E;&#x6027;&#x52A8;&#x753B;&#x5165;&#x95E8;" class="anchor-navigation-ex-anchor" href="#&#x5C5E;&#x6027;&#x52A8;&#x753B;&#x5165;&#x95E8;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x5C5E;&#x6027;&#x52A8;&#x753B;&#x5165;&#x95E8;</h3>
 <p>&#x9996;&#x5148;&#x6211;&#x4EEC;&#x6765;&#x770B;&#x770B;&#x5982;&#x4F55;&#x7528;&#x5C5E;&#x6027;&#x52A8;&#x753B;&#x5B9E;&#x73B0;&#x4E0A;&#x9762;&#x8865;&#x95F4;&#x52A8;&#x753B;&#x7684;&#x6548;&#x679C;</p>
-<pre><code class="lang-java">    private void RotateAnimation() {
-        ObjectAnimator anim = ObjectAnimator.ofFloat(myView, &quot;rotation&quot;, 0f, 360f);
-        anim.setDuration(1000);
+<pre><code class="lang-java">    <span class="hljs-function"><span class="hljs-keyword">private</span> <span class="hljs-keyword">void</span> <span class="hljs-title">RotateAnimation</span><span class="hljs-params">()</span> </span>{
+        ObjectAnimator anim = ObjectAnimator.ofFloat(myView, <span class="hljs-string">&quot;rotation&quot;</span>, <span class="hljs-number">0f</span>, <span class="hljs-number">360f</span>);
+        anim.setDuration(<span class="hljs-number">1000</span>);
         anim.start();
     }
 
-    private void AlpahAnimation() {
-        ObjectAnimator anim = ObjectAnimator.ofFloat(myView, &quot;alpha&quot;, 1.0f, 0.8f, 0.6f, 0.4f, 0.2f, 0.0f);
-        anim.setRepeatCount(-1);
+    <span class="hljs-function"><span class="hljs-keyword">private</span> <span class="hljs-keyword">void</span> <span class="hljs-title">AlpahAnimation</span><span class="hljs-params">()</span> </span>{
+        ObjectAnimator anim = ObjectAnimator.ofFloat(myView, <span class="hljs-string">&quot;alpha&quot;</span>, <span class="hljs-number">1.0f</span>, <span class="hljs-number">0.8f</span>, <span class="hljs-number">0.6f</span>, <span class="hljs-number">0.4f</span>, <span class="hljs-number">0.2f</span>, <span class="hljs-number">0.0f</span>);
+        anim.setRepeatCount(-<span class="hljs-number">1</span>);
         anim.setRepeatMode(ObjectAnimator.REVERSE);
-        anim.setDuration(2000);
+        anim.setDuration(<span class="hljs-number">2000</span>);
         anim.start();
     }
 </code></pre>
 <p>&#x8FD9;&#x4E24;&#x4E2A;&#x65B9;&#x6CD5;&#x7528;&#x5C5E;&#x6027;&#x52A8;&#x753B;&#x7684;&#x65B9;&#x5F0F;&#x5206;&#x522B;&#x5B9E;&#x73B0;&#x4E86;&#x65CB;&#x8F6C;&#x52A8;&#x753B;&#x548C;&#x6DE1;&#x5165;&#x6DE1;&#x51FA;&#x52A8;&#x753B;&#xFF0C;&#x5176;&#x4E2D;setDuration&#x3001;setRepeatMode&#x53CA;setRepeatCount&#x548C;&#x8865;&#x95F4;&#x52A8;&#x753B;&#x4E2D;&#x7684;&#x6982;&#x5FF5;&#x662F;&#x4E00;&#x6837;&#x7684;&#x3002;</p>
 <p>&#x53EF;&#x4EE5;&#x770B;&#x5230;&#xFF0C;&#x5C5E;&#x6027;&#x52A8;&#x753B;&#x8C8C;&#x4F3C;&#x5F3A;&#x5927;&#x4E86;&#x8BB8;&#x591A;&#xFF0C;&#x5B9E;&#x73B0;&#x5F88;&#x65B9;&#x4FBF;&#xFF0C;&#x540C;&#x65F6;&#x52A8;&#x753B;&#x53EF;&#x53D8;&#x5316;&#x7684;&#x503C;&#x4E5F;&#x6709;&#x4E86;&#x66F4;&#x591A;&#x7684;&#x9009;&#x62E9;&#xFF0C;&#x52A8;&#x753B;&#x6240;&#x80FD;&#x5448;&#x73B0;&#x7684;&#x7EC6;&#x8282;&#x4E5F;&#x66F4;&#x591A;&#x3002;</p>
 <p>&#x5F53;&#x7136;&#x5C5E;&#x6027;&#x52A8;&#x753B;&#x4E5F;&#x662F;&#x53EF;&#x4EE5;&#x7EC4;&#x5408;&#x5B9E;&#x73B0;&#x7684;</p>
-<pre><code class="lang-java">                ObjectAnimator alphaAnim = ObjectAnimator.ofFloat(myView, &quot;alpha&quot;, 1.0f, 0.5f, 0.8f, 1.0f);
-                ObjectAnimator scaleXAnim = ObjectAnimator.ofFloat(myView, &quot;scaleX&quot;, 0.0f, 1.0f);
-                ObjectAnimator scaleYAnim = ObjectAnimator.ofFloat(myView, &quot;scaleY&quot;, 0.0f, 2.0f);
-                ObjectAnimator rotateAnim = ObjectAnimator.ofFloat(myView, &quot;rotation&quot;, 0, 360);
-                ObjectAnimator transXAnim = ObjectAnimator.ofFloat(myView, &quot;translationX&quot;, 100, 400);
-                ObjectAnimator transYAnim = ObjectAnimator.ofFloat(myView, &quot;tranlsationY&quot;, 100, 750);
-                AnimatorSet set = new AnimatorSet();
+<pre><code class="lang-java">                ObjectAnimator alphaAnim = ObjectAnimator.ofFloat(myView, <span class="hljs-string">&quot;alpha&quot;</span>, <span class="hljs-number">1.0f</span>, <span class="hljs-number">0.5f</span>, <span class="hljs-number">0.8f</span>, <span class="hljs-number">1.0f</span>);
+                ObjectAnimator scaleXAnim = ObjectAnimator.ofFloat(myView, <span class="hljs-string">&quot;scaleX&quot;</span>, <span class="hljs-number">0.0f</span>, <span class="hljs-number">1.0f</span>);
+                ObjectAnimator scaleYAnim = ObjectAnimator.ofFloat(myView, <span class="hljs-string">&quot;scaleY&quot;</span>, <span class="hljs-number">0.0f</span>, <span class="hljs-number">2.0f</span>);
+                ObjectAnimator rotateAnim = ObjectAnimator.ofFloat(myView, <span class="hljs-string">&quot;rotation&quot;</span>, <span class="hljs-number">0</span>, <span class="hljs-number">360</span>);
+                ObjectAnimator transXAnim = ObjectAnimator.ofFloat(myView, <span class="hljs-string">&quot;translationX&quot;</span>, <span class="hljs-number">100</span>, <span class="hljs-number">400</span>);
+                ObjectAnimator transYAnim = ObjectAnimator.ofFloat(myView, <span class="hljs-string">&quot;tranlsationY&quot;</span>, <span class="hljs-number">100</span>, <span class="hljs-number">750</span>);
+                AnimatorSet set = <span class="hljs-keyword">new</span> AnimatorSet();
                 set.playTogether(alphaAnim, scaleXAnim, scaleYAnim, rotateAnim, transXAnim, transYAnim);
-//                set.playSequentially(alphaAnim, scaleXAnim, scaleYAnim, rotateAnim, transXAnim, transYAnim);
-                set.setDuration(3000);
+<span class="hljs-comment">//                set.playSequentially(alphaAnim, scaleXAnim, scaleYAnim, rotateAnim, transXAnim, transYAnim);</span>
+                set.setDuration(<span class="hljs-number">3000</span>);
                 set.start();
 </code></pre>
 <p>&#x53EF;&#x4EE5;&#x770B;&#x5230;&#x8FD9;&#x4E9B;&#x52A8;&#x753B;&#x53EF;&#x4EE5;&#x540C;&#x65F6;&#x64AD;&#x653E;&#xFF0C;&#x6216;&#x8005;&#x662F;&#x6309;&#x5E8F;&#x64AD;&#x653E;&#x3002;</p>
@@ -3917,30 +3921,30 @@ img.startAnimation(animation);
 <p>&#x8FD9;&#x4E2A;&#x52A8;&#x753B;&#x6700;&#x5173;&#x952E;&#x7684;&#x4E09;&#x70B9;&#x5C31;&#x662F; &#x8FD0;&#x52A8;&#x8F68;&#x8FF9;&#x3001;&#x5C0F;&#x7403;&#x534A;&#x5F84;&#x53CA;&#x989C;&#x8272;&#x7684;&#x53D8;&#x5316;&#xFF1B;&#x6211;&#x4EEC;&#x5C31;&#x4ECE;&#x8FD9;&#x4E09;&#x4E2A;&#x65B9;&#x9762;&#x5C55;&#x5F00;&#x3002;&#x6700;&#x540E;&#x6211;&#x4EEC;&#x5728;&#x7ED3;&#x5408;Interpolator&#x8BF4;&#x4E00;&#x4E0B;TimeInterpolator&#x7684;&#x610F;&#x4E49;&#x3002;</p>
 <h5 id="&#x7528;typeevaluator-&#x786E;&#x5B9A;&#x8FD0;&#x52A8;&#x8F68;&#x8FF9;"><a name="&#x7528;typeevaluator-&#x786E;&#x5B9A;&#x8FD0;&#x52A8;&#x8F68;&#x8FF9;" class="anchor-navigation-ex-anchor" href="#&#x7528;typeevaluator-&#x786E;&#x5B9A;&#x8FD0;&#x52A8;&#x8F68;&#x8FF9;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x7528;TypeEvaluator &#x786E;&#x5B9A;&#x8FD0;&#x52A8;&#x8F68;&#x8FF9;</h5>
 <p>&#x524D;&#x9762;&#x8BF4;&#x4E86;&#xFF0C;TypeEvaluator&#x51B3;&#x5B9A;&#x4E86;&#x52A8;&#x753B;&#x5982;&#x4F55;&#x4ECE;&#x521D;&#x59CB;&#x503C;&#x8FC7;&#x6E21;&#x5230;&#x7ED3;&#x675F;&#x503C;&#x3002;&#x8FD9;&#x4E2A;TypeEvaluator&#x662F;&#x4E2A;&#x63A5;&#x53E3;&#xFF0C;&#x6211;&#x4EEC;&#x53EF;&#x4EE5;&#x5B9E;&#x73B0;&#x8FD9;&#x4E2A;&#x63A5;&#x53E3;&#x3002;</p>
-<pre><code class="lang-java">public class PointSinEvaluator implements TypeEvaluator {
+<pre><code class="lang-java"><span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">PointSinEvaluator</span> <span class="hljs-keyword">implements</span> <span class="hljs-title">TypeEvaluator</span> </span>{
 
-    @Override
-    public Object evaluate(float fraction, Object startValue, Object endValue) {
+    <span class="hljs-meta">@Override</span>
+    <span class="hljs-function"><span class="hljs-keyword">public</span> Object <span class="hljs-title">evaluate</span><span class="hljs-params">(<span class="hljs-keyword">float</span> fraction, Object startValue, Object endValue)</span> </span>{
         Point startPoint = (Point) startValue;
         Point endPoint = (Point) endValue;
-        float x = startPoint.getX() + fraction * (endPoint.getX() - startPoint.getX());
+        <span class="hljs-keyword">float</span> x = startPoint.getX() + fraction * (endPoint.getX() - startPoint.getX());
 
-        float y = (float) (Math.sin(x * Math.PI / 180) * 100) + endPoint.getY() / 2;
-        Point point = new Point(x, y);
-        return point;
+        <span class="hljs-keyword">float</span> y = (<span class="hljs-keyword">float</span>) (Math.sin(x * Math.PI / <span class="hljs-number">180</span>) * <span class="hljs-number">100</span>) + endPoint.getY() / <span class="hljs-number">2</span>;
+        Point point = <span class="hljs-keyword">new</span> Point(x, y);
+        <span class="hljs-keyword">return</span> point;
     }
 }
 </code></pre>
 <p>PointSinEvaluator &#x7EE7;&#x627F;&#x4E86;TypeEvaluator&#x7C7B;&#xFF0C;&#x5E76;&#x5B9E;&#x73B0;&#x4E86;&#x4ED6;&#x552F;&#x4E00;&#x7684;&#x65B9;&#x6CD5;evaluate&#xFF1B;&#x8FD9;&#x4E2A;&#x65B9;&#x6CD5;&#x6709;&#x4E09;&#x4E2A;&#x53C2;&#x6570;&#xFF0C;&#x7B2C;&#x4E00;&#x4E2A;&#x53C2;&#x6570;fraction &#x4EE3;&#x8868;&#x5F53;&#x524D;&#x52A8;&#x753B;&#x5B8C;&#x6210;&#x7684;<strong>&#x767E;&#x5206;&#x6BD4;</strong>&#xFF0C;&#x8FD9;&#x4E2A;&#x503C;&#x662F;&#x5982;&#x4F55;&#x53D8;&#x5316;&#x7684;&#x540E;&#x9762;&#x8FD8;&#x4F1A;&#x63D0;&#x5230;&#xFF1B;&#x7B2C;&#x4E8C;&#x4E2A;&#x548C;&#x7B2C;&#x4E09;&#x4E2A;&#x53C2;&#x6570;&#x4EE3;&#x8868;&#x52A8;&#x753B;&#x7684;<strong>&#x521D;&#x59CB;&#x503C;&#x548C;&#x7ED3;&#x675F;&#x503C;</strong>&#x3002;&#x8FD9;&#x91CC;&#x6211;&#x4EEC;&#x7684;&#x903B;&#x8F91;&#x5F88;&#x7B80;&#x5355;&#xFF0C;x&#x7684;&#x503C;&#x968F;&#x7740;fraction &#x4E0D;&#x65AD;&#x53D8;&#x5316;&#xFF0C;&#x5E76;&#x6700;&#x7EC8;&#x8FBE;&#x5230;&#x7ED3;&#x675F;&#x503C;&#xFF1B;y&#x7684;&#x503C;&#x5C31;&#x662F;&#x5F53;&#x524D;x&#x503C;&#x6240;&#x5BF9;&#x5E94;&#x7684;sin(x) &#x503C;&#xFF0C;&#x7136;&#x540E;&#x7528;x &#x548C; y &#x4EA7;&#x751F;&#x4E00;&#x4E2A;&#x65B0;&#x7684;&#x70B9;&#xFF08;Point&#x5BF9;&#x8C61;&#xFF09;&#x8FD4;&#x56DE;&#x3002;</p>
 <p>&#x8FD9;&#x6837;&#x6211;&#x4EEC;&#x5C31;&#x53EF;&#x4EE5;&#x4F7F;&#x7528;&#x8FD9;&#x4E2A;PointSinEvaluator &#x751F;&#x6210;&#x5C5E;&#x6027;&#x52A8;&#x753B;&#x7684;&#x5B9E;&#x4F8B;&#x4E86;&#x3002;</p>
-<pre><code class="lang-java">        Point startP = new Point(RADIUS, RADIUS);//&#x521D;&#x59CB;&#x503C;&#xFF08;&#x8D77;&#x70B9;&#xFF09;
-        Point endP = new Point(getWidth() - RADIUS, getHeight() - RADIUS);//&#x7ED3;&#x675F;&#x503C;&#xFF08;&#x7EC8;&#x70B9;&#xFF09;
-        final ValueAnimator valueAnimator = ValueAnimator.ofObject(new PointSinEvaluator(), startP, endP);
-        valueAnimator.setRepeatCount(-1);
+<pre><code class="lang-java">        Point startP = <span class="hljs-keyword">new</span> Point(RADIUS, RADIUS);<span class="hljs-comment">//&#x521D;&#x59CB;&#x503C;&#xFF08;&#x8D77;&#x70B9;&#xFF09;</span>
+        Point endP = <span class="hljs-keyword">new</span> Point(getWidth() - RADIUS, getHeight() - RADIUS);<span class="hljs-comment">//&#x7ED3;&#x675F;&#x503C;&#xFF08;&#x7EC8;&#x70B9;&#xFF09;</span>
+        <span class="hljs-keyword">final</span> ValueAnimator valueAnimator = ValueAnimator.ofObject(<span class="hljs-keyword">new</span> PointSinEvaluator(), startP, endP);
+        valueAnimator.setRepeatCount(-<span class="hljs-number">1</span>);
         valueAnimator.setRepeatMode(ValueAnimator.REVERSE);
-        valueAnimator.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() {
-            @Override
-            public void onAnimationUpdate(ValueAnimator animation) {
+        valueAnimator.addUpdateListener(<span class="hljs-keyword">new</span> ValueAnimator.AnimatorUpdateListener() {
+            <span class="hljs-meta">@Override</span>
+            <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">onAnimationUpdate</span><span class="hljs-params">(ValueAnimator animation)</span> </span>{
                 currentPoint = (Point) animation.getAnimatedValue();
                 postInvalidate();
             }
@@ -3949,33 +3953,33 @@ img.startAnimation(animation);
 <p>&#x8FD9;&#x6837;&#x6211;&#x4EEC;&#x5C31;&#x5B8C;&#x6210;&#x4E86;&#x52A8;&#x753B;&#x8F68;&#x8FF9;&#x7684;&#x5B9A;&#x4E49;&#xFF0C;&#x73B0;&#x5728;&#x53EA;&#x8981;&#x8C03;&#x7528;valueAnimator.start() &#x65B9;&#x6CD5;&#xFF0C;&#x5C31;&#x4F1A;&#x7ED8;&#x5236;&#x51FA;&#x4E00;&#x4E2A;&#x6B63;&#x5F26;&#x66F2;&#x7EBF;&#x7684;&#x8F68;&#x8FF9;&#x3002;</p>
 <h5 id="&#x989C;&#x8272;&#x53CA;&#x534A;&#x5F84;&#x52A8;&#x753B;&#x5B9E;&#x73B0;"><a name="&#x989C;&#x8272;&#x53CA;&#x534A;&#x5F84;&#x52A8;&#x753B;&#x5B9E;&#x73B0;" class="anchor-navigation-ex-anchor" href="#&#x989C;&#x8272;&#x53CA;&#x534A;&#x5F84;&#x52A8;&#x753B;&#x5B9E;&#x73B0;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x989C;&#x8272;&#x53CA;&#x534A;&#x5F84;&#x52A8;&#x753B;&#x5B9E;&#x73B0;</h5>
 <p>&#x4E4B;&#x524D;&#x6211;&#x4EEC;&#x8BF4;&#x8FC7;&#xFF0C;&#x4F7F;&#x7528;ObjectAnimator  &#x53EF;&#x4EE5;&#x5BF9;&#x4EFB;&#x610F;&#x5BF9;&#x8C61;&#x7684;&#x4EFB;&#x610F;&#x5C5E;&#x6027;&#x8FDB;&#x884C;&#x52A8;&#x753B;&#x64CD;&#x4F5C;&#xFF0C;&#x8FD9;&#x53E5;&#x8BDD;&#x662F;&#x4E0D;&#x592A;&#x4E25;&#x8C28;&#x7684;&#xFF0C;&#x8FD9;&#x4E2A;&#x4EFB;&#x610F;&#x5C5E;&#x6027;&#x8FD8;&#x9700;&#x8981;&#x6709;get &#x548C; set  &#x65B9;&#x6CD5;&#x3002;</p>
-<pre><code class="lang-java">public class PointAnimView extends View {
+<pre><code class="lang-java"><span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">PointAnimView</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">View</span> </span>{
 
-    /**
+    <span class="hljs-comment">/**
      * &#x5B9E;&#x73B0;&#x5173;&#x4E8E;color &#x7684;&#x5C5E;&#x6027;&#x52A8;&#x753B;
-     */
-    private int color;
-    private float radius = RADIUS;
+     */</span>
+    <span class="hljs-keyword">private</span> <span class="hljs-keyword">int</span> color;
+    <span class="hljs-keyword">private</span> <span class="hljs-keyword">float</span> radius = RADIUS;
 
     .....
 
 }
 </code></pre>
 <p>&#x8FD9;&#x91CC;&#x5728;&#x6211;&#x4EEC;&#x7684;&#x81EA;&#x5B9A;&#x4E49;view&#x4E2D;&#xFF0C;&#x5B9A;&#x4E49;&#x4E86;&#x4E24;&#x4E2A;&#x5C5E;&#x6027;color &#x548C; radius&#xFF0C;&#x5E76;&#x5B9E;&#x73B0;&#x4E86;&#x4ED6;&#x4EEC;&#x5404;&#x81EA;&#x7684;get set &#x65B9;&#x6CD5;&#xFF0C;&#x8FD9;&#x6837;&#x6211;&#x4EEC;&#x5C31;&#x53EF;&#x4EE5;&#x4F7F;&#x7528;&#x5C5E;&#x6027;&#x52A8;&#x753B;&#x7684;&#x7279;&#x70B9;&#x5B9E;&#x73B0;&#x5C0F;&#x7403;&#x989C;&#x8272;&#x53D8;&#x5316;&#x7684;&#x52A8;&#x753B;&#x548C;&#x534A;&#x5F84;&#x53D8;&#x5316;&#x7684;&#x52A8;&#x753B;&#x3002;</p>
-<pre><code class="lang-java">        ObjectAnimator animColor = ObjectAnimator.ofObject(this, &quot;color&quot;, new ArgbEvaluator(), Color.GREEN,
+<pre><code class="lang-java">        ObjectAnimator animColor = ObjectAnimator.ofObject(<span class="hljs-keyword">this</span>, <span class="hljs-string">&quot;color&quot;</span>, <span class="hljs-keyword">new</span> ArgbEvaluator(), Color.GREEN,
                 Color.YELLOW, Color.BLUE, Color.WHITE, Color.RED);
-        animColor.setRepeatCount(-1);
+        animColor.setRepeatCount(-<span class="hljs-number">1</span>);
         animColor.setRepeatMode(ValueAnimator.REVERSE);
 
 
-        ValueAnimator animScale = ValueAnimator.ofFloat(20f, 80f, 60f, 10f, 35f,55f,10f);
-        animScale.setRepeatCount(-1);
+        ValueAnimator animScale = ValueAnimator.ofFloat(<span class="hljs-number">20f</span>, <span class="hljs-number">80f</span>, <span class="hljs-number">60f</span>, <span class="hljs-number">10f</span>, <span class="hljs-number">35f</span>,<span class="hljs-number">55f</span>,<span class="hljs-number">10f</span>);
+        animScale.setRepeatCount(-<span class="hljs-number">1</span>);
         animScale.setRepeatMode(ValueAnimator.REVERSE);
-        animScale.setDuration(5000);
-        animScale.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() {
-            @Override
-            public void onAnimationUpdate(ValueAnimator animation) {
-                radius = (float) animation.getAnimatedValue();
+        animScale.setDuration(<span class="hljs-number">5000</span>);
+        animScale.addUpdateListener(<span class="hljs-keyword">new</span> ValueAnimator.AnimatorUpdateListener() {
+            <span class="hljs-meta">@Override</span>
+            <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">onAnimationUpdate</span><span class="hljs-params">(ValueAnimator animation)</span> </span>{
+                radius = (<span class="hljs-keyword">float</span>) animation.getAnimatedValue();
             }
         });
 </code></pre>
@@ -3983,183 +3987,183 @@ img.startAnimation(animation);
 <p>&#x5BF9;radius &#x8FD9;&#x4E2A;&#x5C5E;&#x6027;&#x4F7F;&#x7528;&#x4E86;ValueAnimator&#xFF0C;&#x4F7F;&#x7528;&#x4E86;&#x5176;ofFloat&#x65B9;&#x6CD5;&#x5B9E;&#x73B0;&#x4E86;&#x4E00;&#x7CFB;&#x5217;float&#x503C;&#x7684;&#x53D8;&#x5316;&#xFF1B;&#x540C;&#x65F6;&#x4E3A;&#x5176;&#x6DFB;&#x52A0;&#x4E86;&#x52A8;&#x753B;&#x53D8;&#x5316;&#x7684;&#x76D1;&#x542C;&#x5668;&#xFF0C;&#x5728;&#x5C5E;&#x6027;&#x503C;&#x66F4;&#x65B0;&#x7684;&#x8FC7;&#x7A0B;&#x4E2D;&#xFF0C;&#x6211;&#x4EEC;&#x53EF;&#x4EE5;&#x5C06;&#x53D8;&#x5316;&#x7684;&#x7ED3;&#x679C;&#x8D4B;&#x7ED9;radius&#xFF0C;&#x8FD9;&#x6837;&#x5C31;&#x5B9E;&#x73B0;&#x4E86;&#x534A;&#x5F84;&#x52A8;&#x6001;&#x7684;&#x53D8;&#x5316;&#x3002;</p>
 <p><strong>&#x8FD9;&#x91CC;radius &#x4E5F;&#x53EF;&#x4EE5;&#x4F7F;&#x7528;&#x548C;color&#x76F8;&#x540C;&#x7684;&#x65B9;&#x5F0F;&#xFF0C;&#x53EA;&#x9700;&#x8981;&#x628A;ArgbEvaluator &#x66FF;&#x6362;&#x4E3A;FloatEvaluator&#xFF0C;&#x540C;&#x65F6;&#x4FEE;&#x6539;&#x52A8;&#x753B;&#x7684;&#x53D8;&#x5316;&#x503C;&#x5373;&#x53EF;&#xFF1B;&#x4F7F;&#x7528;&#x6DFB;&#x52A0;&#x76D1;&#x542C;&#x5668;&#x7684;&#x65B9;&#x5F0F;&#xFF0C;&#x53EA;&#x662F;&#x4E3A;&#x4E86;&#x4ECB;&#x7ECD;&#x76D1;&#x542C;&#x5668;&#x7684;&#x4F7F;&#x7528;&#x65B9;&#x6CD5;&#x800C;&#x5DF2;</strong></p>
 <p>&#x597D;&#x4E86;&#xFF0C;&#x5230;&#x8FD9;&#x91CC;&#x6211;&#x4EEC;&#x5DF2;&#x7ECF;&#x5B9A;&#x4E49;&#x51FA;&#x4E86;&#x6240;&#x6709;&#x9700;&#x8981;&#x7684;&#x52A8;&#x753B;&#xFF0C;&#x524D;&#x9762;&#x8BF4;&#x8FC7;&#xFF0C;&#x5C5E;&#x6027;&#x52A8;&#x753B;&#x4E5F;&#x662F;&#x53EF;&#x4EE5;&#x7EC4;&#x5408;&#x4F7F;&#x7528;&#x7684;&#x3002;&#x56E0;&#x6B64;&#xFF0C;&#x5728;&#x52A8;&#x753B;&#x542F;&#x52A8;&#x7684;&#x65F6;&#x5019;&#xFF0C;&#x540C;&#x65F6;&#x64AD;&#x653E;&#x8FD9;&#x4E09;&#x4E2A;&#x52A8;&#x753B;&#xFF0C;&#x5C31;&#x53EF;&#x4EE5;&#x5B9E;&#x73B0;&#x56FE;&#x4E2D;&#x7684;&#x6548;&#x679C;&#x4E86;&#x3002;</p>
-<pre><code class="lang-java">        animSet = new AnimatorSet();
+<pre><code class="lang-java">        animSet = <span class="hljs-keyword">new</span> AnimatorSet();
         animSet.play(valueAnimator).with(animColor).with(animScale);
-        animSet.setDuration(5000);
+        animSet.setDuration(<span class="hljs-number">5000</span>);
         animSet.setInterpolator(interpolatorType);
         animSet.start();
 </code></pre>
 <p>PointAnimView  &#x6E90;&#x7801;</p>
-<pre><code class="lang-java">public class PointAnimView extends View {
+<pre><code class="lang-java"><span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">PointAnimView</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">View</span> </span>{
 
-    public static final float RADIUS = 20f;
+    <span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">final</span> <span class="hljs-keyword">float</span> RADIUS = <span class="hljs-number">20f</span>;
 
-    private Point currentPoint;
+    <span class="hljs-keyword">private</span> Point currentPoint;
 
-    private Paint mPaint;
-    private Paint linePaint;
+    <span class="hljs-keyword">private</span> Paint mPaint;
+    <span class="hljs-keyword">private</span> Paint linePaint;
 
-    private AnimatorSet animSet;
-    private TimeInterpolator interpolatorType = new LinearInterpolator();
+    <span class="hljs-keyword">private</span> AnimatorSet animSet;
+    <span class="hljs-keyword">private</span> TimeInterpolator interpolatorType = <span class="hljs-keyword">new</span> LinearInterpolator();
 
-    /**
+    <span class="hljs-comment">/**
      * &#x5B9E;&#x73B0;&#x5173;&#x4E8E;color &#x7684;&#x5C5E;&#x6027;&#x52A8;&#x753B;
-     */
-    private int color;
-    private float radius = RADIUS;
+     */</span>
+    <span class="hljs-keyword">private</span> <span class="hljs-keyword">int</span> color;
+    <span class="hljs-keyword">private</span> <span class="hljs-keyword">float</span> radius = RADIUS;
 
-    public PointAnimView(Context context) {
-        super(context);
+    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-title">PointAnimView</span><span class="hljs-params">(Context context)</span> </span>{
+        <span class="hljs-keyword">super</span>(context);
         init();
     }
 
 
-    public PointAnimView(Context context, AttributeSet attrs) {
-        super(context, attrs);
+    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-title">PointAnimView</span><span class="hljs-params">(Context context, AttributeSet attrs)</span> </span>{
+        <span class="hljs-keyword">super</span>(context, attrs);
         init();
     }
 
-    public PointAnimView(Context context, AttributeSet attrs, int defStyleAttr) {
-        super(context, attrs, defStyleAttr);
+    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-title">PointAnimView</span><span class="hljs-params">(Context context, AttributeSet attrs, <span class="hljs-keyword">int</span> defStyleAttr)</span> </span>{
+        <span class="hljs-keyword">super</span>(context, attrs, defStyleAttr);
         init();
     }
 
 
-    public int getColor() {
-        return color;
+    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">int</span> <span class="hljs-title">getColor</span><span class="hljs-params">()</span> </span>{
+        <span class="hljs-keyword">return</span> color;
     }
 
-    public void setColor(int color) {
-        this.color = color;
-        mPaint.setColor(this.color);
+    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">setColor</span><span class="hljs-params">(<span class="hljs-keyword">int</span> color)</span> </span>{
+        <span class="hljs-keyword">this</span>.color = color;
+        mPaint.setColor(<span class="hljs-keyword">this</span>.color);
     }
 
-    public float getRadius() {
-        return radius;
+    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">float</span> <span class="hljs-title">getRadius</span><span class="hljs-params">()</span> </span>{
+        <span class="hljs-keyword">return</span> radius;
     }
 
-    public void setRadius(float radius) {
-        this.radius = radius;
+    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">setRadius</span><span class="hljs-params">(<span class="hljs-keyword">float</span> radius)</span> </span>{
+        <span class="hljs-keyword">this</span>.radius = radius;
     }
 
-    private void init() {
-        mPaint = new Paint(Paint.ANTI_ALIAS_FLAG);
+    <span class="hljs-function"><span class="hljs-keyword">private</span> <span class="hljs-keyword">void</span> <span class="hljs-title">init</span><span class="hljs-params">()</span> </span>{
+        mPaint = <span class="hljs-keyword">new</span> Paint(Paint.ANTI_ALIAS_FLAG);
         mPaint.setColor(Color.TRANSPARENT);
 
-        linePaint = new Paint(Paint.ANTI_ALIAS_FLAG);
+        linePaint = <span class="hljs-keyword">new</span> Paint(Paint.ANTI_ALIAS_FLAG);
         linePaint.setColor(Color.BLACK);
-        linePaint.setStrokeWidth(5);
+        linePaint.setStrokeWidth(<span class="hljs-number">5</span>);
     }
 
-    @Override
-    protected void onDraw(Canvas canvas) {
-        if (currentPoint == null) {
-            currentPoint = new Point(RADIUS, RADIUS);
+    <span class="hljs-meta">@Override</span>
+    <span class="hljs-function"><span class="hljs-keyword">protected</span> <span class="hljs-keyword">void</span> <span class="hljs-title">onDraw</span><span class="hljs-params">(Canvas canvas)</span> </span>{
+        <span class="hljs-keyword">if</span> (currentPoint == <span class="hljs-keyword">null</span>) {
+            currentPoint = <span class="hljs-keyword">new</span> Point(RADIUS, RADIUS);
             drawCircle(canvas);
-//            StartAnimation();
-        } else {
+<span class="hljs-comment">//            StartAnimation();</span>
+        } <span class="hljs-keyword">else</span> {
             drawCircle(canvas);
         }
 
         drawLine(canvas);
     }
 
-    private void drawLine(Canvas canvas) {
-        canvas.drawLine(10, getHeight() / 2, getWidth(), getHeight() / 2, linePaint);
-        canvas.drawLine(10, getHeight() / 2 - 150, 10, getHeight() / 2 + 150, linePaint);
+    <span class="hljs-function"><span class="hljs-keyword">private</span> <span class="hljs-keyword">void</span> <span class="hljs-title">drawLine</span><span class="hljs-params">(Canvas canvas)</span> </span>{
+        canvas.drawLine(<span class="hljs-number">10</span>, getHeight() / <span class="hljs-number">2</span>, getWidth(), getHeight() / <span class="hljs-number">2</span>, linePaint);
+        canvas.drawLine(<span class="hljs-number">10</span>, getHeight() / <span class="hljs-number">2</span> - <span class="hljs-number">150</span>, <span class="hljs-number">10</span>, getHeight() / <span class="hljs-number">2</span> + <span class="hljs-number">150</span>, linePaint);
         canvas.drawPoint(currentPoint.getX(), currentPoint.getY(), linePaint);
 
     }
 
-    public void StartAnimation() {
-        Point startP = new Point(RADIUS, RADIUS);
-        Point endP = new Point(getWidth() - RADIUS, getHeight() - RADIUS);
-        final ValueAnimator valueAnimator = ValueAnimator.ofObject(new PointSinEvaluator(), startP, endP);
-        valueAnimator.setRepeatCount(-1);
+    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">StartAnimation</span><span class="hljs-params">()</span> </span>{
+        Point startP = <span class="hljs-keyword">new</span> Point(RADIUS, RADIUS);
+        Point endP = <span class="hljs-keyword">new</span> Point(getWidth() - RADIUS, getHeight() - RADIUS);
+        <span class="hljs-keyword">final</span> ValueAnimator valueAnimator = ValueAnimator.ofObject(<span class="hljs-keyword">new</span> PointSinEvaluator(), startP, endP);
+        valueAnimator.setRepeatCount(-<span class="hljs-number">1</span>);
         valueAnimator.setRepeatMode(ValueAnimator.REVERSE);
-        valueAnimator.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() {
-            @Override
-            public void onAnimationUpdate(ValueAnimator animation) {
+        valueAnimator.addUpdateListener(<span class="hljs-keyword">new</span> ValueAnimator.AnimatorUpdateListener() {
+            <span class="hljs-meta">@Override</span>
+            <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">onAnimationUpdate</span><span class="hljs-params">(ValueAnimator animation)</span> </span>{
                 currentPoint = (Point) animation.getAnimatedValue();
                 postInvalidate();
             }
         });
 
-//
-        ObjectAnimator animColor = ObjectAnimator.ofObject(this, &quot;color&quot;, new ArgbEvaluator(), Color.GREEN,
+<span class="hljs-comment">//</span>
+        ObjectAnimator animColor = ObjectAnimator.ofObject(<span class="hljs-keyword">this</span>, <span class="hljs-string">&quot;color&quot;</span>, <span class="hljs-keyword">new</span> ArgbEvaluator(), Color.GREEN,
                 Color.YELLOW, Color.BLUE, Color.WHITE, Color.RED);
-        animColor.setRepeatCount(-1);
+        animColor.setRepeatCount(-<span class="hljs-number">1</span>);
         animColor.setRepeatMode(ValueAnimator.REVERSE);
 
 
-        ValueAnimator animScale = ValueAnimator.ofFloat(20f, 80f, 60f, 10f, 35f,55f,10f);
-        animScale.setRepeatCount(-1);
+        ValueAnimator animScale = ValueAnimator.ofFloat(<span class="hljs-number">20f</span>, <span class="hljs-number">80f</span>, <span class="hljs-number">60f</span>, <span class="hljs-number">10f</span>, <span class="hljs-number">35f</span>,<span class="hljs-number">55f</span>,<span class="hljs-number">10f</span>);
+        animScale.setRepeatCount(-<span class="hljs-number">1</span>);
         animScale.setRepeatMode(ValueAnimator.REVERSE);
-        animScale.setDuration(5000);
-        animScale.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() {
-            @Override
-            public void onAnimationUpdate(ValueAnimator animation) {
-                radius = (float) animation.getAnimatedValue();
+        animScale.setDuration(<span class="hljs-number">5000</span>);
+        animScale.addUpdateListener(<span class="hljs-keyword">new</span> ValueAnimator.AnimatorUpdateListener() {
+            <span class="hljs-meta">@Override</span>
+            <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">onAnimationUpdate</span><span class="hljs-params">(ValueAnimator animation)</span> </span>{
+                radius = (<span class="hljs-keyword">float</span>) animation.getAnimatedValue();
             }
         });
 
 
-        animSet = new AnimatorSet();
+        animSet = <span class="hljs-keyword">new</span> AnimatorSet();
         animSet.play(valueAnimator).with(animColor).with(animScale);
-        animSet.setDuration(5000);
+        animSet.setDuration(<span class="hljs-number">5000</span>);
         animSet.setInterpolator(interpolatorType);
         animSet.start();
 
     }
 
-    private void drawCircle(Canvas canvas) {
-        float x = currentPoint.getX();
-        float y = currentPoint.getY();
+    <span class="hljs-function"><span class="hljs-keyword">private</span> <span class="hljs-keyword">void</span> <span class="hljs-title">drawCircle</span><span class="hljs-params">(Canvas canvas)</span> </span>{
+        <span class="hljs-keyword">float</span> x = currentPoint.getX();
+        <span class="hljs-keyword">float</span> y = currentPoint.getY();
         canvas.drawCircle(x, y, radius, mPaint);
     }
 
 
-    public void setInterpolatorType(int type ) {
-        switch (type) {
-            case 1:
-                interpolatorType = new BounceInterpolator();
-                break;
-            case 2:
-                interpolatorType = new AccelerateDecelerateInterpolator();
-                break;
-            case 3:
-                interpolatorType = new DecelerateInterpolator();
-                break;
-            case 4:
-                interpolatorType = new AnticipateInterpolator();
-                break;
-            case 5:
-                interpolatorType = new LinearInterpolator();
-                break;
-            case 6:
-                interpolatorType=new LinearOutSlowInInterpolator();
-                break;
-            case 7:
-                interpolatorType = new OvershootInterpolator();
-            default:
-                interpolatorType = new LinearInterpolator();
-                break;
+    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">setInterpolatorType</span><span class="hljs-params">(<span class="hljs-keyword">int</span> type )</span> </span>{
+        <span class="hljs-keyword">switch</span> (type) {
+            <span class="hljs-keyword">case</span> <span class="hljs-number">1</span>:
+                interpolatorType = <span class="hljs-keyword">new</span> BounceInterpolator();
+                <span class="hljs-keyword">break</span>;
+            <span class="hljs-keyword">case</span> <span class="hljs-number">2</span>:
+                interpolatorType = <span class="hljs-keyword">new</span> AccelerateDecelerateInterpolator();
+                <span class="hljs-keyword">break</span>;
+            <span class="hljs-keyword">case</span> <span class="hljs-number">3</span>:
+                interpolatorType = <span class="hljs-keyword">new</span> DecelerateInterpolator();
+                <span class="hljs-keyword">break</span>;
+            <span class="hljs-keyword">case</span> <span class="hljs-number">4</span>:
+                interpolatorType = <span class="hljs-keyword">new</span> AnticipateInterpolator();
+                <span class="hljs-keyword">break</span>;
+            <span class="hljs-keyword">case</span> <span class="hljs-number">5</span>:
+                interpolatorType = <span class="hljs-keyword">new</span> LinearInterpolator();
+                <span class="hljs-keyword">break</span>;
+            <span class="hljs-keyword">case</span> <span class="hljs-number">6</span>:
+                interpolatorType=<span class="hljs-keyword">new</span> LinearOutSlowInInterpolator();
+                <span class="hljs-keyword">break</span>;
+            <span class="hljs-keyword">case</span> <span class="hljs-number">7</span>:
+                interpolatorType = <span class="hljs-keyword">new</span> OvershootInterpolator();
+            <span class="hljs-keyword">default</span>:
+                interpolatorType = <span class="hljs-keyword">new</span> LinearInterpolator();
+                <span class="hljs-keyword">break</span>;
         }
     }
 
 
-    @TargetApi(Build.VERSION_CODES.KITKAT)
-    public void pauseAnimation() {
-        if (animSet != null) {
+    <span class="hljs-meta">@TargetApi</span>(Build.VERSION_CODES.KITKAT)
+    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">pauseAnimation</span><span class="hljs-params">()</span> </span>{
+        <span class="hljs-keyword">if</span> (animSet != <span class="hljs-keyword">null</span>) {
             animSet.pause();
         }
     }
 
 
-    public void stopAnimation() {
-        if (animSet != null) {
+    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">stopAnimation</span><span class="hljs-params">()</span> </span>{
+        <span class="hljs-keyword">if</span> (animSet != <span class="hljs-keyword">null</span>) {
             animSet.cancel();
-            this.clearAnimation();
+            <span class="hljs-keyword">this</span>.clearAnimation();
         }
     }
 }
@@ -4171,24 +4175,24 @@ img.startAnimation(animation);
 <p>&#x8FD9;&#x91CC;&#x6211;&#x4EEC;&#x4F7F;&#x7528;&#x7684;Interpolator&#x5C31;&#x51B3;&#x5B9A;&#x4E86; &#x524D;&#x9762;&#x6211;&#x4EEC;&#x63D0;&#x5230;&#x7684;fraction&#x3002;&#x53D8;&#x5316;&#x7684;&#x8282;&#x594F;&#x51B3;&#x5B9A;&#x4E86;&#x52A8;&#x753B;&#x6240;&#x6267;&#x884C;&#x7684;&#x767E;&#x5206;&#x6BD4;&#x3002;&#x4E0D;&#x5F97;&#x4E0D;&#x8BF4;&#xFF0C;&#x8FD9;&#x4E48;ValueAnimator&#x7684;&#x8BBE;&#x8BA1;&#x7684;&#x786E;&#x662F;&#x5F88;&#x5DE7;&#x5999;&#x3002;</p>
 <h4 id="xml-&#x5C5E;&#x6027;&#x52A8;&#x753B;"><a name="xml-&#x5C5E;&#x6027;&#x52A8;&#x753B;" class="anchor-navigation-ex-anchor" href="#xml-&#x5C5E;&#x6027;&#x52A8;&#x753B;"><i class="fa fa-link" aria-hidden="true"></i></a>XML &#x5C5E;&#x6027;&#x52A8;&#x753B;</h4>
 <p>&#x8FD9;&#x91CC;&#x63D0;&#x4E00;&#x4E0B;&#xFF0C;&#x5C5E;&#x6027;&#x52A8;&#x753B;&#x5F53;&#x7136;&#x4E5F;&#x53EF;&#x4EE5;&#x4F7F;&#x7528;xml&#x6587;&#x4EF6;&#x7684;&#x65B9;&#x5F0F;&#x5B9E;&#x73B0;&#xFF0C;&#x4F46;&#x662F;&#x5C5E;&#x6027;&#x52A8;&#x753B;&#x7684;&#x5C5E;&#x6027;&#x503C;&#x4E00;&#x822C;&#x4F1A;&#x7275;&#x626F;&#x5230;&#x5BF9;&#x8C61;&#x5177;&#x4F53;&#x7684;&#x5C5E;&#x6027;&#xFF0C;&#x66F4;&#x591A;&#x662F;&#x901A;&#x8FC7;&#x4EE3;&#x7801;&#x52A8;&#x6001;&#x83B7;&#x53D6;&#xFF0C;&#x6240;&#x4EE5;xml&#x6587;&#x4EF6;&#x7684;&#x5B9E;&#x73B0;&#x4F1A;&#x6709;&#x4E9B;&#x4E0D;&#x65B9;&#x4FBF;&#x3002;</p>
-<pre><code class="lang-xml">&lt;set android:ordering=&quot;sequentially&quot;&gt;
-    &lt;set&gt;
-        &lt;objectAnimator
-            android:propertyName=&quot;x&quot;
-            android:duration=&quot;500&quot;
-            android:valueTo=&quot;400&quot;
-            android:valueType=&quot;intType&quot;/&gt;
-        &lt;objectAnimator
-            android:propertyName=&quot;y&quot;
-            android:duration=&quot;500&quot;
-            android:valueTo=&quot;300&quot;
-            android:valueType=&quot;intType&quot;/&gt;
-    &lt;/set&gt;
-    &lt;objectAnimator
-        android:propertyName=&quot;alpha&quot;
-        android:duration=&quot;500&quot;
-        android:valueTo=&quot;1f&quot;/&gt;
-&lt;/set&gt;
+<pre><code class="lang-xml"><span class="hljs-tag">&lt;<span class="hljs-name">set</span> <span class="hljs-attr">android:ordering</span>=<span class="hljs-string">&quot;sequentially&quot;</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">set</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">objectAnimator</span>
+            <span class="hljs-attr">android:propertyName</span>=<span class="hljs-string">&quot;x&quot;</span>
+            <span class="hljs-attr">android:duration</span>=<span class="hljs-string">&quot;500&quot;</span>
+            <span class="hljs-attr">android:valueTo</span>=<span class="hljs-string">&quot;400&quot;</span>
+            <span class="hljs-attr">android:valueType</span>=<span class="hljs-string">&quot;intType&quot;</span>/&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">objectAnimator</span>
+            <span class="hljs-attr">android:propertyName</span>=<span class="hljs-string">&quot;y&quot;</span>
+            <span class="hljs-attr">android:duration</span>=<span class="hljs-string">&quot;500&quot;</span>
+            <span class="hljs-attr">android:valueTo</span>=<span class="hljs-string">&quot;300&quot;</span>
+            <span class="hljs-attr">android:valueType</span>=<span class="hljs-string">&quot;intType&quot;</span>/&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-name">set</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">objectAnimator</span>
+        <span class="hljs-attr">android:propertyName</span>=<span class="hljs-string">&quot;alpha&quot;</span>
+        <span class="hljs-attr">android:duration</span>=<span class="hljs-string">&quot;500&quot;</span>
+        <span class="hljs-attr">android:valueTo</span>=<span class="hljs-string">&quot;1f&quot;</span>/&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">set</span>&gt;</span>
 </code></pre>
 <p>&#x4F7F;&#x7528;&#x65B9;&#x5F0F;&#xFF1A;</p>
 <pre><code class="lang-java">AnimatorSet set = (AnimatorSet) AnimatorInflater.loadAnimator(myContext,
@@ -4197,9 +4201,9 @@ set.setTarget(myObject);
 set.start();
 </code></pre>
 <p>xml &#x6587;&#x4EF6;&#x4E2D;&#x7684;&#x6807;&#x7B7E;&#x4E5F;&#x548C;&#x5C5E;&#x6027;&#x52A8;&#x753B;&#x7684;&#x7C7B;&#x76F8;&#x5BF9;&#x5E94;&#x3002;</p>
-<pre><code class="lang-xml"> ValueAnimator --- &lt;animator&gt; 
- ObjectAnimator --- &lt;objectAnimator&gt; 
- AnimatorSet --- &lt;set&gt;
+<pre><code class="lang-xml"> ValueAnimator --- <span class="hljs-tag">&lt;<span class="hljs-name">animator</span>&gt;</span> 
+ ObjectAnimator --- <span class="hljs-tag">&lt;<span class="hljs-name">objectAnimator</span>&gt;</span> 
+ AnimatorSet --- <span class="hljs-tag">&lt;<span class="hljs-name">set</span>&gt;</span>
 </code></pre>
 <p>&#x8FD9;&#x4E9B;&#x5C31;&#x662F;&#x5C5E;&#x6027;&#x52A8;&#x753B;&#x7684;&#x6838;&#x5FC3;&#x5185;&#x5BB9;&#x3002;&#x73B0;&#x5728;&#x4F7F;&#x7528;&#x5C5E;&#x6027;&#x52A8;&#x753B;&#x7684;&#x7279;&#x6027;&#x81EA;&#x5B9A;&#x4E49;&#x52A8;&#x753B;&#x5E94;&#x8BE5;&#x4E0D;&#x662F;&#x96BE;&#x4E8B;&#x4E86;&#x3002;&#x5176;&#x4F59;&#x4FBF;&#x7B7E;&#x7684;&#x542B;&#x4E49;&#xFF0C;&#x7ED3;&#x5408;&#x4E4B;&#x524D;&#x7684;&#x5185;&#x5BB9;&#x5E94;&#x8BE5;&#x4E0D;&#x96BE;&#x7406;&#x89E3;&#x4E86;&#x3002;</p>
 <h2 id="&#x56DB;&#x3001;&#x4F20;&#x7EDF;&#x52A8;&#x753B;-vs-&#x5C5E;&#x6027;&#x52A8;&#x753B;"><a name="&#x56DB;&#x3001;&#x4F20;&#x7EDF;&#x52A8;&#x753B;-vs-&#x5C5E;&#x6027;&#x52A8;&#x753B;" class="anchor-navigation-ex-anchor" href="#&#x56DB;&#x3001;&#x4F20;&#x7EDF;&#x52A8;&#x753B;-vs-&#x5C5E;&#x6027;&#x52A8;&#x753B;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x56DB;&#x3001;&#x4F20;&#x7EDF;&#x52A8;&#x753B; VS &#x5C5E;&#x6027;&#x52A8;&#x753B;</h2>
@@ -4257,7 +4261,7 @@ set.start();
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"Android动画总结","level":"3.1.17","depth":2,"next":{"title":"Android进程优先级","level":"3.1.18","depth":2,"path":"android/basis/process-priority.md","ref":"android/basis/process-priority.md","articles":[]},"previous":{"title":"Android Bitmap压缩策略","level":"3.1.16","depth":2,"path":"android/basis/bitmap.md","ref":"android/basis/bitmap.md","articles":[]},"dir":"ltr"},"config":{"plugins":["-lunr","-search","-highlight","-livereload","search-plus@^0.0.11","simple-page-toc@^0.1.1","github@^2.0.0","github-buttons@2.1.0","edit-link@^2.0.2","advanced-emoji@^0.2.1","anchors@^0.7.1","include-codeblock@^3.0.2","ace@^0.3.2","emphasize@^1.1.0","katex@^1.1.3","splitter@^0.0.8","tbfed-pagefooter@^0.0.1","expandable-chapters-small@^0.1.7","sectionx@^3.1.0","local-video@^1.0.1","anchor-navigation-ex@0.1.8","favicon@^0.0.2"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"tbfed-pagefooter":{"copyright":"Copyright © ruheng.com 2017","modify_label":"该文件修订时间：","modify_format":"YYYY-MM-DD HH:mm:ss"},"emphasize":{},"ace":{},"github":{"url":"https://github.com/LRH1993/android_interview"},"simple-page-toc":{"maxDepth":3,"skipFirstH1":true},"splitter":{},"katex":{},"fontsettings":{"theme":"white","family":"sans","size":2},"sectionx":{"tag":"b"},"anchor-navigation-ex":{"isRewritePageTitle":false,"tocLevel1Icon":"fa fa-hand-o-right","tocLevel2Icon":"fa fa-hand-o-right","tocLevel3Icon":"fa fa-hand-o-right"},"favicon":{"shortcut":"favicon.ico","bookmark":"favicon.ico"},"github-buttons":{"repo":"LRH1993/android_interview","types":["star"],"size":"small"},"expandable-chapters-small":{},"local-video":{},"advanced-emoji":{"embedEmojis":false},"include-codeblock":{"check":false,"edit":true,"fixlang":false,"lang":"","template":"ace","theme":"chrome","unindent":true},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":true,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"edit-link":{"label":"Edit This Page","base":"https://github.com/LRH1993/android_interview/edit/master"},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":true},"anchors":{},"search-plus":{}},"theme":"default","author":"ruheng","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"Android校招面试指南","language":"zh-hans","output.name":"site","links":{"sidebar":{"Home":"http://lruheng.com/"}},"gitbook":"3.2.3","description":"Android面试必备，记录自己的秋招之路"},"file":{"path":"android/basis/animator.md","mtime":"2017-09-07T02:20:02.000Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2017-10-16T12:05:21.906Z"},"basePath":"../..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"Android动画总结","level":"3.1.17","depth":2,"next":{"title":"Android进程优先级","level":"3.1.18","depth":2,"path":"android/basis/process-priority.md","ref":"android/basis/process-priority.md","articles":[]},"previous":{"title":"Android Bitmap压缩策略","level":"3.1.16","depth":2,"path":"android/basis/bitmap.md","ref":"android/basis/bitmap.md","articles":[]},"dir":"ltr"},"config":{"plugins":["-lunr","-search","-livereload","search-plus@^0.0.11","simple-page-toc@^0.1.1","github@^2.0.0","github-buttons@2.1.0","edit-link@^2.0.2","advanced-emoji@^0.2.1","anchors@^0.7.1","include-codeblock@^3.0.2","ace@^0.3.2","emphasize@^1.1.0","katex@^1.1.3","splitter@^0.0.8","tbfed-pagefooter@^0.0.1","expandable-chapters-small@^0.1.7","sectionx@^3.1.0","local-video@^1.0.1","anchor-navigation-ex@0.1.8","favicon@^0.0.2"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"tbfed-pagefooter":{"copyright":"Copyright © ruheng.com 2017","modify_label":"该文件修订时间：","modify_format":"YYYY-MM-DD HH:mm:ss"},"emphasize":{},"ace":{},"github":{"url":"https://github.com/LRH1993/android_interview"},"simple-page-toc":{"maxDepth":3,"skipFirstH1":true},"splitter":{},"katex":{},"fontsettings":{"theme":"white","family":"sans","size":2},"sectionx":{"tag":"b"},"highlight":{},"anchor-navigation-ex":{"isRewritePageTitle":false,"tocLevel1Icon":"fa fa-hand-o-right","tocLevel2Icon":"fa fa-hand-o-right","tocLevel3Icon":"fa fa-hand-o-right"},"favicon":{"shortcut":"favicon.ico","bookmark":"favicon.ico"},"github-buttons":{"repo":"LRH1993/android_interview","types":["star"],"size":"small"},"expandable-chapters-small":{},"local-video":{},"advanced-emoji":{"embedEmojis":false},"include-codeblock":{"check":false,"edit":false,"fixlang":false,"lang":"","template":"default","theme":"chrome","unindent":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":true,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"edit-link":{"label":"Edit This Page","base":"https://github.com/LRH1993/android_interview/edit/master"},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":true},"anchors":{},"search-plus":{}},"theme":"default","author":"ruheng","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"Android校招面试指南","language":"zh-hans","output.name":"site","links":{"sidebar":{"Home":"http://lruheng.com/"}},"gitbook":"3.2.3","description":"Android面试必备，记录自己的秋招之路"},"file":{"path":"android/basis/animator.md","mtime":"2017-09-07T02:20:02.000Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2017-10-16T13:00:43.989Z"},"basePath":"../..","book":{"language":""}});
         });
     </script>
 </div>

@@ -69,6 +69,10 @@
                 
             
                 
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
                 <link rel="stylesheet" href="../../gitbook/gitbook-plugin-fontsettings/website.css">
                 
             
@@ -3736,20 +3740,20 @@
 <h2 id="&#x4E09;&#x3001;&#x62D3;&#x6251;&#x6392;&#x5E8F;&#x7684;&#x4EE3;&#x7801;&#x8BF4;&#x660E;"><a name="&#x4E09;&#x3001;&#x62D3;&#x6251;&#x6392;&#x5E8F;&#x7684;&#x4EE3;&#x7801;&#x8BF4;&#x660E;" class="anchor-navigation-ex-anchor" href="#&#x4E09;&#x3001;&#x62D3;&#x6251;&#x6392;&#x5E8F;&#x7684;&#x4EE3;&#x7801;&#x8BF4;&#x660E;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x4E09;&#x3001;&#x62D3;&#x6251;&#x6392;&#x5E8F;&#x7684;&#x4EE3;&#x7801;&#x8BF4;&#x660E;</h2>
 <p>&#x62D3;&#x6251;&#x6392;&#x5E8F;&#x662F;&#x5BF9;&#x6709;&#x5411;&#x65E0;&#x5411;&#x56FE;&#x7684;&#x6392;&#x5E8F;&#x3002;&#x4E0B;&#x9762;&#x4EE5;&#x90BB;&#x63A5;&#x8868;&#x5B9E;&#x73B0;&#x7684;&#x6709;&#x5411;&#x56FE;&#x6765;&#x5BF9;&#x62D3;&#x6251;&#x6392;&#x5E8F;&#x8FDB;&#x884C;&#x8BF4;&#x660E;&#x3002;</p>
 <p><strong>1. &#x57FA;&#x672C;&#x5B9A;&#x4E49;</strong></p>
-<pre><code class="lang-java">public class ListDG {
-    // &#x90BB;&#x63A5;&#x8868;&#x4E2D;&#x8868;&#x5BF9;&#x5E94;&#x7684;&#x94FE;&#x8868;&#x7684;&#x9876;&#x70B9;
-    private class ENode {
-        int ivex;       // &#x8BE5;&#x8FB9;&#x6240;&#x6307;&#x5411;&#x7684;&#x9876;&#x70B9;&#x7684;&#x4F4D;&#x7F6E;
-        ENode nextEdge; // &#x6307;&#x5411;&#x4E0B;&#x4E00;&#x6761;&#x5F27;&#x7684;&#x6307;&#x9488;
+<pre><code class="lang-java"><span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">ListDG</span> </span>{
+    <span class="hljs-comment">// &#x90BB;&#x63A5;&#x8868;&#x4E2D;&#x8868;&#x5BF9;&#x5E94;&#x7684;&#x94FE;&#x8868;&#x7684;&#x9876;&#x70B9;</span>
+    <span class="hljs-keyword">private</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">ENode</span> </span>{
+        <span class="hljs-keyword">int</span> ivex;       <span class="hljs-comment">// &#x8BE5;&#x8FB9;&#x6240;&#x6307;&#x5411;&#x7684;&#x9876;&#x70B9;&#x7684;&#x4F4D;&#x7F6E;</span>
+        ENode nextEdge; <span class="hljs-comment">// &#x6307;&#x5411;&#x4E0B;&#x4E00;&#x6761;&#x5F27;&#x7684;&#x6307;&#x9488;</span>
     }
 
-    // &#x90BB;&#x63A5;&#x8868;&#x4E2D;&#x8868;&#x7684;&#x9876;&#x70B9;
-    private class VNode {
-        char data;          // &#x9876;&#x70B9;&#x4FE1;&#x606F;
-        ENode firstEdge;    // &#x6307;&#x5411;&#x7B2C;&#x4E00;&#x6761;&#x4F9D;&#x9644;&#x8BE5;&#x9876;&#x70B9;&#x7684;&#x5F27;
+    <span class="hljs-comment">// &#x90BB;&#x63A5;&#x8868;&#x4E2D;&#x8868;&#x7684;&#x9876;&#x70B9;</span>
+    <span class="hljs-keyword">private</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">VNode</span> </span>{
+        <span class="hljs-keyword">char</span> data;          <span class="hljs-comment">// &#x9876;&#x70B9;&#x4FE1;&#x606F;</span>
+        ENode firstEdge;    <span class="hljs-comment">// &#x6307;&#x5411;&#x7B2C;&#x4E00;&#x6761;&#x4F9D;&#x9644;&#x8BE5;&#x9876;&#x70B9;&#x7684;&#x5F27;</span>
     };
 
-    private VNode[] mVexs;  // &#x9876;&#x70B9;&#x6570;&#x7EC4;
+    <span class="hljs-keyword">private</span> VNode[] mVexs;  <span class="hljs-comment">// &#x9876;&#x70B9;&#x6570;&#x7EC4;</span>
 
     ...
 }
@@ -3758,70 +3762,70 @@
 <p><strong>(02)</strong> VNode&#x662F;&#x90BB;&#x63A5;&#x8868;&#x9876;&#x70B9;&#x5BF9;&#x5E94;&#x7684;&#x7ED3;&#x6784;&#x4F53;&#x3002; data&#x662F;&#x9876;&#x70B9;&#x6240;&#x5305;&#x542B;&#x7684;&#x6570;&#x636E;&#xFF0C;&#x800C;firstEdge&#x662F;&#x8BE5;&#x9876;&#x70B9;&#x6240;&#x5305;&#x542B;&#x94FE;&#x8868;&#x7684;&#x8868;&#x5934;&#x6307;&#x9488;&#x3002; </p>
 <p><strong>(03)</strong> ENode&#x662F;&#x90BB;&#x63A5;&#x8868;&#x9876;&#x70B9;&#x6240;&#x5305;&#x542B;&#x7684;&#x94FE;&#x8868;&#x7684;&#x8282;&#x70B9;&#x5BF9;&#x5E94;&#x7684;&#x7ED3;&#x6784;&#x4F53;&#x3002; ivex&#x662F;&#x8BE5;&#x8282;&#x70B9;&#x6240;&#x5BF9;&#x5E94;&#x7684;&#x9876;&#x70B9;&#x5728;vexs&#x4E2D;&#x7684;&#x7D22;&#x5F15;&#xFF0C;&#x800C;nextEdge&#x662F;&#x6307;&#x5411;&#x4E0B;&#x4E00;&#x4E2A;&#x8282;&#x70B9;&#x7684;&#x3002;</p>
 <p><strong>2. &#x62D3;&#x6251;&#x6392;&#x5E8F;</strong></p>
-<pre><code class="lang-java">/*
+<pre><code class="lang-java"><span class="hljs-comment">/*
  * &#x62D3;&#x6251;&#x6392;&#x5E8F;
  *
  * &#x8FD4;&#x56DE;&#x503C;&#xFF1A;
  *     -1 -- &#x5931;&#x8D25;(&#x7531;&#x4E8E;&#x5185;&#x5B58;&#x4E0D;&#x8DB3;&#x7B49;&#x539F;&#x56E0;&#x5BFC;&#x81F4;)
  *      0 -- &#x6210;&#x529F;&#x6392;&#x5E8F;&#xFF0C;&#x5E76;&#x8F93;&#x5165;&#x7ED3;&#x679C;
  *      1 -- &#x5931;&#x8D25;(&#x8BE5;&#x6709;&#x5411;&#x56FE;&#x662F;&#x6709;&#x73AF;&#x7684;)
- */
-public int topologicalSort() {
-    int index = 0;
-    int num = mVexs.size();
-    int[] ins;               // &#x5165;&#x5EA6;&#x6570;&#x7EC4;
-    char[] tops;             // &#x62D3;&#x6251;&#x6392;&#x5E8F;&#x7ED3;&#x679C;&#x6570;&#x7EC4;&#xFF0C;&#x8BB0;&#x5F55;&#x6BCF;&#x4E2A;&#x8282;&#x70B9;&#x7684;&#x6392;&#x5E8F;&#x540E;&#x7684;&#x5E8F;&#x53F7;&#x3002;
-    Queue&lt;Integer&gt; queue;    // &#x8F85;&#x7EC4;&#x961F;&#x5217;
+ */</span>
+<span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">int</span> <span class="hljs-title">topologicalSort</span><span class="hljs-params">()</span> </span>{
+    <span class="hljs-keyword">int</span> index = <span class="hljs-number">0</span>;
+    <span class="hljs-keyword">int</span> num = mVexs.size();
+    <span class="hljs-keyword">int</span>[] ins;               <span class="hljs-comment">// &#x5165;&#x5EA6;&#x6570;&#x7EC4;</span>
+    <span class="hljs-keyword">char</span>[] tops;             <span class="hljs-comment">// &#x62D3;&#x6251;&#x6392;&#x5E8F;&#x7ED3;&#x679C;&#x6570;&#x7EC4;&#xFF0C;&#x8BB0;&#x5F55;&#x6BCF;&#x4E2A;&#x8282;&#x70B9;&#x7684;&#x6392;&#x5E8F;&#x540E;&#x7684;&#x5E8F;&#x53F7;&#x3002;</span>
+    Queue&lt;Integer&gt; queue;    <span class="hljs-comment">// &#x8F85;&#x7EC4;&#x961F;&#x5217;</span>
 
-    ins   = new int[num];
-    tops  = new char[num];
-    queue = new LinkedList&lt;Integer&gt;();
+    ins   = <span class="hljs-keyword">new</span> <span class="hljs-keyword">int</span>[num];
+    tops  = <span class="hljs-keyword">new</span> <span class="hljs-keyword">char</span>[num];
+    queue = <span class="hljs-keyword">new</span> LinkedList&lt;Integer&gt;();
 
-    // &#x7EDF;&#x8BA1;&#x6BCF;&#x4E2A;&#x9876;&#x70B9;&#x7684;&#x5165;&#x5EA6;&#x6570;
-    for(int i = 0; i &lt; num; i++) {
+    <span class="hljs-comment">// &#x7EDF;&#x8BA1;&#x6BCF;&#x4E2A;&#x9876;&#x70B9;&#x7684;&#x5165;&#x5EA6;&#x6570;</span>
+    <span class="hljs-keyword">for</span>(<span class="hljs-keyword">int</span> i = <span class="hljs-number">0</span>; i &lt; num; i++) {
 
         ENode node = mVexs.get(i).firstEdge;
-        while (node != null) {
+        <span class="hljs-keyword">while</span> (node != <span class="hljs-keyword">null</span>) {
             ins[node.ivex]++;
             node = node.nextEdge;
         }
     }
 
-    // &#x5C06;&#x6240;&#x6709;&#x5165;&#x5EA6;&#x4E3A;0&#x7684;&#x9876;&#x70B9;&#x5165;&#x961F;&#x5217;
-    for(int i = 0; i &lt; num; i ++)
-        if(ins[i] == 0)
-            queue.offer(i);                 // &#x5165;&#x961F;&#x5217;
+    <span class="hljs-comment">// &#x5C06;&#x6240;&#x6709;&#x5165;&#x5EA6;&#x4E3A;0&#x7684;&#x9876;&#x70B9;&#x5165;&#x961F;&#x5217;</span>
+    <span class="hljs-keyword">for</span>(<span class="hljs-keyword">int</span> i = <span class="hljs-number">0</span>; i &lt; num; i ++)
+        <span class="hljs-keyword">if</span>(ins[i] == <span class="hljs-number">0</span>)
+            queue.offer(i);                 <span class="hljs-comment">// &#x5165;&#x961F;&#x5217;</span>
 
-    while (!queue.isEmpty()) {              // &#x961F;&#x5217;&#x975E;&#x7A7A;
-        int j = queue.poll().intValue();    // &#x51FA;&#x961F;&#x5217;&#x3002;j&#x662F;&#x9876;&#x70B9;&#x7684;&#x5E8F;&#x53F7;
-        tops[index++] = mVexs.get(j).data;  // &#x5C06;&#x8BE5;&#x9876;&#x70B9;&#x6DFB;&#x52A0;&#x5230;tops&#x4E2D;&#xFF0C;tops&#x662F;&#x6392;&#x5E8F;&#x7ED3;&#x679C;
-        ENode node = mVexs.get(j).firstEdge;// &#x83B7;&#x53D6;&#x4EE5;&#x8BE5;&#x9876;&#x70B9;&#x4E3A;&#x8D77;&#x70B9;&#x7684;&#x51FA;&#x8FB9;&#x961F;&#x5217;
+    <span class="hljs-keyword">while</span> (!queue.isEmpty()) {              <span class="hljs-comment">// &#x961F;&#x5217;&#x975E;&#x7A7A;</span>
+        <span class="hljs-keyword">int</span> j = queue.poll().intValue();    <span class="hljs-comment">// &#x51FA;&#x961F;&#x5217;&#x3002;j&#x662F;&#x9876;&#x70B9;&#x7684;&#x5E8F;&#x53F7;</span>
+        tops[index++] = mVexs.get(j).data;  <span class="hljs-comment">// &#x5C06;&#x8BE5;&#x9876;&#x70B9;&#x6DFB;&#x52A0;&#x5230;tops&#x4E2D;&#xFF0C;tops&#x662F;&#x6392;&#x5E8F;&#x7ED3;&#x679C;</span>
+        ENode node = mVexs.get(j).firstEdge;<span class="hljs-comment">// &#x83B7;&#x53D6;&#x4EE5;&#x8BE5;&#x9876;&#x70B9;&#x4E3A;&#x8D77;&#x70B9;&#x7684;&#x51FA;&#x8FB9;&#x961F;&#x5217;</span>
 
-        // &#x5C06;&#x4E0E;&quot;node&quot;&#x5173;&#x8054;&#x7684;&#x8282;&#x70B9;&#x7684;&#x5165;&#x5EA6;&#x51CF;1&#xFF1B;
-        // &#x82E5;&#x51CF;1&#x4E4B;&#x540E;&#xFF0C;&#x8BE5;&#x8282;&#x70B9;&#x7684;&#x5165;&#x5EA6;&#x4E3A;0&#xFF1B;&#x5219;&#x5C06;&#x8BE5;&#x8282;&#x70B9;&#x6DFB;&#x52A0;&#x5230;&#x961F;&#x5217;&#x4E2D;&#x3002;
-        while(node != null) {
-            // &#x5C06;&#x8282;&#x70B9;(&#x5E8F;&#x53F7;&#x4E3A;node.ivex)&#x7684;&#x5165;&#x5EA6;&#x51CF;1&#x3002;
+        <span class="hljs-comment">// &#x5C06;&#x4E0E;&quot;node&quot;&#x5173;&#x8054;&#x7684;&#x8282;&#x70B9;&#x7684;&#x5165;&#x5EA6;&#x51CF;1&#xFF1B;</span>
+        <span class="hljs-comment">// &#x82E5;&#x51CF;1&#x4E4B;&#x540E;&#xFF0C;&#x8BE5;&#x8282;&#x70B9;&#x7684;&#x5165;&#x5EA6;&#x4E3A;0&#xFF1B;&#x5219;&#x5C06;&#x8BE5;&#x8282;&#x70B9;&#x6DFB;&#x52A0;&#x5230;&#x961F;&#x5217;&#x4E2D;&#x3002;</span>
+        <span class="hljs-keyword">while</span>(node != <span class="hljs-keyword">null</span>) {
+            <span class="hljs-comment">// &#x5C06;&#x8282;&#x70B9;(&#x5E8F;&#x53F7;&#x4E3A;node.ivex)&#x7684;&#x5165;&#x5EA6;&#x51CF;1&#x3002;</span>
             ins[node.ivex]--;
-            // &#x82E5;&#x8282;&#x70B9;&#x7684;&#x5165;&#x5EA6;&#x4E3A;0&#xFF0C;&#x5219;&#x5C06;&#x5176;&quot;&#x5165;&#x961F;&#x5217;&quot;
-            if( ins[node.ivex] == 0)
-                queue.offer(node.ivex);    // &#x5165;&#x961F;&#x5217;
+            <span class="hljs-comment">// &#x82E5;&#x8282;&#x70B9;&#x7684;&#x5165;&#x5EA6;&#x4E3A;0&#xFF0C;&#x5219;&#x5C06;&#x5176;&quot;&#x5165;&#x961F;&#x5217;&quot;</span>
+            <span class="hljs-keyword">if</span>( ins[node.ivex] == <span class="hljs-number">0</span>)
+                queue.offer(node.ivex);    <span class="hljs-comment">// &#x5165;&#x961F;&#x5217;</span>
 
             node = node.nextEdge;
         }
     }
 
-    if(index != num) {
-        System.out.printf(&quot;Graph has a cycle\n&quot;);
-        return 1;
+    <span class="hljs-keyword">if</span>(index != num) {
+        System.out.printf(<span class="hljs-string">&quot;Graph has a cycle\n&quot;</span>);
+        <span class="hljs-keyword">return</span> <span class="hljs-number">1</span>;
     }
 
-    // &#x6253;&#x5370;&#x62D3;&#x6251;&#x6392;&#x5E8F;&#x7ED3;&#x679C;
-    System.out.printf(&quot;== TopSort: &quot;);
-    for(int i = 0; i &lt; num; i ++)
-        System.out.printf(&quot;%c &quot;, tops[i]);
-    System.out.printf(&quot;\n&quot;);
+    <span class="hljs-comment">// &#x6253;&#x5370;&#x62D3;&#x6251;&#x6392;&#x5E8F;&#x7ED3;&#x679C;</span>
+    System.out.printf(<span class="hljs-string">&quot;== TopSort: &quot;</span>);
+    <span class="hljs-keyword">for</span>(<span class="hljs-keyword">int</span> i = <span class="hljs-number">0</span>; i &lt; num; i ++)
+        System.out.printf(<span class="hljs-string">&quot;%c &quot;</span>, tops[i]);
+    System.out.printf(<span class="hljs-string">&quot;\n&quot;</span>);
 
-    return 0;
+    <span class="hljs-keyword">return</span> <span class="hljs-number">0</span>;
 }
 </code></pre>
 <p>&#x8BF4;&#x660E;&#xFF1A; </p>
@@ -3872,7 +3876,7 @@ public int topologicalSort() {
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"拓扑排序","level":"4.4.2","depth":2,"next":{"title":"Kruskal算法","level":"4.4.3","depth":2,"path":"data-structure/graph/Kruskal.md","ref":"data-structure/graph/Kruskal.md","articles":[]},"previous":{"title":"图的基础","level":"4.4.1","depth":2,"path":"data-structure/graph/graph-introduction.md","ref":"data-structure/graph/graph-introduction.md","articles":[]},"dir":"ltr"},"config":{"plugins":["-lunr","-search","-highlight","-livereload","search-plus@^0.0.11","simple-page-toc@^0.1.1","github@^2.0.0","github-buttons@2.1.0","edit-link@^2.0.2","advanced-emoji@^0.2.1","anchors@^0.7.1","include-codeblock@^3.0.2","ace@^0.3.2","emphasize@^1.1.0","katex@^1.1.3","splitter@^0.0.8","tbfed-pagefooter@^0.0.1","expandable-chapters-small@^0.1.7","sectionx@^3.1.0","local-video@^1.0.1","anchor-navigation-ex@0.1.8","favicon@^0.0.2"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"tbfed-pagefooter":{"copyright":"Copyright © ruheng.com 2017","modify_label":"该文件修订时间：","modify_format":"YYYY-MM-DD HH:mm:ss"},"emphasize":{},"ace":{},"github":{"url":"https://github.com/LRH1993/android_interview"},"simple-page-toc":{"maxDepth":3,"skipFirstH1":true},"splitter":{},"katex":{},"fontsettings":{"theme":"white","family":"sans","size":2},"sectionx":{"tag":"b"},"anchor-navigation-ex":{"isRewritePageTitle":false,"tocLevel1Icon":"fa fa-hand-o-right","tocLevel2Icon":"fa fa-hand-o-right","tocLevel3Icon":"fa fa-hand-o-right"},"favicon":{"shortcut":"favicon.ico","bookmark":"favicon.ico"},"github-buttons":{"repo":"LRH1993/android_interview","types":["star"],"size":"small"},"expandable-chapters-small":{},"local-video":{},"advanced-emoji":{"embedEmojis":false},"include-codeblock":{"check":false,"edit":true,"fixlang":false,"lang":"","template":"ace","theme":"chrome","unindent":true},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":true,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"edit-link":{"label":"Edit This Page","base":"https://github.com/LRH1993/android_interview/edit/master"},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":true},"anchors":{},"search-plus":{}},"theme":"default","author":"ruheng","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"Android校招面试指南","language":"zh-hans","output.name":"site","links":{"sidebar":{"Home":"http://lruheng.com/"}},"gitbook":"3.2.3","description":"Android面试必备，记录自己的秋招之路"},"file":{"path":"data-structure/graph/topology.md","mtime":"2017-09-04T02:50:25.000Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2017-10-16T12:05:21.906Z"},"basePath":"../..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"拓扑排序","level":"4.4.2","depth":2,"next":{"title":"Kruskal算法","level":"4.4.3","depth":2,"path":"data-structure/graph/Kruskal.md","ref":"data-structure/graph/Kruskal.md","articles":[]},"previous":{"title":"图的基础","level":"4.4.1","depth":2,"path":"data-structure/graph/graph-introduction.md","ref":"data-structure/graph/graph-introduction.md","articles":[]},"dir":"ltr"},"config":{"plugins":["-lunr","-search","-livereload","search-plus@^0.0.11","simple-page-toc@^0.1.1","github@^2.0.0","github-buttons@2.1.0","edit-link@^2.0.2","advanced-emoji@^0.2.1","anchors@^0.7.1","include-codeblock@^3.0.2","ace@^0.3.2","emphasize@^1.1.0","katex@^1.1.3","splitter@^0.0.8","tbfed-pagefooter@^0.0.1","expandable-chapters-small@^0.1.7","sectionx@^3.1.0","local-video@^1.0.1","anchor-navigation-ex@0.1.8","favicon@^0.0.2"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"tbfed-pagefooter":{"copyright":"Copyright © ruheng.com 2017","modify_label":"该文件修订时间：","modify_format":"YYYY-MM-DD HH:mm:ss"},"emphasize":{},"ace":{},"github":{"url":"https://github.com/LRH1993/android_interview"},"simple-page-toc":{"maxDepth":3,"skipFirstH1":true},"splitter":{},"katex":{},"fontsettings":{"theme":"white","family":"sans","size":2},"sectionx":{"tag":"b"},"highlight":{},"anchor-navigation-ex":{"isRewritePageTitle":false,"tocLevel1Icon":"fa fa-hand-o-right","tocLevel2Icon":"fa fa-hand-o-right","tocLevel3Icon":"fa fa-hand-o-right"},"favicon":{"shortcut":"favicon.ico","bookmark":"favicon.ico"},"github-buttons":{"repo":"LRH1993/android_interview","types":["star"],"size":"small"},"expandable-chapters-small":{},"local-video":{},"advanced-emoji":{"embedEmojis":false},"include-codeblock":{"check":false,"edit":false,"fixlang":false,"lang":"","template":"default","theme":"chrome","unindent":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":true,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"edit-link":{"label":"Edit This Page","base":"https://github.com/LRH1993/android_interview/edit/master"},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":true},"anchors":{},"search-plus":{}},"theme":"default","author":"ruheng","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"Android校招面试指南","language":"zh-hans","output.name":"site","links":{"sidebar":{"Home":"http://lruheng.com/"}},"gitbook":"3.2.3","description":"Android面试必备，记录自己的秋招之路"},"file":{"path":"data-structure/graph/topology.md","mtime":"2017-09-04T02:50:25.000Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2017-10-16T13:00:43.989Z"},"basePath":"../..","book":{"language":""}});
         });
     </script>
 </div>

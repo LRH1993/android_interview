@@ -69,6 +69,10 @@
                 
             
                 
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
                 <link rel="stylesheet" href="../../gitbook/gitbook-plugin-fontsettings/website.css">
                 
             
@@ -3714,99 +3718,99 @@
 <p>&#x2460;&#x9012;&#x5F52;&#x6BD4;&#x8F83;&#x4E24;&#x4E2A;&#x94FE;&#x8868;&#x7684;&#x5176;&#x4F59;&#x8282;&#x70B9;&#xFF0C;&#x8BA9;&#x8F83;&#x5C0F;&#x7684;&#x8282;&#x70B9;&#x4F5C;&#x4E3A;&#x4E0A;&#x4E00;&#x4E2A;&#x65B0;&#x8282;&#x70B9;&#x7684;&#x540E;&#x4E00;&#x4E2A;&#x8282;&#x70B9;&#xFF1B;</p>
 <p>&#x2461;&#x5FAA;&#x73AF;&#x6BD4;&#x8F83;&#x4E24;&#x4E2A;&#x94FE;&#x8868;&#x7684;&#x5176;&#x4F59;&#x8282;&#x70B9;&#xFF0C;&#x8BA9;&#x8F83;&#x5C0F;&#x7684;&#x8282;&#x70B9;&#x4F5C;&#x4E3A;&#x4E0A;&#x4E00;&#x4E2A;&#x65B0;&#x8282;&#x70B9;&#x7684;&#x540E;&#x4E00;&#x4E2A;&#x8282;&#x70B9;&#x3002;&#x76F4;&#x5230;&#x6709;&#x4E00;&#x4E2A;&#x94FE;&#x8868;&#x6CA1;&#x6709;&#x8282;&#x70B9;&#xFF0C;&#x7136;&#x540E;&#x5C06;&#x65B0;&#x94FE;&#x8868;&#x7684;&#x6700;&#x540E;&#x4E00;&#x4E2A;&#x8282;&#x70B9;&#x76F4;&#x63A5;&#x6307;&#x5411;&#x5269;&#x4F59;&#x94FE;&#x8868;&#x7684;&#x8282;&#x70B9;&#x3002;</p>
 <h2 id="&#x4E09;&#x3001;&#x89E3;&#x9898;&#x4EE3;&#x7801;"><a name="&#x4E09;&#x3001;&#x89E3;&#x9898;&#x4EE3;&#x7801;" class="anchor-navigation-ex-anchor" href="#&#x4E09;&#x3001;&#x89E3;&#x9898;&#x4EE3;&#x7801;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x4E09;&#x3001;&#x89E3;&#x9898;&#x4EE3;&#x7801;</h2>
-<pre><code class="lang-java">public class Test {
-    public static class ListNode {
-        int value;
+<pre><code class="lang-java"><span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Test</span> </span>{
+    <span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">ListNode</span> </span>{
+        <span class="hljs-keyword">int</span> value;
         ListNode next;
     }
 
-    /**
+    <span class="hljs-comment">/**
      * &#x8F93;&#x5165;&#x4E24;&#x4E2A;&#x9012;&#x589E;&#x6392;&#x5E8F;&#x7684;&#x94FE;&#x8868;&#xFF0C;&#x5408;&#x5E76;&#x8FD9;&#x4E24;&#x4E2A;&#x94FE;&#x8868;&#x5E76;&#x4F7F;&#x65B0;&#x94FE;&#x8868;&#x4E2D;&#x7684;&#x7ED3;&#x70B9;&#x4ECD;&#x7136;&#x662F;&#x6309;&#x7167;&#x9012;&#x589E;&#x6392;&#x5E8F;&#x7684;
      *
-     * @param head1 &#x7B2C;&#x4E00;&#x4E2A;&#x6709;&#x5E8F;&#x94FE;&#x8868;
-     * @param head2 &#x7B2C;&#x4E8C;&#x4E2A;&#x6709;&#x5E8F;&#x94FE;&#x8868;
-     * @return &#x5408;&#x5E76;&#x540E;&#x7684;&#x6709;&#x5E8F;&#x94FE;&#x8868;&#x5934;
-     */
-    public static ListNode merge(ListNode head1, ListNode head2) {
-        // &#x5982;&#x679C;&#x7B2C;&#x4E00;&#x4E2A;&#x94FE;&#x8868;&#x4E3A;&#x7A7A;&#xFF0C;&#x8FD4;&#x56DE;&#x7B2C;&#x4E8C;&#x4E2A;&#x94FE;&#x8868;&#x5934;&#x7ED3;&#x70B9;
-        if (head1 == null) {
-            return head2;
+     * <span class="hljs-doctag">@param</span> head1 &#x7B2C;&#x4E00;&#x4E2A;&#x6709;&#x5E8F;&#x94FE;&#x8868;
+     * <span class="hljs-doctag">@param</span> head2 &#x7B2C;&#x4E8C;&#x4E2A;&#x6709;&#x5E8F;&#x94FE;&#x8868;
+     * <span class="hljs-doctag">@return</span> &#x5408;&#x5E76;&#x540E;&#x7684;&#x6709;&#x5E8F;&#x94FE;&#x8868;&#x5934;
+     */</span>
+    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> ListNode <span class="hljs-title">merge</span><span class="hljs-params">(ListNode head1, ListNode head2)</span> </span>{
+        <span class="hljs-comment">// &#x5982;&#x679C;&#x7B2C;&#x4E00;&#x4E2A;&#x94FE;&#x8868;&#x4E3A;&#x7A7A;&#xFF0C;&#x8FD4;&#x56DE;&#x7B2C;&#x4E8C;&#x4E2A;&#x94FE;&#x8868;&#x5934;&#x7ED3;&#x70B9;</span>
+        <span class="hljs-keyword">if</span> (head1 == <span class="hljs-keyword">null</span>) {
+            <span class="hljs-keyword">return</span> head2;
         }
 
-        // &#x5982;&#x679C;&#x7B2C;&#x4E8C;&#x4E2A;&#x7ED3;&#x70B9;&#x4E3A;&#x7A7A;&#xFF0C;&#x8FD4;&#x56DE;&#x7B2C;&#x4E00;&#x4E2A;&#x94FE;&#x8868;&#x5934;&#x7ED3;&#x70B9;
-        if (head2 == null) {
-            return head1;
+        <span class="hljs-comment">// &#x5982;&#x679C;&#x7B2C;&#x4E8C;&#x4E2A;&#x7ED3;&#x70B9;&#x4E3A;&#x7A7A;&#xFF0C;&#x8FD4;&#x56DE;&#x7B2C;&#x4E00;&#x4E2A;&#x94FE;&#x8868;&#x5934;&#x7ED3;&#x70B9;</span>
+        <span class="hljs-keyword">if</span> (head2 == <span class="hljs-keyword">null</span>) {
+            <span class="hljs-keyword">return</span> head1;
         }
 
-        // &#x521B;&#x5EFA;&#x4E00;&#x4E2A;&#x4E34;&#x65F6;&#x7ED3;&#x70B9;&#xFF0C;&#x7528;&#x4E8E;&#x6DFB;&#x52A0;&#x5143;&#x7D20;&#x65F6;&#x65B9;&#x4FBF;
-        ListNode root = new ListNode();
-        // &#x7528;&#x4E8E;&#x6307;&#x5411;&#x5408;&#x5E76;&#x540E;&#x7684;&#x65B0;&#x94FE;&#x7684;&#x5C3E;&#x7ED3;&#x70B9;
+        <span class="hljs-comment">// &#x521B;&#x5EFA;&#x4E00;&#x4E2A;&#x4E34;&#x65F6;&#x7ED3;&#x70B9;&#xFF0C;&#x7528;&#x4E8E;&#x6DFB;&#x52A0;&#x5143;&#x7D20;&#x65F6;&#x65B9;&#x4FBF;</span>
+        ListNode root = <span class="hljs-keyword">new</span> ListNode();
+        <span class="hljs-comment">// &#x7528;&#x4E8E;&#x6307;&#x5411;&#x5408;&#x5E76;&#x540E;&#x7684;&#x65B0;&#x94FE;&#x7684;&#x5C3E;&#x7ED3;&#x70B9;</span>
         ListNode pointer = root;
 
-        // &#x5F53;&#x4E24;&#x4E2A;&#x94FE;&#x8868;&#x90FD;&#x4E0D;&#x4E3A;&#x7A7A;&#x5C31;&#x8FDB;&#x884C;&#x5408;&#x5E76;&#x64CD;&#x4F5C;
-        while (head1 != null &amp;&amp; head2 != null) {
-            // &#x4E0B;&#x9762;&#x7684;&#x64CD;&#x4F5C;&#x5408;&#x5E76;&#x8F83;&#x5C0F;&#x7684;&#x5143;&#x7D20;
-            if (head1.value &lt; head2.value) {
+        <span class="hljs-comment">// &#x5F53;&#x4E24;&#x4E2A;&#x94FE;&#x8868;&#x90FD;&#x4E0D;&#x4E3A;&#x7A7A;&#x5C31;&#x8FDB;&#x884C;&#x5408;&#x5E76;&#x64CD;&#x4F5C;</span>
+        <span class="hljs-keyword">while</span> (head1 != <span class="hljs-keyword">null</span> &amp;&amp; head2 != <span class="hljs-keyword">null</span>) {
+            <span class="hljs-comment">// &#x4E0B;&#x9762;&#x7684;&#x64CD;&#x4F5C;&#x5408;&#x5E76;&#x8F83;&#x5C0F;&#x7684;&#x5143;&#x7D20;</span>
+            <span class="hljs-keyword">if</span> (head1.value &lt; head2.value) {
                 pointer.next = head1;
                 head1 = head1.next;
-            } else {
+            } <span class="hljs-keyword">else</span> {
                 pointer.next = head2;
                 head2 = head2.next;
             }
 
-            // &#x5C06;&#x6307;&#x9488;&#x79FB;&#x52A8;&#x5230;&#x5408;&#x5E76;&#x540E;&#x7684;&#x94FE;&#x8868;&#x7684;&#x672B;&#x5C3E;
+            <span class="hljs-comment">// &#x5C06;&#x6307;&#x9488;&#x79FB;&#x52A8;&#x5230;&#x5408;&#x5E76;&#x540E;&#x7684;&#x94FE;&#x8868;&#x7684;&#x672B;&#x5C3E;</span>
             pointer = pointer.next;
         }
 
-        // &#x4E0B;&#x9762;&#x7684;&#x4E24;&#x4E2A;if&#x6709;&#x4E14;&#x53EA;&#x4E00;&#x4E2A;if&#x4F1A;&#x5185;&#x7684;&#x5185;&#x5BB9;&#x4F1A;&#x6267;&#x884C;
+        <span class="hljs-comment">// &#x4E0B;&#x9762;&#x7684;&#x4E24;&#x4E2A;if&#x6709;&#x4E14;&#x53EA;&#x4E00;&#x4E2A;if&#x4F1A;&#x5185;&#x7684;&#x5185;&#x5BB9;&#x4F1A;&#x6267;&#x884C;</span>
 
-        // &#x5982;&#x679C;&#x7B2C;&#x4E00;&#x4E2A;&#x94FE;&#x8868;&#x7684;&#x5143;&#x7D20;&#x672A;&#x5904;&#x7406;&#x5B8C;&#x5C06;&#x5176;&#xFF0C;&#x63A5;&#x5230;&#x5408;&#x5E76;&#x94FE;&#x8868;&#x7684;&#x6700;&#x540E;&#x4E00;&#x4E2A;&#x7ED3;&#x70B9;&#x4E4B;&#x540E;
-        if (head1 != null) {
+        <span class="hljs-comment">// &#x5982;&#x679C;&#x7B2C;&#x4E00;&#x4E2A;&#x94FE;&#x8868;&#x7684;&#x5143;&#x7D20;&#x672A;&#x5904;&#x7406;&#x5B8C;&#x5C06;&#x5176;&#xFF0C;&#x63A5;&#x5230;&#x5408;&#x5E76;&#x94FE;&#x8868;&#x7684;&#x6700;&#x540E;&#x4E00;&#x4E2A;&#x7ED3;&#x70B9;&#x4E4B;&#x540E;</span>
+        <span class="hljs-keyword">if</span> (head1 != <span class="hljs-keyword">null</span>) {
             pointer.next = head1;
         }
 
-        // &#x5982;&#x679C;&#x7B2C;&#x4E8C;&#x4E2A;&#x94FE;&#x8868;&#x7684;&#x5143;&#x7D20;&#x672A;&#x5904;&#x7406;&#x5B8C;&#x5C06;&#x5176;&#xFF0C;&#x63A5;&#x5230;&#x5408;&#x5E76;&#x94FE;&#x8868;&#x7684;&#x6700;&#x540E;&#x4E00;&#x4E2A;&#x7ED3;&#x70B9;&#x4E4B;&#x540E;
-        if (head2 != null) {
+        <span class="hljs-comment">// &#x5982;&#x679C;&#x7B2C;&#x4E8C;&#x4E2A;&#x94FE;&#x8868;&#x7684;&#x5143;&#x7D20;&#x672A;&#x5904;&#x7406;&#x5B8C;&#x5C06;&#x5176;&#xFF0C;&#x63A5;&#x5230;&#x5408;&#x5E76;&#x94FE;&#x8868;&#x7684;&#x6700;&#x540E;&#x4E00;&#x4E2A;&#x7ED3;&#x70B9;&#x4E4B;&#x540E;</span>
+        <span class="hljs-keyword">if</span> (head2 != <span class="hljs-keyword">null</span>) {
             pointer.next = head2;
         }
 
-        // &#x8FD4;&#x56DE;&#x5904;&#x7406;&#x7ED3;&#x679C;
-        return root.next;
+        <span class="hljs-comment">// &#x8FD4;&#x56DE;&#x5904;&#x7406;&#x7ED3;&#x679C;</span>
+        <span class="hljs-keyword">return</span> root.next;
     }
 
 
-    /**
+    <span class="hljs-comment">/**
      * &#x8F93;&#x5165;&#x4E24;&#x4E2A;&#x9012;&#x589E;&#x6392;&#x5E8F;&#x7684;&#x94FE;&#x8868;&#xFF0C;&#x5408;&#x5E76;&#x8FD9;&#x4E24;&#x4E2A;&#x94FE;&#x8868;&#x5E76;&#x4F7F;&#x65B0;&#x94FE;&#x8868;&#x4E2D;&#x7684;&#x7ED3;&#x70B9;&#x4ECD;&#x7136;&#x662F;&#x6309;&#x7167;&#x9012;&#x589E;&#x6392;&#x5E8F;&#x7684;
      * &#x3010;&#x4F7F;&#x7528;&#x7684;&#x662F;&#x9012;&#x5F52;&#x7684;&#x89E3;&#x6CD5;&#xFF0C;&#x4E0D;&#x63A8;&#x8350;&#xFF0C;&#x9012;&#x5F52;&#x8C03;&#x7528;&#x7684;&#x65F6;&#x5019;&#x4F1A;&#x6709;&#x65B9;&#x6CD5;&#x5165;&#x6808;&#xFF0C;&#x9700;&#x8981;&#x66F4;&#x591A;&#x7684;&#x5185;&#x5B58;&#x3011;
      *
-     * @param head1 &#x7B2C;&#x4E00;&#x4E2A;&#x6709;&#x5E8F;&#x94FE;&#x8868;
-     * @param head2 &#x7B2C;&#x4E8C;&#x4E2A;&#x6709;&#x5E8F;&#x94FE;&#x8868;
-     * @return &#x5408;&#x5E76;&#x540E;&#x7684;&#x6709;&#x5E8F;&#x94FE;&#x8868;&#x5934;
-     */
-    public static ListNode merge2(ListNode head1, ListNode head2) {
-        // &#x5982;&#x679C;&#x7B2C;&#x4E00;&#x4E2A;&#x94FE;&#x8868;&#x4E3A;&#x7A7A;&#xFF0C;&#x8FD4;&#x56DE;&#x7B2C;&#x4E8C;&#x4E2A;&#x94FE;&#x8868;&#x5934;&#x7ED3;&#x70B9;
-        if (head1 == null) {
-            return head2;
+     * <span class="hljs-doctag">@param</span> head1 &#x7B2C;&#x4E00;&#x4E2A;&#x6709;&#x5E8F;&#x94FE;&#x8868;
+     * <span class="hljs-doctag">@param</span> head2 &#x7B2C;&#x4E8C;&#x4E2A;&#x6709;&#x5E8F;&#x94FE;&#x8868;
+     * <span class="hljs-doctag">@return</span> &#x5408;&#x5E76;&#x540E;&#x7684;&#x6709;&#x5E8F;&#x94FE;&#x8868;&#x5934;
+     */</span>
+    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> ListNode <span class="hljs-title">merge2</span><span class="hljs-params">(ListNode head1, ListNode head2)</span> </span>{
+        <span class="hljs-comment">// &#x5982;&#x679C;&#x7B2C;&#x4E00;&#x4E2A;&#x94FE;&#x8868;&#x4E3A;&#x7A7A;&#xFF0C;&#x8FD4;&#x56DE;&#x7B2C;&#x4E8C;&#x4E2A;&#x94FE;&#x8868;&#x5934;&#x7ED3;&#x70B9;</span>
+        <span class="hljs-keyword">if</span> (head1 == <span class="hljs-keyword">null</span>) {
+            <span class="hljs-keyword">return</span> head2;
         }
 
-        // &#x5982;&#x679C;&#x7B2C;&#x4E8C;&#x4E2A;&#x94FE;&#x8868;&#x4E3A;&#x7A7A;&#xFF0C;&#x8FD4;&#x56DE;&#x7B2C;&#x4E00;&#x4E2A;&#x94FE;&#x8868;&#x5934;&#x7ED3;&#x70B9;
-        if (head2 == null) {
-            return head1;
+        <span class="hljs-comment">// &#x5982;&#x679C;&#x7B2C;&#x4E8C;&#x4E2A;&#x94FE;&#x8868;&#x4E3A;&#x7A7A;&#xFF0C;&#x8FD4;&#x56DE;&#x7B2C;&#x4E00;&#x4E2A;&#x94FE;&#x8868;&#x5934;&#x7ED3;&#x70B9;</span>
+        <span class="hljs-keyword">if</span> (head2 == <span class="hljs-keyword">null</span>) {
+            <span class="hljs-keyword">return</span> head1;
         }
 
-        // &#x8BB0;&#x5F55;&#x4E24;&#x4E2A;&#x94FE;&#x8868;&#x4E2D;&#x5934;&#x90E8;&#x8F83;&#x5C0F;&#x7684;&#x7ED3;&#x70B9;
+        <span class="hljs-comment">// &#x8BB0;&#x5F55;&#x4E24;&#x4E2A;&#x94FE;&#x8868;&#x4E2D;&#x5934;&#x90E8;&#x8F83;&#x5C0F;&#x7684;&#x7ED3;&#x70B9;</span>
         ListNode tmp = head1;
-        if (tmp.value &lt; head2.value) {
-            // &#x5982;&#x679C;&#x7B2C;&#x4E00;&#x4E2A;&#x94FE;&#x8868;&#x7684;&#x5934;&#x7ED3;&#x70B9;&#x5C0F;&#xFF0C;&#x5C31;&#x9012;&#x5F52;&#x5904;&#x7406;&#x7B2C;&#x4E00;&#x4E2A;&#x94FE;&#x8868;&#x7684;&#x4E0B;&#x4E00;&#x4E2A;&#x7ED3;&#x70B9;&#x548C;&#x7B2C;&#x4E8C;&#x4E2A;&#x94FE;&#x8868;&#x7684;&#x5934;&#x7ED3;&#x70B9;
+        <span class="hljs-keyword">if</span> (tmp.value &lt; head2.value) {
+            <span class="hljs-comment">// &#x5982;&#x679C;&#x7B2C;&#x4E00;&#x4E2A;&#x94FE;&#x8868;&#x7684;&#x5934;&#x7ED3;&#x70B9;&#x5C0F;&#xFF0C;&#x5C31;&#x9012;&#x5F52;&#x5904;&#x7406;&#x7B2C;&#x4E00;&#x4E2A;&#x94FE;&#x8868;&#x7684;&#x4E0B;&#x4E00;&#x4E2A;&#x7ED3;&#x70B9;&#x548C;&#x7B2C;&#x4E8C;&#x4E2A;&#x94FE;&#x8868;&#x7684;&#x5934;&#x7ED3;&#x70B9;</span>
             tmp.next = merge2(head1.next, head2);
-        } else {
-            // &#x5982;&#x679C;&#x7B2C;&#x4E8C;&#x4E2A;&#x94FE;&#x8868;&#x7684;&#x5934;&#x7ED3;&#x70B9;&#x5C0F;&#xFF0C;&#x5C31;&#x9012;&#x5F52;&#x5904;&#x7406;&#x7B2C;&#x4E00;&#x4E2A;&#x94FE;&#x8868;&#x7684;&#x5934;&#x7ED3;&#x70B9;&#x548C;&#x7B2C;&#x4E8C;&#x4E2A;&#x94FE;&#x8868;&#x7684;&#x5934;&#x7ED3;&#x70B9;&#x7684;&#x4E0B;&#x4E00;&#x4E2A;&#x7ED3;&#x70B9;
+        } <span class="hljs-keyword">else</span> {
+            <span class="hljs-comment">// &#x5982;&#x679C;&#x7B2C;&#x4E8C;&#x4E2A;&#x94FE;&#x8868;&#x7684;&#x5934;&#x7ED3;&#x70B9;&#x5C0F;&#xFF0C;&#x5C31;&#x9012;&#x5F52;&#x5904;&#x7406;&#x7B2C;&#x4E00;&#x4E2A;&#x94FE;&#x8868;&#x7684;&#x5934;&#x7ED3;&#x70B9;&#x548C;&#x7B2C;&#x4E8C;&#x4E2A;&#x94FE;&#x8868;&#x7684;&#x5934;&#x7ED3;&#x70B9;&#x7684;&#x4E0B;&#x4E00;&#x4E2A;&#x7ED3;&#x70B9;</span>
             tmp = head2;
             tmp.next = merge2(head1, head2.next);
         }
 
-        // &#x8FD4;&#x56DE;&#x5904;&#x7406;&#x7ED3;&#x679C;
-        return tmp;
+        <span class="hljs-comment">// &#x8FD4;&#x56DE;&#x5904;&#x7406;&#x7ED3;&#x679C;</span>
+        <span class="hljs-keyword">return</span> tmp;
     }
 }
 </code></pre>
@@ -3855,7 +3859,7 @@
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"14.合并两个排序的链表","level":"5.1.14","depth":2,"next":{"title":"15.树的子结构","level":"5.1.15","depth":2,"path":"algorithm/For-offer/15.md","ref":"algorithm/For-offer/15.md","articles":[]},"previous":{"title":"13.反转链表","level":"5.1.13","depth":2,"path":"algorithm/For-offer/13.md","ref":"algorithm/For-offer/13.md","articles":[]},"dir":"ltr"},"config":{"plugins":["-lunr","-search","-highlight","-livereload","search-plus@^0.0.11","simple-page-toc@^0.1.1","github@^2.0.0","github-buttons@2.1.0","edit-link@^2.0.2","advanced-emoji@^0.2.1","anchors@^0.7.1","include-codeblock@^3.0.2","ace@^0.3.2","emphasize@^1.1.0","katex@^1.1.3","splitter@^0.0.8","tbfed-pagefooter@^0.0.1","expandable-chapters-small@^0.1.7","sectionx@^3.1.0","local-video@^1.0.1","anchor-navigation-ex@0.1.8","favicon@^0.0.2"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"tbfed-pagefooter":{"copyright":"Copyright © ruheng.com 2017","modify_label":"该文件修订时间：","modify_format":"YYYY-MM-DD HH:mm:ss"},"emphasize":{},"ace":{},"github":{"url":"https://github.com/LRH1993/android_interview"},"simple-page-toc":{"maxDepth":3,"skipFirstH1":true},"splitter":{},"katex":{},"fontsettings":{"theme":"white","family":"sans","size":2},"sectionx":{"tag":"b"},"anchor-navigation-ex":{"isRewritePageTitle":false,"tocLevel1Icon":"fa fa-hand-o-right","tocLevel2Icon":"fa fa-hand-o-right","tocLevel3Icon":"fa fa-hand-o-right"},"favicon":{"shortcut":"favicon.ico","bookmark":"favicon.ico"},"github-buttons":{"repo":"LRH1993/android_interview","types":["star"],"size":"small"},"expandable-chapters-small":{},"local-video":{},"advanced-emoji":{"embedEmojis":false},"include-codeblock":{"check":false,"edit":true,"fixlang":false,"lang":"","template":"ace","theme":"chrome","unindent":true},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":true,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"edit-link":{"label":"Edit This Page","base":"https://github.com/LRH1993/android_interview/edit/master"},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":true},"anchors":{},"search-plus":{}},"theme":"default","author":"ruheng","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"Android校招面试指南","language":"zh-hans","output.name":"site","links":{"sidebar":{"Home":"http://lruheng.com/"}},"gitbook":"3.2.3","description":"Android面试必备，记录自己的秋招之路"},"file":{"path":"algorithm/For-offer/14.md","mtime":"2017-08-22T07:53:58.000Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2017-10-16T12:05:21.906Z"},"basePath":"../..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"14.合并两个排序的链表","level":"5.1.14","depth":2,"next":{"title":"15.树的子结构","level":"5.1.15","depth":2,"path":"algorithm/For-offer/15.md","ref":"algorithm/For-offer/15.md","articles":[]},"previous":{"title":"13.反转链表","level":"5.1.13","depth":2,"path":"algorithm/For-offer/13.md","ref":"algorithm/For-offer/13.md","articles":[]},"dir":"ltr"},"config":{"plugins":["-lunr","-search","-livereload","search-plus@^0.0.11","simple-page-toc@^0.1.1","github@^2.0.0","github-buttons@2.1.0","edit-link@^2.0.2","advanced-emoji@^0.2.1","anchors@^0.7.1","include-codeblock@^3.0.2","ace@^0.3.2","emphasize@^1.1.0","katex@^1.1.3","splitter@^0.0.8","tbfed-pagefooter@^0.0.1","expandable-chapters-small@^0.1.7","sectionx@^3.1.0","local-video@^1.0.1","anchor-navigation-ex@0.1.8","favicon@^0.0.2"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"tbfed-pagefooter":{"copyright":"Copyright © ruheng.com 2017","modify_label":"该文件修订时间：","modify_format":"YYYY-MM-DD HH:mm:ss"},"emphasize":{},"ace":{},"github":{"url":"https://github.com/LRH1993/android_interview"},"simple-page-toc":{"maxDepth":3,"skipFirstH1":true},"splitter":{},"katex":{},"fontsettings":{"theme":"white","family":"sans","size":2},"sectionx":{"tag":"b"},"highlight":{},"anchor-navigation-ex":{"isRewritePageTitle":false,"tocLevel1Icon":"fa fa-hand-o-right","tocLevel2Icon":"fa fa-hand-o-right","tocLevel3Icon":"fa fa-hand-o-right"},"favicon":{"shortcut":"favicon.ico","bookmark":"favicon.ico"},"github-buttons":{"repo":"LRH1993/android_interview","types":["star"],"size":"small"},"expandable-chapters-small":{},"local-video":{},"advanced-emoji":{"embedEmojis":false},"include-codeblock":{"check":false,"edit":false,"fixlang":false,"lang":"","template":"default","theme":"chrome","unindent":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":true,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"edit-link":{"label":"Edit This Page","base":"https://github.com/LRH1993/android_interview/edit/master"},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":true},"anchors":{},"search-plus":{}},"theme":"default","author":"ruheng","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"Android校招面试指南","language":"zh-hans","output.name":"site","links":{"sidebar":{"Home":"http://lruheng.com/"}},"gitbook":"3.2.3","description":"Android面试必备，记录自己的秋招之路"},"file":{"path":"algorithm/For-offer/14.md","mtime":"2017-08-22T07:53:58.000Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2017-10-16T13:00:43.989Z"},"basePath":"../..","book":{"language":""}});
         });
     </script>
 </div>

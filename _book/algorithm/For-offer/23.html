@@ -69,6 +69,10 @@
                 
             
                 
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
                 <link rel="stylesheet" href="../../gitbook/gitbook-plugin-fontsettings/website.css">
                 
             
@@ -3715,114 +3719,114 @@
 &#x94FE;&#x63A5;&#x8D77;&#x6765;&#x5C31;&#x662F;&#x539F;&#x59CB;&#x94FE;&#x8868;&#xFF0C;&#x628A;&#x5076;&#x6570;&#x4F4D;&#x7F6E;&#x7684;&#x7ED3;&#x70B9;&#x7528;next &#x94FE;&#x63A5;&#x8D77;&#x6765;&#x5C31;&#x662F;&#x590D;&#x5236; 
 &#x51FA;&#x6765;&#x7684;&#x94FE;&#x8868;&#x3002;</p>
 <h2 id="&#x4E09;&#x3001;&#x89E3;&#x9898;&#x4EE3;&#x7801;"><a name="&#x4E09;&#x3001;&#x89E3;&#x9898;&#x4EE3;&#x7801;" class="anchor-navigation-ex-anchor" href="#&#x4E09;&#x3001;&#x89E3;&#x9898;&#x4EE3;&#x7801;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x4E09;&#x3001;&#x89E3;&#x9898;&#x4EE3;&#x7801;</h2>
-<pre><code class="lang-java">public class Test {
-    /**
+<pre><code class="lang-java"><span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Test</span> </span>{
+    <span class="hljs-comment">/**
      * &#x590D;&#x6742;&#x94FE;&#x8868;&#x7ED3;&#x70B9;
-     */
-    public static class ComplexListNode {
-        int value;
+     */</span>
+    <span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">ComplexListNode</span> </span>{
+        <span class="hljs-keyword">int</span> value;
         ComplexListNode next;
         ComplexListNode sibling;
     }
 
-    /**
+    <span class="hljs-comment">/**
      * &#x5B9E;&#x73B0;&#x51FD;&#x590D;&#x5236;&#x4E00;&#x4E2A;&#x590D;&#x6742;&#x94FE;&#x8868;&#x3002;&#x5728;&#x590D;&#x6742;&#x94FE;&#x8868;&#x4E2D;&#xFF0C;&#x6BCF;&#x4E2A;&#x7ED3;&#x70B9;&#x9664;&#x4E86;&#x6709;&#x4E00;&#x4E2A;next&#x5B57;&#x6BB5;&#x6307;&#x5411;&#x4E0B;&#x4E00;&#x4E2A;&#x7ED3;&#x70B9;&#x5916;&#xFF0C;
      * &#x8FD8;&#x6709;&#x4E00;&#x4E2A;sibling&#x5B57;&#x6BB5;&#x6307;&#x5411;&#x94FE;&#x8868;&#x4E2D;&#x7684;&#x4EFB;&#x610F;&#x7ED3;&#x70B9;&#x6216;&#x8005;NULL
      *
-     * @param head &#x94FE;&#x8868;&#x8868;&#x5934;&#x7ED3;&#x70B9;
-     * @return &#x590D;&#x5236;&#x7ED3;&#x70B9;&#x7684;&#x5934;&#x7ED3;&#x70B9;
-     */
-    public static ComplexListNode clone(ComplexListNode head) {
-        // &#x5982;&#x679C;&#x94FE;&#x8868;&#x4E3A;&#x7A7A;&#x5C31;&#x76F4;&#x63A5;&#x8FD4;&#x56DE;&#x7A7A;
-        if (head == null) {
-            return null;
+     * <span class="hljs-doctag">@param</span> head &#x94FE;&#x8868;&#x8868;&#x5934;&#x7ED3;&#x70B9;
+     * <span class="hljs-doctag">@return</span> &#x590D;&#x5236;&#x7ED3;&#x70B9;&#x7684;&#x5934;&#x7ED3;&#x70B9;
+     */</span>
+    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> ComplexListNode <span class="hljs-title">clone</span><span class="hljs-params">(ComplexListNode head)</span> </span>{
+        <span class="hljs-comment">// &#x5982;&#x679C;&#x94FE;&#x8868;&#x4E3A;&#x7A7A;&#x5C31;&#x76F4;&#x63A5;&#x8FD4;&#x56DE;&#x7A7A;</span>
+        <span class="hljs-keyword">if</span> (head == <span class="hljs-keyword">null</span>) {
+            <span class="hljs-keyword">return</span> <span class="hljs-keyword">null</span>;
         }
 
-        // &#x5148;&#x590D;&#x5236;&#x7ED3;&#x70B9;
+        <span class="hljs-comment">// &#x5148;&#x590D;&#x5236;&#x7ED3;&#x70B9;</span>
         cloneNodes(head);
-        // &#x518D;&#x94FE;&#x63A5;sibling&#x5B57;&#x6BB5;
+        <span class="hljs-comment">// &#x518D;&#x94FE;&#x63A5;sibling&#x5B57;&#x6BB5;</span>
         connectNodes(head);
-        // &#x5C06;&#x6574;&#x4E2A;&#x94FE;&#x8868;&#x62C6;&#x5206;&#xFF0C;&#x8FD4;&#x56DE;&#x590D;&#x5236;&#x94FE;&#x8868;&#x7684;&#x5934;&#x7ED3;&#x70B9;
-        return reconnectNodes(head);
+        <span class="hljs-comment">// &#x5C06;&#x6574;&#x4E2A;&#x94FE;&#x8868;&#x62C6;&#x5206;&#xFF0C;&#x8FD4;&#x56DE;&#x590D;&#x5236;&#x94FE;&#x8868;&#x7684;&#x5934;&#x7ED3;&#x70B9;</span>
+        <span class="hljs-keyword">return</span> reconnectNodes(head);
     }
 
-    /**
+    <span class="hljs-comment">/**
      * &#x590D;&#x5236;&#x4E00;&#x4E2A;&#x94FE;&#x8868;&#xFF0C;&#x5E76;&#x4E14;&#x5C06;&#x590D;&#x5236;&#x540E;&#x7684;&#x7ED3;&#x70B9;&#x63D2;&#x5165;&#x5230;&#x88AB;&#x590D;&#x5236;&#x7684;&#x7ED3;&#x70B9;&#x540E;&#x9762;&#xFF0C;&#x53EA;&#x94FE;&#x63A5;&#x590D;&#x5236;&#x7ED3;&#x70B9;&#x7684;next&#x5B57;&#x6BB5;
      *
-     * @param head &#x5F85;&#x590D;&#x5236;&#x94FE;&#x8868;&#x7684;&#x5934;&#x7ED3;&#x70B9;
-     */
-    public static void cloneNodes(ComplexListNode head) {
-        // &#x5982;&#x679C;&#x94FE;&#x8868;&#x4E0D;&#x7A7A;&#xFF0C;&#x8FDB;&#x884C;&#x590D;&#x5236;&#x64CD;&#x4F5C;
-        while (head != null) {
-            // &#x521B;&#x5EFA;&#x4E00;&#x4E2A;&#x65B0;&#x7684;&#x7ED3;&#x70B9;
-            ComplexListNode tmp = new ComplexListNode();
-            // &#x5C06;&#x88AB;&#x590D;&#x5236;&#x7ED3;&#x70B9;&#x7684;&#x503C;&#x4F20;&#x7ED9;&#x590D;&#x5236;&#x7ED3;&#x70B9;
+     * <span class="hljs-doctag">@param</span> head &#x5F85;&#x590D;&#x5236;&#x94FE;&#x8868;&#x7684;&#x5934;&#x7ED3;&#x70B9;
+     */</span>
+    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title">cloneNodes</span><span class="hljs-params">(ComplexListNode head)</span> </span>{
+        <span class="hljs-comment">// &#x5982;&#x679C;&#x94FE;&#x8868;&#x4E0D;&#x7A7A;&#xFF0C;&#x8FDB;&#x884C;&#x590D;&#x5236;&#x64CD;&#x4F5C;</span>
+        <span class="hljs-keyword">while</span> (head != <span class="hljs-keyword">null</span>) {
+            <span class="hljs-comment">// &#x521B;&#x5EFA;&#x4E00;&#x4E2A;&#x65B0;&#x7684;&#x7ED3;&#x70B9;</span>
+            ComplexListNode tmp = <span class="hljs-keyword">new</span> ComplexListNode();
+            <span class="hljs-comment">// &#x5C06;&#x88AB;&#x590D;&#x5236;&#x7ED3;&#x70B9;&#x7684;&#x503C;&#x4F20;&#x7ED9;&#x590D;&#x5236;&#x7ED3;&#x70B9;</span>
             tmp.value = head.value;
-            // &#x590D;&#x5236;&#x7ED3;&#x70B9;&#x7684;next&#x6307;&#x5411;&#x4E0B;&#x4E00;&#x4E2A;&#x8981;&#x88AB;&#x590D;&#x5236;&#x7684;&#x7ED3;&#x70B9;
+            <span class="hljs-comment">// &#x590D;&#x5236;&#x7ED3;&#x70B9;&#x7684;next&#x6307;&#x5411;&#x4E0B;&#x4E00;&#x4E2A;&#x8981;&#x88AB;&#x590D;&#x5236;&#x7684;&#x7ED3;&#x70B9;</span>
             tmp.next = head.next;
-            // &#x88AB;&#x590D;&#x5236;&#x7ED3;&#x70B9;&#x7684;next&#x6307;&#x5411;&#x590D;&#x5236;&#x7ED3;&#x70B9;
+            <span class="hljs-comment">// &#x88AB;&#x590D;&#x5236;&#x7ED3;&#x70B9;&#x7684;next&#x6307;&#x5411;&#x590D;&#x5236;&#x7ED3;&#x70B9;</span>
             head.next = tmp;
-            // &#x5230;&#x4E9B;&#x5904;&#x5C31;&#x5DF2;&#x7ECF;&#x5B8C;&#x6210;&#x4E86;&#x4E00;&#x4E2A;&#x7ED3;&#x70B9;&#x7684;&#x590D;&#x5236;&#x5E76;&#x4E14;&#x63D2;&#x5165;&#x5230;&#x88AB;&#x590D;&#x5236;&#x7ED3;&#x70B9;&#x7684;&#x540E;&#x9762;
-            // heed&#x6307;&#x5411;&#x4E0B;&#x4E00;&#x4E2A;&#x88AB;&#x590D;&#x5236;&#x7ED3;&#x70B9;&#x7684;&#x4F4D;&#x7F6E;
+            <span class="hljs-comment">// &#x5230;&#x4E9B;&#x5904;&#x5C31;&#x5DF2;&#x7ECF;&#x5B8C;&#x6210;&#x4E86;&#x4E00;&#x4E2A;&#x7ED3;&#x70B9;&#x7684;&#x590D;&#x5236;&#x5E76;&#x4E14;&#x63D2;&#x5165;&#x5230;&#x88AB;&#x590D;&#x5236;&#x7ED3;&#x70B9;&#x7684;&#x540E;&#x9762;</span>
+            <span class="hljs-comment">// heed&#x6307;&#x5411;&#x4E0B;&#x4E00;&#x4E2A;&#x88AB;&#x590D;&#x5236;&#x7ED3;&#x70B9;&#x7684;&#x4F4D;&#x7F6E;</span>
             head = tmp.next;
         }
     }
 
-    /**
+    <span class="hljs-comment">/**
      * &#x8BBE;&#x7F6E;&#x590D;&#x5236;&#x7ED3;&#x70B9;&#x7684;sibling&#x5B57;&#x6BB5;
      *
-     * @param head &#x94FE;&#x8868;&#x7684;&#x5934;&#x7ED3;
-     */
-    public static void connectNodes(ComplexListNode head) {
-        // &#x5982;&#x94FE;&#x8868;&#x4E0D;&#x4E3A;&#x7A7A;
-        while (head != null) {
-            // &#x5F53;&#x524D;&#x5904;&#x7406;&#x7684;&#x7ED3;&#x70B9;sibling&#x5B57;&#x6BB5;&#x4E0D;&#x4E3A;&#x7A7A;&#xFF0C;&#x5219;&#x8981;&#x8BBE;&#x7F6E;&#x5176;&#x590D;&#x5236;&#x7ED3;&#x70B9;&#x7684;sibling&#x5B57;&#x6BB5;
-            if (head.sibling != null) {
-                // &#x590D;&#x5236;&#x7ED3;&#x70B9;&#x7684;sibling&#x6307;&#x5411;&#x88AB;&#x590D;&#x5236;&#x7ED3;&#x70B9;&#x7684;sibling&#x5B57;&#x6BB5;&#x7684;&#x4E0B;&#x4E00;&#x4E2A;&#x7ED3;&#x70B9;
-                // head.next&#xFF1A;&#x8868;&#x6C42;&#x590D;&#x5236;&#x7ED3;&#x70B9;&#xFF0C;
-                // head.sibling&#xFF1A;&#x8868;&#x793A;&#x88AB;&#x590D;&#x5236;&#x7ED3;&#x70B9;&#x7684;sibling&#x6240;&#x6307;&#x5411;&#x7684;&#x7ED3;&#x70B9;&#xFF0C;
-                // &#x5B83;&#x7684;&#x4E0B;&#x4E00;&#x4E2A;&#x7ED3;&#x70B9;&#x5C31;&#x662F;&#x5B83;&#x7684;&#x590D;&#x5236;&#x7ED3;&#x70B9;
+     * <span class="hljs-doctag">@param</span> head &#x94FE;&#x8868;&#x7684;&#x5934;&#x7ED3;
+     */</span>
+    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title">connectNodes</span><span class="hljs-params">(ComplexListNode head)</span> </span>{
+        <span class="hljs-comment">// &#x5982;&#x94FE;&#x8868;&#x4E0D;&#x4E3A;&#x7A7A;</span>
+        <span class="hljs-keyword">while</span> (head != <span class="hljs-keyword">null</span>) {
+            <span class="hljs-comment">// &#x5F53;&#x524D;&#x5904;&#x7406;&#x7684;&#x7ED3;&#x70B9;sibling&#x5B57;&#x6BB5;&#x4E0D;&#x4E3A;&#x7A7A;&#xFF0C;&#x5219;&#x8981;&#x8BBE;&#x7F6E;&#x5176;&#x590D;&#x5236;&#x7ED3;&#x70B9;&#x7684;sibling&#x5B57;&#x6BB5;</span>
+            <span class="hljs-keyword">if</span> (head.sibling != <span class="hljs-keyword">null</span>) {
+                <span class="hljs-comment">// &#x590D;&#x5236;&#x7ED3;&#x70B9;&#x7684;sibling&#x6307;&#x5411;&#x88AB;&#x590D;&#x5236;&#x7ED3;&#x70B9;&#x7684;sibling&#x5B57;&#x6BB5;&#x7684;&#x4E0B;&#x4E00;&#x4E2A;&#x7ED3;&#x70B9;</span>
+                <span class="hljs-comment">// head.next&#xFF1A;&#x8868;&#x6C42;&#x590D;&#x5236;&#x7ED3;&#x70B9;&#xFF0C;</span>
+                <span class="hljs-comment">// head.sibling&#xFF1A;&#x8868;&#x793A;&#x88AB;&#x590D;&#x5236;&#x7ED3;&#x70B9;&#x7684;sibling&#x6240;&#x6307;&#x5411;&#x7684;&#x7ED3;&#x70B9;&#xFF0C;</span>
+                <span class="hljs-comment">// &#x5B83;&#x7684;&#x4E0B;&#x4E00;&#x4E2A;&#x7ED3;&#x70B9;&#x5C31;&#x662F;&#x5B83;&#x7684;&#x590D;&#x5236;&#x7ED3;&#x70B9;</span>
                 head.next.sibling = head.sibling.next;
             }
-            // &#x6307;&#x5411;&#x4E0B;&#x4E00;&#x4E2A;&#x8981;&#x5904;&#x7406;&#x7684;&#x590D;&#x5236;&#x7ED3;&#x70B9;
+            <span class="hljs-comment">// &#x6307;&#x5411;&#x4E0B;&#x4E00;&#x4E2A;&#x8981;&#x5904;&#x7406;&#x7684;&#x590D;&#x5236;&#x7ED3;&#x70B9;</span>
             head = head.next.next;
         }
     }
 
-    /**
+    <span class="hljs-comment">/**
      * &#x521A;&#x590D;&#x5236;&#x7ED3;&#x70B9;&#x548C;&#x88AB;&#x590D;&#x5236;&#x7ED3;&#x70B9;&#x62C6;&#x5F00;&#xFF0C;&#x8FD8;&#x539F;&#x88AB;&#x590D;&#x5236;&#x7684;&#x94FE;&#x8868;&#xFF0C;&#x540C;&#x65F6;&#x751F;&#x6210;&#x590D;&#x5236;&#x94FE;&#x8868;
      *
-     * @param head &#x94FE;&#x8868;&#x7684;&#x5934;&#x7ED3;&#x70B9;
-     * @return &#x590D;&#x5236;&#x94FE;&#x8868;&#x7684;&#x5934;&#x7ED3;&#x70B9;
-     */
-    public static ComplexListNode reconnectNodes(ComplexListNode head) {
+     * <span class="hljs-doctag">@param</span> head &#x94FE;&#x8868;&#x7684;&#x5934;&#x7ED3;&#x70B9;
+     * <span class="hljs-doctag">@return</span> &#x590D;&#x5236;&#x94FE;&#x8868;&#x7684;&#x5934;&#x7ED3;&#x70B9;
+     */</span>
+    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> ComplexListNode <span class="hljs-title">reconnectNodes</span><span class="hljs-params">(ComplexListNode head)</span> </span>{
 
-        // &#x5F53;&#x94FE;&#x8868;&#x4E3A;&#x7A7A;&#x5C31;&#x76F4;&#x63A5;&#x8FD4;&#x56DE;&#x7A7A;
-        if (head == null) {
-            return null;
+        <span class="hljs-comment">// &#x5F53;&#x94FE;&#x8868;&#x4E3A;&#x7A7A;&#x5C31;&#x76F4;&#x63A5;&#x8FD4;&#x56DE;&#x7A7A;</span>
+        <span class="hljs-keyword">if</span> (head == <span class="hljs-keyword">null</span>) {
+            <span class="hljs-keyword">return</span> <span class="hljs-keyword">null</span>;
         }
 
-        // &#x7528;&#x4E8E;&#x8BB0;&#x5F55;&#x590D;&#x5236;&#x94FE;&#x8868;&#x7684;&#x5934;&#x7ED3;&#x70B9;
+        <span class="hljs-comment">// &#x7528;&#x4E8E;&#x8BB0;&#x5F55;&#x590D;&#x5236;&#x94FE;&#x8868;&#x7684;&#x5934;&#x7ED3;&#x70B9;</span>
         ComplexListNode newHead = head.next;
-        // &#x7528;&#x4E8E;&#x8BB0;&#x5F55;&#x5F53;&#x524D;&#x5904;&#x7406;&#x7684;&#x590D;&#x5236;&#x7ED3;&#x70B9;
+        <span class="hljs-comment">// &#x7528;&#x4E8E;&#x8BB0;&#x5F55;&#x5F53;&#x524D;&#x5904;&#x7406;&#x7684;&#x590D;&#x5236;&#x7ED3;&#x70B9;</span>
         ComplexListNode pointer = newHead;
-        // &#x88AB;&#x590D;&#x5236;&#x7ED3;&#x70B9;&#x7684;next&#x6307;&#x5411;&#x4E0B;&#x4E00;&#x4E2A;&#x539F;&#x94FE;&#x8868;&#x7ED3;&#x70B9;
+        <span class="hljs-comment">// &#x88AB;&#x590D;&#x5236;&#x7ED3;&#x70B9;&#x7684;next&#x6307;&#x5411;&#x4E0B;&#x4E00;&#x4E2A;&#x539F;&#x94FE;&#x8868;&#x7ED3;&#x70B9;</span>
         head.next = newHead.next;
-        // &#x6307;&#x5411;&#x65B0;&#x7684;&#x88AB;&#x590D;&#x5236;&#x7ED3;&#x70B9;
+        <span class="hljs-comment">// &#x6307;&#x5411;&#x65B0;&#x7684;&#x88AB;&#x590D;&#x5236;&#x7ED3;&#x70B9;</span>
         head = head.next;
 
-        while (head != null) {
-            // pointer&#x6307;&#x5411;&#x590D;&#x5236;&#x7ED3;&#x70B9;
+        <span class="hljs-keyword">while</span> (head != <span class="hljs-keyword">null</span>) {
+            <span class="hljs-comment">// pointer&#x6307;&#x5411;&#x590D;&#x5236;&#x7ED3;&#x70B9;</span>
             pointer.next = head.next;
             pointer = pointer.next;
-            // head&#x7684;&#x4E0B;&#x4E00;&#x4E2A;&#x6307;&#x5411;&#x590D;&#x5236;&#x7ED3;&#x70B9;&#x7684;&#x4E0B;&#x4E00;&#x4E2A;&#x7ED3;&#x70B9;&#xFF0C;&#x5373;&#x539F;&#x6765;&#x94FE;&#x8868;&#x7684;&#x7ED3;&#x70B9;
+            <span class="hljs-comment">// head&#x7684;&#x4E0B;&#x4E00;&#x4E2A;&#x6307;&#x5411;&#x590D;&#x5236;&#x7ED3;&#x70B9;&#x7684;&#x4E0B;&#x4E00;&#x4E2A;&#x7ED3;&#x70B9;&#xFF0C;&#x5373;&#x539F;&#x6765;&#x94FE;&#x8868;&#x7684;&#x7ED3;&#x70B9;</span>
             head.next = pointer.next;
-            // head&#x6307;&#x5411;&#x4E0B;&#x4E00;&#x4E2A;&#x539F;&#x6765;&#x94FE;&#x8868;&#x4E0A;&#x7684;&#x7ED3;&#x70B9;
+            <span class="hljs-comment">// head&#x6307;&#x5411;&#x4E0B;&#x4E00;&#x4E2A;&#x539F;&#x6765;&#x94FE;&#x8868;&#x4E0A;&#x7684;&#x7ED3;&#x70B9;</span>
             head = pointer.next;
         }
 
-        // &#x8FD4;&#x56DE;&#x590D;&#x5236;&#x94FE;&#x8868;&#x7684;&#x5934;&#x7ED3;&#x70B9;
-        return newHead;
+        <span class="hljs-comment">// &#x8FD4;&#x56DE;&#x590D;&#x5236;&#x94FE;&#x8868;&#x7684;&#x5934;&#x7ED3;&#x70B9;</span>
+        <span class="hljs-keyword">return</span> newHead;
     }
 }
 </code></pre>
@@ -3871,7 +3875,7 @@
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"23.复杂链表的复制","level":"5.1.23","depth":2,"next":{"title":"24.二叉搜索树与双向链表","level":"5.1.24","depth":2,"path":"algorithm/For-offer/24.md","ref":"algorithm/For-offer/24.md","articles":[]},"previous":{"title":"22.二叉树中和为某一值得路径","level":"5.1.22","depth":2,"path":"algorithm/For-offer/22.md","ref":"algorithm/For-offer/22.md","articles":[]},"dir":"ltr"},"config":{"plugins":["-lunr","-search","-highlight","-livereload","search-plus@^0.0.11","simple-page-toc@^0.1.1","github@^2.0.0","github-buttons@2.1.0","edit-link@^2.0.2","advanced-emoji@^0.2.1","anchors@^0.7.1","include-codeblock@^3.0.2","ace@^0.3.2","emphasize@^1.1.0","katex@^1.1.3","splitter@^0.0.8","tbfed-pagefooter@^0.0.1","expandable-chapters-small@^0.1.7","sectionx@^3.1.0","local-video@^1.0.1","anchor-navigation-ex@0.1.8","favicon@^0.0.2"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"tbfed-pagefooter":{"copyright":"Copyright © ruheng.com 2017","modify_label":"该文件修订时间：","modify_format":"YYYY-MM-DD HH:mm:ss"},"emphasize":{},"ace":{},"github":{"url":"https://github.com/LRH1993/android_interview"},"simple-page-toc":{"maxDepth":3,"skipFirstH1":true},"splitter":{},"katex":{},"fontsettings":{"theme":"white","family":"sans","size":2},"sectionx":{"tag":"b"},"anchor-navigation-ex":{"isRewritePageTitle":false,"tocLevel1Icon":"fa fa-hand-o-right","tocLevel2Icon":"fa fa-hand-o-right","tocLevel3Icon":"fa fa-hand-o-right"},"favicon":{"shortcut":"favicon.ico","bookmark":"favicon.ico"},"github-buttons":{"repo":"LRH1993/android_interview","types":["star"],"size":"small"},"expandable-chapters-small":{},"local-video":{},"advanced-emoji":{"embedEmojis":false},"include-codeblock":{"check":false,"edit":true,"fixlang":false,"lang":"","template":"ace","theme":"chrome","unindent":true},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":true,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"edit-link":{"label":"Edit This Page","base":"https://github.com/LRH1993/android_interview/edit/master"},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":true},"anchors":{},"search-plus":{}},"theme":"default","author":"ruheng","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"Android校招面试指南","language":"zh-hans","output.name":"site","links":{"sidebar":{"Home":"http://lruheng.com/"}},"gitbook":"3.2.3","description":"Android面试必备，记录自己的秋招之路"},"file":{"path":"algorithm/For-offer/23.md","mtime":"2017-08-22T09:01:45.000Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2017-10-16T12:05:21.906Z"},"basePath":"../..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"23.复杂链表的复制","level":"5.1.23","depth":2,"next":{"title":"24.二叉搜索树与双向链表","level":"5.1.24","depth":2,"path":"algorithm/For-offer/24.md","ref":"algorithm/For-offer/24.md","articles":[]},"previous":{"title":"22.二叉树中和为某一值得路径","level":"5.1.22","depth":2,"path":"algorithm/For-offer/22.md","ref":"algorithm/For-offer/22.md","articles":[]},"dir":"ltr"},"config":{"plugins":["-lunr","-search","-livereload","search-plus@^0.0.11","simple-page-toc@^0.1.1","github@^2.0.0","github-buttons@2.1.0","edit-link@^2.0.2","advanced-emoji@^0.2.1","anchors@^0.7.1","include-codeblock@^3.0.2","ace@^0.3.2","emphasize@^1.1.0","katex@^1.1.3","splitter@^0.0.8","tbfed-pagefooter@^0.0.1","expandable-chapters-small@^0.1.7","sectionx@^3.1.0","local-video@^1.0.1","anchor-navigation-ex@0.1.8","favicon@^0.0.2"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"tbfed-pagefooter":{"copyright":"Copyright © ruheng.com 2017","modify_label":"该文件修订时间：","modify_format":"YYYY-MM-DD HH:mm:ss"},"emphasize":{},"ace":{},"github":{"url":"https://github.com/LRH1993/android_interview"},"simple-page-toc":{"maxDepth":3,"skipFirstH1":true},"splitter":{},"katex":{},"fontsettings":{"theme":"white","family":"sans","size":2},"sectionx":{"tag":"b"},"highlight":{},"anchor-navigation-ex":{"isRewritePageTitle":false,"tocLevel1Icon":"fa fa-hand-o-right","tocLevel2Icon":"fa fa-hand-o-right","tocLevel3Icon":"fa fa-hand-o-right"},"favicon":{"shortcut":"favicon.ico","bookmark":"favicon.ico"},"github-buttons":{"repo":"LRH1993/android_interview","types":["star"],"size":"small"},"expandable-chapters-small":{},"local-video":{},"advanced-emoji":{"embedEmojis":false},"include-codeblock":{"check":false,"edit":false,"fixlang":false,"lang":"","template":"default","theme":"chrome","unindent":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":true,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"edit-link":{"label":"Edit This Page","base":"https://github.com/LRH1993/android_interview/edit/master"},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":true},"anchors":{},"search-plus":{}},"theme":"default","author":"ruheng","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"Android校招面试指南","language":"zh-hans","output.name":"site","links":{"sidebar":{"Home":"http://lruheng.com/"}},"gitbook":"3.2.3","description":"Android面试必备，记录自己的秋招之路"},"file":{"path":"algorithm/For-offer/23.md","mtime":"2017-08-22T09:01:45.000Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2017-10-16T13:00:43.989Z"},"basePath":"../..","book":{"language":""}});
         });
     </script>
 </div>

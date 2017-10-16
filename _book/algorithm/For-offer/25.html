@@ -69,6 +69,10 @@
                 
             
                 
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
                 <link rel="stylesheet" href="../../gitbook/gitbook-plugin-fontsettings/website.css">
                 
             
@@ -3712,43 +3716,43 @@
 <p>&#x6211;&#x4EEC;&#x6C42;&#x6574;&#x4E2A;&#x5B57;&#x7B26;&#x4E32;&#x7684;&#x6392;&#x5217;&#xFF0C;&#x53EF;&#x4EE5;&#x770B;&#x6210;&#x4E24;&#x6B65;&#xFF1A;&#x9996;&#x5148;&#x6C42;&#x6240;&#x6709;&#x53EF;&#x80FD;&#x51FA;&#x73B0;&#x5728;&#x7B2C;&#x4E00;&#x4E2A;&#x4F4D;&#x7F6E;&#x7684;&#x5B57;&#x7B26;&#xFF0C;&#x5373;&#x628A;&#x7B2C;&#x4E00;&#x4E2A;&#x5B57;&#x7B26;&#x548C;&#x540E;&#x9762;&#x6240;&#x6709;&#x7684;&#x5B57;&#x7B26;&#x4EA4;&#x6362;&#x3002;&#x8FD9;&#x4E2A;&#x65F6;&#x5019;&#x6211;&#x4EEC;&#x4ECD;&#x628A;&#x540E;&#x9762;&#x7684;&#x6240;&#x6709;&#x5B57;&#x7B26;&#x5206;&#x6210;&#x4E24;&#x90E8;&#x5206;&#xFF1A;&#x540E;&#x9762;&#x5B57;&#x7B26;&#x7684;&#x7B2C;&#x4E00;&#x4E2A;&#x5B57;&#x7B26;&#xFF0C;&#x4EE5;&#x53CA;&#x8FD9;&#x4E2A;&#x5B57;&#x7B26;&#x4E4B;&#x540E;&#x7684;&#x6240;&#x6709;&#x5B57;&#x7B26;&#x3002;</p>
 <p>&#x8FD9;&#x5176;&#x5B9E;&#x662F;&#x5F88;&#x5178;&#x578B;&#x7684;&#x9012;&#x5F52;&#x601D;&#x8DEF;&#x3002;</p>
 <h2 id="&#x4E09;&#x3001;&#x89E3;&#x9898;&#x4EE3;&#x7801;"><a name="&#x4E09;&#x3001;&#x89E3;&#x9898;&#x4EE3;&#x7801;" class="anchor-navigation-ex-anchor" href="#&#x4E09;&#x3001;&#x89E3;&#x9898;&#x4EE3;&#x7801;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x4E09;&#x3001;&#x89E3;&#x9898;&#x4EE3;&#x7801;</h2>
-<pre><code class="lang-java">public class Test {
-    /**
+<pre><code class="lang-java"><span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Test</span> </span>{
+    <span class="hljs-comment">/**
      * &#x9898;&#x76EE;&#xFF1A;&#x8F93;&#x5165;&#x4E00;&#x4E2A;&#x5B57;&#x7B26;&#x4E32;&#xFF0C;&#x6253;&#x5370;&#x51FA;&#x8BE5;&#x5B57;&#x7B26;&#x4E8B;&#x4E2D;&#x5B57;&#x7B26;&#x7684;&#x6240;&#x6709;&#x6392;&#x5217;&#x3002;&#x4F8B;&#x5982;&#x8F93;&#x5165;&#x5B57;&#x7B26;&#x4E32;abc&#x3002;
      * &#x5219;&#x6253;&#x5370;&#x51FA;&#x7531;&#x5B57;&#x7B26;a&#x3001;b&#x3001;c &#x6240;&#x80FD;&#x6392;&#x5217;&#x51FA;&#x6765;&#x7684;&#x6240;&#x6709;&#x5B57;&#x7B26;&#x4E32;abc&#x3001;acb&#x3001;bac&#x3001;bca&#x3001;cab&#x548C;cba&#x3002;
      *
-     * @param chars &#x5F85;&#x6392;&#x5E8F;&#x7684;&#x5B57;&#x7B26;&#x6570;&#x7EC4;
-     */
-    public static void permutation(char[] chars) {
-        // &#x8F93;&#x5165;&#x8F83;&#x9A8C;
-        if (chars == null || chars.length &lt; 1) {
-            return;
+     * <span class="hljs-doctag">@param</span> chars &#x5F85;&#x6392;&#x5E8F;&#x7684;&#x5B57;&#x7B26;&#x6570;&#x7EC4;
+     */</span>
+    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title">permutation</span><span class="hljs-params">(<span class="hljs-keyword">char</span>[] chars)</span> </span>{
+        <span class="hljs-comment">// &#x8F93;&#x5165;&#x8F83;&#x9A8C;</span>
+        <span class="hljs-keyword">if</span> (chars == <span class="hljs-keyword">null</span> || chars.length &lt; <span class="hljs-number">1</span>) {
+            <span class="hljs-keyword">return</span>;
         }
-        // &#x8FDB;&#x884C;&#x6392;&#x5217;&#x64CD;&#x4F5C;
-        permutation(chars, 0);
+        <span class="hljs-comment">// &#x8FDB;&#x884C;&#x6392;&#x5217;&#x64CD;&#x4F5C;</span>
+        permutation(chars, <span class="hljs-number">0</span>);
     }
 
-    /**
+    <span class="hljs-comment">/**
      * &#x6C42;&#x5B57;&#x7B26;&#x6570;&#x7EC4;&#x7684;&#x6392;&#x5217;
      *
-     * @param chars &#x5F85;&#x6392;&#x5217;&#x7684;&#x5B57;&#x7B26;&#x4E32;
-     * @param begin &#x5F53;&#x524D;&#x5904;&#x7406;&#x7684;&#x4F4D;&#x7F6E;
-     */
-    public static void permutation(char[] chars, int begin) {
-        // &#x5982;&#x679C;&#x662F;&#x6700;&#x540E;&#x4E00;&#x4E2A;&#x5143;&#x7D20;&#x4E86;&#xFF0C;&#x5C31;&#x8F93;&#x51FA;&#x6392;&#x5217;&#x7ED3;&#x679C;
-        if (chars.length - 1 == begin) {
-            System.out.print(new String(chars) + &quot; &quot;);
-        } else {
-            char tmp;
-            // &#x5BF9;&#x5F53;&#x524D;&#x8FD8;&#x672A;&#x5904;&#x7406;&#x7684;&#x5B57;&#x7B26;&#x4E32;&#x8FDB;&#x884C;&#x5904;&#x7406;&#xFF0C;&#x6BCF;&#x4E2A;&#x5B57;&#x7B26;&#x90FD;&#x53EF;&#x4EE5;&#x4F5C;&#x4E3A;&#x5F53;&#x524D;&#x5904;&#x7406;&#x4F4D;&#x7F6E;&#x7684;&#x5143;&#x7D20;
-            for (int i = begin; i &lt; chars.length; i++) {
-                // &#x4E0B;&#x9762;&#x662F;&#x4EA4;&#x6362;&#x5143;&#x7D20;&#x7684;&#x4F4D;&#x7F6E;
+     * <span class="hljs-doctag">@param</span> chars &#x5F85;&#x6392;&#x5217;&#x7684;&#x5B57;&#x7B26;&#x4E32;
+     * <span class="hljs-doctag">@param</span> begin &#x5F53;&#x524D;&#x5904;&#x7406;&#x7684;&#x4F4D;&#x7F6E;
+     */</span>
+    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title">permutation</span><span class="hljs-params">(<span class="hljs-keyword">char</span>[] chars, <span class="hljs-keyword">int</span> begin)</span> </span>{
+        <span class="hljs-comment">// &#x5982;&#x679C;&#x662F;&#x6700;&#x540E;&#x4E00;&#x4E2A;&#x5143;&#x7D20;&#x4E86;&#xFF0C;&#x5C31;&#x8F93;&#x51FA;&#x6392;&#x5217;&#x7ED3;&#x679C;</span>
+        <span class="hljs-keyword">if</span> (chars.length - <span class="hljs-number">1</span> == begin) {
+            System.out.print(<span class="hljs-keyword">new</span> String(chars) + <span class="hljs-string">&quot; &quot;</span>);
+        } <span class="hljs-keyword">else</span> {
+            <span class="hljs-keyword">char</span> tmp;
+            <span class="hljs-comment">// &#x5BF9;&#x5F53;&#x524D;&#x8FD8;&#x672A;&#x5904;&#x7406;&#x7684;&#x5B57;&#x7B26;&#x4E32;&#x8FDB;&#x884C;&#x5904;&#x7406;&#xFF0C;&#x6BCF;&#x4E2A;&#x5B57;&#x7B26;&#x90FD;&#x53EF;&#x4EE5;&#x4F5C;&#x4E3A;&#x5F53;&#x524D;&#x5904;&#x7406;&#x4F4D;&#x7F6E;&#x7684;&#x5143;&#x7D20;</span>
+            <span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> i = begin; i &lt; chars.length; i++) {
+                <span class="hljs-comment">// &#x4E0B;&#x9762;&#x662F;&#x4EA4;&#x6362;&#x5143;&#x7D20;&#x7684;&#x4F4D;&#x7F6E;</span>
                 tmp = chars[begin];
                 chars[begin] = chars[i];
                 chars[i] = tmp;
 
-                // &#x5904;&#x7406;&#x4E0B;&#x4E00;&#x4E2A;&#x4F4D;&#x7F6E;
-                permutation(chars, begin + 1);
+                <span class="hljs-comment">// &#x5904;&#x7406;&#x4E0B;&#x4E00;&#x4E2A;&#x4F4D;&#x7F6E;</span>
+                permutation(chars, begin + <span class="hljs-number">1</span>);
             }
         }
     }
@@ -3799,7 +3803,7 @@
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"25.字符串的排列","level":"5.1.25","depth":2,"next":{"title":"26.数组中出现次数超过一半的数字","level":"5.1.26","depth":2,"path":"algorithm/For-offer/26.md","ref":"algorithm/For-offer/26.md","articles":[]},"previous":{"title":"24.二叉搜索树与双向链表","level":"5.1.24","depth":2,"path":"algorithm/For-offer/24.md","ref":"algorithm/For-offer/24.md","articles":[]},"dir":"ltr"},"config":{"plugins":["-lunr","-search","-highlight","-livereload","search-plus@^0.0.11","simple-page-toc@^0.1.1","github@^2.0.0","github-buttons@2.1.0","edit-link@^2.0.2","advanced-emoji@^0.2.1","anchors@^0.7.1","include-codeblock@^3.0.2","ace@^0.3.2","emphasize@^1.1.0","katex@^1.1.3","splitter@^0.0.8","tbfed-pagefooter@^0.0.1","expandable-chapters-small@^0.1.7","sectionx@^3.1.0","local-video@^1.0.1","anchor-navigation-ex@0.1.8","favicon@^0.0.2"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"tbfed-pagefooter":{"copyright":"Copyright © ruheng.com 2017","modify_label":"该文件修订时间：","modify_format":"YYYY-MM-DD HH:mm:ss"},"emphasize":{},"ace":{},"github":{"url":"https://github.com/LRH1993/android_interview"},"simple-page-toc":{"maxDepth":3,"skipFirstH1":true},"splitter":{},"katex":{},"fontsettings":{"theme":"white","family":"sans","size":2},"sectionx":{"tag":"b"},"anchor-navigation-ex":{"isRewritePageTitle":false,"tocLevel1Icon":"fa fa-hand-o-right","tocLevel2Icon":"fa fa-hand-o-right","tocLevel3Icon":"fa fa-hand-o-right"},"favicon":{"shortcut":"favicon.ico","bookmark":"favicon.ico"},"github-buttons":{"repo":"LRH1993/android_interview","types":["star"],"size":"small"},"expandable-chapters-small":{},"local-video":{},"advanced-emoji":{"embedEmojis":false},"include-codeblock":{"check":false,"edit":true,"fixlang":false,"lang":"","template":"ace","theme":"chrome","unindent":true},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":true,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"edit-link":{"label":"Edit This Page","base":"https://github.com/LRH1993/android_interview/edit/master"},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":true},"anchors":{},"search-plus":{}},"theme":"default","author":"ruheng","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"Android校招面试指南","language":"zh-hans","output.name":"site","links":{"sidebar":{"Home":"http://lruheng.com/"}},"gitbook":"3.2.3","description":"Android面试必备，记录自己的秋招之路"},"file":{"path":"algorithm/For-offer/25.md","mtime":"2017-08-23T01:59:11.000Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2017-10-16T12:05:21.906Z"},"basePath":"../..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"25.字符串的排列","level":"5.1.25","depth":2,"next":{"title":"26.数组中出现次数超过一半的数字","level":"5.1.26","depth":2,"path":"algorithm/For-offer/26.md","ref":"algorithm/For-offer/26.md","articles":[]},"previous":{"title":"24.二叉搜索树与双向链表","level":"5.1.24","depth":2,"path":"algorithm/For-offer/24.md","ref":"algorithm/For-offer/24.md","articles":[]},"dir":"ltr"},"config":{"plugins":["-lunr","-search","-livereload","search-plus@^0.0.11","simple-page-toc@^0.1.1","github@^2.0.0","github-buttons@2.1.0","edit-link@^2.0.2","advanced-emoji@^0.2.1","anchors@^0.7.1","include-codeblock@^3.0.2","ace@^0.3.2","emphasize@^1.1.0","katex@^1.1.3","splitter@^0.0.8","tbfed-pagefooter@^0.0.1","expandable-chapters-small@^0.1.7","sectionx@^3.1.0","local-video@^1.0.1","anchor-navigation-ex@0.1.8","favicon@^0.0.2"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"tbfed-pagefooter":{"copyright":"Copyright © ruheng.com 2017","modify_label":"该文件修订时间：","modify_format":"YYYY-MM-DD HH:mm:ss"},"emphasize":{},"ace":{},"github":{"url":"https://github.com/LRH1993/android_interview"},"simple-page-toc":{"maxDepth":3,"skipFirstH1":true},"splitter":{},"katex":{},"fontsettings":{"theme":"white","family":"sans","size":2},"sectionx":{"tag":"b"},"highlight":{},"anchor-navigation-ex":{"isRewritePageTitle":false,"tocLevel1Icon":"fa fa-hand-o-right","tocLevel2Icon":"fa fa-hand-o-right","tocLevel3Icon":"fa fa-hand-o-right"},"favicon":{"shortcut":"favicon.ico","bookmark":"favicon.ico"},"github-buttons":{"repo":"LRH1993/android_interview","types":["star"],"size":"small"},"expandable-chapters-small":{},"local-video":{},"advanced-emoji":{"embedEmojis":false},"include-codeblock":{"check":false,"edit":false,"fixlang":false,"lang":"","template":"default","theme":"chrome","unindent":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":true,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"edit-link":{"label":"Edit This Page","base":"https://github.com/LRH1993/android_interview/edit/master"},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":true},"anchors":{},"search-plus":{}},"theme":"default","author":"ruheng","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"Android校招面试指南","language":"zh-hans","output.name":"site","links":{"sidebar":{"Home":"http://lruheng.com/"}},"gitbook":"3.2.3","description":"Android面试必备，记录自己的秋招之路"},"file":{"path":"algorithm/For-offer/25.md","mtime":"2017-08-23T01:59:11.000Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2017-10-16T13:00:43.989Z"},"basePath":"../..","book":{"language":""}});
         });
     </script>
 </div>

@@ -69,6 +69,10 @@
                 
             
                 
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
                 <link rel="stylesheet" href="../../gitbook/gitbook-plugin-fontsettings/website.css">
                 
             
@@ -3710,68 +3714,68 @@
 <p><strong>&#xFF08;2&#xFF09;&#x5728;try&#x5757;&#x4E2D;&#x6709;System.exit(0);&#x8FD9;&#x6837;&#x7684;&#x8BED;&#x53E5;&#xFF0C;System.exit(0);&#x662F;&#x7EC8;&#x6B62;Java&#x865A;&#x62DF;&#x673A;JVM&#x7684;&#xFF0C;&#x8FDE;JVM&#x90FD;&#x505C;&#x6B62;&#x4E86;&#xFF0C;&#x6240;&#x6709;&#x90FD;&#x7ED3;&#x675F;&#x4E86;&#xFF0C;&#x5F53;&#x7136;finally&#x8BED;&#x53E5;&#x4E5F;&#x4E0D;&#x4F1A;&#x88AB;&#x6267;&#x884C;&#x5230;&#x3002;</strong></p>
 <p>&#x5F53;&#x7136;&#x8FD8;&#x6709;&#x5F88;&#x591A;&#x4EBA;&#x63A2;&#x8BA8;finally&#x8BED;&#x53E5;&#x7684;&#x6267;&#x884C;&#x4E0E;return&#x7684;&#x5173;&#x7CFB;&#xFF0C;&#x9887;&#x4E3A;&#x8BA9;&#x4EBA;&#x8FF7;&#x60D1;&#xFF0C;&#x4E0D;&#x77E5;&#x9053;finally&#x8BED;&#x53E5;&#x662F;&#x5728;try&#x7684;return&#x4E4B;&#x524D;&#x6267;&#x884C;&#x8FD8;&#x662F;&#x4E4B;&#x540E;&#x6267;&#x884C;&#xFF1F;&#x6211;&#x4E5F;&#x662F;&#x4E00;&#x5934;&#x96FE;&#x6C34;&#xFF0C;&#x6211;&#x89C9;&#x5F97;&#x4ED6;&#x4EEC;&#x7684;&#x8BF4;&#x6CD5;&#x90FD;&#x4E0D;&#x6B63;&#x786E;&#xFF0C;&#x6211;&#x89C9;&#x5F97;&#x5E94;&#x8BE5;&#x662F;&#xFF1A;<strong>finally&#x8BED;&#x53E5;&#x662F;&#x5728;try&#x7684;return&#x8BED;&#x53E5;&#x6267;&#x884C;&#x4E4B;&#x540E;&#xFF0C;return&#x8FD4;&#x56DE;&#x4E4B;&#x524D;&#x6267;&#x884C;</strong>&#x3002;&#x8FD9;&#x6837;&#x7684;&#x8BF4;&#x6CD5;&#x6709;&#x70B9;&#x77DB;&#x76FE;&#xFF0C;&#x4E5F;&#x8BB8;&#x662F;&#x6211;&#x8868;&#x8FF0;&#x4E0D;&#x592A;&#x6E05;&#x695A;&#xFF0C;&#x4E0B;&#x9762;&#x6211;&#x7ED9;&#x51FA;&#x81EA;&#x5DF1;&#x8BD5;&#x9A8C;&#x7684;&#x4E00;&#x4E9B;&#x7ED3;&#x679C;&#x548C;&#x793A;&#x4F8B;&#x8FDB;&#x884C;&#x4F50;&#x8BC1;&#xFF0C;&#x6709;&#x4EC0;&#x4E48;&#x95EE;&#x9898;&#x6B22;&#x8FCE;&#x5927;&#x5BB6;&#x63D0;&#x51FA;&#x6765;&#x3002;</p>
 <h3 id="1-finally&#x8BED;&#x53E5;&#x5728;return&#x8BED;&#x53E5;&#x6267;&#x884C;&#x4E4B;&#x540E;return&#x8FD4;&#x56DE;&#x4E4B;&#x524D;&#x6267;&#x884C;&#x7684;&#x3002;"><a name="1-finally&#x8BED;&#x53E5;&#x5728;return&#x8BED;&#x53E5;&#x6267;&#x884C;&#x4E4B;&#x540E;return&#x8FD4;&#x56DE;&#x4E4B;&#x524D;&#x6267;&#x884C;&#x7684;&#x3002;" class="anchor-navigation-ex-anchor" href="#1-finally&#x8BED;&#x53E5;&#x5728;return&#x8BED;&#x53E5;&#x6267;&#x884C;&#x4E4B;&#x540E;return&#x8FD4;&#x56DE;&#x4E4B;&#x524D;&#x6267;&#x884C;&#x7684;&#x3002;"><i class="fa fa-link" aria-hidden="true"></i></a>1. finally&#x8BED;&#x53E5;&#x5728;return&#x8BED;&#x53E5;&#x6267;&#x884C;&#x4E4B;&#x540E;return&#x8FD4;&#x56DE;&#x4E4B;&#x524D;&#x6267;&#x884C;&#x7684;&#x3002;</h3>
-<pre><code class="lang-java">public class FinallyTest1 {
+<pre><code class="lang-java"><span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">FinallyTest1</span> </span>{
 
-    public static void main(String[] args) {
+    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title">main</span><span class="hljs-params">(String[] args)</span> </span>{
 
         System.out.println(test1());
     }
 
-    public static int test1() {
-        int b = 20;
+    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">int</span> <span class="hljs-title">test1</span><span class="hljs-params">()</span> </span>{
+        <span class="hljs-keyword">int</span> b = <span class="hljs-number">20</span>;
 
-        try {
-            System.out.println(&quot;try block&quot;);
+        <span class="hljs-keyword">try</span> {
+            System.out.println(<span class="hljs-string">&quot;try block&quot;</span>);
 
-            return b += 80; 
+            <span class="hljs-keyword">return</span> b += <span class="hljs-number">80</span>; 
         }
-        catch (Exception e) {
+        <span class="hljs-keyword">catch</span> (Exception e) {
 
-            System.out.println(&quot;catch block&quot;);
+            System.out.println(<span class="hljs-string">&quot;catch block&quot;</span>);
         }
-        finally {
+        <span class="hljs-keyword">finally</span> {
 
-            System.out.println(&quot;finally block&quot;);
+            System.out.println(<span class="hljs-string">&quot;finally block&quot;</span>);
 
-            if (b &gt; 25) {
-                System.out.println(&quot;b&gt;25, b = &quot; + b);
+            <span class="hljs-keyword">if</span> (b &gt; <span class="hljs-number">25</span>) {
+                System.out.println(<span class="hljs-string">&quot;b&gt;25, b = &quot;</span> + b);
             }
         }
 
-        return b;
+        <span class="hljs-keyword">return</span> b;
     }
 
 }
 </code></pre>
 <p>&#x8FD0;&#x884C;&#x7ED3;&#x679C;&#x662F;&#xFF1A;</p>
-<pre><code class="lang-java">try block
-finally block
-b&gt;25, b = 100
-100
+<pre><code class="lang-java"><span class="hljs-keyword">try</span> block
+<span class="hljs-keyword">finally</span> block
+b&gt;<span class="hljs-number">25</span>, b = <span class="hljs-number">100</span>
+<span class="hljs-number">100</span>
 </code></pre>
 <p>&#x8BF4;&#x660E;return&#x8BED;&#x53E5;&#x5DF2;&#x7ECF;&#x6267;&#x884C;&#x4E86;&#x518D;&#x53BB;&#x6267;&#x884C;finally&#x8BED;&#x53E5;&#xFF0C;&#x4E0D;&#x8FC7;&#x5E76;&#x6CA1;&#x6709;&#x76F4;&#x63A5;&#x8FD4;&#x56DE;&#xFF0C;&#x800C;&#x662F;&#x7B49;finally&#x8BED;&#x53E5;&#x6267;&#x884C;&#x5B8C;&#x4E86;&#x518D;&#x8FD4;&#x56DE;&#x7ED3;&#x679C;&#x3002;</p>
 <p>&#x5982;&#x679C;&#x89C9;&#x5F97;&#x8FD9;&#x4E2A;&#x4F8B;&#x5B50;&#x8FD8;&#x4E0D;&#x8DB3;&#x4EE5;&#x8BF4;&#x660E;&#x8FD9;&#x4E2A;&#x60C5;&#x51B5;&#x7684;&#x8BDD;&#xFF0C;&#x4E0B;&#x9762;&#x518D;&#x52A0;&#x4E2A;&#x4F8B;&#x5B50;&#x52A0;&#x5F3A;&#x8BC1;&#x660E;&#x7ED3;&#x8BBA;&#xFF1A;</p>
-<pre><code class="lang-java">public class FinallyTest1 {
+<pre><code class="lang-java"><span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">FinallyTest1</span> </span>{
 
-    public static void main(String[] args) {
+    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title">main</span><span class="hljs-params">(String[] args)</span> </span>{
 
         System.out.println(test11());
     }
 
-    public static String test11() {
-        try {
-            System.out.println(&quot;try block&quot;);
+    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> String <span class="hljs-title">test11</span><span class="hljs-params">()</span> </span>{
+        <span class="hljs-keyword">try</span> {
+            System.out.println(<span class="hljs-string">&quot;try block&quot;</span>);
 
-           return test12();
-      } finally {
-           System.out.println(&quot;finally block&quot;);
+           <span class="hljs-keyword">return</span> test12();
+      } <span class="hljs-keyword">finally</span> {
+           System.out.println(<span class="hljs-string">&quot;finally block&quot;</span>);
        }
   }
 
-  public static String test12() {
-       System.out.println(&quot;return statement&quot;);
+  <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> String <span class="hljs-title">test12</span><span class="hljs-params">()</span> </span>{
+       System.out.println(<span class="hljs-string">&quot;return statement&quot;</span>);
 
-       return &quot;after return&quot;;
+       <span class="hljs-keyword">return</span> <span class="hljs-string">&quot;after return&quot;</span>;
    }
 
 }
@@ -3784,35 +3788,35 @@ after return
 </code></pre><p>&#x8BF4;&#x660E;try&#x4E2D;&#x7684;return&#x8BED;&#x53E5;&#x5148;&#x6267;&#x884C;&#x4E86;&#x4F46;&#x5E76;&#x6CA1;&#x6709;&#x7ACB;&#x5373;&#x8FD4;&#x56DE;&#xFF0C;&#x7B49;&#x5230;finally&#x6267;&#x884C;&#x7ED3;&#x675F;&#x540E;&#x518D;&#x8FD4;&#x56DE;&#x3002;</p>
 <p>&#x8FD9;&#x91CC;&#x5927;&#x5BB6;&#x53EF;&#x80FD;&#x4F1A;&#x60F3;&#xFF1A;&#x5982;&#x679C;finally&#x91CC;&#x4E5F;&#x6709;return&#x8BED;&#x53E5;&#xFF0C;&#x90A3;&#x4E48;&#x662F;&#x4E0D;&#x662F;&#x5C31;&#x76F4;&#x63A5;&#x8FD4;&#x56DE;&#x4E86;&#xFF0C;try&#x4E2D;&#x7684;return&#x5C31;&#x4E0D;&#x80FD;&#x8FD4;&#x56DE;&#x4E86;&#xFF1F;&#x770B;&#x4E0B;&#x9762;&#x3002;</p>
 <h3 id="2-finally&#x5757;&#x4E2D;&#x7684;return&#x8BED;&#x53E5;&#x4F1A;&#x8986;&#x76D6;try&#x5757;&#x4E2D;&#x7684;return&#x8FD4;&#x56DE;&#x3002;"><a name="2-finally&#x5757;&#x4E2D;&#x7684;return&#x8BED;&#x53E5;&#x4F1A;&#x8986;&#x76D6;try&#x5757;&#x4E2D;&#x7684;return&#x8FD4;&#x56DE;&#x3002;" class="anchor-navigation-ex-anchor" href="#2-finally&#x5757;&#x4E2D;&#x7684;return&#x8BED;&#x53E5;&#x4F1A;&#x8986;&#x76D6;try&#x5757;&#x4E2D;&#x7684;return&#x8FD4;&#x56DE;&#x3002;"><i class="fa fa-link" aria-hidden="true"></i></a>2. finally&#x5757;&#x4E2D;&#x7684;return&#x8BED;&#x53E5;&#x4F1A;&#x8986;&#x76D6;try&#x5757;&#x4E2D;&#x7684;return&#x8FD4;&#x56DE;&#x3002;</h3>
-<pre><code class="lang-java">public class FinallyTest2 {
+<pre><code class="lang-java"><span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">FinallyTest2</span> </span>{
 
-    public static void main(String[] args) {
+    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title">main</span><span class="hljs-params">(String[] args)</span> </span>{
 
         System.out.println(test2());
     }
 
-    public static int test2() {
-        int b = 20;
+    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">int</span> <span class="hljs-title">test2</span><span class="hljs-params">()</span> </span>{
+        <span class="hljs-keyword">int</span> b = <span class="hljs-number">20</span>;
 
-        try {
-            System.out.println(&quot;try block&quot;);
+        <span class="hljs-keyword">try</span> {
+            System.out.println(<span class="hljs-string">&quot;try block&quot;</span>);
 
-            return b += 80;
-        } catch (Exception e) {
+            <span class="hljs-keyword">return</span> b += <span class="hljs-number">80</span>;
+        } <span class="hljs-keyword">catch</span> (Exception e) {
 
-            System.out.println(&quot;catch block&quot;);
-        } finally {
+            System.out.println(<span class="hljs-string">&quot;catch block&quot;</span>);
+        } <span class="hljs-keyword">finally</span> {
 
-            System.out.println(&quot;finally block&quot;);
+            System.out.println(<span class="hljs-string">&quot;finally block&quot;</span>);
 
-            if (b &gt; 25) {
-                System.out.println(&quot;b&gt;25, b = &quot; + b);
+            <span class="hljs-keyword">if</span> (b &gt; <span class="hljs-number">25</span>) {
+                System.out.println(<span class="hljs-string">&quot;b&gt;25, b = &quot;</span> + b);
             }
 
-            return 200;
+            <span class="hljs-keyword">return</span> <span class="hljs-number">200</span>;
         }
 
-        // return b;
+        <span class="hljs-comment">// return b;</span>
     }
 
 }
@@ -3826,71 +3830,71 @@ b&gt;25, b = 100
 <p>&#x8FD9;&#x91CC;&#x5927;&#x5BB6;&#x53EF;&#x80FD;&#x53C8;&#x60F3;&#xFF1A;&#x5982;&#x679C;finally&#x91CC;&#x6CA1;&#x6709;return&#x8BED;&#x53E5;&#xFF0C;&#x4F46;&#x4FEE;&#x6539;&#x4E86;b&#x7684;&#x503C;&#xFF0C;&#x90A3;&#x4E48;try&#x4E2D;return&#x8FD4;&#x56DE;&#x7684;&#x662F;&#x4FEE;&#x6539;&#x540E;&#x7684;&#x503C;&#x8FD8;&#x662F;&#x539F;&#x503C;&#xFF1F;&#x770B;&#x4E0B;&#x9762;&#x3002;</p>
 <h3 id="3-&#x5982;&#x679C;finally&#x8BED;&#x53E5;&#x4E2D;&#x6CA1;&#x6709;return&#x8BED;&#x53E5;&#x8986;&#x76D6;&#x8FD4;&#x56DE;&#x503C;&#xFF0C;&#x90A3;&#x4E48;&#x539F;&#x6765;&#x7684;&#x8FD4;&#x56DE;&#x503C;&#x53EF;&#x80FD;&#x56E0;&#x4E3A;finally&#x91CC;&#x7684;&#x4FEE;&#x6539;&#x800C;&#x6539;&#x53D8;&#x4E5F;&#x53EF;&#x80FD;&#x4E0D;&#x53D8;&#x3002;"><a name="3-&#x5982;&#x679C;finally&#x8BED;&#x53E5;&#x4E2D;&#x6CA1;&#x6709;return&#x8BED;&#x53E5;&#x8986;&#x76D6;&#x8FD4;&#x56DE;&#x503C;&#xFF0C;&#x90A3;&#x4E48;&#x539F;&#x6765;&#x7684;&#x8FD4;&#x56DE;&#x503C;&#x53EF;&#x80FD;&#x56E0;&#x4E3A;finally&#x91CC;&#x7684;&#x4FEE;&#x6539;&#x800C;&#x6539;&#x53D8;&#x4E5F;&#x53EF;&#x80FD;&#x4E0D;&#x53D8;&#x3002;" class="anchor-navigation-ex-anchor" href="#3-&#x5982;&#x679C;finally&#x8BED;&#x53E5;&#x4E2D;&#x6CA1;&#x6709;return&#x8BED;&#x53E5;&#x8986;&#x76D6;&#x8FD4;&#x56DE;&#x503C;&#xFF0C;&#x90A3;&#x4E48;&#x539F;&#x6765;&#x7684;&#x8FD4;&#x56DE;&#x503C;&#x53EF;&#x80FD;&#x56E0;&#x4E3A;finally&#x91CC;&#x7684;&#x4FEE;&#x6539;&#x800C;&#x6539;&#x53D8;&#x4E5F;&#x53EF;&#x80FD;&#x4E0D;&#x53D8;&#x3002;"><i class="fa fa-link" aria-hidden="true"></i></a>3. &#x5982;&#x679C;finally&#x8BED;&#x53E5;&#x4E2D;&#x6CA1;&#x6709;return&#x8BED;&#x53E5;&#x8986;&#x76D6;&#x8FD4;&#x56DE;&#x503C;&#xFF0C;&#x90A3;&#x4E48;&#x539F;&#x6765;&#x7684;&#x8FD4;&#x56DE;&#x503C;&#x53EF;&#x80FD;&#x56E0;&#x4E3A;finally&#x91CC;&#x7684;&#x4FEE;&#x6539;&#x800C;&#x6539;&#x53D8;&#x4E5F;&#x53EF;&#x80FD;&#x4E0D;&#x53D8;&#x3002;</h3>
 <p><strong>&#x6D4B;&#x8BD5;&#x7528;&#x4F8B;1&#xFF1A;</strong></p>
-<pre><code class="lang-java">public class FinallyTest3 {
+<pre><code class="lang-java"><span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">FinallyTest3</span> </span>{
 
-    public static void main(String[] args) {
+    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title">main</span><span class="hljs-params">(String[] args)</span> </span>{
 
         System.out.println(test3());
     }
 
-    public static int test3() {
-        int b = 20;
+    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">int</span> <span class="hljs-title">test3</span><span class="hljs-params">()</span> </span>{
+        <span class="hljs-keyword">int</span> b = <span class="hljs-number">20</span>;
 
-        try {
-            System.out.println(&quot;try block&quot;);
+        <span class="hljs-keyword">try</span> {
+            System.out.println(<span class="hljs-string">&quot;try block&quot;</span>);
 
-            return b += 80;
-        } catch (Exception e) {
+            <span class="hljs-keyword">return</span> b += <span class="hljs-number">80</span>;
+        } <span class="hljs-keyword">catch</span> (Exception e) {
 
-            System.out.println(&quot;catch block&quot;);
-        } finally {
+            System.out.println(<span class="hljs-string">&quot;catch block&quot;</span>);
+        } <span class="hljs-keyword">finally</span> {
 
-            System.out.println(&quot;finally block&quot;);
+            System.out.println(<span class="hljs-string">&quot;finally block&quot;</span>);
 
-            if (b &gt; 25) {
-                System.out.println(&quot;b&gt;25, b = &quot; + b);
+            <span class="hljs-keyword">if</span> (b &gt; <span class="hljs-number">25</span>) {
+                System.out.println(<span class="hljs-string">&quot;b&gt;25, b = &quot;</span> + b);
             }
 
-            b = 150;
+            b = <span class="hljs-number">150</span>;
         }
 
-        return 2000;
+        <span class="hljs-keyword">return</span> <span class="hljs-number">2000</span>;
     }
 
 }
 </code></pre>
 <p>&#x8FD0;&#x884C;&#x7ED3;&#x679C;&#x662F;&#xFF1A;</p>
-<pre><code class="lang-Java">try block
-finally block
-b&gt;25, b = 100
-100
+<pre><code class="lang-Java"><span class="hljs-keyword">try</span> block
+<span class="hljs-keyword">finally</span> block
+b&gt;<span class="hljs-number">25</span>, b = <span class="hljs-number">100</span>
+<span class="hljs-number">100</span>
 </code></pre>
 <p><strong>&#x6D4B;&#x8BD5;&#x7528;&#x4F8B;2&#xFF1A;</strong></p>
-<pre><code class="lang-java">import java.util.*;
+<pre><code class="lang-java"><span class="hljs-keyword">import</span> java.util.*;
 
-public class FinallyTest6
-{
-    public static void main(String[] args) {
-        System.out.println(getMap().get(&quot;KEY&quot;).toString());
+<span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">FinallyTest6</span>
+</span>{
+    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title">main</span><span class="hljs-params">(String[] args)</span> </span>{
+        System.out.println(getMap().get(<span class="hljs-string">&quot;KEY&quot;</span>).toString());
     }
 
-    public static Map&lt;String, String&gt; getMap() {
-        Map&lt;String, String&gt; map = new HashMap&lt;String, String&gt;();
-        map.put(&quot;KEY&quot;, &quot;INIT&quot;);
+    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> Map&lt;String, String&gt; <span class="hljs-title">getMap</span><span class="hljs-params">()</span> </span>{
+        Map&lt;String, String&gt; map = <span class="hljs-keyword">new</span> HashMap&lt;String, String&gt;();
+        map.put(<span class="hljs-string">&quot;KEY&quot;</span>, <span class="hljs-string">&quot;INIT&quot;</span>);
 
-        try {
-            map.put(&quot;KEY&quot;, &quot;TRY&quot;);
-            return map;
+        <span class="hljs-keyword">try</span> {
+            map.put(<span class="hljs-string">&quot;KEY&quot;</span>, <span class="hljs-string">&quot;TRY&quot;</span>);
+            <span class="hljs-keyword">return</span> map;
         }
-        catch (Exception e) {
-            map.put(&quot;KEY&quot;, &quot;CATCH&quot;);
+        <span class="hljs-keyword">catch</span> (Exception e) {
+            map.put(<span class="hljs-string">&quot;KEY&quot;</span>, <span class="hljs-string">&quot;CATCH&quot;</span>);
         }
-        finally {
-            map.put(&quot;KEY&quot;, &quot;FINALLY&quot;);
-            map = null;
+        <span class="hljs-keyword">finally</span> {
+            map.put(<span class="hljs-string">&quot;KEY&quot;</span>, <span class="hljs-string">&quot;FINALLY&quot;</span>);
+            map = <span class="hljs-keyword">null</span>;
         }
 
-        return map;
+        <span class="hljs-keyword">return</span> map;
     }
 }
 </code></pre>
@@ -3899,38 +3903,38 @@ public class FinallyTest6
 </code></pre><p>&#x4E3A;&#x4EC0;&#x4E48;&#x6D4B;&#x8BD5;&#x7528;&#x4F8B;1&#x4E2D;finally&#x91CC;&#x7684;b = 150;&#x5E76;&#x6CA1;&#x6709;&#x8D77;&#x5230;&#x4F5C;&#x7528;&#x800C;&#x6D4B;&#x8BD5;&#x7528;&#x4F8B;2&#x4E2D;finally&#x7684;map.put(&quot;KEY&quot;, &quot;FINALLY&quot;);&#x8D77;&#x4E86;&#x4F5C;&#x7528;&#x800C;map = null;&#x5374;&#x6CA1;&#x8D77;&#x4F5C;&#x7528;&#x5462;&#xFF1F;&#x8FD9;&#x5C31;&#x662F;Java&#x5230;&#x5E95;&#x662F;&#x4F20;&#x503C;&#x8FD8;&#x662F;&#x4F20;&#x5740;&#x7684;&#x95EE;&#x9898;&#x4E86;&#xFF0C;&#x5177;&#x4F53;&#x8BF7;&#x770B;<a href="http://www.cnblogs.com/lanxuezaipiao/p/3371224.html" target="_blank">&#x7CBE;&#x9009;30&#x9053;Java&#x7B14;&#x8BD5;&#x9898;&#x89E3;&#x7B54;</a>&#xFF0C;&#x91CC;&#x9762;&#x6709;&#x8BE6;&#x7EC6;&#x7684;&#x89E3;&#x7B54;&#xFF0C;&#x7B80;&#x5355;&#x6765;&#x8BF4;&#x5C31;&#x662F;&#xFF1A;Java&#x4E2D;&#x53EA;&#x6709;&#x4F20;&#x503C;&#x6CA1;&#x6709;&#x4F20;&#x5740;&#xFF0C;&#x8FD9;&#x4E5F;&#x662F;&#x4E3A;&#x4EC0;&#x4E48;map = null&#x8FD9;&#x53E5;&#x4E0D;&#x8D77;&#x4F5C;&#x7528;&#x3002;&#x8FD9;&#x540C;&#x65F6;&#x4E5F;&#x8BF4;&#x660E;&#x4E86;&#x8FD4;&#x56DE;&#x8BED;&#x53E5;&#x662F;try&#x4E2D;&#x7684;return&#x8BED;&#x53E5;&#x800C;&#x4E0D;&#x662F; finally&#x5916;&#x9762;&#x7684;return b;&#x8FD9;&#x53E5;&#xFF0C;&#x4E0D;&#x76F8;&#x4FE1;&#x7684;&#x8BDD;&#x53EF;&#x4EE5;&#x8BD5;&#x4E0B;&#xFF0C;&#x5C06;return b;&#x6539;&#x4E3A;return 294&#xFF0C;&#x5BF9;&#x539F;&#x6765;&#x7684;&#x7ED3;&#x679C;&#x6CA1;&#x6709;&#x4E00;&#x70B9;&#x5F71;&#x54CD;&#x3002;</p>
 <p>&#x8FD9;&#x91CC;&#x5927;&#x5BB6;&#x53EF;&#x80FD;&#x53C8;&#x8981;&#x60F3;&#xFF1A;&#x662F;&#x4E0D;&#x662F;&#x6BCF;&#x6B21;&#x8FD4;&#x56DE;&#x7684;&#x4E00;&#x5B9A;&#x662F;try&#x4E2D;&#x7684;return&#x8BED;&#x53E5;&#x5462;&#xFF1F;&#x90A3;&#x4E48;finally&#x5916;&#x7684;return b&#x4E0D;&#x662F;&#x4E00;&#x70B9;&#x4F5C;&#x7528;&#x6CA1;&#x5417;&#xFF1F;&#x8BF7;&#x770B;&#x4E0B;&#x9762;&#x3002;</p>
 <h3 id="4-try&#x5757;&#x91CC;&#x7684;return&#x8BED;&#x53E5;&#x5728;&#x5F02;&#x5E38;&#x7684;&#x60C5;&#x51B5;&#x4E0B;&#x4E0D;&#x4F1A;&#x88AB;&#x6267;&#x884C;&#xFF0C;&#x8FD9;&#x6837;&#x5177;&#x4F53;&#x8FD4;&#x56DE;&#x54EA;&#x4E2A;&#x770B;&#x60C5;&#x51B5;&#x3002;"><a name="4-try&#x5757;&#x91CC;&#x7684;return&#x8BED;&#x53E5;&#x5728;&#x5F02;&#x5E38;&#x7684;&#x60C5;&#x51B5;&#x4E0B;&#x4E0D;&#x4F1A;&#x88AB;&#x6267;&#x884C;&#xFF0C;&#x8FD9;&#x6837;&#x5177;&#x4F53;&#x8FD4;&#x56DE;&#x54EA;&#x4E2A;&#x770B;&#x60C5;&#x51B5;&#x3002;" class="anchor-navigation-ex-anchor" href="#4-try&#x5757;&#x91CC;&#x7684;return&#x8BED;&#x53E5;&#x5728;&#x5F02;&#x5E38;&#x7684;&#x60C5;&#x51B5;&#x4E0B;&#x4E0D;&#x4F1A;&#x88AB;&#x6267;&#x884C;&#xFF0C;&#x8FD9;&#x6837;&#x5177;&#x4F53;&#x8FD4;&#x56DE;&#x54EA;&#x4E2A;&#x770B;&#x60C5;&#x51B5;&#x3002;"><i class="fa fa-link" aria-hidden="true"></i></a>4. try&#x5757;&#x91CC;&#x7684;return&#x8BED;&#x53E5;&#x5728;&#x5F02;&#x5E38;&#x7684;&#x60C5;&#x51B5;&#x4E0B;&#x4E0D;&#x4F1A;&#x88AB;&#x6267;&#x884C;&#xFF0C;&#x8FD9;&#x6837;&#x5177;&#x4F53;&#x8FD4;&#x56DE;&#x54EA;&#x4E2A;&#x770B;&#x60C5;&#x51B5;&#x3002;</h3>
-<pre><code class="lang-java">public class FinallyTest4 {
+<pre><code class="lang-java"><span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">FinallyTest4</span> </span>{
 
-    public static void main(String[] args) {
+    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title">main</span><span class="hljs-params">(String[] args)</span> </span>{
 
         System.out.println(test4());
     }
 
-    public static int test4() {
-        int b = 20;
+    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">int</span> <span class="hljs-title">test4</span><span class="hljs-params">()</span> </span>{
+        <span class="hljs-keyword">int</span> b = <span class="hljs-number">20</span>;
 
-        try {
-            System.out.println(&quot;try block&quot;);
+        <span class="hljs-keyword">try</span> {
+            System.out.println(<span class="hljs-string">&quot;try block&quot;</span>);
 
-            b = b / 0;
+            b = b / <span class="hljs-number">0</span>;
 
-            return b += 80;
-        } catch (Exception e) {
+            <span class="hljs-keyword">return</span> b += <span class="hljs-number">80</span>;
+        } <span class="hljs-keyword">catch</span> (Exception e) {
 
-            b += 15;
-            System.out.println(&quot;catch block&quot;);
-        } finally {
+            b += <span class="hljs-number">15</span>;
+            System.out.println(<span class="hljs-string">&quot;catch block&quot;</span>);
+        } <span class="hljs-keyword">finally</span> {
 
-            System.out.println(&quot;finally block&quot;);
+            System.out.println(<span class="hljs-string">&quot;finally block&quot;</span>);
 
-            if (b &gt; 25) {
-                System.out.println(&quot;b&gt;25, b = &quot; + b);
+            <span class="hljs-keyword">if</span> (b &gt; <span class="hljs-number">25</span>) {
+                System.out.println(<span class="hljs-string">&quot;b&gt;25, b = &quot;</span> + b);
             }
 
-            b += 50;
+            b += <span class="hljs-number">50</span>;
         }
 
-        return b;
+        <span class="hljs-keyword">return</span> b;
     }
 
 }
@@ -3944,38 +3948,38 @@ b&gt;25, b = 35
 </code></pre><p>&#x8FD9;&#x91CC;&#x56E0; &#x4E3A;&#x5728;return&#x4E4B;&#x524D;&#x53D1;&#x751F;&#x4E86;&#x9664;0&#x5F02;&#x5E38;&#xFF0C;&#x6240;&#x4EE5;try&#x4E2D;&#x7684;return&#x4E0D;&#x4F1A;&#x88AB;&#x6267;&#x884C;&#x5230;&#xFF0C;&#x800C;&#x662F;&#x63A5;&#x7740;&#x6267;&#x884C;&#x6355;&#x83B7;&#x5F02;&#x5E38;&#x7684;catch &#x8BED;&#x53E5;&#x548C;&#x6700;&#x7EC8;&#x7684;finally&#x8BED;&#x53E5;&#xFF0C;&#x6B64;&#x65F6;&#x4E24;&#x8005;&#x5BF9;b&#x7684;&#x4FEE;&#x6539;&#x90FD;&#x5F71;&#x54CD;&#x4E86;&#x6700;&#x7EC8;&#x7684;&#x8FD4;&#x56DE;&#x503C;&#xFF0C;&#x8FD9;&#x65F6;return b;&#x5C31;&#x8D77;&#x5230;&#x4F5C;&#x7528;&#x4E86;&#x3002;&#x5F53;&#x7136;&#x5982;&#x679C;&#x4F60;&#x8FD9;&#x91CC;&#x5C06;return b&#x6539;&#x4E3A;return 300&#x4EC0;&#x4E48;&#x7684;&#xFF0C;&#x6700;&#x540E;&#x8FD4;&#x56DE;&#x7684;&#x5C31;&#x662F;300&#xFF0C;&#x8FD9;&#x6BCB;&#x5EB8;&#x7F6E;&#x7591;&#x3002;</p>
 <p>&#x8FD9;&#x91CC;&#x5927;&#x5BB6;&#x53EF;&#x80FD;&#x53C8;&#x6709;&#x7591;&#x95EE;&#xFF1A;&#x5982;&#x679C;catch&#x4E2D;&#x6709;return&#x8BED;&#x53E5;&#x5462;&#xFF1F;&#x5F53;&#x7136;&#x53EA;&#x6709;&#x5728;&#x5F02;&#x5E38;&#x7684;&#x60C5;&#x51B5;&#x4E0B;&#x624D;&#x6709;&#x53EF;&#x80FD;&#x4F1A;&#x6267;&#x884C;&#xFF0C;&#x90A3;&#x4E48;&#x662F;&#x5728;finally&#x4E4B;&#x524D;&#x5C31;&#x8FD4;&#x56DE;&#x5417;&#xFF1F;&#x770B;&#x4E0B;&#x9762;&#x3002;</p>
 <h3 id="5-&#x5F53;&#x53D1;&#x751F;&#x5F02;&#x5E38;&#x540E;&#xFF0C;catch&#x4E2D;&#x7684;return&#x6267;&#x884C;&#x60C5;&#x51B5;&#x4E0E;&#x672A;&#x53D1;&#x751F;&#x5F02;&#x5E38;&#x65F6;try&#x4E2D;return&#x7684;&#x6267;&#x884C;&#x60C5;&#x51B5;&#x5B8C;&#x5168;&#x4E00;&#x6837;&#x3002;"><a name="5-&#x5F53;&#x53D1;&#x751F;&#x5F02;&#x5E38;&#x540E;&#xFF0C;catch&#x4E2D;&#x7684;return&#x6267;&#x884C;&#x60C5;&#x51B5;&#x4E0E;&#x672A;&#x53D1;&#x751F;&#x5F02;&#x5E38;&#x65F6;try&#x4E2D;return&#x7684;&#x6267;&#x884C;&#x60C5;&#x51B5;&#x5B8C;&#x5168;&#x4E00;&#x6837;&#x3002;" class="anchor-navigation-ex-anchor" href="#5-&#x5F53;&#x53D1;&#x751F;&#x5F02;&#x5E38;&#x540E;&#xFF0C;catch&#x4E2D;&#x7684;return&#x6267;&#x884C;&#x60C5;&#x51B5;&#x4E0E;&#x672A;&#x53D1;&#x751F;&#x5F02;&#x5E38;&#x65F6;try&#x4E2D;return&#x7684;&#x6267;&#x884C;&#x60C5;&#x51B5;&#x5B8C;&#x5168;&#x4E00;&#x6837;&#x3002;"><i class="fa fa-link" aria-hidden="true"></i></a>5. &#x5F53;&#x53D1;&#x751F;&#x5F02;&#x5E38;&#x540E;&#xFF0C;catch&#x4E2D;&#x7684;return&#x6267;&#x884C;&#x60C5;&#x51B5;&#x4E0E;&#x672A;&#x53D1;&#x751F;&#x5F02;&#x5E38;&#x65F6;try&#x4E2D;return&#x7684;&#x6267;&#x884C;&#x60C5;&#x51B5;&#x5B8C;&#x5168;&#x4E00;&#x6837;&#x3002;</h3>
-<pre><code class="lang-java">public class FinallyTest5 {
+<pre><code class="lang-java"><span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">FinallyTest5</span> </span>{
 
-    public static void main(String[] args) {
+    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title">main</span><span class="hljs-params">(String[] args)</span> </span>{
 
         System.out.println(test5());
     }
 
-    public static int test5() {
-        int b = 20;
+    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">int</span> <span class="hljs-title">test5</span><span class="hljs-params">()</span> </span>{
+        <span class="hljs-keyword">int</span> b = <span class="hljs-number">20</span>;
 
-        try {
-            System.out.println(&quot;try block&quot;);
+        <span class="hljs-keyword">try</span> {
+            System.out.println(<span class="hljs-string">&quot;try block&quot;</span>);
 
-            b = b /0;
+            b = b /<span class="hljs-number">0</span>;
 
-            return b += 80;
-        } catch (Exception e) {
+            <span class="hljs-keyword">return</span> b += <span class="hljs-number">80</span>;
+        } <span class="hljs-keyword">catch</span> (Exception e) {
 
-            System.out.println(&quot;catch block&quot;);
-            return b += 15;
-        } finally {
+            System.out.println(<span class="hljs-string">&quot;catch block&quot;</span>);
+            <span class="hljs-keyword">return</span> b += <span class="hljs-number">15</span>;
+        } <span class="hljs-keyword">finally</span> {
 
-            System.out.println(&quot;finally block&quot;);
+            System.out.println(<span class="hljs-string">&quot;finally block&quot;</span>);
 
-            if (b &gt; 25) {
-                System.out.println(&quot;b&gt;25, b = &quot; + b);
+            <span class="hljs-keyword">if</span> (b &gt; <span class="hljs-number">25</span>) {
+                System.out.println(<span class="hljs-string">&quot;b&gt;25, b = &quot;</span> + b);
             }
 
-            b += 50;
+            b += <span class="hljs-number">50</span>;
         }
 
-        //return b;
+        <span class="hljs-comment">//return b;</span>
     }
 
 }
@@ -4033,7 +4037,7 @@ b&gt;25, b = 35
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"Java finally与return执行顺序","level":"2.1.20","depth":2,"next":{"title":"Java 8 新特性","level":"2.1.21","depth":2,"path":"java/basis/java-8.md","ref":"java/basis/java-8.md","articles":[]},"previous":{"title":"Java transient关键字","level":"2.1.19","depth":2,"path":"java/basis/transient.md","ref":"java/basis/transient.md","articles":[]},"dir":"ltr"},"config":{"plugins":["-lunr","-search","-highlight","-livereload","search-plus@^0.0.11","simple-page-toc@^0.1.1","github@^2.0.0","github-buttons@2.1.0","edit-link@^2.0.2","advanced-emoji@^0.2.1","anchors@^0.7.1","include-codeblock@^3.0.2","ace@^0.3.2","emphasize@^1.1.0","katex@^1.1.3","splitter@^0.0.8","tbfed-pagefooter@^0.0.1","expandable-chapters-small@^0.1.7","sectionx@^3.1.0","local-video@^1.0.1","anchor-navigation-ex@0.1.8","favicon@^0.0.2"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"tbfed-pagefooter":{"copyright":"Copyright © ruheng.com 2017","modify_label":"该文件修订时间：","modify_format":"YYYY-MM-DD HH:mm:ss"},"emphasize":{},"ace":{},"github":{"url":"https://github.com/LRH1993/android_interview"},"simple-page-toc":{"maxDepth":3,"skipFirstH1":true},"splitter":{},"katex":{},"fontsettings":{"theme":"white","family":"sans","size":2},"sectionx":{"tag":"b"},"anchor-navigation-ex":{"isRewritePageTitle":false,"tocLevel1Icon":"fa fa-hand-o-right","tocLevel2Icon":"fa fa-hand-o-right","tocLevel3Icon":"fa fa-hand-o-right"},"favicon":{"shortcut":"favicon.ico","bookmark":"favicon.ico"},"github-buttons":{"repo":"LRH1993/android_interview","types":["star"],"size":"small"},"expandable-chapters-small":{},"local-video":{},"advanced-emoji":{"embedEmojis":false},"include-codeblock":{"check":false,"edit":true,"fixlang":false,"lang":"","template":"ace","theme":"chrome","unindent":true},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":true,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"edit-link":{"label":"Edit This Page","base":"https://github.com/LRH1993/android_interview/edit/master"},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":true},"anchors":{},"search-plus":{}},"theme":"default","author":"ruheng","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"Android校招面试指南","language":"zh-hans","output.name":"site","links":{"sidebar":{"Home":"http://lruheng.com/"}},"gitbook":"3.2.3","description":"Android面试必备，记录自己的秋招之路"},"file":{"path":"java/basis/finally-return.md","mtime":"2017-09-07T02:02:16.000Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2017-10-16T12:05:21.906Z"},"basePath":"../..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"Java finally与return执行顺序","level":"2.1.20","depth":2,"next":{"title":"Java 8 新特性","level":"2.1.21","depth":2,"path":"java/basis/java-8.md","ref":"java/basis/java-8.md","articles":[]},"previous":{"title":"Java transient关键字","level":"2.1.19","depth":2,"path":"java/basis/transient.md","ref":"java/basis/transient.md","articles":[]},"dir":"ltr"},"config":{"plugins":["-lunr","-search","-livereload","search-plus@^0.0.11","simple-page-toc@^0.1.1","github@^2.0.0","github-buttons@2.1.0","edit-link@^2.0.2","advanced-emoji@^0.2.1","anchors@^0.7.1","include-codeblock@^3.0.2","ace@^0.3.2","emphasize@^1.1.0","katex@^1.1.3","splitter@^0.0.8","tbfed-pagefooter@^0.0.1","expandable-chapters-small@^0.1.7","sectionx@^3.1.0","local-video@^1.0.1","anchor-navigation-ex@0.1.8","favicon@^0.0.2"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"tbfed-pagefooter":{"copyright":"Copyright © ruheng.com 2017","modify_label":"该文件修订时间：","modify_format":"YYYY-MM-DD HH:mm:ss"},"emphasize":{},"ace":{},"github":{"url":"https://github.com/LRH1993/android_interview"},"simple-page-toc":{"maxDepth":3,"skipFirstH1":true},"splitter":{},"katex":{},"fontsettings":{"theme":"white","family":"sans","size":2},"sectionx":{"tag":"b"},"highlight":{},"anchor-navigation-ex":{"isRewritePageTitle":false,"tocLevel1Icon":"fa fa-hand-o-right","tocLevel2Icon":"fa fa-hand-o-right","tocLevel3Icon":"fa fa-hand-o-right"},"favicon":{"shortcut":"favicon.ico","bookmark":"favicon.ico"},"github-buttons":{"repo":"LRH1993/android_interview","types":["star"],"size":"small"},"expandable-chapters-small":{},"local-video":{},"advanced-emoji":{"embedEmojis":false},"include-codeblock":{"check":false,"edit":false,"fixlang":false,"lang":"","template":"default","theme":"chrome","unindent":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":true,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"edit-link":{"label":"Edit This Page","base":"https://github.com/LRH1993/android_interview/edit/master"},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":true},"anchors":{},"search-plus":{}},"theme":"default","author":"ruheng","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"Android校招面试指南","language":"zh-hans","output.name":"site","links":{"sidebar":{"Home":"http://lruheng.com/"}},"gitbook":"3.2.3","description":"Android面试必备，记录自己的秋招之路"},"file":{"path":"java/basis/finally-return.md","mtime":"2017-09-07T02:02:16.000Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2017-10-16T13:00:43.989Z"},"basePath":"../..","book":{"language":""}});
         });
     </script>
 </div>

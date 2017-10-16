@@ -69,6 +69,10 @@
                 
             
                 
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
                 <link rel="stylesheet" href="../../gitbook/gitbook-plugin-fontsettings/website.css">
                 
             
@@ -3729,103 +3733,103 @@
 <p>&#x2462;&#x8FD4;&#x56DE;&#x4EA7;&#x54C1;&#x5BF9;&#x8C61;&#x5E76;&#x4F7F;&#x7528;</p>
 <h3 id="&#x4E09;&#x3001;&#x62BD;&#x8C61;&#x5DE5;&#x5382;&#x7684;&#x4F7F;&#x7528;&#x5B9E;&#x4F8B;"><a name="&#x4E09;&#x3001;&#x62BD;&#x8C61;&#x5DE5;&#x5382;&#x7684;&#x4F7F;&#x7528;&#x5B9E;&#x4F8B;" class="anchor-navigation-ex-anchor" href="#&#x4E09;&#x3001;&#x62BD;&#x8C61;&#x5DE5;&#x5382;&#x7684;&#x4F7F;&#x7528;&#x5B9E;&#x4F8B;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x4E09;&#x3001;&#x62BD;&#x8C61;&#x5DE5;&#x5382;&#x7684;&#x4F7F;&#x7528;&#x5B9E;&#x4F8B;</h3>
 <p>&#x5047;&#x8BBE;&#x6709;&#x4E00;&#x4E2A;&#x79FB;&#x52A8;&#x7EC8;&#x7AEF;&#x5DE5;&#x5382;&#xFF0C;&#x53EF;&#x4EE5;&#x5236;&#x9020;&#x82F9;&#x679C;&#x7CFB;&#x5217;&#x7684;&#x79FB;&#x52A8;&#x4EA7;&#x54C1;&#x548C;&#x4E09;&#x661F;&#x7CFB;&#x5217;&#x7684;&#x79FB;&#x52A8;&#x4EA7;&#x54C1;&#x3002;&#x8FD9;&#x4E2A;&#x5DE5;&#x5382;&#x4E0B;&#x6709;&#x4E24;&#x4E2A;&#x5B50;&#x5382;&#xFF0C;&#x4E00;&#x4E2A;&#x8D1F;&#x8D23;&#x5236;&#x9020;&#x82F9;&#x679C;&#x7CFB;&#x5217;&#x7684;Pad&#x548C;&#x4E09;&#x661F;&#x7CFB;&#x5217;&#x7684;Pad&#xFF0C;&#x53E6;&#x4E00;&#x4E2A;&#x8D1F;&#x8D23;&#x5236;&#x9020;&#x82F9;&#x679C;&#x7CFB;&#x5217;&#x7684;&#x624B;&#x673A;&#x548C;&#x4E09;&#x661F;&#x7CFB;&#x5217;&#x7684;&#x624B;&#x673A;&#x3002;&#x8FD9;&#x4FBF;&#x662F;&#x4E00;&#x4E2A;&#x5178;&#x578B;&#x7684;&#x62BD;&#x8C61;&#x5DE5;&#x5382;&#x7684;&#x5B9E;&#x4F8B;&#x3002;<br><strong>&#x62BD;&#x8C61;&#x4EA7;&#x54C1;&#xFF1A; &#x82F9;&#x679C;&#x7CFB;&#x5217;</strong></p>
-<pre><code class="lang-java"> public interface Apple
-     {
-        void AppleStyle();
+<pre><code class="lang-java"> <span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">interface</span> <span class="hljs-title">Apple</span>
+     </span>{
+        <span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">AppleStyle</span><span class="hljs-params">()</span></span>;
     }
 </code></pre>
 <p><strong>&#x62BD;&#x8C61;&#x4EA7;&#x54C1;&#xFF1A; &#x4E09;&#x661F;&#x7CFB;&#x5217;</strong></p>
-<pre><code class="lang-java">public interface Sumsung
-     {
-        void BangziStyle();
+<pre><code class="lang-java"><span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">interface</span> <span class="hljs-title">Sumsung</span>
+     </span>{
+        <span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">BangziStyle</span><span class="hljs-params">()</span></span>;
    }
 </code></pre>
 <p><strong>&#x5177;&#x4F53;&#x4EA7;&#x54C1;&#xFF1A;iphone</strong></p>
-<pre><code class="lang-java"> public class iphone implements Apple
-     {
-         public void AppleStyle()
-         {
-            Console.WriteLine(&quot;Apple&apos;s style: iPhone!&quot;);
+<pre><code class="lang-java"> <span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">iphone</span> <span class="hljs-keyword">implements</span> <span class="hljs-title">Apple</span>
+     </span>{
+         <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">AppleStyle</span><span class="hljs-params">()</span>
+         </span>{
+            Console.WriteLine(<span class="hljs-string">&quot;Apple&apos;s style: iPhone!&quot;</span>);
         }
      }
 </code></pre>
 <p><strong>&#x5177;&#x4F53;&#x4EA7;&#x54C1;&#xFF1A;ipad</strong></p>
-<pre><code class="lang-java"> public class ipad implements Apple
-    {
+<pre><code class="lang-java"> <span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">ipad</span> <span class="hljs-keyword">implements</span> <span class="hljs-title">Apple</span>
+    </span>{
 
-         public void AppleStyle()
-        {
-             Console.WriteLine(&quot;Apple&apos;s style: iPad!&quot;);
+         <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">AppleStyle</span><span class="hljs-params">()</span>
+        </span>{
+             Console.WriteLine(<span class="hljs-string">&quot;Apple&apos;s style: iPad!&quot;</span>);
         }
 
      }
 </code></pre>
 <p><strong>&#x5177;&#x4F53;&#x4EA7;&#x54C1;&#xFF1A;note2</strong></p>
-<pre><code class="lang-java"> public class note2 implements Sumsung
-     {
-         public void BangziStyle()
-         {
-            Console.WriteLine(&quot;Bangzi&apos;s style : Note2!&quot;);
+<pre><code class="lang-java"> <span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">note2</span> <span class="hljs-keyword">implements</span> <span class="hljs-title">Sumsung</span>
+     </span>{
+         <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">BangziStyle</span><span class="hljs-params">()</span>
+         </span>{
+            Console.WriteLine(<span class="hljs-string">&quot;Bangzi&apos;s style : Note2!&quot;</span>);
          }
 
      }
 </code></pre>
 <p><strong>&#x5177;&#x4F53;&#x4EA7;&#x54C1;&#xFF1A;tabs</strong></p>
-<pre><code class="lang-java">public class Tabs implements Sumsung
-      {
-         public void BangziStyle()
-         {
-            Console.WriteLine(&quot;Bangzi&apos;s style : Tab!&quot;);
+<pre><code class="lang-java"><span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Tabs</span> <span class="hljs-keyword">implements</span> <span class="hljs-title">Sumsung</span>
+      </span>{
+         <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">BangziStyle</span><span class="hljs-params">()</span>
+         </span>{
+            Console.WriteLine(<span class="hljs-string">&quot;Bangzi&apos;s style : Tab!&quot;</span>);
        }
      }
 </code></pre>
 <p><strong>&#x62BD;&#x8C61;&#x5DE5;&#x5382;</strong></p>
-<pre><code class="lang-java"> public interface Factory
-     {
-         Apple createAppleProduct();
-         Sumsung createSumsungProduct();
+<pre><code class="lang-java"> <span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">interface</span> <span class="hljs-title">Factory</span>
+     </span>{
+         <span class="hljs-function">Apple <span class="hljs-title">createAppleProduct</span><span class="hljs-params">()</span></span>;
+         <span class="hljs-function">Sumsung <span class="hljs-title">createSumsungProduct</span><span class="hljs-params">()</span></span>;
      }
 </code></pre>
 <p><strong>&#x624B;&#x673A;&#x5DE5;&#x5382;</strong></p>
-<pre><code class="lang-java">public class Factory_Phone implements Factory
-     {
-         public Apple createAppleProduct()
-         {
-             return new iphone();
+<pre><code class="lang-java"><span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Factory_Phone</span> <span class="hljs-keyword">implements</span> <span class="hljs-title">Factory</span>
+     </span>{
+         <span class="hljs-function"><span class="hljs-keyword">public</span> Apple <span class="hljs-title">createAppleProduct</span><span class="hljs-params">()</span>
+         </span>{
+             <span class="hljs-keyword">return</span> <span class="hljs-keyword">new</span> iphone();
          }
 
-         public Sumsung createSumsungProduct()
-         {
-             return new note2();
+         <span class="hljs-function"><span class="hljs-keyword">public</span> Sumsung <span class="hljs-title">createSumsungProduct</span><span class="hljs-params">()</span>
+         </span>{
+             <span class="hljs-keyword">return</span> <span class="hljs-keyword">new</span> note2();
          }
      }
 </code></pre>
 <p><strong>pad&#x5DE5;&#x5382;</strong></p>
-<pre><code class="lang-java">public class Factory_Pad implements  Factory
-     {
-         public Apple createAppleProduct()
-         {
-             return new ipad();
+<pre><code class="lang-java"><span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Factory_Pad</span> <span class="hljs-keyword">implements</span>  <span class="hljs-title">Factory</span>
+     </span>{
+         <span class="hljs-function"><span class="hljs-keyword">public</span> Apple <span class="hljs-title">createAppleProduct</span><span class="hljs-params">()</span>
+         </span>{
+             <span class="hljs-keyword">return</span> <span class="hljs-keyword">new</span> ipad();
          }
 
-         public Sumsung createSumsungProduct()
-         {
-             return new Tabs();
+         <span class="hljs-function"><span class="hljs-keyword">public</span> Sumsung <span class="hljs-title">createSumsungProduct</span><span class="hljs-params">()</span>
+         </span>{
+             <span class="hljs-keyword">return</span> <span class="hljs-keyword">new</span> Tabs();
          }
      }
 </code></pre>
 <p><strong>&#x5BA2;&#x6237;&#x7AEF;&#x8C03;&#x7528;</strong></p>
-<pre><code class="lang-java">public static void Main(string[] args)
-         {
-             //&#x91C7;&#x8D2D;&#x5546;&#x8981;&#x4E00;&#x53F0;iPad&#x548C;&#x4E00;&#x53F0;Tab
-              Factory factory = new Factory_Pad();
+<pre><code class="lang-java"><span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title">Main</span><span class="hljs-params">(string[] args)</span>
+         </span>{
+             <span class="hljs-comment">//&#x91C7;&#x8D2D;&#x5546;&#x8981;&#x4E00;&#x53F0;iPad&#x548C;&#x4E00;&#x53F0;Tab</span>
+              Factory factory = <span class="hljs-keyword">new</span> Factory_Pad();
               Apple apple = factory.createAppleProduct();
               apple.AppleStyle();
               Sumsung sumsung = factory.createSumsungProduct();
               sumsung.BangziStyle();
 
-             //&#x91C7;&#x8D2D;&#x5546;&#x53C8;&#x8981;&#x4E00;&#x53F0;iPhone&#x548C;&#x4E00;&#x53F0;Note2
-            factory = new Factory_Phone();
+             <span class="hljs-comment">//&#x91C7;&#x8D2D;&#x5546;&#x53C8;&#x8981;&#x4E00;&#x53F0;iPhone&#x548C;&#x4E00;&#x53F0;Note2</span>
+            factory = <span class="hljs-keyword">new</span> Factory_Phone();
              apple = factory.createAppleProduct();
              apple.AppleStyle();
              sumsung = factory.createSumsungProduct();
@@ -3892,7 +3896,7 @@
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"抽象工厂模式","level":"6.1.3","depth":2,"next":{"title":"单例模式","level":"6.1.4","depth":2,"path":"design-mode/Builder-Pattern/Singleton-Pattern.md","ref":"design-mode/Builder-Pattern/Singleton-Pattern.md","articles":[]},"previous":{"title":"工厂方法模式","level":"6.1.2","depth":2,"path":"design-mode/Builder-Pattern/Factory-Method.md","ref":"design-mode/Builder-Pattern/Factory-Method.md","articles":[]},"dir":"ltr"},"config":{"plugins":["-lunr","-search","-highlight","-livereload","search-plus@^0.0.11","simple-page-toc@^0.1.1","github@^2.0.0","github-buttons@2.1.0","edit-link@^2.0.2","advanced-emoji@^0.2.1","anchors@^0.7.1","include-codeblock@^3.0.2","ace@^0.3.2","emphasize@^1.1.0","katex@^1.1.3","splitter@^0.0.8","tbfed-pagefooter@^0.0.1","expandable-chapters-small@^0.1.7","sectionx@^3.1.0","local-video@^1.0.1","anchor-navigation-ex@0.1.8","favicon@^0.0.2"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"tbfed-pagefooter":{"copyright":"Copyright © ruheng.com 2017","modify_label":"该文件修订时间：","modify_format":"YYYY-MM-DD HH:mm:ss"},"emphasize":{},"ace":{},"github":{"url":"https://github.com/LRH1993/android_interview"},"simple-page-toc":{"maxDepth":3,"skipFirstH1":true},"splitter":{},"katex":{},"fontsettings":{"theme":"white","family":"sans","size":2},"sectionx":{"tag":"b"},"anchor-navigation-ex":{"isRewritePageTitle":false,"tocLevel1Icon":"fa fa-hand-o-right","tocLevel2Icon":"fa fa-hand-o-right","tocLevel3Icon":"fa fa-hand-o-right"},"favicon":{"shortcut":"favicon.ico","bookmark":"favicon.ico"},"github-buttons":{"repo":"LRH1993/android_interview","types":["star"],"size":"small"},"expandable-chapters-small":{},"local-video":{},"advanced-emoji":{"embedEmojis":false},"include-codeblock":{"check":false,"edit":true,"fixlang":false,"lang":"","template":"ace","theme":"chrome","unindent":true},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":true,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"edit-link":{"label":"Edit This Page","base":"https://github.com/LRH1993/android_interview/edit/master"},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":true},"anchors":{},"search-plus":{}},"theme":"default","author":"ruheng","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"Android校招面试指南","language":"zh-hans","output.name":"site","links":{"sidebar":{"Home":"http://lruheng.com/"}},"gitbook":"3.2.3","description":"Android面试必备，记录自己的秋招之路"},"file":{"path":"design-mode/Builder-Pattern/Abstract-Factory.md","mtime":"2017-08-22T07:53:58.000Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2017-10-16T12:05:21.906Z"},"basePath":"../..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"抽象工厂模式","level":"6.1.3","depth":2,"next":{"title":"单例模式","level":"6.1.4","depth":2,"path":"design-mode/Builder-Pattern/Singleton-Pattern.md","ref":"design-mode/Builder-Pattern/Singleton-Pattern.md","articles":[]},"previous":{"title":"工厂方法模式","level":"6.1.2","depth":2,"path":"design-mode/Builder-Pattern/Factory-Method.md","ref":"design-mode/Builder-Pattern/Factory-Method.md","articles":[]},"dir":"ltr"},"config":{"plugins":["-lunr","-search","-livereload","search-plus@^0.0.11","simple-page-toc@^0.1.1","github@^2.0.0","github-buttons@2.1.0","edit-link@^2.0.2","advanced-emoji@^0.2.1","anchors@^0.7.1","include-codeblock@^3.0.2","ace@^0.3.2","emphasize@^1.1.0","katex@^1.1.3","splitter@^0.0.8","tbfed-pagefooter@^0.0.1","expandable-chapters-small@^0.1.7","sectionx@^3.1.0","local-video@^1.0.1","anchor-navigation-ex@0.1.8","favicon@^0.0.2"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"tbfed-pagefooter":{"copyright":"Copyright © ruheng.com 2017","modify_label":"该文件修订时间：","modify_format":"YYYY-MM-DD HH:mm:ss"},"emphasize":{},"ace":{},"github":{"url":"https://github.com/LRH1993/android_interview"},"simple-page-toc":{"maxDepth":3,"skipFirstH1":true},"splitter":{},"katex":{},"fontsettings":{"theme":"white","family":"sans","size":2},"sectionx":{"tag":"b"},"highlight":{},"anchor-navigation-ex":{"isRewritePageTitle":false,"tocLevel1Icon":"fa fa-hand-o-right","tocLevel2Icon":"fa fa-hand-o-right","tocLevel3Icon":"fa fa-hand-o-right"},"favicon":{"shortcut":"favicon.ico","bookmark":"favicon.ico"},"github-buttons":{"repo":"LRH1993/android_interview","types":["star"],"size":"small"},"expandable-chapters-small":{},"local-video":{},"advanced-emoji":{"embedEmojis":false},"include-codeblock":{"check":false,"edit":false,"fixlang":false,"lang":"","template":"default","theme":"chrome","unindent":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":true,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"edit-link":{"label":"Edit This Page","base":"https://github.com/LRH1993/android_interview/edit/master"},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":true},"anchors":{},"search-plus":{}},"theme":"default","author":"ruheng","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"Android校招面试指南","language":"zh-hans","output.name":"site","links":{"sidebar":{"Home":"http://lruheng.com/"}},"gitbook":"3.2.3","description":"Android面试必备，记录自己的秋招之路"},"file":{"path":"design-mode/Builder-Pattern/Abstract-Factory.md","mtime":"2017-08-22T07:53:58.000Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2017-10-16T13:00:43.989Z"},"basePath":"../..","book":{"language":""}});
         });
     </script>
 </div>

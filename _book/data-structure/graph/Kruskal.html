@@ -69,6 +69,10 @@
                 
             
                 
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
                 <link rel="stylesheet" href="../../gitbook/gitbook-plugin-fontsettings/website.css">
                 
             
@@ -3748,16 +3752,16 @@
 <h2 id="&#x4E94;&#x3001;&#x514B;&#x9C81;&#x65AF;&#x5361;&#x5C14;&#x7B97;&#x6CD5;&#x7684;&#x4EE3;&#x7801;&#x8BF4;&#x660E;"><a name="&#x4E94;&#x3001;&#x514B;&#x9C81;&#x65AF;&#x5361;&#x5C14;&#x7B97;&#x6CD5;&#x7684;&#x4EE3;&#x7801;&#x8BF4;&#x660E;" class="anchor-navigation-ex-anchor" href="#&#x4E94;&#x3001;&#x514B;&#x9C81;&#x65AF;&#x5361;&#x5C14;&#x7B97;&#x6CD5;&#x7684;&#x4EE3;&#x7801;&#x8BF4;&#x660E;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x4E94;&#x3001;&#x514B;&#x9C81;&#x65AF;&#x5361;&#x5C14;&#x7B97;&#x6CD5;&#x7684;&#x4EE3;&#x7801;&#x8BF4;&#x660E;</h2>
 <p>&#x6709;&#x4E86;&#x524D;&#x9762;&#x7684;&#x7B97;&#x6CD5;&#x5206;&#x6790;&#x4E4B;&#x540E;&#xFF0C;&#x4E0B;&#x9762;&#x6211;&#x4EEC;&#x6765;&#x67E5;&#x770B;&#x5177;&#x4F53;&#x4EE3;&#x7801;&#x3002;&#x8FD9;&#x91CC;&#x9009;&#x53D6;&quot;&#x90BB;&#x63A5;&#x77E9;&#x9635;&quot;&#x8FDB;&#x884C;&#x8BF4;&#x660E;&#xFF0C;&#x5BF9;&#x4E8E;&quot;&#x90BB;&#x63A5;&#x8868;&quot;&#x5B9E;&#x73B0;&#x7684;&#x56FE;&#x5728;&#x540E;&#x9762;&#x7684;&#x6E90;&#x7801;&#x4E2D;&#x4F1A;&#x7ED9;&#x51FA;&#x76F8;&#x5E94;&#x7684;&#x6E90;&#x7801;&#x3002;</p>
 <p><strong>1. &#x57FA;&#x672C;&#x5B9A;&#x4E49;</strong></p>
-<pre><code class="lang-java">// &#x8FB9;&#x7684;&#x7ED3;&#x6784;&#x4F53;
-private static class EData {
-    char start; // &#x8FB9;&#x7684;&#x8D77;&#x70B9;
-    char end;   // &#x8FB9;&#x7684;&#x7EC8;&#x70B9;
-    int weight; // &#x8FB9;&#x7684;&#x6743;&#x91CD;
+<pre><code class="lang-java"><span class="hljs-comment">// &#x8FB9;&#x7684;&#x7ED3;&#x6784;&#x4F53;</span>
+<span class="hljs-keyword">private</span> <span class="hljs-keyword">static</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">EData</span> </span>{
+    <span class="hljs-keyword">char</span> start; <span class="hljs-comment">// &#x8FB9;&#x7684;&#x8D77;&#x70B9;</span>
+    <span class="hljs-keyword">char</span> end;   <span class="hljs-comment">// &#x8FB9;&#x7684;&#x7EC8;&#x70B9;</span>
+    <span class="hljs-keyword">int</span> weight; <span class="hljs-comment">// &#x8FB9;&#x7684;&#x6743;&#x91CD;</span>
 
-    public EData(char start, char end, int weight) {
-        this.start = start;
-        this.end = end;
-        this.weight = weight;
+    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-title">EData</span><span class="hljs-params">(<span class="hljs-keyword">char</span> start, <span class="hljs-keyword">char</span> end, <span class="hljs-keyword">int</span> weight)</span> </span>{
+        <span class="hljs-keyword">this</span>.start = start;
+        <span class="hljs-keyword">this</span>.end = end;
+        <span class="hljs-keyword">this</span>.weight = weight;
     }
 };
 </code></pre>
@@ -3773,41 +3777,41 @@ private static class EData {
 }
 </code></pre><p>MatrixUDG&#x662F;&#x90BB;&#x63A5;&#x77E9;&#x9635;&#x5BF9;&#x5E94;&#x7684;&#x7ED3;&#x6784;&#x4F53;&#x3002;mVexs&#x7528;&#x4E8E;&#x4FDD;&#x5B58;&#x9876;&#x70B9;&#xFF0C;mEdgNum&#x7528;&#x4E8E;&#x4FDD;&#x5B58;&#x8FB9;&#x6570;&#xFF0C;mMatrix&#x5219;&#x662F;&#x7528;&#x4E8E;&#x4FDD;&#x5B58;&#x77E9;&#x9635;&#x4FE1;&#x606F;&#x7684;&#x4E8C;&#x7EF4;&#x6570;&#x7EC4;&#x3002;&#x4F8B;&#x5982;&#xFF0C;mMatrix[i][j]=1&#xFF0C;&#x5219;&#x8868;&#x793A;&quot;&#x9876;&#x70B9;i(&#x5373;mVexs[i])&quot;&#x548C;&quot;&#x9876;&#x70B9;j(&#x5373;mVexs[j])&quot;&#x662F;&#x90BB;&#x63A5;&#x70B9;&#xFF1B;mMatrix[i][j]=0&#xFF0C;&#x5219;&#x8868;&#x793A;&#x5B83;&#x4EEC;&#x4E0D;&#x662F;&#x90BB;&#x63A5;&#x70B9;&#x3002;</p>
 <p><strong>2. &#x514B;&#x9C81;&#x65AF;&#x5361;&#x5C14;&#x7B97;&#x6CD5;</strong></p>
-<pre><code class="lang-java">/*
+<pre><code class="lang-java"><span class="hljs-comment">/*
  * &#x514B;&#x9C81;&#x65AF;&#x5361;&#x5C14;&#xFF08;Kruskal)&#x6700;&#x5C0F;&#x751F;&#x6210;&#x6811;
- */
-public void kruskal() {
-    int index = 0;                      // rets&#x6570;&#x7EC4;&#x7684;&#x7D22;&#x5F15;
-    int[] vends = new int[mEdgNum];     // &#x7528;&#x4E8E;&#x4FDD;&#x5B58;&quot;&#x5DF2;&#x6709;&#x6700;&#x5C0F;&#x751F;&#x6210;&#x6811;&quot;&#x4E2D;&#x6BCF;&#x4E2A;&#x9876;&#x70B9;&#x5728;&#x8BE5;&#x6700;&#x5C0F;&#x6811;&#x4E2D;&#x7684;&#x7EC8;&#x70B9;&#x3002;
-    EData[] rets = new EData[mEdgNum];  // &#x7ED3;&#x679C;&#x6570;&#x7EC4;&#xFF0C;&#x4FDD;&#x5B58;kruskal&#x6700;&#x5C0F;&#x751F;&#x6210;&#x6811;&#x7684;&#x8FB9;
-    EData[] edges;                      // &#x56FE;&#x5BF9;&#x5E94;&#x7684;&#x6240;&#x6709;&#x8FB9;
+ */</span>
+<span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">kruskal</span><span class="hljs-params">()</span> </span>{
+    <span class="hljs-keyword">int</span> index = <span class="hljs-number">0</span>;                      <span class="hljs-comment">// rets&#x6570;&#x7EC4;&#x7684;&#x7D22;&#x5F15;</span>
+    <span class="hljs-keyword">int</span>[] vends = <span class="hljs-keyword">new</span> <span class="hljs-keyword">int</span>[mEdgNum];     <span class="hljs-comment">// &#x7528;&#x4E8E;&#x4FDD;&#x5B58;&quot;&#x5DF2;&#x6709;&#x6700;&#x5C0F;&#x751F;&#x6210;&#x6811;&quot;&#x4E2D;&#x6BCF;&#x4E2A;&#x9876;&#x70B9;&#x5728;&#x8BE5;&#x6700;&#x5C0F;&#x6811;&#x4E2D;&#x7684;&#x7EC8;&#x70B9;&#x3002;</span>
+    EData[] rets = <span class="hljs-keyword">new</span> EData[mEdgNum];  <span class="hljs-comment">// &#x7ED3;&#x679C;&#x6570;&#x7EC4;&#xFF0C;&#x4FDD;&#x5B58;kruskal&#x6700;&#x5C0F;&#x751F;&#x6210;&#x6811;&#x7684;&#x8FB9;</span>
+    EData[] edges;                      <span class="hljs-comment">// &#x56FE;&#x5BF9;&#x5E94;&#x7684;&#x6240;&#x6709;&#x8FB9;</span>
 
-    // &#x83B7;&#x53D6;&quot;&#x56FE;&#x4E2D;&#x6240;&#x6709;&#x7684;&#x8FB9;&quot;
+    <span class="hljs-comment">// &#x83B7;&#x53D6;&quot;&#x56FE;&#x4E2D;&#x6240;&#x6709;&#x7684;&#x8FB9;&quot;</span>
     edges = getEdges();
-    // &#x5C06;&#x8FB9;&#x6309;&#x7167;&quot;&#x6743;&quot;&#x7684;&#x5927;&#x5C0F;&#x8FDB;&#x884C;&#x6392;&#x5E8F;(&#x4ECE;&#x5C0F;&#x5230;&#x5927;)
+    <span class="hljs-comment">// &#x5C06;&#x8FB9;&#x6309;&#x7167;&quot;&#x6743;&quot;&#x7684;&#x5927;&#x5C0F;&#x8FDB;&#x884C;&#x6392;&#x5E8F;(&#x4ECE;&#x5C0F;&#x5230;&#x5927;)</span>
     sortEdges(edges, mEdgNum);
 
-    for (int i=0; i&lt;mEdgNum; i++) {
-        int p1 = getPosition(edges[i].start);      // &#x83B7;&#x53D6;&#x7B2C;i&#x6761;&#x8FB9;&#x7684;&quot;&#x8D77;&#x70B9;&quot;&#x7684;&#x5E8F;&#x53F7;
-        int p2 = getPosition(edges[i].end);        // &#x83B7;&#x53D6;&#x7B2C;i&#x6761;&#x8FB9;&#x7684;&quot;&#x7EC8;&#x70B9;&quot;&#x7684;&#x5E8F;&#x53F7;
+    <span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> i=<span class="hljs-number">0</span>; i&lt;mEdgNum; i++) {
+        <span class="hljs-keyword">int</span> p1 = getPosition(edges[i].start);      <span class="hljs-comment">// &#x83B7;&#x53D6;&#x7B2C;i&#x6761;&#x8FB9;&#x7684;&quot;&#x8D77;&#x70B9;&quot;&#x7684;&#x5E8F;&#x53F7;</span>
+        <span class="hljs-keyword">int</span> p2 = getPosition(edges[i].end);        <span class="hljs-comment">// &#x83B7;&#x53D6;&#x7B2C;i&#x6761;&#x8FB9;&#x7684;&quot;&#x7EC8;&#x70B9;&quot;&#x7684;&#x5E8F;&#x53F7;</span>
 
-        int m = getEnd(vends, p1);                 // &#x83B7;&#x53D6;p1&#x5728;&quot;&#x5DF2;&#x6709;&#x7684;&#x6700;&#x5C0F;&#x751F;&#x6210;&#x6811;&quot;&#x4E2D;&#x7684;&#x7EC8;&#x70B9;
-        int n = getEnd(vends, p2);                 // &#x83B7;&#x53D6;p2&#x5728;&quot;&#x5DF2;&#x6709;&#x7684;&#x6700;&#x5C0F;&#x751F;&#x6210;&#x6811;&quot;&#x4E2D;&#x7684;&#x7EC8;&#x70B9;
-        // &#x5982;&#x679C;m!=n&#xFF0C;&#x610F;&#x5473;&#x7740;&quot;&#x8FB9;i&quot;&#x4E0E;&quot;&#x5DF2;&#x7ECF;&#x6DFB;&#x52A0;&#x5230;&#x6700;&#x5C0F;&#x751F;&#x6210;&#x6811;&#x4E2D;&#x7684;&#x9876;&#x70B9;&quot;&#x6CA1;&#x6709;&#x5F62;&#x6210;&#x73AF;&#x8DEF;
-        if (m != n) {
-            vends[m] = n;                       // &#x8BBE;&#x7F6E;m&#x5728;&quot;&#x5DF2;&#x6709;&#x7684;&#x6700;&#x5C0F;&#x751F;&#x6210;&#x6811;&quot;&#x4E2D;&#x7684;&#x7EC8;&#x70B9;&#x4E3A;n
-            rets[index++] = edges[i];           // &#x4FDD;&#x5B58;&#x7ED3;&#x679C;
+        <span class="hljs-keyword">int</span> m = getEnd(vends, p1);                 <span class="hljs-comment">// &#x83B7;&#x53D6;p1&#x5728;&quot;&#x5DF2;&#x6709;&#x7684;&#x6700;&#x5C0F;&#x751F;&#x6210;&#x6811;&quot;&#x4E2D;&#x7684;&#x7EC8;&#x70B9;</span>
+        <span class="hljs-keyword">int</span> n = getEnd(vends, p2);                 <span class="hljs-comment">// &#x83B7;&#x53D6;p2&#x5728;&quot;&#x5DF2;&#x6709;&#x7684;&#x6700;&#x5C0F;&#x751F;&#x6210;&#x6811;&quot;&#x4E2D;&#x7684;&#x7EC8;&#x70B9;</span>
+        <span class="hljs-comment">// &#x5982;&#x679C;m!=n&#xFF0C;&#x610F;&#x5473;&#x7740;&quot;&#x8FB9;i&quot;&#x4E0E;&quot;&#x5DF2;&#x7ECF;&#x6DFB;&#x52A0;&#x5230;&#x6700;&#x5C0F;&#x751F;&#x6210;&#x6811;&#x4E2D;&#x7684;&#x9876;&#x70B9;&quot;&#x6CA1;&#x6709;&#x5F62;&#x6210;&#x73AF;&#x8DEF;</span>
+        <span class="hljs-keyword">if</span> (m != n) {
+            vends[m] = n;                       <span class="hljs-comment">// &#x8BBE;&#x7F6E;m&#x5728;&quot;&#x5DF2;&#x6709;&#x7684;&#x6700;&#x5C0F;&#x751F;&#x6210;&#x6811;&quot;&#x4E2D;&#x7684;&#x7EC8;&#x70B9;&#x4E3A;n</span>
+            rets[index++] = edges[i];           <span class="hljs-comment">// &#x4FDD;&#x5B58;&#x7ED3;&#x679C;</span>
         }
     }
 
-    // &#x7EDF;&#x8BA1;&#x5E76;&#x6253;&#x5370;&quot;kruskal&#x6700;&#x5C0F;&#x751F;&#x6210;&#x6811;&quot;&#x7684;&#x4FE1;&#x606F;
-    int length = 0;
-    for (int i = 0; i &lt; index; i++)
+    <span class="hljs-comment">// &#x7EDF;&#x8BA1;&#x5E76;&#x6253;&#x5370;&quot;kruskal&#x6700;&#x5C0F;&#x751F;&#x6210;&#x6811;&quot;&#x7684;&#x4FE1;&#x606F;</span>
+    <span class="hljs-keyword">int</span> length = <span class="hljs-number">0</span>;
+    <span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> i = <span class="hljs-number">0</span>; i &lt; index; i++)
         length += rets[i].weight;
-    System.out.printf(&quot;Kruskal=%d: &quot;, length);
-    for (int i = 0; i &lt; index; i++)
-        System.out.printf(&quot;(%c,%c) &quot;, rets[i].start, rets[i].end);
-    System.out.printf(&quot;\n&quot;);
+    System.out.printf(<span class="hljs-string">&quot;Kruskal=%d: &quot;</span>, length);
+    <span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> i = <span class="hljs-number">0</span>; i &lt; index; i++)
+        System.out.printf(<span class="hljs-string">&quot;(%c,%c) &quot;</span>, rets[i].start, rets[i].end);
+    System.out.printf(<span class="hljs-string">&quot;\n&quot;</span>);
 }
 </code></pre>
 <footer class="page-footer"><span class="copyright">Copyright &#xA9; ruheng.com 2017 all right reserved&#xFF0C;powered by Gitbook</span><span class="footer-modification">&#x8BE5;&#x6587;&#x4EF6;&#x4FEE;&#x8BA2;&#x65F6;&#x95F4;&#xFF1A;
@@ -3855,7 +3859,7 @@ public void kruskal() {
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"Kruskal算法","level":"4.4.3","depth":2,"next":{"title":"Prim算法","level":"4.4.4","depth":2,"path":"data-structure/graph/Prim.md","ref":"data-structure/graph/Prim.md","articles":[]},"previous":{"title":"拓扑排序","level":"4.4.2","depth":2,"path":"data-structure/graph/topology.md","ref":"data-structure/graph/topology.md","articles":[]},"dir":"ltr"},"config":{"plugins":["-lunr","-search","-highlight","-livereload","search-plus@^0.0.11","simple-page-toc@^0.1.1","github@^2.0.0","github-buttons@2.1.0","edit-link@^2.0.2","advanced-emoji@^0.2.1","anchors@^0.7.1","include-codeblock@^3.0.2","ace@^0.3.2","emphasize@^1.1.0","katex@^1.1.3","splitter@^0.0.8","tbfed-pagefooter@^0.0.1","expandable-chapters-small@^0.1.7","sectionx@^3.1.0","local-video@^1.0.1","anchor-navigation-ex@0.1.8","favicon@^0.0.2"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"tbfed-pagefooter":{"copyright":"Copyright © ruheng.com 2017","modify_label":"该文件修订时间：","modify_format":"YYYY-MM-DD HH:mm:ss"},"emphasize":{},"ace":{},"github":{"url":"https://github.com/LRH1993/android_interview"},"simple-page-toc":{"maxDepth":3,"skipFirstH1":true},"splitter":{},"katex":{},"fontsettings":{"theme":"white","family":"sans","size":2},"sectionx":{"tag":"b"},"anchor-navigation-ex":{"isRewritePageTitle":false,"tocLevel1Icon":"fa fa-hand-o-right","tocLevel2Icon":"fa fa-hand-o-right","tocLevel3Icon":"fa fa-hand-o-right"},"favicon":{"shortcut":"favicon.ico","bookmark":"favicon.ico"},"github-buttons":{"repo":"LRH1993/android_interview","types":["star"],"size":"small"},"expandable-chapters-small":{},"local-video":{},"advanced-emoji":{"embedEmojis":false},"include-codeblock":{"check":false,"edit":true,"fixlang":false,"lang":"","template":"ace","theme":"chrome","unindent":true},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":true,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"edit-link":{"label":"Edit This Page","base":"https://github.com/LRH1993/android_interview/edit/master"},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":true},"anchors":{},"search-plus":{}},"theme":"default","author":"ruheng","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"Android校招面试指南","language":"zh-hans","output.name":"site","links":{"sidebar":{"Home":"http://lruheng.com/"}},"gitbook":"3.2.3","description":"Android面试必备，记录自己的秋招之路"},"file":{"path":"data-structure/graph/Kruskal.md","mtime":"2017-09-04T03:01:15.000Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2017-10-16T12:05:21.906Z"},"basePath":"../..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"Kruskal算法","level":"4.4.3","depth":2,"next":{"title":"Prim算法","level":"4.4.4","depth":2,"path":"data-structure/graph/Prim.md","ref":"data-structure/graph/Prim.md","articles":[]},"previous":{"title":"拓扑排序","level":"4.4.2","depth":2,"path":"data-structure/graph/topology.md","ref":"data-structure/graph/topology.md","articles":[]},"dir":"ltr"},"config":{"plugins":["-lunr","-search","-livereload","search-plus@^0.0.11","simple-page-toc@^0.1.1","github@^2.0.0","github-buttons@2.1.0","edit-link@^2.0.2","advanced-emoji@^0.2.1","anchors@^0.7.1","include-codeblock@^3.0.2","ace@^0.3.2","emphasize@^1.1.0","katex@^1.1.3","splitter@^0.0.8","tbfed-pagefooter@^0.0.1","expandable-chapters-small@^0.1.7","sectionx@^3.1.0","local-video@^1.0.1","anchor-navigation-ex@0.1.8","favicon@^0.0.2"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"tbfed-pagefooter":{"copyright":"Copyright © ruheng.com 2017","modify_label":"该文件修订时间：","modify_format":"YYYY-MM-DD HH:mm:ss"},"emphasize":{},"ace":{},"github":{"url":"https://github.com/LRH1993/android_interview"},"simple-page-toc":{"maxDepth":3,"skipFirstH1":true},"splitter":{},"katex":{},"fontsettings":{"theme":"white","family":"sans","size":2},"sectionx":{"tag":"b"},"highlight":{},"anchor-navigation-ex":{"isRewritePageTitle":false,"tocLevel1Icon":"fa fa-hand-o-right","tocLevel2Icon":"fa fa-hand-o-right","tocLevel3Icon":"fa fa-hand-o-right"},"favicon":{"shortcut":"favicon.ico","bookmark":"favicon.ico"},"github-buttons":{"repo":"LRH1993/android_interview","types":["star"],"size":"small"},"expandable-chapters-small":{},"local-video":{},"advanced-emoji":{"embedEmojis":false},"include-codeblock":{"check":false,"edit":false,"fixlang":false,"lang":"","template":"default","theme":"chrome","unindent":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":true,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"edit-link":{"label":"Edit This Page","base":"https://github.com/LRH1993/android_interview/edit/master"},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":true},"anchors":{},"search-plus":{}},"theme":"default","author":"ruheng","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"Android校招面试指南","language":"zh-hans","output.name":"site","links":{"sidebar":{"Home":"http://lruheng.com/"}},"gitbook":"3.2.3","description":"Android面试必备，记录自己的秋招之路"},"file":{"path":"data-structure/graph/Kruskal.md","mtime":"2017-09-04T03:01:15.000Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2017-10-16T13:00:43.989Z"},"basePath":"../..","book":{"language":""}});
         });
     </script>
 </div>

@@ -69,6 +69,10 @@
                 
             
                 
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
                 <link rel="stylesheet" href="../../gitbook/gitbook-plugin-fontsettings/website.css">
                 
             
@@ -3709,25 +3713,25 @@
 <p>&#xFF08;1&#xFF09;&#x5B9A;&#x4E49;Thread&#x7C7B;&#x7684;&#x5B50;&#x7C7B;&#xFF0C;&#x5E76;&#x91CD;&#x5199;&#x8BE5;&#x7C7B;&#x7684;run&#x65B9;&#x6CD5;&#xFF0C;&#x8BE5;run&#x65B9;&#x6CD5;&#x7684;&#x65B9;&#x6CD5;&#x4F53;&#x5C31;&#x4EE3;&#x8868;&#x4E86;&#x7EBF;&#x7A0B;&#x8981;&#x5B8C;&#x6210;&#x7684;&#x4EFB;&#x52A1;&#x3002;&#x56E0;&#x6B64;&#x628A;run()&#x65B9;&#x6CD5;&#x79F0;&#x4E3A;&#x6267;&#x884C;&#x4F53;&#x3002;</p>
 <p>&#xFF08;2&#xFF09;&#x521B;&#x5EFA;Thread&#x5B50;&#x7C7B;&#x7684;&#x5B9E;&#x4F8B;&#xFF0C;&#x5373;&#x521B;&#x5EFA;&#x4E86;&#x7EBF;&#x7A0B;&#x5BF9;&#x8C61;&#x3002;</p>
 <p>&#xFF08;3&#xFF09;&#x8C03;&#x7528;&#x7EBF;&#x7A0B;&#x5BF9;&#x8C61;&#x7684;start()&#x65B9;&#x6CD5;&#x6765;&#x542F;&#x52A8;&#x8BE5;&#x7EBF;&#x7A0B;&#x3002;</p>
-<pre><code class="lang-java">public class FirstThreadTest extends Thread{  
-    int i = 0;  
-    //&#x91CD;&#x5199;run&#x65B9;&#x6CD5;&#xFF0C;run&#x65B9;&#x6CD5;&#x7684;&#x65B9;&#x6CD5;&#x4F53;&#x5C31;&#x662F;&#x73B0;&#x573A;&#x6267;&#x884C;&#x4F53;  
-    public void run()  
-    {  
-        for(;i&lt;100;i++){  
-        System.out.println(getName()+&quot;  &quot;+i);  
+<pre><code class="lang-java"><span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">FirstThreadTest</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">Thread</span></span>{  
+    <span class="hljs-keyword">int</span> i = <span class="hljs-number">0</span>;  
+    <span class="hljs-comment">//&#x91CD;&#x5199;run&#x65B9;&#x6CD5;&#xFF0C;run&#x65B9;&#x6CD5;&#x7684;&#x65B9;&#x6CD5;&#x4F53;&#x5C31;&#x662F;&#x73B0;&#x573A;&#x6267;&#x884C;&#x4F53;  </span>
+    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">run</span><span class="hljs-params">()</span>  
+    </span>{  
+        <span class="hljs-keyword">for</span>(;i&lt;<span class="hljs-number">100</span>;i++){  
+        System.out.println(getName()+<span class="hljs-string">&quot;  &quot;</span>+i);  
 
         }  
     }  
-    public static void main(String[] args)  
-    {  
-        for(int i = 0;i&lt; 100;i++)  
+    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title">main</span><span class="hljs-params">(String[] args)</span>  
+    </span>{  
+        <span class="hljs-keyword">for</span>(<span class="hljs-keyword">int</span> i = <span class="hljs-number">0</span>;i&lt; <span class="hljs-number">100</span>;i++)  
         {  
-            System.out.println(Thread.currentThread().getName()+&quot;  : &quot;+i);  
-            if(i==20)  
+            System.out.println(Thread.currentThread().getName()+<span class="hljs-string">&quot;  : &quot;</span>+i);  
+            <span class="hljs-keyword">if</span>(i==<span class="hljs-number">20</span>)  
             {  
-                new FirstThreadTest().start();  
-                new FirstThreadTest().start();  
+                <span class="hljs-keyword">new</span> FirstThreadTest().start();  
+                <span class="hljs-keyword">new</span> FirstThreadTest().start();  
             }  
         }  
     }  
@@ -3739,27 +3743,27 @@
 <p>&#xFF08;1&#xFF09;&#x5B9A;&#x4E49;runnable&#x63A5;&#x53E3;&#x7684;&#x5B9E;&#x73B0;&#x7C7B;&#xFF0C;&#x5E76;&#x91CD;&#x5199;&#x8BE5;&#x63A5;&#x53E3;&#x7684;run()&#x65B9;&#x6CD5;&#xFF0C;&#x8BE5;run()&#x65B9;&#x6CD5;&#x7684;&#x65B9;&#x6CD5;&#x4F53;&#x540C;&#x6837;&#x662F;&#x8BE5;&#x7EBF;&#x7A0B;&#x7684;&#x7EBF;&#x7A0B;&#x6267;&#x884C;&#x4F53;&#x3002;</p>
 <p>&#xFF08;2&#xFF09;&#x521B;&#x5EFA; Runnable&#x5B9E;&#x73B0;&#x7C7B;&#x7684;&#x5B9E;&#x4F8B;&#xFF0C;&#x5E76;&#x4F9D;&#x6B64;&#x5B9E;&#x4F8B;&#x4F5C;&#x4E3A;Thread&#x7684;target&#x6765;&#x521B;&#x5EFA;Thread&#x5BF9;&#x8C61;&#xFF0C;&#x8BE5;Thread&#x5BF9;&#x8C61;&#x624D;&#x662F;&#x771F;&#x6B63;&#x7684;&#x7EBF;&#x7A0B;&#x5BF9;&#x8C61;&#x3002;</p>
 <p>&#xFF08;3&#xFF09;&#x8C03;&#x7528;&#x7EBF;&#x7A0B;&#x5BF9;&#x8C61;&#x7684;start()&#x65B9;&#x6CD5;&#x6765;&#x542F;&#x52A8;&#x8BE5;&#x7EBF;&#x7A0B;&#x3002;</p>
-<pre><code class="lang-java">public class RunnableThreadTest implements Runnable  
-{  
+<pre><code class="lang-java"><span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">RunnableThreadTest</span> <span class="hljs-keyword">implements</span> <span class="hljs-title">Runnable</span>  
+</span>{  
 
-    private int i;  
-    public void run()  
-    {  
-        for(i = 0;i &lt;100;i++)  
+    <span class="hljs-keyword">private</span> <span class="hljs-keyword">int</span> i;  
+    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">run</span><span class="hljs-params">()</span>  
+    </span>{  
+        <span class="hljs-keyword">for</span>(i = <span class="hljs-number">0</span>;i &lt;<span class="hljs-number">100</span>;i++)  
         {  
-            System.out.println(Thread.currentThread().getName()+&quot; &quot;+i);  
+            System.out.println(Thread.currentThread().getName()+<span class="hljs-string">&quot; &quot;</span>+i);  
         }  
     }  
-    public static void main(String[] args)  
-    {  
-        for(int i = 0;i &lt; 100;i++)  
+    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title">main</span><span class="hljs-params">(String[] args)</span>  
+    </span>{  
+        <span class="hljs-keyword">for</span>(<span class="hljs-keyword">int</span> i = <span class="hljs-number">0</span>;i &lt; <span class="hljs-number">100</span>;i++)  
         {  
-            System.out.println(Thread.currentThread().getName()+&quot; &quot;+i);  
-            if(i==20)  
+            System.out.println(Thread.currentThread().getName()+<span class="hljs-string">&quot; &quot;</span>+i);  
+            <span class="hljs-keyword">if</span>(i==<span class="hljs-number">20</span>)  
             {  
-                RunnableThreadTest rtt = new RunnableThreadTest();  
-                new Thread(rtt,&quot;&#x65B0;&#x7EBF;&#x7A0B;1&quot;).start();  
-                new Thread(rtt,&quot;&#x65B0;&#x7EBF;&#x7A0B;2&quot;).start();  
+                RunnableThreadTest rtt = <span class="hljs-keyword">new</span> RunnableThreadTest();  
+                <span class="hljs-keyword">new</span> Thread(rtt,<span class="hljs-string">&quot;&#x65B0;&#x7EBF;&#x7A0B;1&quot;</span>).start();  
+                <span class="hljs-keyword">new</span> Thread(rtt,<span class="hljs-string">&quot;&#x65B0;&#x7EBF;&#x7A0B;2&quot;</span>).start();  
             }  
         }  
 
@@ -3772,43 +3776,43 @@
 <p>&#xFF08;2&#xFF09;&#x521B;&#x5EFA;Callable&#x5B9E;&#x73B0;&#x7C7B;&#x7684;&#x5B9E;&#x4F8B;&#xFF0C;&#x4F7F;&#x7528;FutureTask&#x7C7B;&#x6765;&#x5305;&#x88C5;Callable&#x5BF9;&#x8C61;&#xFF0C;&#x8BE5;FutureTask&#x5BF9;&#x8C61;&#x5C01;&#x88C5;&#x4E86;&#x8BE5;Callable&#x5BF9;&#x8C61;&#x7684;call()&#x65B9;&#x6CD5;&#x7684;&#x8FD4;&#x56DE;&#x503C;&#x3002;</p>
 <p>&#xFF08;3&#xFF09;&#x4F7F;&#x7528;FutureTask&#x5BF9;&#x8C61;&#x4F5C;&#x4E3A;Thread&#x5BF9;&#x8C61;&#x7684;target&#x521B;&#x5EFA;&#x5E76;&#x542F;&#x52A8;&#x65B0;&#x7EBF;&#x7A0B;&#x3002;</p>
 <p>&#xFF08;4&#xFF09;&#x8C03;&#x7528;FutureTask&#x5BF9;&#x8C61;&#x7684;get()&#x65B9;&#x6CD5;&#x6765;&#x83B7;&#x5F97;&#x5B50;&#x7EBF;&#x7A0B;&#x6267;&#x884C;&#x7ED3;&#x675F;&#x540E;&#x7684;&#x8FD4;&#x56DE;&#x503C;&#xFF0C;&#x8C03;&#x7528;get()&#x65B9;&#x6CD5;&#x4F1A;&#x963B;&#x585E;&#x7EBF;&#x7A0B;&#x3002;</p>
-<pre><code class="lang-java">public class CallableThreadTest implements Callable&lt;Integer&gt;  
-{  
+<pre><code class="lang-java"><span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">CallableThreadTest</span> <span class="hljs-keyword">implements</span> <span class="hljs-title">Callable</span>&lt;<span class="hljs-title">Integer</span>&gt;  
+</span>{  
 
-    public static void main(String[] args)  
-    {  
-        CallableThreadTest ctt = new CallableThreadTest();  
-        FutureTask&lt;Integer&gt; ft = new FutureTask&lt;&gt;(ctt);  
-        for(int i = 0;i &lt; 100;i++)  
+    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title">main</span><span class="hljs-params">(String[] args)</span>  
+    </span>{  
+        CallableThreadTest ctt = <span class="hljs-keyword">new</span> CallableThreadTest();  
+        FutureTask&lt;Integer&gt; ft = <span class="hljs-keyword">new</span> FutureTask&lt;&gt;(ctt);  
+        <span class="hljs-keyword">for</span>(<span class="hljs-keyword">int</span> i = <span class="hljs-number">0</span>;i &lt; <span class="hljs-number">100</span>;i++)  
         {  
-            System.out.println(Thread.currentThread().getName()+&quot; &#x7684;&#x5FAA;&#x73AF;&#x53D8;&#x91CF;i&#x7684;&#x503C;&quot;+i);  
-            if(i==20)  
+            System.out.println(Thread.currentThread().getName()+<span class="hljs-string">&quot; &#x7684;&#x5FAA;&#x73AF;&#x53D8;&#x91CF;i&#x7684;&#x503C;&quot;</span>+i);  
+            <span class="hljs-keyword">if</span>(i==<span class="hljs-number">20</span>)  
             {  
-                new Thread(ft,&quot;&#x6709;&#x8FD4;&#x56DE;&#x503C;&#x7684;&#x7EBF;&#x7A0B;&quot;).start();  
+                <span class="hljs-keyword">new</span> Thread(ft,<span class="hljs-string">&quot;&#x6709;&#x8FD4;&#x56DE;&#x503C;&#x7684;&#x7EBF;&#x7A0B;&quot;</span>).start();  
             }  
         }  
-        try  
+        <span class="hljs-keyword">try</span>  
         {  
-            System.out.println(&quot;&#x5B50;&#x7EBF;&#x7A0B;&#x7684;&#x8FD4;&#x56DE;&#x503C;&#xFF1A;&quot;+ft.get());  
-        } catch (InterruptedException e)  
+            System.out.println(<span class="hljs-string">&quot;&#x5B50;&#x7EBF;&#x7A0B;&#x7684;&#x8FD4;&#x56DE;&#x503C;&#xFF1A;&quot;</span>+ft.get());  
+        } <span class="hljs-keyword">catch</span> (InterruptedException e)  
         {  
             e.printStackTrace();  
-        } catch (ExecutionException e)  
+        } <span class="hljs-keyword">catch</span> (ExecutionException e)  
         {  
             e.printStackTrace();  
         }  
 
     }  
 
-    @Override  
-    public Integer call() throws Exception  
-    {  
-        int i = 0;  
-        for(;i&lt;100;i++)  
+    <span class="hljs-meta">@Override</span>  
+    <span class="hljs-function"><span class="hljs-keyword">public</span> Integer <span class="hljs-title">call</span><span class="hljs-params">()</span> <span class="hljs-keyword">throws</span> Exception  
+    </span>{  
+        <span class="hljs-keyword">int</span> i = <span class="hljs-number">0</span>;  
+        <span class="hljs-keyword">for</span>(;i&lt;<span class="hljs-number">100</span>;i++)  
         {  
-            System.out.println(Thread.currentThread().getName()+&quot; &quot;+i);  
+            System.out.println(Thread.currentThread().getName()+<span class="hljs-string">&quot; &quot;</span>+i);  
         }  
-        return i;  
+        <span class="hljs-keyword">return</span> i;  
     }  
 
 }
@@ -3868,7 +3872,7 @@
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"Java创建线程的三种方式","level":"2.2.1","depth":2,"next":{"title":"Java线程池","level":"2.2.2","depth":2,"path":"java/concurrence/thread-pool.md","ref":"java/concurrence/thread-pool.md","articles":[]},"previous":{"title":"Java并发","level":"2.2","depth":1,"path":"java/concurrence.md","ref":"java/concurrence.md","articles":[{"title":"Java创建线程的三种方式","level":"2.2.1","depth":2,"path":"java/concurrence/CreateThread.md","ref":"java/concurrence/CreateThread.md","articles":[]},{"title":"Java线程池","level":"2.2.2","depth":2,"path":"java/concurrence/thread-pool.md","ref":"java/concurrence/thread-pool.md","articles":[]},{"title":"死锁","level":"2.2.3","depth":2,"path":"java/concurrence/deadlock.md","ref":"java/concurrence/deadlock.md","articles":[]},{"title":"Synchronized/ReentrantLock","level":"2.2.4","depth":2,"path":"java/concurrence/synchronized-reentrantlock.md","ref":"java/concurrence/synchronized-reentrantlock.md","articles":[]},{"title":"生产者/消费者模式","level":"2.2.5","depth":2,"path":"java/concurrence/producer-consumer.md","ref":"java/concurrence/producer-consumer.md","articles":[]},{"title":"volatile关键字","level":"2.2.6","depth":2,"path":"java/concurrence/volatile.md","ref":"java/concurrence/volatile.md","articles":[]},{"title":"CAS原子操作","level":"2.2.7","depth":2,"path":"java/concurrence/CAS.md","ref":"java/concurrence/CAS.md","articles":[]},{"title":"AbstractQueuedSynchronizer详解","level":"2.2.8","depth":2,"path":"java/concurrence/AbstractQueuedSynchronizer.md","ref":"java/concurrence/AbstractQueuedSynchronizer.md","articles":[]},{"title":"深入理解ReentrantLock","level":"2.2.9","depth":2,"path":"java/concurrence/ReentrantLock.md","ref":"java/concurrence/ReentrantLock.md","articles":[]},{"title":"Java并发集合——ArrayBlockingQueue","level":"2.2.10","depth":2,"path":"java/concurrence/ArrayBlockingQueue.md","ref":"java/concurrence/ArrayBlockingQueue.md","articles":[]},{"title":"Java并发集合——LinkedBlockingQueue","level":"2.2.11","depth":2,"path":"java/concurrence/LinkedBlockingQueue.md","ref":"java/concurrence/LinkedBlockingQueue.md","articles":[]},{"title":"Java并发集合——ConcurrentHashMap","level":"2.2.12","depth":2,"path":"java/concurrence/ConcurrentHashMap.md","ref":"java/concurrence/ConcurrentHashMap.md","articles":[]}]},"dir":"ltr"},"config":{"plugins":["-lunr","-search","-highlight","-livereload","search-plus@^0.0.11","simple-page-toc@^0.1.1","github@^2.0.0","github-buttons@2.1.0","edit-link@^2.0.2","advanced-emoji@^0.2.1","anchors@^0.7.1","include-codeblock@^3.0.2","ace@^0.3.2","emphasize@^1.1.0","katex@^1.1.3","splitter@^0.0.8","tbfed-pagefooter@^0.0.1","expandable-chapters-small@^0.1.7","sectionx@^3.1.0","local-video@^1.0.1","anchor-navigation-ex@0.1.8","favicon@^0.0.2"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"tbfed-pagefooter":{"copyright":"Copyright © ruheng.com 2017","modify_label":"该文件修订时间：","modify_format":"YYYY-MM-DD HH:mm:ss"},"emphasize":{},"ace":{},"github":{"url":"https://github.com/LRH1993/android_interview"},"simple-page-toc":{"maxDepth":3,"skipFirstH1":true},"splitter":{},"katex":{},"fontsettings":{"theme":"white","family":"sans","size":2},"sectionx":{"tag":"b"},"anchor-navigation-ex":{"isRewritePageTitle":false,"tocLevel1Icon":"fa fa-hand-o-right","tocLevel2Icon":"fa fa-hand-o-right","tocLevel3Icon":"fa fa-hand-o-right"},"favicon":{"shortcut":"favicon.ico","bookmark":"favicon.ico"},"github-buttons":{"repo":"LRH1993/android_interview","types":["star"],"size":"small"},"expandable-chapters-small":{},"local-video":{},"advanced-emoji":{"embedEmojis":false},"include-codeblock":{"check":false,"edit":true,"fixlang":false,"lang":"","template":"ace","theme":"chrome","unindent":true},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":true,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"edit-link":{"label":"Edit This Page","base":"https://github.com/LRH1993/android_interview/edit/master"},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":true},"anchors":{},"search-plus":{}},"theme":"default","author":"ruheng","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"Android校招面试指南","language":"zh-hans","output.name":"site","links":{"sidebar":{"Home":"http://lruheng.com/"}},"gitbook":"3.2.3","description":"Android面试必备，记录自己的秋招之路"},"file":{"path":"java/concurrence/CreateThread.md","mtime":"2017-08-22T07:53:58.000Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2017-10-16T12:05:21.906Z"},"basePath":"../..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"Java创建线程的三种方式","level":"2.2.1","depth":2,"next":{"title":"Java线程池","level":"2.2.2","depth":2,"path":"java/concurrence/thread-pool.md","ref":"java/concurrence/thread-pool.md","articles":[]},"previous":{"title":"Java并发","level":"2.2","depth":1,"path":"java/concurrence.md","ref":"java/concurrence.md","articles":[{"title":"Java创建线程的三种方式","level":"2.2.1","depth":2,"path":"java/concurrence/CreateThread.md","ref":"java/concurrence/CreateThread.md","articles":[]},{"title":"Java线程池","level":"2.2.2","depth":2,"path":"java/concurrence/thread-pool.md","ref":"java/concurrence/thread-pool.md","articles":[]},{"title":"死锁","level":"2.2.3","depth":2,"path":"java/concurrence/deadlock.md","ref":"java/concurrence/deadlock.md","articles":[]},{"title":"Synchronized/ReentrantLock","level":"2.2.4","depth":2,"path":"java/concurrence/synchronized-reentrantlock.md","ref":"java/concurrence/synchronized-reentrantlock.md","articles":[]},{"title":"生产者/消费者模式","level":"2.2.5","depth":2,"path":"java/concurrence/producer-consumer.md","ref":"java/concurrence/producer-consumer.md","articles":[]},{"title":"volatile关键字","level":"2.2.6","depth":2,"path":"java/concurrence/volatile.md","ref":"java/concurrence/volatile.md","articles":[]},{"title":"CAS原子操作","level":"2.2.7","depth":2,"path":"java/concurrence/CAS.md","ref":"java/concurrence/CAS.md","articles":[]},{"title":"AbstractQueuedSynchronizer详解","level":"2.2.8","depth":2,"path":"java/concurrence/AbstractQueuedSynchronizer.md","ref":"java/concurrence/AbstractQueuedSynchronizer.md","articles":[]},{"title":"深入理解ReentrantLock","level":"2.2.9","depth":2,"path":"java/concurrence/ReentrantLock.md","ref":"java/concurrence/ReentrantLock.md","articles":[]},{"title":"Java并发集合——ArrayBlockingQueue","level":"2.2.10","depth":2,"path":"java/concurrence/ArrayBlockingQueue.md","ref":"java/concurrence/ArrayBlockingQueue.md","articles":[]},{"title":"Java并发集合——LinkedBlockingQueue","level":"2.2.11","depth":2,"path":"java/concurrence/LinkedBlockingQueue.md","ref":"java/concurrence/LinkedBlockingQueue.md","articles":[]},{"title":"Java并发集合——ConcurrentHashMap","level":"2.2.12","depth":2,"path":"java/concurrence/ConcurrentHashMap.md","ref":"java/concurrence/ConcurrentHashMap.md","articles":[]}]},"dir":"ltr"},"config":{"plugins":["-lunr","-search","-livereload","search-plus@^0.0.11","simple-page-toc@^0.1.1","github@^2.0.0","github-buttons@2.1.0","edit-link@^2.0.2","advanced-emoji@^0.2.1","anchors@^0.7.1","include-codeblock@^3.0.2","ace@^0.3.2","emphasize@^1.1.0","katex@^1.1.3","splitter@^0.0.8","tbfed-pagefooter@^0.0.1","expandable-chapters-small@^0.1.7","sectionx@^3.1.0","local-video@^1.0.1","anchor-navigation-ex@0.1.8","favicon@^0.0.2"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"tbfed-pagefooter":{"copyright":"Copyright © ruheng.com 2017","modify_label":"该文件修订时间：","modify_format":"YYYY-MM-DD HH:mm:ss"},"emphasize":{},"ace":{},"github":{"url":"https://github.com/LRH1993/android_interview"},"simple-page-toc":{"maxDepth":3,"skipFirstH1":true},"splitter":{},"katex":{},"fontsettings":{"theme":"white","family":"sans","size":2},"sectionx":{"tag":"b"},"highlight":{},"anchor-navigation-ex":{"isRewritePageTitle":false,"tocLevel1Icon":"fa fa-hand-o-right","tocLevel2Icon":"fa fa-hand-o-right","tocLevel3Icon":"fa fa-hand-o-right"},"favicon":{"shortcut":"favicon.ico","bookmark":"favicon.ico"},"github-buttons":{"repo":"LRH1993/android_interview","types":["star"],"size":"small"},"expandable-chapters-small":{},"local-video":{},"advanced-emoji":{"embedEmojis":false},"include-codeblock":{"check":false,"edit":false,"fixlang":false,"lang":"","template":"default","theme":"chrome","unindent":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":true,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"edit-link":{"label":"Edit This Page","base":"https://github.com/LRH1993/android_interview/edit/master"},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":true},"anchors":{},"search-plus":{}},"theme":"default","author":"ruheng","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"Android校招面试指南","language":"zh-hans","output.name":"site","links":{"sidebar":{"Home":"http://lruheng.com/"}},"gitbook":"3.2.3","description":"Android面试必备，记录自己的秋招之路"},"file":{"path":"java/concurrence/CreateThread.md","mtime":"2017-08-22T07:53:58.000Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2017-10-16T13:00:43.989Z"},"basePath":"../..","book":{"language":""}});
         });
     </script>
 </div>

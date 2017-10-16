@@ -69,6 +69,10 @@
                 
             
                 
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
                 <link rel="stylesheet" href="../../gitbook/gitbook-plugin-fontsettings/website.css">
                 
             
@@ -3710,17 +3714,17 @@
 <p>A <strong>Red-Black tree </strong>based NavigableMap implementation. The map is sorted according to the natural ordering of its keys, or by a Comparator provided at map creation time, depending on which constructor is used.<br>This implementation provides guaranteed <strong>log(n) time cost </strong>for the containsKey, get, put and remove operations. Algorithms are adaptations of those in Cormen, Leiserson, and Rivest&#x2019;s Introduction to Algorithms.</p>
 </blockquote>
 <p>&#x4E4B;&#x524D;&#x5DF2;&#x7ECF;&#x5B66;&#x4E60;&#x8FC7;HashMap&#x548C;LinkedHashMap&#x4E86;&#xFF0C;HashMap&#x4E0D;&#x4FDD;&#x8BC1;&#x6570;&#x636E;&#x6709;&#x5E8F;&#xFF0C;LinkedHashMap&#x4FDD;&#x8BC1;&#x6570;&#x636E;&#x53EF;&#x4EE5;&#x4FDD;&#x6301;&#x63D2;&#x5165;&#x987A;&#x5E8F;&#xFF0C;&#x800C;&#x5982;&#x679C;&#x6211;&#x4EEC;&#x5E0C;&#x671B;Map&#x53EF;&#x4EE5;&#x4FDD;&#x6301;key&#x7684;&#x5927;&#x5C0F;&#x987A;&#x5E8F;&#x7684;&#x65F6;&#x5019;&#xFF0C;&#x6211;&#x4EEC;&#x5C31;&#x9700;&#x8981;&#x5229;&#x7528;TreeMap&#x4E86;&#x3002;</p>
-<pre><code class="lang-java">TreeMap&lt;Integer, String&gt; tmap = new TreeMap&lt;Integer, String&gt;();
-tmap.put(1, &quot;&#x8BED;&#x6587;&quot;);
-tmap.put(3, &quot;&#x82F1;&#x8BED;&quot;);
-tmap.put(2, &quot;&#x6570;&#x5B66;&quot;);
-tmap.put(4, &quot;&#x653F;&#x6CBB;&quot;);
-tmap.put(5, &quot;&#x5386;&#x53F2;&quot;);
-tmap.put(6, &quot;&#x5730;&#x7406;&quot;);
-tmap.put(7, &quot;&#x751F;&#x7269;&quot;);
-tmap.put(8, &quot;&#x5316;&#x5B66;&quot;);
-for(Entry&lt;Integer, String&gt; entry : tmap.entrySet()) {
-    System.out.println(entry.getKey() + &quot;: &quot; + entry.getValue());
+<pre><code class="lang-java">TreeMap&lt;Integer, String&gt; tmap = <span class="hljs-keyword">new</span> TreeMap&lt;Integer, String&gt;();
+tmap.put(<span class="hljs-number">1</span>, <span class="hljs-string">&quot;&#x8BED;&#x6587;&quot;</span>);
+tmap.put(<span class="hljs-number">3</span>, <span class="hljs-string">&quot;&#x82F1;&#x8BED;&quot;</span>);
+tmap.put(<span class="hljs-number">2</span>, <span class="hljs-string">&quot;&#x6570;&#x5B66;&quot;</span>);
+tmap.put(<span class="hljs-number">4</span>, <span class="hljs-string">&quot;&#x653F;&#x6CBB;&quot;</span>);
+tmap.put(<span class="hljs-number">5</span>, <span class="hljs-string">&quot;&#x5386;&#x53F2;&quot;</span>);
+tmap.put(<span class="hljs-number">6</span>, <span class="hljs-string">&quot;&#x5730;&#x7406;&quot;</span>);
+tmap.put(<span class="hljs-number">7</span>, <span class="hljs-string">&quot;&#x751F;&#x7269;&quot;</span>);
+tmap.put(<span class="hljs-number">8</span>, <span class="hljs-string">&quot;&#x5316;&#x5B66;&quot;</span>);
+<span class="hljs-keyword">for</span>(Entry&lt;Integer, String&gt; entry : tmap.entrySet()) {
+    System.out.println(entry.getKey() + <span class="hljs-string">&quot;: &quot;</span> + entry.getValue());
 }
 </code></pre>
 <p>&#x5176;&#x5927;&#x81F4;&#x7684;&#x7ED3;&#x6784;&#x5982;&#x4E0B;&#x6240;&#x793A;&#xFF1A;<br><img src="https://cloud.githubusercontent.com/assets/1736354/7041463/05ee676a-de0c-11e4-9412-4c6964931e43.png" alt="" title="treemap"><br>&#x4F7F;&#x7528;&#x7EA2;&#x9ED1;&#x6811;&#x7684;&#x597D;&#x5904;&#x662F;&#x80FD;&#x591F;&#x4F7F;&#x5F97;&#x6811;&#x5177;&#x6709;&#x4E0D;&#x9519;&#x7684;&#x5E73;&#x8861;&#x6027;&#xFF0C;&#x8FD9;&#x6837;&#x64CD;&#x4F5C;&#x7684;&#x901F;&#x5EA6;&#x5C31;&#x53EF;&#x4EE5;&#x8FBE;&#x5230;log(n)&#x7684;&#x6C34;&#x5E73;&#x4E86;&#x3002;&#x5177;&#x4F53;&#x7EA2;&#x9ED1;&#x6811;&#x7684;&#x5B9E;&#x73B0;&#x4E0D;&#x5728;&#x8FD9;&#x91CC;&#x8D58;&#x8FF0;&#xFF0C;&#x53EF;&#x4EE5;&#x53C2;&#x8003;<a href="http://dongxicheng.org/structure/red-black-tree/" target="_blank">&#x6570;&#x636E;&#x7ED3;&#x6784;&#x4E4B;&#x7EA2;&#x9ED1;&#x6811;</a>&#x3001;<a href="http://zh.wikipedia.org/wiki/&#x7EA2;&#x9ED1;&#x6811;" target="_blank">wikipedia-&#x7EA2;&#x9ED1;&#x6811;</a>&#x7B49;&#x7684;&#x5B9E;&#x73B0;&#x3002;</p>
@@ -3729,123 +3733,123 @@ for(Entry&lt;Integer, String&gt; entry : tmap.entrySet()) {
 <p>Associates the specified value with the specified key in this map.If the map previously contained a mapping for the key, the old value is replaced.</p>
 </blockquote>
 <p>&#x5982;&#x679C;&#x5B58;&#x5728;&#x7684;&#x8BDD;&#xFF0C;old value&#x88AB;&#x66FF;&#x6362;&#xFF1B;&#x5982;&#x679C;&#x4E0D;&#x5B58;&#x5728;&#x7684;&#x8BDD;&#xFF0C;&#x5219;&#x65B0;&#x6DFB;&#x4E00;&#x4E2A;&#x8282;&#x70B9;&#xFF0C;&#x7136;&#x540E;&#x5BF9;&#x505A;&#x7EA2;&#x9ED1;&#x6811;&#x7684;&#x5E73;&#x8861;&#x64CD;&#x4F5C;&#x3002;</p>
-<pre><code class="lang-java">public V put(K key, V value) {
+<pre><code class="lang-java"><span class="hljs-function"><span class="hljs-keyword">public</span> V <span class="hljs-title">put</span><span class="hljs-params">(K key, V value)</span> </span>{
     Entry&lt;K,V&gt; t = root;
-    if (t == null) {
-        compare(key, key); // type (and possibly null) check
-        root = new Entry&lt;&gt;(key, value, null);
-        size = 1;
+    <span class="hljs-keyword">if</span> (t == <span class="hljs-keyword">null</span>) {
+        compare(key, key); <span class="hljs-comment">// type (and possibly null) check</span>
+        root = <span class="hljs-keyword">new</span> Entry&lt;&gt;(key, value, <span class="hljs-keyword">null</span>);
+        size = <span class="hljs-number">1</span>;
         modCount++;
-        return null;
+        <span class="hljs-keyword">return</span> <span class="hljs-keyword">null</span>;
     }
-    int cmp;
+    <span class="hljs-keyword">int</span> cmp;
     Entry&lt;K,V&gt; parent;
-    // split comparator and comparable paths
-    Comparator&lt;? super K&gt; cpr = comparator;
-        // &#x5982;&#x679C;&#x8BE5;&#x8282;&#x70B9;&#x5B58;&#x5728;&#xFF0C;&#x5219;&#x66FF;&#x6362;&#x503C;&#x76F4;&#x63A5;&#x8FD4;&#x56DE;
-    if (cpr != null) {
+    <span class="hljs-comment">// split comparator and comparable paths</span>
+    Comparator&lt;? <span class="hljs-keyword">super</span> K&gt; cpr = comparator;
+        <span class="hljs-comment">// &#x5982;&#x679C;&#x8BE5;&#x8282;&#x70B9;&#x5B58;&#x5728;&#xFF0C;&#x5219;&#x66FF;&#x6362;&#x503C;&#x76F4;&#x63A5;&#x8FD4;&#x56DE;</span>
+    <span class="hljs-keyword">if</span> (cpr != <span class="hljs-keyword">null</span>) {
         do {
             parent = t;
             cmp = cpr.compare(key, t.key);
-            if (cmp &lt; 0)
+            <span class="hljs-keyword">if</span> (cmp &lt; <span class="hljs-number">0</span>)
                 t = t.left;
-            else if (cmp &gt; 0)
+            <span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span> (cmp &gt; <span class="hljs-number">0</span>)
                 t = t.right;
-            else
-                return t.setValue(value);
-        } while (t != null);
+            <span class="hljs-keyword">else</span>
+                <span class="hljs-keyword">return</span> t.setValue(value);
+        } <span class="hljs-keyword">while</span> (t != <span class="hljs-keyword">null</span>);
     }
-    else {
-        if (key == null)
-            throw new NullPointerException();
-        @SuppressWarnings(&quot;unchecked&quot;)
-            Comparable&lt;? super K&gt; k = (Comparable&lt;? super K&gt;) key;
+    <span class="hljs-keyword">else</span> {
+        <span class="hljs-keyword">if</span> (key == <span class="hljs-keyword">null</span>)
+            <span class="hljs-keyword">throw</span> <span class="hljs-keyword">new</span> NullPointerException();
+        <span class="hljs-meta">@SuppressWarnings</span>(<span class="hljs-string">&quot;unchecked&quot;</span>)
+            Comparable&lt;? <span class="hljs-keyword">super</span> K&gt; k = (Comparable&lt;? <span class="hljs-keyword">super</span> K&gt;) key;
         do {
             parent = t;
             cmp = k.compareTo(t.key);
-            if (cmp &lt; 0)
+            <span class="hljs-keyword">if</span> (cmp &lt; <span class="hljs-number">0</span>)
                 t = t.left;
-            else if (cmp &gt; 0)
+            <span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span> (cmp &gt; <span class="hljs-number">0</span>)
                 t = t.right;
-            else
-                return t.setValue(value);
-        } while (t != null);
+            <span class="hljs-keyword">else</span>
+                <span class="hljs-keyword">return</span> t.setValue(value);
+        } <span class="hljs-keyword">while</span> (t != <span class="hljs-keyword">null</span>);
     }
-        // &#x5982;&#x679C;&#x8BE5;&#x8282;&#x70B9;&#x672A;&#x5B58;&#x5728;&#xFF0C;&#x5219;&#x65B0;&#x5EFA;
-    Entry&lt;K,V&gt; e = new Entry&lt;&gt;(key, value, parent);
-    if (cmp &lt; 0)
+        <span class="hljs-comment">// &#x5982;&#x679C;&#x8BE5;&#x8282;&#x70B9;&#x672A;&#x5B58;&#x5728;&#xFF0C;&#x5219;&#x65B0;&#x5EFA;</span>
+    Entry&lt;K,V&gt; e = <span class="hljs-keyword">new</span> Entry&lt;&gt;(key, value, parent);
+    <span class="hljs-keyword">if</span> (cmp &lt; <span class="hljs-number">0</span>)
         parent.left = e;
-    else
+    <span class="hljs-keyword">else</span>
         parent.right = e;
-        // &#x7EA2;&#x9ED1;&#x6811;&#x5E73;&#x8861;&#x8C03;&#x6574;
+        <span class="hljs-comment">// &#x7EA2;&#x9ED1;&#x6811;&#x5E73;&#x8861;&#x8C03;&#x6574;</span>
     fixAfterInsertion(e);
     size++;
     modCount++;
-    return null;
+    <span class="hljs-keyword">return</span> <span class="hljs-keyword">null</span>;
 }
 </code></pre>
 <h3 id="3-_get&#x51FD;&#x6570;"><a name="3-_get&#x51FD;&#x6570;" class="anchor-navigation-ex-anchor" href="#3-_get&#x51FD;&#x6570;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x4E09;&#x3001; get&#x51FD;&#x6570; </h3>
 <p>get&#x51FD;&#x6570;&#x5219;&#x76F8;&#x5BF9;&#x6765;&#x8BF4;&#x6BD4;&#x8F83;&#x7B80;&#x5355;&#xFF0C;&#x4EE5;log(n)&#x7684;&#x590D;&#x6742;&#x5EA6;&#x8FDB;&#x884C;get&#x3002;</p>
-<pre><code class="lang-java">final Entry&lt;K,V&gt; getEntry(Object key) {
-    // Offload comparator-based version for sake of performance
-    if (comparator != null)
-        return getEntryUsingComparator(key);
-    if (key == null)
-        throw new NullPointerException();
-    @SuppressWarnings(&quot;unchecked&quot;)
-        Comparable&lt;? super K&gt; k = (Comparable&lt;? super K&gt;) key;
+<pre><code class="lang-java"><span class="hljs-function"><span class="hljs-keyword">final</span> Entry&lt;K,V&gt; <span class="hljs-title">getEntry</span><span class="hljs-params">(Object key)</span> </span>{
+    <span class="hljs-comment">// Offload comparator-based version for sake of performance</span>
+    <span class="hljs-keyword">if</span> (comparator != <span class="hljs-keyword">null</span>)
+        <span class="hljs-keyword">return</span> getEntryUsingComparator(key);
+    <span class="hljs-keyword">if</span> (key == <span class="hljs-keyword">null</span>)
+        <span class="hljs-keyword">throw</span> <span class="hljs-keyword">new</span> NullPointerException();
+    <span class="hljs-meta">@SuppressWarnings</span>(<span class="hljs-string">&quot;unchecked&quot;</span>)
+        Comparable&lt;? <span class="hljs-keyword">super</span> K&gt; k = (Comparable&lt;? <span class="hljs-keyword">super</span> K&gt;) key;
     Entry&lt;K,V&gt; p = root;
-        // &#x6309;&#x7167;&#x4E8C;&#x53C9;&#x6811;&#x641C;&#x7D22;&#x7684;&#x65B9;&#x5F0F;&#x8FDB;&#x884C;&#x641C;&#x7D22;&#xFF0C;&#x641C;&#x5230;&#x8FD4;&#x56DE;
-    while (p != null) {
-        int cmp = k.compareTo(p.key);
-        if (cmp &lt; 0)
+        <span class="hljs-comment">// &#x6309;&#x7167;&#x4E8C;&#x53C9;&#x6811;&#x641C;&#x7D22;&#x7684;&#x65B9;&#x5F0F;&#x8FDB;&#x884C;&#x641C;&#x7D22;&#xFF0C;&#x641C;&#x5230;&#x8FD4;&#x56DE;</span>
+    <span class="hljs-keyword">while</span> (p != <span class="hljs-keyword">null</span>) {
+        <span class="hljs-keyword">int</span> cmp = k.compareTo(p.key);
+        <span class="hljs-keyword">if</span> (cmp &lt; <span class="hljs-number">0</span>)
             p = p.left;
-        else if (cmp &gt; 0)
+        <span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span> (cmp &gt; <span class="hljs-number">0</span>)
             p = p.right;
-        else
-            return p;
+        <span class="hljs-keyword">else</span>
+            <span class="hljs-keyword">return</span> p;
     }
-    return null;
+    <span class="hljs-keyword">return</span> <span class="hljs-keyword">null</span>;
 }
-public V get(Object key) {
+<span class="hljs-function"><span class="hljs-keyword">public</span> V <span class="hljs-title">get</span><span class="hljs-params">(Object key)</span> </span>{
     Entry&lt;K,V&gt; p = getEntry(key);
-    return (p==null ? null : p.value);
+    <span class="hljs-keyword">return</span> (p==<span class="hljs-keyword">null</span> ? <span class="hljs-keyword">null</span> : p.value);
 }
 </code></pre>
 <h3 id="4-_successor&#x540E;&#x7EE7;"><a name="4-_successor&#x540E;&#x7EE7;" class="anchor-navigation-ex-anchor" href="#4-_successor&#x540E;&#x7EE7;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x56DB;&#x3001;successor&#x540E;&#x7EE7; </h3>
 <p>TreeMap&#x662F;&#x5982;&#x4F55;&#x4FDD;&#x8BC1;&#x5176;&#x8FED;&#x4EE3;&#x8F93;&#x51FA;&#x662F;&#x6709;&#x5E8F;&#x7684;&#x5462;&#xFF1F;&#x5176;&#x5B9E;&#x4ECE;&#x5B8F;&#x89C2;&#x4E0A;&#x6765;&#x8BB2;&#xFF0C;&#x5C31;&#x76F8;&#x5F53;&#x4E8E;&#x6811;&#x7684;&#x4E2D;&#x5E8F;&#x904D;&#x5386;(LDR)&#x3002;&#x6211;&#x4EEC;&#x5148;&#x770B;&#x4E00;&#x4E0B;&#x8FED;&#x4EE3;&#x8F93;&#x51FA;&#x7684;&#x6B65;&#x9AA4;</p>
-<pre><code class="lang-java">for(Entry&lt;Integer, String&gt; entry : tmap.entrySet()) {
-    System.out.println(entry.getKey() + &quot;: &quot; + entry.getValue());
+<pre><code class="lang-java"><span class="hljs-keyword">for</span>(Entry&lt;Integer, String&gt; entry : tmap.entrySet()) {
+    System.out.println(entry.getKey() + <span class="hljs-string">&quot;: &quot;</span> + entry.getValue());
 }
 </code></pre>
 <p>&#x6839;&#x636E;<a href="http://docs.oracle.com/javase/specs/jls/se8/html/jls-14.html#jls-14.14.2" target="_blank">The enhanced for statement</a>&#xFF0C;for&#x8BED;&#x53E5;&#x4F1A;&#x505A;&#x5982;&#x4E0B;&#x8F6C;&#x6362;&#x4E3A;&#xFF1A;</p>
-<pre><code class="lang-java">for(Iterator&lt;Map.Entry&lt;String, String&gt;&gt; it = tmap.entrySet().iterator() ; tmap.hasNext(); ) {
+<pre><code class="lang-java"><span class="hljs-keyword">for</span>(Iterator&lt;Map.Entry&lt;String, String&gt;&gt; it = tmap.entrySet().iterator() ; tmap.hasNext(); ) {
     Entry&lt;Integer, String&gt; entry = it.next();
-    System.out.println(entry.getKey() + &quot;: &quot; + entry.getValue());
+    System.out.println(entry.getKey() + <span class="hljs-string">&quot;: &quot;</span> + entry.getValue());
 }
 </code></pre>
 <p>&#x5728;<strong>it.next()</strong>&#x7684;&#x8C03;&#x7528;&#x4E2D;&#x4F1A;&#x4F7F;&#x7528;<strong>nextEntry</strong>&#x8C03;&#x7528;<code>successor</code>&#x8FD9;&#x4E2A;&#x662F;&#x8FC7;&#x7684;&#x540E;&#x7EE7;&#x7684;&#x91CD;&#x70B9;&#xFF0C;&#x5177;&#x4F53;&#x5B9E;&#x73B0;&#x5982;&#x4E0B;&#xFF1A;</p>
-<pre><code class="lang-java">static &lt;K,V&gt; TreeMap.Entry&lt;K,V&gt; successor(Entry&lt;K,V&gt; t) {
-    if (t == null)
-        return null;
-    else if (t.right != null) {
-        // &#x6709;&#x53F3;&#x5B50;&#x6811;&#x7684;&#x8282;&#x70B9;&#xFF0C;&#x540E;&#x7EE7;&#x8282;&#x70B9;&#x5C31;&#x662F;&#x53F3;&#x5B50;&#x6811;&#x7684;&#x201C;&#x6700;&#x5DE6;&#x8282;&#x70B9;&#x201D;
-        // &#x56E0;&#x4E3A;&#x201C;&#x6700;&#x5DE6;&#x5B50;&#x6811;&#x201D;&#x662F;&#x53F3;&#x5B50;&#x6811;&#x7684;&#x6700;&#x5C0F;&#x8282;&#x70B9;
+<pre><code class="lang-java"><span class="hljs-keyword">static</span> &lt;K,V&gt; TreeMap.<span class="hljs-function">Entry&lt;K,V&gt; <span class="hljs-title">successor</span><span class="hljs-params">(Entry&lt;K,V&gt; t)</span> </span>{
+    <span class="hljs-keyword">if</span> (t == <span class="hljs-keyword">null</span>)
+        <span class="hljs-keyword">return</span> <span class="hljs-keyword">null</span>;
+    <span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span> (t.right != <span class="hljs-keyword">null</span>) {
+        <span class="hljs-comment">// &#x6709;&#x53F3;&#x5B50;&#x6811;&#x7684;&#x8282;&#x70B9;&#xFF0C;&#x540E;&#x7EE7;&#x8282;&#x70B9;&#x5C31;&#x662F;&#x53F3;&#x5B50;&#x6811;&#x7684;&#x201C;&#x6700;&#x5DE6;&#x8282;&#x70B9;&#x201D;</span>
+        <span class="hljs-comment">// &#x56E0;&#x4E3A;&#x201C;&#x6700;&#x5DE6;&#x5B50;&#x6811;&#x201D;&#x662F;&#x53F3;&#x5B50;&#x6811;&#x7684;&#x6700;&#x5C0F;&#x8282;&#x70B9;</span>
         Entry&lt;K,V&gt; p = t.right;
-        while (p.left != null)
+        <span class="hljs-keyword">while</span> (p.left != <span class="hljs-keyword">null</span>)
             p = p.left;
-        return p;
-    } else {
-        // &#x5982;&#x679C;&#x53F3;&#x5B50;&#x6811;&#x4E3A;&#x7A7A;&#xFF0C;&#x5219;&#x5BFB;&#x627E;&#x5F53;&#x524D;&#x8282;&#x70B9;&#x6240;&#x5728;&#x5DE6;&#x5B50;&#x6811;&#x7684;&#x7B2C;&#x4E00;&#x4E2A;&#x7956;&#x5148;&#x8282;&#x70B9;
-        // &#x56E0;&#x4E3A;&#x5DE6;&#x5B50;&#x6811;&#x627E;&#x5B8C;&#x4E86;&#xFF0C;&#x6839;&#x636E;LDR&#x8BE5;D&#x4E86;
+        <span class="hljs-keyword">return</span> p;
+    } <span class="hljs-keyword">else</span> {
+        <span class="hljs-comment">// &#x5982;&#x679C;&#x53F3;&#x5B50;&#x6811;&#x4E3A;&#x7A7A;&#xFF0C;&#x5219;&#x5BFB;&#x627E;&#x5F53;&#x524D;&#x8282;&#x70B9;&#x6240;&#x5728;&#x5DE6;&#x5B50;&#x6811;&#x7684;&#x7B2C;&#x4E00;&#x4E2A;&#x7956;&#x5148;&#x8282;&#x70B9;</span>
+        <span class="hljs-comment">// &#x56E0;&#x4E3A;&#x5DE6;&#x5B50;&#x6811;&#x627E;&#x5B8C;&#x4E86;&#xFF0C;&#x6839;&#x636E;LDR&#x8BE5;D&#x4E86;</span>
         Entry&lt;K,V&gt; p = t.parent;
         Entry&lt;K,V&gt; ch = t;
-        // &#x4FDD;&#x8BC1;&#x5DE6;&#x5B50;&#x6811;
-        while (p != null &amp;&amp; ch == p.right) {
+        <span class="hljs-comment">// &#x4FDD;&#x8BC1;&#x5DE6;&#x5B50;&#x6811;</span>
+        <span class="hljs-keyword">while</span> (p != <span class="hljs-keyword">null</span> &amp;&amp; ch == p.right) {
             ch = p;
             p = p.parent;
         }
-        return p;
+        <span class="hljs-keyword">return</span> p;
     }
 }
 </code></pre>
@@ -3901,7 +3905,7 @@ public V get(Object key) {
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"Java集合——TreeMap","level":"2.1.5","depth":2,"next":{"title":"Java集合——LinkedHashMap","level":"2.1.6","depth":2,"path":"java/basis/LinkedHashMap.md","ref":"java/basis/LinkedHashMap.md","articles":[]},"previous":{"title":"Java集合——HashMap","level":"2.1.4","depth":2,"path":"java/basis/hashmap.md","ref":"java/basis/hashmap.md","articles":[]},"dir":"ltr"},"config":{"plugins":["-lunr","-search","-highlight","-livereload","search-plus@^0.0.11","simple-page-toc@^0.1.1","github@^2.0.0","github-buttons@2.1.0","edit-link@^2.0.2","advanced-emoji@^0.2.1","anchors@^0.7.1","include-codeblock@^3.0.2","ace@^0.3.2","emphasize@^1.1.0","katex@^1.1.3","splitter@^0.0.8","tbfed-pagefooter@^0.0.1","expandable-chapters-small@^0.1.7","sectionx@^3.1.0","local-video@^1.0.1","anchor-navigation-ex@0.1.8","favicon@^0.0.2"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"tbfed-pagefooter":{"copyright":"Copyright © ruheng.com 2017","modify_label":"该文件修订时间：","modify_format":"YYYY-MM-DD HH:mm:ss"},"emphasize":{},"ace":{},"github":{"url":"https://github.com/LRH1993/android_interview"},"simple-page-toc":{"maxDepth":3,"skipFirstH1":true},"splitter":{},"katex":{},"fontsettings":{"theme":"white","family":"sans","size":2},"sectionx":{"tag":"b"},"anchor-navigation-ex":{"isRewritePageTitle":false,"tocLevel1Icon":"fa fa-hand-o-right","tocLevel2Icon":"fa fa-hand-o-right","tocLevel3Icon":"fa fa-hand-o-right"},"favicon":{"shortcut":"favicon.ico","bookmark":"favicon.ico"},"github-buttons":{"repo":"LRH1993/android_interview","types":["star"],"size":"small"},"expandable-chapters-small":{},"local-video":{},"advanced-emoji":{"embedEmojis":false},"include-codeblock":{"check":false,"edit":true,"fixlang":false,"lang":"","template":"ace","theme":"chrome","unindent":true},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":true,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"edit-link":{"label":"Edit This Page","base":"https://github.com/LRH1993/android_interview/edit/master"},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":true},"anchors":{},"search-plus":{}},"theme":"default","author":"ruheng","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"Android校招面试指南","language":"zh-hans","output.name":"site","links":{"sidebar":{"Home":"http://lruheng.com/"}},"gitbook":"3.2.3","description":"Android面试必备，记录自己的秋招之路"},"file":{"path":"java/basis/treemap.md","mtime":"2017-08-22T07:53:58.000Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2017-10-16T12:05:21.906Z"},"basePath":"../..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"Java集合——TreeMap","level":"2.1.5","depth":2,"next":{"title":"Java集合——LinkedHashMap","level":"2.1.6","depth":2,"path":"java/basis/LinkedHashMap.md","ref":"java/basis/LinkedHashMap.md","articles":[]},"previous":{"title":"Java集合——HashMap","level":"2.1.4","depth":2,"path":"java/basis/hashmap.md","ref":"java/basis/hashmap.md","articles":[]},"dir":"ltr"},"config":{"plugins":["-lunr","-search","-livereload","search-plus@^0.0.11","simple-page-toc@^0.1.1","github@^2.0.0","github-buttons@2.1.0","edit-link@^2.0.2","advanced-emoji@^0.2.1","anchors@^0.7.1","include-codeblock@^3.0.2","ace@^0.3.2","emphasize@^1.1.0","katex@^1.1.3","splitter@^0.0.8","tbfed-pagefooter@^0.0.1","expandable-chapters-small@^0.1.7","sectionx@^3.1.0","local-video@^1.0.1","anchor-navigation-ex@0.1.8","favicon@^0.0.2"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"tbfed-pagefooter":{"copyright":"Copyright © ruheng.com 2017","modify_label":"该文件修订时间：","modify_format":"YYYY-MM-DD HH:mm:ss"},"emphasize":{},"ace":{},"github":{"url":"https://github.com/LRH1993/android_interview"},"simple-page-toc":{"maxDepth":3,"skipFirstH1":true},"splitter":{},"katex":{},"fontsettings":{"theme":"white","family":"sans","size":2},"sectionx":{"tag":"b"},"highlight":{},"anchor-navigation-ex":{"isRewritePageTitle":false,"tocLevel1Icon":"fa fa-hand-o-right","tocLevel2Icon":"fa fa-hand-o-right","tocLevel3Icon":"fa fa-hand-o-right"},"favicon":{"shortcut":"favicon.ico","bookmark":"favicon.ico"},"github-buttons":{"repo":"LRH1993/android_interview","types":["star"],"size":"small"},"expandable-chapters-small":{},"local-video":{},"advanced-emoji":{"embedEmojis":false},"include-codeblock":{"check":false,"edit":false,"fixlang":false,"lang":"","template":"default","theme":"chrome","unindent":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":true,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"edit-link":{"label":"Edit This Page","base":"https://github.com/LRH1993/android_interview/edit/master"},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":true},"anchors":{},"search-plus":{}},"theme":"default","author":"ruheng","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"Android校招面试指南","language":"zh-hans","output.name":"site","links":{"sidebar":{"Home":"http://lruheng.com/"}},"gitbook":"3.2.3","description":"Android面试必备，记录自己的秋招之路"},"file":{"path":"java/basis/treemap.md","mtime":"2017-08-22T07:53:58.000Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2017-10-16T13:00:43.989Z"},"basePath":"../..","book":{"language":""}});
         });
     </script>
 </div>

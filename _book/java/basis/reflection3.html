@@ -69,6 +69,10 @@
                 
             
                 
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
                 <link rel="stylesheet" href="../../gitbook/gitbook-plugin-fontsettings/website.css">
                 
             
@@ -3708,37 +3712,37 @@
                                 <h3 id="&#x4E00;&#x3001;&#x6CDB;&#x578B;&#x548C;class&#x7C7B;"><a name="&#x4E00;&#x3001;&#x6CDB;&#x578B;&#x548C;class&#x7C7B;" class="anchor-navigation-ex-anchor" href="#&#x4E00;&#x3001;&#x6CDB;&#x578B;&#x548C;class&#x7C7B;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x4E00;&#x3001;&#x6CDB;&#x578B;&#x548C;Class&#x7C7B;</h3>
 <p>&#x4ECE;JDK 1.5 &#x540E;&#xFF0C;Java&#x4E2D;&#x5F15;&#x5165;&#x6CDB;&#x578B;&#x673A;&#x5236;&#xFF0C;Class&#x7C7B;&#x4E5F;&#x589E;&#x52A0;&#x4E86;&#x6CDB;&#x578B;&#x529F;&#x80FD;&#xFF0C;&#x4ECE;&#x800C;&#x5141;&#x8BB8;&#x4F7F;&#x7528;&#x6CDB;&#x578B;&#x6765;&#x9650;&#x5236;Class&#x7C7B;&#xFF0C;&#x4F8B;&#x5982;&#xFF1A;String.class&#x7684;&#x7C7B;&#x578B;&#x5B9E;&#x9645;&#x4E0A;&#x662F;Class&lt;String&gt;&#x3002;&#x5982;&#x679C;Class&#x5BF9;&#x5E94;&#x7684;&#x7C7B;&#x6682;&#x65F6;&#x672A;&#x77E5;&#xFF0C;&#x5219;&#x4F7F;&#x7528;Class&lt;?&gt;(?&#x662F;&#x901A;&#x914D;&#x7B26;)&#x3002;&#x901A;&#x8FC7;&#x53CD;&#x5C04;&#x4E2D;&#x4F7F;&#x7528;&#x6CDB;&#x578B;&#xFF0C;&#x53EF;&#x4EE5;&#x907F;&#x514D;&#x4F7F;&#x7528;&#x53CD;&#x5C04;&#x751F;&#x6210;&#x7684;&#x5BF9;&#x8C61;&#x9700;&#x8981;&#x5F3A;&#x5236;&#x7C7B;&#x578B;&#x8F6C;&#x6362;&#x3002;</p>
 <p>&#x6CDB;&#x578B;&#x7684;&#x597D;&#x5904;&#x4F17;&#x591A;&#xFF0C;&#x6700;&#x4E3B;&#x8981;&#x7684;&#x4E00;&#x70B9;&#x5C31;&#x662F;&#x907F;&#x514D;&#x7C7B;&#x578B;&#x8F6C;&#x6362;&#xFF0C;&#x9632;&#x6B62;&#x51FA;&#x73B0;ClassCastException&#xFF0C;&#x5373;&#x7C7B;&#x578B;&#x8F6C;&#x6362;&#x5F02;&#x5E38;&#x3002;&#x4EE5;&#x4E0B;&#x9762;&#x7A0B;&#x5E8F;&#x4E3A;&#x4F8B;&#xFF1A;</p>
-<pre><code class="lang-java">public class ObjectFactory {
-    public static Object getInstance(String name){
-        try {
-            //&#x521B;&#x5EFA;&#x6307;&#x5B9A;&#x7C7B;&#x5BF9;&#x5E94;&#x7684;Class&#x5BF9;&#x8C61;
+<pre><code class="lang-java"><span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">ObjectFactory</span> </span>{
+    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> Object <span class="hljs-title">getInstance</span><span class="hljs-params">(String name)</span></span>{
+        <span class="hljs-keyword">try</span> {
+            <span class="hljs-comment">//&#x521B;&#x5EFA;&#x6307;&#x5B9A;&#x7C7B;&#x5BF9;&#x5E94;&#x7684;Class&#x5BF9;&#x8C61;</span>
             Class cls = Class.forName(name);
-            //&#x8FD4;&#x56DE;&#x4F7F;&#x7528;&#x8BE5;Class&#x5BF9;&#x8C61;&#x521B;&#x5EFA;&#x7684;&#x5B9E;&#x4F8B;
-            return cls.newInstance();
-        } catch (ClassNotFoundException | InstantiationException | IllegalAccessException e) {
+            <span class="hljs-comment">//&#x8FD4;&#x56DE;&#x4F7F;&#x7528;&#x8BE5;Class&#x5BF9;&#x8C61;&#x521B;&#x5EFA;&#x7684;&#x5B9E;&#x4F8B;</span>
+            <span class="hljs-keyword">return</span> cls.newInstance();
+        } <span class="hljs-keyword">catch</span> (ClassNotFoundException | InstantiationException | IllegalAccessException e) {
             e.printStackTrace();
-            return null;
+            <span class="hljs-keyword">return</span> <span class="hljs-keyword">null</span>;
         }
     }
 
 }
 </code></pre>
 <p>&#x4E0A;&#x9762;&#x7A0B;&#x5E8F;&#x662F;&#x4E2A;&#x5DE5;&#x5382;&#x7C7B;&#xFF0C;&#x901A;&#x8FC7;&#x6307;&#x5B9A;&#x7684;&#x5B57;&#x7B26;&#x4E32;&#x521B;&#x5EFA;Class&#x5BF9;&#x8C61;&#x5E76;&#x521B;&#x5EFA;&#x4E00;&#x4E2A;&#x7C7B;&#x7684;&#x5B9E;&#x4F8B;&#x5BF9;&#x8C61;&#x8FD4;&#x56DE;&#x3002;&#x4F46;&#x662F;&#x8FD9;&#x4E2A;&#x5BF9;&#x8C61;&#x7684;&#x7C7B;&#x578B;&#x662F;Object&#x5BF9;&#x8C61;&#xFF0C;&#x53D6;&#x51FA;&#x5B9E;&#x4F8B;&#x540E;&#x9700;&#x8981;&#x5F3A;&#x5236;&#x7C7B;&#x578B;&#x8F6C;&#x6362;&#x3002;<br>&#x5982;&#x4E0B;&#x4F8B;&#xFF1A;</p>
-<pre><code class="lang-java">Date date = (Date) ObjectFactory.getInstance(&quot;java.util.Date&quot;);
+<pre><code class="lang-java">Date date = (Date) ObjectFactory.getInstance(<span class="hljs-string">&quot;java.util.Date&quot;</span>);
 </code></pre>
 <p>&#x6216;&#x8005;&#x5982;&#x4E0B;&#xFF1A;</p>
-<pre><code class="lang-java">String string = (String) ObjectFactory.getInstance(&quot;java.util.Date&quot;);
+<pre><code class="lang-java">String string = (String) ObjectFactory.getInstance(<span class="hljs-string">&quot;java.util.Date&quot;</span>);
 </code></pre>
 <p>&#x4E0A;&#x9762;&#x4EE3;&#x7801;&#x5728;&#x7F16;&#x8BD1;&#x65F6;&#x4E0D;&#x4F1A;&#x6709;&#x4EFB;&#x4F55;&#x95EE;&#x9898;&#xFF0C;&#x4F46;&#x662F;&#x8FD0;&#x884C;&#x65F6;&#x5C06;&#x629B;&#x51FA;ClassCastException&#x5F02;&#x5E38;&#xFF0C;&#x56E0;&#x4E3A;&#x7A0B;&#x5E8F;&#x8BD5;&#x56FE;&#x5C06;&#x4E00;&#x4E2A;Date&#x5BF9;&#x8C61;&#x8F6C;&#x6362;&#x6210;String&#x5BF9;&#x8C61;&#x3002;</p>
 <p>&#x4F46;&#x662F;&#x6CDB;&#x578B;&#x7684;&#x51FA;&#x73B0;&#x540E;&#xFF0C;&#x5C31;&#x53EF;&#x4EE5;&#x907F;&#x514D;&#x8FD9;&#x79CD;&#x60C5;&#x51B5;&#x3002;</p>
-<pre><code class="lang-java">public class ObjectFactory {
-    public static &lt;T&gt; T getInstance(Class&lt;T&gt; cls) {
-        try {
-            // &#x8FD4;&#x56DE;&#x4F7F;&#x7528;&#x8BE5;Class&#x5BF9;&#x8C61;&#x521B;&#x5EFA;&#x7684;&#x5B9E;&#x4F8B;
-            return cls.newInstance();
-        } catch (InstantiationException | IllegalAccessException e) {
+<pre><code class="lang-java"><span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">ObjectFactory</span> </span>{
+    <span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> &lt;T&gt; <span class="hljs-function">T <span class="hljs-title">getInstance</span><span class="hljs-params">(Class&lt;T&gt; cls)</span> </span>{
+        <span class="hljs-keyword">try</span> {
+            <span class="hljs-comment">// &#x8FD4;&#x56DE;&#x4F7F;&#x7528;&#x8BE5;Class&#x5BF9;&#x8C61;&#x521B;&#x5EFA;&#x7684;&#x5B9E;&#x4F8B;</span>
+            <span class="hljs-keyword">return</span> cls.newInstance();
+        } <span class="hljs-keyword">catch</span> (InstantiationException | IllegalAccessException e) {
             e.printStackTrace();
-            return null;
+            <span class="hljs-keyword">return</span> <span class="hljs-keyword">null</span>;
         }
     }
 
@@ -3751,51 +3755,51 @@
 <p>&#x5F53;&#x7136;Class&#x7C7B;&#x5F15;&#x5165;&#x6CDB;&#x578B;&#x7684;&#x597D;&#x5904;&#x4E0D;&#x6B62;&#x8FD9;&#x4E00;&#x70B9;&#xFF0C;&#x5728;&#x4EE5;&#x540E;&#x7684;&#x5B9E;&#x9645;&#x5E94;&#x7528;&#x4E2D;&#x4F1A;&#x66F4;&#x52A0;&#x80FD;&#x4F53;&#x4F1A;&#x5230;&#x3002;</p>
 <h3 id="&#x4E8C;&#x3001;&#x4F7F;&#x7528;&#x53CD;&#x5C04;&#x6765;&#x83B7;&#x53D6;&#x6CDB;&#x578B;&#x4FE1;&#x606F;"><a name="&#x4E8C;&#x3001;&#x4F7F;&#x7528;&#x53CD;&#x5C04;&#x6765;&#x83B7;&#x53D6;&#x6CDB;&#x578B;&#x4FE1;&#x606F;" class="anchor-navigation-ex-anchor" href="#&#x4E8C;&#x3001;&#x4F7F;&#x7528;&#x53CD;&#x5C04;&#x6765;&#x83B7;&#x53D6;&#x6CDB;&#x578B;&#x4FE1;&#x606F;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x4E8C;&#x3001;&#x4F7F;&#x7528;&#x53CD;&#x5C04;&#x6765;&#x83B7;&#x53D6;&#x6CDB;&#x578B;&#x4FE1;&#x606F;</h3>
 <p>&#x901A;&#x8FC7;&#x6307;&#x5B9A;&#x7C7B;&#x5BF9;&#x5E94;&#x7684; Class &#x5BF9;&#x8C61;&#xFF0C;&#x53EF;&#x4EE5;&#x83B7;&#x5F97;&#x8BE5;&#x7C7B;&#x91CC;&#x5305;&#x542B;&#x7684;&#x6240;&#x6709; Field&#xFF0C;&#x4E0D;&#x7BA1;&#x8BE5; Field &#x662F;&#x4F7F;&#x7528; private &#x4FEE;&#x9970;&#xFF0C;&#x8FD8;&#x662F;&#x4F7F;&#x7528; public &#x4FEE;&#x9970;&#x3002;&#x83B7;&#x5F97;&#x4E86; Field &#x5BF9;&#x8C61;&#x540E;&#xFF0C;&#x5C31;&#x53EF;&#x4EE5;&#x5F88;&#x5BB9;&#x6613;&#x5730;&#x83B7;&#x5F97;&#x8BE5; Field &#x7684;&#x6570;&#x636E;&#x7C7B;&#x578B;&#xFF0C;&#x5373;&#x4F7F;&#x7528;&#x5982;&#x4E0B;&#x4EE3;&#x7801;&#x5373;&#x53EF;&#x83B7;&#x5F97;&#x6307;&#x5B9A; Field &#x7684;&#x7C7B;&#x578B;&#x3002;</p>
-<pre><code class="lang-java">// &#x83B7;&#x53D6; Field &#x5BF9;&#x8C61; f &#x7684;&#x7C7B;&#x578B;
+<pre><code class="lang-java"><span class="hljs-comment">// &#x83B7;&#x53D6; Field &#x5BF9;&#x8C61; f &#x7684;&#x7C7B;&#x578B;</span>
 Class&lt;?&gt; a = f.getType();
 </code></pre>
 <p>&#x4F46;&#x8FD9;&#x79CD;&#x65B9;&#x5F0F;&#x53EA;&#x5BF9;&#x666E;&#x901A;&#x7C7B;&#x578B;&#x7684; Field &#x6709;&#x6548;&#x3002;&#x5982;&#x679C;&#x8BE5; Field &#x7684;&#x7C7B;&#x578B;&#x662F;&#x6709;&#x6CDB;&#x578B;&#x9650;&#x5236;&#x7684;&#x7C7B;&#x578B;&#xFF0C;&#x5982; Map&lt;String, Integer&gt; &#x7C7B;&#x578B;&#xFF0C;&#x5219;&#x4E0D;&#x80FD;&#x51C6;&#x786E;&#x5730;&#x5F97;&#x5230;&#x8BE5; Field &#x7684;&#x6CDB;&#x578B;&#x53C2;&#x6570;&#x3002;</p>
 <p>&#x4E3A;&#x4E86;&#x83B7;&#x5F97;&#x6307;&#x5B9A; Field &#x7684;&#x6CDB;&#x578B;&#x7C7B;&#x578B;&#xFF0C;&#x5E94;&#x5148;&#x4F7F;&#x7528;&#x5982;&#x4E0B;&#x65B9;&#x6CD5;&#x6765;&#x83B7;&#x53D6;&#x6307;&#x5B9A; Field &#x7684;&#x7C7B;&#x578B;&#x3002;</p>
-<pre><code class="lang-java">// &#x83B7;&#x5F97; Field &#x5B9E;&#x4F8B;&#x7684;&#x6CDB;&#x578B;&#x7C7B;&#x578B;
+<pre><code class="lang-java"><span class="hljs-comment">// &#x83B7;&#x5F97; Field &#x5B9E;&#x4F8B;&#x7684;&#x6CDB;&#x578B;&#x7C7B;&#x578B;</span>
 Type type = f.getGenericType();
 </code></pre>
 <p>&#x7136;&#x540E;&#x5C06; Type &#x5BF9;&#x8C61;&#x5F3A;&#x5236;&#x7C7B;&#x578B;&#x8F6C;&#x6362;&#x4E3A; ParameterizedType &#x5BF9;&#x8C61;&#xFF0C;ParameterizedType &#x4EE3;&#x8868;&#x88AB;&#x53C2;&#x6570;&#x5316;&#x7684;&#x7C7B;&#x578B;&#xFF0C;&#x4E5F;&#x5C31;&#x662F;&#x589E;&#x52A0;&#x4E86;&#x6CDB;&#x578B;&#x9650;&#x5236;&#x7684;&#x7C7B;&#x578B;&#x3002;ParameterizedType &#x7C7B;&#x63D0;&#x4F9B;&#x4E86;&#x5982;&#x4E0B;&#x4E24;&#x4E2A;&#x65B9;&#x6CD5;&#x3002;</p>
 <p><strong>getRawType()&#xFF1A;</strong>&#x8FD4;&#x56DE;&#x6CA1;&#x6709;&#x6CDB;&#x578B;&#x4FE1;&#x606F;&#x7684;&#x539F;&#x59CB;&#x7C7B;&#x578B;&#x3002;</p>
 <p><strong>getActualTypeArguments()&#xFF1A;</strong>&#x8FD4;&#x56DE;&#x6CDB;&#x578B;&#x53C2;&#x6570;&#x7684;&#x7C7B;&#x578B;&#x3002;</p>
 <p>&#x4E0B;&#x9762;&#x662F;&#x4E00;&#x4E2A;&#x83B7;&#x53D6;&#x6CDB;&#x578B;&#x7C7B;&#x578B;&#x7684;&#x5B8C;&#x6574;&#x7A0B;&#x5E8F;&#x3002;</p>
-<pre><code class="lang-java">public class GenericTest
-{
-    private Map&lt;String , Integer&gt; score;
-    public static void main(String[] args)
-        throws Exception
-    {
+<pre><code class="lang-java"><span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">GenericTest</span>
+</span>{
+    <span class="hljs-keyword">private</span> Map&lt;String , Integer&gt; score;
+    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title">main</span><span class="hljs-params">(String[] args)</span>
+        <span class="hljs-keyword">throws</span> Exception
+    </span>{
         Class&lt;GenericTest&gt; clazz = GenericTest.class;
-        Field f = clazz.getDeclaredField(&quot;score&quot;);
-        // &#x76F4;&#x63A5;&#x4F7F;&#x7528;getType()&#x53D6;&#x51FA;Field&#x7C7B;&#x578B;&#x53EA;&#x5BF9;&#x666E;&#x901A;&#x7C7B;&#x578B;&#x7684;Field&#x6709;&#x6548;
+        Field f = clazz.getDeclaredField(<span class="hljs-string">&quot;score&quot;</span>);
+        <span class="hljs-comment">// &#x76F4;&#x63A5;&#x4F7F;&#x7528;getType()&#x53D6;&#x51FA;Field&#x7C7B;&#x578B;&#x53EA;&#x5BF9;&#x666E;&#x901A;&#x7C7B;&#x578B;&#x7684;Field&#x6709;&#x6548;</span>
         Class&lt;?&gt; a = f.getType();
-        // &#x4E0B;&#x9762;&#x5C06;&#x770B;&#x5230;&#x4EC5;&#x8F93;&#x51FA;java.util.Map
-        System.out.println(&quot;score&#x7684;&#x7C7B;&#x578B;&#x662F;:&quot; + a);
-        // &#x83B7;&#x5F97;Field&#x5B9E;&#x4F8B;f&#x7684;&#x6CDB;&#x578B;&#x7C7B;&#x578B;
+        <span class="hljs-comment">// &#x4E0B;&#x9762;&#x5C06;&#x770B;&#x5230;&#x4EC5;&#x8F93;&#x51FA;java.util.Map</span>
+        System.out.println(<span class="hljs-string">&quot;score&#x7684;&#x7C7B;&#x578B;&#x662F;:&quot;</span> + a);
+        <span class="hljs-comment">// &#x83B7;&#x5F97;Field&#x5B9E;&#x4F8B;f&#x7684;&#x6CDB;&#x578B;&#x7C7B;&#x578B;</span>
         Type gType = f.getGenericType();
-        // &#x5982;&#x679C;gType&#x7C7B;&#x578B;&#x662F;ParameterizedType&#x5BF9;&#x8C61;
-        if(gType instanceof ParameterizedType)
+        <span class="hljs-comment">// &#x5982;&#x679C;gType&#x7C7B;&#x578B;&#x662F;ParameterizedType&#x5BF9;&#x8C61;</span>
+        <span class="hljs-keyword">if</span>(gType <span class="hljs-keyword">instanceof</span> ParameterizedType)
         {
-            // &#x5F3A;&#x5236;&#x7C7B;&#x578B;&#x8F6C;&#x6362;
+            <span class="hljs-comment">// &#x5F3A;&#x5236;&#x7C7B;&#x578B;&#x8F6C;&#x6362;</span>
             ParameterizedType pType = (ParameterizedType)gType;
-            // &#x83B7;&#x53D6;&#x539F;&#x59CB;&#x7C7B;&#x578B;
+            <span class="hljs-comment">// &#x83B7;&#x53D6;&#x539F;&#x59CB;&#x7C7B;&#x578B;</span>
             Type rType = pType.getRawType();
-            System.out.println(&quot;&#x539F;&#x59CB;&#x7C7B;&#x578B;&#x662F;&#xFF1A;&quot; + rType);
-            // &#x53D6;&#x5F97;&#x6CDB;&#x578B;&#x7C7B;&#x578B;&#x7684;&#x6CDB;&#x578B;&#x53C2;&#x6570;
+            System.out.println(<span class="hljs-string">&quot;&#x539F;&#x59CB;&#x7C7B;&#x578B;&#x662F;&#xFF1A;&quot;</span> + rType);
+            <span class="hljs-comment">// &#x53D6;&#x5F97;&#x6CDB;&#x578B;&#x7C7B;&#x578B;&#x7684;&#x6CDB;&#x578B;&#x53C2;&#x6570;</span>
             Type[] tArgs = pType.getActualTypeArguments();
-            System.out.println(&quot;&#x6CDB;&#x578B;&#x7C7B;&#x578B;&#x662F;:&quot;);
-            for (int i = 0; i &lt; tArgs.length; i++) 
+            System.out.println(<span class="hljs-string">&quot;&#x6CDB;&#x578B;&#x7C7B;&#x578B;&#x662F;:&quot;</span>);
+            <span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> i = <span class="hljs-number">0</span>; i &lt; tArgs.length; i++) 
             {
-                System.out.println(&quot;&#x7B2C;&quot; + i + &quot;&#x4E2A;&#x6CDB;&#x578B;&#x7C7B;&#x578B;&#x662F;&#xFF1A;&quot; + tArgs[i]);
+                System.out.println(<span class="hljs-string">&quot;&#x7B2C;&quot;</span> + i + <span class="hljs-string">&quot;&#x4E2A;&#x6CDB;&#x578B;&#x7C7B;&#x578B;&#x662F;&#xFF1A;&quot;</span> + tArgs[i]);
             }
         }
-        else
+        <span class="hljs-keyword">else</span>
         {
-            System.out.println(&quot;&#x83B7;&#x53D6;&#x6CDB;&#x578B;&#x7C7B;&#x578B;&#x51FA;&#x9519;&#xFF01;&quot;);
+            System.out.println(<span class="hljs-string">&quot;&#x83B7;&#x53D6;&#x6CDB;&#x578B;&#x7C7B;&#x578B;&#x51FA;&#x9519;&#xFF01;&quot;</span>);
         }
     }
 }
@@ -3851,7 +3855,7 @@ Type type = f.getGenericType();
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"Java反射(三)","level":"2.1.10","depth":2,"next":{"title":"Java注解","level":"2.1.11","depth":2,"path":"java/basis/annotation.md","ref":"java/basis/annotation.md","articles":[]},"previous":{"title":"Java反射(二)","level":"2.1.9","depth":2,"path":"java/basis/reflection2.md","ref":"java/basis/reflection2.md","articles":[]},"dir":"ltr"},"config":{"plugins":["-lunr","-search","-highlight","-livereload","search-plus@^0.0.11","simple-page-toc@^0.1.1","github@^2.0.0","github-buttons@2.1.0","edit-link@^2.0.2","advanced-emoji@^0.2.1","anchors@^0.7.1","include-codeblock@^3.0.2","ace@^0.3.2","emphasize@^1.1.0","katex@^1.1.3","splitter@^0.0.8","tbfed-pagefooter@^0.0.1","expandable-chapters-small@^0.1.7","sectionx@^3.1.0","local-video@^1.0.1","anchor-navigation-ex@0.1.8","favicon@^0.0.2"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"tbfed-pagefooter":{"copyright":"Copyright © ruheng.com 2017","modify_label":"该文件修订时间：","modify_format":"YYYY-MM-DD HH:mm:ss"},"emphasize":{},"ace":{},"github":{"url":"https://github.com/LRH1993/android_interview"},"simple-page-toc":{"maxDepth":3,"skipFirstH1":true},"splitter":{},"katex":{},"fontsettings":{"theme":"white","family":"sans","size":2},"sectionx":{"tag":"b"},"anchor-navigation-ex":{"isRewritePageTitle":false,"tocLevel1Icon":"fa fa-hand-o-right","tocLevel2Icon":"fa fa-hand-o-right","tocLevel3Icon":"fa fa-hand-o-right"},"favicon":{"shortcut":"favicon.ico","bookmark":"favicon.ico"},"github-buttons":{"repo":"LRH1993/android_interview","types":["star"],"size":"small"},"expandable-chapters-small":{},"local-video":{},"advanced-emoji":{"embedEmojis":false},"include-codeblock":{"check":false,"edit":true,"fixlang":false,"lang":"","template":"ace","theme":"chrome","unindent":true},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":true,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"edit-link":{"label":"Edit This Page","base":"https://github.com/LRH1993/android_interview/edit/master"},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":true},"anchors":{},"search-plus":{}},"theme":"default","author":"ruheng","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"Android校招面试指南","language":"zh-hans","output.name":"site","links":{"sidebar":{"Home":"http://lruheng.com/"}},"gitbook":"3.2.3","description":"Android面试必备，记录自己的秋招之路"},"file":{"path":"java/basis/reflection3.md","mtime":"2017-08-22T07:53:58.000Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2017-10-16T12:05:21.906Z"},"basePath":"../..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"Java反射(三)","level":"2.1.10","depth":2,"next":{"title":"Java注解","level":"2.1.11","depth":2,"path":"java/basis/annotation.md","ref":"java/basis/annotation.md","articles":[]},"previous":{"title":"Java反射(二)","level":"2.1.9","depth":2,"path":"java/basis/reflection2.md","ref":"java/basis/reflection2.md","articles":[]},"dir":"ltr"},"config":{"plugins":["-lunr","-search","-livereload","search-plus@^0.0.11","simple-page-toc@^0.1.1","github@^2.0.0","github-buttons@2.1.0","edit-link@^2.0.2","advanced-emoji@^0.2.1","anchors@^0.7.1","include-codeblock@^3.0.2","ace@^0.3.2","emphasize@^1.1.0","katex@^1.1.3","splitter@^0.0.8","tbfed-pagefooter@^0.0.1","expandable-chapters-small@^0.1.7","sectionx@^3.1.0","local-video@^1.0.1","anchor-navigation-ex@0.1.8","favicon@^0.0.2"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"tbfed-pagefooter":{"copyright":"Copyright © ruheng.com 2017","modify_label":"该文件修订时间：","modify_format":"YYYY-MM-DD HH:mm:ss"},"emphasize":{},"ace":{},"github":{"url":"https://github.com/LRH1993/android_interview"},"simple-page-toc":{"maxDepth":3,"skipFirstH1":true},"splitter":{},"katex":{},"fontsettings":{"theme":"white","family":"sans","size":2},"sectionx":{"tag":"b"},"highlight":{},"anchor-navigation-ex":{"isRewritePageTitle":false,"tocLevel1Icon":"fa fa-hand-o-right","tocLevel2Icon":"fa fa-hand-o-right","tocLevel3Icon":"fa fa-hand-o-right"},"favicon":{"shortcut":"favicon.ico","bookmark":"favicon.ico"},"github-buttons":{"repo":"LRH1993/android_interview","types":["star"],"size":"small"},"expandable-chapters-small":{},"local-video":{},"advanced-emoji":{"embedEmojis":false},"include-codeblock":{"check":false,"edit":false,"fixlang":false,"lang":"","template":"default","theme":"chrome","unindent":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":true,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"edit-link":{"label":"Edit This Page","base":"https://github.com/LRH1993/android_interview/edit/master"},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":true},"anchors":{},"search-plus":{}},"theme":"default","author":"ruheng","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"Android校招面试指南","language":"zh-hans","output.name":"site","links":{"sidebar":{"Home":"http://lruheng.com/"}},"gitbook":"3.2.3","description":"Android面试必备，记录自己的秋招之路"},"file":{"path":"java/basis/reflection3.md","mtime":"2017-08-22T07:53:58.000Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2017-10-16T13:00:43.989Z"},"basePath":"../..","book":{"language":""}});
         });
     </script>
 </div>

@@ -69,6 +69,10 @@
                 
             
                 
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
                 <link rel="stylesheet" href="../../gitbook/gitbook-plugin-fontsettings/website.css">
                 
             
@@ -3715,37 +3719,37 @@
 &#x4E3A;&#x4E86;&#x89E3;&#x51B3;&#x8FD9;&#x4E2A;&#x95EE;&#x9898;&#xFF0C;&#x6211;&#x4EEC;&#x53EF;&#x4EE5;&#x5B9A;&#x4E49;&#x54C8;&#x5E0C;&#x8868;&#x7684;&#x952E;&#xFF08;Key&#xFF09;&#x662F;&#x5B57;&#x7B26;&#xFF0C; &#x800C;&#x503C;(Value &#xFF09;&#x662F;&#x8BE5;&#x5B57;&#x7B26;&#x51FA;&#x73B0;&#x7684;&#x6B21;&#x6570;&#x3002;&#x540C;&#x65F6;&#x6211;&#x4EEC;&#x8FD8;&#x9700;&#x8981;&#x4ECE;&#x5934;&#x5F00;&#x59CB;&#x626B;&#x63CF;&#x5B57;&#x7B26;&#x4E32;&#x4E24;&#x6B21;&#x3002;&#x7B2C;&#x4E00;&#x6B21;&#x626B;&#x63CF;&#x5B57;&#x7B26;&#x4E32;&#x65F6;&#xFF0C;&#x6BCF;&#x626B;&#x63CF;&#x5230;&#x4E00;&#x4E2A;&#x5B57;&#x7B26;&#x5C31;&#x5728;&#x54C8;&#x5E0C;&#x8868;&#x7684;&#x5BF9;&#x5E94;&#x9879;&#x4E2D;&#x628A;&#x6B21;&#x6570;&#x52A0;1 &#x3002;&#x63A5;&#x4E0B;&#x6765;&#x7B2C;&#x4E8C;&#x6B21;&#x626B;&#x63CF;&#x65F6;&#xFF0C; &#x6BCF;&#x626B;&#x63CF;&#x5230;&#x4E00;&#x4E2A;&#x5B57;&#x7B26;&#x5C31;&#x80FD;&#x4ECE;&#x54C8;&#x5E0C;&#x8868;&#x4E2D;&#x5F97;&#x5230;&#x8BE5;&#x5B57;&#x7B26;&#x51FA;&#x73B0;&#x7684;&#x6B21;&#x6570;&#x3002;&#x8FD9;&#x6837;&#x7B2C;&#x4E00;&#x4E2A;&#x53EA;&#x51FA;&#x73B0;&#x4E00;&#x6B21;&#x7684;&#x5B57;&#x7B26;&#x5C31;&#x662F;&#x7B26;&#x5408;&#x8981;&#x6C42;&#x7684;&#x8F93;&#x51FA;&#x3002; 
 &#x7B2C;&#x4E00;&#x6B21;&#x626B;&#x63CF;&#x65F6;&#xFF0C;&#x5728;&#x54C8;&#x5E0C;&#x8868;&#x4E2D;&#x66F4;&#x65B0;&#x4E00;&#x4E2A;&#x5B57;&#x7B26;&#x51FA;&#x73B0;&#x7684;&#x6B21;&#x6570;&#x7684;&#x65F6;&#x95F4;&#x662F;O(n) &#x3002;&#x5982;&#x679C;&#x5B57;&#x7B26;&#x4E32;&#x957F;&#x5EA6;&#x4E3A;n&#xFF0C; &#x90A3;&#x4E48;&#x7B2C;&#x4E00;&#x6B21;&#x626B;&#x63CF;&#x7684;&#x65F6;&#x95F4;&#x590D;&#x6742;&#x5EA6;&#x662F;O(n)&#x3002;&#x7B2C;&#x4E8C;&#x6B21;&#x626B;&#x63CF;&#x65F6;&#xFF0C;&#x540C;&#x6837;0(1)&#x80FD;&#x8BFB;&#x51FA;&#x4E00;&#x4E2A;&#x5B57;&#x7B26;&#x51FA;&#x73B0;&#x7684;&#x6B21;&#x6570;&#xFF0C;&#x6240;&#x4EE5;&#x65F6;&#x95F4;&#x590D;&#x6742;&#x5EA6;&#x4ECD;&#x7136;&#x662F;O(n)&#x3002;&#x8FD9;&#x6837;&#x7B97;&#x8D77;&#x6765;&#xFF0C;&#x603B;&#x7684;&#x65F6;&#x95F4;&#x590D;&#x6742;&#x5EA6;&#x662F;O(n)&#x3002;</p>
 <h2 id="&#x4E09;&#x3001;&#x89E3;&#x9898;&#x4EE3;&#x7801;"><a name="&#x4E09;&#x3001;&#x89E3;&#x9898;&#x4EE3;&#x7801;" class="anchor-navigation-ex-anchor" href="#&#x4E09;&#x3001;&#x89E3;&#x9898;&#x4EE3;&#x7801;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x4E09;&#x3001;&#x89E3;&#x9898;&#x4EE3;&#x7801;</h2>
-<pre><code class="lang-java">public class Test {
-    public static char firstNotRepeatingChar(String s) {
-        if (s == null || s.length() &lt; 1) {
-            throw new IllegalArgumentException(&quot;Arg should not be null or empty&quot;);
+<pre><code class="lang-java"><span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Test</span> </span>{
+    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">char</span> <span class="hljs-title">firstNotRepeatingChar</span><span class="hljs-params">(String s)</span> </span>{
+        <span class="hljs-keyword">if</span> (s == <span class="hljs-keyword">null</span> || s.length() &lt; <span class="hljs-number">1</span>) {
+            <span class="hljs-keyword">throw</span> <span class="hljs-keyword">new</span> IllegalArgumentException(<span class="hljs-string">&quot;Arg should not be null or empty&quot;</span>);
         }
 
-        Map&lt;Character, Integer&gt; map = new LinkedHashMap&lt;&gt;();
-        for (int i = 0; i &lt; s.length(); i++) {
-            char c = s.charAt(i);
-            if (map.containsKey(c)) {
-                map.put(c, -2);
-            } else {
+        Map&lt;Character, Integer&gt; map = <span class="hljs-keyword">new</span> LinkedHashMap&lt;&gt;();
+        <span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> i = <span class="hljs-number">0</span>; i &lt; s.length(); i++) {
+            <span class="hljs-keyword">char</span> c = s.charAt(i);
+            <span class="hljs-keyword">if</span> (map.containsKey(c)) {
+                map.put(c, -<span class="hljs-number">2</span>);
+            } <span class="hljs-keyword">else</span> {
                 map.put(c, i);
             }
         }
 
         Set&lt;Map.Entry&lt;Character, Integer&gt;&gt; entrySet = map.entrySet();
-        // &#x8BB0;&#x5F55;&#x53EA;&#x51FA;&#x73B0;&#x4E00;&#x6B21;&#x7684;&#x5B57;&#x7B26;&#x7684;&#x7D22;&#x5F15;
-        int idx = Integer.MAX_VALUE;
-        // &#x8BB0;&#x5F55;&#x53EA;&#x51FA;&#x73B0;&#x4E00;&#x6B21;&#x7684;&#x5B57;&#x7B26;
-        char result = &apos;\0&apos;;
+        <span class="hljs-comment">// &#x8BB0;&#x5F55;&#x53EA;&#x51FA;&#x73B0;&#x4E00;&#x6B21;&#x7684;&#x5B57;&#x7B26;&#x7684;&#x7D22;&#x5F15;</span>
+        <span class="hljs-keyword">int</span> idx = Integer.MAX_VALUE;
+        <span class="hljs-comment">// &#x8BB0;&#x5F55;&#x53EA;&#x51FA;&#x73B0;&#x4E00;&#x6B21;&#x7684;&#x5B57;&#x7B26;</span>
+        <span class="hljs-keyword">char</span> result = <span class="hljs-string">&apos;\0&apos;</span>;
 
-        // &#x627E;&#x6700;&#x5C0F;&#x7D22;&#x5F15;&#x5BF9;&#x5E94;&#x7684;&#x5B57;&#x7B26;
-        for (Map.Entry&lt;Character, Integer&gt; entry : entrySet) {
-            if (entry.getValue() &gt;= 0 &amp;&amp; entry.getValue() &lt; idx) {
+        <span class="hljs-comment">// &#x627E;&#x6700;&#x5C0F;&#x7D22;&#x5F15;&#x5BF9;&#x5E94;&#x7684;&#x5B57;&#x7B26;</span>
+        <span class="hljs-keyword">for</span> (Map.Entry&lt;Character, Integer&gt; entry : entrySet) {
+            <span class="hljs-keyword">if</span> (entry.getValue() &gt;= <span class="hljs-number">0</span> &amp;&amp; entry.getValue() &lt; idx) {
                 idx = entry.getValue();
                 result = entry.getKey();
             }
         }
 
-        return result;
+        <span class="hljs-keyword">return</span> result;
     }
 }
 </code></pre>
@@ -3794,7 +3798,7 @@
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"32.第一个只出现一次的字符","level":"5.1.32","depth":2,"next":{"title":"33.数组中的逆序对","level":"5.1.33","depth":2,"path":"algorithm/For-offer/33.md","ref":"algorithm/For-offer/33.md","articles":[]},"previous":{"title":"31.丑数","level":"5.1.31","depth":2,"path":"algorithm/For-offer/31.md","ref":"algorithm/For-offer/31.md","articles":[]},"dir":"ltr"},"config":{"plugins":["-lunr","-search","-highlight","-livereload","search-plus@^0.0.11","simple-page-toc@^0.1.1","github@^2.0.0","github-buttons@2.1.0","edit-link@^2.0.2","advanced-emoji@^0.2.1","anchors@^0.7.1","include-codeblock@^3.0.2","ace@^0.3.2","emphasize@^1.1.0","katex@^1.1.3","splitter@^0.0.8","tbfed-pagefooter@^0.0.1","expandable-chapters-small@^0.1.7","sectionx@^3.1.0","local-video@^1.0.1","anchor-navigation-ex@0.1.8","favicon@^0.0.2"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"tbfed-pagefooter":{"copyright":"Copyright © ruheng.com 2017","modify_label":"该文件修订时间：","modify_format":"YYYY-MM-DD HH:mm:ss"},"emphasize":{},"ace":{},"github":{"url":"https://github.com/LRH1993/android_interview"},"simple-page-toc":{"maxDepth":3,"skipFirstH1":true},"splitter":{},"katex":{},"fontsettings":{"theme":"white","family":"sans","size":2},"sectionx":{"tag":"b"},"anchor-navigation-ex":{"isRewritePageTitle":false,"tocLevel1Icon":"fa fa-hand-o-right","tocLevel2Icon":"fa fa-hand-o-right","tocLevel3Icon":"fa fa-hand-o-right"},"favicon":{"shortcut":"favicon.ico","bookmark":"favicon.ico"},"github-buttons":{"repo":"LRH1993/android_interview","types":["star"],"size":"small"},"expandable-chapters-small":{},"local-video":{},"advanced-emoji":{"embedEmojis":false},"include-codeblock":{"check":false,"edit":true,"fixlang":false,"lang":"","template":"ace","theme":"chrome","unindent":true},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":true,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"edit-link":{"label":"Edit This Page","base":"https://github.com/LRH1993/android_interview/edit/master"},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":true},"anchors":{},"search-plus":{}},"theme":"default","author":"ruheng","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"Android校招面试指南","language":"zh-hans","output.name":"site","links":{"sidebar":{"Home":"http://lruheng.com/"}},"gitbook":"3.2.3","description":"Android面试必备，记录自己的秋招之路"},"file":{"path":"algorithm/For-offer/32.md","mtime":"2017-08-28T01:15:15.000Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2017-10-16T12:05:21.906Z"},"basePath":"../..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"32.第一个只出现一次的字符","level":"5.1.32","depth":2,"next":{"title":"33.数组中的逆序对","level":"5.1.33","depth":2,"path":"algorithm/For-offer/33.md","ref":"algorithm/For-offer/33.md","articles":[]},"previous":{"title":"31.丑数","level":"5.1.31","depth":2,"path":"algorithm/For-offer/31.md","ref":"algorithm/For-offer/31.md","articles":[]},"dir":"ltr"},"config":{"plugins":["-lunr","-search","-livereload","search-plus@^0.0.11","simple-page-toc@^0.1.1","github@^2.0.0","github-buttons@2.1.0","edit-link@^2.0.2","advanced-emoji@^0.2.1","anchors@^0.7.1","include-codeblock@^3.0.2","ace@^0.3.2","emphasize@^1.1.0","katex@^1.1.3","splitter@^0.0.8","tbfed-pagefooter@^0.0.1","expandable-chapters-small@^0.1.7","sectionx@^3.1.0","local-video@^1.0.1","anchor-navigation-ex@0.1.8","favicon@^0.0.2"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"tbfed-pagefooter":{"copyright":"Copyright © ruheng.com 2017","modify_label":"该文件修订时间：","modify_format":"YYYY-MM-DD HH:mm:ss"},"emphasize":{},"ace":{},"github":{"url":"https://github.com/LRH1993/android_interview"},"simple-page-toc":{"maxDepth":3,"skipFirstH1":true},"splitter":{},"katex":{},"fontsettings":{"theme":"white","family":"sans","size":2},"sectionx":{"tag":"b"},"highlight":{},"anchor-navigation-ex":{"isRewritePageTitle":false,"tocLevel1Icon":"fa fa-hand-o-right","tocLevel2Icon":"fa fa-hand-o-right","tocLevel3Icon":"fa fa-hand-o-right"},"favicon":{"shortcut":"favicon.ico","bookmark":"favicon.ico"},"github-buttons":{"repo":"LRH1993/android_interview","types":["star"],"size":"small"},"expandable-chapters-small":{},"local-video":{},"advanced-emoji":{"embedEmojis":false},"include-codeblock":{"check":false,"edit":false,"fixlang":false,"lang":"","template":"default","theme":"chrome","unindent":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":true,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"edit-link":{"label":"Edit This Page","base":"https://github.com/LRH1993/android_interview/edit/master"},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":true},"anchors":{},"search-plus":{}},"theme":"default","author":"ruheng","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"Android校招面试指南","language":"zh-hans","output.name":"site","links":{"sidebar":{"Home":"http://lruheng.com/"}},"gitbook":"3.2.3","description":"Android面试必备，记录自己的秋招之路"},"file":{"path":"algorithm/For-offer/32.md","mtime":"2017-08-28T01:15:15.000Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2017-10-16T13:00:43.989Z"},"basePath":"../..","book":{"language":""}});
         });
     </script>
 </div>

@@ -69,6 +69,10 @@
                 
             
                 
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
                 <link rel="stylesheet" href="../../gitbook/gitbook-plugin-fontsettings/website.css">
                 
             
@@ -3790,12 +3794,12 @@ b. &#x4E0E; <code>Android</code> &#x7CFB;&#x7EDF;&#x5728;&#x7279;&#x5B9A;&#x60C5
 <em>mBroadcastReceiver.java</em></p>
 </li>
 </ul>
-<pre><code class="lang-java">public class mBroadcastReceiver extends BroadcastReceiver {
+<pre><code class="lang-java"><span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">mBroadcastReceiver</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">BroadcastReceiver</span> </span>{
 
-  //&#x63A5;&#x6536;&#x5230;&#x5E7F;&#x64AD;&#x540E;&#x81EA;&#x52A8;&#x8C03;&#x7528;&#x8BE5;&#x65B9;&#x6CD5;
-  @Override
-  public void onReceive(Context context, Intent intent) {
-   //&#x5199;&#x5165;&#x63A5;&#x6536;&#x5E7F;&#x64AD;&#x540E;&#x7684;&#x64CD;&#x4F5C;
+  <span class="hljs-comment">//&#x63A5;&#x6536;&#x5230;&#x5E7F;&#x64AD;&#x540E;&#x81EA;&#x52A8;&#x8C03;&#x7528;&#x8BE5;&#x65B9;&#x6CD5;</span>
+  <span class="hljs-meta">@Override</span>
+  <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">onReceive</span><span class="hljs-params">(Context context, Intent intent)</span> </span>{
+   <span class="hljs-comment">//&#x5199;&#x5165;&#x63A5;&#x6536;&#x5E7F;&#x64AD;&#x540E;&#x7684;&#x64CD;&#x4F5C;</span>
     }
 }
 </code></pre>
@@ -3806,28 +3810,28 @@ b. &#x4E0E; <code>Android</code> &#x7CFB;&#x7EDF;&#x5728;&#x7279;&#x5B9A;&#x60C5
 <li>&#x5728;AndroidManifest.xml&#x91CC;&#x901A;&#x8FC7;<strong><receive></receive></strong>&#x6807;&#x7B7E;&#x58F0;&#x660E;</li>
 <li>&#x5C5E;&#x6027;&#x8BF4;&#x660E;&#xFF1A;</li>
 </ul>
-<pre><code class="lang-xml">&lt;receiver 
-    android:enabled=[&quot;true&quot; | &quot;false&quot;]
-//&#x6B64;broadcastReceiver&#x80FD;&#x5426;&#x63A5;&#x6536;&#x5176;&#x4ED6;App&#x7684;&#x53D1;&#x51FA;&#x7684;&#x5E7F;&#x64AD;
-//&#x9ED8;&#x8BA4;&#x503C;&#x662F;&#x7531;receiver&#x4E2D;&#x6709;&#x65E0;intent-filter&#x51B3;&#x5B9A;&#x7684;&#xFF1A;&#x5982;&#x679C;&#x6709;intent-filter&#xFF0C;&#x9ED8;&#x8BA4;&#x503C;&#x4E3A;true&#xFF0C;&#x5426;&#x5219;&#x4E3A;false
-    android:exported=[&quot;true&quot; | &quot;false&quot;]
-    android:icon=&quot;drawable resource&quot;
-    android:label=&quot;string resource&quot;
-//&#x7EE7;&#x627F;BroadcastReceiver&#x5B50;&#x7C7B;&#x7684;&#x7C7B;&#x540D;
-    android:name=&quot;.mBroadcastReceiver&quot;
-//&#x5177;&#x6709;&#x76F8;&#x5E94;&#x6743;&#x9650;&#x7684;&#x5E7F;&#x64AD;&#x53D1;&#x9001;&#x8005;&#x53D1;&#x9001;&#x7684;&#x5E7F;&#x64AD;&#x624D;&#x80FD;&#x88AB;&#x6B64;BroadcastReceiver&#x6240;&#x63A5;&#x6536;&#xFF1B;
-    android:permission=&quot;string&quot;
-//BroadcastReceiver&#x8FD0;&#x884C;&#x6240;&#x5904;&#x7684;&#x8FDB;&#x7A0B;
-//&#x9ED8;&#x8BA4;&#x4E3A;app&#x7684;&#x8FDB;&#x7A0B;&#xFF0C;&#x53EF;&#x4EE5;&#x6307;&#x5B9A;&#x72EC;&#x7ACB;&#x7684;&#x8FDB;&#x7A0B;
-//&#x6CE8;&#xFF1A;Android&#x56DB;&#x5927;&#x57FA;&#x672C;&#x7EC4;&#x4EF6;&#x90FD;&#x53EF;&#x4EE5;&#x901A;&#x8FC7;&#x6B64;&#x5C5E;&#x6027;&#x6307;&#x5B9A;&#x81EA;&#x5DF1;&#x7684;&#x72EC;&#x7ACB;&#x8FDB;&#x7A0B;
-    android:process=&quot;string&quot; &gt;
+<pre><code class="lang-xml"><span class="hljs-tag">&lt;<span class="hljs-name">receiver</span> 
+    <span class="hljs-attr">android:enabled</span>=<span class="hljs-string">[&quot;true&quot;</span> | &quot;<span class="hljs-attr">false</span>&quot;]
+//&#x6B64;<span class="hljs-attr">broadcastReceiver</span>&#x80FD;&#x5426;&#x63A5;&#x6536;&#x5176;&#x4ED6;<span class="hljs-attr">App</span>&#x7684;&#x53D1;&#x51FA;&#x7684;&#x5E7F;&#x64AD;
+//&#x9ED8;&#x8BA4;&#x503C;&#x662F;&#x7531;<span class="hljs-attr">receiver</span>&#x4E2D;&#x6709;&#x65E0;<span class="hljs-attr">intent-filter</span>&#x51B3;&#x5B9A;&#x7684;&#xFF1A;&#x5982;&#x679C;&#x6709;<span class="hljs-attr">intent-filter</span>&#xFF0C;&#x9ED8;&#x8BA4;&#x503C;&#x4E3A;<span class="hljs-attr">true</span>&#xFF0C;&#x5426;&#x5219;&#x4E3A;<span class="hljs-attr">false</span>
+    <span class="hljs-attr">android:exported</span>=<span class="hljs-string">[&quot;true&quot;</span> | &quot;<span class="hljs-attr">false</span>&quot;]
+    <span class="hljs-attr">android:icon</span>=<span class="hljs-string">&quot;drawable resource&quot;</span>
+    <span class="hljs-attr">android:label</span>=<span class="hljs-string">&quot;string resource&quot;</span>
+//&#x7EE7;&#x627F;<span class="hljs-attr">BroadcastReceiver</span>&#x5B50;&#x7C7B;&#x7684;&#x7C7B;&#x540D;
+    <span class="hljs-attr">android:name</span>=<span class="hljs-string">&quot;.mBroadcastReceiver&quot;</span>
+//&#x5177;&#x6709;&#x76F8;&#x5E94;&#x6743;&#x9650;&#x7684;&#x5E7F;&#x64AD;&#x53D1;&#x9001;&#x8005;&#x53D1;&#x9001;&#x7684;&#x5E7F;&#x64AD;&#x624D;&#x80FD;&#x88AB;&#x6B64;<span class="hljs-attr">BroadcastReceiver</span>&#x6240;&#x63A5;&#x6536;&#xFF1B;
+    <span class="hljs-attr">android:permission</span>=<span class="hljs-string">&quot;string&quot;</span>
+//<span class="hljs-attr">BroadcastReceiver</span>&#x8FD0;&#x884C;&#x6240;&#x5904;&#x7684;&#x8FDB;&#x7A0B;
+//&#x9ED8;&#x8BA4;&#x4E3A;<span class="hljs-attr">app</span>&#x7684;&#x8FDB;&#x7A0B;&#xFF0C;&#x53EF;&#x4EE5;&#x6307;&#x5B9A;&#x72EC;&#x7ACB;&#x7684;&#x8FDB;&#x7A0B;
+//&#x6CE8;&#xFF1A;<span class="hljs-attr">Android</span>&#x56DB;&#x5927;&#x57FA;&#x672C;&#x7EC4;&#x4EF6;&#x90FD;&#x53EF;&#x4EE5;&#x901A;&#x8FC7;&#x6B64;&#x5C5E;&#x6027;&#x6307;&#x5B9A;&#x81EA;&#x5DF1;&#x7684;&#x72EC;&#x7ACB;&#x8FDB;&#x7A0B;
+    <span class="hljs-attr">android:process</span>=<span class="hljs-string">&quot;string&quot;</span> &gt;</span>
 
 //&#x7528;&#x4E8E;&#x6307;&#x5B9A;&#x6B64;&#x5E7F;&#x64AD;&#x63A5;&#x6536;&#x5668;&#x5C06;&#x63A5;&#x6536;&#x7684;&#x5E7F;&#x64AD;&#x7C7B;&#x578B;
 //&#x672C;&#x793A;&#x4F8B;&#x4E2D;&#x7ED9;&#x51FA;&#x7684;&#x662F;&#x7528;&#x4E8E;&#x63A5;&#x6536;&#x7F51;&#x7EDC;&#x72B6;&#x6001;&#x6539;&#x53D8;&#x65F6;&#x53D1;&#x51FA;&#x7684;&#x5E7F;&#x64AD;
- &lt;intent-filter&gt;
-&lt;action android:name=&quot;android.net.conn.CONNECTIVITY_CHANGE&quot; /&gt;
-    &lt;/intent-filter&gt;
-&lt;/receiver&gt;
+ <span class="hljs-tag">&lt;<span class="hljs-name">intent-filter</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">action</span> <span class="hljs-attr">android:name</span>=<span class="hljs-string">&quot;android.net.conn.CONNECTIVITY_CHANGE&quot;</span> /&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-name">intent-filter</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">receiver</span>&gt;</span>
 </code></pre>
 <ul>
 <li><p>&#x6CE8;&#x518C;&#x793A;&#x4F8B;</p>
@@ -3844,30 +3848,30 @@ b. &#x4E0E; <code>Android</code> &#x7CFB;&#x7EDF;&#x5728;&#x7279;&#x5B9A;&#x60C5
 </ul>
 <h4 id="422-&#x52A8;&#x6001;&#x6CE8;&#x518C;"><a name="422-&#x52A8;&#x6001;&#x6CE8;&#x518C;" class="anchor-navigation-ex-anchor" href="#422-&#x52A8;&#x6001;&#x6CE8;&#x518C;"><i class="fa fa-link" aria-hidden="true"></i></a>4.2.2 &#x52A8;&#x6001;&#x6CE8;&#x518C;</h4>
 <p>&#x5728;&#x4EE3;&#x7801;&#x4E2D;&#x901A;&#x8FC7;&#x8C03;&#x7528;Context&#x7684;<em>registerReceiver&#xFF08;&#xFF09;</em>&#x65B9;&#x6CD5;&#x8FDB;&#x884C;&#x52A8;&#x6001;&#x6CE8;&#x518C;BroadcastReceiver&#xFF0C;&#x5177;&#x4F53;&#x4EE3;&#x7801;&#x5982;&#x4E0B;&#xFF1A;</p>
-<pre><code class="lang-Java">@Override
-  protected void onResume(){
-      super.onResume();
+<pre><code class="lang-Java"><span class="hljs-meta">@Override</span>
+  <span class="hljs-function"><span class="hljs-keyword">protected</span> <span class="hljs-keyword">void</span> <span class="hljs-title">onResume</span><span class="hljs-params">()</span></span>{
+      <span class="hljs-keyword">super</span>.onResume();
 
-    //&#x5B9E;&#x4F8B;&#x5316;BroadcastReceiver&#x5B50;&#x7C7B; &amp;  IntentFilter
-     mBroadcastReceiver mBroadcastReceiver = new mBroadcastReceiver();
-     IntentFilter intentFilter = new IntentFilter();
+    <span class="hljs-comment">//&#x5B9E;&#x4F8B;&#x5316;BroadcastReceiver&#x5B50;&#x7C7B; &amp;  IntentFilter</span>
+     mBroadcastReceiver mBroadcastReceiver = <span class="hljs-keyword">new</span> mBroadcastReceiver();
+     IntentFilter intentFilter = <span class="hljs-keyword">new</span> IntentFilter();
 
-    //&#x8BBE;&#x7F6E;&#x63A5;&#x6536;&#x5E7F;&#x64AD;&#x7684;&#x7C7B;&#x578B;
+    <span class="hljs-comment">//&#x8BBE;&#x7F6E;&#x63A5;&#x6536;&#x5E7F;&#x64AD;&#x7684;&#x7C7B;&#x578B;</span>
      intentFilter.addAction(android.net.conn.CONNECTIVITY_CHANGE);
 
-    //&#x8C03;&#x7528;Context&#x7684;registerReceiver&#xFF08;&#xFF09;&#x65B9;&#x6CD5;&#x8FDB;&#x884C;&#x52A8;&#x6001;&#x6CE8;&#x518C;
+    <span class="hljs-comment">//&#x8C03;&#x7528;Context&#x7684;registerReceiver&#xFF08;&#xFF09;&#x65B9;&#x6CD5;&#x8FDB;&#x884C;&#x52A8;&#x6001;&#x6CE8;&#x518C;</span>
      registerReceiver(mBroadcastReceiver, intentFilter);
  }
 
 
-//&#x6CE8;&#x518C;&#x5E7F;&#x64AD;&#x540E;&#xFF0C;&#x8981;&#x5728;&#x76F8;&#x5E94;&#x4F4D;&#x7F6E;&#x8BB0;&#x5F97;&#x9500;&#x6BC1;&#x5E7F;&#x64AD;
-//&#x5373;&#x5728;onPause() &#x4E2D;unregisterReceiver(mBroadcastReceiver)
-//&#x5F53;&#x6B64;Activity&#x5B9E;&#x4F8B;&#x5316;&#x65F6;&#xFF0C;&#x4F1A;&#x52A8;&#x6001;&#x5C06;MyBroadcastReceiver&#x6CE8;&#x518C;&#x5230;&#x7CFB;&#x7EDF;&#x4E2D;
-//&#x5F53;&#x6B64;Activity&#x9500;&#x6BC1;&#x65F6;&#xFF0C;&#x52A8;&#x6001;&#x6CE8;&#x518C;&#x7684;MyBroadcastReceiver&#x5C06;&#x4E0D;&#x518D;&#x63A5;&#x6536;&#x5230;&#x76F8;&#x5E94;&#x7684;&#x5E7F;&#x64AD;&#x3002;
- @Override
- protected void onPause() {
-     super.onPause();
-      //&#x9500;&#x6BC1;&#x5728;onResume()&#x65B9;&#x6CD5;&#x4E2D;&#x7684;&#x5E7F;&#x64AD;
+<span class="hljs-comment">//&#x6CE8;&#x518C;&#x5E7F;&#x64AD;&#x540E;&#xFF0C;&#x8981;&#x5728;&#x76F8;&#x5E94;&#x4F4D;&#x7F6E;&#x8BB0;&#x5F97;&#x9500;&#x6BC1;&#x5E7F;&#x64AD;</span>
+<span class="hljs-comment">//&#x5373;&#x5728;onPause() &#x4E2D;unregisterReceiver(mBroadcastReceiver)</span>
+<span class="hljs-comment">//&#x5F53;&#x6B64;Activity&#x5B9E;&#x4F8B;&#x5316;&#x65F6;&#xFF0C;&#x4F1A;&#x52A8;&#x6001;&#x5C06;MyBroadcastReceiver&#x6CE8;&#x518C;&#x5230;&#x7CFB;&#x7EDF;&#x4E2D;</span>
+<span class="hljs-comment">//&#x5F53;&#x6B64;Activity&#x9500;&#x6BC1;&#x65F6;&#xFF0C;&#x52A8;&#x6001;&#x6CE8;&#x518C;&#x7684;MyBroadcastReceiver&#x5C06;&#x4E0D;&#x518D;&#x63A5;&#x6536;&#x5230;&#x76F8;&#x5E94;&#x7684;&#x5E7F;&#x64AD;&#x3002;</span>
+ <span class="hljs-meta">@Override</span>
+ <span class="hljs-function"><span class="hljs-keyword">protected</span> <span class="hljs-keyword">void</span> <span class="hljs-title">onPause</span><span class="hljs-params">()</span> </span>{
+     <span class="hljs-keyword">super</span>.onPause();
+      <span class="hljs-comment">//&#x9500;&#x6BC1;&#x5728;onResume()&#x65B9;&#x6CD5;&#x4E2D;&#x7684;&#x5E7F;&#x64AD;</span>
      unregisterReceiver(mBroadcastReceiver);
      }
 }
@@ -3904,10 +3908,10 @@ b. &#x4E0E; <code>Android</code> &#x7CFB;&#x7EDF;&#x5728;&#x7279;&#x5B9A;&#x60C5
 <p>&#x5177;&#x4F53;&#x8BF4;&#x660E;&#x5982;&#x4E0B;&#xFF1A;</p>
 <p><strong>&#x2460;. &#x666E;&#x901A;&#x5E7F;&#x64AD;&#xFF08;Normal Broadcast&#xFF09;</strong></p>
 <p>&#x5373;&#x5F00;&#x53D1;&#x8005;&#x81EA;&#x8EAB;&#x5B9A;&#x4E49;intent&#x7684;&#x5E7F;&#x64AD;&#xFF08;&#x6700;&#x5E38;&#x7528;&#xFF09;&#x3002;&#x53D1;&#x9001;&#x5E7F;&#x64AD;&#x4F7F;&#x7528;&#x5982;&#x4E0B;&#xFF1A;</p>
-<pre><code class="lang-Java">Intent intent = new Intent();
-//&#x5BF9;&#x5E94;BroadcastReceiver&#x4E2D;intentFilter&#x7684;action
+<pre><code class="lang-Java">Intent intent = <span class="hljs-keyword">new</span> Intent();
+<span class="hljs-comment">//&#x5BF9;&#x5E94;BroadcastReceiver&#x4E2D;intentFilter&#x7684;action</span>
 intent.setAction(BROADCAST_ACTION);
-//&#x53D1;&#x9001;&#x5E7F;&#x64AD;
+<span class="hljs-comment">//&#x53D1;&#x9001;&#x5E7F;&#x64AD;</span>
 sendBroadcast(intent);
 </code></pre>
 <ul>
@@ -4086,25 +4090,25 @@ Android&#x4E2D;&#x7684;&#x5E7F;&#x64AD;&#x53EF;&#x4EE5;&#x8DE8;App&#x76F4;&#x63A
 </blockquote>
 </li>
 </ul>
-<pre><code class="lang-Java">//&#x6CE8;&#x518C;&#x5E94;&#x7528;&#x5185;&#x5E7F;&#x64AD;&#x63A5;&#x6536;&#x5668;
-//&#x6B65;&#x9AA4;1&#xFF1A;&#x5B9E;&#x4F8B;&#x5316;BroadcastReceiver&#x5B50;&#x7C7B; &amp; IntentFilter mBroadcastReceiver 
-mBroadcastReceiver = new mBroadcastReceiver(); 
-IntentFilter intentFilter = new IntentFilter(); 
+<pre><code class="lang-Java"><span class="hljs-comment">//&#x6CE8;&#x518C;&#x5E94;&#x7528;&#x5185;&#x5E7F;&#x64AD;&#x63A5;&#x6536;&#x5668;</span>
+<span class="hljs-comment">//&#x6B65;&#x9AA4;1&#xFF1A;&#x5B9E;&#x4F8B;&#x5316;BroadcastReceiver&#x5B50;&#x7C7B; &amp; IntentFilter mBroadcastReceiver </span>
+mBroadcastReceiver = <span class="hljs-keyword">new</span> mBroadcastReceiver(); 
+IntentFilter intentFilter = <span class="hljs-keyword">new</span> IntentFilter(); 
 
-//&#x6B65;&#x9AA4;2&#xFF1A;&#x5B9E;&#x4F8B;&#x5316;LocalBroadcastManager&#x7684;&#x5B9E;&#x4F8B;
-localBroadcastManager = LocalBroadcastManager.getInstance(this);
+<span class="hljs-comment">//&#x6B65;&#x9AA4;2&#xFF1A;&#x5B9E;&#x4F8B;&#x5316;LocalBroadcastManager&#x7684;&#x5B9E;&#x4F8B;</span>
+localBroadcastManager = LocalBroadcastManager.getInstance(<span class="hljs-keyword">this</span>);
 
-//&#x6B65;&#x9AA4;3&#xFF1A;&#x8BBE;&#x7F6E;&#x63A5;&#x6536;&#x5E7F;&#x64AD;&#x7684;&#x7C7B;&#x578B; 
+<span class="hljs-comment">//&#x6B65;&#x9AA4;3&#xFF1A;&#x8BBE;&#x7F6E;&#x63A5;&#x6536;&#x5E7F;&#x64AD;&#x7684;&#x7C7B;&#x578B; </span>
 intentFilter.addAction(android.net.conn.CONNECTIVITY_CHANGE);
 
-//&#x6B65;&#x9AA4;4&#xFF1A;&#x8C03;&#x7528;LocalBroadcastManager&#x5355;&#x4E00;&#x5B9E;&#x4F8B;&#x7684;registerReceiver&#xFF08;&#xFF09;&#x65B9;&#x6CD5;&#x8FDB;&#x884C;&#x52A8;&#x6001;&#x6CE8;&#x518C; 
+<span class="hljs-comment">//&#x6B65;&#x9AA4;4&#xFF1A;&#x8C03;&#x7528;LocalBroadcastManager&#x5355;&#x4E00;&#x5B9E;&#x4F8B;&#x7684;registerReceiver&#xFF08;&#xFF09;&#x65B9;&#x6CD5;&#x8FDB;&#x884C;&#x52A8;&#x6001;&#x6CE8;&#x518C; </span>
 localBroadcastManager.registerReceiver(mBroadcastReceiver, intentFilter);
 
-//&#x53D6;&#x6D88;&#x6CE8;&#x518C;&#x5E94;&#x7528;&#x5185;&#x5E7F;&#x64AD;&#x63A5;&#x6536;&#x5668;
+<span class="hljs-comment">//&#x53D6;&#x6D88;&#x6CE8;&#x518C;&#x5E94;&#x7528;&#x5185;&#x5E7F;&#x64AD;&#x63A5;&#x6536;&#x5668;</span>
 localBroadcastManager.unregisterReceiver(mBroadcastReceiver);
 
-//&#x53D1;&#x9001;&#x5E94;&#x7528;&#x5185;&#x5E7F;&#x64AD;
-Intent intent = new Intent();
+<span class="hljs-comment">//&#x53D1;&#x9001;&#x5E94;&#x7528;&#x5185;&#x5E7F;&#x64AD;</span>
+Intent intent = <span class="hljs-keyword">new</span> Intent();
 intent.setAction(BROADCAST_ACTION);
 localBroadcastManager.sendBroadcast(intent);
 </code></pre>
@@ -4155,7 +4159,7 @@ localBroadcastManager.sendBroadcast(intent);
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"BroadcastReceiver全方位解析","level":"3.1.3","depth":2,"next":{"title":"ContentProvider全方位解析","level":"3.1.4","depth":2,"path":"android/basis/ContentProvider.md","ref":"android/basis/ContentProvider.md","articles":[]},"previous":{"title":"Service全方位解析","level":"3.1.2","depth":2,"path":"android/basis/service.md","ref":"android/basis/service.md","articles":[]},"dir":"ltr"},"config":{"plugins":["-lunr","-search","-highlight","-livereload","search-plus@^0.0.11","simple-page-toc@^0.1.1","github@^2.0.0","github-buttons@2.1.0","edit-link@^2.0.2","advanced-emoji@^0.2.1","anchors@^0.7.1","include-codeblock@^3.0.2","ace@^0.3.2","emphasize@^1.1.0","katex@^1.1.3","splitter@^0.0.8","tbfed-pagefooter@^0.0.1","expandable-chapters-small@^0.1.7","sectionx@^3.1.0","local-video@^1.0.1","anchor-navigation-ex@0.1.8","favicon@^0.0.2"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"tbfed-pagefooter":{"copyright":"Copyright © ruheng.com 2017","modify_label":"该文件修订时间：","modify_format":"YYYY-MM-DD HH:mm:ss"},"emphasize":{},"ace":{},"github":{"url":"https://github.com/LRH1993/android_interview"},"simple-page-toc":{"maxDepth":3,"skipFirstH1":true},"splitter":{},"katex":{},"fontsettings":{"theme":"white","family":"sans","size":2},"sectionx":{"tag":"b"},"anchor-navigation-ex":{"isRewritePageTitle":false,"tocLevel1Icon":"fa fa-hand-o-right","tocLevel2Icon":"fa fa-hand-o-right","tocLevel3Icon":"fa fa-hand-o-right"},"favicon":{"shortcut":"favicon.ico","bookmark":"favicon.ico"},"github-buttons":{"repo":"LRH1993/android_interview","types":["star"],"size":"small"},"expandable-chapters-small":{},"local-video":{},"advanced-emoji":{"embedEmojis":false},"include-codeblock":{"check":false,"edit":true,"fixlang":false,"lang":"","template":"ace","theme":"chrome","unindent":true},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":true,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"edit-link":{"label":"Edit This Page","base":"https://github.com/LRH1993/android_interview/edit/master"},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":true},"anchors":{},"search-plus":{}},"theme":"default","author":"ruheng","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"Android校招面试指南","language":"zh-hans","output.name":"site","links":{"sidebar":{"Home":"http://lruheng.com/"}},"gitbook":"3.2.3","description":"Android面试必备，记录自己的秋招之路"},"file":{"path":"android/basis/broadcastreceiver.md","mtime":"2017-08-23T08:30:26.000Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2017-10-16T12:05:21.906Z"},"basePath":"../..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"BroadcastReceiver全方位解析","level":"3.1.3","depth":2,"next":{"title":"ContentProvider全方位解析","level":"3.1.4","depth":2,"path":"android/basis/ContentProvider.md","ref":"android/basis/ContentProvider.md","articles":[]},"previous":{"title":"Service全方位解析","level":"3.1.2","depth":2,"path":"android/basis/service.md","ref":"android/basis/service.md","articles":[]},"dir":"ltr"},"config":{"plugins":["-lunr","-search","-livereload","search-plus@^0.0.11","simple-page-toc@^0.1.1","github@^2.0.0","github-buttons@2.1.0","edit-link@^2.0.2","advanced-emoji@^0.2.1","anchors@^0.7.1","include-codeblock@^3.0.2","ace@^0.3.2","emphasize@^1.1.0","katex@^1.1.3","splitter@^0.0.8","tbfed-pagefooter@^0.0.1","expandable-chapters-small@^0.1.7","sectionx@^3.1.0","local-video@^1.0.1","anchor-navigation-ex@0.1.8","favicon@^0.0.2"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"tbfed-pagefooter":{"copyright":"Copyright © ruheng.com 2017","modify_label":"该文件修订时间：","modify_format":"YYYY-MM-DD HH:mm:ss"},"emphasize":{},"ace":{},"github":{"url":"https://github.com/LRH1993/android_interview"},"simple-page-toc":{"maxDepth":3,"skipFirstH1":true},"splitter":{},"katex":{},"fontsettings":{"theme":"white","family":"sans","size":2},"sectionx":{"tag":"b"},"highlight":{},"anchor-navigation-ex":{"isRewritePageTitle":false,"tocLevel1Icon":"fa fa-hand-o-right","tocLevel2Icon":"fa fa-hand-o-right","tocLevel3Icon":"fa fa-hand-o-right"},"favicon":{"shortcut":"favicon.ico","bookmark":"favicon.ico"},"github-buttons":{"repo":"LRH1993/android_interview","types":["star"],"size":"small"},"expandable-chapters-small":{},"local-video":{},"advanced-emoji":{"embedEmojis":false},"include-codeblock":{"check":false,"edit":false,"fixlang":false,"lang":"","template":"default","theme":"chrome","unindent":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":true,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"edit-link":{"label":"Edit This Page","base":"https://github.com/LRH1993/android_interview/edit/master"},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":true},"anchors":{},"search-plus":{}},"theme":"default","author":"ruheng","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"Android校招面试指南","language":"zh-hans","output.name":"site","links":{"sidebar":{"Home":"http://lruheng.com/"}},"gitbook":"3.2.3","description":"Android面试必备，记录自己的秋招之路"},"file":{"path":"android/basis/broadcastreceiver.md","mtime":"2017-08-23T08:30:26.000Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2017-10-16T13:00:43.989Z"},"basePath":"../..","book":{"language":""}});
         });
     </script>
 </div>

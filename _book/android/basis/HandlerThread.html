@@ -69,6 +69,10 @@
                 
             
                 
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
                 <link rel="stylesheet" href="../../gitbook/gitbook-plugin-fontsettings/website.css">
                 
             
@@ -3725,7 +3729,7 @@
 <ol>
 <li>&#x521B;&#x5EFA;HandlerThread&#x7684;&#x5B9E;&#x4F8B;&#x5BF9;&#x8C61;</li>
 </ol>
-<pre><code class="lang-java">HandlerThread handlerThread = new HandlerThread(&quot;myHandlerThread&quot;);
+<pre><code class="lang-java">HandlerThread handlerThread = <span class="hljs-keyword">new</span> HandlerThread(<span class="hljs-string">&quot;myHandlerThread&quot;</span>);
 </code></pre>
 <p>&#x8BE5;&#x53C2;&#x6570;&#x8868;&#x793A;&#x7EBF;&#x7A0B;&#x7684;&#x540D;&#x5B57;&#xFF0C;&#x53EF;&#x4EE5;&#x968F;&#x4FBF;&#x9009;&#x62E9;&#x3002; </p>
 <ol>
@@ -3737,11 +3741,11 @@
 <li>&#x5C06;&#x6211;&#x4EEC;&#x7684;handlerThread&#x4E0E;Handler&#x7ED1;&#x5B9A;&#x5728;&#x4E00;&#x8D77;&#x3002; 
 &#x8FD8;&#x8BB0;&#x5F97;&#x662F;&#x600E;&#x6837;&#x5C06;Handler&#x4E0E;&#x7EBF;&#x7A0B;&#x5BF9;&#x8C61;&#x7ED1;&#x5B9A;&#x5728;&#x4E00;&#x8D77;&#x7684;&#x5417;&#xFF1F;&#x5176;&#x5B9E;&#x5F88;&#x7B80;&#x5355;&#xFF0C;&#x5C31;&#x662F;&#x5C06;&#x7EBF;&#x7A0B;&#x7684;looper&#x4E0E;Handler&#x7ED1;&#x5B9A;&#x5728;&#x4E00;&#x8D77;&#xFF0C;&#x4EE3;&#x7801;&#x5982;&#x4E0B;&#xFF1A;</li>
 </ol>
-<pre><code class="lang-java">mThreadHandler = new Handler(mHandlerThread.getLooper()) {
-    @Override
-    public void handleMessage(Message msg) {
+<pre><code class="lang-java">mThreadHandler = <span class="hljs-keyword">new</span> Handler(mHandlerThread.getLooper()) {
+    <span class="hljs-meta">@Override</span>
+    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">handleMessage</span><span class="hljs-params">(Message msg)</span> </span>{
         checkForUpdate();
-        if(isUpdate){
+        <span class="hljs-keyword">if</span>(isUpdate){
             mThreadHandler.sendEmptyMessage(MSG_UPDATE_INFO);
         }
     }
@@ -3749,69 +3753,69 @@
 </code></pre>
 <p><strong>&#x6CE8;&#x610F;&#x5FC5;&#x987B;&#x6309;&#x7167;&#x4EE5;&#x4E0A;&#x4E09;&#x4E2A;&#x6B65;&#x9AA4;&#x6765;&#xFF0C;&#x4E0B;&#x9762;&#x5728;&#x8BB2;&#x89E3;&#x6E90;&#x7801;&#x7684;&#x65F6;&#x5019;&#x4F1A;&#x5206;&#x6790;&#x5176;&#x539F;&#x56E0;</strong></p>
 <h3 id="&#x5B8C;&#x6574;&#x6D4B;&#x8BD5;&#x4EE3;&#x7801;&#x5982;&#x4E0B;"><a name="&#x5B8C;&#x6574;&#x6D4B;&#x8BD5;&#x4EE3;&#x7801;&#x5982;&#x4E0B;" class="anchor-navigation-ex-anchor" href="#&#x5B8C;&#x6574;&#x6D4B;&#x8BD5;&#x4EE3;&#x7801;&#x5982;&#x4E0B;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x5B8C;&#x6574;&#x6D4B;&#x8BD5;&#x4EE3;&#x7801;&#x5982;&#x4E0B;</h3>
-<pre><code class="lang-java">public class MainActivity extends AppCompatActivity {
-    private TextView mTv;
-    Handler mMainHandler = new Handler();
-    private Handler mThreadHandler;
-    private static final int MSG_UPDATE_INFO = 0x100;
-    private HandlerThread mHandlerThread;
-    private boolean isUpdate=true;
-    @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
+<pre><code class="lang-java"><span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">MainActivity</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">AppCompatActivity</span> </span>{
+    <span class="hljs-keyword">private</span> TextView mTv;
+    Handler mMainHandler = <span class="hljs-keyword">new</span> Handler();
+    <span class="hljs-keyword">private</span> Handler mThreadHandler;
+    <span class="hljs-keyword">private</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">final</span> <span class="hljs-keyword">int</span> MSG_UPDATE_INFO = <span class="hljs-number">0x100</span>;
+    <span class="hljs-keyword">private</span> HandlerThread mHandlerThread;
+    <span class="hljs-keyword">private</span> <span class="hljs-keyword">boolean</span> isUpdate=<span class="hljs-keyword">true</span>;
+    <span class="hljs-meta">@Override</span>
+    <span class="hljs-function"><span class="hljs-keyword">protected</span> <span class="hljs-keyword">void</span> <span class="hljs-title">onCreate</span><span class="hljs-params">(Bundle savedInstanceState)</span> </span>{
+        <span class="hljs-keyword">super</span>.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         mTv = (TextView) findViewById(R.id.tv);
         initHandlerThread();
     }
-    private void initHandlerThread() {
-        mHandlerThread = new HandlerThread(&quot;xujun&quot;);
+    <span class="hljs-function"><span class="hljs-keyword">private</span> <span class="hljs-keyword">void</span> <span class="hljs-title">initHandlerThread</span><span class="hljs-params">()</span> </span>{
+        mHandlerThread = <span class="hljs-keyword">new</span> HandlerThread(<span class="hljs-string">&quot;xujun&quot;</span>);
         mHandlerThread.start();
-        mThreadHandler = new Handler(mHandlerThread.getLooper()) {
-            @Override
-            public void handleMessage(Message msg) {
+        mThreadHandler = <span class="hljs-keyword">new</span> Handler(mHandlerThread.getLooper()) {
+            <span class="hljs-meta">@Override</span>
+            <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">handleMessage</span><span class="hljs-params">(Message msg)</span> </span>{
                 checkForUpdate();
-                if(isUpdate){
+                <span class="hljs-keyword">if</span>(isUpdate){
                     mThreadHandler.sendEmptyMessage(MSG_UPDATE_INFO);
                 }
             }
         };
     }
-    /**
+    <span class="hljs-comment">/**
      * &#x6A21;&#x62DF;&#x4ECE;&#x670D;&#x52A1;&#x5668;&#x89E3;&#x6790;&#x6570;&#x636E;
-     */
-    private void checkForUpdate() {
-        try {
-            //&#x6A21;&#x62DF;&#x8017;&#x65F6;
-            Thread.sleep(1200);
-            mMainHandler.post(new Runnable() {
-                @Override
-                public void run() {
-                    String result = &quot;&#x5B9E;&#x65F6;&#x66F4;&#x65B0;&#x4E2D;&#xFF0C;&#x5F53;&#x524D;&#x80A1;&#x7968;&#x884C;&#x60C5;&#xFF1A;&lt;font color=&apos;red&apos;&gt;%d&lt;/font&gt;&quot;;
-                    result = String.format(result, (int) (Math.random() * 5000 + 1000));
+     */</span>
+    <span class="hljs-function"><span class="hljs-keyword">private</span> <span class="hljs-keyword">void</span> <span class="hljs-title">checkForUpdate</span><span class="hljs-params">()</span> </span>{
+        <span class="hljs-keyword">try</span> {
+            <span class="hljs-comment">//&#x6A21;&#x62DF;&#x8017;&#x65F6;</span>
+            Thread.sleep(<span class="hljs-number">1200</span>);
+            mMainHandler.post(<span class="hljs-keyword">new</span> Runnable() {
+                <span class="hljs-meta">@Override</span>
+                <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">run</span><span class="hljs-params">()</span> </span>{
+                    String result = <span class="hljs-string">&quot;&#x5B9E;&#x65F6;&#x66F4;&#x65B0;&#x4E2D;&#xFF0C;&#x5F53;&#x524D;&#x80A1;&#x7968;&#x884C;&#x60C5;&#xFF1A;&lt;font color=&apos;red&apos;&gt;%d&lt;/font&gt;&quot;</span>;
+                    result = String.format(result, (<span class="hljs-keyword">int</span>) (Math.random() * <span class="hljs-number">5000</span> + <span class="hljs-number">1000</span>));
                     mTv.setText(Html.fromHtml(result));
                 }
             });
-        } catch (InterruptedException e) {
+        } <span class="hljs-keyword">catch</span> (InterruptedException e) {
             e.printStackTrace();
         }
     }
-    @Override
-    protected void onResume() {
-        isUpdate=true;
-        super.onResume();
+    <span class="hljs-meta">@Override</span>
+    <span class="hljs-function"><span class="hljs-keyword">protected</span> <span class="hljs-keyword">void</span> <span class="hljs-title">onResume</span><span class="hljs-params">()</span> </span>{
+        isUpdate=<span class="hljs-keyword">true</span>;
+        <span class="hljs-keyword">super</span>.onResume();
         mThreadHandler.sendEmptyMessage(MSG_UPDATE_INFO);
     }
-    @Override
-    protected void onPause() {
-        super.onPause();
-        isUpdate=false;
+    <span class="hljs-meta">@Override</span>
+    <span class="hljs-function"><span class="hljs-keyword">protected</span> <span class="hljs-keyword">void</span> <span class="hljs-title">onPause</span><span class="hljs-params">()</span> </span>{
+        <span class="hljs-keyword">super</span>.onPause();
+        isUpdate=<span class="hljs-keyword">false</span>;
         mThreadHandler.removeMessages(MSG_UPDATE_INFO);
     }
-    @Override
-    protected void onDestroy() {
-        super.onDestroy();
+    <span class="hljs-meta">@Override</span>
+    <span class="hljs-function"><span class="hljs-keyword">protected</span> <span class="hljs-keyword">void</span> <span class="hljs-title">onDestroy</span><span class="hljs-params">()</span> </span>{
+        <span class="hljs-keyword">super</span>.onDestroy();
         mHandlerThread.quit();
-        mMainHandler.removeCallbacksAndMessages(null);
+        mMainHandler.removeCallbacksAndMessages(<span class="hljs-keyword">null</span>);
     }
 }
 </code></pre>
@@ -3819,118 +3823,118 @@
 <p><img src="http://upload-images.jianshu.io/upload_images/2050203-a1ee8856b13b5368.gif?imageMogr2/auto-orient/strip" alt="img"></p>
 <h2 id="handlerthread&#x6E90;&#x7801;&#x5206;&#x6790;"><a name="handlerthread&#x6E90;&#x7801;&#x5206;&#x6790;" class="anchor-navigation-ex-anchor" href="#handlerthread&#x6E90;&#x7801;&#x5206;&#x6790;"><i class="fa fa-link" aria-hidden="true"></i></a>HandlerThread&#x6E90;&#x7801;&#x5206;&#x6790;</h2>
 <p>&#x5B98;&#x65B9;&#x6E90;&#x4EE3;&#x7801;&#x5982;&#x4E0B;&#xFF0C;&#x662F;&#x57FA;&#x4E8E;sdk23&#x7684;&#xFF0C;&#x53EF;&#x4EE5;&#x770B;&#x5230;&#xFF0C;&#x53EA;&#x6709;&#x4E00;&#x767E;&#x591A;&#x884C;&#x4EE3;&#x7801;&#x800C;&#x5DF2;</p>
-<pre><code class="lang-java">public class HandlerThread extends Thread {
-    int mPriority;
-    int mTid = -1;
+<pre><code class="lang-java"><span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">HandlerThread</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">Thread</span> </span>{
+    <span class="hljs-keyword">int</span> mPriority;
+    <span class="hljs-keyword">int</span> mTid = -<span class="hljs-number">1</span>;
     Looper mLooper;
-    public HandlerThread(String name) {
-        super(name);
+    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-title">HandlerThread</span><span class="hljs-params">(String name)</span> </span>{
+        <span class="hljs-keyword">super</span>(name);
         mPriority = Process.THREAD_PRIORITY_DEFAULT;
     }
-    public HandlerThread(String name, int priority) {
-        super(name);
+    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-title">HandlerThread</span><span class="hljs-params">(String name, <span class="hljs-keyword">int</span> priority)</span> </span>{
+        <span class="hljs-keyword">super</span>(name);
         mPriority = priority;
     }
-    /**
+    <span class="hljs-comment">/**
      * Call back method that can be explicitly overridden if needed to execute some
      * setup before Looper loops.
-     */
-    protected void onLooperPrepared() {
+     */</span>
+    <span class="hljs-function"><span class="hljs-keyword">protected</span> <span class="hljs-keyword">void</span> <span class="hljs-title">onLooperPrepared</span><span class="hljs-params">()</span> </span>{
     }
-    @Override
-    public void run() {
+    <span class="hljs-meta">@Override</span>
+    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">run</span><span class="hljs-params">()</span> </span>{
         mTid = Process.myTid();
         Looper.prepare();
-        //&#x6301;&#x6709;&#x9501;&#x673A;&#x5236;&#x6765;&#x83B7;&#x5F97;&#x5F53;&#x524D;&#x7EBF;&#x7A0B;&#x7684;Looper&#x5BF9;&#x8C61;
-        synchronized (this) {
+        <span class="hljs-comment">//&#x6301;&#x6709;&#x9501;&#x673A;&#x5236;&#x6765;&#x83B7;&#x5F97;&#x5F53;&#x524D;&#x7EBF;&#x7A0B;&#x7684;Looper&#x5BF9;&#x8C61;</span>
+        <span class="hljs-keyword">synchronized</span> (<span class="hljs-keyword">this</span>) {
             mLooper = Looper.myLooper();
-            //&#x53D1;&#x51FA;&#x901A;&#x77E5;&#xFF0C;&#x5F53;&#x524D;&#x7EBF;&#x7A0B;&#x5DF2;&#x7ECF;&#x521B;&#x5EFA;mLooper&#x5BF9;&#x8C61;&#x6210;&#x529F;&#xFF0C;&#x8FD9;&#x91CC;&#x4E3B;&#x8981;&#x662F;&#x901A;&#x77E5;getLooper&#x65B9;&#x6CD5;&#x4E2D;&#x7684;wait
+            <span class="hljs-comment">//&#x53D1;&#x51FA;&#x901A;&#x77E5;&#xFF0C;&#x5F53;&#x524D;&#x7EBF;&#x7A0B;&#x5DF2;&#x7ECF;&#x521B;&#x5EFA;mLooper&#x5BF9;&#x8C61;&#x6210;&#x529F;&#xFF0C;&#x8FD9;&#x91CC;&#x4E3B;&#x8981;&#x662F;&#x901A;&#x77E5;getLooper&#x65B9;&#x6CD5;&#x4E2D;&#x7684;wait</span>
             notifyAll();
         }
-        //&#x8BBE;&#x7F6E;&#x7EBF;&#x7A0B;&#x7684;&#x4F18;&#x5148;&#x7EA7;&#x522B;
+        <span class="hljs-comment">//&#x8BBE;&#x7F6E;&#x7EBF;&#x7A0B;&#x7684;&#x4F18;&#x5148;&#x7EA7;&#x522B;</span>
         Process.setThreadPriority(mPriority);
-        //&#x8FD9;&#x91CC;&#x9ED8;&#x8BA4;&#x662F;&#x7A7A;&#x65B9;&#x6CD5;&#x7684;&#x5B9E;&#x73B0;&#xFF0C;&#x6211;&#x4EEC;&#x53EF;&#x4EE5;&#x91CD;&#x5199;&#x8FD9;&#x4E2A;&#x65B9;&#x6CD5;&#x6765;&#x505A;&#x4E00;&#x4E9B;&#x7EBF;&#x7A0B;&#x5F00;&#x59CB;&#x4E4B;&#x524D;&#x7684;&#x51C6;&#x5907;&#xFF0C;&#x65B9;&#x4FBF;&#x6269;&#x5C55;
+        <span class="hljs-comment">//&#x8FD9;&#x91CC;&#x9ED8;&#x8BA4;&#x662F;&#x7A7A;&#x65B9;&#x6CD5;&#x7684;&#x5B9E;&#x73B0;&#xFF0C;&#x6211;&#x4EEC;&#x53EF;&#x4EE5;&#x91CD;&#x5199;&#x8FD9;&#x4E2A;&#x65B9;&#x6CD5;&#x6765;&#x505A;&#x4E00;&#x4E9B;&#x7EBF;&#x7A0B;&#x5F00;&#x59CB;&#x4E4B;&#x524D;&#x7684;&#x51C6;&#x5907;&#xFF0C;&#x65B9;&#x4FBF;&#x6269;&#x5C55;</span>
         onLooperPrepared();
         Looper.loop();
-        mTid = -1;
+        mTid = -<span class="hljs-number">1</span>;
     }
-    public Looper getLooper() {
-        if (!isAlive()) {
-            return null;
+    <span class="hljs-function"><span class="hljs-keyword">public</span> Looper <span class="hljs-title">getLooper</span><span class="hljs-params">()</span> </span>{
+        <span class="hljs-keyword">if</span> (!isAlive()) {
+            <span class="hljs-keyword">return</span> <span class="hljs-keyword">null</span>;
         }
-        // &#x76F4;&#x5230;&#x7EBF;&#x7A0B;&#x521B;&#x5EFA;&#x5B8C;Looper&#x4E4B;&#x540E;&#x624D;&#x80FD;&#x83B7;&#x5F97;Looper&#x5BF9;&#x8C61;&#xFF0C;Looper&#x672A;&#x521B;&#x5EFA;&#x6210;&#x529F;&#xFF0C;&#x963B;&#x585E;
-        synchronized (this) {
-            while (isAlive() &amp;&amp; mLooper == null) {
-                try {
+        <span class="hljs-comment">// &#x76F4;&#x5230;&#x7EBF;&#x7A0B;&#x521B;&#x5EFA;&#x5B8C;Looper&#x4E4B;&#x540E;&#x624D;&#x80FD;&#x83B7;&#x5F97;Looper&#x5BF9;&#x8C61;&#xFF0C;Looper&#x672A;&#x521B;&#x5EFA;&#x6210;&#x529F;&#xFF0C;&#x963B;&#x585E;</span>
+        <span class="hljs-keyword">synchronized</span> (<span class="hljs-keyword">this</span>) {
+            <span class="hljs-keyword">while</span> (isAlive() &amp;&amp; mLooper == <span class="hljs-keyword">null</span>) {
+                <span class="hljs-keyword">try</span> {
                     wait();
-                } catch (InterruptedException e) {
+                } <span class="hljs-keyword">catch</span> (InterruptedException e) {
                 }
             }
         }
-        return mLooper;
+        <span class="hljs-keyword">return</span> mLooper;
     }
-    public boolean quit() {
+    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">boolean</span> <span class="hljs-title">quit</span><span class="hljs-params">()</span> </span>{
         Looper looper = getLooper();
-        if (looper != null) {
+        <span class="hljs-keyword">if</span> (looper != <span class="hljs-keyword">null</span>) {
             looper.quit();
-            return true;
+            <span class="hljs-keyword">return</span> <span class="hljs-keyword">true</span>;
         }
-        return false;
+        <span class="hljs-keyword">return</span> <span class="hljs-keyword">false</span>;
     }
-    public boolean quitSafely() {
+    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">boolean</span> <span class="hljs-title">quitSafely</span><span class="hljs-params">()</span> </span>{
         Looper looper = getLooper();
-        if (looper != null) {
+        <span class="hljs-keyword">if</span> (looper != <span class="hljs-keyword">null</span>) {
             looper.quitSafely();
-            return true;
+            <span class="hljs-keyword">return</span> <span class="hljs-keyword">true</span>;
         }
-        return false;
+        <span class="hljs-keyword">return</span> <span class="hljs-keyword">false</span>;
     }
-    /**
+    <span class="hljs-comment">/**
      * Returns the identifier of this thread. See Process.myTid().
-     */
-    public int getThreadId() {
-        return mTid;
+     */</span>
+    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">int</span> <span class="hljs-title">getThreadId</span><span class="hljs-params">()</span> </span>{
+        <span class="hljs-keyword">return</span> mTid;
     }
 }
 </code></pre>
 <h3 id="1&#xFF09;&#x9996;&#x5148;&#x6211;&#x4EEC;&#x5148;&#x6765;&#x770B;&#x4E00;&#x4E0B;&#x5B83;&#x7684;&#x6784;&#x9020;&#x65B9;&#x6CD5;"><a name="1&#xFF09;&#x9996;&#x5148;&#x6211;&#x4EEC;&#x5148;&#x6765;&#x770B;&#x4E00;&#x4E0B;&#x5B83;&#x7684;&#x6784;&#x9020;&#x65B9;&#x6CD5;" class="anchor-navigation-ex-anchor" href="#1&#xFF09;&#x9996;&#x5148;&#x6211;&#x4EEC;&#x5148;&#x6765;&#x770B;&#x4E00;&#x4E0B;&#x5B83;&#x7684;&#x6784;&#x9020;&#x65B9;&#x6CD5;"><i class="fa fa-link" aria-hidden="true"></i></a>1&#xFF09;&#x9996;&#x5148;&#x6211;&#x4EEC;&#x5148;&#x6765;&#x770B;&#x4E00;&#x4E0B;&#x5B83;&#x7684;&#x6784;&#x9020;&#x65B9;&#x6CD5;</h3>
-<pre><code class="lang-java"> public HandlerThread(String name) {
-        super(name);
+<pre><code class="lang-java"> <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-title">HandlerThread</span><span class="hljs-params">(String name)</span> </span>{
+        <span class="hljs-keyword">super</span>(name);
         mPriority = Process.THREAD_PRIORITY_DEFAULT;
     }
-    public HandlerThread(String name, int priority) {
-        super(name);
+    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-title">HandlerThread</span><span class="hljs-params">(String name, <span class="hljs-keyword">int</span> priority)</span> </span>{
+        <span class="hljs-keyword">super</span>(name);
         mPriority = priority;
     }
 </code></pre>
 <p>&#x6709;&#x4E24;&#x4E2A;&#x6784;&#x9020;&#x65B9;&#x6CD5;&#xFF0C;&#x4E00;&#x4E2A;&#x53C2;&#x6570;&#x7684;&#x548C;&#x4E24;&#x4E2A;&#x53C2;&#x6570;&#x7684;&#xFF0C;name&#x4EE3;&#x8868;&#x5F53;&#x524D;&#x7EBF;&#x7A0B;&#x7684;&#x540D;&#x79F0;&#xFF0C;priority&#x4E3A;&#x7EBF;&#x7A0B;&#x7684;&#x4F18;&#x5148;&#x7EA7;&#x522B;</p>
 <h3 id="2&#xFF09;&#x63A5;&#x7740;&#x6211;&#x4EEC;&#x6765;&#x770B;&#x4E00;&#x4E0B;run&#xFF08;&#xFF09;&#x65B9;&#x6CD5;&#xFF0C;&#x5728;run&#x65B9;&#x6CD5;&#x91CC;&#x9762;&#x6211;&#x4EEC;&#x53EF;&#x4EE5;&#x770B;&#x5230;&#x6211;&#x4EEC;&#x4F1A;&#x521D;&#x59CB;&#x5316;&#x4E00;&#x4E2A;looper&#xFF0C;&#x5E76;&#x8BBE;&#x7F6E;&#x7EBF;&#x7A0B;&#x7684;&#x4F18;&#x5148;&#x7EA7;&#x522B;"><a name="2&#xFF09;&#x63A5;&#x7740;&#x6211;&#x4EEC;&#x6765;&#x770B;&#x4E00;&#x4E0B;run&#xFF08;&#xFF09;&#x65B9;&#x6CD5;&#xFF0C;&#x5728;run&#x65B9;&#x6CD5;&#x91CC;&#x9762;&#x6211;&#x4EEC;&#x53EF;&#x4EE5;&#x770B;&#x5230;&#x6211;&#x4EEC;&#x4F1A;&#x521D;&#x59CB;&#x5316;&#x4E00;&#x4E2A;looper&#xFF0C;&#x5E76;&#x8BBE;&#x7F6E;&#x7EBF;&#x7A0B;&#x7684;&#x4F18;&#x5148;&#x7EA7;&#x522B;" class="anchor-navigation-ex-anchor" href="#2&#xFF09;&#x63A5;&#x7740;&#x6211;&#x4EEC;&#x6765;&#x770B;&#x4E00;&#x4E0B;run&#xFF08;&#xFF09;&#x65B9;&#x6CD5;&#xFF0C;&#x5728;run&#x65B9;&#x6CD5;&#x91CC;&#x9762;&#x6211;&#x4EEC;&#x53EF;&#x4EE5;&#x770B;&#x5230;&#x6211;&#x4EEC;&#x4F1A;&#x521D;&#x59CB;&#x5316;&#x4E00;&#x4E2A;looper&#xFF0C;&#x5E76;&#x8BBE;&#x7F6E;&#x7EBF;&#x7A0B;&#x7684;&#x4F18;&#x5148;&#x7EA7;&#x522B;"><i class="fa fa-link" aria-hidden="true"></i></a>2&#xFF09;&#x63A5;&#x7740;&#x6211;&#x4EEC;&#x6765;&#x770B;&#x4E00;&#x4E0B;run&#xFF08;&#xFF09;&#x65B9;&#x6CD5;&#xFF0C;&#x5728;run&#x65B9;&#x6CD5;&#x91CC;&#x9762;&#x6211;&#x4EEC;&#x53EF;&#x4EE5;&#x770B;&#x5230;&#x6211;&#x4EEC;&#x4F1A;&#x521D;&#x59CB;&#x5316;&#x4E00;&#x4E2A;Looper&#xFF0C;&#x5E76;&#x8BBE;&#x7F6E;&#x7EBF;&#x7A0B;&#x7684;&#x4F18;&#x5148;&#x7EA7;&#x522B;</h3>
-<pre><code class="lang-java">public void run() {
+<pre><code class="lang-java"><span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">run</span><span class="hljs-params">()</span> </span>{
     mTid = Process.myTid();
     Looper.prepare();
-    //&#x6301;&#x6709;&#x9501;&#x673A;&#x5236;&#x6765;&#x83B7;&#x5F97;&#x5F53;&#x524D;&#x7EBF;&#x7A0B;&#x7684;Looper&#x5BF9;&#x8C61;
-    synchronized (this) {
+    <span class="hljs-comment">//&#x6301;&#x6709;&#x9501;&#x673A;&#x5236;&#x6765;&#x83B7;&#x5F97;&#x5F53;&#x524D;&#x7EBF;&#x7A0B;&#x7684;Looper&#x5BF9;&#x8C61;</span>
+    <span class="hljs-keyword">synchronized</span> (<span class="hljs-keyword">this</span>) {
         mLooper = Looper.myLooper();
-        //&#x53D1;&#x51FA;&#x901A;&#x77E5;&#xFF0C;&#x5F53;&#x524D;&#x7EBF;&#x7A0B;&#x5DF2;&#x7ECF;&#x521B;&#x5EFA;mLooper&#x5BF9;&#x8C61;&#x6210;&#x529F;&#xFF0C;&#x8FD9;&#x91CC;&#x4E3B;&#x8981;&#x662F;&#x901A;&#x77E5;getLooper&#x65B9;&#x6CD5;&#x4E2D;&#x7684;wait
+        <span class="hljs-comment">//&#x53D1;&#x51FA;&#x901A;&#x77E5;&#xFF0C;&#x5F53;&#x524D;&#x7EBF;&#x7A0B;&#x5DF2;&#x7ECF;&#x521B;&#x5EFA;mLooper&#x5BF9;&#x8C61;&#x6210;&#x529F;&#xFF0C;&#x8FD9;&#x91CC;&#x4E3B;&#x8981;&#x662F;&#x901A;&#x77E5;getLooper&#x65B9;&#x6CD5;&#x4E2D;&#x7684;wait</span>
         notifyAll();
     }
-    //&#x8BBE;&#x7F6E;&#x7EBF;&#x7A0B;&#x7684;&#x4F18;&#x5148;&#x7EA7;&#x522B;
+    <span class="hljs-comment">//&#x8BBE;&#x7F6E;&#x7EBF;&#x7A0B;&#x7684;&#x4F18;&#x5148;&#x7EA7;&#x522B;</span>
     Process.setThreadPriority(mPriority);
-    //&#x8FD9;&#x91CC;&#x9ED8;&#x8BA4;&#x662F;&#x7A7A;&#x65B9;&#x6CD5;&#x7684;&#x5B9E;&#x73B0;&#xFF0C;&#x6211;&#x4EEC;&#x53EF;&#x4EE5;&#x91CD;&#x5199;&#x8FD9;&#x4E2A;&#x65B9;&#x6CD5;&#x6765;&#x505A;&#x4E00;&#x4E9B;&#x7EBF;&#x7A0B;&#x5F00;&#x59CB;&#x4E4B;&#x524D;&#x7684;&#x51C6;&#x5907;&#xFF0C;&#x65B9;&#x4FBF;&#x6269;&#x5C55;
+    <span class="hljs-comment">//&#x8FD9;&#x91CC;&#x9ED8;&#x8BA4;&#x662F;&#x7A7A;&#x65B9;&#x6CD5;&#x7684;&#x5B9E;&#x73B0;&#xFF0C;&#x6211;&#x4EEC;&#x53EF;&#x4EE5;&#x91CD;&#x5199;&#x8FD9;&#x4E2A;&#x65B9;&#x6CD5;&#x6765;&#x505A;&#x4E00;&#x4E9B;&#x7EBF;&#x7A0B;&#x5F00;&#x59CB;&#x4E4B;&#x524D;&#x7684;&#x51C6;&#x5907;&#xFF0C;&#x65B9;&#x4FBF;&#x6269;&#x5C55;</span>
     onLooperPrepared();
     Looper.loop();
-    mTid = -1;
+    mTid = -<span class="hljs-number">1</span>;
 }
 </code></pre>
 <ul>
 <li>&#x8FD8;&#x8BB0;&#x5F97;&#x6211;&#x4EEC;&#x524D;&#x9762;&#x6211;&#x4EEC;&#x8BF4;&#x5230;&#x4F7F;&#x7528;HandlerThread&#x7684;&#x65F6;&#x5019;&#x5FC5;&#x987B;&#x8C03;&#x7528;start&#xFF08;&#xFF09;&#x65B9;&#x6CD5;&#xFF0C;&#x63A5;&#x7740;&#x624D;&#x53EF;&#x4EE5;&#x5C06;&#x6211;&#x4EEC;&#x7684;HandlerThread&#x548C;&#x6211;&#x4EEC;&#x7684;handler&#x7ED1;&#x5B9A;&#x5728;&#x4E00;&#x8D77;&#x5417;?&#x5176;&#x5B9E;&#x539F;&#x56E0;&#x5C31;&#x662F;&#x6211;&#x4EEC;&#x662F;&#x5728;run&#xFF08;&#xFF09;&#x65B9;&#x6CD5;&#x624D;&#x5F00;&#x59CB;&#x521D;&#x59CB;&#x5316;&#x6211;&#x4EEC;&#x7684;looper&#xFF0C;&#x800C;&#x6211;&#x4EEC;&#x8C03;&#x7528;HandlerThread&#x7684;start&#xFF08;&#xFF09;&#x65B9;&#x6CD5;&#x7684;&#x65F6;&#x5019;&#xFF0C;&#x7EBF;&#x7A0B;&#x4F1A;&#x4EA4;&#x7ED9;&#x865A;&#x62DF;&#x673A;&#x8C03;&#x5EA6;&#xFF0C;&#x7531;&#x865A;&#x62DF;&#x673A;&#x81EA;&#x52A8;&#x8C03;&#x7528;run&#x65B9;&#x6CD5;</li>
 </ul>
 <pre><code class="lang-java">mHandlerThread.start();
-mThreadHandler = new Handler(mHandlerThread.getLooper()) {
-    @Override
-    public void handleMessage(Message msg) {
+mThreadHandler = <span class="hljs-keyword">new</span> Handler(mHandlerThread.getLooper()) {
+    <span class="hljs-meta">@Override</span>
+    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">handleMessage</span><span class="hljs-params">(Message msg)</span> </span>{
         checkForUpdate();
-        if(isUpdate){
+        <span class="hljs-keyword">if</span>(isUpdate){
             mThreadHandler.sendEmptyMessage(MSG_UPDATE_INFO);
         }
     }
@@ -3939,102 +3943,102 @@ mThreadHandler = new Handler(mHandlerThread.getLooper()) {
 <ul>
 <li>&#x8FD9;&#x91CC;&#x6211;&#x4EEC;&#x4E3A;&#x4EC0;&#x4E48;&#x8981;&#x4F7F;&#x7528;&#x9501;&#x673A;&#x5236;&#x548C;notifyAll();&#xFF0C;&#x539F;&#x56E0;&#x6211;&#x4EEC;&#x53EF;&#x4EE5;&#x4ECE;getLooper&#xFF08;&#xFF09;&#x65B9;&#x6CD5;&#x4E2D;&#x77E5;&#x9053;</li>
 </ul>
-<pre><code class="lang-java">public Looper getLooper() {
-    if (!isAlive()) {
-        return null;
+<pre><code class="lang-java"><span class="hljs-function"><span class="hljs-keyword">public</span> Looper <span class="hljs-title">getLooper</span><span class="hljs-params">()</span> </span>{
+    <span class="hljs-keyword">if</span> (!isAlive()) {
+        <span class="hljs-keyword">return</span> <span class="hljs-keyword">null</span>;
     }
-    // &#x76F4;&#x5230;&#x7EBF;&#x7A0B;&#x521B;&#x5EFA;&#x5B8C;Looper&#x4E4B;&#x540E;&#x624D;&#x80FD;&#x83B7;&#x5F97;Looper&#x5BF9;&#x8C61;&#xFF0C;Looper&#x672A;&#x521B;&#x5EFA;&#x6210;&#x529F;&#xFF0C;&#x963B;&#x585E;
-    synchronized (this) {
-        while (isAlive() &amp;&amp; mLooper == null) {
-            try {
+    <span class="hljs-comment">// &#x76F4;&#x5230;&#x7EBF;&#x7A0B;&#x521B;&#x5EFA;&#x5B8C;Looper&#x4E4B;&#x540E;&#x624D;&#x80FD;&#x83B7;&#x5F97;Looper&#x5BF9;&#x8C61;&#xFF0C;Looper&#x672A;&#x521B;&#x5EFA;&#x6210;&#x529F;&#xFF0C;&#x963B;&#x585E;</span>
+    <span class="hljs-keyword">synchronized</span> (<span class="hljs-keyword">this</span>) {
+        <span class="hljs-keyword">while</span> (isAlive() &amp;&amp; mLooper == <span class="hljs-keyword">null</span>) {
+            <span class="hljs-keyword">try</span> {
                 wait();
-            } catch (InterruptedException e) {
+            } <span class="hljs-keyword">catch</span> (InterruptedException e) {
             }
         }
     }
-    return mLooper;
+    <span class="hljs-keyword">return</span> mLooper;
 }
 </code></pre>
 <p><strong>&#x603B;&#x7ED3;&#xFF1A;&#x5728;&#x83B7;&#x5F97;mLooper&#x5BF9;&#x8C61;&#x7684;&#x65F6;&#x5019;&#x5B58;&#x5728;&#x4E00;&#x4E2A;&#x540C;&#x6B65;&#x7684;&#x95EE;&#x9898;&#xFF0C;&#x53EA;&#x6709;&#x5F53;&#x7EBF;&#x7A0B;&#x521B;&#x5EFA;&#x6210;&#x529F;&#x5E76;&#x4E14;Looper&#x5BF9;&#x8C61;&#x4E5F;&#x521B;&#x5EFA;&#x6210;&#x529F;&#x4E4B;&#x540E;&#x624D;&#x80FD;&#x83B7;&#x5F97;mLooper&#x7684;&#x503C;&#x3002;&#x8FD9;&#x91CC;&#x7B49;&#x5F85;&#x65B9;&#x6CD5;wait&#x548C;run&#x65B9;&#x6CD5;&#x4E2D;&#x7684;notifyAll&#x65B9;&#x6CD5;&#x5171;&#x540C;&#x5B8C;&#x6210;&#x540C;&#x6B65;&#x95EE;&#x9898;&#x3002;</strong></p>
 <h3 id="3&#x63A5;&#x7740;&#x6211;&#x4EEC;&#x6765;&#x770B;&#x4E00;&#x4E0B;quit&#x65B9;&#x6CD5;&#x548C;quitsafe&#x65B9;&#x6CD5;"><a name="3&#x63A5;&#x7740;&#x6211;&#x4EEC;&#x6765;&#x770B;&#x4E00;&#x4E0B;quit&#x65B9;&#x6CD5;&#x548C;quitsafe&#x65B9;&#x6CD5;" class="anchor-navigation-ex-anchor" href="#3&#x63A5;&#x7740;&#x6211;&#x4EEC;&#x6765;&#x770B;&#x4E00;&#x4E0B;quit&#x65B9;&#x6CD5;&#x548C;quitsafe&#x65B9;&#x6CD5;"><i class="fa fa-link" aria-hidden="true"></i></a>3)&#x63A5;&#x7740;&#x6211;&#x4EEC;&#x6765;&#x770B;&#x4E00;&#x4E0B;quit&#x65B9;&#x6CD5;&#x548C;quitSafe&#x65B9;&#x6CD5;</h3>
-<pre><code class="lang-java">//&#x8C03;&#x7528;&#x8FD9;&#x4E2A;&#x65B9;&#x6CD5;&#x9000;&#x51FA;Looper&#x6D88;&#x606F;&#x5FAA;&#x73AF;&#xFF0C;&#x53CA;&#x9000;&#x51FA;&#x7EBF;&#x7A0B;
-public boolean quit() {
+<pre><code class="lang-java"><span class="hljs-comment">//&#x8C03;&#x7528;&#x8FD9;&#x4E2A;&#x65B9;&#x6CD5;&#x9000;&#x51FA;Looper&#x6D88;&#x606F;&#x5FAA;&#x73AF;&#xFF0C;&#x53CA;&#x9000;&#x51FA;&#x7EBF;&#x7A0B;</span>
+<span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">boolean</span> <span class="hljs-title">quit</span><span class="hljs-params">()</span> </span>{
     Looper looper = getLooper();
-    if (looper != null) {
+    <span class="hljs-keyword">if</span> (looper != <span class="hljs-keyword">null</span>) {
         looper.quit();
-        return true;
+        <span class="hljs-keyword">return</span> <span class="hljs-keyword">true</span>;
     }
-    return false;
+    <span class="hljs-keyword">return</span> <span class="hljs-keyword">false</span>;
 }
-//&#x8C03;&#x7528;&#x8FD9;&#x4E2A;&#x65B9;&#x6CD5;&#x5B89;&#x5168;&#x5730;&#x9000;&#x51FA;&#x7EBF;&#x7A0B;
-@TargetApi(Build.VERSION_CODES.JELLY_BEAN_MR2)
-public boolean quitSafely() {
+<span class="hljs-comment">//&#x8C03;&#x7528;&#x8FD9;&#x4E2A;&#x65B9;&#x6CD5;&#x5B89;&#x5168;&#x5730;&#x9000;&#x51FA;&#x7EBF;&#x7A0B;</span>
+<span class="hljs-meta">@TargetApi</span>(Build.VERSION_CODES.JELLY_BEAN_MR2)
+<span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">boolean</span> <span class="hljs-title">quitSafely</span><span class="hljs-params">()</span> </span>{
     Looper looper = getLooper();
-    if (looper != null) {
+    <span class="hljs-keyword">if</span> (looper != <span class="hljs-keyword">null</span>) {
         looper.quitSafely();
-        return true;
+        <span class="hljs-keyword">return</span> <span class="hljs-keyword">true</span>;
     }
-    return false;
+    <span class="hljs-keyword">return</span> <span class="hljs-keyword">false</span>;
 }
 </code></pre>
 <p>&#x8DDF;&#x8E2A;&#x8FD9;&#x4E24;&#x4E2A;&#x65B9;&#x6CD5;&#x5BB9;&#x6613;&#x77E5;&#x9053;&#x53EA;&#x4E24;&#x4E2A;&#x65B9;&#x6CD5;&#x6700;&#x7EC8;&#x90FD;&#x4F1A;&#x8C03;&#x7528;MessageQueue&#x7684;quit&#xFF08;boolean safe&#xFF09;&#x65B9;&#x6CD5;</p>
-<pre><code class="lang-java">void quit(boolean safe) {
-    if (!mQuitAllowed) {
-        throw new IllegalStateException(&quot;Main thread not allowed to quit.&quot;);
+<pre><code class="lang-java"><span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">quit</span><span class="hljs-params">(<span class="hljs-keyword">boolean</span> safe)</span> </span>{
+    <span class="hljs-keyword">if</span> (!mQuitAllowed) {
+        <span class="hljs-keyword">throw</span> <span class="hljs-keyword">new</span> IllegalStateException(<span class="hljs-string">&quot;Main thread not allowed to quit.&quot;</span>);
     }
-    synchronized (this) {
-        if (mQuitting) {
-            return;
+    <span class="hljs-keyword">synchronized</span> (<span class="hljs-keyword">this</span>) {
+        <span class="hljs-keyword">if</span> (mQuitting) {
+            <span class="hljs-keyword">return</span>;
         }
-        mQuitting = true;
-        //&#x5B89;&#x5168;&#x9000;&#x51FA;&#x8C03;&#x7528;&#x8FD9;&#x4E2A;&#x65B9;&#x6CD5;
-        if (safe) {
+        mQuitting = <span class="hljs-keyword">true</span>;
+        <span class="hljs-comment">//&#x5B89;&#x5168;&#x9000;&#x51FA;&#x8C03;&#x7528;&#x8FD9;&#x4E2A;&#x65B9;&#x6CD5;</span>
+        <span class="hljs-keyword">if</span> (safe) {
             removeAllFutureMessagesLocked();
-        } else {//&#x4E0D;&#x5B89;&#x5168;&#x9000;&#x51FA;&#x8C03;&#x7528;&#x8FD9;&#x4E2A;&#x65B9;&#x6CD5;
+        } <span class="hljs-keyword">else</span> {<span class="hljs-comment">//&#x4E0D;&#x5B89;&#x5168;&#x9000;&#x51FA;&#x8C03;&#x7528;&#x8FD9;&#x4E2A;&#x65B9;&#x6CD5;</span>
             removeAllMessagesLocked();
         }
-        // We can assume mPtr != 0 because mQuitting was previously false.
+        <span class="hljs-comment">// We can assume mPtr != 0 because mQuitting was previously false.</span>
         nativeWake(mPtr);
     }
 }
 </code></pre>
 <p>&#x4E0D;&#x5B89;&#x5168;&#x7684;&#x4F1A;&#x8C03;&#x7528;removeAllMessagesLocked();&#x8FD9;&#x4E2A;&#x65B9;&#x6CD5;&#xFF0C;&#x6211;&#x4EEC;&#x6765;&#x770B;&#x8FD9;&#x4E2A;&#x65B9;&#x6CD5;&#x662F;&#x600E;&#x6837;&#x5904;&#x7406;&#x7684;&#xFF0C;&#x5176;&#x5B9E;&#x5C31;&#x662F;&#x904D;&#x5386;Message&#x94FE;&#x8868;&#xFF0C;&#x79FB;&#x9664;&#x6240;&#x6709;&#x4FE1;&#x606F;&#x7684;&#x56DE;&#x8C03;&#xFF0C;&#x5E76;&#x91CD;&#x7F6E;&#x4E3A;null</p>
-<pre><code class="lang-java">private void removeAllMessagesLocked() {
+<pre><code class="lang-java"><span class="hljs-function"><span class="hljs-keyword">private</span> <span class="hljs-keyword">void</span> <span class="hljs-title">removeAllMessagesLocked</span><span class="hljs-params">()</span> </span>{
     Message p = mMessages;
-    while (p != null) {
+    <span class="hljs-keyword">while</span> (p != <span class="hljs-keyword">null</span>) {
         Message n = p.next;
         p.recycleUnchecked();
         p = n;
     }
-    mMessages = null;
+    mMessages = <span class="hljs-keyword">null</span>;
 }
 </code></pre>
 <p>&#x5B89;&#x5168;&#x5730;&#x4F1A;&#x8C03;&#x7528;removeAllFutureMessagesLocked();&#x8FD9;&#x4E2A;&#x65B9;&#x6CD5;&#xFF0C;&#x5B83;&#x4F1A;&#x6839;&#x636E;Message.when&#x8FD9;&#x4E2A;&#x5C5E;&#x6027;&#xFF0C;&#x5224;&#x65AD;&#x6211;&#x4EEC;&#x5F53;&#x524D;&#x6D88;&#x606F;&#x961F;&#x5217;&#x662F;&#x5426;&#x6B63;&#x5728;&#x5904;&#x7406;&#x6D88;&#x606F;&#xFF0C;&#x6CA1;&#x6709;&#x6B63;&#x5728;&#x5904;&#x7406;&#x6D88;&#x606F;&#x7684;&#x8BDD;&#xFF0C;&#x76F4;&#x63A5;&#x79FB;&#x9664;&#x6240;&#x6709;&#x56DE;&#x8C03;&#xFF0C;&#x6B63;&#x5728;&#x5904;&#x7406;&#x7684;&#x8BDD;&#xFF0C;&#x7B49;&#x5F85;&#x8BE5;&#x6D88;&#x606F;&#x5904;&#x7406;&#x5904;&#x7406;&#x5B8C;&#x6BD5;&#x518D;&#x9000;&#x51FA;&#x8BE5;&#x5FAA;&#x73AF;&#x3002;&#x56E0;&#x6B64;&#x8BF4;quitSafe&#xFF08;&#xFF09;&#x662F;&#x5B89;&#x5168;&#x7684;&#xFF0C;&#x800C;quit&#xFF08;&#xFF09;&#x65B9;&#x6CD5;&#x662F;&#x4E0D;&#x5B89;&#x5168;&#x7684;&#xFF0C;&#x56E0;&#x4E3A;quit&#x65B9;&#x6CD5;&#x4E0D;&#x7BA1;&#x662F;&#x5426;&#x6B63;&#x5728;&#x5904;&#x7406;&#x6D88;&#x606F;&#xFF0C;&#x76F4;&#x63A5;&#x79FB;&#x9664;&#x6240;&#x6709;&#x56DE;&#x8C03;&#x3002;</p>
-<pre><code class="lang-java">private void removeAllFutureMessagesLocked() {
-    final long now = SystemClock.uptimeMillis();
+<pre><code class="lang-java"><span class="hljs-function"><span class="hljs-keyword">private</span> <span class="hljs-keyword">void</span> <span class="hljs-title">removeAllFutureMessagesLocked</span><span class="hljs-params">()</span> </span>{
+    <span class="hljs-keyword">final</span> <span class="hljs-keyword">long</span> now = SystemClock.uptimeMillis();
     Message p = mMessages;
-    if (p != null) {
-        //&#x5224;&#x65AD;&#x5F53;&#x524D;&#x961F;&#x5217;&#x4E2D;&#x7684;&#x6D88;&#x606F;&#x662F;&#x5426;&#x6B63;&#x5728;&#x5904;&#x7406;&#x8FD9;&#x4E2A;&#x6D88;&#x606F;&#xFF0C;&#x300B;&#x6CA1;&#x6709;&#x7684;&#x8BDD;&#xFF0C;&#x76F4;&#x63A5;&#x79FB;&#x9664;&#x6240;&#x6709;&#x56DE;&#x8C03;
-        if (p.when &gt; now) {
+    <span class="hljs-keyword">if</span> (p != <span class="hljs-keyword">null</span>) {
+        <span class="hljs-comment">//&#x5224;&#x65AD;&#x5F53;&#x524D;&#x961F;&#x5217;&#x4E2D;&#x7684;&#x6D88;&#x606F;&#x662F;&#x5426;&#x6B63;&#x5728;&#x5904;&#x7406;&#x8FD9;&#x4E2A;&#x6D88;&#x606F;&#xFF0C;&#x300B;&#x6CA1;&#x6709;&#x7684;&#x8BDD;&#xFF0C;&#x76F4;&#x63A5;&#x79FB;&#x9664;&#x6240;&#x6709;&#x56DE;&#x8C03;</span>
+        <span class="hljs-keyword">if</span> (p.when &gt; now) {
             removeAllMessagesLocked();
-        } else {//&#x6B63;&#x5728;&#x5904;&#x7406;&#x7684;&#x8BDD;&#xFF0C;&#x7B49;&#x5F85;&#x8BE5;&#x6D88;&#x606F;&#x5904;&#x7406;&#x5904;&#x7406;&#x5B8C;&#x6BD5;&#x518D;&#x9000;&#x51FA;&#x8BE5;&#x5FAA;&#x73AF;
+        } <span class="hljs-keyword">else</span> {<span class="hljs-comment">//&#x6B63;&#x5728;&#x5904;&#x7406;&#x7684;&#x8BDD;&#xFF0C;&#x7B49;&#x5F85;&#x8BE5;&#x6D88;&#x606F;&#x5904;&#x7406;&#x5904;&#x7406;&#x5B8C;&#x6BD5;&#x518D;&#x9000;&#x51FA;&#x8BE5;&#x5FAA;&#x73AF;</span>
             Message n;
-            for (;;) {
+            <span class="hljs-keyword">for</span> (;;) {
                 n = p.next;
-                if (n == null) {
-                    return;
+                <span class="hljs-keyword">if</span> (n == <span class="hljs-keyword">null</span>) {
+                    <span class="hljs-keyword">return</span>;
                 }
-                if (n.when &gt; now) {
-                    break;
+                <span class="hljs-keyword">if</span> (n.when &gt; now) {
+                    <span class="hljs-keyword">break</span>;
                 }
                 p = n;
             }
-            p.next = null;
+            p.next = <span class="hljs-keyword">null</span>;
             do {
                 p = n;
                 n = p.next;
                 p.recycleUnchecked();
-            } while (n != null);
+            } <span class="hljs-keyword">while</span> (n != <span class="hljs-keyword">null</span>);
         }
     }
 }
@@ -4084,7 +4088,7 @@ public boolean quitSafely() {
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"HandlerThread详解","level":"3.1.9","depth":2,"next":{"title":"IntentService详解","level":"3.1.10","depth":2,"path":"android/basis/IntentService.md","ref":"android/basis/IntentService.md","articles":[]},"previous":{"title":"AsyncTask详解","level":"3.1.8","depth":2,"path":"android/basis/asynctask.md","ref":"android/basis/asynctask.md","articles":[]},"dir":"ltr"},"config":{"plugins":["-lunr","-search","-highlight","-livereload","search-plus@^0.0.11","simple-page-toc@^0.1.1","github@^2.0.0","github-buttons@2.1.0","edit-link@^2.0.2","advanced-emoji@^0.2.1","anchors@^0.7.1","include-codeblock@^3.0.2","ace@^0.3.2","emphasize@^1.1.0","katex@^1.1.3","splitter@^0.0.8","tbfed-pagefooter@^0.0.1","expandable-chapters-small@^0.1.7","sectionx@^3.1.0","local-video@^1.0.1","anchor-navigation-ex@0.1.8","favicon@^0.0.2"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"tbfed-pagefooter":{"copyright":"Copyright © ruheng.com 2017","modify_label":"该文件修订时间：","modify_format":"YYYY-MM-DD HH:mm:ss"},"emphasize":{},"ace":{},"github":{"url":"https://github.com/LRH1993/android_interview"},"simple-page-toc":{"maxDepth":3,"skipFirstH1":true},"splitter":{},"katex":{},"fontsettings":{"theme":"white","family":"sans","size":2},"sectionx":{"tag":"b"},"anchor-navigation-ex":{"isRewritePageTitle":false,"tocLevel1Icon":"fa fa-hand-o-right","tocLevel2Icon":"fa fa-hand-o-right","tocLevel3Icon":"fa fa-hand-o-right"},"favicon":{"shortcut":"favicon.ico","bookmark":"favicon.ico"},"github-buttons":{"repo":"LRH1993/android_interview","types":["star"],"size":"small"},"expandable-chapters-small":{},"local-video":{},"advanced-emoji":{"embedEmojis":false},"include-codeblock":{"check":false,"edit":true,"fixlang":false,"lang":"","template":"ace","theme":"chrome","unindent":true},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":true,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"edit-link":{"label":"Edit This Page","base":"https://github.com/LRH1993/android_interview/edit/master"},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":true},"anchors":{},"search-plus":{}},"theme":"default","author":"ruheng","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"Android校招面试指南","language":"zh-hans","output.name":"site","links":{"sidebar":{"Home":"http://lruheng.com/"}},"gitbook":"3.2.3","description":"Android面试必备，记录自己的秋招之路"},"file":{"path":"android/basis/HandlerThread.md","mtime":"2017-08-29T09:03:47.000Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2017-10-16T12:05:21.906Z"},"basePath":"../..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"HandlerThread详解","level":"3.1.9","depth":2,"next":{"title":"IntentService详解","level":"3.1.10","depth":2,"path":"android/basis/IntentService.md","ref":"android/basis/IntentService.md","articles":[]},"previous":{"title":"AsyncTask详解","level":"3.1.8","depth":2,"path":"android/basis/asynctask.md","ref":"android/basis/asynctask.md","articles":[]},"dir":"ltr"},"config":{"plugins":["-lunr","-search","-livereload","search-plus@^0.0.11","simple-page-toc@^0.1.1","github@^2.0.0","github-buttons@2.1.0","edit-link@^2.0.2","advanced-emoji@^0.2.1","anchors@^0.7.1","include-codeblock@^3.0.2","ace@^0.3.2","emphasize@^1.1.0","katex@^1.1.3","splitter@^0.0.8","tbfed-pagefooter@^0.0.1","expandable-chapters-small@^0.1.7","sectionx@^3.1.0","local-video@^1.0.1","anchor-navigation-ex@0.1.8","favicon@^0.0.2"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"tbfed-pagefooter":{"copyright":"Copyright © ruheng.com 2017","modify_label":"该文件修订时间：","modify_format":"YYYY-MM-DD HH:mm:ss"},"emphasize":{},"ace":{},"github":{"url":"https://github.com/LRH1993/android_interview"},"simple-page-toc":{"maxDepth":3,"skipFirstH1":true},"splitter":{},"katex":{},"fontsettings":{"theme":"white","family":"sans","size":2},"sectionx":{"tag":"b"},"highlight":{},"anchor-navigation-ex":{"isRewritePageTitle":false,"tocLevel1Icon":"fa fa-hand-o-right","tocLevel2Icon":"fa fa-hand-o-right","tocLevel3Icon":"fa fa-hand-o-right"},"favicon":{"shortcut":"favicon.ico","bookmark":"favicon.ico"},"github-buttons":{"repo":"LRH1993/android_interview","types":["star"],"size":"small"},"expandable-chapters-small":{},"local-video":{},"advanced-emoji":{"embedEmojis":false},"include-codeblock":{"check":false,"edit":false,"fixlang":false,"lang":"","template":"default","theme":"chrome","unindent":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":true,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"edit-link":{"label":"Edit This Page","base":"https://github.com/LRH1993/android_interview/edit/master"},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":true},"anchors":{},"search-plus":{}},"theme":"default","author":"ruheng","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"Android校招面试指南","language":"zh-hans","output.name":"site","links":{"sidebar":{"Home":"http://lruheng.com/"}},"gitbook":"3.2.3","description":"Android面试必备，记录自己的秋招之路"},"file":{"path":"android/basis/HandlerThread.md","mtime":"2017-08-29T09:03:47.000Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2017-10-16T13:00:43.989Z"},"basePath":"../..","book":{"language":""}});
         });
     </script>
 </div>

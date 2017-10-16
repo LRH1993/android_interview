@@ -69,6 +69,10 @@
                 
             
                 
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
                 <link rel="stylesheet" href="../../gitbook/gitbook-plugin-fontsettings/website.css">
                 
             
@@ -3735,11 +3739,11 @@
 <p>&#x56FE;&#x4E2D;&#x7684;Client,Server,Service Manager&#x4E4B;&#x95F4;&#x4EA4;&#x4E92;&#x90FD;&#x662F;&#x865A;&#x7EBF;&#x8868;&#x793A;&#xFF0C;&#x662F;&#x7531;&#x4E8E;&#x5B83;&#x4EEC;&#x5F7C;&#x6B64;&#x4E4B;&#x95F4;&#x4E0D;&#x662F;&#x76F4;&#x63A5;&#x4EA4;&#x4E92;&#x7684;&#xFF0C;&#x800C;&#x662F;&#x90FD;&#x901A;&#x8FC7;&#x4E0E;Binder&#x9A71;&#x52A8;&#x8FDB;&#x884C;&#x4EA4;&#x4E92;&#x7684;&#xFF0C;&#x4ECE;&#x800C;&#x5B9E;&#x73B0;IPC&#x901A;&#x4FE1;&#x65B9;&#x5F0F;&#x3002;&#x5176;&#x4E2D;Binder&#x9A71;&#x52A8;&#x4F4D;&#x4E8E;&#x5185;&#x6838;&#x7A7A;&#x95F4;&#xFF0C;Client,Server,Service Manager&#x4F4D;&#x4E8E;&#x7528;&#x6237;&#x7A7A;&#x95F4;&#x3002;Binder&#x9A71;&#x52A8;&#x548C;Service Manager&#x53EF;&#x4EE5;&#x770B;&#x505A;&#x662F;Android&#x5E73;&#x53F0;&#x7684;&#x57FA;&#x7840;&#x67B6;&#x6784;&#xFF0C;&#x800C;Client&#x548C;Server&#x662F;Android&#x7684;&#x5E94;&#x7528;&#x5C42;&#xFF0C;&#x5F00;&#x53D1;&#x4EBA;&#x5458;&#x53EA;&#x9700;&#x81EA;&#x5B9A;&#x4E49;&#x5B9E;&#x73B0;client&#x3001;Server&#x7AEF;&#xFF0C;&#x501F;&#x52A9;Android&#x7684;&#x57FA;&#x672C;&#x5E73;&#x53F0;&#x67B6;&#x6784;&#x4FBF;&#x53EF;&#x4EE5;&#x76F4;&#x63A5;&#x8FDB;&#x884C;IPC&#x901A;&#x4FE1;&#x3002;</p>
 <p><strong>Binder&#x8FD0;&#x884C;&#x7684;&#x5B9E;&#x4F8B;&#x89E3;&#x91CA;</strong></p>
 <p>&#x9996;&#x5148;&#x6211;&#x4EEC;&#x770B;&#x770B;&#x6211;&#x4EEC;&#x7684;&#x7A0B;&#x5E8F;&#x8DE8;&#x8FDB;&#x7A0B;&#x8C03;&#x7528;&#x7CFB;&#x7EDF;&#x670D;&#x52A1;&#x7684;&#x7B80;&#x5355;&#x793A;&#x4F8B;&#xFF0C;&#x5B9E;&#x73B0;&#x6D6E;&#x52A8;&#x7A97;&#x53E3;&#x90E8;&#x5206;&#x4EE3;&#x7801;&#xFF1A;</p>
-<pre><code class="lang-java">//&#x83B7;&#x53D6;WindowManager&#x670D;&#x52A1;&#x5F15;&#x7528;
+<pre><code class="lang-java"><span class="hljs-comment">//&#x83B7;&#x53D6;WindowManager&#x670D;&#x52A1;&#x5F15;&#x7528;</span>
 WindowManager wm = (WindowManager)getSystemService(getApplication().WINDOW_SERVICE);  
-//&#x5E03;&#x5C40;&#x53C2;&#x6570;layoutParams&#x76F8;&#x5173;&#x8BBE;&#x7F6E;&#x7565;...
-View view=LayoutInflater.from(getApplication()).inflate(R.layout.float_layout, null);  
-//&#x6DFB;&#x52A0;view
+<span class="hljs-comment">//&#x5E03;&#x5C40;&#x53C2;&#x6570;layoutParams&#x76F8;&#x5173;&#x8BBE;&#x7F6E;&#x7565;...</span>
+View view=LayoutInflater.from(getApplication()).inflate(R.layout.float_layout, <span class="hljs-keyword">null</span>);  
+<span class="hljs-comment">//&#x6DFB;&#x52A0;view</span>
 wm.addView(view, layoutParams);
 </code></pre>
 <p><strong>&#x6CE8;&#x518C;&#x670D;&#x52A1;(addService)&#xFF1A;</strong>&#x5728;Android&#x5F00;&#x673A;&#x542F;&#x52A8;&#x8FC7;&#x7A0B;&#x4E2D;&#xFF0C;Android&#x4F1A;&#x521D;&#x59CB;&#x5316;&#x7CFB;&#x7EDF;&#x7684;&#x5404;&#x79CD;Service&#xFF0C;&#x5E76;&#x5C06;&#x8FD9;&#x4E9B;Service&#x5411;ServiceManager&#x6CE8;&#x518C;&#xFF08;&#x5373;&#x8BA9;ServiceManager&#x7BA1;&#x7406;&#xFF09;&#x3002;&#x8FD9;&#x4E00;&#x6B65;&#x662F;&#x7CFB;&#x7EDF;&#x81EA;&#x52A8;&#x5B8C;&#x6210;&#x7684;&#x3002;</p>
@@ -3766,97 +3770,97 @@ wm.addView(view, layoutParams);
 &#x901A;&#x8FC7;&#x5982;&#x4E0B;&#x65B9;&#x5F0F;&#x65B0;&#x5EFA;&#x4E00;&#x4E2A;AIDL&#x6587;&#x4EF6;</p>
 <p><img src="http://upload-images.jianshu.io/upload_images/3985563-4ea35902ebf6fa51.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="img"></p>
 <p><strong>&#x9ED8;&#x8BA4;&#x751F;&#x6210;&#x683C;&#x5F0F;</strong></p>
-<pre><code class="lang-java">interface IBookManager {
-    /**
+<pre><code class="lang-java"><span class="hljs-class"><span class="hljs-keyword">interface</span> <span class="hljs-title">IBookManager</span> </span>{
+    <span class="hljs-comment">/**
      * Demonstrates some basic types that you can use as parameters
      * and return values in AIDL.
-     */
-    void basicTypes(int anInt, long aLong, boolean aBoolean, float aFloat,
-            double aDouble, String aString);
+     */</span>
+    <span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">basicTypes</span><span class="hljs-params">(<span class="hljs-keyword">int</span> anInt, <span class="hljs-keyword">long</span> aLong, <span class="hljs-keyword">boolean</span> aBoolean, <span class="hljs-keyword">float</span> aFloat,
+            <span class="hljs-keyword">double</span> aDouble, String aString)</span></span>;
 }
 </code></pre>
 <p>&#x9ED8;&#x8BA4;&#x5982;&#x4E0B;&#x683C;&#x5F0F;&#xFF0C;&#x7531;&#x4E8E;&#x672C;&#x4F8B;&#x8981;&#x64CD;&#x4F5C;Book&#x7C7B;&#xFF0C;&#x5B9E;&#x73B0;&#x4E24;&#x4E2A;&#x65B9;&#x6CD5;&#xFF0C;&#x6DFB;&#x52A0;&#x4E66;&#x672C;&#x548C;&#x8FD4;&#x56DE;&#x4E66;&#x672C;&#x5217;&#x8868;&#x3002;</p>
 <p><strong>&#x5B9A;&#x4E49;&#x4E00;&#x4E2A;Book&#x7C7B;&#xFF0C;&#x5B9E;&#x73B0;Parcelable&#x63A5;&#x53E3;&#x3002;</strong></p>
-<pre><code class="lang-java">public class Book implements Parcelable {
-    public int bookId;
-    public String bookName;
+<pre><code class="lang-java"><span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Book</span> <span class="hljs-keyword">implements</span> <span class="hljs-title">Parcelable</span> </span>{
+    <span class="hljs-keyword">public</span> <span class="hljs-keyword">int</span> bookId;
+    <span class="hljs-keyword">public</span> String bookName;
 
-    public Book() {
+    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-title">Book</span><span class="hljs-params">()</span> </span>{
     }
 
-    public Book(int bookId, String bookName) {
-        this.bookId = bookId;
-        this.bookName = bookName;
+    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-title">Book</span><span class="hljs-params">(<span class="hljs-keyword">int</span> bookId, String bookName)</span> </span>{
+        <span class="hljs-keyword">this</span>.bookId = bookId;
+        <span class="hljs-keyword">this</span>.bookName = bookName;
     }
 
-    public int getBookId() {
-        return bookId;
+    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">int</span> <span class="hljs-title">getBookId</span><span class="hljs-params">()</span> </span>{
+        <span class="hljs-keyword">return</span> bookId;
     }
 
-    public void setBookId(int bookId) {
-        this.bookId = bookId;
+    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">setBookId</span><span class="hljs-params">(<span class="hljs-keyword">int</span> bookId)</span> </span>{
+        <span class="hljs-keyword">this</span>.bookId = bookId;
     }
 
-    public String getBookName() {
-        return bookName;
+    <span class="hljs-function"><span class="hljs-keyword">public</span> String <span class="hljs-title">getBookName</span><span class="hljs-params">()</span> </span>{
+        <span class="hljs-keyword">return</span> bookName;
     }
 
-    public void setBookName(String bookName) {
-        this.bookName = bookName;
+    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">setBookName</span><span class="hljs-params">(String bookName)</span> </span>{
+        <span class="hljs-keyword">this</span>.bookName = bookName;
     }
 
-    @Override
-    public int describeContents() {
-        return 0;
+    <span class="hljs-meta">@Override</span>
+    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">int</span> <span class="hljs-title">describeContents</span><span class="hljs-params">()</span> </span>{
+        <span class="hljs-keyword">return</span> <span class="hljs-number">0</span>;
     }
 
-    @Override
-    public void writeToParcel(Parcel dest, int flags) {
-        dest.writeInt(this.bookId);
-        dest.writeString(this.bookName);
+    <span class="hljs-meta">@Override</span>
+    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">writeToParcel</span><span class="hljs-params">(Parcel dest, <span class="hljs-keyword">int</span> flags)</span> </span>{
+        dest.writeInt(<span class="hljs-keyword">this</span>.bookId);
+        dest.writeString(<span class="hljs-keyword">this</span>.bookName);
     }
 
-    protected Book(Parcel in) {
-        this.bookId = in.readInt();
-        this.bookName = in.readString();
+    <span class="hljs-function"><span class="hljs-keyword">protected</span> <span class="hljs-title">Book</span><span class="hljs-params">(Parcel in)</span> </span>{
+        <span class="hljs-keyword">this</span>.bookId = in.readInt();
+        <span class="hljs-keyword">this</span>.bookName = in.readString();
     }
 
-    public static final Parcelable.Creator&lt;Book&gt; CREATOR = new Parcelable.Creator&lt;Book&gt;() {
-        @Override
-        public Book createFromParcel(Parcel source) {
-            return new Book(source);
+    <span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">final</span> Parcelable.Creator&lt;Book&gt; CREATOR = <span class="hljs-keyword">new</span> Parcelable.Creator&lt;Book&gt;() {
+        <span class="hljs-meta">@Override</span>
+        <span class="hljs-function"><span class="hljs-keyword">public</span> Book <span class="hljs-title">createFromParcel</span><span class="hljs-params">(Parcel source)</span> </span>{
+            <span class="hljs-keyword">return</span> <span class="hljs-keyword">new</span> Book(source);
         }
 
-        @Override
-        public Book[] newArray(int size) {
-            return new Book[size];
+        <span class="hljs-meta">@Override</span>
+        <span class="hljs-keyword">public</span> Book[] newArray(<span class="hljs-keyword">int</span> size) {
+            <span class="hljs-keyword">return</span> <span class="hljs-keyword">new</span> Book[size];
         }
     };
 }
 </code></pre>
 <p>&#x7531;&#x4E8E;AIDL&#x53EA;&#x652F;&#x6301;&#x6570;&#x636E;&#x7C7B;&#x578B;:&#x57FA;&#x672C;&#x7C7B;&#x578B;&#xFF08;int,long,char,boolean&#x7B49;&#xFF09;,String,CharSequence,List,Map&#xFF0C;&#x5176;&#x4ED6;&#x7C7B;&#x578B;&#x5FC5;&#x987B;&#x4F7F;&#x7528;import&#x5BFC;&#x5165;&#xFF0C;&#x5373;&#x4F7F;&#x5B83;&#x4EEC;&#x53EF;&#x80FD;&#x5728;&#x540C;&#x4E00;&#x4E2A;&#x5305;&#x91CC;&#xFF0C;&#x6BD4;&#x5982;&#x4E0A;&#x9762;&#x7684;Book&#x3002;</p>
 <p><strong>&#x6700;&#x7EC8;IBookManager.aidl &#x7684;&#x5B9E;&#x73B0;</strong></p>
-<pre><code class="lang-java">// Declare any non-default types here with import statements
-import com.lvr.aidldemo.Book;
+<pre><code class="lang-java"><span class="hljs-comment">// Declare any non-default types here with import statements</span>
+<span class="hljs-keyword">import</span> com.lvr.aidldemo.Book;
 
-interface IBookManager {
-    /**
+<span class="hljs-class"><span class="hljs-keyword">interface</span> <span class="hljs-title">IBookManager</span> </span>{
+    <span class="hljs-comment">/**
      * Demonstrates some basic types that you can use as parameters
      * and return values in AIDL.
-     */
-    void basicTypes(int anInt, long aLong, boolean aBoolean, float aFloat,
-            double aDouble, String aString);
+     */</span>
+    <span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">basicTypes</span><span class="hljs-params">(<span class="hljs-keyword">int</span> anInt, <span class="hljs-keyword">long</span> aLong, <span class="hljs-keyword">boolean</span> aBoolean, <span class="hljs-keyword">float</span> aFloat,
+            <span class="hljs-keyword">double</span> aDouble, String aString)</span></span>;
 
-    void addBook(in Book book);
+    <span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">addBook</span><span class="hljs-params">(in Book book)</span></span>;
 
-    List&lt;Book&gt; getBookList();
+    <span class="hljs-function">List&lt;Book&gt; <span class="hljs-title">getBookList</span><span class="hljs-params">()</span></span>;
 
 }
 </code></pre>
 <p><strong>&#x6CE8;&#x610F;&#xFF1A;&#x5982;&#x679C;&#x81EA;&#x5B9A;&#x4E49;&#x7684;Parcelable&#x5BF9;&#x8C61;&#xFF0C;&#x5FC5;&#x987B;&#x521B;&#x5EFA;&#x4E00;&#x4E2A;&#x548C;&#x5B83;&#x540C;&#x540D;&#x7684;AIDL&#x6587;&#x4EF6;&#xFF0C;&#x5E76;&#x5728;&#x5176;&#x4E2D;&#x58F0;&#x660E;&#x5B83;&#x4E3A;parcelable&#x7C7B;&#x578B;&#x3002;</strong></p>
 <p><strong>Book.aidl</strong></p>
-<pre><code class="lang-Java">// Book.aidl
-package com.lvr.aidldemo;
+<pre><code class="lang-Java"><span class="hljs-comment">// Book.aidl</span>
+<span class="hljs-keyword">package</span> com.lvr.aidldemo;
 
 parcelable Book;
 </code></pre>
@@ -3866,34 +3870,34 @@ parcelable Book;
 <p><img src="http://upload-images.jianshu.io/upload_images/3985563-53d6a0fdeafefa74.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="img"></p>
 <p>&#x5176;&#x4E2D;&#x8BE5;&#x63A5;&#x53E3;&#x4E2D;&#x6709;&#x4E2A;&#x91CD;&#x8981;&#x7684;&#x5185;&#x90E8;&#x7C7B;Stub &#xFF0C;&#x7EE7;&#x627F;&#x4E86;Binder &#x7C7B;&#xFF0C;&#x540C;&#x65F6;&#x5B9E;&#x73B0;&#x4E86;IBookManager&#x63A5;&#x53E3;&#x3002;
 &#x8FD9;&#x4E2A;&#x5185;&#x90E8;&#x7C7B;&#x662F;&#x63A5;&#x4E0B;&#x6765;&#x7684;&#x5173;&#x952E;&#x5185;&#x5BB9;&#x3002;</p>
-<pre><code class="lang-java">public static abstract class Stub extends android.os.Binder implements com.lvr.aidldemo.IBookManager{}
+<pre><code class="lang-java"><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">abstract</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Stub</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">android</span>.<span class="hljs-title">os</span>.<span class="hljs-title">Binder</span> <span class="hljs-keyword">implements</span> <span class="hljs-title">com</span>.<span class="hljs-title">lvr</span>.<span class="hljs-title">aidldemo</span>.<span class="hljs-title">IBookManager</span></span>{}
 </code></pre>
 <p><strong>&#x670D;&#x52A1;&#x7AEF;</strong>
 &#x670D;&#x52A1;&#x7AEF;&#x9996;&#x5148;&#x8981;&#x521B;&#x5EFA;&#x4E00;&#x4E2A;Service&#x7528;&#x6765;&#x76D1;&#x542C;&#x5BA2;&#x6237;&#x7AEF;&#x7684;&#x8FDE;&#x63A5;&#x8BF7;&#x6C42;&#x3002;&#x7136;&#x540E;&#x5728;Service&#x4E2D;&#x5B9E;&#x73B0;Stub &#x7C7B;&#xFF0C;&#x5E76;&#x5B9A;&#x4E49;&#x63A5;&#x53E3;&#x4E2D;&#x65B9;&#x6CD5;&#x7684;&#x5177;&#x4F53;&#x5B9E;&#x73B0;&#x3002;</p>
-<pre><code class="lang-java">//&#x5B9E;&#x73B0;&#x4E86;AIDL&#x7684;&#x62BD;&#x8C61;&#x51FD;&#x6570;
-    private IBookManager.Stub mbinder = new IBookManager.Stub() {
-        @Override
-        public void basicTypes(int anInt, long aLong, boolean aBoolean, float aFloat, double aDouble, String aString) throws RemoteException {
-            //&#x4EC0;&#x4E48;&#x4E5F;&#x4E0D;&#x505A;
+<pre><code class="lang-java"><span class="hljs-comment">//&#x5B9E;&#x73B0;&#x4E86;AIDL&#x7684;&#x62BD;&#x8C61;&#x51FD;&#x6570;</span>
+    <span class="hljs-keyword">private</span> IBookManager.Stub mbinder = <span class="hljs-keyword">new</span> IBookManager.Stub() {
+        <span class="hljs-meta">@Override</span>
+        <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">basicTypes</span><span class="hljs-params">(<span class="hljs-keyword">int</span> anInt, <span class="hljs-keyword">long</span> aLong, <span class="hljs-keyword">boolean</span> aBoolean, <span class="hljs-keyword">float</span> aFloat, <span class="hljs-keyword">double</span> aDouble, String aString)</span> <span class="hljs-keyword">throws</span> RemoteException </span>{
+            <span class="hljs-comment">//&#x4EC0;&#x4E48;&#x4E5F;&#x4E0D;&#x505A;</span>
         }
 
-        @Override
-        public void addBook(Book book) throws RemoteException {
-            //&#x6DFB;&#x52A0;&#x4E66;&#x672C;
-            if(!mBookList.contains(book)){
+        <span class="hljs-meta">@Override</span>
+        <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">addBook</span><span class="hljs-params">(Book book)</span> <span class="hljs-keyword">throws</span> RemoteException </span>{
+            <span class="hljs-comment">//&#x6DFB;&#x52A0;&#x4E66;&#x672C;</span>
+            <span class="hljs-keyword">if</span>(!mBookList.contains(book)){
                 mBookList.add(book);
             }
         }
 
-        @Override
-        public List&lt;Book&gt; getBookList() throws RemoteException {
-            return mBookList;
+        <span class="hljs-meta">@Override</span>
+        <span class="hljs-function"><span class="hljs-keyword">public</span> List&lt;Book&gt; <span class="hljs-title">getBookList</span><span class="hljs-params">()</span> <span class="hljs-keyword">throws</span> RemoteException </span>{
+            <span class="hljs-keyword">return</span> mBookList;
         }
     };
 </code></pre>
 <p>&#x5F53;&#x5BA2;&#x6237;&#x7AEF;&#x8FDE;&#x63A5;&#x670D;&#x52A1;&#x7AEF;&#xFF0C;&#x670D;&#x52A1;&#x7AEF;&#x5C31;&#x4F1A;&#x8C03;&#x7528;&#x5982;&#x4E0B;&#x65B9;&#x6CD5;&#xFF1A;</p>
-<pre><code class="lang-java"> public IBinder onBind(Intent intent) {
-        return mbinder;
+<pre><code class="lang-java"> <span class="hljs-function"><span class="hljs-keyword">public</span> IBinder <span class="hljs-title">onBind</span><span class="hljs-params">(Intent intent)</span> </span>{
+        <span class="hljs-keyword">return</span> mbinder;
     }
 </code></pre>
 <p>&#x5C31;&#x4F1A;&#x628A;Stub&#x5B9E;&#x73B0;&#x5BF9;&#x8C61;&#x8FD4;&#x56DE;&#x7ED9;&#x5BA2;&#x6237;&#x7AEF;&#xFF0C;&#x8BE5;&#x5BF9;&#x8C61;&#x662F;&#x4E2A;Binder&#x5BF9;&#x8C61;&#xFF0C;&#x53EF;&#x4EE5;&#x5B9E;&#x73B0;&#x8FDB;&#x7A0B;&#x95F4;&#x901A;&#x4FE1;&#x3002;
@@ -3911,19 +3915,19 @@ parcelable Book;
 <p><strong>&#x5BA2;&#x6237;&#x7AEF;</strong></p>
 <p><strong>&#x9996;&#x5148;&#x5C06;&#x670D;&#x52A1;&#x7AEF;&#x5DE5;&#x7A0B;&#x4E2D;&#x7684;aidl&#x6587;&#x4EF6;&#x5939;&#x4E0B;&#x7684;&#x5185;&#x5BB9;&#x6574;&#x4E2A;&#x62F7;&#x8D1D;&#x5230;&#x5BA2;&#x6237;&#x7AEF;&#x5DE5;&#x7A0B;&#x7684;&#x5BF9;&#x5E94;&#x4F4D;&#x7F6E;&#x4E0B;&#xFF0C;&#x7531;&#x4E8E;&#x672C;&#x4F8B;&#x7684;&#x4F7F;&#x7528;&#x5728;&#x4E00;&#x4E2A;&#x5E94;&#x7528;&#x4E2D;&#xFF0C;&#x5C31;&#x4E0D;&#x9700;&#x8981;&#x62F7;&#x8D1D;&#x4E86;&#xFF0C;&#x5176;&#x4ED6;&#x60C5;&#x51B5;&#x4E00;&#x5B9A;&#x4E0D;&#x8981;&#x5FD8;&#x8BB0;&#x8FD9;&#x4E00;&#x6B65;&#x3002;</strong></p>
 <p>&#x5BA2;&#x6237;&#x7AEF;&#x9700;&#x8981;&#x505A;&#x7684;&#x4E8B;&#x60C5;&#x6BD4;&#x8F83;&#x7B80;&#x5355;&#xFF0C;&#x9996;&#x5148;&#x9700;&#x8981;&#x7ED1;&#x5B9A;&#x670D;&#x52A1;&#x7AEF;&#x7684;Service&#x3002;</p>
-<pre><code class="lang-java">                Intent intentService = new Intent();
-                intentService.setAction(&quot;com.lvr.aidldemo.MyService&quot;);
+<pre><code class="lang-java">                Intent intentService = <span class="hljs-keyword">new</span> Intent();
+                intentService.setAction(<span class="hljs-string">&quot;com.lvr.aidldemo.MyService&quot;</span>);
                 intentService.setPackage(getPackageName());
                 intentService.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
-                MyClient.this.bindService(intentService, mServiceConnection, BIND_AUTO_CREATE);
-                Toast.makeText(getApplicationContext(),&quot;&#x7ED1;&#x5B9A;&#x4E86;&#x670D;&#x52A1;&quot;,Toast.LENGTH_SHORT).show();
+                MyClient.<span class="hljs-keyword">this</span>.bindService(intentService, mServiceConnection, BIND_AUTO_CREATE);
+                Toast.makeText(getApplicationContext(),<span class="hljs-string">&quot;&#x7ED1;&#x5B9A;&#x4E86;&#x670D;&#x52A1;&quot;</span>,Toast.LENGTH_SHORT).show();
 </code></pre>
 <p>&#x5C06;&#x670D;&#x52A1;&#x7AEF;&#x8FD4;&#x56DE;&#x7684;Binder&#x5BF9;&#x8C61;&#x8F6C;&#x6362;&#x6210;AIDL&#x63A5;&#x53E3;&#x6240;&#x5C5E;&#x7684;&#x7C7B;&#x578B;&#xFF0C;&#x63A5;&#x7740;&#x5C31;&#x53EF;&#x4EE5;&#x8C03;&#x7528;AIDL&#x4E2D;&#x7684;&#x65B9;&#x6CD5;&#x4E86;&#x3002;</p>
-<pre><code class="lang-java">              if(mIBookManager!=null){
-                    try {
-                        mIBookManager.addBook(new Book(18,&quot;&#x65B0;&#x6DFB;&#x52A0;&#x7684;&#x4E66;&quot;));
-                        Toast.makeText(getApplicationContext(),mIBookManager.getBookList().size()+&quot;&quot;,Toast.LENGTH_SHORT).show();
-                    } catch (RemoteException e) {
+<pre><code class="lang-java">              <span class="hljs-keyword">if</span>(mIBookManager!=<span class="hljs-keyword">null</span>){
+                    <span class="hljs-keyword">try</span> {
+                        mIBookManager.addBook(<span class="hljs-keyword">new</span> Book(<span class="hljs-number">18</span>,<span class="hljs-string">&quot;&#x65B0;&#x6DFB;&#x52A0;&#x7684;&#x4E66;&quot;</span>));
+                        Toast.makeText(getApplicationContext(),mIBookManager.getBookList().size()+<span class="hljs-string">&quot;&quot;</span>,Toast.LENGTH_SHORT).show();
+                    } <span class="hljs-keyword">catch</span> (RemoteException e) {
                         e.printStackTrace();
                     }
                 }
@@ -3937,64 +3941,64 @@ parcelable Book;
 <p>&#x90A3;&#x4E48;&#x5982;&#x4F55;&#x7EF4;&#x62A4;&#x5B9E;&#x73B0;&#x4E86;IInterface&#x63A5;&#x53E3;&#x7684;&#x5BF9;&#x8C61;&#x548C;&#x83B7;&#x53D6;Binder&#x5BF9;&#x8C61;&#x5462;&#xFF1F;</p>
 <p><strong>&#x670D;&#x52A1;&#x7AEF;&#x83B7;&#x53D6;Binder&#x5BF9;&#x8C61;&#x5E76;&#x4FDD;&#x5B58;IInterface&#x63A5;&#x53E3;&#x5BF9;&#x8C61;</strong>
 Binder&#x4E2D;&#x4E24;&#x4E2A;&#x5173;&#x952E;&#x65B9;&#x6CD5;&#xFF1A;</p>
-<pre><code class="lang-java"> public class Binder implement IBinder{
-        void attachInterface(IInterface plus, String descriptor)
-        IInterface queryLocalInterface(Stringdescriptor) //&#x4ECE;IBinder&#x4E2D;&#x7EE7;&#x627F;&#x800C;&#x6765;
+<pre><code class="lang-java"> <span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Binder</span> <span class="hljs-title">implement</span> <span class="hljs-title">IBinder</span></span>{
+        <span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">attachInterface</span><span class="hljs-params">(IInterface plus, String descriptor)</span>
+        IInterface <span class="hljs-title">queryLocalInterface</span><span class="hljs-params">(Stringdescriptor)</span> <span class="hljs-comment">//&#x4ECE;IBinder&#x4E2D;&#x7EE7;&#x627F;&#x800C;&#x6765;</span>
       ..........................
 }
-</code></pre>
+</span></code></pre>
 <p>Binder&#x5177;&#x6709;&#x88AB;&#x8DE8;&#x8FDB;&#x7A0B;&#x4F20;&#x8F93;&#x7684;&#x80FD;&#x529B;&#x662F;&#x56E0;&#x4E3A;&#x5B83;&#x5B9E;&#x73B0;&#x4E86;IBinder&#x63A5;&#x53E3;&#x3002;&#x7CFB;&#x7EDF;&#x4F1A;&#x4E3A;&#x6BCF;&#x4E2A;&#x5B9E;&#x73B0;&#x4E86;&#x8BE5;&#x63A5;&#x53E3;&#x7684;&#x5BF9;&#x8C61;&#x63D0;&#x4F9B;&#x8DE8;&#x8FDB;&#x7A0B;&#x4F20;&#x8F93;&#xFF0C;&#x8FD9;&#x662F;&#x7CFB;&#x7EDF;&#x7ED9;&#x6211;&#x4EEC;&#x7684;&#x4E00;&#x4E2A;&#x5F88;&#x5927;&#x7684;&#x798F;&#x5229;&#x3002;</p>
 <p><strong>Binder&#x5177;&#x6709;&#x7684;&#x5B8C;&#x6210;&#x7279;&#x5B9A;&#x4EFB;&#x52A1;&#x7684;&#x80FD;&#x529B;&#x662F;&#x901A;&#x8FC7;&#x5B83;&#x7684;IInterface&#x7684;&#x5BF9;&#x8C61;&#x83B7;&#x5F97;&#x7684;</strong>&#xFF0C;&#x6211;&#x4EEC;&#x53EF;&#x4EE5;&#x7B80;&#x5355;&#x7406;&#x89E3;attachInterface&#x65B9;&#x6CD5;&#x4F1A;&#x5C06;&#xFF08;descriptor&#xFF0C;plus&#xFF09;&#x4F5C;&#x4E3A;&#xFF08;key,value&#xFF09;&#x5BF9;&#x5B58;&#x5165;Binder&#x5BF9;&#x8C61;&#x4E2D;&#x7684;&#x4E00;&#x4E2A;Map<string,iinterface>&#x5BF9;&#x8C61;&#x4E2D;&#xFF0C;Binder&#x5BF9;&#x8C61;&#x53EF;&#x901A;&#x8FC7;attachInterface&#x65B9;&#x6CD5;&#x6301;&#x6709;&#x4E00;&#x4E2A;IInterface&#x5BF9;&#x8C61;&#xFF08;&#x5373;plus&#xFF09;&#x7684;&#x5F15;&#x7528;&#xFF0C;&#x5E76;&#x4F9D;&#x9760;&#x5B83;&#x83B7;&#x5F97;&#x5B8C;&#x6210;&#x7279;&#x5B9A;&#x4EFB;&#x52A1;&#x7684;&#x80FD;&#x529B;&#x3002;queryLocalInterface&#x65B9;&#x6CD5;&#x53EF;&#x4EE5;&#x8BA4;&#x4E3A;&#x662F;&#x6839;&#x636E;key&#x503C;&#xFF08;&#x5373;&#x53C2;&#x6570; descriptor&#xFF09;&#x67E5;&#x627E;&#x76F8;&#x5E94;&#x7684;IInterface&#x5BF9;&#x8C61;&#x3002;</string,iinterface></p>
 <p>&#x5728;&#x670D;&#x52A1;&#x7AEF;&#x8FDB;&#x7A0B;&#xFF0C;&#x901A;&#x8FC7;&#x5B9E;&#x73B0;<code>private IBookManager.Stub mbinder = new IBookManager.Stub() {}</code>&#x62BD;&#x8C61;&#x7C7B;&#xFF0C;&#x83B7;&#x5F97;Binder&#x5BF9;&#x8C61;&#x3002;
 &#x5E76;&#x4FDD;&#x5B58;&#x4E86;IInterface&#x5BF9;&#x8C61;&#x3002;</p>
-<pre><code class="lang-java">public Stub()
-{
-this.attachInterface(this, DESCRIPTOR);
+<pre><code class="lang-java"><span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-title">Stub</span><span class="hljs-params">()</span>
+</span>{
+<span class="hljs-keyword">this</span>.attachInterface(<span class="hljs-keyword">this</span>, DESCRIPTOR);
 }
 </code></pre>
 <p><strong>&#x5BA2;&#x6237;&#x7AEF;&#x83B7;&#x53D6;Binder&#x5BF9;&#x8C61;&#x5E76;&#x83B7;&#x53D6;IInterface&#x63A5;&#x53E3;&#x5BF9;&#x8C61;</strong></p>
 <p>&#x901A;&#x8FC7;bindService&#x83B7;&#x5F97;Binder&#x5BF9;&#x8C61;</p>
-<pre><code class="lang-java"> MyClient.this.bindService(intentService, mServiceConnection, BIND_AUTO_CREATE);
+<pre><code class="lang-java"> MyClient.<span class="hljs-keyword">this</span>.bindService(intentService, mServiceConnection, BIND_AUTO_CREATE);
 </code></pre>
 <p>&#x7136;&#x540E;&#x901A;&#x8FC7;Binder&#x5BF9;&#x8C61;&#x83B7;&#x5F97;IInterface&#x5BF9;&#x8C61;&#x3002;</p>
-<pre><code class="lang-java">private ServiceConnection mServiceConnection = new ServiceConnection() {
-        @Override
-        public void onServiceConnected(ComponentName name, IBinder binder) {
-            //&#x901A;&#x8FC7;&#x670D;&#x52A1;&#x7AEF;onBind&#x65B9;&#x6CD5;&#x8FD4;&#x56DE;&#x7684;binder&#x5BF9;&#x8C61;&#x5F97;&#x5230;IBookManager&#x7684;&#x5B9E;&#x4F8B;&#xFF0C;&#x5F97;&#x5230;&#x5B9E;&#x4F8B;&#x5C31;&#x53EF;&#x4EE5;&#x8C03;&#x7528;&#x5B83;&#x7684;&#x65B9;&#x6CD5;&#x4E86;
+<pre><code class="lang-java"><span class="hljs-keyword">private</span> ServiceConnection mServiceConnection = <span class="hljs-keyword">new</span> ServiceConnection() {
+        <span class="hljs-meta">@Override</span>
+        <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">onServiceConnected</span><span class="hljs-params">(ComponentName name, IBinder binder)</span> </span>{
+            <span class="hljs-comment">//&#x901A;&#x8FC7;&#x670D;&#x52A1;&#x7AEF;onBind&#x65B9;&#x6CD5;&#x8FD4;&#x56DE;&#x7684;binder&#x5BF9;&#x8C61;&#x5F97;&#x5230;IBookManager&#x7684;&#x5B9E;&#x4F8B;&#xFF0C;&#x5F97;&#x5230;&#x5B9E;&#x4F8B;&#x5C31;&#x53EF;&#x4EE5;&#x8C03;&#x7528;&#x5B83;&#x7684;&#x65B9;&#x6CD5;&#x4E86;</span>
             mIBookManager = IBookManager.Stub.asInterface(binder);
         }
 
-        @Override
-        public void onServiceDisconnected(ComponentName name) {
-            mIBookManager = null;
+        <span class="hljs-meta">@Override</span>
+        <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">onServiceDisconnected</span><span class="hljs-params">(ComponentName name)</span> </span>{
+            mIBookManager = <span class="hljs-keyword">null</span>;
         }
     };
 </code></pre>
 <p>&#x5176;&#x4E2D;<code>asInterface(binder)</code>&#x65B9;&#x6CD5;&#x5982;&#x4E0B;&#xFF1A;</p>
-<pre><code class="lang-java">public static com.lvr.aidldemo.IBookManager asInterface(android.os.IBinder obj)
-{
-if ((obj==null)) {
-return null;
+<pre><code class="lang-java"><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> com.lvr.aidldemo.<span class="hljs-function">IBookManager <span class="hljs-title">asInterface</span><span class="hljs-params">(android.os.IBinder obj)</span>
+</span>{
+<span class="hljs-keyword">if</span> ((obj==<span class="hljs-keyword">null</span>)) {
+<span class="hljs-keyword">return</span> <span class="hljs-keyword">null</span>;
 }
 android.os.IInterface iin = obj.queryLocalInterface(DESCRIPTOR);
-if (((iin!=null)&amp;&amp;(iin instanceof com.lvr.aidldemo.IBookManager))) {
-return ((com.lvr.aidldemo.IBookManager)iin);
+<span class="hljs-keyword">if</span> (((iin!=<span class="hljs-keyword">null</span>)&amp;&amp;(iin <span class="hljs-keyword">instanceof</span> com.lvr.aidldemo.IBookManager))) {
+<span class="hljs-keyword">return</span> ((com.lvr.aidldemo.IBookManager)iin);
 }
-return new com.lvr.aidldemo.IBookManager.Stub.Proxy(obj);
+<span class="hljs-keyword">return</span> <span class="hljs-keyword">new</span> com.lvr.aidldemo.IBookManager.Stub.Proxy(obj);
 }
 </code></pre>
 <p>&#x5148;&#x901A;&#x8FC7;<code>queryLocalInterface(DESCRIPTOR);</code>&#x67E5;&#x627E;&#x5230;&#x5BF9;&#x5E94;&#x7684;IInterface&#x5BF9;&#x8C61;&#xFF0C;&#x7136;&#x540E;&#x5224;&#x65AD;&#x5BF9;&#x8C61;&#x7684;&#x7C7B;&#x578B;&#xFF0C;&#x5982;&#x679C;&#x662F;&#x540C;&#x4E00;&#x4E2A;&#x8FDB;&#x7A0B;&#x8C03;&#x7528;&#x5219;&#x8FD4;&#x56DE;IBookManager&#x5BF9;&#x8C61;&#xFF0C;&#x7531;&#x4E8E;&#x662F;&#x8DE8;&#x8FDB;&#x7A0B;&#x8C03;&#x7528;&#x5219;&#x8FD4;&#x56DE;Proxy&#x5BF9;&#x8C61;&#xFF0C;&#x5373;Binder&#x7C7B;&#x7684;&#x4EE3;&#x7406;&#x5BF9;&#x8C61;&#x3002;</p>
 <h4 id="&#x2461;&#x8C03;&#x7528;&#x670D;&#x52A1;&#x7AEF;&#x65B9;&#x6CD5;"><a name="&#x2461;&#x8C03;&#x7528;&#x670D;&#x52A1;&#x7AEF;&#x65B9;&#x6CD5;" class="anchor-navigation-ex-anchor" href="#&#x2461;&#x8C03;&#x7528;&#x670D;&#x52A1;&#x7AEF;&#x65B9;&#x6CD5;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x2461;.&#x8C03;&#x7528;&#x670D;&#x52A1;&#x7AEF;&#x65B9;&#x6CD5;</h4>
 <p>&#x83B7;&#x5F97;&#x4E86;Binder&#x7C7B;&#x7684;&#x4EE3;&#x7406;&#x5BF9;&#x8C61;&#xFF0C;&#x5E76;&#x4E14;&#x901A;&#x8FC7;&#x4EE3;&#x7406;&#x5BF9;&#x8C61;&#x83B7;&#x5F97;&#x4E86;IInterface&#x5BF9;&#x8C61;&#xFF0C;&#x90A3;&#x4E48;&#x5C31;&#x53EF;&#x4EE5;&#x8C03;&#x7528;&#x63A5;&#x53E3;&#x7684;&#x5177;&#x4F53;&#x5B9E;&#x73B0;&#x65B9;&#x6CD5;&#x4E86;&#xFF0C;&#x6765;&#x5B9E;&#x73B0;&#x8C03;&#x7528;&#x670D;&#x52A1;&#x7AEF;&#x65B9;&#x6CD5;&#x7684;&#x76EE;&#x7684;&#x3002;</p>
 <p>&#x4EE5;addBook&#x65B9;&#x6CD5;&#x4E3A;&#x4F8B;&#xFF0C;&#x8C03;&#x7528;&#x8BE5;&#x65B9;&#x6CD5;&#x540E;&#xFF0C;&#x5BA2;&#x6237;&#x7AEF;&#x7EBF;&#x7A0B;&#x6302;&#x8D77;&#xFF0C;&#x7B49;&#x5F85;&#x5524;&#x9192;&#xFF1A;</p>
-<pre><code class="lang-java">@Override public void addBook(com.lvr.aidldemo.Book book) throws android.os.RemoteException
-{
+<pre><code class="lang-java"><span class="hljs-meta">@Override</span> <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">addBook</span><span class="hljs-params">(com.lvr.aidldemo.Book book)</span> <span class="hljs-keyword">throws</span> android.os.RemoteException
+</span>{
 ..........
-//&#x7B2C;&#x4E00;&#x4E2A;&#x53C2;&#x6570;&#xFF1A;&#x8BC6;&#x522B;&#x8C03;&#x7528;&#x54EA;&#x4E00;&#x4E2A;&#x65B9;&#x6CD5;&#x7684;ID
-//&#x7B2C;&#x4E8C;&#x4E2A;&#x53C2;&#x6570;&#xFF1A;Book&#x7684;&#x5E8F;&#x5217;&#x5316;&#x4F20;&#x5165;&#x6570;&#x636E;
-//&#x7B2C;&#x4E09;&#x4E2A;&#x53C2;&#x6570;&#xFF1A;&#x8C03;&#x7528;&#x65B9;&#x6CD5;&#x540E;&#x8FD4;&#x56DE;&#x7684;&#x6570;&#x636E;
-//&#x6700;&#x540E;&#x4E00;&#x4E2A;&#x4E0D;&#x7528;&#x7BA1;
-mRemote.transact(Stub.TRANSACTION_addBook, _data, _reply, 0);
+<span class="hljs-comment">//&#x7B2C;&#x4E00;&#x4E2A;&#x53C2;&#x6570;&#xFF1A;&#x8BC6;&#x522B;&#x8C03;&#x7528;&#x54EA;&#x4E00;&#x4E2A;&#x65B9;&#x6CD5;&#x7684;ID</span>
+<span class="hljs-comment">//&#x7B2C;&#x4E8C;&#x4E2A;&#x53C2;&#x6570;&#xFF1A;Book&#x7684;&#x5E8F;&#x5217;&#x5316;&#x4F20;&#x5165;&#x6570;&#x636E;</span>
+<span class="hljs-comment">//&#x7B2C;&#x4E09;&#x4E2A;&#x53C2;&#x6570;&#xFF1A;&#x8C03;&#x7528;&#x65B9;&#x6CD5;&#x540E;&#x8FD4;&#x56DE;&#x7684;&#x6570;&#x636E;</span>
+<span class="hljs-comment">//&#x6700;&#x540E;&#x4E00;&#x4E2A;&#x4E0D;&#x7528;&#x7BA1;</span>
+mRemote.transact(Stub.TRANSACTION_addBook, _data, _reply, <span class="hljs-number">0</span>);
 _reply.readException();
 }
 ..........
@@ -4002,20 +4006,20 @@ _reply.readException();
 </code></pre>
 <p>&#x7701;&#x7565;&#x90E8;&#x5206;&#x4E3B;&#x8981;&#x5B8C;&#x6210;&#x5BF9;&#x6DFB;&#x52A0;&#x7684;Book&#x5BF9;&#x8C61;&#x8FDB;&#x884C;&#x5E8F;&#x5217;&#x5316;&#x5DE5;&#x4F5C;&#xFF0C;&#x7136;&#x540E;&#x8C03;&#x7528;<code>transact</code>&#x65B9;&#x6CD5;&#x3002;</p>
 <p>Proxy&#x5BF9;&#x8C61;&#x4E2D;&#x7684;transact&#x8C03;&#x7528;&#x53D1;&#x751F;&#x540E;&#xFF0C;&#x4F1A;&#x5F15;&#x8D77;&#x7CFB;&#x7EDF;&#x7684;&#x6CE8;&#x610F;&#xFF0C;&#x7CFB;&#x7EDF;&#x610F;&#x8BC6;&#x5230;Proxy&#x5BF9;&#x8C61;&#x60F3;&#x627E;&#x5B83;&#x7684;&#x771F;&#x8EAB;Binder&#x5BF9;&#x8C61;&#xFF08;&#x7CFB;&#x7EDF;&#x5176;&#x5B9E;&#x4E00;&#x76F4;&#x5B58;&#x7740;Binder&#x548C;Proxy&#x7684;&#x5BF9;&#x5E94;&#x5173;&#x7CFB;&#xFF09;&#x3002;&#x4E8E;&#x662F;&#x7CFB;&#x7EDF;&#x5C06;&#x8FD9;&#x4E2A;&#x8BF7;&#x6C42;&#x4E2D;&#x7684;&#x6570;&#x636E;&#x8F6C;&#x53D1;&#x7ED9;Binder&#x5BF9;&#x8C61;&#xFF0C;Binder&#x5BF9;&#x8C61;&#x5C06;&#x4F1A;&#x5728;onTransact&#x4E2D;&#x6536;&#x5230;Proxy&#x5BF9;&#x8C61;&#x4F20;&#x6765;&#x7684;&#x6570;&#x636E;&#xFF0C;&#x4E8E;&#x662F;&#x5B83;&#x4ECE;data&#x4E2D;&#x53D6;&#x51FA;&#x5BA2;&#x6237;&#x7AEF;&#x8FDB;&#x7A0B;&#x4F20;&#x6765;&#x7684;&#x6570;&#x636E;&#xFF0C;&#x53C8;&#x6839;&#x636E;&#x7B2C;&#x4E00;&#x4E2A;&#x53C2;&#x6570;&#x786E;&#x5B9A;&#x60F3;&#x8BA9;&#x5B83;&#x6267;&#x884C;&#x6DFB;&#x52A0;&#x4E66;&#x672C;&#x64CD;&#x4F5C;&#xFF0C;&#x4E8E;&#x662F;&#x5B83;&#x5C31;&#x6267;&#x884C;&#x4E86;&#x54CD;&#x5E94;&#x64CD;&#x4F5C;&#xFF0C;&#x5E76;&#x628A;&#x7ED3;&#x679C;&#x5199;&#x56DE;reply&#x3002;&#x4EE3;&#x7801;&#x6982;&#x7565;&#x5982;&#x4E0B;&#xFF1A;</p>
-<pre><code class="lang-java">case TRANSACTION_addBook:
+<pre><code class="lang-java"><span class="hljs-keyword">case</span> TRANSACTION_addBook:
 {
 data.enforceInterface(DESCRIPTOR);
 com.lvr.aidldemo.Book _arg0;
-if ((0!=data.readInt())) {
+<span class="hljs-keyword">if</span> ((<span class="hljs-number">0</span>!=data.readInt())) {
 _arg0 = com.lvr.aidldemo.Book.CREATOR.createFromParcel(data);
 }
-else {
-_arg0 = null;
+<span class="hljs-keyword">else</span> {
+_arg0 = <span class="hljs-keyword">null</span>;
 }
-//&#x8FD9;&#x91CC;&#x8C03;&#x7528;&#x670D;&#x52A1;&#x7AEF;&#x5B9E;&#x73B0;&#x7684;addBook&#x65B9;&#x6CD5;
-this.addBook(_arg0);
+<span class="hljs-comment">//&#x8FD9;&#x91CC;&#x8C03;&#x7528;&#x670D;&#x52A1;&#x7AEF;&#x5B9E;&#x73B0;&#x7684;addBook&#x65B9;&#x6CD5;</span>
+<span class="hljs-keyword">this</span>.addBook(_arg0);
 reply.writeNoException();
-return true;
+<span class="hljs-keyword">return</span> <span class="hljs-keyword">true</span>;
 }
 </code></pre>
 <p>&#x7136;&#x540E;&#x5728;<code>transact</code>&#x65B9;&#x6CD5;&#x83B7;&#x5F97;<code>_reply</code>&#x5E76;&#x8FD4;&#x56DE;&#x7ED3;&#x679C;&#xFF0C;&#x672C;&#x4F8B;&#x4E2D;&#x7684;addList&#x65B9;&#x6CD5;&#x6CA1;&#x6709;&#x8FD4;&#x56DE;&#x503C;&#x3002;</p>
@@ -4065,7 +4069,7 @@ return true;
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"Android Binder机制及AIDL使用","level":"3.2.4","depth":2,"next":{"title":"Android Parcelable和Serializable的区别","level":"3.2.5","depth":2,"path":"android/advance/serializable.md","ref":"android/advance/serializable.md","articles":[]},"previous":{"title":"Android MVP模式详解","level":"3.2.3","depth":2,"path":"android/advance/mvp.md","ref":"android/advance/mvp.md","articles":[]},"dir":"ltr"},"config":{"plugins":["-lunr","-search","-highlight","-livereload","search-plus@^0.0.11","simple-page-toc@^0.1.1","github@^2.0.0","github-buttons@2.1.0","edit-link@^2.0.2","advanced-emoji@^0.2.1","anchors@^0.7.1","include-codeblock@^3.0.2","ace@^0.3.2","emphasize@^1.1.0","katex@^1.1.3","splitter@^0.0.8","tbfed-pagefooter@^0.0.1","expandable-chapters-small@^0.1.7","sectionx@^3.1.0","local-video@^1.0.1","anchor-navigation-ex@0.1.8","favicon@^0.0.2"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"tbfed-pagefooter":{"copyright":"Copyright © ruheng.com 2017","modify_label":"该文件修订时间：","modify_format":"YYYY-MM-DD HH:mm:ss"},"emphasize":{},"ace":{},"github":{"url":"https://github.com/LRH1993/android_interview"},"simple-page-toc":{"maxDepth":3,"skipFirstH1":true},"splitter":{},"katex":{},"fontsettings":{"theme":"white","family":"sans","size":2},"sectionx":{"tag":"b"},"anchor-navigation-ex":{"isRewritePageTitle":false,"tocLevel1Icon":"fa fa-hand-o-right","tocLevel2Icon":"fa fa-hand-o-right","tocLevel3Icon":"fa fa-hand-o-right"},"favicon":{"shortcut":"favicon.ico","bookmark":"favicon.ico"},"github-buttons":{"repo":"LRH1993/android_interview","types":["star"],"size":"small"},"expandable-chapters-small":{},"local-video":{},"advanced-emoji":{"embedEmojis":false},"include-codeblock":{"check":false,"edit":true,"fixlang":false,"lang":"","template":"ace","theme":"chrome","unindent":true},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":true,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"edit-link":{"label":"Edit This Page","base":"https://github.com/LRH1993/android_interview/edit/master"},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":true},"anchors":{},"search-plus":{}},"theme":"default","author":"ruheng","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"Android校招面试指南","language":"zh-hans","output.name":"site","links":{"sidebar":{"Home":"http://lruheng.com/"}},"gitbook":"3.2.3","description":"Android面试必备，记录自己的秋招之路"},"file":{"path":"android/advance/binder.md","mtime":"2017-09-02T03:14:32.000Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2017-10-16T12:05:21.906Z"},"basePath":"../..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"Android Binder机制及AIDL使用","level":"3.2.4","depth":2,"next":{"title":"Android Parcelable和Serializable的区别","level":"3.2.5","depth":2,"path":"android/advance/serializable.md","ref":"android/advance/serializable.md","articles":[]},"previous":{"title":"Android MVP模式详解","level":"3.2.3","depth":2,"path":"android/advance/mvp.md","ref":"android/advance/mvp.md","articles":[]},"dir":"ltr"},"config":{"plugins":["-lunr","-search","-livereload","search-plus@^0.0.11","simple-page-toc@^0.1.1","github@^2.0.0","github-buttons@2.1.0","edit-link@^2.0.2","advanced-emoji@^0.2.1","anchors@^0.7.1","include-codeblock@^3.0.2","ace@^0.3.2","emphasize@^1.1.0","katex@^1.1.3","splitter@^0.0.8","tbfed-pagefooter@^0.0.1","expandable-chapters-small@^0.1.7","sectionx@^3.1.0","local-video@^1.0.1","anchor-navigation-ex@0.1.8","favicon@^0.0.2"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"tbfed-pagefooter":{"copyright":"Copyright © ruheng.com 2017","modify_label":"该文件修订时间：","modify_format":"YYYY-MM-DD HH:mm:ss"},"emphasize":{},"ace":{},"github":{"url":"https://github.com/LRH1993/android_interview"},"simple-page-toc":{"maxDepth":3,"skipFirstH1":true},"splitter":{},"katex":{},"fontsettings":{"theme":"white","family":"sans","size":2},"sectionx":{"tag":"b"},"highlight":{},"anchor-navigation-ex":{"isRewritePageTitle":false,"tocLevel1Icon":"fa fa-hand-o-right","tocLevel2Icon":"fa fa-hand-o-right","tocLevel3Icon":"fa fa-hand-o-right"},"favicon":{"shortcut":"favicon.ico","bookmark":"favicon.ico"},"github-buttons":{"repo":"LRH1993/android_interview","types":["star"],"size":"small"},"expandable-chapters-small":{},"local-video":{},"advanced-emoji":{"embedEmojis":false},"include-codeblock":{"check":false,"edit":false,"fixlang":false,"lang":"","template":"default","theme":"chrome","unindent":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":true,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"edit-link":{"label":"Edit This Page","base":"https://github.com/LRH1993/android_interview/edit/master"},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":true},"anchors":{},"search-plus":{}},"theme":"default","author":"ruheng","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"Android校招面试指南","language":"zh-hans","output.name":"site","links":{"sidebar":{"Home":"http://lruheng.com/"}},"gitbook":"3.2.3","description":"Android面试必备，记录自己的秋招之路"},"file":{"path":"android/advance/binder.md","mtime":"2017-09-02T03:14:32.000Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2017-10-16T13:00:43.989Z"},"basePath":"../..","book":{"language":""}});
         });
     </script>
 </div>

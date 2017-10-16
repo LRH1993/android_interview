@@ -69,6 +69,10 @@
                 
             
                 
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
                 <link rel="stylesheet" href="../../gitbook/gitbook-plugin-fontsettings/website.css">
                 
             
@@ -3709,41 +3713,41 @@
 <p><include>&#x6807;&#x7B7E;&#x5728;&#x5E03;&#x5C40;&#x4F18;&#x5316;&#x4E2D;&#x662F;&#x4F7F;&#x7528;&#x6700;&#x591A;&#x7684;&#x4E00;&#x4E2A;&#x6807;&#x7B7E;&#x4E86;&#xFF0C;&#x5B83;&#x5C31;&#x662F;&#x4E3A;&#x4E86;&#x89E3;&#x51B3;&#x91CD;&#x590D;&#x5B9A;&#x4E49;&#x5E03;&#x5C40;&#x7684;&#x95EE;&#x9898;&#x3002;<include>&#x6807;&#x7B7E;&#x5C31;&#x76F8;&#x5F53;&#x4E8E;C&#x3001;C++&#x4E2D;&#x7684;include&#x5934;&#x6587;&#x4EF6;&#x4E00;&#x6837;&#xFF0C;&#x628A;&#x4E00;&#x4E9B;&#x5E38;&#x7528;&#x7684;&#x5E95;&#x5C42;&#x7684;API&#x5C01;&#x88C5;&#x8D77;&#x6765;&#xFF0C;&#x9700;&#x8981;&#x7684;&#x65F6;&#x5019;&#x5F15;&#x5165;&#x5373;&#x53EF;&#x3002;&#x5728;&#x4E00;&#x4E9B;&#x5F00;&#x6E90;&#x7684;J2EE&#x4E2D;&#x8BB8;&#x591A;XML&#x914D;&#x7F6E;&#x6587;&#x4EF6;&#x4E5F;&#x90FD;&#x4F1A;&#x4F7F;&#x7528;<include>&#x6807;&#x7B7E;&#xFF0C;&#x5C06;&#x591A;&#x4E2A;&#x914D;&#x7F6E;&#x6587;&#x4EF6;&#x7EC4;&#x5408;&#x6210;&#x4E3A;&#x4E00;&#x4E2A;&#x66F4;&#x4E3A;&#x590D;&#x6742;&#x7684;&#x914D;&#x7F6E;&#x6587;&#x4EF6;&#xFF0C;&#x5982;&#x6700;&#x5E38;&#x89C1;&#x7684;S2SH&#x3002;</include></include></include></p>
 <p>&#x5728;&#x4EE5;&#x524D;Android&#x5F00;&#x53D1;&#x4E2D;&#xFF0C;&#x7531;&#x4E8E;ActionBar&#x8BBE;&#x8BA1;&#x4E0A;&#x7684;&#x4E0D;&#x7EDF;&#x4E00;&#x4EE5;&#x53CA;&#x517C;&#x5BB9;&#x6027;&#x95EE;&#x9898;&#xFF0C;&#x6240;&#x4EE5;&#x5F88;&#x591A;&#x5E94;&#x7528;&#x90FD;&#x81EA;&#x5B9A;&#x4E49;&#x4E86;&#x4E00;&#x5957;&#x81EA;&#x5DF1;&#x7684;&#x6807;&#x9898;&#x680F;titlebar&#x3002;&#x6807;&#x9898;&#x680F;&#x6211;&#x4EEC;&#x77E5;&#x9053;&#x5728;&#x5E94;&#x7528;&#x7684;&#x6BCF;&#x4E2A;&#x754C;&#x9762;&#x51E0;&#x4E4E;&#x90FD;&#x4F1A;&#x7528;&#x5230;&#xFF0C;&#x5728;&#x8FD9;&#x91CC;&#x53EF;&#x4EE5;&#x4F5C;&#x4E3A;&#x4E00;&#x4E2A;&#x5F88;&#x597D;&#x7684;&#x793A;&#x4F8B;&#x6765;&#x89E3;&#x91CA;<include>&#x6807;&#x7B7E;&#x7684;&#x4F7F;&#x7528;&#x3002;</include></p>
 <p>&#x4E0B;&#x9762;&#x662F;&#x4E00;&#x4E2A;&#x81EA;&#x5B9A;&#x4E49;&#x7684;titlebar&#x6587;&#x4EF6;&#xFF1A;</p>
-<pre><code class="lang-xml">&lt;FrameLayout xmlns:android=&quot;http://schemas.android.com/apk/res/android&quot;
-    android:layout_width=&quot;match_parent&quot;
-    android:layout_height=&quot;wrap_content&quot;
-    android:background=&quot;@color/titlebar_bg&quot;&gt;
+<pre><code class="lang-xml"><span class="hljs-tag">&lt;<span class="hljs-name">FrameLayout</span> <span class="hljs-attr">xmlns:android</span>=<span class="hljs-string">&quot;http://schemas.android.com/apk/res/android&quot;</span>
+    <span class="hljs-attr">android:layout_width</span>=<span class="hljs-string">&quot;match_parent&quot;</span>
+    <span class="hljs-attr">android:layout_height</span>=<span class="hljs-string">&quot;wrap_content&quot;</span>
+    <span class="hljs-attr">android:background</span>=<span class="hljs-string">&quot;@color/titlebar_bg&quot;</span>&gt;</span>
 
-    &lt;ImageView android:layout_width=&quot;wrap_content&quot;
-               android:layout_height=&quot;wrap_content&quot;
-               android:src=&quot;@drawable/gafricalogo&quot; /&gt;
-&lt;/FrameLayout&gt;
+    <span class="hljs-tag">&lt;<span class="hljs-name">ImageView</span> <span class="hljs-attr">android:layout_width</span>=<span class="hljs-string">&quot;wrap_content&quot;</span>
+               <span class="hljs-attr">android:layout_height</span>=<span class="hljs-string">&quot;wrap_content&quot;</span>
+               <span class="hljs-attr">android:src</span>=<span class="hljs-string">&quot;@drawable/gafricalogo&quot;</span> /&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">FrameLayout</span>&gt;</span>
 </code></pre>
 <p>&#x5728;&#x5E94;&#x7528;&#x4E2D;&#x4F7F;&#x7528;titlebar&#x5E03;&#x5C40;&#x6587;&#x4EF6;&#xFF0C;&#x6211;&#x4EEC;&#x901A;&#x8FC7;<include>&#x6807;&#x7B7E;,&#x5E03;&#x5C40;&#x6587;&#x4EF6;&#x5982;&#x4E0B;&#xFF1A;</include></p>
-<pre><code class="lang-xml">&lt;LinearLayout xmlns:android=&quot;http://schemas.android.com/apk/res/android&quot;
-    android:orientation=&quot;vertical&quot;
-    android:layout_width=&quot;match_parent&quot;
-    android:layout_height=&quot;match_parent&quot;
-    android:background=&quot;@color/app_bg&quot;
-    android:gravity=&quot;center_horizontal&quot;&gt;
+<pre><code class="lang-xml"><span class="hljs-tag">&lt;<span class="hljs-name">LinearLayout</span> <span class="hljs-attr">xmlns:android</span>=<span class="hljs-string">&quot;http://schemas.android.com/apk/res/android&quot;</span>
+    <span class="hljs-attr">android:orientation</span>=<span class="hljs-string">&quot;vertical&quot;</span>
+    <span class="hljs-attr">android:layout_width</span>=<span class="hljs-string">&quot;match_parent&quot;</span>
+    <span class="hljs-attr">android:layout_height</span>=<span class="hljs-string">&quot;match_parent&quot;</span>
+    <span class="hljs-attr">android:background</span>=<span class="hljs-string">&quot;@color/app_bg&quot;</span>
+    <span class="hljs-attr">android:gravity</span>=<span class="hljs-string">&quot;center_horizontal&quot;</span>&gt;</span>
 
-    &lt;include layout=&quot;@layout/titlebar&quot;/&gt;
+    <span class="hljs-tag">&lt;<span class="hljs-name">include</span> <span class="hljs-attr">layout</span>=<span class="hljs-string">&quot;@layout/titlebar&quot;</span>/&gt;</span>
 
-    &lt;TextView android:layout_width=&quot;match_parent&quot;
-              android:layout_height=&quot;wrap_content&quot;
-              android:text=&quot;@string/hello&quot;
-              android:padding=&quot;10dp&quot; /&gt;
+    <span class="hljs-tag">&lt;<span class="hljs-name">TextView</span> <span class="hljs-attr">android:layout_width</span>=<span class="hljs-string">&quot;match_parent&quot;</span>
+              <span class="hljs-attr">android:layout_height</span>=<span class="hljs-string">&quot;wrap_content&quot;</span>
+              <span class="hljs-attr">android:text</span>=<span class="hljs-string">&quot;@string/hello&quot;</span>
+              <span class="hljs-attr">android:padding</span>=<span class="hljs-string">&quot;10dp&quot;</span> /&gt;</span>
 
     ...
 
-&lt;/LinearLayout&gt;
+<span class="hljs-tag">&lt;/<span class="hljs-name">LinearLayout</span>&gt;</span>
 </code></pre>
 <p>&#x5728;<include>&#x6807;&#x7B7E;&#x4E2D;&#x53EF;&#x4EE5;&#x8986;&#x76D6;&#x5BFC;&#x5165;&#x7684;&#x5E03;&#x5C40;&#x6587;&#x4EF6;root&#x5E03;&#x5C40;&#x7684;&#x5E03;&#x5C40;&#x5C5E;&#x6027;&#xFF08;&#x5982;layout_*&#x5C5E;&#x6027;&#xFF09;&#x3002;</include></p>
 <p>&#x5E03;&#x5C40;&#x793A;&#x4F8B;&#x5982;&#x4E0B;&#xFF1A;</p>
-<pre><code class="lang-xml">&lt;include android:id=&quot;@+id/news_title&quot;
-         android:layout_width=&quot;match_parent&quot;
-         android:layout_height=&quot;match_parent&quot;
-         layout=&quot;@layout/title&quot;/&gt;
+<pre><code class="lang-xml"><span class="hljs-tag">&lt;<span class="hljs-name">include</span> <span class="hljs-attr">android:id</span>=<span class="hljs-string">&quot;@+id/news_title&quot;</span>
+         <span class="hljs-attr">android:layout_width</span>=<span class="hljs-string">&quot;match_parent&quot;</span>
+         <span class="hljs-attr">android:layout_height</span>=<span class="hljs-string">&quot;match_parent&quot;</span>
+         <span class="hljs-attr">layout</span>=<span class="hljs-string">&quot;@layout/title&quot;</span>/&gt;</span>
 </code></pre>
 <p>&#x5982;&#x679C;&#x60F3;&#x4F7F;&#x7528;<include>&#x6807;&#x7B7E;&#x8986;&#x76D6;&#x5D4C;&#x5165;&#x5E03;&#x5C40;root&#x5E03;&#x5C40;&#x5C5E;&#x6027;&#xFF0C;&#x5FC5;&#x987B;&#x540C;&#x65F6;&#x8986;&#x76D6;layout_height&#x548C;layout_width&#x5C5E;&#x6027;&#xFF0C;&#x5426;&#x5219;&#x4F1A;&#x76F4;&#x63A5;&#x62A5;&#x7F16;&#x8BD1;&#x65F6;&#x8BED;&#x6CD5;&#x9519;&#x8BEF;&#x3002;</include></p>
 <blockquote>
@@ -3753,44 +3757,44 @@
 <h2 id="&#x4E8C;&#x3001;"><a name="&#x4E8C;&#x3001;" class="anchor-navigation-ex-anchor" href="#&#x4E8C;&#x3001;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x4E8C;&#x3001;</h2>
 <p><merge>&#x6807;&#x7B7E;&#x90FD;&#x662F;&#x4E0E;<include>&#x6807;&#x7B7E;&#x7EC4;&#x5408;&#x4F7F;&#x7528;&#x7684;&#xFF0C;&#x5B83;&#x7684;&#x4F5C;&#x7528;&#x5C31;&#x662F;&#x53EF;&#x4EE5;&#x6709;&#x6548;&#x51CF;&#x5C11;View&#x6811;&#x7684;&#x5C42;&#x6B21;&#x6765;&#x4F18;&#x5316;&#x5E03;&#x5C40;&#x3002;</include></merge></p>
 <p>&#x4E0B;&#x9762;&#x901A;&#x8FC7;&#x4E00;&#x4E2A;&#x7B80;&#x5355;&#x7684;&#x793A;&#x4F8B;&#x63A2;&#x8BA8;&#x4E00;&#x4E0B;<merge>&#x6807;&#x7B7E;&#x7684;&#x4F7F;&#x7528;&#xFF0C;&#x4E0B;&#x9762;&#x662F;&#x5D4C;&#x5957;&#x5E03;&#x5C40;&#x7684;layout_text.xml&#x6587;&#x4EF6;&#xFF1A;</merge></p>
-<pre><code class="lang-Xml">&lt;LinearLayout xmlns:android=&quot;http://schemas.android.com/apk/res/android&quot;
-    android:layout_width=&quot;match_parent&quot;
-    android:layout_height=&quot;match_parent&quot;
-    android:orientation=&quot;vertical&quot; &gt;
-    &lt;TextView
-        android:id=&quot;@+id/textView&quot;
-        android:layout_width=&quot;match_parent&quot;
-        android:text=&quot;Hello World!&quot;
-        android:layout_height=&quot;match_parent&quot; /&gt;
-&lt;/LinearLayout&gt;
+<pre><code class="lang-Xml"><span class="hljs-tag">&lt;<span class="hljs-name">LinearLayout</span> <span class="hljs-attr">xmlns:android</span>=<span class="hljs-string">&quot;http://schemas.android.com/apk/res/android&quot;</span>
+    <span class="hljs-attr">android:layout_width</span>=<span class="hljs-string">&quot;match_parent&quot;</span>
+    <span class="hljs-attr">android:layout_height</span>=<span class="hljs-string">&quot;match_parent&quot;</span>
+    <span class="hljs-attr">android:orientation</span>=<span class="hljs-string">&quot;vertical&quot;</span> &gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">TextView</span>
+        <span class="hljs-attr">android:id</span>=<span class="hljs-string">&quot;@+id/textView&quot;</span>
+        <span class="hljs-attr">android:layout_width</span>=<span class="hljs-string">&quot;match_parent&quot;</span>
+        <span class="hljs-attr">android:text</span>=<span class="hljs-string">&quot;Hello World!&quot;</span>
+        <span class="hljs-attr">android:layout_height</span>=<span class="hljs-string">&quot;match_parent&quot;</span> /&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">LinearLayout</span>&gt;</span>
 </code></pre>
 <p>&#x4E00;&#x4E2A;&#x7EBF;&#x6027;&#x5E03;&#x5C40;&#x4E2D;&#x5D4C;&#x5957;&#x4E00;&#x4E2A;&#x6587;&#x672C;&#x89C6;&#x56FE;&#xFF0C;&#x4E3B;&#x5E03;&#x5C40;&#x5982;&#x4E0B;&#xFF1A;</p>
-<pre><code class="lang-xml">&lt;LinearLayout xmlns:android=&quot;http://schemas.android.com/apk/res/android&quot;
-    android:id=&quot;@+id/layout_wrap&quot;
-    android:layout_width=&quot;match_parent&quot;
-    android:layout_height=&quot;match_parent&quot;
-    android:orientation=&quot;vertical&quot; &gt;
+<pre><code class="lang-xml"><span class="hljs-tag">&lt;<span class="hljs-name">LinearLayout</span> <span class="hljs-attr">xmlns:android</span>=<span class="hljs-string">&quot;http://schemas.android.com/apk/res/android&quot;</span>
+    <span class="hljs-attr">android:id</span>=<span class="hljs-string">&quot;@+id/layout_wrap&quot;</span>
+    <span class="hljs-attr">android:layout_width</span>=<span class="hljs-string">&quot;match_parent&quot;</span>
+    <span class="hljs-attr">android:layout_height</span>=<span class="hljs-string">&quot;match_parent&quot;</span>
+    <span class="hljs-attr">android:orientation</span>=<span class="hljs-string">&quot;vertical&quot;</span> &gt;</span>
 
-    &lt;include
-        android:id=&quot;@+id/layout_import&quot;
-        android:layout_width=&quot;match_parent&quot;
-        android:layout_height=&quot;match_parent&quot;
-        layout=&quot;@layout/layout_text&quot; /&gt;
+    <span class="hljs-tag">&lt;<span class="hljs-name">include</span>
+        <span class="hljs-attr">android:id</span>=<span class="hljs-string">&quot;@+id/layout_import&quot;</span>
+        <span class="hljs-attr">android:layout_width</span>=<span class="hljs-string">&quot;match_parent&quot;</span>
+        <span class="hljs-attr">android:layout_height</span>=<span class="hljs-string">&quot;match_parent&quot;</span>
+        <span class="hljs-attr">layout</span>=<span class="hljs-string">&quot;@layout/layout_text&quot;</span> /&gt;</span>
 
-&lt;/LinearLayout&gt;
+<span class="hljs-tag">&lt;/<span class="hljs-name">LinearLayout</span>&gt;</span>
 </code></pre>
 <p>&#x901A;&#x8FC7;hierarchyviewer&#x6211;&#x4EEC;&#x53EF;&#x4EE5;&#x770B;&#x5230;&#x4E3B;&#x5E03;&#x5C40;View&#x6811;&#x7684;&#x90E8;&#x5206;&#x5C42;&#x7EA7;&#x7ED3;&#x6784;&#x5982;&#x4E0B;&#x56FE;&#xFF1A;</p>
 <p><a href="http://www.sunnyang.com/wp-content/uploads/2016/04/layout_merge01.png" target="_blank"><img src="http://www.sunnyang.com/wp-content/uploads/2016/04/layout_merge01.png" alt="layout_merge01"></a></p>
 <p>&#x73B0;&#x5728;&#x8BB2;&#x5D4C;&#x5957;&#x5E03;&#x5C40;&#x8DDF;&#x5E03;&#x5C40;&#x6807;&#x7B7E;&#x66F4;&#x6539;&#x4E3A;<merge>&#xFF0C;merge_text.xml&#x5E03;&#x5C40;&#x6587;&#x4EF6;&#x5982;&#x4E0B;&#xFF1A;</merge></p>
-<pre><code class="lang-xml">&lt;merge xmlns:android=&quot;http://schemas.android.com/apk/res/android&quot; &gt;
+<pre><code class="lang-xml"><span class="hljs-tag">&lt;<span class="hljs-name">merge</span> <span class="hljs-attr">xmlns:android</span>=<span class="hljs-string">&quot;http://schemas.android.com/apk/res/android&quot;</span> &gt;</span>
 
-    &lt;TextView
-        android:id=&quot;@+id/textView&quot;
-        android:layout_width=&quot;match_parent&quot;
-        android:layout_height=&quot;match_parent&quot;
-        android:text=&quot;Hello World!&quot;/&gt;
+    <span class="hljs-tag">&lt;<span class="hljs-name">TextView</span>
+        <span class="hljs-attr">android:id</span>=<span class="hljs-string">&quot;@+id/textView&quot;</span>
+        <span class="hljs-attr">android:layout_width</span>=<span class="hljs-string">&quot;match_parent&quot;</span>
+        <span class="hljs-attr">android:layout_height</span>=<span class="hljs-string">&quot;match_parent&quot;</span>
+        <span class="hljs-attr">android:text</span>=<span class="hljs-string">&quot;Hello World!&quot;</span>/&gt;</span>
 
-&lt;/merge&gt;
+<span class="hljs-tag">&lt;/<span class="hljs-name">merge</span>&gt;</span>
 </code></pre>
 <p>&#x7136;&#x540E;&#x5C06;&#x4E3B;&#x5E03;&#x5C40;<include>&#x6807;&#x7B7E;&#x4E2D;&#x7684;layout&#x66F4;&#x6539;&#x4E3A;merge_text.xml&#xFF0C;&#x8FD0;&#x884C;&#x540E;&#x91CD;&#x65B0;&#x622A;&#x56FE;&#x5982;&#x4E0B;:</include></p>
 <p><a href="http://www.sunnyang.com/wp-content/uploads/2016/04/layout_merge02.png" target="_blank"><img src="http://www.sunnyang.com/wp-content/uploads/2016/04/layout_merge02.png" alt="layout_merge02"></a></p>
@@ -3804,52 +3808,52 @@
 <p>ViewStub&#x5C31;&#x662F;&#x4E3A;&#x4E86;&#x89E3;&#x51B3;&#x4E0A;&#x9762;&#x95EE;&#x9898;&#x7684;&#xFF0C;ViewStub&#x662F;&#x4E00;&#x4E2A;&#x8F7B;&#x91CF;&#x7EA7;&#x7684;View&#xFF0C;&#x5B83;&#x4E00;&#x4E2A;&#x770B;&#x4E0D;&#x89C1;&#x7684;&#xFF0C;&#x4E0D;&#x5360;&#x5E03;&#x5C40;&#x4F4D;&#x7F6E;&#xFF0C;&#x5360;&#x7528;&#x8D44;&#x6E90;&#x975E;&#x5E38;&#x5C0F;&#x7684;&#x63A7;&#x4EF6;&#x3002;</p>
 <h3 id="&#x5B9A;&#x4E49;viewstub&#x5E03;&#x5C40;&#x6587;&#x4EF6;"><a name="&#x5B9A;&#x4E49;viewstub&#x5E03;&#x5C40;&#x6587;&#x4EF6;" class="anchor-navigation-ex-anchor" href="#&#x5B9A;&#x4E49;viewstub&#x5E03;&#x5C40;&#x6587;&#x4EF6;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x5B9A;&#x4E49;ViewStub&#x5E03;&#x5C40;&#x6587;&#x4EF6;</h3>
 <p>&#x4E0B;&#x9762;&#x662F;&#x4E00;&#x4E2A;ViewStub&#x5E03;&#x5C40;&#x6587;&#x4EF6;&#xFF1A;</p>
-<pre><code class="lang-xml">&lt;LinearLayout xmlns:android=&quot;http://schemas.android.com/apk/res/android&quot;
-    android:id=&quot;@+id/layout_wrap&quot;
-    android:layout_width=&quot;match_parent&quot;
-    android:layout_height=&quot;match_parent&quot;
-    android:orientation=&quot;vertical&quot; &gt;
+<pre><code class="lang-xml"><span class="hljs-tag">&lt;<span class="hljs-name">LinearLayout</span> <span class="hljs-attr">xmlns:android</span>=<span class="hljs-string">&quot;http://schemas.android.com/apk/res/android&quot;</span>
+    <span class="hljs-attr">android:id</span>=<span class="hljs-string">&quot;@+id/layout_wrap&quot;</span>
+    <span class="hljs-attr">android:layout_width</span>=<span class="hljs-string">&quot;match_parent&quot;</span>
+    <span class="hljs-attr">android:layout_height</span>=<span class="hljs-string">&quot;match_parent&quot;</span>
+    <span class="hljs-attr">android:orientation</span>=<span class="hljs-string">&quot;vertical&quot;</span> &gt;</span>
 
-    &lt;ViewStub
-        android:id=&quot;@+id/stub_image&quot;
-        android:layout_width=&quot;match_parent&quot;
-        android:layout_height=&quot;wrap_content&quot;
-        android:inflatedId=&quot;@+id/image_import&quot;
-        android:layout=&quot;@layout/layout_image&quot; /&gt;
+    <span class="hljs-tag">&lt;<span class="hljs-name">ViewStub</span>
+        <span class="hljs-attr">android:id</span>=<span class="hljs-string">&quot;@+id/stub_image&quot;</span>
+        <span class="hljs-attr">android:layout_width</span>=<span class="hljs-string">&quot;match_parent&quot;</span>
+        <span class="hljs-attr">android:layout_height</span>=<span class="hljs-string">&quot;wrap_content&quot;</span>
+        <span class="hljs-attr">android:inflatedId</span>=<span class="hljs-string">&quot;@+id/image_import&quot;</span>
+        <span class="hljs-attr">android:layout</span>=<span class="hljs-string">&quot;@layout/layout_image&quot;</span> /&gt;</span>
 
-    &lt;ViewStub
-        android:id=&quot;@+id/stub_text&quot;
-        android:layout_width=&quot;match_parent&quot;
-        android:layout_height=&quot;wrap_content&quot;
-        android:inflatedId=&quot;@+id/text_import&quot;
-        android:layout=&quot;@layout/layout_text&quot; /&gt;
+    <span class="hljs-tag">&lt;<span class="hljs-name">ViewStub</span>
+        <span class="hljs-attr">android:id</span>=<span class="hljs-string">&quot;@+id/stub_text&quot;</span>
+        <span class="hljs-attr">android:layout_width</span>=<span class="hljs-string">&quot;match_parent&quot;</span>
+        <span class="hljs-attr">android:layout_height</span>=<span class="hljs-string">&quot;wrap_content&quot;</span>
+        <span class="hljs-attr">android:inflatedId</span>=<span class="hljs-string">&quot;@+id/text_import&quot;</span>
+        <span class="hljs-attr">android:layout</span>=<span class="hljs-string">&quot;@layout/layout_text&quot;</span> /&gt;</span>
 
-&lt;/LinearLayout&gt;
+<span class="hljs-tag">&lt;/<span class="hljs-name">LinearLayout</span>&gt;</span>
 </code></pre>
 <p>layout_image.xml&#x6587;&#x4EF6;&#x5982;&#x4E0B;&#xFF08;layout_text.xml&#x7C7B;&#x4F3C;&#xFF09;&#xFF1A;</p>
-<pre><code class="lang-Xml">&lt;LinearLayout xmlns:android=&quot;http://schemas.android.com/apk/res/android&quot;
-    android:layout_width=&quot;match_parent&quot;
-    android:layout_height=&quot;wrap_content&quot;
-    android:id=&quot;@+id/layout_image&quot;&gt;
+<pre><code class="lang-Xml"><span class="hljs-tag">&lt;<span class="hljs-name">LinearLayout</span> <span class="hljs-attr">xmlns:android</span>=<span class="hljs-string">&quot;http://schemas.android.com/apk/res/android&quot;</span>
+    <span class="hljs-attr">android:layout_width</span>=<span class="hljs-string">&quot;match_parent&quot;</span>
+    <span class="hljs-attr">android:layout_height</span>=<span class="hljs-string">&quot;wrap_content&quot;</span>
+    <span class="hljs-attr">android:id</span>=<span class="hljs-string">&quot;@+id/layout_image&quot;</span>&gt;</span>
 
-    &lt;ImageView
-        android:id=&quot;@+id/imageView&quot;
-        android:layout_width=&quot;match_parent&quot;
-        android:layout_height=&quot;wrap_content&quot; /&gt;
+    <span class="hljs-tag">&lt;<span class="hljs-name">ImageView</span>
+        <span class="hljs-attr">android:id</span>=<span class="hljs-string">&quot;@+id/imageView&quot;</span>
+        <span class="hljs-attr">android:layout_width</span>=<span class="hljs-string">&quot;match_parent&quot;</span>
+        <span class="hljs-attr">android:layout_height</span>=<span class="hljs-string">&quot;wrap_content&quot;</span> /&gt;</span>
 
-&lt;/LinearLayout&gt;
+<span class="hljs-tag">&lt;/<span class="hljs-name">LinearLayout</span>&gt;</span>
 </code></pre>
 <h3 id="&#x52A0;&#x8F7D;viewstub&#x5E03;&#x5C40;&#x6587;&#x4EF6;"><a name="&#x52A0;&#x8F7D;viewstub&#x5E03;&#x5C40;&#x6587;&#x4EF6;" class="anchor-navigation-ex-anchor" href="#&#x52A0;&#x8F7D;viewstub&#x5E03;&#x5C40;&#x6587;&#x4EF6;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x52A0;&#x8F7D;ViewStub&#x5E03;&#x5C40;&#x6587;&#x4EF6;</h3>
 <p>&#x52A8;&#x6001;&#x52A0;&#x8F7D;ViewStub&#x6240;&#x5305;&#x542B;&#x7684;&#x5E03;&#x5C40;&#x6587;&#x4EF6;&#x6709;&#x4E24;&#x79CD;&#x65B9;&#x5F0F;&#xFF0C;&#x65B9;&#x5F0F;&#x4E00;&#x4F7F;&#x7528;&#x4F7F;&#x7528;inflate()&#x65B9;&#x6CD5;&#xFF0C;&#x65B9;&#x5F0F;&#x4E8C;&#x5C31;&#x662F;&#x4F7F;&#x7528;setVisibility(View.VISIBLE)&#x3002;</p>
 <p>&#x793A;&#x4F8B;java&#x4EE3;&#x7801;&#x5982;&#x4E0B;&#xFF1A;</p>
-<pre><code class="lang-java">private ViewStub viewStub;
+<pre><code class="lang-java"><span class="hljs-keyword">private</span> ViewStub viewStub;
 
-protected void onCreate(Bundle savedInstanceState) {
-    super.onCreate(savedInstanceState);
+<span class="hljs-function"><span class="hljs-keyword">protected</span> <span class="hljs-keyword">void</span> <span class="hljs-title">onCreate</span><span class="hljs-params">(Bundle savedInstanceState)</span> </span>{
+    <span class="hljs-keyword">super</span>.onCreate(savedInstanceState);
     setContentView(R.layout.layout_main2);
     viewStub = (ViewStub) findViewById(R.id.stub_image);
-    //viewStub.inflate();//&#x65B9;&#x5F0F;&#x4E00;
-    viewStub.setVisibility(View.VISIBLE);//&#x65B9;&#x5F0F;&#x4E8C;
+    <span class="hljs-comment">//viewStub.inflate();//&#x65B9;&#x5F0F;&#x4E00;</span>
+    viewStub.setVisibility(View.VISIBLE);<span class="hljs-comment">//&#x65B9;&#x5F0F;&#x4E8C;</span>
     ImageView imageView = (ImageView) findViewById(R.id.imageView);
     imageView.setImageResource(R.drawable.image);
 }
@@ -3863,37 +3867,37 @@ protected void onCreate(Bundle savedInstanceState) {
 <h2 id="&#x56DB;&#x3001;&#x5C0F;&#x7ED3;"><a name="&#x56DB;&#x3001;&#x5C0F;&#x7ED3;" class="anchor-navigation-ex-anchor" href="#&#x56DB;&#x3001;&#x5C0F;&#x7ED3;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x56DB;&#x3001;&#x5C0F;&#x7ED3;</h2>
 <p>Android&#x5E03;&#x5C40;&#x4F18;&#x5316;&#x57FA;&#x672C;&#x4E0A;&#x5C31;&#x8BBE;&#x8BA1;&#x4E0A;&#x9762;include&#x3001;merge&#x3001;ViewStub&#x4E09;&#x4E2A;&#x6807;&#x7B7E;&#x7684;&#x4F7F;&#x7528;&#x3002;&#x5728;&#x5E73;&#x5E38;&#x5F00;&#x53D1;&#x4E2D;&#x5E03;&#x5C40;&#x63A8;&#x8350;&#x4F7F;&#x7528;RelativeLayout&#xFF0C;&#x5B83;&#x4E5F;&#x53EF;&#x4EE5;&#x6709;&#x6548;&#x51CF;&#x5C11;&#x5E03;&#x5C40;&#x5C42;&#x7EA7;&#x5D4C;&#x5957;&#x3002;&#x6700;&#x540E;&#x4E86;&#x5C06;merge&#x548C;include&#x6E90;&#x7801;&#x9644;&#x4E0A;&#xFF0C;ViewStub&#x5C31;&#x662F;&#x4E00;&#x4E2A;View&#xFF0C;&#x5C31;&#x4E0D;&#x8D34;&#x51FA;&#x6765;&#x4E86;&#x3002;</p>
 <h3 id="include&#x6E90;&#x7801;"><a name="include&#x6E90;&#x7801;" class="anchor-navigation-ex-anchor" href="#include&#x6E90;&#x7801;"><i class="fa fa-link" aria-hidden="true"></i></a>Include&#x6E90;&#x7801;</h3>
-<pre><code class="lang-java">/**
+<pre><code class="lang-java"><span class="hljs-comment">/**
  * Exercise &lt;include /&gt; tag in XML files.
- */
-public class Include extends Activity {
-    @Override
-    protected void onCreate(Bundle icicle) {
-        super.onCreate(icicle);
+ */</span>
+<span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Include</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">Activity</span> </span>{
+    <span class="hljs-meta">@Override</span>
+    <span class="hljs-function"><span class="hljs-keyword">protected</span> <span class="hljs-keyword">void</span> <span class="hljs-title">onCreate</span><span class="hljs-params">(Bundle icicle)</span> </span>{
+        <span class="hljs-keyword">super</span>.onCreate(icicle);
         setContentView(R.layout.include_tag);
     }
 }
 </code></pre>
 <h4 id="merge&#x6E90;&#x7801;"><a name="merge&#x6E90;&#x7801;" class="anchor-navigation-ex-anchor" href="#merge&#x6E90;&#x7801;"><i class="fa fa-link" aria-hidden="true"></i></a>Merge&#x6E90;&#x7801;</h4>
-<pre><code class="lang-java">/**
+<pre><code class="lang-java"><span class="hljs-comment">/**
  * Exercise &lt;merge /&gt; tag in XML files.
- */
-public class Merge extends Activity {
-    private LinearLayout mLayout;
+ */</span>
+<span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Merge</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">Activity</span> </span>{
+    <span class="hljs-keyword">private</span> LinearLayout mLayout;
 
-    @Override
-    protected void onCreate(Bundle icicle) {
-        super.onCreate(icicle);
+    <span class="hljs-meta">@Override</span>
+    <span class="hljs-function"><span class="hljs-keyword">protected</span> <span class="hljs-keyword">void</span> <span class="hljs-title">onCreate</span><span class="hljs-params">(Bundle icicle)</span> </span>{
+        <span class="hljs-keyword">super</span>.onCreate(icicle);
 
-        mLayout = new LinearLayout(this);
+        mLayout = <span class="hljs-keyword">new</span> LinearLayout(<span class="hljs-keyword">this</span>);
         mLayout.setOrientation(LinearLayout.VERTICAL);
-        LayoutInflater.from(this).inflate(R.layout.merge_tag, mLayout);
+        LayoutInflater.from(<span class="hljs-keyword">this</span>).inflate(R.layout.merge_tag, mLayout);
 
         setContentView(mLayout);
     }
 
-    public ViewGroup getLayout() {
-        return mLayout;
+    <span class="hljs-function"><span class="hljs-keyword">public</span> ViewGroup <span class="hljs-title">getLayout</span><span class="hljs-params">()</span> </span>{
+        <span class="hljs-keyword">return</span> mLayout;
     }
 }
 </code></pre>
@@ -3942,7 +3946,7 @@ public class Merge extends Activity {
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"Android布局优化之include、merge、ViewStub的使用","level":"3.2.9","depth":2,"next":{"title":"Android权限处理","level":"3.2.10","depth":2,"path":"android/advance/permission.md","ref":"android/advance/permission.md","articles":[]},"previous":{"title":"Android 内存泄漏总结","level":"3.2.8","depth":2,"path":"android/advance/memory-leak.md","ref":"android/advance/memory-leak.md","articles":[]},"dir":"ltr"},"config":{"plugins":["-lunr","-search","-highlight","-livereload","search-plus@^0.0.11","simple-page-toc@^0.1.1","github@^2.0.0","github-buttons@2.1.0","edit-link@^2.0.2","advanced-emoji@^0.2.1","anchors@^0.7.1","include-codeblock@^3.0.2","ace@^0.3.2","emphasize@^1.1.0","katex@^1.1.3","splitter@^0.0.8","tbfed-pagefooter@^0.0.1","expandable-chapters-small@^0.1.7","sectionx@^3.1.0","local-video@^1.0.1","anchor-navigation-ex@0.1.8","favicon@^0.0.2"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"tbfed-pagefooter":{"copyright":"Copyright © ruheng.com 2017","modify_label":"该文件修订时间：","modify_format":"YYYY-MM-DD HH:mm:ss"},"emphasize":{},"ace":{},"github":{"url":"https://github.com/LRH1993/android_interview"},"simple-page-toc":{"maxDepth":3,"skipFirstH1":true},"splitter":{},"katex":{},"fontsettings":{"theme":"white","family":"sans","size":2},"sectionx":{"tag":"b"},"anchor-navigation-ex":{"isRewritePageTitle":false,"tocLevel1Icon":"fa fa-hand-o-right","tocLevel2Icon":"fa fa-hand-o-right","tocLevel3Icon":"fa fa-hand-o-right"},"favicon":{"shortcut":"favicon.ico","bookmark":"favicon.ico"},"github-buttons":{"repo":"LRH1993/android_interview","types":["star"],"size":"small"},"expandable-chapters-small":{},"local-video":{},"advanced-emoji":{"embedEmojis":false},"include-codeblock":{"check":false,"edit":true,"fixlang":false,"lang":"","template":"ace","theme":"chrome","unindent":true},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":true,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"edit-link":{"label":"Edit This Page","base":"https://github.com/LRH1993/android_interview/edit/master"},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":true},"anchors":{},"search-plus":{}},"theme":"default","author":"ruheng","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"Android校招面试指南","language":"zh-hans","output.name":"site","links":{"sidebar":{"Home":"http://lruheng.com/"}},"gitbook":"3.2.3","description":"Android面试必备，记录自己的秋招之路"},"file":{"path":"android/advance/layout-optimization.md","mtime":"2017-09-03T05:59:19.000Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2017-10-16T12:05:21.906Z"},"basePath":"../..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"Android布局优化之include、merge、ViewStub的使用","level":"3.2.9","depth":2,"next":{"title":"Android权限处理","level":"3.2.10","depth":2,"path":"android/advance/permission.md","ref":"android/advance/permission.md","articles":[]},"previous":{"title":"Android 内存泄漏总结","level":"3.2.8","depth":2,"path":"android/advance/memory-leak.md","ref":"android/advance/memory-leak.md","articles":[]},"dir":"ltr"},"config":{"plugins":["-lunr","-search","-livereload","search-plus@^0.0.11","simple-page-toc@^0.1.1","github@^2.0.0","github-buttons@2.1.0","edit-link@^2.0.2","advanced-emoji@^0.2.1","anchors@^0.7.1","include-codeblock@^3.0.2","ace@^0.3.2","emphasize@^1.1.0","katex@^1.1.3","splitter@^0.0.8","tbfed-pagefooter@^0.0.1","expandable-chapters-small@^0.1.7","sectionx@^3.1.0","local-video@^1.0.1","anchor-navigation-ex@0.1.8","favicon@^0.0.2"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"tbfed-pagefooter":{"copyright":"Copyright © ruheng.com 2017","modify_label":"该文件修订时间：","modify_format":"YYYY-MM-DD HH:mm:ss"},"emphasize":{},"ace":{},"github":{"url":"https://github.com/LRH1993/android_interview"},"simple-page-toc":{"maxDepth":3,"skipFirstH1":true},"splitter":{},"katex":{},"fontsettings":{"theme":"white","family":"sans","size":2},"sectionx":{"tag":"b"},"highlight":{},"anchor-navigation-ex":{"isRewritePageTitle":false,"tocLevel1Icon":"fa fa-hand-o-right","tocLevel2Icon":"fa fa-hand-o-right","tocLevel3Icon":"fa fa-hand-o-right"},"favicon":{"shortcut":"favicon.ico","bookmark":"favicon.ico"},"github-buttons":{"repo":"LRH1993/android_interview","types":["star"],"size":"small"},"expandable-chapters-small":{},"local-video":{},"advanced-emoji":{"embedEmojis":false},"include-codeblock":{"check":false,"edit":false,"fixlang":false,"lang":"","template":"default","theme":"chrome","unindent":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":true,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"edit-link":{"label":"Edit This Page","base":"https://github.com/LRH1993/android_interview/edit/master"},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":true},"anchors":{},"search-plus":{}},"theme":"default","author":"ruheng","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"Android校招面试指南","language":"zh-hans","output.name":"site","links":{"sidebar":{"Home":"http://lruheng.com/"}},"gitbook":"3.2.3","description":"Android面试必备，记录自己的秋招之路"},"file":{"path":"android/advance/layout-optimization.md","mtime":"2017-09-03T05:59:19.000Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2017-10-16T13:00:43.989Z"},"basePath":"../..","book":{"language":""}});
         });
     </script>
 </div>

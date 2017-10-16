@@ -69,6 +69,10 @@
                 
             
                 
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
                 <link rel="stylesheet" href="../../gitbook/gitbook-plugin-fontsettings/website.css">
                 
             
@@ -3708,24 +3712,24 @@
                                 <h3 id="&#x4E00;&#x3001;&#x6D88;&#x606F;&#x673A;&#x5236;&#x6982;&#x8FF0;"><a name="&#x4E00;&#x3001;&#x6D88;&#x606F;&#x673A;&#x5236;&#x6982;&#x8FF0;" class="anchor-navigation-ex-anchor" href="#&#x4E00;&#x3001;&#x6D88;&#x606F;&#x673A;&#x5236;&#x6982;&#x8FF0;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x4E00;&#x3001;&#x6D88;&#x606F;&#x673A;&#x5236;&#x6982;&#x8FF0;</h3>
 <h5 id="1&#x6D88;&#x606F;&#x673A;&#x5236;&#x7684;&#x7B80;&#x4ECB;"><a name="1&#x6D88;&#x606F;&#x673A;&#x5236;&#x7684;&#x7B80;&#x4ECB;" class="anchor-navigation-ex-anchor" href="#1&#x6D88;&#x606F;&#x673A;&#x5236;&#x7684;&#x7B80;&#x4ECB;"><i class="fa fa-link" aria-hidden="true"></i></a>1.&#x6D88;&#x606F;&#x673A;&#x5236;&#x7684;&#x7B80;&#x4ECB;</h5>
 <p>&#x5728;Android&#x4E2D;&#x4F7F;&#x7528;&#x6D88;&#x606F;&#x673A;&#x5236;&#xFF0C;&#x6211;&#x4EEC;&#x9996;&#x5148;&#x60F3;&#x5230;&#x7684;&#x5C31;&#x662F;Handler&#x3002;&#x6CA1;&#x9519;&#xFF0C;Handler&#x662F;Android&#x6D88;&#x606F;&#x673A;&#x5236;&#x7684;&#x4E0A;&#x5C42;&#x63A5;&#x53E3;&#x3002;Handler&#x7684;&#x4F7F;&#x7528;&#x8FC7;&#x7A0B;&#x5F88;&#x7B80;&#x5355;&#xFF0C;&#x901A;&#x8FC7;&#x5B83;&#x53EF;&#x4EE5;&#x8F7B;&#x677E;&#x5730;&#x5C06;&#x4E00;&#x4E2A;&#x4EFB;&#x52A1;&#x5207;&#x6362;&#x5230;Handler&#x6240;&#x5728;&#x7684;&#x7EBF;&#x7A0B;&#x4E2D;&#x53BB;&#x6267;&#x884C;&#x3002;&#x901A;&#x5E38;&#x60C5;&#x51B5;&#x4E0B;&#xFF0C;Handler&#x7684;&#x4F7F;&#x7528;&#x573A;&#x666F;&#x5C31;&#x662F;&#x66F4;&#x65B0;UI&#x3002;<br>&#x5982;&#x4E0B;&#x5C31;&#x662F;&#x4F7F;&#x7528;&#x6D88;&#x606F;&#x673A;&#x5236;&#x7684;&#x4E00;&#x4E2A;&#x7B80;&#x5355;&#x5B9E;&#x4F8B;&#xFF1A;</p>
-<pre><code class="lang-java">public class Activity extends android.app.Activity {
-    private Handler mHandler = new Handler(){
-        @Override
-        public void handleMessage(Message msg) {
-            super.handleMessage(msg);
+<pre><code class="lang-java"><span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Activity</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">android</span>.<span class="hljs-title">app</span>.<span class="hljs-title">Activity</span> </span>{
+    <span class="hljs-keyword">private</span> Handler mHandler = <span class="hljs-keyword">new</span> Handler(){
+        <span class="hljs-meta">@Override</span>
+        <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">handleMessage</span><span class="hljs-params">(Message msg)</span> </span>{
+            <span class="hljs-keyword">super</span>.handleMessage(msg);
             System.out.println(msg.what);
         }
     };
-    @Override
-    public void onCreate(Bundle savedInstanceState, PersistableBundle persistentState) {
-        super.onCreate(savedInstanceState, persistentState);
+    <span class="hljs-meta">@Override</span>
+    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">onCreate</span><span class="hljs-params">(Bundle savedInstanceState, PersistableBundle persistentState)</span> </span>{
+        <span class="hljs-keyword">super</span>.onCreate(savedInstanceState, persistentState);
         setContentView(R.layout.activity_main);
-        new Thread(new Runnable() {
-            @Override
-            public void run() {
+        <span class="hljs-keyword">new</span> Thread(<span class="hljs-keyword">new</span> Runnable() {
+            <span class="hljs-meta">@Override</span>
+            <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">run</span><span class="hljs-params">()</span> </span>{
                 ...............&#x8017;&#x65F6;&#x64CD;&#x4F5C;
                 Message message = Message.obtain();
-                message.what = 1;
+                message.what = <span class="hljs-number">1</span>;
                 mHandler.sendMessage(message);
             }
         }).start();
@@ -3750,46 +3754,46 @@
 <h3 id="&#x4E8C;&#x3001;&#x6D88;&#x606F;&#x673A;&#x5236;&#x7684;&#x6E90;&#x7801;&#x89E3;&#x6790;"><a name="&#x4E8C;&#x3001;&#x6D88;&#x606F;&#x673A;&#x5236;&#x7684;&#x6E90;&#x7801;&#x89E3;&#x6790;" class="anchor-navigation-ex-anchor" href="#&#x4E8C;&#x3001;&#x6D88;&#x606F;&#x673A;&#x5236;&#x7684;&#x6E90;&#x7801;&#x89E3;&#x6790;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x4E8C;&#x3001;&#x6D88;&#x606F;&#x673A;&#x5236;&#x7684;&#x6E90;&#x7801;&#x89E3;&#x6790;</h3>
 <h5 id="1looper"><a name="1looper" class="anchor-navigation-ex-anchor" href="#1looper"><i class="fa fa-link" aria-hidden="true"></i></a>1.Looper</h5>
 <p>&#x8981;&#x60F3;&#x4F7F;&#x7528;&#x6D88;&#x606F;&#x673A;&#x5236;&#xFF0C;&#x9996;&#x5148;&#x8981;&#x521B;&#x5EFA;&#x4E00;&#x4E2A;Looper&#x3002;<br><strong>&#x521D;&#x59CB;&#x5316;Looper</strong><br>&#x65E0;&#x53C2;&#x60C5;&#x51B5;&#x4E0B;&#xFF0C;&#x9ED8;&#x8BA4;&#x8C03;&#x7528;<code>prepare(true);</code>&#x8868;&#x793A;&#x7684;&#x662F;&#x8FD9;&#x4E2A;Looper&#x53EF;&#x4EE5;&#x9000;&#x51FA;&#xFF0C;&#x800C;&#x5BF9;&#x4E8E;false&#x7684;&#x60C5;&#x51B5;&#x5219;&#x8868;&#x793A;&#x5F53;&#x524D;Looper&#x4E0D;&#x53EF;&#x4EE5;&#x9000;&#x51FA;&#x3002;&#x3002;</p>
-<pre><code class="lang-java"> public static void prepare() {
-        prepare(true);
+<pre><code class="lang-java"> <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title">prepare</span><span class="hljs-params">()</span> </span>{
+        prepare(<span class="hljs-keyword">true</span>);
     }
 
-    private static void prepare(boolean quitAllowed) {
-        if (sThreadLocal.get() != null) {
-            throw new RuntimeException(&quot;Only one Looper may be created per thread&quot;);
+    <span class="hljs-function"><span class="hljs-keyword">private</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title">prepare</span><span class="hljs-params">(<span class="hljs-keyword">boolean</span> quitAllowed)</span> </span>{
+        <span class="hljs-keyword">if</span> (sThreadLocal.get() != <span class="hljs-keyword">null</span>) {
+            <span class="hljs-keyword">throw</span> <span class="hljs-keyword">new</span> RuntimeException(<span class="hljs-string">&quot;Only one Looper may be created per thread&quot;</span>);
         }
-        sThreadLocal.set(new Looper(quitAllowed));
+        sThreadLocal.set(<span class="hljs-keyword">new</span> Looper(quitAllowed));
     }
 </code></pre>
 <p>&#x8FD9;&#x91CC;&#x770B;&#x51FA;&#xFF0C;&#x4E0D;&#x80FD;&#x91CD;&#x590D;&#x521B;&#x5EFA;Looper&#xFF0C;&#x53EA;&#x80FD;&#x521B;&#x5EFA;&#x4E00;&#x4E2A;&#x3002;&#x521B;&#x5EFA;Looper,&#x5E76;&#x4FDD;&#x5B58;&#x5728;ThreadLocal&#x3002;&#x5176;&#x4E2D;ThreadLocal&#x662F;&#x7EBF;&#x7A0B;&#x672C;&#x5730;&#x5B58;&#x50A8;&#x533A;&#xFF08;Thread Local Storage&#xFF0C;&#x7B80;&#x79F0;&#x4E3A;TLS&#xFF09;&#xFF0C;&#x6BCF;&#x4E2A;&#x7EBF;&#x7A0B;&#x90FD;&#x6709;&#x81EA;&#x5DF1;&#x7684;&#x79C1;&#x6709;&#x7684;&#x672C;&#x5730;&#x5B58;&#x50A8;&#x533A;&#x57DF;&#xFF0C;&#x4E0D;&#x540C;&#x7EBF;&#x7A0B;&#x4E4B;&#x95F4;&#x5F7C;&#x6B64;&#x4E0D;&#x80FD;&#x8BBF;&#x95EE;&#x5BF9;&#x65B9;&#x7684;TLS&#x533A;&#x57DF;&#x3002;<br><strong>&#x5F00;&#x542F;Looper</strong></p>
-<pre><code class="lang-java">public static void loop() {
-    final Looper me = myLooper();  //&#x83B7;&#x53D6;TLS&#x5B58;&#x50A8;&#x7684;Looper&#x5BF9;&#x8C61; 
-    if (me == null) {
-        throw new RuntimeException(&quot;No Looper; Looper.prepare() wasn&apos;t called on this thread.&quot;);
+<pre><code class="lang-java"><span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title">loop</span><span class="hljs-params">()</span> </span>{
+    <span class="hljs-keyword">final</span> Looper me = myLooper();  <span class="hljs-comment">//&#x83B7;&#x53D6;TLS&#x5B58;&#x50A8;&#x7684;Looper&#x5BF9;&#x8C61; </span>
+    <span class="hljs-keyword">if</span> (me == <span class="hljs-keyword">null</span>) {
+        <span class="hljs-keyword">throw</span> <span class="hljs-keyword">new</span> RuntimeException(<span class="hljs-string">&quot;No Looper; Looper.prepare() wasn&apos;t called on this thread.&quot;</span>);
     }
-    final MessageQueue queue = me.mQueue;  //&#x83B7;&#x53D6;Looper&#x5BF9;&#x8C61;&#x4E2D;&#x7684;&#x6D88;&#x606F;&#x961F;&#x5217;
+    <span class="hljs-keyword">final</span> MessageQueue queue = me.mQueue;  <span class="hljs-comment">//&#x83B7;&#x53D6;Looper&#x5BF9;&#x8C61;&#x4E2D;&#x7684;&#x6D88;&#x606F;&#x961F;&#x5217;</span>
 
     Binder.clearCallingIdentity();
-    final long ident = Binder.clearCallingIdentity();
+    <span class="hljs-keyword">final</span> <span class="hljs-keyword">long</span> ident = Binder.clearCallingIdentity();
 
-    for (;;) { //&#x8FDB;&#x5165;loop&#x7684;&#x4E3B;&#x5FAA;&#x73AF;&#x65B9;&#x6CD5;
-        Message msg = queue.next(); //&#x53EF;&#x80FD;&#x4F1A;&#x963B;&#x585E;,&#x56E0;&#x4E3A;next()&#x65B9;&#x6CD5;&#x53EF;&#x80FD;&#x4F1A;&#x65E0;&#x9650;&#x5FAA;&#x73AF;
-        if (msg == null) { //&#x6D88;&#x606F;&#x4E3A;&#x7A7A;&#xFF0C;&#x5219;&#x9000;&#x51FA;&#x5FAA;&#x73AF;
-            return;
+    <span class="hljs-keyword">for</span> (;;) { <span class="hljs-comment">//&#x8FDB;&#x5165;loop&#x7684;&#x4E3B;&#x5FAA;&#x73AF;&#x65B9;&#x6CD5;</span>
+        Message msg = queue.next(); <span class="hljs-comment">//&#x53EF;&#x80FD;&#x4F1A;&#x963B;&#x585E;,&#x56E0;&#x4E3A;next()&#x65B9;&#x6CD5;&#x53EF;&#x80FD;&#x4F1A;&#x65E0;&#x9650;&#x5FAA;&#x73AF;</span>
+        <span class="hljs-keyword">if</span> (msg == <span class="hljs-keyword">null</span>) { <span class="hljs-comment">//&#x6D88;&#x606F;&#x4E3A;&#x7A7A;&#xFF0C;&#x5219;&#x9000;&#x51FA;&#x5FAA;&#x73AF;</span>
+            <span class="hljs-keyword">return</span>;
         }
 
-        Printer logging = me.mLogging;  //&#x9ED8;&#x8BA4;&#x4E3A;null&#xFF0C;&#x53EF;&#x901A;&#x8FC7;setMessageLogging()&#x65B9;&#x6CD5;&#x6765;&#x6307;&#x5B9A;&#x8F93;&#x51FA;&#xFF0C;&#x7528;&#x4E8E;debug&#x529F;&#x80FD;
-        if (logging != null) {
-            logging.println(&quot;&gt;&gt;&gt;&gt;&gt; Dispatching to &quot; + msg.target + &quot; &quot; +
-                    msg.callback + &quot;: &quot; + msg.what);
+        Printer logging = me.mLogging;  <span class="hljs-comment">//&#x9ED8;&#x8BA4;&#x4E3A;null&#xFF0C;&#x53EF;&#x901A;&#x8FC7;setMessageLogging()&#x65B9;&#x6CD5;&#x6765;&#x6307;&#x5B9A;&#x8F93;&#x51FA;&#xFF0C;&#x7528;&#x4E8E;debug&#x529F;&#x80FD;</span>
+        <span class="hljs-keyword">if</span> (logging != <span class="hljs-keyword">null</span>) {
+            logging.println(<span class="hljs-string">&quot;&gt;&gt;&gt;&gt;&gt; Dispatching to &quot;</span> + msg.target + <span class="hljs-string">&quot; &quot;</span> +
+                    msg.callback + <span class="hljs-string">&quot;: &quot;</span> + msg.what);
         }
-        msg.target.dispatchMessage(msg); //&#x83B7;&#x53D6;msg&#x7684;&#x76EE;&#x6807;Handler&#xFF0C;&#x7136;&#x540E;&#x7528;&#x4E8E;&#x5206;&#x53D1;Message 
-        if (logging != null) {
-            logging.println(&quot;&lt;&lt;&lt;&lt;&lt; Finished to &quot; + msg.target + &quot; &quot; + msg.callback);
+        msg.target.dispatchMessage(msg); <span class="hljs-comment">//&#x83B7;&#x53D6;msg&#x7684;&#x76EE;&#x6807;Handler&#xFF0C;&#x7136;&#x540E;&#x7528;&#x4E8E;&#x5206;&#x53D1;Message </span>
+        <span class="hljs-keyword">if</span> (logging != <span class="hljs-keyword">null</span>) {
+            logging.println(<span class="hljs-string">&quot;&lt;&lt;&lt;&lt;&lt; Finished to &quot;</span> + msg.target + <span class="hljs-string">&quot; &quot;</span> + msg.callback);
         }
 
-        final long newIdent = Binder.clearCallingIdentity();
-        if (ident != newIdent) {
+        <span class="hljs-keyword">final</span> <span class="hljs-keyword">long</span> newIdent = Binder.clearCallingIdentity();
+        <span class="hljs-keyword">if</span> (ident != newIdent) {
 
         }
         msg.recycleUnchecked(); 
@@ -3799,7 +3803,7 @@
 <p>loop()&#x8FDB;&#x5165;&#x5FAA;&#x73AF;&#x6A21;&#x5F0F;&#xFF0C;&#x4E0D;&#x65AD;&#x91CD;&#x590D;&#x4E0B;&#x9762;&#x7684;&#x64CD;&#x4F5C;&#xFF0C;&#x76F4;&#x5230;&#x6D88;&#x606F;&#x4E3A;&#x7A7A;&#x65F6;&#x9000;&#x51FA;&#x5FAA;&#x73AF;:<br>&#x8BFB;&#x53D6;MessageQueue&#x7684;&#x4E0B;&#x4E00;&#x6761;Message&#xFF08;&#x5173;&#x4E8E;next()&#xFF0C;&#x540E;&#x9762;&#x8BE6;&#x7EC6;&#x4ECB;&#x7ECD;&#xFF09;&#xFF1B;<br>&#x628A;Message&#x5206;&#x53D1;&#x7ED9;&#x76F8;&#x5E94;&#x7684;target&#x3002;</p>
 <p><strong>&#x5F53;next()&#x53D6;&#x51FA;&#x4E0B;&#x4E00;&#x6761;&#x6D88;&#x606F;&#x65F6;&#xFF0C;&#x961F;&#x5217;&#x4E2D;&#x5DF2;&#x7ECF;&#x6CA1;&#x6709;&#x6D88;&#x606F;&#x65F6;&#xFF0C;next()&#x4F1A;&#x65E0;&#x9650;&#x5FAA;&#x73AF;&#xFF0C;&#x4EA7;&#x751F;&#x963B;&#x585E;&#x3002;&#x7B49;&#x5F85;MessageQueue&#x4E2D;&#x52A0;&#x5165;&#x6D88;&#x606F;&#xFF0C;&#x7136;&#x540E;&#x91CD;&#x65B0;&#x5524;&#x9192;&#x3002;</strong></p>
 <p><strong>&#x4E3B;&#x7EBF;&#x7A0B;&#x4E2D;&#x4E0D;&#x9700;&#x8981;&#x81EA;&#x5DF1;&#x521B;&#x5EFA;Looper&#xFF0C;&#x8FD9;&#x662F;&#x7531;&#x4E8E;&#x5728;&#x7A0B;&#x5E8F;&#x542F;&#x52A8;&#x7684;&#x65F6;&#x5019;&#xFF0C;&#x7CFB;&#x7EDF;&#x5DF2;&#x7ECF;&#x5E2E;&#x6211;&#x4EEC;&#x81EA;&#x52A8;&#x8C03;&#x7528;&#x4E86;</strong><code>Looper.prepare()</code><strong>&#x65B9;&#x6CD5;&#x3002;&#x67E5;&#x770B;ActivityThread&#x4E2D;&#x7684;</strong><code>main()</code><strong>&#x65B9;&#x6CD5;&#xFF0C;&#x4EE3;&#x7801;&#x5982;&#x4E0B;&#x6240;&#x793A;&#xFF1A;</strong></p>
-<pre><code class="lang-java">  public static void main(String[] args) {
+<pre><code class="lang-java">  <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title">main</span><span class="hljs-params">(String[] args)</span> </span>{
 ..........................
         Looper.prepareMainLooper();
   ..........................
@@ -3811,20 +3815,20 @@
 <p>&#x5176;&#x4E2D;<code>`prepareMainLooper()</code>&#x65B9;&#x6CD5;&#x4F1A;&#x8C03;&#x7528;<code>prepare(false)</code>&#x65B9;&#x6CD5;&#x3002;</p>
 <h6 id="2handler"><a name="2handler" class="anchor-navigation-ex-anchor" href="#2handler"><i class="fa fa-link" aria-hidden="true"></i></a>2.Handler</h6>
 <p><strong>&#x521B;&#x5EFA;Handler</strong></p>
-<pre><code class="lang-java">public Handler() {
-    this(null, false);
+<pre><code class="lang-java"><span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-title">Handler</span><span class="hljs-params">()</span> </span>{
+    <span class="hljs-keyword">this</span>(<span class="hljs-keyword">null</span>, <span class="hljs-keyword">false</span>);
 }
 
-public Handler(Callback callback, boolean async) {
+<span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-title">Handler</span><span class="hljs-params">(Callback callback, <span class="hljs-keyword">boolean</span> async)</span> </span>{
    .................................
-    //&#x5FC5;&#x987B;&#x5148;&#x6267;&#x884C;Looper.prepare()&#xFF0C;&#x624D;&#x80FD;&#x83B7;&#x53D6;Looper&#x5BF9;&#x8C61;&#xFF0C;&#x5426;&#x5219;&#x4E3A;null.
-    mLooper = Looper.myLooper();  //&#x4ECE;&#x5F53;&#x524D;&#x7EBF;&#x7A0B;&#x7684;TLS&#x4E2D;&#x83B7;&#x53D6;Looper&#x5BF9;&#x8C61;
-    if (mLooper == null) {
-        throw new RuntimeException(&quot;&quot;);
+    <span class="hljs-comment">//&#x5FC5;&#x987B;&#x5148;&#x6267;&#x884C;Looper.prepare()&#xFF0C;&#x624D;&#x80FD;&#x83B7;&#x53D6;Looper&#x5BF9;&#x8C61;&#xFF0C;&#x5426;&#x5219;&#x4E3A;null.</span>
+    mLooper = Looper.myLooper();  <span class="hljs-comment">//&#x4ECE;&#x5F53;&#x524D;&#x7EBF;&#x7A0B;&#x7684;TLS&#x4E2D;&#x83B7;&#x53D6;Looper&#x5BF9;&#x8C61;</span>
+    <span class="hljs-keyword">if</span> (mLooper == <span class="hljs-keyword">null</span>) {
+        <span class="hljs-keyword">throw</span> <span class="hljs-keyword">new</span> RuntimeException(<span class="hljs-string">&quot;&quot;</span>);
     }
-    mQueue = mLooper.mQueue; //&#x6D88;&#x606F;&#x961F;&#x5217;&#xFF0C;&#x6765;&#x81EA;Looper&#x5BF9;&#x8C61;
-    mCallback = callback;  //&#x56DE;&#x8C03;&#x65B9;&#x6CD5;
-    mAsynchronous = async; //&#x8BBE;&#x7F6E;&#x6D88;&#x606F;&#x662F;&#x5426;&#x4E3A;&#x5F02;&#x6B65;&#x5904;&#x7406;&#x65B9;&#x5F0F;
+    mQueue = mLooper.mQueue; <span class="hljs-comment">//&#x6D88;&#x606F;&#x961F;&#x5217;&#xFF0C;&#x6765;&#x81EA;Looper&#x5BF9;&#x8C61;</span>
+    mCallback = callback;  <span class="hljs-comment">//&#x56DE;&#x8C03;&#x65B9;&#x6CD5;</span>
+    mAsynchronous = async; <span class="hljs-comment">//&#x8BBE;&#x7F6E;&#x6D88;&#x606F;&#x662F;&#x5426;&#x4E3A;&#x5F02;&#x6B65;&#x5904;&#x7406;&#x65B9;&#x5F0F;</span>
 }
 </code></pre>
 <p>&#x5BF9;&#x4E8E;Handler&#x7684;&#x65E0;&#x53C2;&#x6784;&#x9020;&#x65B9;&#x6CD5;&#xFF0C;&#x9ED8;&#x8BA4;&#x91C7;&#x7528;&#x5F53;&#x524D;&#x7EBF;&#x7A0B;TLS&#x4E2D;&#x7684;Looper&#x5BF9;&#x8C61;&#xFF0C;&#x5E76;&#x4E14;callback&#x56DE;&#x8C03;&#x65B9;&#x6CD5;&#x4E3A;null&#xFF0C;&#x4E14;&#x6D88;&#x606F;&#x4E3A;&#x540C;&#x6B65;&#x5904;&#x7406;&#x65B9;&#x5F0F;&#x3002;&#x53EA;&#x8981;&#x6267;&#x884C;&#x7684;<code>Looper.prepare()</code>&#x65B9;&#x6CD5;&#xFF0C;&#x90A3;&#x4E48;&#x4FBF;&#x53EF;&#x4EE5;&#x83B7;&#x53D6;&#x6709;&#x6548;&#x7684;Looper&#x5BF9;&#x8C61;&#x3002;</p>
@@ -3832,183 +3836,183 @@ public Handler(Callback callback, boolean async) {
 <p>&#x53D1;&#x9001;&#x6D88;&#x606F;&#x6709;&#x51E0;&#x79CD;&#x65B9;&#x5F0F;&#xFF0C;&#x4F46;&#x662F;&#x5F52;&#x6839;&#x7ED3;&#x5E95;&#x90FD;&#x662F;&#x8C03;&#x7528;&#x4E86;<code>sendMessageAtTime()</code>&#x65B9;&#x6CD5;&#x3002;</p>
 <p>&#x5728;&#x5B50;&#x7EBF;&#x7A0B;&#x4E2D;&#x901A;&#x8FC7;Handler&#x7684;post()&#x65B9;&#x5F0F;&#x6216;send()&#x65B9;&#x5F0F;&#x53D1;&#x9001;&#x6D88;&#x606F;&#xFF0C;&#x6700;&#x7EC8;&#x90FD;&#x662F;&#x8C03;&#x7528;&#x4E86;<code>sendMessageAtTime()</code>&#x65B9;&#x6CD5;&#x3002;</p>
 <p><strong>post&#x65B9;&#x6CD5;</strong></p>
-<pre><code class="lang-java"> public final boolean post(Runnable r)
-    {
-       return  sendMessageDelayed(getPostMessage(r), 0);
+<pre><code class="lang-java"> <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">final</span> <span class="hljs-keyword">boolean</span> <span class="hljs-title">post</span><span class="hljs-params">(Runnable r)</span>
+    </span>{
+       <span class="hljs-keyword">return</span>  sendMessageDelayed(getPostMessage(r), <span class="hljs-number">0</span>);
     }
-public final boolean postAtTime(Runnable r, long uptimeMillis)
-    {
-        return sendMessageAtTime(getPostMessage(r), uptimeMillis);
+<span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">final</span> <span class="hljs-keyword">boolean</span> <span class="hljs-title">postAtTime</span><span class="hljs-params">(Runnable r, <span class="hljs-keyword">long</span> uptimeMillis)</span>
+    </span>{
+        <span class="hljs-keyword">return</span> sendMessageAtTime(getPostMessage(r), uptimeMillis);
     }
- public final boolean postAtTime(Runnable r, Object token, long uptimeMillis)
-    {
-        return sendMessageAtTime(getPostMessage(r, token), uptimeMillis);
+ <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">final</span> <span class="hljs-keyword">boolean</span> <span class="hljs-title">postAtTime</span><span class="hljs-params">(Runnable r, Object token, <span class="hljs-keyword">long</span> uptimeMillis)</span>
+    </span>{
+        <span class="hljs-keyword">return</span> sendMessageAtTime(getPostMessage(r, token), uptimeMillis);
     }
- public final boolean postDelayed(Runnable r, long delayMillis)
-    {
-        return sendMessageDelayed(getPostMessage(r), delayMillis);
+ <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">final</span> <span class="hljs-keyword">boolean</span> <span class="hljs-title">postDelayed</span><span class="hljs-params">(Runnable r, <span class="hljs-keyword">long</span> delayMillis)</span>
+    </span>{
+        <span class="hljs-keyword">return</span> sendMessageDelayed(getPostMessage(r), delayMillis);
     }
 </code></pre>
 <p><strong>send&#x65B9;&#x6CD5;</strong></p>
-<pre><code class="lang-java">public final boolean sendMessage(Message msg)
-    {
-        return sendMessageDelayed(msg, 0);
+<pre><code class="lang-java"><span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">final</span> <span class="hljs-keyword">boolean</span> <span class="hljs-title">sendMessage</span><span class="hljs-params">(Message msg)</span>
+    </span>{
+        <span class="hljs-keyword">return</span> sendMessageDelayed(msg, <span class="hljs-number">0</span>);
     }
- public final boolean sendEmptyMessage(int what)
-    {
-        return sendEmptyMessageDelayed(what, 0);
+ <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">final</span> <span class="hljs-keyword">boolean</span> <span class="hljs-title">sendEmptyMessage</span><span class="hljs-params">(<span class="hljs-keyword">int</span> what)</span>
+    </span>{
+        <span class="hljs-keyword">return</span> sendEmptyMessageDelayed(what, <span class="hljs-number">0</span>);
     } 
-public final boolean sendEmptyMessageDelayed(int what, long delayMillis) {
+<span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">final</span> <span class="hljs-keyword">boolean</span> <span class="hljs-title">sendEmptyMessageDelayed</span><span class="hljs-params">(<span class="hljs-keyword">int</span> what, <span class="hljs-keyword">long</span> delayMillis)</span> </span>{
         Message msg = Message.obtain();
         msg.what = what;
-        return sendMessageDelayed(msg, delayMillis);
+        <span class="hljs-keyword">return</span> sendMessageDelayed(msg, delayMillis);
     }
- public final boolean sendEmptyMessageAtTime(int what, long uptimeMillis) {
+ <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">final</span> <span class="hljs-keyword">boolean</span> <span class="hljs-title">sendEmptyMessageAtTime</span><span class="hljs-params">(<span class="hljs-keyword">int</span> what, <span class="hljs-keyword">long</span> uptimeMillis)</span> </span>{
         Message msg = Message.obtain();
         msg.what = what;
-        return sendMessageAtTime(msg, uptimeMillis);
+        <span class="hljs-keyword">return</span> sendMessageAtTime(msg, uptimeMillis);
     }
- public final boolean sendMessageDelayed(Message msg, long delayMillis)
-    {
-        if (delayMillis &lt; 0) {
-            delayMillis = 0;
+ <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">final</span> <span class="hljs-keyword">boolean</span> <span class="hljs-title">sendMessageDelayed</span><span class="hljs-params">(Message msg, <span class="hljs-keyword">long</span> delayMillis)</span>
+    </span>{
+        <span class="hljs-keyword">if</span> (delayMillis &lt; <span class="hljs-number">0</span>) {
+            delayMillis = <span class="hljs-number">0</span>;
         }
-        return sendMessageAtTime(msg, SystemClock.uptimeMillis() + delayMillis);
+        <span class="hljs-keyword">return</span> sendMessageAtTime(msg, SystemClock.uptimeMillis() + delayMillis);
     }
 </code></pre>
 <p>&#x5C31;&#x8FDE;&#x5B50;&#x7EBF;&#x7A0B;&#x4E2D;&#x8C03;&#x7528;Activity&#x4E2D;&#x7684;runOnUiThread()&#x4E2D;&#x66F4;&#x65B0;UI&#xFF0C;&#x5176;&#x5B9E;&#x4E5F;&#x662F;&#x53D1;&#x9001;&#x6D88;&#x606F;&#x901A;&#x77E5;&#x4E3B;&#x7EBF;&#x7A0B;&#x66F4;&#x65B0;UI&#xFF0C;&#x6700;&#x7EC8;&#x4E5F;&#x4F1A;&#x8C03;&#x7528;<code>sendMessageAtTime()</code>&#x65B9;&#x6CD5;&#x3002;</p>
-<pre><code class="lang-java"> public final void runOnUiThread(Runnable action) {
-        if (Thread.currentThread() != mUiThread) {
+<pre><code class="lang-java"> <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">final</span> <span class="hljs-keyword">void</span> <span class="hljs-title">runOnUiThread</span><span class="hljs-params">(Runnable action)</span> </span>{
+        <span class="hljs-keyword">if</span> (Thread.currentThread() != mUiThread) {
             mHandler.post(action);
-        } else {
+        } <span class="hljs-keyword">else</span> {
             action.run();
         }
     }
 </code></pre>
 <p>&#x5982;&#x679C;&#x5F53;&#x524D;&#x7684;&#x7EBF;&#x7A0B;&#x4E0D;&#x7B49;&#x4E8E;UI&#x7EBF;&#x7A0B;(&#x4E3B;&#x7EBF;&#x7A0B;)&#xFF0C;&#x5C31;&#x53BB;&#x8C03;&#x7528;Handler&#x7684;post()&#x65B9;&#x6CD5;&#xFF0C;&#x6700;&#x7EC8;&#x4F1A;&#x8C03;&#x7528;<code>sendMessageAtTime()</code>&#x65B9;&#x6CD5;&#x3002;&#x5426;&#x5219;&#x5C31;&#x76F4;&#x63A5;&#x8C03;&#x7528;Runnable&#x5BF9;&#x8C61;&#x7684;run()&#x65B9;&#x6CD5;&#x3002;</p>
 <p>&#x4E0B;&#x9762;&#x6211;&#x4EEC;&#x5C31;&#x6765;&#x4E00;&#x63A2;&#x7A76;&#x7ADF;&#xFF0C;&#x5230;&#x5E95;<code>sendMessageAtTime()</code>&#x65B9;&#x6CD5;&#x6709;&#x4EC0;&#x4E48;&#x4F5C;&#x7528;&#xFF1F;<br><strong>sendMessageAtTime()</strong></p>
-<pre><code class="lang-java"> public boolean sendMessageAtTime(Message msg, long uptimeMillis) {
-       //&#x5176;&#x4E2D;mQueue&#x662F;&#x6D88;&#x606F;&#x961F;&#x5217;&#xFF0C;&#x4ECE;Looper&#x4E2D;&#x83B7;&#x53D6;&#x7684;
+<pre><code class="lang-java"> <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">boolean</span> <span class="hljs-title">sendMessageAtTime</span><span class="hljs-params">(Message msg, <span class="hljs-keyword">long</span> uptimeMillis)</span> </span>{
+       <span class="hljs-comment">//&#x5176;&#x4E2D;mQueue&#x662F;&#x6D88;&#x606F;&#x961F;&#x5217;&#xFF0C;&#x4ECE;Looper&#x4E2D;&#x83B7;&#x53D6;&#x7684;</span>
         MessageQueue queue = mQueue;
-        if (queue == null) {
-            RuntimeException e = new RuntimeException(
-                    this + &quot; sendMessageAtTime() called with no mQueue&quot;);
-            Log.w(&quot;Looper&quot;, e.getMessage(), e);
-            return false;
+        <span class="hljs-keyword">if</span> (queue == <span class="hljs-keyword">null</span>) {
+            RuntimeException e = <span class="hljs-keyword">new</span> RuntimeException(
+                    <span class="hljs-keyword">this</span> + <span class="hljs-string">&quot; sendMessageAtTime() called with no mQueue&quot;</span>);
+            Log.w(<span class="hljs-string">&quot;Looper&quot;</span>, e.getMessage(), e);
+            <span class="hljs-keyword">return</span> <span class="hljs-keyword">false</span>;
         }
-        //&#x8C03;&#x7528;enqueueMessage&#x65B9;&#x6CD5;
-        return enqueueMessage(queue, msg, uptimeMillis);
+        <span class="hljs-comment">//&#x8C03;&#x7528;enqueueMessage&#x65B9;&#x6CD5;</span>
+        <span class="hljs-keyword">return</span> enqueueMessage(queue, msg, uptimeMillis);
     }
 </code></pre>
-<pre><code class="lang-java"> private boolean enqueueMessage(MessageQueue queue, Message msg, long uptimeMillis) {
-        msg.target = this;
-        if (mAsynchronous) {
-            msg.setAsynchronous(true);
+<pre><code class="lang-java"> <span class="hljs-function"><span class="hljs-keyword">private</span> <span class="hljs-keyword">boolean</span> <span class="hljs-title">enqueueMessage</span><span class="hljs-params">(MessageQueue queue, Message msg, <span class="hljs-keyword">long</span> uptimeMillis)</span> </span>{
+        msg.target = <span class="hljs-keyword">this</span>;
+        <span class="hljs-keyword">if</span> (mAsynchronous) {
+            msg.setAsynchronous(<span class="hljs-keyword">true</span>);
         }
-        //&#x8C03;&#x7528;MessageQueue&#x7684;enqueueMessage&#x65B9;&#x6CD5;
-        return queue.enqueueMessage(msg, uptimeMillis);
+        <span class="hljs-comment">//&#x8C03;&#x7528;MessageQueue&#x7684;enqueueMessage&#x65B9;&#x6CD5;</span>
+        <span class="hljs-keyword">return</span> queue.enqueueMessage(msg, uptimeMillis);
     }
 </code></pre>
 <p>&#x53EF;&#x4EE5;&#x770B;&#x5230;sendMessageAtTime()`&#x65B9;&#x6CD5;&#x7684;&#x4F5C;&#x7528;&#x5F88;&#x7B80;&#x5355;&#xFF0C;&#x5C31;&#x662F;&#x8C03;&#x7528;MessageQueue&#x7684;enqueueMessage()&#x65B9;&#x6CD5;&#xFF0C;&#x5F80;&#x6D88;&#x606F;&#x961F;&#x5217;&#x4E2D;&#x6DFB;&#x52A0;&#x4E00;&#x4E2A;&#x6D88;&#x606F;&#x3002;<br>&#x4E0B;&#x9762;&#x6765;&#x770B;enqueueMessage()&#x65B9;&#x6CD5;&#x7684;&#x5177;&#x4F53;&#x6267;&#x884C;&#x903B;&#x8F91;&#x3002;<br><strong>enqueueMessage()</strong></p>
-<pre><code class="lang-java">boolean enqueueMessage(Message msg, long when) {
-    // &#x6BCF;&#x4E00;&#x4E2A;Message&#x5FC5;&#x987B;&#x6709;&#x4E00;&#x4E2A;target
-    if (msg.target == null) {
-        throw new IllegalArgumentException(&quot;Message must have a target.&quot;);
+<pre><code class="lang-java"><span class="hljs-function"><span class="hljs-keyword">boolean</span> <span class="hljs-title">enqueueMessage</span><span class="hljs-params">(Message msg, <span class="hljs-keyword">long</span> when)</span> </span>{
+    <span class="hljs-comment">// &#x6BCF;&#x4E00;&#x4E2A;Message&#x5FC5;&#x987B;&#x6709;&#x4E00;&#x4E2A;target</span>
+    <span class="hljs-keyword">if</span> (msg.target == <span class="hljs-keyword">null</span>) {
+        <span class="hljs-keyword">throw</span> <span class="hljs-keyword">new</span> IllegalArgumentException(<span class="hljs-string">&quot;Message must have a target.&quot;</span>);
     }
-    if (msg.isInUse()) {
-        throw new IllegalStateException(msg + &quot; This message is already in use.&quot;);
+    <span class="hljs-keyword">if</span> (msg.isInUse()) {
+        <span class="hljs-keyword">throw</span> <span class="hljs-keyword">new</span> IllegalStateException(msg + <span class="hljs-string">&quot; This message is already in use.&quot;</span>);
     }
-    synchronized (this) {
-        if (mQuitting) {  //&#x6B63;&#x5728;&#x9000;&#x51FA;&#x65F6;&#xFF0C;&#x56DE;&#x6536;msg&#xFF0C;&#x52A0;&#x5165;&#x5230;&#x6D88;&#x606F;&#x6C60;
+    <span class="hljs-keyword">synchronized</span> (<span class="hljs-keyword">this</span>) {
+        <span class="hljs-keyword">if</span> (mQuitting) {  <span class="hljs-comment">//&#x6B63;&#x5728;&#x9000;&#x51FA;&#x65F6;&#xFF0C;&#x56DE;&#x6536;msg&#xFF0C;&#x52A0;&#x5165;&#x5230;&#x6D88;&#x606F;&#x6C60;</span>
             msg.recycle();
-            return false;
+            <span class="hljs-keyword">return</span> <span class="hljs-keyword">false</span>;
         }
         msg.markInUse();
         msg.when = when;
         Message p = mMessages;
-        boolean needWake;
-        if (p == null || when == 0 || when &lt; p.when) {
-            //p&#x4E3A;null(&#x4EE3;&#x8868;MessageQueue&#x6CA1;&#x6709;&#x6D88;&#x606F;&#xFF09; &#x6216;&#x8005;msg&#x7684;&#x89E6;&#x53D1;&#x65F6;&#x95F4;&#x662F;&#x961F;&#x5217;&#x4E2D;&#x6700;&#x65E9;&#x7684;&#xFF0C; &#x5219;&#x8FDB;&#x5165;&#x8BE5;&#x8BE5;&#x5206;&#x652F;
+        <span class="hljs-keyword">boolean</span> needWake;
+        <span class="hljs-keyword">if</span> (p == <span class="hljs-keyword">null</span> || when == <span class="hljs-number">0</span> || when &lt; p.when) {
+            <span class="hljs-comment">//p&#x4E3A;null(&#x4EE3;&#x8868;MessageQueue&#x6CA1;&#x6709;&#x6D88;&#x606F;&#xFF09; &#x6216;&#x8005;msg&#x7684;&#x89E6;&#x53D1;&#x65F6;&#x95F4;&#x662F;&#x961F;&#x5217;&#x4E2D;&#x6700;&#x65E9;&#x7684;&#xFF0C; &#x5219;&#x8FDB;&#x5165;&#x8BE5;&#x8BE5;&#x5206;&#x652F;</span>
             msg.next = p;
             mMessages = msg;
             needWake = mBlocked; 
-        } else {
-            //&#x5C06;&#x6D88;&#x606F;&#x6309;&#x65F6;&#x95F4;&#x987A;&#x5E8F;&#x63D2;&#x5165;&#x5230;MessageQueue&#x3002;&#x4E00;&#x822C;&#x5730;&#xFF0C;&#x4E0D;&#x9700;&#x8981;&#x5524;&#x9192;&#x4E8B;&#x4EF6;&#x961F;&#x5217;&#xFF0C;&#x9664;&#x975E;
-            //&#x6D88;&#x606F;&#x961F;&#x5934;&#x5B58;&#x5728;barrier&#xFF0C;&#x5E76;&#x4E14;&#x540C;&#x65F6;Message&#x662F;&#x961F;&#x5217;&#x4E2D;&#x6700;&#x65E9;&#x7684;&#x5F02;&#x6B65;&#x6D88;&#x606F;&#x3002;
-            needWake = mBlocked &amp;&amp; p.target == null &amp;&amp; msg.isAsynchronous();
+        } <span class="hljs-keyword">else</span> {
+            <span class="hljs-comment">//&#x5C06;&#x6D88;&#x606F;&#x6309;&#x65F6;&#x95F4;&#x987A;&#x5E8F;&#x63D2;&#x5165;&#x5230;MessageQueue&#x3002;&#x4E00;&#x822C;&#x5730;&#xFF0C;&#x4E0D;&#x9700;&#x8981;&#x5524;&#x9192;&#x4E8B;&#x4EF6;&#x961F;&#x5217;&#xFF0C;&#x9664;&#x975E;</span>
+            <span class="hljs-comment">//&#x6D88;&#x606F;&#x961F;&#x5934;&#x5B58;&#x5728;barrier&#xFF0C;&#x5E76;&#x4E14;&#x540C;&#x65F6;Message&#x662F;&#x961F;&#x5217;&#x4E2D;&#x6700;&#x65E9;&#x7684;&#x5F02;&#x6B65;&#x6D88;&#x606F;&#x3002;</span>
+            needWake = mBlocked &amp;&amp; p.target == <span class="hljs-keyword">null</span> &amp;&amp; msg.isAsynchronous();
             Message prev;
-            for (;;) {
+            <span class="hljs-keyword">for</span> (;;) {
                 prev = p;
                 p = p.next;
-                if (p == null || when &lt; p.when) {
-                    break;
+                <span class="hljs-keyword">if</span> (p == <span class="hljs-keyword">null</span> || when &lt; p.when) {
+                    <span class="hljs-keyword">break</span>;
                 }
-                if (needWake &amp;&amp; p.isAsynchronous()) {
-                    needWake = false;
+                <span class="hljs-keyword">if</span> (needWake &amp;&amp; p.isAsynchronous()) {
+                    needWake = <span class="hljs-keyword">false</span>;
                 }
             }
             msg.next = p;
             prev.next = msg;
         }
-        if (needWake) {
+        <span class="hljs-keyword">if</span> (needWake) {
             nativeWake(mPtr);
         }
     }
-    return true;
+    <span class="hljs-keyword">return</span> <span class="hljs-keyword">true</span>;
 }
 </code></pre>
 <p>MessageQueue&#x662F;&#x6309;&#x7167;Message&#x89E6;&#x53D1;&#x65F6;&#x95F4;&#x7684;&#x5148;&#x540E;&#x987A;&#x5E8F;&#x6392;&#x5217;&#x7684;&#xFF0C;&#x961F;&#x5934;&#x7684;&#x6D88;&#x606F;&#x662F;&#x5C06;&#x8981;&#x6700;&#x65E9;&#x89E6;&#x53D1;&#x7684;&#x6D88;&#x606F;&#x3002;&#x5F53;&#x6709;&#x6D88;&#x606F;&#x9700;&#x8981;&#x52A0;&#x5165;&#x6D88;&#x606F;&#x961F;&#x5217;&#x65F6;&#xFF0C;&#x4F1A;&#x4ECE;&#x961F;&#x5217;&#x5934;&#x5F00;&#x59CB;&#x904D;&#x5386;&#xFF0C;&#x76F4;&#x5230;&#x627E;&#x5230;&#x6D88;&#x606F;&#x5E94;&#x8BE5;&#x63D2;&#x5165;&#x7684;&#x5408;&#x9002;&#x4F4D;&#x7F6E;&#xFF0C;&#x4EE5;&#x4FDD;&#x8BC1;&#x6240;&#x6709;&#x6D88;&#x606F;&#x7684;&#x65F6;&#x95F4;&#x987A;&#x5E8F;&#x3002;</p>
 <h5 id="4&#x83B7;&#x53D6;&#x6D88;&#x606F;"><a name="4&#x83B7;&#x53D6;&#x6D88;&#x606F;" class="anchor-navigation-ex-anchor" href="#4&#x83B7;&#x53D6;&#x6D88;&#x606F;"><i class="fa fa-link" aria-hidden="true"></i></a>4.&#x83B7;&#x53D6;&#x6D88;&#x606F;</h5>
 <p>&#x5F53;&#x53D1;&#x9001;&#x4E86;&#x6D88;&#x606F;&#x540E;&#xFF0C;&#x5728;MessageQueue&#x7EF4;&#x62A4;&#x4E86;&#x6D88;&#x606F;&#x961F;&#x5217;&#xFF0C;&#x7136;&#x540E;&#x5728;Looper&#x4E2D;&#x901A;&#x8FC7;<code>loop()</code>&#x65B9;&#x6CD5;&#xFF0C;&#x4E0D;&#x65AD;&#x5730;&#x83B7;&#x53D6;&#x6D88;&#x606F;&#x3002;&#x4E0A;&#x9762;&#x5BF9;<code>loop()</code>&#x65B9;&#x6CD5;&#x8FDB;&#x884C;&#x4E86;&#x4ECB;&#x7ECD;&#xFF0C;&#x5176;&#x4E2D;&#x6700;&#x91CD;&#x8981;&#x7684;&#x662F;&#x8C03;&#x7528;&#x4E86;<code>queue.next()</code>&#x65B9;&#x6CD5;,&#x901A;&#x8FC7;&#x8BE5;&#x65B9;&#x6CD5;&#x6765;&#x63D0;&#x53D6;&#x4E0B;&#x4E00;&#x6761;&#x4FE1;&#x606F;&#x3002;&#x4E0B;&#x9762;&#x6211;&#x4EEC;&#x6765;&#x770B;&#x4E00;&#x4E0B;<code>next()</code>&#x65B9;&#x6CD5;&#x7684;&#x5177;&#x4F53;&#x6D41;&#x7A0B;&#x3002;<br><strong>next()</strong></p>
-<pre><code class="lang-java">Message next() {
-    final long ptr = mPtr;
-    if (ptr == 0) { //&#x5F53;&#x6D88;&#x606F;&#x5FAA;&#x73AF;&#x5DF2;&#x7ECF;&#x9000;&#x51FA;&#xFF0C;&#x5219;&#x76F4;&#x63A5;&#x8FD4;&#x56DE;
-        return null;
+<pre><code class="lang-java"><span class="hljs-function">Message <span class="hljs-title">next</span><span class="hljs-params">()</span> </span>{
+    <span class="hljs-keyword">final</span> <span class="hljs-keyword">long</span> ptr = mPtr;
+    <span class="hljs-keyword">if</span> (ptr == <span class="hljs-number">0</span>) { <span class="hljs-comment">//&#x5F53;&#x6D88;&#x606F;&#x5FAA;&#x73AF;&#x5DF2;&#x7ECF;&#x9000;&#x51FA;&#xFF0C;&#x5219;&#x76F4;&#x63A5;&#x8FD4;&#x56DE;</span>
+        <span class="hljs-keyword">return</span> <span class="hljs-keyword">null</span>;
     }
-    int pendingIdleHandlerCount = -1; // &#x5FAA;&#x73AF;&#x8FED;&#x4EE3;&#x7684;&#x9996;&#x6B21;&#x4E3A;-1
-    int nextPollTimeoutMillis = 0;
-    for (;;) {
-        if (nextPollTimeoutMillis != 0) {
+    <span class="hljs-keyword">int</span> pendingIdleHandlerCount = -<span class="hljs-number">1</span>; <span class="hljs-comment">// &#x5FAA;&#x73AF;&#x8FED;&#x4EE3;&#x7684;&#x9996;&#x6B21;&#x4E3A;-1</span>
+    <span class="hljs-keyword">int</span> nextPollTimeoutMillis = <span class="hljs-number">0</span>;
+    <span class="hljs-keyword">for</span> (;;) {
+        <span class="hljs-keyword">if</span> (nextPollTimeoutMillis != <span class="hljs-number">0</span>) {
             Binder.flushPendingCommands();
         }
-        //&#x963B;&#x585E;&#x64CD;&#x4F5C;&#xFF0C;&#x5F53;&#x7B49;&#x5F85;nextPollTimeoutMillis&#x65F6;&#x957F;&#xFF0C;&#x6216;&#x8005;&#x6D88;&#x606F;&#x961F;&#x5217;&#x88AB;&#x5524;&#x9192;&#xFF0C;&#x90FD;&#x4F1A;&#x8FD4;&#x56DE;
+        <span class="hljs-comment">//&#x963B;&#x585E;&#x64CD;&#x4F5C;&#xFF0C;&#x5F53;&#x7B49;&#x5F85;nextPollTimeoutMillis&#x65F6;&#x957F;&#xFF0C;&#x6216;&#x8005;&#x6D88;&#x606F;&#x961F;&#x5217;&#x88AB;&#x5524;&#x9192;&#xFF0C;&#x90FD;&#x4F1A;&#x8FD4;&#x56DE;</span>
         nativePollOnce(ptr, nextPollTimeoutMillis);
-        synchronized (this) {
-            final long now = SystemClock.uptimeMillis();
-            Message prevMsg = null;
+        <span class="hljs-keyword">synchronized</span> (<span class="hljs-keyword">this</span>) {
+            <span class="hljs-keyword">final</span> <span class="hljs-keyword">long</span> now = SystemClock.uptimeMillis();
+            Message prevMsg = <span class="hljs-keyword">null</span>;
             Message msg = mMessages;
-            if (msg != null &amp;&amp; msg.target == null) {
-                //&#x5F53;&#x6D88;&#x606F;Handler&#x4E3A;&#x7A7A;&#x65F6;&#xFF0C;&#x67E5;&#x8BE2;MessageQueue&#x4E2D;&#x7684;&#x4E0B;&#x4E00;&#x6761;&#x5F02;&#x6B65;&#x6D88;&#x606F;msg&#xFF0C;&#x4E3A;&#x7A7A;&#x5219;&#x9000;&#x51FA;&#x5FAA;&#x73AF;&#x3002;
+            <span class="hljs-keyword">if</span> (msg != <span class="hljs-keyword">null</span> &amp;&amp; msg.target == <span class="hljs-keyword">null</span>) {
+                <span class="hljs-comment">//&#x5F53;&#x6D88;&#x606F;Handler&#x4E3A;&#x7A7A;&#x65F6;&#xFF0C;&#x67E5;&#x8BE2;MessageQueue&#x4E2D;&#x7684;&#x4E0B;&#x4E00;&#x6761;&#x5F02;&#x6B65;&#x6D88;&#x606F;msg&#xFF0C;&#x4E3A;&#x7A7A;&#x5219;&#x9000;&#x51FA;&#x5FAA;&#x73AF;&#x3002;</span>
                 do {
                     prevMsg = msg;
                     msg = msg.next;
-                } while (msg != null &amp;&amp; !msg.isAsynchronous());
+                } <span class="hljs-keyword">while</span> (msg != <span class="hljs-keyword">null</span> &amp;&amp; !msg.isAsynchronous());
             }
-            if (msg != null) {
-                if (now &lt; msg.when) {
-                    //&#x5F53;&#x5F02;&#x6B65;&#x6D88;&#x606F;&#x89E6;&#x53D1;&#x65F6;&#x95F4;&#x5927;&#x4E8E;&#x5F53;&#x524D;&#x65F6;&#x95F4;&#xFF0C;&#x5219;&#x8BBE;&#x7F6E;&#x4E0B;&#x4E00;&#x6B21;&#x8F6E;&#x8BE2;&#x7684;&#x8D85;&#x65F6;&#x65F6;&#x957F;
-                    nextPollTimeoutMillis = (int) Math.min(msg.when - now, Integer.MAX_VALUE);
-                } else {
-                    // &#x83B7;&#x53D6;&#x4E00;&#x6761;&#x6D88;&#x606F;&#xFF0C;&#x5E76;&#x8FD4;&#x56DE;
-                    mBlocked = false;
-                    if (prevMsg != null) {
+            <span class="hljs-keyword">if</span> (msg != <span class="hljs-keyword">null</span>) {
+                <span class="hljs-keyword">if</span> (now &lt; msg.when) {
+                    <span class="hljs-comment">//&#x5F53;&#x5F02;&#x6B65;&#x6D88;&#x606F;&#x89E6;&#x53D1;&#x65F6;&#x95F4;&#x5927;&#x4E8E;&#x5F53;&#x524D;&#x65F6;&#x95F4;&#xFF0C;&#x5219;&#x8BBE;&#x7F6E;&#x4E0B;&#x4E00;&#x6B21;&#x8F6E;&#x8BE2;&#x7684;&#x8D85;&#x65F6;&#x65F6;&#x957F;</span>
+                    nextPollTimeoutMillis = (<span class="hljs-keyword">int</span>) Math.min(msg.when - now, Integer.MAX_VALUE);
+                } <span class="hljs-keyword">else</span> {
+                    <span class="hljs-comment">// &#x83B7;&#x53D6;&#x4E00;&#x6761;&#x6D88;&#x606F;&#xFF0C;&#x5E76;&#x8FD4;&#x56DE;</span>
+                    mBlocked = <span class="hljs-keyword">false</span>;
+                    <span class="hljs-keyword">if</span> (prevMsg != <span class="hljs-keyword">null</span>) {
                         prevMsg.next = msg.next;
-                    } else {
+                    } <span class="hljs-keyword">else</span> {
                         mMessages = msg.next;
                     }
-                    msg.next = null;
-                    //&#x8BBE;&#x7F6E;&#x6D88;&#x606F;&#x7684;&#x4F7F;&#x7528;&#x72B6;&#x6001;&#xFF0C;&#x5373;flags |= FLAG_IN_USE
+                    msg.next = <span class="hljs-keyword">null</span>;
+                    <span class="hljs-comment">//&#x8BBE;&#x7F6E;&#x6D88;&#x606F;&#x7684;&#x4F7F;&#x7528;&#x72B6;&#x6001;&#xFF0C;&#x5373;flags |= FLAG_IN_USE</span>
                     msg.markInUse();
-                    return msg;   //&#x6210;&#x529F;&#x5730;&#x83B7;&#x53D6;MessageQueue&#x4E2D;&#x7684;&#x4E0B;&#x4E00;&#x6761;&#x5373;&#x5C06;&#x8981;&#x6267;&#x884C;&#x7684;&#x6D88;&#x606F;
+                    <span class="hljs-keyword">return</span> msg;   <span class="hljs-comment">//&#x6210;&#x529F;&#x5730;&#x83B7;&#x53D6;MessageQueue&#x4E2D;&#x7684;&#x4E0B;&#x4E00;&#x6761;&#x5373;&#x5C06;&#x8981;&#x6267;&#x884C;&#x7684;&#x6D88;&#x606F;</span>
                 }
-            } else {
-                //&#x6CA1;&#x6709;&#x6D88;&#x606F;
-                nextPollTimeoutMillis = -1;
+            } <span class="hljs-keyword">else</span> {
+                <span class="hljs-comment">//&#x6CA1;&#x6709;&#x6D88;&#x606F;</span>
+                nextPollTimeoutMillis = -<span class="hljs-number">1</span>;
             }
-         //&#x6D88;&#x606F;&#x6B63;&#x5728;&#x9000;&#x51FA;&#xFF0C;&#x8FD4;&#x56DE;null
-            if (mQuitting) {
+         <span class="hljs-comment">//&#x6D88;&#x606F;&#x6B63;&#x5728;&#x9000;&#x51FA;&#xFF0C;&#x8FD4;&#x56DE;null</span>
+            <span class="hljs-keyword">if</span> (mQuitting) {
                 dispose();
-                return null;
+                <span class="hljs-keyword">return</span> <span class="hljs-keyword">null</span>;
             }
             ...............................
     }
@@ -4017,23 +4021,23 @@ public final boolean sendEmptyMessageDelayed(int what, long delayMillis) {
 <p>nativePollOnce&#x662F;&#x963B;&#x585E;&#x64CD;&#x4F5C;&#xFF0C;&#x5176;&#x4E2D;nextPollTimeoutMillis&#x4EE3;&#x8868;&#x4E0B;&#x4E00;&#x4E2A;&#x6D88;&#x606F;&#x5230;&#x6765;&#x524D;&#xFF0C;&#x8FD8;&#x9700;&#x8981;&#x7B49;&#x5F85;&#x7684;&#x65F6;&#x957F;&#xFF1B;&#x5F53;nextPollTimeoutMillis = -1&#x65F6;&#xFF0C;&#x8868;&#x793A;&#x6D88;&#x606F;&#x961F;&#x5217;&#x4E2D;&#x65E0;&#x6D88;&#x606F;&#xFF0C;&#x4F1A;&#x4E00;&#x76F4;&#x7B49;&#x5F85;&#x4E0B;&#x53BB;&#x3002;<br>&#x53EF;&#x4EE5;&#x770B;&#x51FA;<code>next()</code>&#x65B9;&#x6CD5;&#x6839;&#x636E;&#x6D88;&#x606F;&#x7684;&#x89E6;&#x53D1;&#x65F6;&#x95F4;&#xFF0C;&#x83B7;&#x53D6;&#x4E0B;&#x4E00;&#x6761;&#x9700;&#x8981;&#x6267;&#x884C;&#x7684;&#x6D88;&#x606F;,&#x961F;&#x5217;&#x4E2D;&#x6D88;&#x606F;&#x4E3A;&#x7A7A;&#x65F6;&#xFF0C;&#x5219;&#x4F1A;&#x8FDB;&#x884C;&#x963B;&#x585E;&#x64CD;&#x4F5C;&#x3002;</p>
 <h5 id="5&#x5206;&#x53D1;&#x6D88;&#x606F;"><a name="5&#x5206;&#x53D1;&#x6D88;&#x606F;" class="anchor-navigation-ex-anchor" href="#5&#x5206;&#x53D1;&#x6D88;&#x606F;"><i class="fa fa-link" aria-hidden="true"></i></a>5.&#x5206;&#x53D1;&#x6D88;&#x606F;</h5>
 <p>&#x5728;loop()&#x65B9;&#x6CD5;&#x4E2D;&#xFF0C;&#x83B7;&#x53D6;&#x5230;&#x4E0B;&#x4E00;&#x6761;&#x6D88;&#x606F;&#x540E;&#xFF0C;&#x6267;&#x884C;<code>msg.target.dispatchMessage(msg)</code>&#xFF0C;&#x6765;&#x5206;&#x53D1;&#x6D88;&#x606F;&#x5230;&#x76EE;&#x6807;Handler&#x5BF9;&#x8C61;&#x3002;<br>&#x4E0B;&#x9762;&#x5C31;&#x6765;&#x5177;&#x4F53;&#x770B;&#x4E0B;<code>dispatchMessage(msg)</code>&#x65B9;&#x6CD5;&#x7684;&#x6267;&#x884C;&#x6D41;&#x7A0B;&#x3002;<br><strong>dispatchMessage()</strong></p>
-<pre><code class="lang-java">public void dispatchMessage(Message msg) {
-    if (msg.callback != null) {
-        //&#x5F53;Message&#x5B58;&#x5728;&#x56DE;&#x8C03;&#x65B9;&#x6CD5;&#xFF0C;&#x56DE;&#x8C03;msg.callback.run()&#x65B9;&#x6CD5;&#xFF1B;
+<pre><code class="lang-java"><span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">dispatchMessage</span><span class="hljs-params">(Message msg)</span> </span>{
+    <span class="hljs-keyword">if</span> (msg.callback != <span class="hljs-keyword">null</span>) {
+        <span class="hljs-comment">//&#x5F53;Message&#x5B58;&#x5728;&#x56DE;&#x8C03;&#x65B9;&#x6CD5;&#xFF0C;&#x56DE;&#x8C03;msg.callback.run()&#x65B9;&#x6CD5;&#xFF1B;</span>
         handleCallback(msg);
-    } else {
-        if (mCallback != null) {
-            //&#x5F53;Handler&#x5B58;&#x5728;Callback&#x6210;&#x5458;&#x53D8;&#x91CF;&#x65F6;&#xFF0C;&#x56DE;&#x8C03;&#x65B9;&#x6CD5;handleMessage()&#xFF1B;
-            if (mCallback.handleMessage(msg)) {
-                return;
+    } <span class="hljs-keyword">else</span> {
+        <span class="hljs-keyword">if</span> (mCallback != <span class="hljs-keyword">null</span>) {
+            <span class="hljs-comment">//&#x5F53;Handler&#x5B58;&#x5728;Callback&#x6210;&#x5458;&#x53D8;&#x91CF;&#x65F6;&#xFF0C;&#x56DE;&#x8C03;&#x65B9;&#x6CD5;handleMessage()&#xFF1B;</span>
+            <span class="hljs-keyword">if</span> (mCallback.handleMessage(msg)) {
+                <span class="hljs-keyword">return</span>;
             }
         }
-        //Handler&#x81EA;&#x8EAB;&#x7684;&#x56DE;&#x8C03;&#x65B9;&#x6CD5;handleMessage()
+        <span class="hljs-comment">//Handler&#x81EA;&#x8EAB;&#x7684;&#x56DE;&#x8C03;&#x65B9;&#x6CD5;handleMessage()</span>
         handleMessage(msg);
     }
 }
 </code></pre>
-<pre><code class="lang-java">private static void handleCallback(Message message) {
+<pre><code class="lang-java"><span class="hljs-function"><span class="hljs-keyword">private</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title">handleCallback</span><span class="hljs-params">(Message message)</span> </span>{
         message.callback.run();
     }
 </code></pre>
@@ -4088,7 +4092,7 @@ public final boolean sendEmptyMessageDelayed(int what, long delayMillis) {
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"Android消息机制","level":"3.1.6","depth":2,"next":{"title":"Android事件分发机制","level":"3.1.7","depth":2,"path":"android/basis/Event-Dispatch.md","ref":"android/basis/Event-Dispatch.md","articles":[]},"previous":{"title":"Fragment详解","level":"3.1.5","depth":2,"path":"android/basis/Fragment.md","ref":"android/basis/Fragment.md","articles":[]},"dir":"ltr"},"config":{"plugins":["-lunr","-search","-highlight","-livereload","search-plus@^0.0.11","simple-page-toc@^0.1.1","github@^2.0.0","github-buttons@2.1.0","edit-link@^2.0.2","advanced-emoji@^0.2.1","anchors@^0.7.1","include-codeblock@^3.0.2","ace@^0.3.2","emphasize@^1.1.0","katex@^1.1.3","splitter@^0.0.8","tbfed-pagefooter@^0.0.1","expandable-chapters-small@^0.1.7","sectionx@^3.1.0","local-video@^1.0.1","anchor-navigation-ex@0.1.8","favicon@^0.0.2"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"tbfed-pagefooter":{"copyright":"Copyright © ruheng.com 2017","modify_label":"该文件修订时间：","modify_format":"YYYY-MM-DD HH:mm:ss"},"emphasize":{},"ace":{},"github":{"url":"https://github.com/LRH1993/android_interview"},"simple-page-toc":{"maxDepth":3,"skipFirstH1":true},"splitter":{},"katex":{},"fontsettings":{"theme":"white","family":"sans","size":2},"sectionx":{"tag":"b"},"anchor-navigation-ex":{"isRewritePageTitle":false,"tocLevel1Icon":"fa fa-hand-o-right","tocLevel2Icon":"fa fa-hand-o-right","tocLevel3Icon":"fa fa-hand-o-right"},"favicon":{"shortcut":"favicon.ico","bookmark":"favicon.ico"},"github-buttons":{"repo":"LRH1993/android_interview","types":["star"],"size":"small"},"expandable-chapters-small":{},"local-video":{},"advanced-emoji":{"embedEmojis":false},"include-codeblock":{"check":false,"edit":true,"fixlang":false,"lang":"","template":"ace","theme":"chrome","unindent":true},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":true,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"edit-link":{"label":"Edit This Page","base":"https://github.com/LRH1993/android_interview/edit/master"},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":true},"anchors":{},"search-plus":{}},"theme":"default","author":"ruheng","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"Android校招面试指南","language":"zh-hans","output.name":"site","links":{"sidebar":{"Home":"http://lruheng.com/"}},"gitbook":"3.2.3","description":"Android面试必备，记录自己的秋招之路"},"file":{"path":"android/basis/message-mechanism.md","mtime":"2017-08-22T07:53:58.000Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2017-10-16T12:05:21.906Z"},"basePath":"../..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"Android消息机制","level":"3.1.6","depth":2,"next":{"title":"Android事件分发机制","level":"3.1.7","depth":2,"path":"android/basis/Event-Dispatch.md","ref":"android/basis/Event-Dispatch.md","articles":[]},"previous":{"title":"Fragment详解","level":"3.1.5","depth":2,"path":"android/basis/Fragment.md","ref":"android/basis/Fragment.md","articles":[]},"dir":"ltr"},"config":{"plugins":["-lunr","-search","-livereload","search-plus@^0.0.11","simple-page-toc@^0.1.1","github@^2.0.0","github-buttons@2.1.0","edit-link@^2.0.2","advanced-emoji@^0.2.1","anchors@^0.7.1","include-codeblock@^3.0.2","ace@^0.3.2","emphasize@^1.1.0","katex@^1.1.3","splitter@^0.0.8","tbfed-pagefooter@^0.0.1","expandable-chapters-small@^0.1.7","sectionx@^3.1.0","local-video@^1.0.1","anchor-navigation-ex@0.1.8","favicon@^0.0.2"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"tbfed-pagefooter":{"copyright":"Copyright © ruheng.com 2017","modify_label":"该文件修订时间：","modify_format":"YYYY-MM-DD HH:mm:ss"},"emphasize":{},"ace":{},"github":{"url":"https://github.com/LRH1993/android_interview"},"simple-page-toc":{"maxDepth":3,"skipFirstH1":true},"splitter":{},"katex":{},"fontsettings":{"theme":"white","family":"sans","size":2},"sectionx":{"tag":"b"},"highlight":{},"anchor-navigation-ex":{"isRewritePageTitle":false,"tocLevel1Icon":"fa fa-hand-o-right","tocLevel2Icon":"fa fa-hand-o-right","tocLevel3Icon":"fa fa-hand-o-right"},"favicon":{"shortcut":"favicon.ico","bookmark":"favicon.ico"},"github-buttons":{"repo":"LRH1993/android_interview","types":["star"],"size":"small"},"expandable-chapters-small":{},"local-video":{},"advanced-emoji":{"embedEmojis":false},"include-codeblock":{"check":false,"edit":false,"fixlang":false,"lang":"","template":"default","theme":"chrome","unindent":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":true,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"edit-link":{"label":"Edit This Page","base":"https://github.com/LRH1993/android_interview/edit/master"},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":true},"anchors":{},"search-plus":{}},"theme":"default","author":"ruheng","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"Android校招面试指南","language":"zh-hans","output.name":"site","links":{"sidebar":{"Home":"http://lruheng.com/"}},"gitbook":"3.2.3","description":"Android面试必备，记录自己的秋招之路"},"file":{"path":"android/basis/message-mechanism.md","mtime":"2017-08-22T07:53:58.000Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2017-10-16T13:00:43.989Z"},"basePath":"../..","book":{"language":""}});
         });
     </script>
 </div>

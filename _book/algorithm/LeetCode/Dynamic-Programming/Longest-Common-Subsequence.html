@@ -69,6 +69,10 @@
                 
             
                 
+                <link rel="stylesheet" href="../../../gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
                 <link rel="stylesheet" href="../../../gitbook/gitbook-plugin-fontsettings/website.css">
                 
             
@@ -3721,30 +3725,30 @@
 <p>&#x8FD9;&#x9053;&#x9898;&#x7684;&#x72B6;&#x6001;&#x5F88;&#x5BB9;&#x6613;&#x627E;&#xFF0C;&#x4E0D;&#x59A8;&#x5148;&#x8BD5;&#x8BD5;&#x4EE5;<code>f[i][j]</code>&#x8868;&#x793A;&#x5B57;&#x7B26;&#x4E32; A &#x7684;&#x524D; <code>i</code> &#x4F4D;&#x548C;&#x5B57;&#x7B26;&#x4E32; B &#x7684;&#x524D; <code>j</code> &#x4F4D;&#x7684;&#x6700;&#x957F;&#x516C;&#x5171;&#x5B50;&#x5E8F;&#x5217;&#x6570;&#x76EE;&#xFF0C;&#x90A3;&#x4E48;&#x63A5;&#x4E0B;&#x6765;&#x8BD5;&#x8BD5;&#x5BFB;&#x627E;&#x5176;&#x72B6;&#x6001;&#x8F6C;&#x79FB;&#x65B9;&#x7A0B;&#x3002;&#x4ECE;&#x5B9E;&#x9645;&#x4F8B;&#x5B50;<code>ABCD</code>&#x548C;<code>EDCA</code>&#x51FA;&#x53D1;&#xFF0C;&#x9996;&#x5148;&#x521D;&#x59CB;&#x5316;<code>f</code>&#x7684;&#x957F;&#x5EA6;&#x4E3A;&#x5B57;&#x7B26;&#x4E32;&#x957F;&#x5EA6;&#x52A0;1&#xFF0C;&#x90A3;&#x4E48;&#x6709;<code>f[0][0] = 0</code>, <code>f[0][*] = 0</code>, <code>f[*][0] = 0</code>, &#x6700;&#x540E;&#x5E94;&#x8BE5;&#x8FD4;&#x56DE;<code>f[lenA][lenB]</code>. &#x5373; f &#x4E2D;&#x7D22;&#x5F15;&#x4E0E;&#x5B57;&#x7B26;&#x4E32;&#x7D22;&#x5F15;&#x5BF9;&#x5E94;(&#x5B57;&#x7B26;&#x4E32;&#x7D22;&#x5F15;&#x4ECE;1&#x5F00;&#x59CB;&#x7B97;&#x8D77;)&#xFF0C;&#x90A3;&#x4E48;&#x5728;A &#x7684;&#x7B2C;&#x4E00;&#x4E2A;&#x5B57;&#x7B26;&#x4E0E; B &#x7684;&#x7B2C;&#x4E00;&#x4E2A;&#x5B57;&#x7B26;&#x76F8;&#x7B49;&#x65F6;&#xFF0C;<code>f[1][1] = 1 + f[0][0]</code>, &#x5426;&#x5219;<code>f[1][1] = max(f[0][1], f[1][0])</code>&#x3002;</p>
 <p>&#x63A8;&#x800C;&#x5E7F;&#x4E4B;&#xFF0C;&#x4E5F;&#x5C31;&#x610F;&#x5473;&#x7740;&#x82E5;<code>A[i] == B[j]</code>, &#x5219;&#x5206;&#x522B;&#x53BB;&#x6389;&#x8FD9;&#x4E24;&#x4E2A;&#x5B57;&#x7B26;&#x540E;&#xFF0C;&#x539F; LCS &#x6570;&#x76EE;&#x51CF;&#x4E00;&#xFF0C;&#x90A3;&#x4E3A;&#x4EC0;&#x4E48;&#x4E00;&#x5B9A;&#x662F;1&#x800C;&#x4E0D;&#x662F;0&#x6216;&#x8005;2&#x5462;&#xFF1F;&#x56E0;&#x4E3A;&#x4E0D;&#x7BA1;&#x516C;&#x5171;&#x5B50;&#x5E8F;&#x5217;&#x662F;&#x4EE5;&#x54EA;&#x4E2A;&#x5B57;&#x7B26;&#x7ED3;&#x5C3E;&#xFF0C;&#x5728;<code>A[i] == B[j]</code>&#x65F6; LCS &#x6700;&#x591A;&#x53EA;&#x80FD;&#x589E;&#x52A0;1. &#x800C;&#x5728;<code>A[i] != B[j]</code>&#x65F6;&#xFF0C;&#x7531;&#x4E8E;<code>A[i]</code> &#x6216;&#x8005; <code>B[j]</code> &#x4E0D;&#x53EF;&#x80FD;&#x540C;&#x65F6;&#x51FA;&#x73B0;&#x5728;&#x6700;&#x7EC8;&#x7684; LCS &#x4E2D;&#xFF0C;&#x6545;&#x8FD9;&#x4E2A;&#x95EE;&#x9898;&#x53EF;&#x8FDB;&#x4E00;&#x6B65;&#x7F29;&#x5C0F;&#xFF0C;<code>f[i][j] = max(f[i - 1][j], f[i][j - 1])</code>. &#x9700;&#x8981;&#x6CE8;&#x610F;&#x7684;&#x662F;&#x8FD9;&#x79CD;&#x72B6;&#x6001;&#x8F6C;&#x79FB;&#x65B9;&#x7A0B;&#x53EA;&#x4F9D;&#x8D56;&#x6700;&#x7EC8;&#x7684; LCS &#x6570;&#x76EE;&#xFF0C;&#x800C;&#x4E0D;&#x4F9D;&#x8D56;&#x4E8E;&#x516C;&#x5171;&#x5B50;&#x5E8F;&#x5217;&#x5230;&#x5E95;&#x662F;&#x4EE5;&#x7B2C;&#x51E0;&#x4E2A;&#x7D22;&#x5F15;&#x7ED3;&#x675F;&#x3002;</p>
 <h2 id="&#x4E09;&#x3001;&#x89E3;&#x9898;&#x4EE3;&#x7801;"><a name="&#x4E09;&#x3001;&#x89E3;&#x9898;&#x4EE3;&#x7801;" class="anchor-navigation-ex-anchor" href="#&#x4E09;&#x3001;&#x89E3;&#x9898;&#x4EE3;&#x7801;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x4E09;&#x3001;&#x89E3;&#x9898;&#x4EE3;&#x7801;</h2>
-<pre><code class="lang-Java">public class Solution {
-    /**
-     * @param A, B: Two strings.
-     * @return: The length of longest common subsequence of A and B.
-     */
-    public int longestCommonSubsequence(String A, String B) {
-        if (A == null || A.length() == 0) return 0;
-        if (B == null || B.length() == 0) return 0;
+<pre><code class="lang-Java"><span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Solution</span> </span>{
+    <span class="hljs-comment">/**
+     * <span class="hljs-doctag">@param</span> A, B: Two strings.
+     * <span class="hljs-doctag">@return</span>: The length of longest common subsequence of A and B.
+     */</span>
+    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">int</span> <span class="hljs-title">longestCommonSubsequence</span><span class="hljs-params">(String A, String B)</span> </span>{
+        <span class="hljs-keyword">if</span> (A == <span class="hljs-keyword">null</span> || A.length() == <span class="hljs-number">0</span>) <span class="hljs-keyword">return</span> <span class="hljs-number">0</span>;
+        <span class="hljs-keyword">if</span> (B == <span class="hljs-keyword">null</span> || B.length() == <span class="hljs-number">0</span>) <span class="hljs-keyword">return</span> <span class="hljs-number">0</span>;
 
-        int lenA = A.length();
-        int lenB = B.length();
-        int[][] lcs = new int[1 + lenA][1 + lenB];
+        <span class="hljs-keyword">int</span> lenA = A.length();
+        <span class="hljs-keyword">int</span> lenB = B.length();
+        <span class="hljs-keyword">int</span>[][] lcs = <span class="hljs-keyword">new</span> <span class="hljs-keyword">int</span>[<span class="hljs-number">1</span> + lenA][<span class="hljs-number">1</span> + lenB];
 
-        for (int i = 1; i &lt; 1 + lenA; i++) {
-            for (int j = 1; j &lt; 1 + lenB; j++) {
-                if (A.charAt(i - 1) == B.charAt(j - 1)) {
-                    lcs[i][j] = 1 + lcs[i - 1][j - 1];
-                } else {
-                    lcs[i][j] = Math.max(lcs[i - 1][j], lcs[i][j - 1]);
+        <span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> i = <span class="hljs-number">1</span>; i &lt; <span class="hljs-number">1</span> + lenA; i++) {
+            <span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> j = <span class="hljs-number">1</span>; j &lt; <span class="hljs-number">1</span> + lenB; j++) {
+                <span class="hljs-keyword">if</span> (A.charAt(i - <span class="hljs-number">1</span>) == B.charAt(j - <span class="hljs-number">1</span>)) {
+                    lcs[i][j] = <span class="hljs-number">1</span> + lcs[i - <span class="hljs-number">1</span>][j - <span class="hljs-number">1</span>];
+                } <span class="hljs-keyword">else</span> {
+                    lcs[i][j] = Math.max(lcs[i - <span class="hljs-number">1</span>][j], lcs[i][j - <span class="hljs-number">1</span>]);
                 }
             }
         }
 
-        return lcs[lenA][lenB];
+        <span class="hljs-keyword">return</span> lcs[lenA][lenB];
     }
 }
 </code></pre>
@@ -3793,7 +3797,7 @@
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"Longest Common Subsequence","level":"5.2.1.2","depth":3,"next":{"title":"Longest Increasing Subsequence","level":"5.2.1.3","depth":3,"path":"algorithm/LeetCode/Dynamic-Programming/Longest-Increasing-Subsequence.md","ref":"algorithm/LeetCode/Dynamic-Programming/Longest-Increasing-Subsequence.md","articles":[]},"previous":{"title":"Distinct Subsequences","level":"5.2.1.1","depth":3,"path":"algorithm/LeetCode/Dynamic-Programming/Distinct-Subsequences.md","ref":"algorithm/LeetCode/Dynamic-Programming/Distinct-Subsequences.md","articles":[]},"dir":"ltr"},"config":{"plugins":["-lunr","-search","-highlight","-livereload","search-plus@^0.0.11","simple-page-toc@^0.1.1","github@^2.0.0","github-buttons@2.1.0","edit-link@^2.0.2","advanced-emoji@^0.2.1","anchors@^0.7.1","include-codeblock@^3.0.2","ace@^0.3.2","emphasize@^1.1.0","katex@^1.1.3","splitter@^0.0.8","tbfed-pagefooter@^0.0.1","expandable-chapters-small@^0.1.7","sectionx@^3.1.0","local-video@^1.0.1","anchor-navigation-ex@0.1.8","favicon@^0.0.2"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"tbfed-pagefooter":{"copyright":"Copyright © ruheng.com 2017","modify_label":"该文件修订时间：","modify_format":"YYYY-MM-DD HH:mm:ss"},"emphasize":{},"ace":{},"github":{"url":"https://github.com/LRH1993/android_interview"},"simple-page-toc":{"maxDepth":3,"skipFirstH1":true},"splitter":{},"katex":{},"fontsettings":{"theme":"white","family":"sans","size":2},"sectionx":{"tag":"b"},"anchor-navigation-ex":{"isRewritePageTitle":false,"tocLevel1Icon":"fa fa-hand-o-right","tocLevel2Icon":"fa fa-hand-o-right","tocLevel3Icon":"fa fa-hand-o-right"},"favicon":{"shortcut":"favicon.ico","bookmark":"favicon.ico"},"github-buttons":{"repo":"LRH1993/android_interview","types":["star"],"size":"small"},"expandable-chapters-small":{},"local-video":{},"advanced-emoji":{"embedEmojis":false},"include-codeblock":{"check":false,"edit":true,"fixlang":false,"lang":"","template":"ace","theme":"chrome","unindent":true},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":true,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"edit-link":{"label":"Edit This Page","base":"https://github.com/LRH1993/android_interview/edit/master"},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":true},"anchors":{},"search-plus":{}},"theme":"default","author":"ruheng","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"Android校招面试指南","language":"zh-hans","output.name":"site","links":{"sidebar":{"Home":"http://lruheng.com/"}},"gitbook":"3.2.3","description":"Android面试必备，记录自己的秋招之路"},"file":{"path":"algorithm/LeetCode/Dynamic-Programming/Longest-Common-Subsequence.md","mtime":"2017-09-04T13:01:31.000Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2017-10-16T12:05:21.906Z"},"basePath":"../../..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"Longest Common Subsequence","level":"5.2.1.2","depth":3,"next":{"title":"Longest Increasing Subsequence","level":"5.2.1.3","depth":3,"path":"algorithm/LeetCode/Dynamic-Programming/Longest-Increasing-Subsequence.md","ref":"algorithm/LeetCode/Dynamic-Programming/Longest-Increasing-Subsequence.md","articles":[]},"previous":{"title":"Distinct Subsequences","level":"5.2.1.1","depth":3,"path":"algorithm/LeetCode/Dynamic-Programming/Distinct-Subsequences.md","ref":"algorithm/LeetCode/Dynamic-Programming/Distinct-Subsequences.md","articles":[]},"dir":"ltr"},"config":{"plugins":["-lunr","-search","-livereload","search-plus@^0.0.11","simple-page-toc@^0.1.1","github@^2.0.0","github-buttons@2.1.0","edit-link@^2.0.2","advanced-emoji@^0.2.1","anchors@^0.7.1","include-codeblock@^3.0.2","ace@^0.3.2","emphasize@^1.1.0","katex@^1.1.3","splitter@^0.0.8","tbfed-pagefooter@^0.0.1","expandable-chapters-small@^0.1.7","sectionx@^3.1.0","local-video@^1.0.1","anchor-navigation-ex@0.1.8","favicon@^0.0.2"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"tbfed-pagefooter":{"copyright":"Copyright © ruheng.com 2017","modify_label":"该文件修订时间：","modify_format":"YYYY-MM-DD HH:mm:ss"},"emphasize":{},"ace":{},"github":{"url":"https://github.com/LRH1993/android_interview"},"simple-page-toc":{"maxDepth":3,"skipFirstH1":true},"splitter":{},"katex":{},"fontsettings":{"theme":"white","family":"sans","size":2},"sectionx":{"tag":"b"},"highlight":{},"anchor-navigation-ex":{"isRewritePageTitle":false,"tocLevel1Icon":"fa fa-hand-o-right","tocLevel2Icon":"fa fa-hand-o-right","tocLevel3Icon":"fa fa-hand-o-right"},"favicon":{"shortcut":"favicon.ico","bookmark":"favicon.ico"},"github-buttons":{"repo":"LRH1993/android_interview","types":["star"],"size":"small"},"expandable-chapters-small":{},"local-video":{},"advanced-emoji":{"embedEmojis":false},"include-codeblock":{"check":false,"edit":false,"fixlang":false,"lang":"","template":"default","theme":"chrome","unindent":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":true,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"edit-link":{"label":"Edit This Page","base":"https://github.com/LRH1993/android_interview/edit/master"},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":true},"anchors":{},"search-plus":{}},"theme":"default","author":"ruheng","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"Android校招面试指南","language":"zh-hans","output.name":"site","links":{"sidebar":{"Home":"http://lruheng.com/"}},"gitbook":"3.2.3","description":"Android面试必备，记录自己的秋招之路"},"file":{"path":"algorithm/LeetCode/Dynamic-Programming/Longest-Common-Subsequence.md","mtime":"2017-09-04T13:01:31.000Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2017-10-16T13:00:43.989Z"},"basePath":"../../..","book":{"language":""}});
         });
     </script>
 </div>

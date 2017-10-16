@@ -69,6 +69,10 @@
                 
             
                 
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
                 <link rel="stylesheet" href="../../gitbook/gitbook-plugin-fontsettings/website.css">
                 
             
@@ -3720,100 +3724,100 @@
 <p>&#x3000;&#x3000;&#x25CF;&#x3000;&#x3000;<strong>&#x5177;&#x4F53;&#x89C2;&#x5BDF;&#x8005;(ConcreteObserver)&#x89D2;&#x8272;&#xFF1A;</strong>&#x5B58;&#x50A8;&#x4E0E;&#x4E3B;&#x9898;&#x7684;&#x72B6;&#x6001;&#x81EA;&#x6070;&#x7684;&#x72B6;&#x6001;&#x3002;&#x5177;&#x4F53;&#x89C2;&#x5BDF;&#x8005;&#x89D2;&#x8272;&#x5B9E;&#x73B0;&#x62BD;&#x8C61;&#x89C2;&#x5BDF;&#x8005;&#x89D2;&#x8272;&#x6240;&#x8981;&#x6C42;&#x7684;&#x66F4;&#x65B0;&#x63A5;&#x53E3;&#xFF0C;&#x4EE5;&#x4FBF;&#x4F7F;&#x672C;&#x8EAB;&#x7684;&#x72B6;&#x6001;&#x4E0E;&#x4E3B;&#x9898;&#x7684;&#x72B6;&#x6001;&#x76F8;&#x534F;&#x8C03;&#x3002;&#x5982;&#x679C;&#x9700;&#x8981;&#xFF0C;&#x5177;&#x4F53;&#x89C2;&#x5BDF;&#x8005;&#x89D2;&#x8272;&#x53EF;&#x4EE5;&#x4FDD;&#x6301;&#x4E00;&#x4E2A;&#x6307;&#x5411;&#x5177;&#x4F53;&#x4E3B;&#x9898;&#x5BF9;&#x8C61;&#x7684;&#x5F15;&#x7528;&#x3002;</p>
 <h3 id="&#x4E09;&#x3001;&#x89C2;&#x5BDF;&#x8005;&#x6A21;&#x5F0F;&#x7684;&#x4EE3;&#x7801;&#x5B9E;&#x73B0;"><a name="&#x4E09;&#x3001;&#x89C2;&#x5BDF;&#x8005;&#x6A21;&#x5F0F;&#x7684;&#x4EE3;&#x7801;&#x5B9E;&#x73B0;" class="anchor-navigation-ex-anchor" href="#&#x4E09;&#x3001;&#x89C2;&#x5BDF;&#x8005;&#x6A21;&#x5F0F;&#x7684;&#x4EE3;&#x7801;&#x5B9E;&#x73B0;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x4E09;&#x3001;&#x89C2;&#x5BDF;&#x8005;&#x6A21;&#x5F0F;&#x7684;&#x4EE3;&#x7801;&#x5B9E;&#x73B0;</h3>
 <p><strong>&#x62BD;&#x8C61;&#x4E3B;&#x9898;&#x89D2;&#x8272;&#x7C7B;(&#x6B64;&#x5904;&#x662F;&#x62BD;&#x8C61;&#x7C7B;&#xFF0C;&#x6539;&#x6210;&#x63A5;&#x53E3;&#x5C06;&#x4F1A;&#x63D0;&#x9AD8;&#x590D;&#x7528;)</strong></p>
-<pre><code class="lang-java">public abstract class Subject {
-    /**
+<pre><code class="lang-java"><span class="hljs-keyword">public</span> <span class="hljs-keyword">abstract</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Subject</span> </span>{
+    <span class="hljs-comment">/**
      * &#x7528;&#x6765;&#x4FDD;&#x5B58;&#x6CE8;&#x518C;&#x7684;&#x89C2;&#x5BDF;&#x8005;&#x5BF9;&#x8C61;
-     */
-    private    List
+     */</span>
+    <span class="hljs-keyword">private</span>    List
 &lt;
 Observer
 &gt;
- list = new ArrayList
+ list = <span class="hljs-keyword">new</span> ArrayList
 &lt;
 Observer
 &gt;
 ();
-    /**
+    <span class="hljs-comment">/**
      * &#x6CE8;&#x518C;&#x89C2;&#x5BDF;&#x8005;&#x5BF9;&#x8C61;
-     * @param observer    &#x89C2;&#x5BDF;&#x8005;&#x5BF9;&#x8C61;
-     */
-    public void attach(Observer observer){
+     * <span class="hljs-doctag">@param</span> observer    &#x89C2;&#x5BDF;&#x8005;&#x5BF9;&#x8C61;
+     */</span>
+    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">attach</span><span class="hljs-params">(Observer observer)</span></span>{
 
         list.add(observer);
-        System.out.println(&quot;Attached an observer&quot;);
+        System.out.println(<span class="hljs-string">&quot;Attached an observer&quot;</span>);
     }
-    /**
+    <span class="hljs-comment">/**
      * &#x5220;&#x9664;&#x89C2;&#x5BDF;&#x8005;&#x5BF9;&#x8C61;
-     * @param observer    &#x89C2;&#x5BDF;&#x8005;&#x5BF9;&#x8C61;
-     */
-    public void detach(Observer observer){
+     * <span class="hljs-doctag">@param</span> observer    &#x89C2;&#x5BDF;&#x8005;&#x5BF9;&#x8C61;
+     */</span>
+    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">detach</span><span class="hljs-params">(Observer observer)</span></span>{
 
         list.remove(observer);
     }
-    /**
+    <span class="hljs-comment">/**
      * &#x901A;&#x77E5;&#x6240;&#x6709;&#x6CE8;&#x518C;&#x7684;&#x89C2;&#x5BDF;&#x8005;&#x5BF9;&#x8C61;
-     */
-    public void nodifyObservers(String newState){
+     */</span>
+    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">nodifyObservers</span><span class="hljs-params">(String newState)</span></span>{
 
-        for(Observer observer : list){
+        <span class="hljs-keyword">for</span>(Observer observer : list){
             observer.update(newState);
         }
     }
 }
 </code></pre>
 <p><strong>&#x5177;&#x4F53;&#x4E3B;&#x9898;&#x89D2;&#x8272;&#x7C7B;</strong></p>
-<pre><code class="lang-java">public class ConcreteSubject extends Subject{
+<pre><code class="lang-java"><span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">ConcreteSubject</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">Subject</span></span>{
 
-    private String state;
+    <span class="hljs-keyword">private</span> String state;
 
-    public String getState() {
-        return state;
+    <span class="hljs-function"><span class="hljs-keyword">public</span> String <span class="hljs-title">getState</span><span class="hljs-params">()</span> </span>{
+        <span class="hljs-keyword">return</span> state;
     }
 
-    public void change(String newState){
+    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">change</span><span class="hljs-params">(String newState)</span></span>{
         state = newState;
-        System.out.println(&quot;&#x4E3B;&#x9898;&#x72B6;&#x6001;&#x4E3A;&#xFF1A;&quot; + state);
-        //&#x72B6;&#x6001;&#x53D1;&#x751F;&#x6539;&#x53D8;&#xFF0C;&#x901A;&#x77E5;&#x5404;&#x4E2A;&#x89C2;&#x5BDF;&#x8005;
-        this.nodifyObservers(state);
+        System.out.println(<span class="hljs-string">&quot;&#x4E3B;&#x9898;&#x72B6;&#x6001;&#x4E3A;&#xFF1A;&quot;</span> + state);
+        <span class="hljs-comment">//&#x72B6;&#x6001;&#x53D1;&#x751F;&#x6539;&#x53D8;&#xFF0C;&#x901A;&#x77E5;&#x5404;&#x4E2A;&#x89C2;&#x5BDF;&#x8005;</span>
+        <span class="hljs-keyword">this</span>.nodifyObservers(state);
     }
 }
 </code></pre>
 <p><strong>&#x62BD;&#x8C61;&#x89C2;&#x5BDF;&#x8005;&#x89D2;&#x8272;&#x7C7B;</strong></p>
-<pre><code class="lang-java">public interface Observer {
-    /**
+<pre><code class="lang-java"><span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">interface</span> <span class="hljs-title">Observer</span> </span>{
+    <span class="hljs-comment">/**
      * &#x66F4;&#x65B0;&#x63A5;&#x53E3;
-     * @param state    &#x66F4;&#x65B0;&#x7684;&#x72B6;&#x6001;
-     */
-    public void update(String state);
+     * <span class="hljs-doctag">@param</span> state    &#x66F4;&#x65B0;&#x7684;&#x72B6;&#x6001;
+     */</span>
+    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">update</span><span class="hljs-params">(String state)</span></span>;
 }
 </code></pre>
 <p><strong>&#x5177;&#x4F53;&#x89C2;&#x5BDF;&#x8005;&#x89D2;&#x8272;&#x7C7B;</strong></p>
-<pre><code class="lang-java">public class ConcreteObserver implements Observer {
-    //&#x89C2;&#x5BDF;&#x8005;&#x7684;&#x72B6;&#x6001;
-    private String observerState;
+<pre><code class="lang-java"><span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">ConcreteObserver</span> <span class="hljs-keyword">implements</span> <span class="hljs-title">Observer</span> </span>{
+    <span class="hljs-comment">//&#x89C2;&#x5BDF;&#x8005;&#x7684;&#x72B6;&#x6001;</span>
+    <span class="hljs-keyword">private</span> String observerState;
 
-    @Override
-    public void update(String state) {
-        /**
+    <span class="hljs-meta">@Override</span>
+    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">update</span><span class="hljs-params">(String state)</span> </span>{
+        <span class="hljs-comment">/**
          * &#x66F4;&#x65B0;&#x89C2;&#x5BDF;&#x8005;&#x7684;&#x72B6;&#x6001;&#xFF0C;&#x4F7F;&#x5176;&#x4E0E;&#x76EE;&#x6807;&#x7684;&#x72B6;&#x6001;&#x4FDD;&#x6301;&#x4E00;&#x81F4;
-         */
+         */</span>
         observerState = state;
-        System.out.println(&quot;&#x72B6;&#x6001;&#x4E3A;&#xFF1A;&quot;+observerState);
+        System.out.println(<span class="hljs-string">&quot;&#x72B6;&#x6001;&#x4E3A;&#xFF1A;&quot;</span>+observerState);
     }
 }
 </code></pre>
 <p>&#x5177;&#x4F53;&#x4F7F;&#x7528;&#xFF1A;</p>
-<pre><code class="lang-java">public class Client {
+<pre><code class="lang-java"><span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Client</span> </span>{
 
-    public static void main(String[] args) {
-        //&#x521B;&#x5EFA;&#x4E3B;&#x9898;&#x5BF9;&#x8C61;
-        ConcreteSubject subject = new ConcreteSubject();
-        //&#x521B;&#x5EFA;&#x89C2;&#x5BDF;&#x8005;&#x5BF9;&#x8C61;
-        Observer observer = new ConcreteObserver();
-        //&#x5C06;&#x89C2;&#x5BDF;&#x8005;&#x5BF9;&#x8C61;&#x767B;&#x8BB0;&#x5230;&#x4E3B;&#x9898;&#x5BF9;&#x8C61;&#x4E0A;
+    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title">main</span><span class="hljs-params">(String[] args)</span> </span>{
+        <span class="hljs-comment">//&#x521B;&#x5EFA;&#x4E3B;&#x9898;&#x5BF9;&#x8C61;</span>
+        ConcreteSubject subject = <span class="hljs-keyword">new</span> ConcreteSubject();
+        <span class="hljs-comment">//&#x521B;&#x5EFA;&#x89C2;&#x5BDF;&#x8005;&#x5BF9;&#x8C61;</span>
+        Observer observer = <span class="hljs-keyword">new</span> ConcreteObserver();
+        <span class="hljs-comment">//&#x5C06;&#x89C2;&#x5BDF;&#x8005;&#x5BF9;&#x8C61;&#x767B;&#x8BB0;&#x5230;&#x4E3B;&#x9898;&#x5BF9;&#x8C61;&#x4E0A;</span>
         subject.attach(observer);
-        //&#x6539;&#x53D8;&#x4E3B;&#x9898;&#x5BF9;&#x8C61;&#x7684;&#x72B6;&#x6001;
-        subject.change(&quot;new state&quot;);
+        <span class="hljs-comment">//&#x6539;&#x53D8;&#x4E3B;&#x9898;&#x5BF9;&#x8C61;&#x7684;&#x72B6;&#x6001;</span>
+        subject.change(<span class="hljs-string">&quot;new state&quot;</span>);
     }
 }
 </code></pre>
@@ -3827,86 +3831,86 @@ Observer
 <p>&#x3000;&#x3000;&#x6839;&#x636E;&#x4E0A;&#x9762;&#x7684;&#x63CF;&#x8FF0;&#xFF0C;&#x53D1;&#x73B0;&#x524D;&#x9762;&#x7684;&#x4F8B;&#x5B50;&#x5C31;&#x662F;&#x5178;&#x578B;&#x7684;&#x63A8;&#x6A21;&#x578B;&#xFF0C;&#x4E0B;&#x9762;&#x7ED9;&#x51FA;&#x4E00;&#x4E2A;&#x62C9;&#x6A21;&#x578B;&#x7684;&#x5B9E;&#x4F8B;&#x3002;</p>
 <p><strong>&#x62C9;&#x6A21;&#x578B;&#x7684;&#x62BD;&#x8C61;&#x89C2;&#x5BDF;&#x8005;&#x7C7B;</strong></p>
 <p>&#x62C9;&#x6A21;&#x578B;&#x901A;&#x5E38;&#x90FD;&#x662F;&#x628A;&#x4E3B;&#x9898;&#x5BF9;&#x8C61;&#x5F53;&#x505A;&#x53C2;&#x6570;&#x4F20;&#x9012;&#x3002;</p>
-<pre><code class="lang-java">public interface Observer {
-    /**
+<pre><code class="lang-java"><span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">interface</span> <span class="hljs-title">Observer</span> </span>{
+    <span class="hljs-comment">/**
      * &#x66F4;&#x65B0;&#x63A5;&#x53E3;
-     * @param subject &#x4F20;&#x5165;&#x4E3B;&#x9898;&#x5BF9;&#x8C61;&#xFF0C;&#x65B9;&#x9762;&#x83B7;&#x53D6;&#x76F8;&#x5E94;&#x7684;&#x4E3B;&#x9898;&#x5BF9;&#x8C61;&#x7684;&#x72B6;&#x6001;
-     */
-    public void update(Subject subject);
+     * <span class="hljs-doctag">@param</span> subject &#x4F20;&#x5165;&#x4E3B;&#x9898;&#x5BF9;&#x8C61;&#xFF0C;&#x65B9;&#x9762;&#x83B7;&#x53D6;&#x76F8;&#x5E94;&#x7684;&#x4E3B;&#x9898;&#x5BF9;&#x8C61;&#x7684;&#x72B6;&#x6001;
+     */</span>
+    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">update</span><span class="hljs-params">(Subject subject)</span></span>;
 }
 </code></pre>
 <p><strong>&#x62C9;&#x6A21;&#x578B;&#x7684;&#x5177;&#x4F53;&#x89C2;&#x5BDF;&#x8005;&#x7C7B;</strong></p>
-<pre><code class="lang-java">public class ConcreteObserver implements Observer {
-    //&#x89C2;&#x5BDF;&#x8005;&#x7684;&#x72B6;&#x6001;
-    private String observerState;
+<pre><code class="lang-java"><span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">ConcreteObserver</span> <span class="hljs-keyword">implements</span> <span class="hljs-title">Observer</span> </span>{
+    <span class="hljs-comment">//&#x89C2;&#x5BDF;&#x8005;&#x7684;&#x72B6;&#x6001;</span>
+    <span class="hljs-keyword">private</span> String observerState;
 
-    @Override
-    public void update(Subject subject) {
-        /**
+    <span class="hljs-meta">@Override</span>
+    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">update</span><span class="hljs-params">(Subject subject)</span> </span>{
+        <span class="hljs-comment">/**
          * &#x66F4;&#x65B0;&#x89C2;&#x5BDF;&#x8005;&#x7684;&#x72B6;&#x6001;&#xFF0C;&#x4F7F;&#x5176;&#x4E0E;&#x76EE;&#x6807;&#x7684;&#x72B6;&#x6001;&#x4FDD;&#x6301;&#x4E00;&#x81F4;
-         */
+         */</span>
         observerState = ((ConcreteSubject)subject).getState();
-        System.out.println(&quot;&#x89C2;&#x5BDF;&#x8005;&#x72B6;&#x6001;&#x4E3A;&#xFF1A;&quot;+observerState);
+        System.out.println(<span class="hljs-string">&quot;&#x89C2;&#x5BDF;&#x8005;&#x72B6;&#x6001;&#x4E3A;&#xFF1A;&quot;</span>+observerState);
     }
 
 }
 </code></pre>
 <p><strong>&#x62C9;&#x6A21;&#x578B;&#x7684;&#x62BD;&#x8C61;&#x4E3B;&#x9898;&#x7C7B;</strong><br>&#x62C9;&#x6A21;&#x578B;&#x7684;&#x62BD;&#x8C61;&#x4E3B;&#x9898;&#x7C7B;&#x4E3B;&#x8981;&#x7684;&#x6539;&#x53D8;&#x662F;nodifyObservers()&#x65B9;&#x6CD5;&#x3002;&#x5728;&#x5FAA;&#x73AF;&#x901A;&#x77E5;&#x89C2;&#x5BDF;&#x8005;&#x7684;&#x65F6;&#x5019;&#xFF0C;&#x4E5F;&#x5C31;&#x662F;&#x5FAA;&#x73AF;&#x8C03;&#x7528;&#x89C2;&#x5BDF;&#x8005;&#x7684;update()&#x65B9;&#x6CD5;&#x7684;&#x65F6;&#x5019;&#xFF0C;&#x4F20;&#x5165;&#x7684;&#x53C2;&#x6570;&#x4E0D;&#x540C;&#x4E86;&#x3002;</p>
-<pre><code class="lang-java">public abstract class Subject {
-    /**
+<pre><code class="lang-java"><span class="hljs-keyword">public</span> <span class="hljs-keyword">abstract</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Subject</span> </span>{
+    <span class="hljs-comment">/**
      * &#x7528;&#x6765;&#x4FDD;&#x5B58;&#x6CE8;&#x518C;&#x7684;&#x89C2;&#x5BDF;&#x8005;&#x5BF9;&#x8C61;
-     */
-    private    List
+     */</span>
+    <span class="hljs-keyword">private</span>    List
 &lt;
 Observer
 &gt;
- list = new ArrayList
+ list = <span class="hljs-keyword">new</span> ArrayList
 &lt;
 Observer
 &gt;
 ();
-    /**
+    <span class="hljs-comment">/**
      * &#x6CE8;&#x518C;&#x89C2;&#x5BDF;&#x8005;&#x5BF9;&#x8C61;
-     * @param observer    &#x89C2;&#x5BDF;&#x8005;&#x5BF9;&#x8C61;
-     */
-    public void attach(Observer observer){
+     * <span class="hljs-doctag">@param</span> observer    &#x89C2;&#x5BDF;&#x8005;&#x5BF9;&#x8C61;
+     */</span>
+    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">attach</span><span class="hljs-params">(Observer observer)</span></span>{
 
         list.add(observer);
-        System.out.println(&quot;Attached an observer&quot;);
+        System.out.println(<span class="hljs-string">&quot;Attached an observer&quot;</span>);
     }
-    /**
+    <span class="hljs-comment">/**
      * &#x5220;&#x9664;&#x89C2;&#x5BDF;&#x8005;&#x5BF9;&#x8C61;
-     * @param observer    &#x89C2;&#x5BDF;&#x8005;&#x5BF9;&#x8C61;
-     */
-    public void detach(Observer observer){
+     * <span class="hljs-doctag">@param</span> observer    &#x89C2;&#x5BDF;&#x8005;&#x5BF9;&#x8C61;
+     */</span>
+    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">detach</span><span class="hljs-params">(Observer observer)</span></span>{
 
         list.remove(observer);
     }
-    /**
+    <span class="hljs-comment">/**
      * &#x901A;&#x77E5;&#x6240;&#x6709;&#x6CE8;&#x518C;&#x7684;&#x89C2;&#x5BDF;&#x8005;&#x5BF9;&#x8C61;
-     */
-    public void nodifyObservers(){
+     */</span>
+    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">nodifyObservers</span><span class="hljs-params">()</span></span>{
 
-        for(Observer observer : list){
-            observer.update(this);
+        <span class="hljs-keyword">for</span>(Observer observer : list){
+            observer.update(<span class="hljs-keyword">this</span>);
         }
     }
 }
 </code></pre>
 <p><strong>&#x62C9;&#x6A21;&#x578B;&#x7684;&#x5177;&#x4F53;&#x4E3B;&#x9898;&#x7C7B;</strong><br>&#x8DDF;&#x63A8;&#x6A21;&#x578B;&#x76F8;&#x6BD4;&#xFF0C;&#x6709;&#x4E00;&#x70B9;&#x53D8;&#x5316;&#xFF0C;&#x5C31;&#x662F;&#x8C03;&#x7528;&#x901A;&#x77E5;&#x89C2;&#x5BDF;&#x8005;&#x7684;&#x65B9;&#x6CD5;&#x7684;&#x65F6;&#x5019;&#xFF0C;&#x4E0D;&#x9700;&#x8981;&#x4F20;&#x5165;&#x53C2;&#x6570;&#x4E86;&#x3002;</p>
-<pre><code class="lang-java">public class ConcreteSubject extends Subject{
+<pre><code class="lang-java"><span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">ConcreteSubject</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">Subject</span></span>{
 
-    private String state;
+    <span class="hljs-keyword">private</span> String state;
 
-    public String getState() {
-        return state;
+    <span class="hljs-function"><span class="hljs-keyword">public</span> String <span class="hljs-title">getState</span><span class="hljs-params">()</span> </span>{
+        <span class="hljs-keyword">return</span> state;
     }
 
-    public void change(String newState){
+    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">change</span><span class="hljs-params">(String newState)</span></span>{
         state = newState;
-        System.out.println(&quot;&#x4E3B;&#x9898;&#x72B6;&#x6001;&#x4E3A;&#xFF1A;&quot; + state);
-        //&#x72B6;&#x6001;&#x53D1;&#x751F;&#x6539;&#x53D8;&#xFF0C;&#x901A;&#x77E5;&#x5404;&#x4E2A;&#x89C2;&#x5BDF;&#x8005;
-        this.nodifyObservers();
+        System.out.println(<span class="hljs-string">&quot;&#x4E3B;&#x9898;&#x72B6;&#x6001;&#x4E3A;&#xFF1A;&quot;</span> + state);
+        <span class="hljs-comment">//&#x72B6;&#x6001;&#x53D1;&#x751F;&#x6539;&#x53D8;&#xFF0C;&#x901A;&#x77E5;&#x5404;&#x4E2A;&#x89C2;&#x5BDF;&#x8005;</span>
+        <span class="hljs-keyword">this</span>.nodifyObservers();
     }
 }
 </code></pre>
@@ -3916,96 +3920,96 @@ Observer
 <h3 id="&#x4E94;&#x3001;java&#x63D0;&#x4F9B;&#x7684;&#x5BF9;&#x89C2;&#x5BDF;&#x8005;&#x6A21;&#x5F0F;&#x7684;&#x652F;&#x6301;"><a name="&#x4E94;&#x3001;java&#x63D0;&#x4F9B;&#x7684;&#x5BF9;&#x89C2;&#x5BDF;&#x8005;&#x6A21;&#x5F0F;&#x7684;&#x652F;&#x6301;" class="anchor-navigation-ex-anchor" href="#&#x4E94;&#x3001;java&#x63D0;&#x4F9B;&#x7684;&#x5BF9;&#x89C2;&#x5BDF;&#x8005;&#x6A21;&#x5F0F;&#x7684;&#x652F;&#x6301;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x4E94;&#x3001;JAVA&#x63D0;&#x4F9B;&#x7684;&#x5BF9;&#x89C2;&#x5BDF;&#x8005;&#x6A21;&#x5F0F;&#x7684;&#x652F;&#x6301;</h3>
 <p>&#x5728;JAVA&#x8BED;&#x8A00;&#x7684;java.util&#x5E93;&#x91CC;&#x9762;&#xFF0C;&#x63D0;&#x4F9B;&#x4E86;&#x4E00;&#x4E2A;Observable&#x7C7B;&#x4EE5;&#x53CA;&#x4E00;&#x4E2A;Observer&#x63A5;&#x53E3;&#xFF0C;&#x6784;&#x6210;JAVA&#x8BED;&#x8A00;&#x5BF9;&#x89C2;&#x5BDF;&#x8005;&#x6A21;&#x5F0F;&#x7684;&#x652F;&#x6301;&#x3002;</p>
 <p><strong>Observer&#x63A5;&#x53E3;</strong><br>&#x8FD9;&#x4E2A;&#x63A5;&#x53E3;&#x53EA;&#x5B9A;&#x4E49;&#x4E86;&#x4E00;&#x4E2A;&#x65B9;&#x6CD5;&#xFF0C;&#x5373;update()&#x65B9;&#x6CD5;&#xFF0C;&#x5F53;&#x88AB;&#x89C2;&#x5BDF;&#x8005;&#x5BF9;&#x8C61;&#x7684;&#x72B6;&#x6001;&#x53D1;&#x751F;&#x53D8;&#x5316;&#x65F6;&#xFF0C;&#x88AB;&#x89C2;&#x5BDF;&#x8005;&#x5BF9;&#x8C61;&#x7684;notifyObservers()&#x65B9;&#x6CD5;&#x5C31;&#x4F1A;&#x8C03;&#x7528;&#x8FD9;&#x4E00;&#x65B9;&#x6CD5;&#x3002;</p>
-<pre><code class="lang-java">public interface Observer {
+<pre><code class="lang-java"><span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">interface</span> <span class="hljs-title">Observer</span> </span>{
 
-    void update(Observable o, Object arg);
+    <span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">update</span><span class="hljs-params">(Observable o, Object arg)</span></span>;
 }
 </code></pre>
 <p><strong>Observable&#x7C7B;</strong><br>&#x88AB;&#x89C2;&#x5BDF;&#x8005;&#x7C7B;&#x90FD;&#x662F;java.util.Observable&#x7C7B;&#x7684;&#x5B50;&#x7C7B;&#x3002;java.util.Observable&#x63D0;&#x4F9B;&#x516C;&#x5F00;&#x7684;&#x65B9;&#x6CD5;&#x652F;&#x6301;&#x89C2;&#x5BDF;&#x8005;&#x5BF9;&#x8C61;&#xFF0C;&#x8FD9;&#x4E9B;&#x65B9;&#x6CD5;&#x4E2D;&#x6709;&#x4E24;&#x4E2A;&#x5BF9;Observable&#x7684;&#x5B50;&#x7C7B;&#x975E;&#x5E38;&#x91CD;&#x8981;&#xFF1A;&#x4E00;&#x4E2A;&#x662F;setChanged()&#xFF0C;&#x53E6;&#x4E00;&#x4E2A;&#x662F;notifyObservers()&#x3002;&#x7B2C;&#x4E00;&#x65B9;&#x6CD5;setChanged()&#x88AB;&#x8C03;&#x7528;&#x4E4B;&#x540E;&#x4F1A;&#x8BBE;&#x7F6E;&#x4E00;&#x4E2A;&#x5185;&#x90E8;&#x6807;&#x8BB0;&#x53D8;&#x91CF;&#xFF0C;&#x4EE3;&#x8868;&#x88AB;&#x89C2;&#x5BDF;&#x8005;&#x5BF9;&#x8C61;&#x7684;&#x72B6;&#x6001;&#x53D1;&#x751F;&#x4E86;&#x53D8;&#x5316;&#x3002;&#x7B2C;&#x4E8C;&#x4E2A;&#x662F;notifyObservers()&#xFF0C;&#x8FD9;&#x4E2A;&#x65B9;&#x6CD5;&#x88AB;&#x8C03;&#x7528;&#x65F6;&#xFF0C;&#x4F1A;&#x8C03;&#x7528;&#x6240;&#x6709;&#x767B;&#x8BB0;&#x8FC7;&#x7684;&#x89C2;&#x5BDF;&#x8005;&#x5BF9;&#x8C61;&#x7684;update()&#x65B9;&#x6CD5;&#xFF0C;&#x4F7F;&#x8FD9;&#x4E9B;&#x89C2;&#x5BDF;&#x8005;&#x5BF9;&#x8C61;&#x53EF;&#x4EE5;&#x66F4;&#x65B0;&#x81EA;&#x5DF1;&#x3002;</p>
-<pre><code class="lang-java">public class Observable {
-    private boolean changed = false;
-    private Vector obs;
+<pre><code class="lang-java"><span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Observable</span> </span>{
+    <span class="hljs-keyword">private</span> <span class="hljs-keyword">boolean</span> changed = <span class="hljs-keyword">false</span>;
+    <span class="hljs-keyword">private</span> Vector obs;
 
-    /** Construct an Observable with zero Observers. */
+    <span class="hljs-comment">/** Construct an Observable with zero Observers. */</span>
 
-    public Observable() {
-    obs = new Vector();
+    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-title">Observable</span><span class="hljs-params">()</span> </span>{
+    obs = <span class="hljs-keyword">new</span> Vector();
     }
 
-    /**
+    <span class="hljs-comment">/**
      * &#x5C06;&#x4E00;&#x4E2A;&#x89C2;&#x5BDF;&#x8005;&#x6DFB;&#x52A0;&#x5230;&#x89C2;&#x5BDF;&#x8005;&#x805A;&#x96C6;&#x4E0A;&#x9762;
-     */
-    public synchronized void addObserver(Observer o) {
-        if (o == null)
-            throw new NullPointerException();
-    if (!obs.contains(o)) {
+     */</span>
+    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">synchronized</span> <span class="hljs-keyword">void</span> <span class="hljs-title">addObserver</span><span class="hljs-params">(Observer o)</span> </span>{
+        <span class="hljs-keyword">if</span> (o == <span class="hljs-keyword">null</span>)
+            <span class="hljs-keyword">throw</span> <span class="hljs-keyword">new</span> NullPointerException();
+    <span class="hljs-keyword">if</span> (!obs.contains(o)) {
         obs.addElement(o);
     }
     }
 
-    /**
+    <span class="hljs-comment">/**
      * &#x5C06;&#x4E00;&#x4E2A;&#x89C2;&#x5BDF;&#x8005;&#x4ECE;&#x89C2;&#x5BDF;&#x8005;&#x805A;&#x96C6;&#x4E0A;&#x5220;&#x9664;
-     */
-    public synchronized void deleteObserver(Observer o) {
+     */</span>
+    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">synchronized</span> <span class="hljs-keyword">void</span> <span class="hljs-title">deleteObserver</span><span class="hljs-params">(Observer o)</span> </span>{
         obs.removeElement(o);
     }
 
-    public void notifyObservers() {
-    notifyObservers(null);
+    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">notifyObservers</span><span class="hljs-params">()</span> </span>{
+    notifyObservers(<span class="hljs-keyword">null</span>);
     }
 
-    /**
+    <span class="hljs-comment">/**
      * &#x5982;&#x679C;&#x672C;&#x5BF9;&#x8C61;&#x6709;&#x53D8;&#x5316;&#xFF08;&#x90A3;&#x65F6;hasChanged &#x65B9;&#x6CD5;&#x4F1A;&#x8FD4;&#x56DE;true&#xFF09;
      * &#x8C03;&#x7528;&#x672C;&#x65B9;&#x6CD5;&#x901A;&#x77E5;&#x6240;&#x6709;&#x767B;&#x8BB0;&#x7684;&#x89C2;&#x5BDF;&#x8005;&#xFF0C;&#x5373;&#x8C03;&#x7528;&#x5B83;&#x4EEC;&#x7684;update()&#x65B9;&#x6CD5;
      * &#x4F20;&#x5165;this&#x548C;arg&#x4F5C;&#x4E3A;&#x53C2;&#x6570;
-     */
-    public void notifyObservers(Object arg) {
+     */</span>
+    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">notifyObservers</span><span class="hljs-params">(Object arg)</span> </span>{
 
         Object[] arrLocal;
 
-    synchronized (this) {
+    <span class="hljs-keyword">synchronized</span> (<span class="hljs-keyword">this</span>) {
 
-        if (!changed)
-                return;
+        <span class="hljs-keyword">if</span> (!changed)
+                <span class="hljs-keyword">return</span>;
             arrLocal = obs.toArray();
             clearChanged();
         }
 
-        for (int i = arrLocal.length-1; i
+        <span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> i = arrLocal.length-<span class="hljs-number">1</span>; i
 &gt;
-=0; i--)
-            ((Observer)arrLocal[i]).update(this, arg);
+=<span class="hljs-number">0</span>; i--)
+            ((Observer)arrLocal[i]).update(<span class="hljs-keyword">this</span>, arg);
     }
 
-    /**
+    <span class="hljs-comment">/**
      * &#x5C06;&#x89C2;&#x5BDF;&#x8005;&#x805A;&#x96C6;&#x6E05;&#x7A7A;
-     */
-    public synchronized void deleteObservers() {
+     */</span>
+    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">synchronized</span> <span class="hljs-keyword">void</span> <span class="hljs-title">deleteObservers</span><span class="hljs-params">()</span> </span>{
     obs.removeAllElements();
     }
 
-    /**
+    <span class="hljs-comment">/**
      * &#x5C06;&#x201C;&#x5DF2;&#x53D8;&#x5316;&#x201D;&#x8BBE;&#x7F6E;&#x4E3A;true
-     */
-    protected synchronized void setChanged() {
-    changed = true;
+     */</span>
+    <span class="hljs-function"><span class="hljs-keyword">protected</span> <span class="hljs-keyword">synchronized</span> <span class="hljs-keyword">void</span> <span class="hljs-title">setChanged</span><span class="hljs-params">()</span> </span>{
+    changed = <span class="hljs-keyword">true</span>;
     }
 
-    /**
+    <span class="hljs-comment">/**
      * &#x5C06;&#x201C;&#x5DF2;&#x53D8;&#x5316;&#x201D;&#x91CD;&#x7F6E;&#x4E3A;false
-     */
-    protected synchronized void clearChanged() {
-    changed = false;
+     */</span>
+    <span class="hljs-function"><span class="hljs-keyword">protected</span> <span class="hljs-keyword">synchronized</span> <span class="hljs-keyword">void</span> <span class="hljs-title">clearChanged</span><span class="hljs-params">()</span> </span>{
+    changed = <span class="hljs-keyword">false</span>;
     }
 
-    /**
+    <span class="hljs-comment">/**
      * &#x68C0;&#x6D4B;&#x672C;&#x5BF9;&#x8C61;&#x662F;&#x5426;&#x5DF2;&#x53D8;&#x5316;
-     */
-    public synchronized boolean hasChanged() {
-    return changed;
+     */</span>
+    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">synchronized</span> <span class="hljs-keyword">boolean</span> <span class="hljs-title">hasChanged</span><span class="hljs-params">()</span> </span>{
+    <span class="hljs-keyword">return</span> changed;
     }
 
-    /**
+    <span class="hljs-comment">/**
      * Returns the number of observers of this 
 &lt;
 tt
@@ -4016,28 +4020,28 @@ Observable
 &gt;
  object.
      *
-     * @return  the number of observers of this object.
-     */
-    public synchronized int countObservers() {
-    return obs.size();
+     * <span class="hljs-doctag">@return</span>  the number of observers of this object.
+     */</span>
+    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">synchronized</span> <span class="hljs-keyword">int</span> <span class="hljs-title">countObservers</span><span class="hljs-params">()</span> </span>{
+    <span class="hljs-keyword">return</span> obs.size();
     }
 }
 </code></pre>
 <p>&#x8FD9;&#x4E2A;&#x7C7B;&#x4EE3;&#x8868;&#x4E00;&#x4E2A;&#x88AB;&#x89C2;&#x5BDF;&#x8005;&#x5BF9;&#x8C61;&#xFF0C;&#x6709;&#x65F6;&#x79F0;&#x4E4B;&#x4E3A;&#x4E3B;&#x9898;&#x5BF9;&#x8C61;&#x3002;&#x4E00;&#x4E2A;&#x88AB;&#x89C2;&#x5BDF;&#x8005;&#x5BF9;&#x8C61;&#x53EF;&#x4EE5;&#x6709;&#x6570;&#x4E2A;&#x89C2;&#x5BDF;&#x8005;&#x5BF9;&#x8C61;&#xFF0C;&#x6BCF;&#x4E2A;&#x89C2;&#x5BDF;&#x8005;&#x5BF9;&#x8C61;&#x90FD;&#x662F;&#x5B9E;&#x73B0;Observer&#x63A5;&#x53E3;&#x7684;&#x5BF9;&#x8C61;&#x3002;&#x5728;&#x88AB;&#x89C2;&#x5BDF;&#x8005;&#x53D1;&#x751F;&#x53D8;&#x5316;&#x65F6;&#xFF0C;&#x4F1A;&#x8C03;&#x7528;Observable&#x7684;notifyObservers()&#x65B9;&#x6CD5;&#xFF0C;&#x6B64;&#x65B9;&#x6CD5;&#x8C03;&#x7528;&#x6240;&#x6709;&#x7684;&#x5177;&#x4F53;&#x89C2;&#x5BDF;&#x8005;&#x7684;update()&#x65B9;&#x6CD5;&#xFF0C;&#x4ECE;&#x800C;&#x4F7F;&#x6240;&#x6709;&#x7684;&#x89C2;&#x5BDF;&#x8005;&#x90FD;&#x88AB;&#x901A;&#x77E5;&#x66F4;&#x65B0;&#x81EA;&#x5DF1;&#x3002;</p>
 <h5 id="&#x4F7F;&#x7528;java&#x5BF9;&#x89C2;&#x5BDF;&#x8005;&#x6A21;&#x5F0F;&#x7684;&#x652F;&#x6301;"><a name="&#x4F7F;&#x7528;java&#x5BF9;&#x89C2;&#x5BDF;&#x8005;&#x6A21;&#x5F0F;&#x7684;&#x652F;&#x6301;" class="anchor-navigation-ex-anchor" href="#&#x4F7F;&#x7528;java&#x5BF9;&#x89C2;&#x5BDF;&#x8005;&#x6A21;&#x5F0F;&#x7684;&#x652F;&#x6301;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x4F7F;&#x7528;JAVA&#x5BF9;&#x89C2;&#x5BDF;&#x8005;&#x6A21;&#x5F0F;&#x7684;&#x652F;&#x6301;</h5>
 <p>&#x8FD9;&#x91CC;&#x7ED9;&#x51FA;&#x4E00;&#x4E2A;&#x975E;&#x5E38;&#x7B80;&#x5355;&#x7684;&#x4F8B;&#x5B50;&#xFF0C;&#x8BF4;&#x660E;&#x600E;&#x6837;&#x4F7F;&#x7528;JAVA&#x6240;&#x63D0;&#x4F9B;&#x7684;&#x5BF9;&#x89C2;&#x5BDF;&#x8005;&#x6A21;&#x5F0F;&#x7684;&#x652F;&#x6301;&#x3002;&#x5728;&#x8FD9;&#x4E2A;&#x4F8B;&#x5B50;&#x4E2D;&#xFF0C;&#x88AB;&#x89C2;&#x5BDF;&#x5BF9;&#x8C61;&#x53EB;&#x505A;Watched&#xFF1B;&#x800C;&#x89C2;&#x5BDF;&#x8005;&#x5BF9;&#x8C61;&#x53EB;&#x505A;Watcher&#x3002;Watched&#x5BF9;&#x8C61;&#x7EE7;&#x627F;&#x81EA;java.util.Observable&#x7C7B;&#xFF1B;&#x800C;Watcher&#x5BF9;&#x8C61;&#x5B9E;&#x73B0;&#x4E86;java.util.Observer&#x63A5;&#x53E3;&#x3002;&#x53E6;&#x5916;&#x6709;&#x4E00;&#x4E2A;Test&#x7C7B;&#x626E;&#x6F14;&#x5BA2;&#x6237;&#x7AEF;&#x89D2;&#x8272;&#x3002;<br><strong>&#x88AB;&#x89C2;&#x5BDF;&#x8005;Watched&#x7C7B;</strong></p>
-<pre><code class="lang-java">public class Watched extends Observable{
+<pre><code class="lang-java"><span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Watched</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">Observable</span></span>{
 
-    private String data = &quot;&quot;;
+    <span class="hljs-keyword">private</span> String data = <span class="hljs-string">&quot;&quot;</span>;
 
-    public String getData() {
-        return data;
+    <span class="hljs-function"><span class="hljs-keyword">public</span> String <span class="hljs-title">getData</span><span class="hljs-params">()</span> </span>{
+        <span class="hljs-keyword">return</span> data;
     }
 
-    public void setData(String data) {
+    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">setData</span><span class="hljs-params">(String data)</span> </span>{
 
-        if(!this.data.equals(data)){
-            this.data = data;
+        <span class="hljs-keyword">if</span>(!<span class="hljs-keyword">this</span>.data.equals(data)){
+            <span class="hljs-keyword">this</span>.data = data;
             setChanged();
            notifyObservers();
         }  
@@ -4047,30 +4051,30 @@ Observable
 }
 </code></pre>
 <p><strong>&#x89C2;&#x5BDF;&#x8005;Watcher &#x7C7B;</strong></p>
-<pre><code class="lang-java">public class Watcher implements Observer{
+<pre><code class="lang-java"><span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Watcher</span> <span class="hljs-keyword">implements</span> <span class="hljs-title">Observer</span></span>{
 
-    public Watcher(Observable o){
-        o.addObserver(this);
+    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-title">Watcher</span><span class="hljs-params">(Observable o)</span></span>{
+        o.addObserver(<span class="hljs-keyword">this</span>);
     }
 
-    @Override
-    public void update(Observable o, Object arg) {
+    <span class="hljs-meta">@Override</span>
+    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">update</span><span class="hljs-params">(Observable o, Object arg)</span> </span>{
 
-        System.out.println(&quot;&#x72B6;&#x6001;&#x53D1;&#x751F;&#x6539;&#x53D8;&#xFF1A;&quot; + ((Watched)o).getData());
+        System.out.println(<span class="hljs-string">&quot;&#x72B6;&#x6001;&#x53D1;&#x751F;&#x6539;&#x53D8;&#xFF1A;&quot;</span> + ((Watched)o).getData());
     }
 }
 </code></pre>
 <p>&#x5177;&#x4F53;&#x4F7F;&#x7528;&#xFF1A;</p>
-<pre><code class="lang-java">public static void main(String[] args) {
+<pre><code class="lang-java"><span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title">main</span><span class="hljs-params">(String[] args)</span> </span>{
 
-        //&#x521B;&#x5EFA;&#x88AB;&#x89C2;&#x5BDF;&#x8005;&#x5BF9;&#x8C61;
-        Watched watched = new Watched();
-        //&#x521B;&#x5EFA;&#x89C2;&#x5BDF;&#x8005;&#x5BF9;&#x8C61;&#xFF0C;&#x5E76;&#x5C06;&#x88AB;&#x89C2;&#x5BDF;&#x8005;&#x5BF9;&#x8C61;&#x767B;&#x8BB0;
-        Observer watcher = new Watcher(watched);
-        //&#x7ED9;&#x88AB;&#x89C2;&#x5BDF;&#x8005;&#x72B6;&#x6001;&#x8D4B;&#x503C;
-        watched.setData(&quot;start&quot;);
-        watched.setData(&quot;run&quot;);
-        watched.setData(&quot;stop&quot;);
+        <span class="hljs-comment">//&#x521B;&#x5EFA;&#x88AB;&#x89C2;&#x5BDF;&#x8005;&#x5BF9;&#x8C61;</span>
+        Watched watched = <span class="hljs-keyword">new</span> Watched();
+        <span class="hljs-comment">//&#x521B;&#x5EFA;&#x89C2;&#x5BDF;&#x8005;&#x5BF9;&#x8C61;&#xFF0C;&#x5E76;&#x5C06;&#x88AB;&#x89C2;&#x5BDF;&#x8005;&#x5BF9;&#x8C61;&#x767B;&#x8BB0;</span>
+        Observer watcher = <span class="hljs-keyword">new</span> Watcher(watched);
+        <span class="hljs-comment">//&#x7ED9;&#x88AB;&#x89C2;&#x5BDF;&#x8005;&#x72B6;&#x6001;&#x8D4B;&#x503C;</span>
+        watched.setData(<span class="hljs-string">&quot;start&quot;</span>);
+        watched.setData(<span class="hljs-string">&quot;run&quot;</span>);
+        watched.setData(<span class="hljs-string">&quot;stop&quot;</span>);
 
     }
 </code></pre>
@@ -4121,7 +4125,7 @@ Observable
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"观察者模式","level":"6.3.3","depth":2,"next":{"title":"策略模式","level":"6.3.4","depth":2,"path":"design-mode/Behavioral-Pattern/Strategy-Pattern.md","ref":"design-mode/Behavioral-Pattern/Strategy-Pattern.md","articles":[]},"previous":{"title":"迭代器模式","level":"6.3.2","depth":2,"path":"design-mode/Behavioral-Pattern/Iterator-Pattern.md","ref":"design-mode/Behavioral-Pattern/Iterator-Pattern.md","articles":[]},"dir":"ltr"},"config":{"plugins":["-lunr","-search","-highlight","-livereload","search-plus@^0.0.11","simple-page-toc@^0.1.1","github@^2.0.0","github-buttons@2.1.0","edit-link@^2.0.2","advanced-emoji@^0.2.1","anchors@^0.7.1","include-codeblock@^3.0.2","ace@^0.3.2","emphasize@^1.1.0","katex@^1.1.3","splitter@^0.0.8","tbfed-pagefooter@^0.0.1","expandable-chapters-small@^0.1.7","sectionx@^3.1.0","local-video@^1.0.1","anchor-navigation-ex@0.1.8","favicon@^0.0.2"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"tbfed-pagefooter":{"copyright":"Copyright © ruheng.com 2017","modify_label":"该文件修订时间：","modify_format":"YYYY-MM-DD HH:mm:ss"},"emphasize":{},"ace":{},"github":{"url":"https://github.com/LRH1993/android_interview"},"simple-page-toc":{"maxDepth":3,"skipFirstH1":true},"splitter":{},"katex":{},"fontsettings":{"theme":"white","family":"sans","size":2},"sectionx":{"tag":"b"},"anchor-navigation-ex":{"isRewritePageTitle":false,"tocLevel1Icon":"fa fa-hand-o-right","tocLevel2Icon":"fa fa-hand-o-right","tocLevel3Icon":"fa fa-hand-o-right"},"favicon":{"shortcut":"favicon.ico","bookmark":"favicon.ico"},"github-buttons":{"repo":"LRH1993/android_interview","types":["star"],"size":"small"},"expandable-chapters-small":{},"local-video":{},"advanced-emoji":{"embedEmojis":false},"include-codeblock":{"check":false,"edit":true,"fixlang":false,"lang":"","template":"ace","theme":"chrome","unindent":true},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":true,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"edit-link":{"label":"Edit This Page","base":"https://github.com/LRH1993/android_interview/edit/master"},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":true},"anchors":{},"search-plus":{}},"theme":"default","author":"ruheng","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"Android校招面试指南","language":"zh-hans","output.name":"site","links":{"sidebar":{"Home":"http://lruheng.com/"}},"gitbook":"3.2.3","description":"Android面试必备，记录自己的秋招之路"},"file":{"path":"design-mode/Behavioral-Pattern/Observer-Pattern.md","mtime":"2017-08-22T07:53:58.000Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2017-10-16T12:05:21.906Z"},"basePath":"../..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"观察者模式","level":"6.3.3","depth":2,"next":{"title":"策略模式","level":"6.3.4","depth":2,"path":"design-mode/Behavioral-Pattern/Strategy-Pattern.md","ref":"design-mode/Behavioral-Pattern/Strategy-Pattern.md","articles":[]},"previous":{"title":"迭代器模式","level":"6.3.2","depth":2,"path":"design-mode/Behavioral-Pattern/Iterator-Pattern.md","ref":"design-mode/Behavioral-Pattern/Iterator-Pattern.md","articles":[]},"dir":"ltr"},"config":{"plugins":["-lunr","-search","-livereload","search-plus@^0.0.11","simple-page-toc@^0.1.1","github@^2.0.0","github-buttons@2.1.0","edit-link@^2.0.2","advanced-emoji@^0.2.1","anchors@^0.7.1","include-codeblock@^3.0.2","ace@^0.3.2","emphasize@^1.1.0","katex@^1.1.3","splitter@^0.0.8","tbfed-pagefooter@^0.0.1","expandable-chapters-small@^0.1.7","sectionx@^3.1.0","local-video@^1.0.1","anchor-navigation-ex@0.1.8","favicon@^0.0.2"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"tbfed-pagefooter":{"copyright":"Copyright © ruheng.com 2017","modify_label":"该文件修订时间：","modify_format":"YYYY-MM-DD HH:mm:ss"},"emphasize":{},"ace":{},"github":{"url":"https://github.com/LRH1993/android_interview"},"simple-page-toc":{"maxDepth":3,"skipFirstH1":true},"splitter":{},"katex":{},"fontsettings":{"theme":"white","family":"sans","size":2},"sectionx":{"tag":"b"},"highlight":{},"anchor-navigation-ex":{"isRewritePageTitle":false,"tocLevel1Icon":"fa fa-hand-o-right","tocLevel2Icon":"fa fa-hand-o-right","tocLevel3Icon":"fa fa-hand-o-right"},"favicon":{"shortcut":"favicon.ico","bookmark":"favicon.ico"},"github-buttons":{"repo":"LRH1993/android_interview","types":["star"],"size":"small"},"expandable-chapters-small":{},"local-video":{},"advanced-emoji":{"embedEmojis":false},"include-codeblock":{"check":false,"edit":false,"fixlang":false,"lang":"","template":"default","theme":"chrome","unindent":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":true,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"edit-link":{"label":"Edit This Page","base":"https://github.com/LRH1993/android_interview/edit/master"},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":true},"anchors":{},"search-plus":{}},"theme":"default","author":"ruheng","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"Android校招面试指南","language":"zh-hans","output.name":"site","links":{"sidebar":{"Home":"http://lruheng.com/"}},"gitbook":"3.2.3","description":"Android面试必备，记录自己的秋招之路"},"file":{"path":"design-mode/Behavioral-Pattern/Observer-Pattern.md","mtime":"2017-08-22T07:53:58.000Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2017-10-16T13:00:43.989Z"},"basePath":"../..","book":{"language":""}});
         });
     </script>
 </div>

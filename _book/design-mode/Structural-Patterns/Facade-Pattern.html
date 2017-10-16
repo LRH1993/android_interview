@@ -69,6 +69,10 @@
                 
             
                 
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
                 <link rel="stylesheet" href="../../gitbook/gitbook-plugin-fontsettings/website.css">
                 
             
@@ -3726,46 +3730,46 @@
 <h5 id="&#x65F6;&#x5E8F;&#x56FE;"><a name="&#x65F6;&#x5E8F;&#x56FE;" class="anchor-navigation-ex-anchor" href="#&#x65F6;&#x5E8F;&#x56FE;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x65F6;&#x5E8F;&#x56FE;</h5>
 <p><img src="http://upload-images.jianshu.io/upload_images/3985563-e8fdbd86d0684d28.png?imageMogr2/auto-orient/strip|imageView2/2/w/1240" alt=""></p>
 <p><strong>&#x5B50;&#x7CFB;&#x7EDF;&#x89D2;&#x8272;&#x4E2D;&#x7684;&#x7C7B;&#xFF1A;</strong></p>
-<pre><code class="lang-java">public class ModuleA {
-    //&#x793A;&#x610F;&#x65B9;&#x6CD5;
-    public void testA(){
-        System.out.println(&quot;&#x8C03;&#x7528;ModuleA&#x4E2D;&#x7684;testA&#x65B9;&#x6CD5;&quot;);
+<pre><code class="lang-java"><span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">ModuleA</span> </span>{
+    <span class="hljs-comment">//&#x793A;&#x610F;&#x65B9;&#x6CD5;</span>
+    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">testA</span><span class="hljs-params">()</span></span>{
+        System.out.println(<span class="hljs-string">&quot;&#x8C03;&#x7528;ModuleA&#x4E2D;&#x7684;testA&#x65B9;&#x6CD5;&quot;</span>);
     }
 }
 </code></pre>
-<pre><code class="lang-java">public class ModuleB {
-    //&#x793A;&#x610F;&#x65B9;&#x6CD5;
-    public void testB(){
-        System.out.println(&quot;&#x8C03;&#x7528;ModuleB&#x4E2D;&#x7684;testB&#x65B9;&#x6CD5;&quot;);
+<pre><code class="lang-java"><span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">ModuleB</span> </span>{
+    <span class="hljs-comment">//&#x793A;&#x610F;&#x65B9;&#x6CD5;</span>
+    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">testB</span><span class="hljs-params">()</span></span>{
+        System.out.println(<span class="hljs-string">&quot;&#x8C03;&#x7528;ModuleB&#x4E2D;&#x7684;testB&#x65B9;&#x6CD5;&quot;</span>);
     }
 }
 </code></pre>
-<pre><code class="lang-java">public class ModuleC {
-    //&#x793A;&#x610F;&#x65B9;&#x6CD5;
-    public void testC(){
-        System.out.println(&quot;&#x8C03;&#x7528;ModuleC&#x4E2D;&#x7684;testC&#x65B9;&#x6CD5;&quot;);
+<pre><code class="lang-java"><span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">ModuleC</span> </span>{
+    <span class="hljs-comment">//&#x793A;&#x610F;&#x65B9;&#x6CD5;</span>
+    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">testC</span><span class="hljs-params">()</span></span>{
+        System.out.println(<span class="hljs-string">&quot;&#x8C03;&#x7528;ModuleC&#x4E2D;&#x7684;testC&#x65B9;&#x6CD5;&quot;</span>);
     }
 }
 </code></pre>
 <p><strong>&#x5916;&#x89C2;&#x89D2;&#x8272;&#x7C7B;:</strong></p>
-<pre><code class="lang-java">public class Facade {
-    //&#x793A;&#x610F;&#x65B9;&#x6CD5;&#xFF0C;&#x6EE1;&#x8DB3;&#x5BA2;&#x6237;&#x7AEF;&#x9700;&#x8981;&#x7684;&#x529F;&#x80FD;
-    public void test(){
-        ModuleA a = new ModuleA();
+<pre><code class="lang-java"><span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Facade</span> </span>{
+    <span class="hljs-comment">//&#x793A;&#x610F;&#x65B9;&#x6CD5;&#xFF0C;&#x6EE1;&#x8DB3;&#x5BA2;&#x6237;&#x7AEF;&#x9700;&#x8981;&#x7684;&#x529F;&#x80FD;</span>
+    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">test</span><span class="hljs-params">()</span></span>{
+        ModuleA a = <span class="hljs-keyword">new</span> ModuleA();
         a.testA();
-        ModuleB b = new ModuleB();
+        ModuleB b = <span class="hljs-keyword">new</span> ModuleB();
         b.testB();
-        ModuleC c = new ModuleC();
+        ModuleC c = <span class="hljs-keyword">new</span> ModuleC();
         c.testC();
     }
 }
 </code></pre>
 <p><strong>&#x5BA2;&#x6237;&#x7AEF;&#x89D2;&#x8272;&#x7C7B;&#xFF1A;</strong></p>
-<pre><code class="lang-java">public class Client {
+<pre><code class="lang-java"><span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Client</span> </span>{
 
-    public static void main(String[] args) {
+    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title">main</span><span class="hljs-params">(String[] args)</span> </span>{
 
-        Facade facade = new Facade();
+        Facade facade = <span class="hljs-keyword">new</span> Facade();
         facade.test();
     }
 
@@ -3775,60 +3779,60 @@
 <h3 id="&#x4E09;&#x3001;&#x5916;&#x89C2;&#x6A21;&#x5F0F;&#x7684;&#x6269;&#x5C55;"><a name="&#x4E09;&#x3001;&#x5916;&#x89C2;&#x6A21;&#x5F0F;&#x7684;&#x6269;&#x5C55;" class="anchor-navigation-ex-anchor" href="#&#x4E09;&#x3001;&#x5916;&#x89C2;&#x6A21;&#x5F0F;&#x7684;&#x6269;&#x5C55;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x4E09;&#x3001;&#x5916;&#x89C2;&#x6A21;&#x5F0F;&#x7684;&#x6269;&#x5C55;</h3>
 <p><strong>&#x4F7F;&#x7528;&#x5916;&#x89C2;&#x6A21;&#x5F0F;&#x8FD8;&#x6709;&#x4E00;&#x4E2A;&#x9644;&#x5E26;&#x7684;&#x597D;&#x5904;&#xFF0C;&#x5C31;&#x662F;&#x80FD;&#x591F;&#x6709;&#x9009;&#x62E9;&#x6027;&#x5730;&#x66B4;&#x9732;&#x65B9;&#x6CD5;</strong>&#x3002;&#x4E00;&#x4E2A;&#x6A21;&#x5757;&#x4E2D;&#x5B9A;&#x4E49;&#x7684;&#x65B9;&#x6CD5;&#x53EF;&#x4EE5;&#x5206;&#x6210;&#x4E24;&#x90E8;&#x5206;&#xFF0C;&#x4E00;&#x90E8;&#x5206;&#x662F;&#x7ED9;&#x5B50;&#x7CFB;&#x7EDF;&#x5916;&#x90E8;&#x4F7F;&#x7528;&#x7684;&#xFF0C;&#x4E00;&#x90E8;&#x5206;&#x662F;&#x5B50;&#x7CFB;&#x7EDF;&#x5185;&#x90E8;&#x6A21;&#x5757;&#x4E4B;&#x95F4;&#x76F8;&#x4E92;&#x8C03;&#x7528;&#x65F6;&#x4F7F;&#x7528;&#x7684;&#x3002;&#x6709;&#x4E86;Facade&#x7C7B;&#xFF0C;&#x90A3;&#x4E48;&#x7528;&#x4E8E;&#x5B50;&#x7CFB;&#x7EDF;&#x5185;&#x90E8;&#x6A21;&#x5757;&#x4E4B;&#x95F4;&#x76F8;&#x4E92;&#x8C03;&#x7528;&#x7684;&#x65B9;&#x6CD5;&#x5C31;&#x4E0D;&#x7528;&#x66B4;&#x9732;&#x7ED9;&#x5B50;&#x7CFB;&#x7EDF;&#x5916;&#x90E8;&#x4E86;&#x3002;</p>
 <p>&#x6BD4;&#x5982;&#xFF0C;&#x5B9A;&#x4E49;&#x5982;&#x4E0B;A&#x3001;B&#x3001;C&#x6A21;&#x5757;&#x3002;</p>
-<pre><code class="lang-java">public class Module {
-    /**
+<pre><code class="lang-java"><span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Module</span> </span>{
+    <span class="hljs-comment">/**
      * &#x63D0;&#x4F9B;&#x7ED9;&#x5B50;&#x7CFB;&#x7EDF;&#x5916;&#x90E8;&#x4F7F;&#x7528;&#x7684;&#x65B9;&#x6CD5;
-     */
-    public void a1(){};
+     */</span>
+    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">a1</span><span class="hljs-params">()</span></span>{};
 
-    /**
+    <span class="hljs-comment">/**
      * &#x5B50;&#x7CFB;&#x7EDF;&#x5185;&#x90E8;&#x6A21;&#x5757;&#x4E4B;&#x95F4;&#x76F8;&#x4E92;&#x8C03;&#x7528;&#x65F6;&#x4F7F;&#x7528;&#x7684;&#x65B9;&#x6CD5;
-     */
-    public void a2(){};
-    public void a3(){};
+     */</span>
+    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">a2</span><span class="hljs-params">()</span></span>{};
+    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">a3</span><span class="hljs-params">()</span></span>{};
 }
 </code></pre>
-<pre><code class="lang-java">public class ModuleB {
-    /**
+<pre><code class="lang-java"><span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">ModuleB</span> </span>{
+    <span class="hljs-comment">/**
      * &#x63D0;&#x4F9B;&#x7ED9;&#x5B50;&#x7CFB;&#x7EDF;&#x5916;&#x90E8;&#x4F7F;&#x7528;&#x7684;&#x65B9;&#x6CD5;
-     */
-    public void b1(){};
+     */</span>
+    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">b1</span><span class="hljs-params">()</span></span>{};
 
-    /**
+    <span class="hljs-comment">/**
      * &#x5B50;&#x7CFB;&#x7EDF;&#x5185;&#x90E8;&#x6A21;&#x5757;&#x4E4B;&#x95F4;&#x76F8;&#x4E92;&#x8C03;&#x7528;&#x65F6;&#x4F7F;&#x7528;&#x7684;&#x65B9;&#x6CD5;
-     */
-    public void b2(){};
-    public void b3(){};
+     */</span>
+    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">b2</span><span class="hljs-params">()</span></span>{};
+    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">b3</span><span class="hljs-params">()</span></span>{};
 }
 </code></pre>
-<pre><code class="lang-java">public class ModuleC {
-    /**
+<pre><code class="lang-java"><span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">ModuleC</span> </span>{
+    <span class="hljs-comment">/**
      * &#x63D0;&#x4F9B;&#x7ED9;&#x5B50;&#x7CFB;&#x7EDF;&#x5916;&#x90E8;&#x4F7F;&#x7528;&#x7684;&#x65B9;&#x6CD5;
-     */
-    public void c1(){};
+     */</span>
+    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">c1</span><span class="hljs-params">()</span></span>{};
 
-    /**
+    <span class="hljs-comment">/**
      * &#x5B50;&#x7CFB;&#x7EDF;&#x5185;&#x90E8;&#x6A21;&#x5757;&#x4E4B;&#x95F4;&#x76F8;&#x4E92;&#x8C03;&#x7528;&#x65F6;&#x4F7F;&#x7528;&#x7684;&#x65B9;&#x6CD5;
-     */
-    public void c2(){};
-    public void c3(){};
+     */</span>
+    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">c2</span><span class="hljs-params">()</span></span>{};
+    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">c3</span><span class="hljs-params">()</span></span>{};
 }
 </code></pre>
-<pre><code class="lang-java">public class ModuleFacade {
+<pre><code class="lang-java"><span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">ModuleFacade</span> </span>{
 
-    ModuleA a = new ModuleA();
-    ModuleB b = new ModuleB();
-    ModuleC c = new ModuleC();
-    /**
+    ModuleA a = <span class="hljs-keyword">new</span> ModuleA();
+    ModuleB b = <span class="hljs-keyword">new</span> ModuleB();
+    ModuleC c = <span class="hljs-keyword">new</span> ModuleC();
+    <span class="hljs-comment">/**
      * &#x4E0B;&#x9762;&#x8FD9;&#x4E9B;&#x662F;A&#x3001;B&#x3001;C&#x6A21;&#x5757;&#x5BF9;&#x5B50;&#x7CFB;&#x7EDF;&#x5916;&#x90E8;&#x63D0;&#x4F9B;&#x7684;&#x65B9;&#x6CD5;
-     */
-    public void a1(){
+     */</span>
+    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">a1</span><span class="hljs-params">()</span></span>{
         a.a1();
     }
-    public void b1(){
+    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">b1</span><span class="hljs-params">()</span></span>{
         b.b1();
     }
-    public void c1(){
+    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">c1</span><span class="hljs-params">()</span></span>{
         c.c1();
     }
 }
@@ -3846,99 +3850,99 @@
 <p>EncryptFacade&#x5145;&#x5F53;&#x5916;&#x89C2;&#x7C7B;&#xFF0C;FileReader&#x3001;CipherMachine&#x548C;FileWriter&#x5145;&#x5F53;&#x5B50;&#x7CFB;&#x7EDF;&#x7C7B;&#x3002;</p>
 <h5 id="3&#x5B9E;&#x4F8B;&#x4EE3;&#x7801;"><a name="3&#x5B9E;&#x4F8B;&#x4EE3;&#x7801;" class="anchor-navigation-ex-anchor" href="#3&#x5B9E;&#x4F8B;&#x4EE3;&#x7801;"><i class="fa fa-link" aria-hidden="true"></i></a>3.&#x5B9E;&#x4F8B;&#x4EE3;&#x7801;</h5>
 <p><strong>FileReader&#xFF1A;&#x6587;&#x4EF6;&#x8BFB;&#x53D6;&#x7C7B;&#xFF0C;&#x5145;&#x5F53;&#x5B50;&#x7CFB;&#x7EDF;&#x7C7B;&#x3002;</strong></p>
-<pre><code class="lang-java">class FileReader  
-    {  
-        public string Read(string fileNameSrc)   
-        {  
-       Console.Write(&quot;&#x8BFB;&#x53D6;&#x6587;&#x4EF6;&#xFF0C;&#x83B7;&#x53D6;&#x660E;&#x6587;&#xFF1A;&quot;);  
-            FileStream fs = null;  
-            StringBuilder sb = new StringBuilder();  
-       try  
+<pre><code class="lang-java"><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">FileReader</span>  
+    </span>{  
+        <span class="hljs-function"><span class="hljs-keyword">public</span> string <span class="hljs-title">Read</span><span class="hljs-params">(string fileNameSrc)</span>   
+        </span>{  
+       Console.Write(<span class="hljs-string">&quot;&#x8BFB;&#x53D6;&#x6587;&#x4EF6;&#xFF0C;&#x83B7;&#x53D6;&#x660E;&#x6587;&#xFF1A;&quot;</span>);  
+            FileStream fs = <span class="hljs-keyword">null</span>;  
+            StringBuilder sb = <span class="hljs-keyword">new</span> StringBuilder();  
+       <span class="hljs-keyword">try</span>  
             {  
-                fs = new FileStream(fileNameSrc, FileMode.Open);  
-                int data;  
-               while((data = fs.ReadByte())!= -1)   
+                fs = <span class="hljs-keyword">new</span> FileStream(fileNameSrc, FileMode.Open);  
+                <span class="hljs-keyword">int</span> data;  
+               <span class="hljs-keyword">while</span>((data = fs.ReadByte())!= -<span class="hljs-number">1</span>)   
                 {  
-            sb = sb.Append((char)data);  
+            sb = sb.Append((<span class="hljs-keyword">char</span>)data);  
                }  
                fs.Close();  
                Console.WriteLine(sb.ToString());  
        }  
-       catch(FileNotFoundException e)   
+       <span class="hljs-keyword">catch</span>(FileNotFoundException e)   
             {  
-           Console.WriteLine(&quot;&#x6587;&#x4EF6;&#x4E0D;&#x5B58;&#x5728;&#xFF01;&quot;);  
+           Console.WriteLine(<span class="hljs-string">&quot;&#x6587;&#x4EF6;&#x4E0D;&#x5B58;&#x5728;&#xFF01;&quot;</span>);  
        }  
-       catch(IOException e)   
+       <span class="hljs-keyword">catch</span>(IOException e)   
             {  
-           Console.WriteLine(&quot;&#x6587;&#x4EF6;&#x64CD;&#x4F5C;&#x9519;&#x8BEF;&#xFF01;&quot;);  
+           Console.WriteLine(<span class="hljs-string">&quot;&#x6587;&#x4EF6;&#x64CD;&#x4F5C;&#x9519;&#x8BEF;&#xFF01;&quot;</span>);  
        }  
-       return sb.ToString();  
+       <span class="hljs-keyword">return</span> sb.ToString();  
         }  
     }
 </code></pre>
 <p><strong>CipherMachine&#xFF1A;&#x6570;&#x636E;&#x52A0;&#x5BC6;&#x7C7B;&#xFF0C;&#x5145;&#x5F53;&#x5B50;&#x7CFB;&#x7EDF;&#x7C7B;&#x3002;</strong></p>
-<pre><code class="lang-java">class CipherMachine  
-    {  
-       public string Encrypt(string plainText)   
-       {  
-       Console.Write(&quot;&#x6570;&#x636E;&#x52A0;&#x5BC6;&#xFF0C;&#x5C06;&#x660E;&#x6587;&#x8F6C;&#x6362;&#x4E3A;&#x5BC6;&#x6587;&#xFF1A;&quot;);  
-       string es = &quot;&quot;;  
-            char[] chars = plainText.ToCharArray();  
-       foreach(char ch in chars)   
+<pre><code class="lang-java"><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">CipherMachine</span>  
+    </span>{  
+       <span class="hljs-function"><span class="hljs-keyword">public</span> string <span class="hljs-title">Encrypt</span><span class="hljs-params">(string plainText)</span>   
+       </span>{  
+       Console.Write(<span class="hljs-string">&quot;&#x6570;&#x636E;&#x52A0;&#x5BC6;&#xFF0C;&#x5C06;&#x660E;&#x6587;&#x8F6C;&#x6362;&#x4E3A;&#x5BC6;&#x6587;&#xFF1A;&quot;</span>);  
+       string es = <span class="hljs-string">&quot;&quot;</span>;  
+            <span class="hljs-keyword">char</span>[] chars = plainText.ToCharArray();  
+       foreach(<span class="hljs-keyword">char</span> ch in chars)   
             {  
-                string c = (ch % 7).ToString();  
+                string c = (ch % <span class="hljs-number">7</span>).ToString();  
            es += c;  
        }  
             Console.WriteLine(es);  
-       return es;  
+       <span class="hljs-keyword">return</span> es;  
     }  
     }
 </code></pre>
 <p><strong>FileWriter&#xFF1A;&#x6587;&#x4EF6;&#x4FDD;&#x5B58;&#x7C7B;&#xFF0C;&#x5145;&#x5F53;&#x5B50;&#x7CFB;&#x7EDF;&#x7C7B;&#x3002;</strong></p>
-<pre><code class="lang-java">class FileWriter  
-    {  
-        public void Write(string encryptStr,string fileNameDes)   
-        {  
-       Console.WriteLine(&quot;&#x4FDD;&#x5B58;&#x5BC6;&#x6587;&#xFF0C;&#x5199;&#x5165;&#x6587;&#x4EF6;&#x3002;&quot;);  
-            FileStream fs = null;  
-       try  
+<pre><code class="lang-java"><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">FileWriter</span>  
+    </span>{  
+        <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">Write</span><span class="hljs-params">(string encryptStr,string fileNameDes)</span>   
+        </span>{  
+       Console.WriteLine(<span class="hljs-string">&quot;&#x4FDD;&#x5B58;&#x5BC6;&#x6587;&#xFF0C;&#x5199;&#x5165;&#x6587;&#x4EF6;&#x3002;&quot;</span>);  
+            FileStream fs = <span class="hljs-keyword">null</span>;  
+       <span class="hljs-keyword">try</span>  
             {  
-               fs = new FileStream(fileNameDes, FileMode.Create);  
-                byte[] str = Encoding.Default.GetBytes(encryptStr);  
-                fs.Write(str,0,str.Length);  
+               fs = <span class="hljs-keyword">new</span> FileStream(fileNameDes, FileMode.Create);  
+                <span class="hljs-keyword">byte</span>[] str = Encoding.Default.GetBytes(encryptStr);  
+                fs.Write(str,<span class="hljs-number">0</span>,str.Length);  
                 fs.Flush();  
                fs.Close();  
        }      
-       catch(FileNotFoundException e)   
+       <span class="hljs-keyword">catch</span>(FileNotFoundException e)   
             {  
-        Console.WriteLine(&quot;&#x6587;&#x4EF6;&#x4E0D;&#x5B58;&#x5728;&#xFF01;&quot;);  
+        Console.WriteLine(<span class="hljs-string">&quot;&#x6587;&#x4EF6;&#x4E0D;&#x5B58;&#x5728;&#xFF01;&quot;</span>);  
        }  
-       catch(IOException e)   
+       <span class="hljs-keyword">catch</span>(IOException e)   
             {  
                 Console.WriteLine(e.Message);  
-           Console.WriteLine(&quot;&#x6587;&#x4EF6;&#x64CD;&#x4F5C;&#x9519;&#x8BEF;&#xFF01;&quot;);  
+           Console.WriteLine(<span class="hljs-string">&quot;&#x6587;&#x4EF6;&#x64CD;&#x4F5C;&#x9519;&#x8BEF;&#xFF01;&quot;</span>);  
        }          
         }  
     }
 </code></pre>
 <p><strong>EncryptFacade&#xFF1A;&#x52A0;&#x5BC6;&#x5916;&#x89C2;&#x7C7B;&#xFF0C;&#x5145;&#x5F53;&#x5916;&#x89C2;&#x7C7B;&#x3002;</strong></p>
-<pre><code class="lang-java">class EncryptFacade  
-    {  
-        //&#x7EF4;&#x6301;&#x5BF9;&#x5176;&#x4ED6;&#x5BF9;&#x8C61;&#x7684;&#x5F15;&#x7528;  
-         private FileReader reader;  
-        private CipherMachine cipher;  
-        private FileWriter writer;  
+<pre><code class="lang-java"><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">EncryptFacade</span>  
+    </span>{  
+        <span class="hljs-comment">//&#x7EF4;&#x6301;&#x5BF9;&#x5176;&#x4ED6;&#x5BF9;&#x8C61;&#x7684;&#x5F15;&#x7528;  </span>
+         <span class="hljs-keyword">private</span> FileReader reader;  
+        <span class="hljs-keyword">private</span> CipherMachine cipher;  
+        <span class="hljs-keyword">private</span> FileWriter writer;  
 
-        public EncryptFacade()  
-        {  
-            reader = new FileReader();  
-            cipher = new CipherMachine();  
-            writer = new FileWriter();  
+        <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-title">EncryptFacade</span><span class="hljs-params">()</span>  
+        </span>{  
+            reader = <span class="hljs-keyword">new</span> FileReader();  
+            cipher = <span class="hljs-keyword">new</span> CipherMachine();  
+            writer = <span class="hljs-keyword">new</span> FileWriter();  
         }  
 
-        //&#x8C03;&#x7528;&#x5176;&#x4ED6;&#x5BF9;&#x8C61;&#x7684;&#x4E1A;&#x52A1;&#x65B9;&#x6CD5;  
-         public void FileEncrypt(string fileNameSrc, string fileNameDes)  
-        {  
+        <span class="hljs-comment">//&#x8C03;&#x7528;&#x5176;&#x4ED6;&#x5BF9;&#x8C61;&#x7684;&#x4E1A;&#x52A1;&#x65B9;&#x6CD5;  </span>
+         <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">FileEncrypt</span><span class="hljs-params">(string fileNameSrc, string fileNameDes)</span>  
+        </span>{  
             string plainStr = reader.Read(fileNameSrc);  
             string encryptStr = cipher.Encrypt(plainStr);  
             writer.Write(encryptStr, fileNameDes);  
@@ -3946,12 +3950,12 @@
     }
 </code></pre>
 <p><strong>Program&#xFF1A;&#x5BA2;&#x6237;&#x7AEF;&#x6D4B;&#x8BD5;&#x7C7B;</strong></p>
-<pre><code class="lang-java">class Program  
-    {  
-        static void Main(string[] args)  
-        {  
-            EncryptFacade ef = new EncryptFacade();  
-            ef.FileEncrypt(&quot;src.txt&quot;, &quot;des.txt&quot;);  
+<pre><code class="lang-java"><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Program</span>  
+    </span>{  
+        <span class="hljs-function"><span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title">Main</span><span class="hljs-params">(string[] args)</span>  
+        </span>{  
+            EncryptFacade ef = <span class="hljs-keyword">new</span> EncryptFacade();  
+            ef.FileEncrypt(<span class="hljs-string">&quot;src.txt&quot;</span>, <span class="hljs-string">&quot;des.txt&quot;</span>);  
             Console.Read();  
         }  
     }
@@ -4008,7 +4012,7 @@
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"外观模式","level":"6.2.2","depth":2,"next":{"title":"装饰者模式","level":"6.2.3","depth":2,"path":"design-mode/Structural-Patterns/Decorator-Pattern.md","ref":"design-mode/Structural-Patterns/Decorator-Pattern.md","articles":[]},"previous":{"title":"适配器模式","level":"6.2.1","depth":2,"path":"design-mode/Structural-Patterns/Adapter-Pattern.md","ref":"design-mode/Structural-Patterns/Adapter-Pattern.md","articles":[]},"dir":"ltr"},"config":{"plugins":["-lunr","-search","-highlight","-livereload","search-plus@^0.0.11","simple-page-toc@^0.1.1","github@^2.0.0","github-buttons@2.1.0","edit-link@^2.0.2","advanced-emoji@^0.2.1","anchors@^0.7.1","include-codeblock@^3.0.2","ace@^0.3.2","emphasize@^1.1.0","katex@^1.1.3","splitter@^0.0.8","tbfed-pagefooter@^0.0.1","expandable-chapters-small@^0.1.7","sectionx@^3.1.0","local-video@^1.0.1","anchor-navigation-ex@0.1.8","favicon@^0.0.2"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"tbfed-pagefooter":{"copyright":"Copyright © ruheng.com 2017","modify_label":"该文件修订时间：","modify_format":"YYYY-MM-DD HH:mm:ss"},"emphasize":{},"ace":{},"github":{"url":"https://github.com/LRH1993/android_interview"},"simple-page-toc":{"maxDepth":3,"skipFirstH1":true},"splitter":{},"katex":{},"fontsettings":{"theme":"white","family":"sans","size":2},"sectionx":{"tag":"b"},"anchor-navigation-ex":{"isRewritePageTitle":false,"tocLevel1Icon":"fa fa-hand-o-right","tocLevel2Icon":"fa fa-hand-o-right","tocLevel3Icon":"fa fa-hand-o-right"},"favicon":{"shortcut":"favicon.ico","bookmark":"favicon.ico"},"github-buttons":{"repo":"LRH1993/android_interview","types":["star"],"size":"small"},"expandable-chapters-small":{},"local-video":{},"advanced-emoji":{"embedEmojis":false},"include-codeblock":{"check":false,"edit":true,"fixlang":false,"lang":"","template":"ace","theme":"chrome","unindent":true},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":true,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"edit-link":{"label":"Edit This Page","base":"https://github.com/LRH1993/android_interview/edit/master"},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":true},"anchors":{},"search-plus":{}},"theme":"default","author":"ruheng","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"Android校招面试指南","language":"zh-hans","output.name":"site","links":{"sidebar":{"Home":"http://lruheng.com/"}},"gitbook":"3.2.3","description":"Android面试必备，记录自己的秋招之路"},"file":{"path":"design-mode/Structural-Patterns/Facade-Pattern.md","mtime":"2017-08-22T07:53:58.000Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2017-10-16T12:05:21.906Z"},"basePath":"../..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"外观模式","level":"6.2.2","depth":2,"next":{"title":"装饰者模式","level":"6.2.3","depth":2,"path":"design-mode/Structural-Patterns/Decorator-Pattern.md","ref":"design-mode/Structural-Patterns/Decorator-Pattern.md","articles":[]},"previous":{"title":"适配器模式","level":"6.2.1","depth":2,"path":"design-mode/Structural-Patterns/Adapter-Pattern.md","ref":"design-mode/Structural-Patterns/Adapter-Pattern.md","articles":[]},"dir":"ltr"},"config":{"plugins":["-lunr","-search","-livereload","search-plus@^0.0.11","simple-page-toc@^0.1.1","github@^2.0.0","github-buttons@2.1.0","edit-link@^2.0.2","advanced-emoji@^0.2.1","anchors@^0.7.1","include-codeblock@^3.0.2","ace@^0.3.2","emphasize@^1.1.0","katex@^1.1.3","splitter@^0.0.8","tbfed-pagefooter@^0.0.1","expandable-chapters-small@^0.1.7","sectionx@^3.1.0","local-video@^1.0.1","anchor-navigation-ex@0.1.8","favicon@^0.0.2"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"tbfed-pagefooter":{"copyright":"Copyright © ruheng.com 2017","modify_label":"该文件修订时间：","modify_format":"YYYY-MM-DD HH:mm:ss"},"emphasize":{},"ace":{},"github":{"url":"https://github.com/LRH1993/android_interview"},"simple-page-toc":{"maxDepth":3,"skipFirstH1":true},"splitter":{},"katex":{},"fontsettings":{"theme":"white","family":"sans","size":2},"sectionx":{"tag":"b"},"highlight":{},"anchor-navigation-ex":{"isRewritePageTitle":false,"tocLevel1Icon":"fa fa-hand-o-right","tocLevel2Icon":"fa fa-hand-o-right","tocLevel3Icon":"fa fa-hand-o-right"},"favicon":{"shortcut":"favicon.ico","bookmark":"favicon.ico"},"github-buttons":{"repo":"LRH1993/android_interview","types":["star"],"size":"small"},"expandable-chapters-small":{},"local-video":{},"advanced-emoji":{"embedEmojis":false},"include-codeblock":{"check":false,"edit":false,"fixlang":false,"lang":"","template":"default","theme":"chrome","unindent":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":true,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"edit-link":{"label":"Edit This Page","base":"https://github.com/LRH1993/android_interview/edit/master"},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":true},"anchors":{},"search-plus":{}},"theme":"default","author":"ruheng","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"Android校招面试指南","language":"zh-hans","output.name":"site","links":{"sidebar":{"Home":"http://lruheng.com/"}},"gitbook":"3.2.3","description":"Android面试必备，记录自己的秋招之路"},"file":{"path":"design-mode/Structural-Patterns/Facade-Pattern.md","mtime":"2017-08-22T07:53:58.000Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2017-10-16T13:00:43.989Z"},"basePath":"../..","book":{"language":""}});
         });
     </script>
 </div>

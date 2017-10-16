@@ -69,6 +69,10 @@
                 
             
                 
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
                 <link rel="stylesheet" href="../../gitbook/gitbook-plugin-fontsettings/website.css">
                 
             
@@ -3708,82 +3712,82 @@
                                 <h2 id="&#x524D;&#x8A00;"><a name="&#x524D;&#x8A00;" class="anchor-navigation-ex-anchor" href="#&#x524D;&#x8A00;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x524D;&#x8A00;</h2>
 <p>java5&#x4E4B;&#x540E;&#xFF0C;&#x5E76;&#x53D1;&#x5305;&#x4E2D;&#x65B0;&#x589E;&#x4E86;Lock&#x63A5;&#x53E3;&#xFF08;&#x4EE5;&#x53CA;&#x76F8;&#x5173;&#x5B9E;&#x73B0;&#x7C7B;&#xFF09;&#x7528;&#x6765;&#x5B9E;&#x73B0;&#x9501;&#x7684;&#x529F;&#x80FD;&#xFF0C;&#x5B83;&#x63D0;&#x4F9B;&#x4E86;&#x4E0E;synchronized&#x5173;&#x952E;&#x5B57;&#x7C7B;&#x4F3C;&#x7684;&#x540C;&#x6B65;&#x529F;&#x80FD;&#x3002;&#x65E2;&#x7136;&#x6709;&#x4E86;synchronized&#x8FD9;&#x79CD;&#x5185;&#x7F6E;&#x7684;&#x9501;&#x529F;&#x80FD;&#xFF0C;&#x4E3A;&#x4F55;&#x8981;&#x65B0;&#x589E;Lock&#x63A5;&#x53E3;&#xFF1F;&#x5148;&#x6765;&#x60F3;&#x8C61;&#x4E00;&#x4E2A;&#x573A;&#x666F;&#xFF1A;&#x624B;&#x628A;&#x624B;&#x7684;&#x8FDB;&#x884C;&#x9501;&#x83B7;&#x53D6;&#x548C;&#x91CA;&#x653E;&#xFF0C;&#x5148;&#x83B7;&#x5F97;&#x9501;A&#xFF0C;&#x7136;&#x540E;&#x518D;&#x83B7;&#x53D6;&#x9501;B&#xFF0C;&#x5F53;&#x83B7;&#x53D6;&#x9501;B&#x540E;&#x91CA;&#x653E;&#x9501;A&#x540C;&#x65F6;&#x83B7;&#x53D6;&#x9501;C&#xFF0C;&#x5F53;&#x9501;C&#x83B7;&#x53D6;&#x540E;&#xFF0C;&#x518D;&#x91CA;&#x653E;&#x9501;B&#x540C;&#x65F6;&#x83B7;&#x53D6;&#x9501;D&#xFF0C;&#x4EE5;&#x6B64;&#x7C7B;&#x63A8;&#xFF0C;&#x8FD9;&#x79CD;&#x573A;&#x666F;&#x4E0B;&#xFF0C;synchronized&#x5173;&#x952E;&#x5B57;&#x5C31;&#x4E0D;&#x90A3;&#x4E48;&#x5BB9;&#x6613;&#x5B9E;&#x73B0;&#x4E86;&#xFF0C;&#x800C;&#x4F7F;&#x7528;Lock&#x5374;&#x663E;&#x5F97;&#x5BB9;&#x6613;&#x8BB8;&#x591A;&#x3002;</p>
 <h2 id="&#x5B9A;&#x4E49;"><a name="&#x5B9A;&#x4E49;" class="anchor-navigation-ex-anchor" href="#&#x5B9A;&#x4E49;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x5B9A;&#x4E49;</h2>
-<pre><code class="lang-java">public class ReentrantLock implements Lock, java.io.Serializable {
-    private final Sync sync;
-    abstract static class Sync extends AbstractQueuedSynchronizer {
+<pre><code class="lang-java"><span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">ReentrantLock</span> <span class="hljs-keyword">implements</span> <span class="hljs-title">Lock</span>, <span class="hljs-title">java</span>.<span class="hljs-title">io</span>.<span class="hljs-title">Serializable</span> </span>{
+    <span class="hljs-keyword">private</span> <span class="hljs-keyword">final</span> Sync sync;
+    <span class="hljs-keyword">abstract</span> <span class="hljs-keyword">static</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Sync</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">AbstractQueuedSynchronizer</span> </span>{
 
-        /**
-         * Performs {@link Lock#lock}. The main reason for subclassing
+        <span class="hljs-comment">/**
+         * Performs {<span class="hljs-doctag">@link</span> Lock#lock}. The main reason for subclassing
          * is to allow fast path for nonfair version.
-         */
-        abstract void lock();
+         */</span>
+        <span class="hljs-function"><span class="hljs-keyword">abstract</span> <span class="hljs-keyword">void</span> <span class="hljs-title">lock</span><span class="hljs-params">()</span></span>;
 
-        /**
+        <span class="hljs-comment">/**
          * Performs non-fair tryLock.  tryAcquire is implemented in
          * subclasses, but both need nonfair try for trylock method.
-         */
-        final boolean nonfairTryAcquire(int acquires) {
-            final Thread current = Thread.currentThread();
-            int c = getState();
-            if (c == 0) {
-                if (compareAndSetState(0, acquires)) {
+         */</span>
+        <span class="hljs-function"><span class="hljs-keyword">final</span> <span class="hljs-keyword">boolean</span> <span class="hljs-title">nonfairTryAcquire</span><span class="hljs-params">(<span class="hljs-keyword">int</span> acquires)</span> </span>{
+            <span class="hljs-keyword">final</span> Thread current = Thread.currentThread();
+            <span class="hljs-keyword">int</span> c = getState();
+            <span class="hljs-keyword">if</span> (c == <span class="hljs-number">0</span>) {
+                <span class="hljs-keyword">if</span> (compareAndSetState(<span class="hljs-number">0</span>, acquires)) {
                     setExclusiveOwnerThread(current);
-                    return true;
+                    <span class="hljs-keyword">return</span> <span class="hljs-keyword">true</span>;
                 }
             }
-            else if (current == getExclusiveOwnerThread()) {
-                int nextc = c + acquires;
-                if (nextc &lt; 0) // overflow
-                    throw new Error(&quot;Maximum lock count exceeded&quot;);
+            <span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span> (current == getExclusiveOwnerThread()) {
+                <span class="hljs-keyword">int</span> nextc = c + acquires;
+                <span class="hljs-keyword">if</span> (nextc &lt; <span class="hljs-number">0</span>) <span class="hljs-comment">// overflow</span>
+                    <span class="hljs-keyword">throw</span> <span class="hljs-keyword">new</span> Error(<span class="hljs-string">&quot;Maximum lock count exceeded&quot;</span>);
                 setState(nextc);
-                return true;
+                <span class="hljs-keyword">return</span> <span class="hljs-keyword">true</span>;
             }
-            return false;
+            <span class="hljs-keyword">return</span> <span class="hljs-keyword">false</span>;
         }
 
-        protected final boolean tryRelease(int releases) {
-            int c = getState() - releases;
-            if (Thread.currentThread() != getExclusiveOwnerThread())
-                throw new IllegalMonitorStateException();
-            boolean free = false;
-            if (c == 0) {
-                free = true;
-                setExclusiveOwnerThread(null);
+        <span class="hljs-function"><span class="hljs-keyword">protected</span> <span class="hljs-keyword">final</span> <span class="hljs-keyword">boolean</span> <span class="hljs-title">tryRelease</span><span class="hljs-params">(<span class="hljs-keyword">int</span> releases)</span> </span>{
+            <span class="hljs-keyword">int</span> c = getState() - releases;
+            <span class="hljs-keyword">if</span> (Thread.currentThread() != getExclusiveOwnerThread())
+                <span class="hljs-keyword">throw</span> <span class="hljs-keyword">new</span> IllegalMonitorStateException();
+            <span class="hljs-keyword">boolean</span> free = <span class="hljs-keyword">false</span>;
+            <span class="hljs-keyword">if</span> (c == <span class="hljs-number">0</span>) {
+                free = <span class="hljs-keyword">true</span>;
+                setExclusiveOwnerThread(<span class="hljs-keyword">null</span>);
             }
             setState(c);
-            return free;
+            <span class="hljs-keyword">return</span> free;
         }
 
     }
-    //&#x9ED8;&#x8BA4;&#x975E;&#x516C;&#x5E73;&#x9501;
-    public ReentrantLock() {
-        sync = new NonfairSync();
+    <span class="hljs-comment">//&#x9ED8;&#x8BA4;&#x975E;&#x516C;&#x5E73;&#x9501;</span>
+    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-title">ReentrantLock</span><span class="hljs-params">()</span> </span>{
+        sync = <span class="hljs-keyword">new</span> NonfairSync();
     }
-    //fair&#x4E3A;false&#x65F6;&#xFF0C;&#x91C7;&#x7528;&#x516C;&#x5E73;&#x9501;&#x7B56;&#x7565;
-    public ReentrantLock(boolean fair) {    
-        sync = fair ? new FairSync() : new NonfairSync();
+    <span class="hljs-comment">//fair&#x4E3A;false&#x65F6;&#xFF0C;&#x91C7;&#x7528;&#x516C;&#x5E73;&#x9501;&#x7B56;&#x7565;</span>
+    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-title">ReentrantLock</span><span class="hljs-params">(<span class="hljs-keyword">boolean</span> fair)</span> </span>{    
+        sync = fair ? <span class="hljs-keyword">new</span> FairSync() : <span class="hljs-keyword">new</span> NonfairSync();
     }
-    public void lock() {
+    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">lock</span><span class="hljs-params">()</span> </span>{
         sync.lock();
     }
-    public void unlock() {    sync.release(1);}
-    public Condition newCondition() {    
-        return sync.newCondition();
+    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">unlock</span><span class="hljs-params">()</span> </span>{    sync.release(<span class="hljs-number">1</span>);}
+    <span class="hljs-function"><span class="hljs-keyword">public</span> Condition <span class="hljs-title">newCondition</span><span class="hljs-params">()</span> </span>{    
+        <span class="hljs-keyword">return</span> sync.newCondition();
     }
     ...
 }
 </code></pre>
 <p>&#x4ECE;&#x6E90;&#x4EE3;&#x7801;&#x53EF;&#x4EE5;Doug lea&#x5DE7;&#x5999;&#x7684;&#x91C7;&#x7528;&#x7EC4;&#x5408;&#x6A21;&#x5F0F;&#x628A;lock&#x548C;unlock&#x65B9;&#x6CD5;&#x59D4;&#x6258;&#x7ED9;&#x540C;&#x6B65;&#x5668;&#x5B8C;&#x6210;&#x3002;</p>
 <h2 id="&#x4F7F;&#x7528;&#x65B9;&#x5F0F;"><a name="&#x4F7F;&#x7528;&#x65B9;&#x5F0F;" class="anchor-navigation-ex-anchor" href="#&#x4F7F;&#x7528;&#x65B9;&#x5F0F;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x4F7F;&#x7528;&#x65B9;&#x5F0F;</h2>
-<pre><code class="lang-java">Lock lock = new ReentrantLock();
+<pre><code class="lang-java">Lock lock = <span class="hljs-keyword">new</span> ReentrantLock();
 Condition condition = lock.newCondition();
 lock.lock();
-try {
-  while(&#x6761;&#x4EF6;&#x5224;&#x65AD;&#x8868;&#x8FBE;&#x5F0F;) {
+<span class="hljs-keyword">try</span> {
+  <span class="hljs-keyword">while</span>(&#x6761;&#x4EF6;&#x5224;&#x65AD;&#x8868;&#x8FBE;&#x5F0F;) {
       condition.wait();
   }
- // &#x5904;&#x7406;&#x903B;&#x8F91;
-} finally {
+ <span class="hljs-comment">// &#x5904;&#x7406;&#x903B;&#x8F91;</span>
+} <span class="hljs-keyword">finally</span> {
     lock.unlock();
 }
 </code></pre>
@@ -3798,26 +3802,26 @@ try {
 <li>&#x540C;&#x65F6;&#x7EBF;&#x7A0B;G&#x6267;&#x884C;lock&#xFF0C;&#x8FD9;&#x4E2A;&#x65F6;&#x5019;&#x4F1A;&#x53D1;&#x751F;&#x4EC0;&#x4E48;&#xFF1F;&#x7EBF;&#x7A0B;B&#x548C;G&#x62E5;&#x6709;&#x76F8;&#x540C;&#x7684;&#x4F18;&#x5148;&#x7EA7;&#xFF0C;&#x8FD9;&#x91CC;&#x8BB2;&#x7684;&#x4F18;&#x5148;&#x7EA7;&#x662F;&#x6307;&#x83B7;&#x53D6;&#x9501;&#x7684;&#x4F18;&#x5148;&#x7EA7;&#xFF0C;&#x540C;&#x65F6;&#x6267;&#x884C;CAS&#x6307;&#x4EE4;&#x7ADE;&#x4E89;&#x9501;&#x3002;&#x5982;&#x679C;&#x6070;&#x597D;&#x7EBF;&#x7A0B;G&#x6210;&#x529F;&#x4E86;&#xFF0C;&#x7EBF;&#x7A0B;B&#x5C31;&#x5F97;&#x91CD;&#x65B0;&#x6302;&#x8D77;&#x7B49;&#x5F85;&#x88AB;&#x5524;&#x9192;&#x3002;</li>
 </ol>
 <p>&#x901A;&#x8FC7;&#x4E0A;&#x8FF0;&#x573A;&#x666F;&#x63CF;&#x8FF0;&#xFF0C;&#x6211;&#x4EEC;&#x53EF;&#x4EE5;&#x770B;&#x4E66;&#xFF0C;&#x5373;&#x4F7F;&#x7EBF;&#x7A0B;B&#x7B49;&#x4E86;&#x5F88;&#x957F;&#x65F6;&#x95F4;&#x4E5F;&#x5F97;&#x548C;&#x65B0;&#x6765;&#x7684;&#x7EBF;&#x7A0B;G&#x540C;&#x65F6;&#x7ADE;&#x4E89;&#x9501;&#xFF0C;&#x5982;&#x6B64;&#x7684;&#x4E0D;&#x516C;&#x5E73;&#x3002;</p>
-<pre><code class="lang-java">static final class NonfairSync extends Sync {
-    /**
+<pre><code class="lang-java"><span class="hljs-keyword">static</span> <span class="hljs-keyword">final</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">NonfairSync</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">Sync</span> </span>{
+    <span class="hljs-comment">/**
      * Performs lock.  Try immediate barge, backing up to normal
      * acquire on failure.
-     */
-    final void lock() {
-        if (compareAndSetState(0, 1))
+     */</span>
+    <span class="hljs-function"><span class="hljs-keyword">final</span> <span class="hljs-keyword">void</span> <span class="hljs-title">lock</span><span class="hljs-params">()</span> </span>{
+        <span class="hljs-keyword">if</span> (compareAndSetState(<span class="hljs-number">0</span>, <span class="hljs-number">1</span>))
             setExclusiveOwnerThread(Thread.currentThread());
-        else
-            acquire(1);
+        <span class="hljs-keyword">else</span>
+            acquire(<span class="hljs-number">1</span>);
     }
 
-    public final void acquire(int arg) {    
-        if (!tryAcquire(arg) &amp;&amp; 
+    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">final</span> <span class="hljs-keyword">void</span> <span class="hljs-title">acquire</span><span class="hljs-params">(<span class="hljs-keyword">int</span> arg)</span> </span>{    
+        <span class="hljs-keyword">if</span> (!tryAcquire(arg) &amp;&amp; 
                 acquireQueued(addWaiter(Node.EXCLUSIVE), arg))       
           selfInterrupt();
     }
 
-    protected final boolean tryAcquire(int acquires) {
-        return nonfairTryAcquire(acquires);
+    <span class="hljs-function"><span class="hljs-keyword">protected</span> <span class="hljs-keyword">final</span> <span class="hljs-keyword">boolean</span> <span class="hljs-title">tryAcquire</span><span class="hljs-params">(<span class="hljs-keyword">int</span> acquires)</span> </span>{
+        <span class="hljs-keyword">return</span> nonfairTryAcquire(acquires);
     }
 }
 </code></pre>
@@ -3839,59 +3843,59 @@ try {
 <li>&#x7EBF;&#x7A0B;G&#x6267;&#x884C;lock&#xFF0C;&#x961F;&#x5217;&#x4E2D;&#x6709;&#x7EBF;&#x7A0B;BCDEF&#x5728;&#x7B49;&#x5F85;&#xFF0C;&#x7EBF;&#x7A0B;G&#x76F4;&#x63A5;&#x52A0;&#x5165;&#x5230;&#x961F;&#x5217;&#x7684;&#x5BF9;&#x5C3E;&#x3002;</li>
 </ol>
 <p>&#x6240;&#x4EE5;&#x6BCF;&#x4E2A;&#x7EBF;&#x7A0B;&#x83B7;&#x53D6;&#x9501;&#x7684;&#x8FC7;&#x7A0B;&#x662F;&#x516C;&#x5E73;&#x7684;&#xFF0C;&#x7B49;&#x5F85;&#x65F6;&#x95F4;&#x6700;&#x957F;&#x7684;&#x4F1A;&#x6700;&#x5148;&#x88AB;&#x5524;&#x9192;&#x83B7;&#x53D6;&#x9501;&#x3002;</p>
-<pre><code class="lang-java">static final class FairSync extends Sync {
-    private static final long serialVersionUID = -3000897897090466540L;
+<pre><code class="lang-java"><span class="hljs-keyword">static</span> <span class="hljs-keyword">final</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">FairSync</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">Sync</span> </span>{
+    <span class="hljs-keyword">private</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">final</span> <span class="hljs-keyword">long</span> serialVersionUID = -<span class="hljs-number">3000897897090466540L</span>;
 
-    final void lock() {
-        acquire(1);
+    <span class="hljs-function"><span class="hljs-keyword">final</span> <span class="hljs-keyword">void</span> <span class="hljs-title">lock</span><span class="hljs-params">()</span> </span>{
+        acquire(<span class="hljs-number">1</span>);
     }
 
-    /**
+    <span class="hljs-comment">/**
      * Fair version of tryAcquire.  Don&apos;t grant access unless
      * recursive call or no waiters or is first.
-     */
-    protected final boolean tryAcquire(int acquires) {
-        final Thread current = Thread.currentThread();
-        int c = getState();
-        if (c == 0) {
-            if (!hasQueuedPredecessors() &amp;&amp;
-                compareAndSetState(0, acquires)) {
+     */</span>
+    <span class="hljs-function"><span class="hljs-keyword">protected</span> <span class="hljs-keyword">final</span> <span class="hljs-keyword">boolean</span> <span class="hljs-title">tryAcquire</span><span class="hljs-params">(<span class="hljs-keyword">int</span> acquires)</span> </span>{
+        <span class="hljs-keyword">final</span> Thread current = Thread.currentThread();
+        <span class="hljs-keyword">int</span> c = getState();
+        <span class="hljs-keyword">if</span> (c == <span class="hljs-number">0</span>) {
+            <span class="hljs-keyword">if</span> (!hasQueuedPredecessors() &amp;&amp;
+                compareAndSetState(<span class="hljs-number">0</span>, acquires)) {
                 setExclusiveOwnerThread(current);
-                return true;
+                <span class="hljs-keyword">return</span> <span class="hljs-keyword">true</span>;
             }
         }
-        else if (current == getExclusiveOwnerThread()) {
-            int nextc = c + acquires;
-            if (nextc &lt; 0)
-                throw new Error(&quot;Maximum lock count exceeded&quot;);
+        <span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span> (current == getExclusiveOwnerThread()) {
+            <span class="hljs-keyword">int</span> nextc = c + acquires;
+            <span class="hljs-keyword">if</span> (nextc &lt; <span class="hljs-number">0</span>)
+                <span class="hljs-keyword">throw</span> <span class="hljs-keyword">new</span> Error(<span class="hljs-string">&quot;Maximum lock count exceeded&quot;</span>);
             setState(nextc);
-            return true;
+            <span class="hljs-keyword">return</span> <span class="hljs-keyword">true</span>;
         }
-        return false;
+        <span class="hljs-keyword">return</span> <span class="hljs-keyword">false</span>;
     }
 }
 </code></pre>
 <h2 id="&#x91CD;&#x5165;&#x9501;&#x5B9E;&#x73B0;"><a name="&#x91CD;&#x5165;&#x9501;&#x5B9E;&#x73B0;" class="anchor-navigation-ex-anchor" href="#&#x91CD;&#x5165;&#x9501;&#x5B9E;&#x73B0;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x91CD;&#x5165;&#x9501;&#x5B9E;&#x73B0;</h2>
 <p>&#x91CD;&#x5165;&#x9501;&#xFF0C;&#x5373;&#x7EBF;&#x7A0B;&#x53EF;&#x4EE5;&#x91CD;&#x590D;&#x83B7;&#x53D6;&#x5DF2;&#x7ECF;&#x6301;&#x6709;&#x7684;&#x9501;&#x3002;&#x5728;&#x975E;&#x516C;&#x5E73;&#x548C;&#x516C;&#x5E73;&#x9501;&#x4E2D;&#xFF0C;&#x90FD;&#x5BF9;&#x91CD;&#x5165;&#x9501;&#x8FDB;&#x884C;&#x4E86;&#x5B9E;&#x73B0;&#x3002;</p>
-<pre><code class="lang-java">    if (current == getExclusiveOwnerThread()) {
-        int nextc = c + acquires;
-        if (nextc &lt; 0)
-            throw new Error(&quot;Maximum lock count exceeded&quot;);
+<pre><code class="lang-java">    <span class="hljs-keyword">if</span> (current == getExclusiveOwnerThread()) {
+        <span class="hljs-keyword">int</span> nextc = c + acquires;
+        <span class="hljs-keyword">if</span> (nextc &lt; <span class="hljs-number">0</span>)
+            <span class="hljs-keyword">throw</span> <span class="hljs-keyword">new</span> Error(<span class="hljs-string">&quot;Maximum lock count exceeded&quot;</span>);
         setState(nextc);
-        return true;
+        <span class="hljs-keyword">return</span> <span class="hljs-keyword">true</span>;
     }
 </code></pre>
 <h2 id="&#x6761;&#x4EF6;&#x53D8;&#x91CF;condition"><a name="&#x6761;&#x4EF6;&#x53D8;&#x91CF;condition" class="anchor-navigation-ex-anchor" href="#&#x6761;&#x4EF6;&#x53D8;&#x91CF;condition"><i class="fa fa-link" aria-hidden="true"></i></a>&#x6761;&#x4EF6;&#x53D8;&#x91CF;Condition</h2>
 <p>&#x6761;&#x4EF6;&#x53D8;&#x91CF;&#x5F88;&#x5927;&#x4E00;&#x4E2A;&#x7A0B;&#x5EA6;&#x4E0A;&#x662F;&#x4E3A;&#x4E86;&#x89E3;&#x51B3;Object.wait/notify/notifyAll&#x96BE;&#x4EE5;&#x4F7F;&#x7528;&#x7684;&#x95EE;&#x9898;&#x3002;</p>
-<pre><code class="lang-Java">public class ConditionObject implements Condition, java.io.Serializable {
-    /** First node of condition queue. */
-    private transient Node firstWaiter;
-    /** Last node of condition queue. */
-    private transient Node lastWaiter;
-    public final void signal() {}
-    public final void signalAll() {}
-    public final void awaitUninterruptibly() {}  
-    public final void await() throws InterruptedException {}
+<pre><code class="lang-Java"><span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">ConditionObject</span> <span class="hljs-keyword">implements</span> <span class="hljs-title">Condition</span>, <span class="hljs-title">java</span>.<span class="hljs-title">io</span>.<span class="hljs-title">Serializable</span> </span>{
+    <span class="hljs-comment">/** First node of condition queue. */</span>
+    <span class="hljs-keyword">private</span> <span class="hljs-keyword">transient</span> Node firstWaiter;
+    <span class="hljs-comment">/** Last node of condition queue. */</span>
+    <span class="hljs-keyword">private</span> <span class="hljs-keyword">transient</span> Node lastWaiter;
+    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">final</span> <span class="hljs-keyword">void</span> <span class="hljs-title">signal</span><span class="hljs-params">()</span> </span>{}
+    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">final</span> <span class="hljs-keyword">void</span> <span class="hljs-title">signalAll</span><span class="hljs-params">()</span> </span>{}
+    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">final</span> <span class="hljs-keyword">void</span> <span class="hljs-title">awaitUninterruptibly</span><span class="hljs-params">()</span> </span>{}  
+    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">final</span> <span class="hljs-keyword">void</span> <span class="hljs-title">await</span><span class="hljs-params">()</span> <span class="hljs-keyword">throws</span> InterruptedException </span>{}
 }
 </code></pre>
 <ol>
@@ -3900,59 +3904,59 @@ try {
 <li>Condition&#x63A5;&#x53E3;&#x5B9A;&#x4E49;&#x7684;&#x65B9;&#x6CD5;&#xFF0C;<strong>await</strong>&#x5BF9;&#x5E94;&#x4E8E;<strong>Object.wait</strong>&#xFF0C;<strong>signal</strong>&#x5BF9;&#x5E94;&#x4E8E;<strong>Object.notify</strong>&#xFF0C;<strong>signalAll</strong>&#x5BF9;&#x5E94;&#x4E8E;<strong>Object.notifyAll</strong>&#x3002;&#x7279;&#x522B;&#x8BF4;&#x660E;&#x7684;&#x662F;Condition&#x7684;&#x63A5;&#x53E3;&#x6539;&#x53D8;&#x540D;&#x79F0;&#x5C31;&#x662F;&#x4E3A;&#x4E86;&#x907F;&#x514D;&#x4E0E;Object&#x4E2D;&#x7684;<em>wait/notify/notifyAll</em>&#x7684;&#x8BED;&#x4E49;&#x548C;&#x4F7F;&#x7528;&#x4E0A;&#x6DF7;&#x6DC6;&#x3002;</li>
 </ol>
 <p>&#x5148;&#x770B;&#x4E00;&#x4E2A;condition&#x5728;&#x751F;&#x4EA7;&#x8005;&#x6D88;&#x8D39;&#x8005;&#x7684;&#x5E94;&#x7528;&#x573A;&#x666F;&#xFF1A;</p>
-<pre><code class="lang-java">import java.util.concurrent.locks.Condition;
-import java.util.concurrent.locks.Lock;
-import java.util.concurrent.locks.ReentrantLock;
+<pre><code class="lang-java"><span class="hljs-keyword">import</span> java.util.concurrent.locks.Condition;
+<span class="hljs-keyword">import</span> java.util.concurrent.locks.Lock;
+<span class="hljs-keyword">import</span> java.util.concurrent.locks.ReentrantLock;
 
-/**
+<span class="hljs-comment">/**
  * Created by j_zhan on 2016/7/13.
- */
-public class Queue&lt;T&gt; {
-    private final T[] items;
-    private final Lock lock = new ReentrantLock();
-    private Condition notFull = lock.newCondition();
-    private Condition notEmpty = lock.newCondition();
-    private int head, tail, count;
-    public Queue(int maxSize) {
-        items = (T[]) new Object[maxSize];
+ */</span>
+<span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Queue</span>&lt;<span class="hljs-title">T</span>&gt; </span>{
+    <span class="hljs-keyword">private</span> <span class="hljs-keyword">final</span> T[] items;
+    <span class="hljs-keyword">private</span> <span class="hljs-keyword">final</span> Lock lock = <span class="hljs-keyword">new</span> ReentrantLock();
+    <span class="hljs-keyword">private</span> Condition notFull = lock.newCondition();
+    <span class="hljs-keyword">private</span> Condition notEmpty = lock.newCondition();
+    <span class="hljs-keyword">private</span> <span class="hljs-keyword">int</span> head, tail, count;
+    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-title">Queue</span><span class="hljs-params">(<span class="hljs-keyword">int</span> maxSize)</span> </span>{
+        items = (T[]) <span class="hljs-keyword">new</span> Object[maxSize];
     }
-    public Queue() {
-        this(10);
+    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-title">Queue</span><span class="hljs-params">()</span> </span>{
+        <span class="hljs-keyword">this</span>(<span class="hljs-number">10</span>);
     }
 
-    public void put(T t) throws InterruptedException {
+    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">put</span><span class="hljs-params">(T t)</span> <span class="hljs-keyword">throws</span> InterruptedException </span>{
         lock.lock();
-        try {
-            while (count == items.length) {
-                //&#x6570;&#x7EC4;&#x6EE1;&#x65F6;&#xFF0C;&#x7EBF;&#x7A0B;&#x8FDB;&#x5165;&#x7B49;&#x5F85;&#x961F;&#x5217;&#x6302;&#x8D77;&#x3002;&#x7EBF;&#x7A0B;&#x88AB;&#x5524;&#x9192;&#x65F6;&#xFF0C;&#x4ECE;&#x8FD9;&#x91CC;&#x8FD4;&#x56DE;&#x3002;
+        <span class="hljs-keyword">try</span> {
+            <span class="hljs-keyword">while</span> (count == items.length) {
+                <span class="hljs-comment">//&#x6570;&#x7EC4;&#x6EE1;&#x65F6;&#xFF0C;&#x7EBF;&#x7A0B;&#x8FDB;&#x5165;&#x7B49;&#x5F85;&#x961F;&#x5217;&#x6302;&#x8D77;&#x3002;&#x7EBF;&#x7A0B;&#x88AB;&#x5524;&#x9192;&#x65F6;&#xFF0C;&#x4ECE;&#x8FD9;&#x91CC;&#x8FD4;&#x56DE;&#x3002;</span>
                 notFull.await(); 
             }
             items[tail] = t;
-            if (++tail == items.length) {
-                tail = 0;
+            <span class="hljs-keyword">if</span> (++tail == items.length) {
+                tail = <span class="hljs-number">0</span>;
             }
             ++count;
             notEmpty.signal();
-        } finally {
+        } <span class="hljs-keyword">finally</span> {
             lock.unlock();
         }
     }
 
-    public T take() throws InterruptedException {
+    <span class="hljs-function"><span class="hljs-keyword">public</span> T <span class="hljs-title">take</span><span class="hljs-params">()</span> <span class="hljs-keyword">throws</span> InterruptedException </span>{
         lock.lock();
-        try {
-            while (count == 0) {
+        <span class="hljs-keyword">try</span> {
+            <span class="hljs-keyword">while</span> (count == <span class="hljs-number">0</span>) {
                 notEmpty.await();
             }
             T o = items[head];
-            items[head] = null;//GC
-            if (++head == items.length) {
-                head = 0;
+            items[head] = <span class="hljs-keyword">null</span>;<span class="hljs-comment">//GC</span>
+            <span class="hljs-keyword">if</span> (++head == items.length) {
+                head = <span class="hljs-number">0</span>;
             }
             --count;
             notFull.signal();
-            return o;
-        } finally {
+            <span class="hljs-keyword">return</span> o;
+        } <span class="hljs-keyword">finally</span> {
             lock.unlock();
         }
     }
@@ -3960,39 +3964,39 @@ public class Queue&lt;T&gt; {
 </code></pre>
 <p>&#x5047;&#x8BBE;&#x7EBF;&#x7A0B;AB&#x5728;&#x5E76;&#x53D1;&#x7684;&#x5F80;items&#x4E2D;&#x63D2;&#x5165;&#x6570;&#x636E;&#xFF0C;&#x5F53;items&#x4E2D;&#x5143;&#x7D20;&#x5B58;&#x6EE1;&#x65F6;&#x3002;&#x5982;&#x679C;&#x7EBF;&#x7A0B;A&#x83B7;&#x53D6;&#x5230;&#x9501;&#xFF0C;&#x7EE7;&#x7EED;&#x6DFB;&#x52A0;&#x6570;&#x636E;&#xFF0C;&#x6EE1;&#x8DB3;count == items.length&#x6761;&#x4EF6;&#xFF0C;&#x5BFC;&#x81F4;&#x7EBF;&#x7A0B;A&#x6267;&#x884C;await&#x65B9;&#x6CD5;&#x3002;
 <strong>ReentrantLock</strong>&#x662F;&#x72EC;&#x5360;&#x9501;&#xFF0C;&#x540C;&#x4E00;&#x65F6;&#x523B;&#x53EA;&#x6709;&#x4E00;&#x4E2A;&#x7EBF;&#x7A0B;&#x80FD;&#x83B7;&#x53D6;&#x5230;&#x9501;&#xFF0C;&#x6240;&#x4EE5;&#x5728;lock.lock()&#x548C;lock.unlock()&#x4E4B;&#x95F4;&#x53EF;&#x80FD;&#x6709;&#x4E00;&#x6B21;&#x91CA;&#x653E;&#x9501;&#x7684;&#x64CD;&#x4F5C;&#xFF08;&#x540C;&#x6837;&#x4E5F;&#x5FC5;&#x7136;&#x8FD8;&#x6709;&#x4E00;&#x6B21;&#x83B7;&#x53D6;&#x9501;&#x7684;&#x64CD;&#x4F5C;&#xFF09;&#x3002;&#x5728;Queue&#x7C7B;&#x4E2D;&#xFF0C;&#x4E0D;&#x7BA1;take&#x8FD8;&#x662F;put&#xFF0C;&#x5728;&#x7EBF;&#x7A0B;&#x6301;&#x6709;&#x9501;&#x4E4B;&#x540E;&#x53EA;&#x6709;await()&#x65B9;&#x6CD5;&#x6709;&#x53EF;&#x80FD;&#x91CA;&#x653E;&#x9501;&#xFF0C;&#x7136;&#x540E;&#x6302;&#x8D77;&#x7EBF;&#x7A0B;&#xFF0C;&#x4E00;&#x65E6;&#x6761;&#x4EF6;&#x6EE1;&#x8DB3;&#x5C31;&#x88AB;&#x5524;&#x9192;&#xFF0C;&#x518D;&#x6B21;&#x83B7;&#x53D6;&#x9501;&#x3002;&#x5177;&#x4F53;&#x5B9E;&#x73B0;&#x5982;&#x4E0B;&#xFF1A;</p>
-<pre><code class="lang-java">public final void await() throws InterruptedException {
-    if (Thread.interrupted())
-        throw new InterruptedException();
+<pre><code class="lang-java"><span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">final</span> <span class="hljs-keyword">void</span> <span class="hljs-title">await</span><span class="hljs-params">()</span> <span class="hljs-keyword">throws</span> InterruptedException </span>{
+    <span class="hljs-keyword">if</span> (Thread.interrupted())
+        <span class="hljs-keyword">throw</span> <span class="hljs-keyword">new</span> InterruptedException();
     Node node = addConditionWaiter();
-    int savedState = fullyRelease(node);
-    int interruptMode = 0;
-    while (!isOnSyncQueue(node)) {
-        LockSupport.park(this);
-        if ((interruptMode = checkInterruptWhileWaiting(node)) != 0)
-            break;
+    <span class="hljs-keyword">int</span> savedState = fullyRelease(node);
+    <span class="hljs-keyword">int</span> interruptMode = <span class="hljs-number">0</span>;
+    <span class="hljs-keyword">while</span> (!isOnSyncQueue(node)) {
+        LockSupport.park(<span class="hljs-keyword">this</span>);
+        <span class="hljs-keyword">if</span> ((interruptMode = checkInterruptWhileWaiting(node)) != <span class="hljs-number">0</span>)
+            <span class="hljs-keyword">break</span>;
     }
-    if (acquireQueued(node, savedState) &amp;&amp; interruptMode != THROW_IE)
+    <span class="hljs-keyword">if</span> (acquireQueued(node, savedState) &amp;&amp; interruptMode != THROW_IE)
         interruptMode = REINTERRUPT;
-    if (node.nextWaiter != null) // clean up if cancelled
+    <span class="hljs-keyword">if</span> (node.nextWaiter != <span class="hljs-keyword">null</span>) <span class="hljs-comment">// clean up if cancelled</span>
         unlinkCancelledWaiters();
-    if (interruptMode != 0)
+    <span class="hljs-keyword">if</span> (interruptMode != <span class="hljs-number">0</span>)
         reportInterruptAfterWait(interruptMode);
 }
 
-private Node addConditionWaiter() {
+<span class="hljs-function"><span class="hljs-keyword">private</span> Node <span class="hljs-title">addConditionWaiter</span><span class="hljs-params">()</span> </span>{
     Node t = lastWaiter;
-    // If lastWaiter is cancelled, clean out.
-    if (t != null &amp;&amp; t.waitStatus != Node.CONDITION) {
+    <span class="hljs-comment">// If lastWaiter is cancelled, clean out.</span>
+    <span class="hljs-keyword">if</span> (t != <span class="hljs-keyword">null</span> &amp;&amp; t.waitStatus != Node.CONDITION) {
         unlinkCancelledWaiters();
         t = lastWaiter;
     }
-    Node node = new Node(Thread.currentThread(), Node.CONDITION);
-    if (t == null)
+    Node node = <span class="hljs-keyword">new</span> Node(Thread.currentThread(), Node.CONDITION);
+    <span class="hljs-keyword">if</span> (t == <span class="hljs-keyword">null</span>)
         firstWaiter = node;
-    else
+    <span class="hljs-keyword">else</span>
         t.nextWaiter = node;
     lastWaiter = node;
-    return node;
+    <span class="hljs-keyword">return</span> node;
 }
 </code></pre>
 <p>await&#x5B9E;&#x73B0;&#x903B;&#x8F91;&#xFF1A;</p>
@@ -4003,31 +4007,31 @@ private Node addConditionWaiter() {
 <li>&#x968F;&#x540E;&#xFF0C;&#x7EBF;&#x7A0B;A&#x7B49;&#x5F85;&#x88AB;&#x5524;&#x9192;&#xFF0C;&#x5F53;&#x7EBF;&#x7A0B;A&#x88AB;&#x5524;&#x9192;&#x65F6;&#xFF0C;&#x4F1A;&#x901A;&#x8FC7;acquireQueued&#x65B9;&#x6CD5;&#x7ADE;&#x4E89;&#x9501;&#xFF0C;&#x5982;&#x679C;&#x5931;&#x8D25;&#xFF0C;&#x7EE7;&#x7EED;&#x6302;&#x8D77;&#x3002;&#x5982;&#x679C;&#x6210;&#x529F;&#xFF0C;&#x7EBF;&#x7A0B;A&#x4ECE;await&#x4F4D;&#x7F6E;&#x6062;&#x590D;&#x3002;</li>
 </ol>
 <p>&#x5047;&#x8BBE;&#x7EBF;&#x7A0B;B&#x83B7;&#x53D6;&#x9501;&#x4E4B;&#x540E;&#xFF0C;&#x6267;&#x884C;&#x4E86;take&#x64CD;&#x4F5C;&#x548C;&#x6761;&#x4EF6;&#x53D8;&#x91CF;&#x7684;signal&#xFF0C;signal&#x901A;&#x8FC7;&#x67D0;&#x79CD;&#x5B9E;&#x73B0;&#x5524;&#x9192;&#x4E86;&#x7EBF;&#x7A0B;A&#xFF0C;&#x5177;&#x4F53;&#x5B9E;&#x73B0;&#x5982;&#x4E0B;&#xFF1A;</p>
-<pre><code class="lang-Java"> public final void signal() {
-     if (!isHeldExclusively())
-         throw new IllegalMonitorStateException();
+<pre><code class="lang-Java"> <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">final</span> <span class="hljs-keyword">void</span> <span class="hljs-title">signal</span><span class="hljs-params">()</span> </span>{
+     <span class="hljs-keyword">if</span> (!isHeldExclusively())
+         <span class="hljs-keyword">throw</span> <span class="hljs-keyword">new</span> IllegalMonitorStateException();
      Node first = firstWaiter;
-     if (first != null)
+     <span class="hljs-keyword">if</span> (first != <span class="hljs-keyword">null</span>)
          doSignal(first);
  }
 
- private void doSignal(Node first) {
+ <span class="hljs-function"><span class="hljs-keyword">private</span> <span class="hljs-keyword">void</span> <span class="hljs-title">doSignal</span><span class="hljs-params">(Node first)</span> </span>{
      do {
-         if ((firstWaiter = first.nextWaiter) == null)
-             lastWaiter = null;
-         first.nextWaiter = null;
-     } while (!transferForSignal(first) &amp;&amp;
-              (first = firstWaiter) != null);
+         <span class="hljs-keyword">if</span> ((firstWaiter = first.nextWaiter) == <span class="hljs-keyword">null</span>)
+             lastWaiter = <span class="hljs-keyword">null</span>;
+         first.nextWaiter = <span class="hljs-keyword">null</span>;
+     } <span class="hljs-keyword">while</span> (!transferForSignal(first) &amp;&amp;
+              (first = firstWaiter) != <span class="hljs-keyword">null</span>);
  }
 
- final boolean transferForSignal(Node node) {
-    if (!compareAndSetWaitStatus(node, Node.CONDITION, 0))
-        return false;
-    Node p = enq(node); //&#x7EBF;&#x7A0B;A&#x63D2;&#x5165;&#x5230;AQS&#x7684;&#x7B49;&#x5F85;&#x961F;&#x5217;&#x4E2D;
-    int ws = p.waitStatus;
-    if (ws &gt; 0 || !compareAndSetWaitStatus(p, ws, Node.SIGNAL))
+ <span class="hljs-function"><span class="hljs-keyword">final</span> <span class="hljs-keyword">boolean</span> <span class="hljs-title">transferForSignal</span><span class="hljs-params">(Node node)</span> </span>{
+    <span class="hljs-keyword">if</span> (!compareAndSetWaitStatus(node, Node.CONDITION, <span class="hljs-number">0</span>))
+        <span class="hljs-keyword">return</span> <span class="hljs-keyword">false</span>;
+    Node p = enq(node); <span class="hljs-comment">//&#x7EBF;&#x7A0B;A&#x63D2;&#x5165;&#x5230;AQS&#x7684;&#x7B49;&#x5F85;&#x961F;&#x5217;&#x4E2D;</span>
+    <span class="hljs-keyword">int</span> ws = p.waitStatus;
+    <span class="hljs-keyword">if</span> (ws &gt; <span class="hljs-number">0</span> || !compareAndSetWaitStatus(p, ws, Node.SIGNAL))
         LockSupport.unpark(node.thread);
-    return true;
+    <span class="hljs-keyword">return</span> <span class="hljs-keyword">true</span>;
 }
 </code></pre>
 <p>signal&#x5B9E;&#x73B0;&#x903B;&#x8F91;&#xFF1A;</p>
@@ -4089,7 +4093,7 @@ private Node addConditionWaiter() {
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"深入理解ReentrantLock","level":"2.2.9","depth":2,"next":{"title":"Java并发集合——ArrayBlockingQueue","level":"2.2.10","depth":2,"path":"java/concurrence/ArrayBlockingQueue.md","ref":"java/concurrence/ArrayBlockingQueue.md","articles":[]},"previous":{"title":"AbstractQueuedSynchronizer详解","level":"2.2.8","depth":2,"path":"java/concurrence/AbstractQueuedSynchronizer.md","ref":"java/concurrence/AbstractQueuedSynchronizer.md","articles":[]},"dir":"ltr"},"config":{"plugins":["-lunr","-search","-highlight","-livereload","search-plus@^0.0.11","simple-page-toc@^0.1.1","github@^2.0.0","github-buttons@2.1.0","edit-link@^2.0.2","advanced-emoji@^0.2.1","anchors@^0.7.1","include-codeblock@^3.0.2","ace@^0.3.2","emphasize@^1.1.0","katex@^1.1.3","splitter@^0.0.8","tbfed-pagefooter@^0.0.1","expandable-chapters-small@^0.1.7","sectionx@^3.1.0","local-video@^1.0.1","anchor-navigation-ex@0.1.8","favicon@^0.0.2"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"tbfed-pagefooter":{"copyright":"Copyright © ruheng.com 2017","modify_label":"该文件修订时间：","modify_format":"YYYY-MM-DD HH:mm:ss"},"emphasize":{},"ace":{},"github":{"url":"https://github.com/LRH1993/android_interview"},"simple-page-toc":{"maxDepth":3,"skipFirstH1":true},"splitter":{},"katex":{},"fontsettings":{"theme":"white","family":"sans","size":2},"sectionx":{"tag":"b"},"anchor-navigation-ex":{"isRewritePageTitle":false,"tocLevel1Icon":"fa fa-hand-o-right","tocLevel2Icon":"fa fa-hand-o-right","tocLevel3Icon":"fa fa-hand-o-right"},"favicon":{"shortcut":"favicon.ico","bookmark":"favicon.ico"},"github-buttons":{"repo":"LRH1993/android_interview","types":["star"],"size":"small"},"expandable-chapters-small":{},"local-video":{},"advanced-emoji":{"embedEmojis":false},"include-codeblock":{"check":false,"edit":true,"fixlang":false,"lang":"","template":"ace","theme":"chrome","unindent":true},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":true,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"edit-link":{"label":"Edit This Page","base":"https://github.com/LRH1993/android_interview/edit/master"},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":true},"anchors":{},"search-plus":{}},"theme":"default","author":"ruheng","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"Android校招面试指南","language":"zh-hans","output.name":"site","links":{"sidebar":{"Home":"http://lruheng.com/"}},"gitbook":"3.2.3","description":"Android面试必备，记录自己的秋招之路"},"file":{"path":"java/concurrence/ReentrantLock.md","mtime":"2017-09-01T10:22:42.000Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2017-10-16T12:05:21.906Z"},"basePath":"../..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"深入理解ReentrantLock","level":"2.2.9","depth":2,"next":{"title":"Java并发集合——ArrayBlockingQueue","level":"2.2.10","depth":2,"path":"java/concurrence/ArrayBlockingQueue.md","ref":"java/concurrence/ArrayBlockingQueue.md","articles":[]},"previous":{"title":"AbstractQueuedSynchronizer详解","level":"2.2.8","depth":2,"path":"java/concurrence/AbstractQueuedSynchronizer.md","ref":"java/concurrence/AbstractQueuedSynchronizer.md","articles":[]},"dir":"ltr"},"config":{"plugins":["-lunr","-search","-livereload","search-plus@^0.0.11","simple-page-toc@^0.1.1","github@^2.0.0","github-buttons@2.1.0","edit-link@^2.0.2","advanced-emoji@^0.2.1","anchors@^0.7.1","include-codeblock@^3.0.2","ace@^0.3.2","emphasize@^1.1.0","katex@^1.1.3","splitter@^0.0.8","tbfed-pagefooter@^0.0.1","expandable-chapters-small@^0.1.7","sectionx@^3.1.0","local-video@^1.0.1","anchor-navigation-ex@0.1.8","favicon@^0.0.2"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"tbfed-pagefooter":{"copyright":"Copyright © ruheng.com 2017","modify_label":"该文件修订时间：","modify_format":"YYYY-MM-DD HH:mm:ss"},"emphasize":{},"ace":{},"github":{"url":"https://github.com/LRH1993/android_interview"},"simple-page-toc":{"maxDepth":3,"skipFirstH1":true},"splitter":{},"katex":{},"fontsettings":{"theme":"white","family":"sans","size":2},"sectionx":{"tag":"b"},"highlight":{},"anchor-navigation-ex":{"isRewritePageTitle":false,"tocLevel1Icon":"fa fa-hand-o-right","tocLevel2Icon":"fa fa-hand-o-right","tocLevel3Icon":"fa fa-hand-o-right"},"favicon":{"shortcut":"favicon.ico","bookmark":"favicon.ico"},"github-buttons":{"repo":"LRH1993/android_interview","types":["star"],"size":"small"},"expandable-chapters-small":{},"local-video":{},"advanced-emoji":{"embedEmojis":false},"include-codeblock":{"check":false,"edit":false,"fixlang":false,"lang":"","template":"default","theme":"chrome","unindent":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":true,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"edit-link":{"label":"Edit This Page","base":"https://github.com/LRH1993/android_interview/edit/master"},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":true},"anchors":{},"search-plus":{}},"theme":"default","author":"ruheng","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"Android校招面试指南","language":"zh-hans","output.name":"site","links":{"sidebar":{"Home":"http://lruheng.com/"}},"gitbook":"3.2.3","description":"Android面试必备，记录自己的秋招之路"},"file":{"path":"java/concurrence/ReentrantLock.md","mtime":"2017-09-01T10:22:42.000Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2017-10-16T13:00:43.989Z"},"basePath":"../..","book":{"language":""}});
         });
     </script>
 </div>

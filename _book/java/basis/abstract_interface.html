@@ -69,6 +69,10 @@
                 
             
                 
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
                 <link rel="stylesheet" href="../../gitbook/gitbook-plugin-fontsettings/website.css">
                 
             
@@ -3711,11 +3715,11 @@
 <h2 id="&#x8BED;&#x6CD5;&#x5B9A;&#x4E49;&#x7406;&#x89E3;"><a name="&#x8BED;&#x6CD5;&#x5B9A;&#x4E49;&#x7406;&#x89E3;" class="anchor-navigation-ex-anchor" href="#&#x8BED;&#x6CD5;&#x5B9A;&#x4E49;&#x7406;&#x89E3;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x8BED;&#x6CD5;&#x5B9A;&#x4E49;&#x7406;&#x89E3;</h2>
 <ol>
 <li><p>&#x62BD;&#x8C61;&#x7C7B;</p>
-<pre><code class="lang-java">abstract class Demo &#xFF5B;    
+<pre><code class="lang-java"><span class="hljs-keyword">abstract</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Demo</span> &#xFF5B;    
 
-    abstract void method1();    
+    <span class="hljs-title">abstract</span> <span class="hljs-title">void</span> <span class="hljs-title">method1</span>()</span>;    
 
-    abstract void method2();    
+    <span class="hljs-function"><span class="hljs-keyword">abstract</span> <span class="hljs-keyword">void</span> <span class="hljs-title">method2</span><span class="hljs-params">()</span></span>;    
 
     &#x2026;    
 
@@ -3723,11 +3727,11 @@
 </code></pre>
 </li>
 <li><p>&#x63A5;&#x53E3;</p>
-<pre><code class="lang-java">interface Demo {    
+<pre><code class="lang-java"><span class="hljs-class"><span class="hljs-keyword">interface</span> <span class="hljs-title">Demo</span> </span>{    
 
-    void method1();    
+    <span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">method1</span><span class="hljs-params">()</span></span>;    
 
-    void method2();    
+    <span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">method2</span><span class="hljs-params">()</span></span>;    
 
     &#x2026;    
 
@@ -3740,9 +3744,9 @@
 <p>&#x9996;&#x5148;&#xFF0C;abstract class&#x5728;Java&#x8BED;&#x8A00;&#x4E2D;&#x8868;&#x793A;&#x7684;&#x662F;&#x4E00;&#x79CD;&#x7EE7;&#x627F;&#x5173;&#x7CFB;&#xFF0C;&#x4E00;&#x4E2A;&#x7C7B;&#x53EA;&#x80FD;&#x4F7F;&#x7528;&#x4E00;&#x6B21;&#x7EE7;&#x627F;&#x5173;&#x7CFB;&#x3002;&#x4F46;&#x662F;&#xFF0C;&#x4E00;&#x4E2A;&#x7C7B;&#x5374;&#x53EF;&#x4EE5;&#x5B9E;&#x73B0;&#x591A;&#x4E2A;interface&#x3002;&#x4E5F;&#x8BB8;&#xFF0C;&#x8FD9;&#x662F;Java&#x8BED;&#x8A00;&#x7684;&#x8BBE;&#x8BA1;&#x8005;&#x5728;&#x8003;&#x8651;Java&#x5BF9;&#x4E8E;&#x591A;&#x91CD;&#x7EE7;&#x627F;&#x7684;&#x652F;&#x6301;&#x65B9;&#x9762;&#x7684;&#x4E00;&#x79CD;&#x6298;&#x4E2D;&#x8003;&#x8651;&#x5427;&#x3002;</p>
 <p>&#x5176;&#x6B21;&#xFF0C;&#x5728;abstract class&#x7684;&#x5B9A;&#x4E49;&#x4E2D;&#xFF0C;&#x6211;&#x4EEC;&#x53EF;&#x4EE5;&#x8D4B;&#x4E88;&#x65B9;&#x6CD5;&#x7684;&#x9ED8;&#x8BA4;&#x884C;&#x4E3A;&#x3002;</p>
 <p>&#x4F46;&#x662F;&#x5728;interface&#x7684;&#x5B9A;&#x4E49;&#x4E2D;&#xFF0C;&#x65B9;&#x6CD5;&#x5374;&#x4E0D;&#x80FD;&#x62E5;&#x6709;&#x9ED8;&#x8BA4;&#x884C;&#x4E3A;&#xFF0C;&#x4E0D;&#x8FC7;&#x5728;JDK1.8&#x4E2D;&#x53EF;&#x4EE5;&#x4F7F;&#x7528;<code>default</code>&#x5173;&#x952E;&#x5B57;&#x5B9E;&#x73B0;&#x9ED8;&#x8BA4;&#x65B9;&#x6CD5;&#x3002;</p>
-<pre><code class="lang-java">interface InterfaceA {
-    default void foo() {
-        System.out.println(&quot;InterfaceA foo&quot;);
+<pre><code class="lang-java"><span class="hljs-class"><span class="hljs-keyword">interface</span> <span class="hljs-title">InterfaceA</span> </span>{
+    <span class="hljs-function"><span class="hljs-keyword">default</span> <span class="hljs-keyword">void</span> <span class="hljs-title">foo</span><span class="hljs-params">()</span> </span>{
+        System.out.println(<span class="hljs-string">&quot;InterfaceA foo&quot;</span>);
     }
 }
 </code></pre>
@@ -3807,7 +3811,7 @@
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"Java抽象类和接口的区别","level":"2.1.17","depth":2,"next":{"title":"Java深拷贝和浅拷贝","level":"2.1.18","depth":2,"path":"java/basis/copy.md","ref":"java/basis/copy.md","articles":[]},"previous":{"title":"Java异常详解","level":"2.1.16","depth":2,"path":"java/basis/throwable.md","ref":"java/basis/throwable.md","articles":[]},"dir":"ltr"},"config":{"plugins":["-lunr","-search","-highlight","-livereload","search-plus@^0.0.11","simple-page-toc@^0.1.1","github@^2.0.0","github-buttons@2.1.0","edit-link@^2.0.2","advanced-emoji@^0.2.1","anchors@^0.7.1","include-codeblock@^3.0.2","ace@^0.3.2","emphasize@^1.1.0","katex@^1.1.3","splitter@^0.0.8","tbfed-pagefooter@^0.0.1","expandable-chapters-small@^0.1.7","sectionx@^3.1.0","local-video@^1.0.1","anchor-navigation-ex@0.1.8","favicon@^0.0.2"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"tbfed-pagefooter":{"copyright":"Copyright © ruheng.com 2017","modify_label":"该文件修订时间：","modify_format":"YYYY-MM-DD HH:mm:ss"},"emphasize":{},"ace":{},"github":{"url":"https://github.com/LRH1993/android_interview"},"simple-page-toc":{"maxDepth":3,"skipFirstH1":true},"splitter":{},"katex":{},"fontsettings":{"theme":"white","family":"sans","size":2},"sectionx":{"tag":"b"},"anchor-navigation-ex":{"isRewritePageTitle":false,"tocLevel1Icon":"fa fa-hand-o-right","tocLevel2Icon":"fa fa-hand-o-right","tocLevel3Icon":"fa fa-hand-o-right"},"favicon":{"shortcut":"favicon.ico","bookmark":"favicon.ico"},"github-buttons":{"repo":"LRH1993/android_interview","types":["star"],"size":"small"},"expandable-chapters-small":{},"local-video":{},"advanced-emoji":{"embedEmojis":false},"include-codeblock":{"check":false,"edit":true,"fixlang":false,"lang":"","template":"ace","theme":"chrome","unindent":true},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":true,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"edit-link":{"label":"Edit This Page","base":"https://github.com/LRH1993/android_interview/edit/master"},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":true},"anchors":{},"search-plus":{}},"theme":"default","author":"ruheng","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"Android校招面试指南","language":"zh-hans","output.name":"site","links":{"sidebar":{"Home":"http://lruheng.com/"}},"gitbook":"3.2.3","description":"Android面试必备，记录自己的秋招之路"},"file":{"path":"java/basis/abstract_interface.md","mtime":"2017-08-31T01:47:51.000Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2017-10-16T12:05:21.906Z"},"basePath":"../..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"Java抽象类和接口的区别","level":"2.1.17","depth":2,"next":{"title":"Java深拷贝和浅拷贝","level":"2.1.18","depth":2,"path":"java/basis/copy.md","ref":"java/basis/copy.md","articles":[]},"previous":{"title":"Java异常详解","level":"2.1.16","depth":2,"path":"java/basis/throwable.md","ref":"java/basis/throwable.md","articles":[]},"dir":"ltr"},"config":{"plugins":["-lunr","-search","-livereload","search-plus@^0.0.11","simple-page-toc@^0.1.1","github@^2.0.0","github-buttons@2.1.0","edit-link@^2.0.2","advanced-emoji@^0.2.1","anchors@^0.7.1","include-codeblock@^3.0.2","ace@^0.3.2","emphasize@^1.1.0","katex@^1.1.3","splitter@^0.0.8","tbfed-pagefooter@^0.0.1","expandable-chapters-small@^0.1.7","sectionx@^3.1.0","local-video@^1.0.1","anchor-navigation-ex@0.1.8","favicon@^0.0.2"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"tbfed-pagefooter":{"copyright":"Copyright © ruheng.com 2017","modify_label":"该文件修订时间：","modify_format":"YYYY-MM-DD HH:mm:ss"},"emphasize":{},"ace":{},"github":{"url":"https://github.com/LRH1993/android_interview"},"simple-page-toc":{"maxDepth":3,"skipFirstH1":true},"splitter":{},"katex":{},"fontsettings":{"theme":"white","family":"sans","size":2},"sectionx":{"tag":"b"},"highlight":{},"anchor-navigation-ex":{"isRewritePageTitle":false,"tocLevel1Icon":"fa fa-hand-o-right","tocLevel2Icon":"fa fa-hand-o-right","tocLevel3Icon":"fa fa-hand-o-right"},"favicon":{"shortcut":"favicon.ico","bookmark":"favicon.ico"},"github-buttons":{"repo":"LRH1993/android_interview","types":["star"],"size":"small"},"expandable-chapters-small":{},"local-video":{},"advanced-emoji":{"embedEmojis":false},"include-codeblock":{"check":false,"edit":false,"fixlang":false,"lang":"","template":"default","theme":"chrome","unindent":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":true,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"edit-link":{"label":"Edit This Page","base":"https://github.com/LRH1993/android_interview/edit/master"},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":true},"anchors":{},"search-plus":{}},"theme":"default","author":"ruheng","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"Android校招面试指南","language":"zh-hans","output.name":"site","links":{"sidebar":{"Home":"http://lruheng.com/"}},"gitbook":"3.2.3","description":"Android面试必备，记录自己的秋招之路"},"file":{"path":"java/basis/abstract_interface.md","mtime":"2017-08-31T01:47:51.000Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2017-10-16T13:00:43.989Z"},"basePath":"../..","book":{"language":""}});
         });
     </script>
 </div>

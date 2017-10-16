@@ -69,6 +69,10 @@
                 
             
                 
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
                 <link rel="stylesheet" href="../../gitbook/gitbook-plugin-fontsettings/website.css">
                 
             
@@ -3709,8 +3713,8 @@
 <p>&#x4ECE;&#x4F7F;&#x7528;&#x65B9;&#x6CD5;&#x51FA;&#x53D1;&#xFF0C;&#x9996;&#x5148;&#x662F;&#x600E;&#x4E48;&#x4F7F;&#x7528;&#xFF0C;&#x5176;&#x6B21;&#x662F;&#x6211;&#x4EEC;&#x4F7F;&#x7528;&#x7684;&#x529F;&#x80FD;&#x5728;&#x5185;&#x90E8;&#x662F;&#x5982;&#x4F55;&#x5B9E;&#x73B0;&#x7684;&#xFF0C;&#x5B9E;&#x73B0;&#x65B9;&#x6848;&#x4E0A;&#x6709;&#x4EC0;&#x4E48;&#x6280;&#x5DE7;&#xFF0C;&#x6709;&#x4EC0;&#x4E48;&#x8303;&#x5F0F;&#x3002;&#x5168;&#x6587;&#x57FA;&#x672C;&#x4E0A;&#x662F;&#x5BF9; Retrofit &#x6E90;&#x7801;&#x7684;&#x4E00;&#x4E2A;&#x5206;&#x6790;&#x4E0E;&#x5BFC;&#x8BFB;&#xFF0C;&#x975E;&#x5E38;&#x5EFA;&#x8BAE;&#x5927;&#x5BB6;&#x4E0B;&#x8F7D; Retrofit &#x6E90;&#x7801;&#x4E4B;&#x540E;&#xFF0C;&#x8DDF;&#x7740;&#x672C;&#x6587;&#xFF0C;&#x8FC7;&#x4E00;&#x904D;&#x6E90;&#x7801;&#x3002;</p>
 <h2 id="&#x4E8C;&#x3001;&#x57FA;&#x672C;&#x7528;&#x4F8B;"><a name="&#x4E8C;&#x3001;&#x57FA;&#x672C;&#x7528;&#x4F8B;" class="anchor-navigation-ex-anchor" href="#&#x4E8C;&#x3001;&#x57FA;&#x672C;&#x7528;&#x4F8B;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x4E8C;&#x3001;&#x57FA;&#x672C;&#x7528;&#x4F8B;</h2>
 <h3 id="21-&#x521B;&#x5EFA;-retrofit-&#x5BF9;&#x8C61;"><a name="21-&#x521B;&#x5EFA;-retrofit-&#x5BF9;&#x8C61;" class="anchor-navigation-ex-anchor" href="#21-&#x521B;&#x5EFA;-retrofit-&#x5BF9;&#x8C61;"><i class="fa fa-link" aria-hidden="true"></i></a>2.1 &#x521B;&#x5EFA; Retrofit &#x5BF9;&#x8C61;</h3>
-<pre><code class="lang-java">Retrofit retrofit = new Retrofit.Builder()
-    .baseUrl(&quot;https://api.github.com/&quot;)
+<pre><code class="lang-java">Retrofit retrofit = <span class="hljs-keyword">new</span> Retrofit.Builder()
+    .baseUrl(<span class="hljs-string">&quot;https://api.github.com/&quot;</span>)
     .addConverterFactory(GsonConverterFactory.create())
     .build();
 </code></pre>
@@ -3724,15 +3728,15 @@
 GitHubService github = retrofit.create(GitHubService.class);
 </code></pre><p>&#x5148;&#x770B;&#x5B9A;&#x4E49;&#xFF0C;&#x975E;&#x5E38;&#x7B80;&#x6D01;&#xFF0C;&#x4E5F;&#x6CA1;&#x6709;&#x4EC0;&#x4E48;&#x7279;&#x522B;&#x4E4B;&#x5904;&#xFF0C;&#x9664;&#x4E86;&#x4E24;&#x4E2A;&#x6CE8;&#x89E3;&#xFF1A;<code>@GET</code> &#x548C; <code>@Path</code>&#x3002;&#x5B83;&#x4EEC;&#x7684;&#x7528;&#x5904;&#x7A0D;&#x540E;&#x518D;&#x5206;&#x6790;&#xFF0C;&#x6211;&#x4EEC;&#x63A5;&#x7740;&#x770B;&#x521B;&#x5EFA; API &#x5B9E;&#x4F8B;&#xFF1A;<code>retrofit.create(GitHubService.class)</code>&#x3002;&#x8FD9;&#x6837;&#x5C31;&#x521B;&#x5EFA;&#x4E86; API &#x5B9E;&#x4F8B;&#x4E86;&#xFF0C;&#x5C31;&#x53EF;&#x4EE5;&#x8C03;&#x7528; API &#x7684;&#x65B9;&#x6CD5;&#x53D1;&#x8D77; HTTP &#x7F51;&#x7EDC;&#x8BF7;&#x6C42;&#x4E86;&#xFF0C;&#x592A;&#x65B9;&#x4FBF;&#x4E86;&#x3002;</p>
 <p>&#x4F46; <code>create</code> &#x65B9;&#x6CD5;&#x662F;&#x600E;&#x4E48;&#x521B;&#x5EFA; API &#x5B9E;&#x4F8B;&#x7684;&#x5462;&#xFF1F;</p>
-<pre><code class="lang-java">public &lt;T&gt; T create(final Class&lt;T&gt; service) {
-  // &#x7701;&#x7565;&#x975E;&#x5173;&#x952E;&#x4EE3;&#x7801;
-  return (T) Proxy.newProxyInstance(service.getClassLoader(), 
-      new Class&lt;?&gt;[] { service },
-      new InvocationHandler() {
-        @Override 
-        public Object invoke(Object proxy, Method method, Object... args)
-            throws Throwable {
-          // &#x5148;&#x7701;&#x7565;&#x5B9E;&#x73B0;
+<pre><code class="lang-java"><span class="hljs-keyword">public</span> &lt;T&gt; <span class="hljs-function">T <span class="hljs-title">create</span><span class="hljs-params">(<span class="hljs-keyword">final</span> Class&lt;T&gt; service)</span> </span>{
+  <span class="hljs-comment">// &#x7701;&#x7565;&#x975E;&#x5173;&#x952E;&#x4EE3;&#x7801;</span>
+  <span class="hljs-keyword">return</span> (T) Proxy.newProxyInstance(service.getClassLoader(), 
+      <span class="hljs-keyword">new</span> Class&lt;?&gt;[] { service },
+      <span class="hljs-keyword">new</span> InvocationHandler() {
+        <span class="hljs-meta">@Override</span> 
+        <span class="hljs-function"><span class="hljs-keyword">public</span> Object <span class="hljs-title">invoke</span><span class="hljs-params">(Object proxy, Method method, Object... args)</span>
+            <span class="hljs-keyword">throws</span> Throwable </span>{
+          <span class="hljs-comment">// &#x5148;&#x7701;&#x7565;&#x5B9E;&#x73B0;</span>
         }
       });
 }
@@ -3742,36 +3746,36 @@ GitHubService github = retrofit.create(GitHubService.class);
 <p>&#x4E3A;&#x4EC0;&#x4E48;&#x8981;&#x7528;&#x52A8;&#x6001;&#x4EE3;&#x7406;&#xFF1F;&#x56E0;&#x4E3A;&#x5BF9;&#x63A5;&#x53E3;&#x7684;&#x6240;&#x6709;&#x65B9;&#x6CD5;&#x7684;&#x8C03;&#x7528;&#x90FD;&#x4F1A;&#x96C6;&#x4E2D;&#x8F6C;&#x53D1;&#x5230; <code>InvocationHandler#invoke</code>&#x51FD;&#x6570;&#x4E2D;&#xFF0C;&#x6211;&#x4EEC;&#x53EF;&#x4EE5;&#x96C6;&#x4E2D;&#x8FDB;&#x884C;&#x5904;&#x7406;&#xFF0C;&#x66F4;&#x65B9;&#x4FBF;&#x4E86;&#x3002;&#x4F60;&#x53EF;&#x80FD;&#x4F1A;&#x60F3;&#xFF0C;&#x6211;&#x4E5F;&#x53EF;&#x4EE5;&#x624B;&#x5199;&#x8FD9;&#x6837;&#x7684;&#x4EE3;&#x7406;&#x7C7B;&#xFF0C;&#x628A;&#x6240;&#x6709;&#x63A5;&#x53E3;&#x7684;&#x8C03;&#x7528;&#x90FD;&#x8F6C;&#x53D1;&#x5230; <code>InvocationHandler#invoke</code> &#x5440;&#xFF0C;&#x5F53;&#x7136;&#x53EF;&#x4EE5;&#xFF0C;&#x4F46;&#x662F;&#x53EF;&#x9760;&#x5730;&#x81EA;&#x52A8;&#x751F;&#x6210;&#x5C82;&#x4E0D;&#x66F4;&#x65B9;&#x4FBF;&#xFF1F;</p>
 <h3 id="23-&#x8C03;&#x7528;-api-&#x65B9;&#x6CD5;"><a name="23-&#x8C03;&#x7528;-api-&#x65B9;&#x6CD5;" class="anchor-navigation-ex-anchor" href="#23-&#x8C03;&#x7528;-api-&#x65B9;&#x6CD5;"><i class="fa fa-link" aria-hidden="true"></i></a>2.3 &#x8C03;&#x7528; API &#x65B9;&#x6CD5;</h3>
 <p>&#x83B7;&#x53D6;&#x5230; API &#x5B9E;&#x4F8B;&#x4E4B;&#x540E;&#xFF0C;&#x8C03;&#x7528;&#x65B9;&#x6CD5;&#x548C;&#x666E;&#x901A;&#x7684;&#x4EE3;&#x7801;&#x6CA1;&#x6709;&#x4EFB;&#x4F55;&#x533A;&#x522B;&#xFF1A;</p>
-<pre><code class="lang-java">Call&lt;List&lt;Repo&gt;&gt; call = github.listRepos(&quot;square&quot;);
+<pre><code class="lang-java">Call&lt;List&lt;Repo&gt;&gt; call = github.listRepos(<span class="hljs-string">&quot;square&quot;</span>);
 List&lt;Repo&gt; repos = call.execute().body();
 </code></pre>
 <p>&#x8FD9;&#x4E24;&#x884C;&#x4EE3;&#x7801;&#x5C31;&#x53D1;&#x51FA;&#x4E86; HTTP &#x8BF7;&#x6C42;&#xFF0C;&#x5E76;&#x628A;&#x8FD4;&#x56DE;&#x7684;&#x6570;&#x636E;&#x8F6C;&#x5316;&#x4E3A;&#x4E86; <code>List&lt;Repo&gt;</code>&#xFF0C;&#x592A;&#x65B9;&#x4FBF;&#x4E86;&#xFF01;</p>
 <p>&#x73B0;&#x5728;&#x6211;&#x4EEC;&#x6765;&#x770B;&#x770B;&#x8C03;&#x7528; <code>listRepos</code> &#x662F;&#x600E;&#x4E48;&#x53D1;&#x51FA; HTTP &#x8BF7;&#x6C42;&#x7684;&#x3002;&#x4E0A;&#x9762; <code>Retrofit#create</code> &#x65B9;&#x6CD5;&#x8FD4;&#x56DE;&#x65F6;&#x7701;&#x7565;&#x7684;&#x4EE3;&#x7801;&#x5982;&#x4E0B;&#xFF1A;</p>
-<pre><code class="lang-java">return (T) Proxy.newProxyInstance(service.getClassLoader(), 
-    new Class&lt;?&gt;[] { service },
-    new InvocationHandler() {
-      private final Platform platform = Platform.get();
+<pre><code class="lang-java"><span class="hljs-keyword">return</span> (T) Proxy.newProxyInstance(service.getClassLoader(), 
+    <span class="hljs-keyword">new</span> Class&lt;?&gt;[] { service },
+    <span class="hljs-keyword">new</span> InvocationHandler() {
+      <span class="hljs-keyword">private</span> <span class="hljs-keyword">final</span> Platform platform = Platform.get();
 
-      @Override 
-      public Object invoke(Object proxy, Method method, Object... args)
-          throws Throwable {
-        // If the method is a method from Object then defer to normal invocation.
-        if (method.getDeclaringClass() == Object.class) {
-          return method.invoke(this, args);
+      <span class="hljs-meta">@Override</span> 
+      <span class="hljs-function"><span class="hljs-keyword">public</span> Object <span class="hljs-title">invoke</span><span class="hljs-params">(Object proxy, Method method, Object... args)</span>
+          <span class="hljs-keyword">throws</span> Throwable </span>{
+        <span class="hljs-comment">// If the method is a method from Object then defer to normal invocation.</span>
+        <span class="hljs-keyword">if</span> (method.getDeclaringClass() == Object.class) {
+          <span class="hljs-keyword">return</span> method.invoke(<span class="hljs-keyword">this</span>, args);
         }
-        if (platform.isDefaultMethod(method)) {
-          return platform.invokeDefaultMethod(method, service, proxy, args);
+        <span class="hljs-keyword">if</span> (platform.isDefaultMethod(method)) {
+          <span class="hljs-keyword">return</span> platform.invokeDefaultMethod(method, service, proxy, args);
         }
         ServiceMethod serviceMethod = loadServiceMethod(method);
-        OkHttpCall okHttpCall = new OkHttpCall&lt;&gt;(serviceMethod, args);
-        return serviceMethod.callAdapter.adapt(okHttpCall);
+        OkHttpCall okHttpCall = <span class="hljs-keyword">new</span> OkHttpCall&lt;&gt;(serviceMethod, args);
+        <span class="hljs-keyword">return</span> serviceMethod.callAdapter.adapt(okHttpCall);
       }
     });
 </code></pre>
 <p>&#x5982;&#x679C;&#x8C03;&#x7528;&#x7684;&#x662F; <code>Object</code> &#x7684;&#x65B9;&#x6CD5;&#xFF0C;&#x4F8B;&#x5982; <code>equals</code>&#xFF0C;<code>toString</code>&#xFF0C;&#x90A3;&#x5C31;&#x76F4;&#x63A5;&#x8C03;&#x7528;&#x3002;&#x5982;&#x679C;&#x662F; default &#x65B9;&#x6CD5;&#xFF08;Java 8 &#x5F15;&#x5165;&#xFF09;&#xFF0C;&#x5C31;&#x8C03;&#x7528; default &#x65B9;&#x6CD5;&#x3002;&#x8FD9;&#x4E9B;&#x6211;&#x4EEC;&#x90FD;&#x5148;&#x4E0D;&#x7BA1;&#xFF0C;&#x56E0;&#x4E3A;&#x6211;&#x4EEC;&#x5728;&#x5B89;&#x5353;&#x5E73;&#x53F0;&#x8C03;&#x7528; <code>listRepos</code>&#xFF0C;&#x80AF;&#x5B9A;&#x4E0D;&#x662F;&#x8FD9;&#x4E24;&#x79CD;&#x60C5;&#x51B5;&#xFF0C;&#x90A3;&#x8FD9;&#x6B21;&#x8C03;&#x7528;&#x771F;&#x6B63;&#x5E72;&#x6D3B;&#x7684;&#x5C31;&#x662F;&#x8FD9;&#x4E09;&#x884C;&#x4EE3;&#x7801;&#x4E86;&#xFF08;&#x597D;&#x597D;&#x8BB0;&#x4F4F;&#x8FD9;&#x4E09;&#x884C;&#x4EE3;&#x7801;&#xFF0C;&#x56E0;&#x4E3A;&#x63A5;&#x4E0B;&#x6765;&#x5F88;&#x957F;&#x7684;&#x7BC7;&#x5E45;&#x90FD;&#x662F;&#x5728;&#x8BB2;&#x5B83;&#x4EEC; :) &#xFF09;&#xFF1A;</p>
 <pre><code class="lang-java">ServiceMethod serviceMethod = loadServiceMethod(method);
-OkHttpCall okHttpCall = new OkHttpCall&lt;&gt;(serviceMethod, args);
-return serviceMethod.callAdapter.adapt(okHttpCall);
+OkHttpCall okHttpCall = <span class="hljs-keyword">new</span> OkHttpCall&lt;&gt;(serviceMethod, args);
+<span class="hljs-keyword">return</span> serviceMethod.callAdapter.adapt(okHttpCall);
 </code></pre>
 <p>&#x5728;&#x7EE7;&#x7EED;&#x5206;&#x6790;&#x8FD9;&#x4E09;&#x884C;&#x4EE3;&#x7801;&#x4E4B;&#x524D;&#xFF0C;&#x6211;&#x4EEC;&#x5148;&#x770B;&#x770B; <a href="http://www.jianshu.com/p/45cb536be2f4" target="_blank">Stay &#x5728; Retrofit&#x5206;&#x6790;-&#x6F02;&#x4EAE;&#x7684;&#x89E3;&#x8026;&#x5957;&#x8DEF;</a> &#x8FD9;&#x7BC7;&#x6587;&#x7AE0;&#x4E2D;&#x5206;&#x4EAB;&#x7684;&#x6D41;&#x7A0B;&#x56FE;&#xFF0C;&#x5B8C;&#x6574;&#x7684;&#x6D41;&#x7A0B;&#x6982;&#x89C8;&#x5EFA;&#x8BAE;&#x4ED4;&#x7EC6;&#x770B;&#x770B;&#x8FD9;&#x7BC7;&#x6587;&#x7AE0;&#xFF1A;</p>
 <p><img src="https://blog.piasy.com/img/201606/retrofit_stay.png" alt="retrofit_stay.png"></p>
@@ -3782,33 +3786,33 @@ return serviceMethod.callAdapter.adapt(okHttpCall);
 <p>Adapts an invocation of an interface method into an HTTP call. &#x628A;&#x5BF9;&#x63A5;&#x53E3;&#x65B9;&#x6CD5;&#x7684;&#x8C03;&#x7528;&#x8F6C;&#x4E3A;&#x4E00;&#x6B21; HTTP &#x8C03;&#x7528;&#x3002;</p>
 </blockquote>
 <p>&#x4E00;&#x4E2A; <code>ServiceMethod</code> &#x5BF9;&#x8C61;&#x5BF9;&#x5E94;&#x4E8E;&#x4E00;&#x4E2A; API interface &#x7684;&#x4E00;&#x4E2A;&#x65B9;&#x6CD5;&#xFF0C;<code>loadServiceMethod(method)</code>&#x65B9;&#x6CD5;&#x8D1F;&#x8D23;&#x52A0;&#x8F7D; <code>ServiceMethod</code>&#xFF1A;</p>
-<pre><code class="lang-java">ServiceMethod loadServiceMethod(Method method) {
+<pre><code class="lang-java"><span class="hljs-function">ServiceMethod <span class="hljs-title">loadServiceMethod</span><span class="hljs-params">(Method method)</span> </span>{
   ServiceMethod result;
-  synchronized (serviceMethodCache) {
+  <span class="hljs-keyword">synchronized</span> (serviceMethodCache) {
     result = serviceMethodCache.get(method);
-    if (result == null) {
-      result = new ServiceMethod.Builder(this, method).build();
+    <span class="hljs-keyword">if</span> (result == <span class="hljs-keyword">null</span>) {
+      result = <span class="hljs-keyword">new</span> ServiceMethod.Builder(<span class="hljs-keyword">this</span>, method).build();
       serviceMethodCache.put(method, result);
     }
   }
-  return result;
+  <span class="hljs-keyword">return</span> result;
 }
 </code></pre>
 <p>&#x8FD9;&#x91CC;&#x5B9E;&#x73B0;&#x4E86;&#x7F13;&#x5B58;&#x903B;&#x8F91;&#xFF0C;&#x540C;&#x4E00;&#x4E2A; API &#x7684;&#x540C;&#x4E00;&#x4E2A;&#x65B9;&#x6CD5;&#xFF0C;&#x53EA;&#x4F1A;&#x521B;&#x5EFA;&#x4E00;&#x6B21;&#x3002;&#x8FD9;&#x91CC;&#x7531;&#x4E8E;&#x6211;&#x4EEC;&#x6BCF;&#x6B21;&#x83B7;&#x53D6; API &#x5B9E;&#x4F8B;&#x90FD;&#x662F;&#x4F20;&#x5165;&#x7684; <code>class</code> &#x5BF9;&#x8C61;&#xFF0C;&#x800C; <code>class</code> &#x5BF9;&#x8C61;&#x662F;&#x8FDB;&#x7A0B;&#x5185;&#x5355;&#x4F8B;&#x7684;&#xFF0C;&#x6240;&#x4EE5;&#x83B7;&#x53D6;&#x5230;&#x5B83;&#x7684;&#x540C;&#x4E00;&#x4E2A;&#x65B9;&#x6CD5; <code>Method</code> &#x5B9E;&#x4F8B;&#x4E5F;&#x662F;&#x5355;&#x4F8B;&#x7684;&#xFF0C;&#x6240;&#x4EE5;&#x8FD9;&#x91CC;&#x7684;&#x7F13;&#x5B58;&#x662F;&#x6709;&#x6548;&#x7684;&#x3002;</p>
 <p>&#x6211;&#x4EEC;&#x518D;&#x770B;&#x770B; <code>ServiceMethod</code> &#x7684;&#x6784;&#x9020;&#x51FD;&#x6570;&#xFF1A;</p>
 <pre><code class="lang-Java">ServiceMethod(Builder&lt;T&gt; builder) {
-  this.callFactory = builder.retrofit.callFactory();
-  this.callAdapter = builder.callAdapter;
-  this.baseUrl = builder.retrofit.baseUrl();
-  this.responseConverter = builder.responseConverter;
-  this.httpMethod = builder.httpMethod;
-  this.relativeUrl = builder.relativeUrl;
-  this.headers = builder.headers;
-  this.contentType = builder.contentType;
-  this.hasBody = builder.hasBody;
-  this.isFormEncoded = builder.isFormEncoded;
-  this.isMultipart = builder.isMultipart;
-  this.parameterHandlers = builder.parameterHandlers;
+  <span class="hljs-keyword">this</span>.callFactory = builder.retrofit.callFactory();
+  <span class="hljs-keyword">this</span>.callAdapter = builder.callAdapter;
+  <span class="hljs-keyword">this</span>.baseUrl = builder.retrofit.baseUrl();
+  <span class="hljs-keyword">this</span>.responseConverter = builder.responseConverter;
+  <span class="hljs-keyword">this</span>.httpMethod = builder.httpMethod;
+  <span class="hljs-keyword">this</span>.relativeUrl = builder.relativeUrl;
+  <span class="hljs-keyword">this</span>.headers = builder.headers;
+  <span class="hljs-keyword">this</span>.contentType = builder.contentType;
+  <span class="hljs-keyword">this</span>.hasBody = builder.hasBody;
+  <span class="hljs-keyword">this</span>.isFormEncoded = builder.isFormEncoded;
+  <span class="hljs-keyword">this</span>.isMultipart = builder.isMultipart;
+  <span class="hljs-keyword">this</span>.parameterHandlers = builder.parameterHandlers;
 }
 </code></pre>
 <p>&#x6210;&#x5458;&#x5F88;&#x591A;&#xFF0C;&#x4F46;&#x8FD9;&#x91CC;&#x6211;&#x4EEC;&#x91CD;&#x70B9;&#x5173;&#x6CE8;&#x56DB;&#x4E2A;&#x6210;&#x5458;&#xFF1A;<code>callFactory</code>&#xFF0C;<code>callAdapter</code>&#xFF0C;<code>responseConverter</code>&#x548C; <code>parameterHandlers</code>&#x3002;</p>
@@ -3822,26 +3826,26 @@ return serviceMethod.callAdapter.adapt(okHttpCall);
 <h4 id="241-callfactory"><a name="241-callfactory" class="anchor-navigation-ex-anchor" href="#241-callfactory"><i class="fa fa-link" aria-hidden="true"></i></a>2.4.1 callFactory</h4>
 <p><code>this.callFactory = builder.retrofit.callFactory()</code>&#xFF0C;&#x6240;&#x4EE5; <code>callFactory</code> &#x5B9E;&#x9645;&#x4E0A;&#x7531; <code>Retrofit</code> &#x7C7B;&#x63D0;&#x4F9B;&#xFF0C;&#x800C;&#x6211;&#x4EEC;&#x5728;&#x6784;&#x9020; <code>Retrofit</code> &#x5BF9;&#x8C61;&#x65F6;&#xFF0C;&#x53EF;&#x4EE5;&#x6307;&#x5B9A; <code>callFactory</code>&#xFF0C;&#x5982;&#x679C;&#x4E0D;&#x6307;&#x5B9A;&#xFF0C;&#x5C06;&#x9ED8;&#x8BA4;&#x8BBE;&#x7F6E;&#x4E3A;&#x4E00;&#x4E2A; <code>okhttp3.OkHttpClient</code>&#x3002;</p>
 <h4 id="242-calladapter"><a name="242-calladapter" class="anchor-navigation-ex-anchor" href="#242-calladapter"><i class="fa fa-link" aria-hidden="true"></i></a>2.4.2 callAdapter</h4>
-<pre><code class="lang-java">private CallAdapter&lt;?&gt; createCallAdapter() {
-  // &#x7701;&#x7565;&#x68C0;&#x67E5;&#x6027;&#x4EE3;&#x7801;
+<pre><code class="lang-java"><span class="hljs-keyword">private</span> CallAdapter&lt;?&gt; createCallAdapter() {
+  <span class="hljs-comment">// &#x7701;&#x7565;&#x68C0;&#x67E5;&#x6027;&#x4EE3;&#x7801;</span>
   Annotation[] annotations = method.getAnnotations();
-  try {
-    return retrofit.callAdapter(returnType, annotations);
-  } catch (RuntimeException e) { 
-    // Wide exception range because factories are user code.
-    throw methodError(e, &quot;Unable to create call adapter for %s&quot;, returnType);
+  <span class="hljs-keyword">try</span> {
+    <span class="hljs-keyword">return</span> retrofit.callAdapter(returnType, annotations);
+  } <span class="hljs-keyword">catch</span> (RuntimeException e) { 
+    <span class="hljs-comment">// Wide exception range because factories are user code.</span>
+    <span class="hljs-keyword">throw</span> methodError(e, <span class="hljs-string">&quot;Unable to create call adapter for %s&quot;</span>, returnType);
   }
 }
 </code></pre>
 <p>&#x53EF;&#x4EE5;&#x770B;&#x5230;&#xFF0C;<code>callAdapter</code> &#x8FD8;&#x662F;&#x7531; <code>Retrofit</code> &#x7C7B;&#x63D0;&#x4F9B;&#x3002;&#x5728; <code>Retrofit</code> &#x7C7B;&#x5185;&#x90E8;&#xFF0C;&#x5C06;&#x904D;&#x5386;&#x4E00;&#x4E2A; <code>CallAdapter.Factory</code> &#x5217;&#x8868;&#xFF0C;&#x8BA9;&#x5DE5;&#x5382;&#x4EEC;&#x63D0;&#x4F9B;&#xFF0C;&#x5982;&#x679C;&#x6700;&#x7EC8;&#x6CA1;&#x6709;&#x5DE5;&#x5382;&#x80FD;&#xFF08;&#x6839;&#x636E; <code>returnType</code> &#x548C; <code>annotations</code>&#xFF09;&#x63D0;&#x4F9B;&#x9700;&#x8981;&#x7684; <code>CallAdapter</code>&#xFF0C;&#x90A3;&#x5C06;&#x629B;&#x51FA;&#x5F02;&#x5E38;&#x3002;&#x800C;&#x8FD9;&#x4E2A;&#x5DE5;&#x5382;&#x5217;&#x8868;&#x6211;&#x4EEC;&#x53EF;&#x4EE5;&#x5728;&#x6784;&#x9020; <code>Retrofit</code> &#x5BF9;&#x8C61;&#x65F6;&#x8FDB;&#x884C;&#x6DFB;&#x52A0;&#x3002;</p>
 <h4 id="243&#xFF0C;responseconverter"><a name="243&#xFF0C;responseconverter" class="anchor-navigation-ex-anchor" href="#243&#xFF0C;responseconverter"><i class="fa fa-link" aria-hidden="true"></i></a>2.4.3&#xFF0C;responseConverter</h4>
-<pre><code class="lang-java">private Converter&lt;ResponseBody, T&gt; createResponseConverter() {
+<pre><code class="lang-java"><span class="hljs-function"><span class="hljs-keyword">private</span> Converter&lt;ResponseBody, T&gt; <span class="hljs-title">createResponseConverter</span><span class="hljs-params">()</span> </span>{
   Annotation[] annotations = method.getAnnotations();
-  try {
-    return retrofit.responseBodyConverter(responseType, annotations);
-  } catch (RuntimeException e) { 
-    // Wide exception range because factories are user code.
-    throw methodError(e, &quot;Unable to create converter for %s&quot;, responseType);
+  <span class="hljs-keyword">try</span> {
+    <span class="hljs-keyword">return</span> retrofit.responseBodyConverter(responseType, annotations);
+  } <span class="hljs-keyword">catch</span> (RuntimeException e) { 
+    <span class="hljs-comment">// Wide exception range because factories are user code.</span>
+    <span class="hljs-keyword">throw</span> methodError(e, <span class="hljs-string">&quot;Unable to create converter for %s&quot;</span>, responseType);
   }
 }
 </code></pre>
@@ -3859,59 +3863,59 @@ return serviceMethod.callAdapter.adapt(okHttpCall);
 <p>&#x7EC8;&#x4E8E;&#x628A; <code>ServiceMethod</code> &#x770B;&#x4E86;&#x4E2A;&#x5927;&#x6982;&#xFF0C;&#x63A5;&#x4E0B;&#x6765;&#x6211;&#x4EEC;&#x770B;&#x770B; <code>OkHttpCall</code>&#x3002;</p>
 <p><code>OkHttpCall</code> &#x5B9E;&#x73B0;&#x4E86; <code>retrofit2.Call</code>&#xFF0C;&#x6211;&#x4EEC;&#x901A;&#x5E38;&#x4F1A;&#x4F7F;&#x7528;&#x5B83;&#x7684; <code>execute()</code> &#x548C; <code>enqueue(Callback&lt;T&gt; callback)</code> &#x63A5;&#x53E3;&#x3002;&#x524D;&#x8005;&#x7528;&#x4E8E;&#x540C;&#x6B65;&#x6267;&#x884C; HTTP &#x8BF7;&#x6C42;&#xFF0C;&#x540E;&#x8005;&#x7528;&#x4E8E;&#x5F02;&#x6B65;&#x6267;&#x884C;&#x3002;</p>
 <h4 id="251&#xFF0C;&#x5148;&#x770B;-execute"><a name="251&#xFF0C;&#x5148;&#x770B;-execute" class="anchor-navigation-ex-anchor" href="#251&#xFF0C;&#x5148;&#x770B;-execute"><i class="fa fa-link" aria-hidden="true"></i></a>2.5.1&#xFF0C;&#x5148;&#x770B; execute()</h4>
-<pre><code class="lang-java">@Override 
-public Response&lt;T&gt; execute() throws IOException {
+<pre><code class="lang-java"><span class="hljs-meta">@Override</span> 
+<span class="hljs-function"><span class="hljs-keyword">public</span> Response&lt;T&gt; <span class="hljs-title">execute</span><span class="hljs-params">()</span> <span class="hljs-keyword">throws</span> IOException </span>{
   okhttp3.Call call;
 
-  synchronized (this) {
-    // &#x7701;&#x7565;&#x90E8;&#x5206;&#x68C0;&#x67E5;&#x4EE3;&#x7801;
+  <span class="hljs-keyword">synchronized</span> (<span class="hljs-keyword">this</span>) {
+    <span class="hljs-comment">// &#x7701;&#x7565;&#x90E8;&#x5206;&#x68C0;&#x67E5;&#x4EE3;&#x7801;</span>
 
     call = rawCall;
-    if (call == null) {
-      try {
+    <span class="hljs-keyword">if</span> (call == <span class="hljs-keyword">null</span>) {
+      <span class="hljs-keyword">try</span> {
         call = rawCall = createRawCall();
-      } catch (IOException | RuntimeException e) {
+      } <span class="hljs-keyword">catch</span> (IOException | RuntimeException e) {
         creationFailure = e;
-        throw e;
+        <span class="hljs-keyword">throw</span> e;
       }
     }
   }
 
-  return parseResponse(call.execute());
+  <span class="hljs-keyword">return</span> parseResponse(call.execute());
 }
 
-private okhttp3.Call createRawCall() throws IOException {
+<span class="hljs-keyword">private</span> okhttp3.<span class="hljs-function">Call <span class="hljs-title">createRawCall</span><span class="hljs-params">()</span> <span class="hljs-keyword">throws</span> IOException </span>{
   Request request = serviceMethod.toRequest(args);
   okhttp3.Call call = serviceMethod.callFactory.newCall(request);
-  if (call == null) {
-    throw new NullPointerException(&quot;Call.Factory returned null.&quot;);
+  <span class="hljs-keyword">if</span> (call == <span class="hljs-keyword">null</span>) {
+    <span class="hljs-keyword">throw</span> <span class="hljs-keyword">new</span> NullPointerException(<span class="hljs-string">&quot;Call.Factory returned null.&quot;</span>);
   }
-  return call;
+  <span class="hljs-keyword">return</span> call;
 }
 
-Response&lt;T&gt; parseResponse(okhttp3.Response rawResponse) throws IOException {
+<span class="hljs-function">Response&lt;T&gt; <span class="hljs-title">parseResponse</span><span class="hljs-params">(okhttp3.Response rawResponse)</span> <span class="hljs-keyword">throws</span> IOException </span>{
   ResponseBody rawBody = rawResponse.body();
 
-  // Remove the body&apos;s source (the only stateful object) so we can pass the response along.
+  <span class="hljs-comment">// Remove the body&apos;s source (the only stateful object) so we can pass the response along.</span>
   rawResponse = rawResponse.newBuilder()
-      .body(new NoContentResponseBody(rawBody.contentType(), rawBody.contentLength()))
+      .body(<span class="hljs-keyword">new</span> NoContentResponseBody(rawBody.contentType(), rawBody.contentLength()))
       .build();
 
-  int code = rawResponse.code();
-  if (code &lt; 200 || code &gt;= 300) {
-    // ...&#x8FD4;&#x56DE;&#x9519;&#x8BEF;
+  <span class="hljs-keyword">int</span> code = rawResponse.code();
+  <span class="hljs-keyword">if</span> (code &lt; <span class="hljs-number">200</span> || code &gt;= <span class="hljs-number">300</span>) {
+    <span class="hljs-comment">// ...&#x8FD4;&#x56DE;&#x9519;&#x8BEF;</span>
   }
 
-  if (code == 204 || code == 205) {
-    return Response.success(null, rawResponse);
+  <span class="hljs-keyword">if</span> (code == <span class="hljs-number">204</span> || code == <span class="hljs-number">205</span>) {
+    <span class="hljs-keyword">return</span> Response.success(<span class="hljs-keyword">null</span>, rawResponse);
   }
 
-  ExceptionCatchingRequestBody catchingBody = new ExceptionCatchingRequestBody(rawBody);
-  try {
+  ExceptionCatchingRequestBody catchingBody = <span class="hljs-keyword">new</span> ExceptionCatchingRequestBody(rawBody);
+  <span class="hljs-keyword">try</span> {
     T body = serviceMethod.toResponse(catchingBody);
-    return Response.success(body, rawResponse);
-  } catch (RuntimeException e) {
-    // ...&#x5F02;&#x5E38;&#x5904;&#x7406;
+    <span class="hljs-keyword">return</span> Response.success(body, rawResponse);
+  } <span class="hljs-keyword">catch</span> (RuntimeException e) {
+    <span class="hljs-comment">// ...&#x5F02;&#x5E38;&#x5904;&#x7406;</span>
   }
 }
 </code></pre>
@@ -3938,25 +3942,25 @@ Response&lt;T&gt; parseResponse(okhttp3.Response rawResponse) throws IOException
 <p><code>RxJavaCallAdapterFactory#get</code> &#x65B9;&#x6CD5;&#x4E2D;&#x5BF9;&#x8FD4;&#x56DE;&#x503C;&#x7684;&#x7C7B;&#x578B;&#x8FDB;&#x884C;&#x4E86;&#x68C0;&#x67E5;&#xFF0C;&#x53EA;&#x652F;&#x6301; <code>rx.Single</code>&#xFF0C;<code>rx.Completable</code> &#x548C; <code>rx.Observable</code>&#xFF0C;&#x8FD9;&#x91CC;&#x6211;&#x4E3B;&#x8981;&#x5173;&#x6CE8;&#x5BF9; <code>rx.Observable</code> &#x7684;&#x652F;&#x6301;&#x3002;</p>
 <p><code>RxJavaCallAdapterFactory#getCallAdapter</code> &#x65B9;&#x6CD5;&#x4E2D;&#x5BF9;&#x8FD4;&#x56DE;&#x503C;&#x7684;&#x6CDB;&#x578B;&#x7C7B;&#x578B;&#x8FDB;&#x884C;&#x4E86;&#x8FDB;&#x4E00;&#x6B65;&#x68C0;&#x67E5;&#xFF0C;&#x4F8B;&#x5982;&#x6211;&#x4EEC;&#x58F0;&#x660E;&#x7684;&#x8FD4;&#x56DE;&#x503C;&#x7C7B;&#x578B;&#x4E3A; <code>Observable&lt;List&lt;Repo&gt;&gt;</code>&#xFF0C;&#x6CDB;&#x578B;&#x7C7B;&#x578B;&#x5C31;&#x662F; <code>List&lt;Repo&gt;</code>&#xFF0C;&#x8FD9;&#x91CC;&#x5BF9; <code>retrofit2.Response</code> &#x548C; <code>retrofit2.adapter.rxjava.Result</code> &#x8FDB;&#x884C;&#x4E86;&#x7279;&#x6B8A;&#x5904;&#x7406;&#xFF0C;&#x6709;&#x5355;&#x72EC;&#x7684; adapter &#x8D1F;&#x8D23;&#x8FDB;&#x884C;&#x8F6C;&#x6362;&#xFF0C;&#x5176;&#x4ED6;&#x6240;&#x6709;&#x7C7B;&#x578B;&#x90FD;&#x7531; <code>SimpleCallAdapter</code> &#x8D1F;&#x8D23;&#x8F6C;&#x6362;&#x3002;</p>
 <p>&#x90A3;&#x6211;&#x4EEC;&#x5C31;&#x6765;&#x770B;&#x770B; <code>SimpleCallAdapter#adapt</code>&#xFF1A;</p>
-<pre><code class="lang-java">@Override
-public &lt;R&gt; Observable&lt;R&gt; adapt(Call&lt;R&gt; call) {
-  Observable&lt;R&gt; observable = Observable.create(new CallOnSubscribe&lt;&gt;(call))
+<pre><code class="lang-java"><span class="hljs-meta">@Override</span>
+<span class="hljs-keyword">public</span> &lt;R&gt; <span class="hljs-function">Observable&lt;R&gt; <span class="hljs-title">adapt</span><span class="hljs-params">(Call&lt;R&gt; call)</span> </span>{
+  Observable&lt;R&gt; observable = Observable.create(<span class="hljs-keyword">new</span> CallOnSubscribe&lt;&gt;(call))
       .lift(OperatorMapResponseToBodyOrError.&lt;R&gt;instance());
-  if (scheduler != null) {
-    return observable.subscribeOn(scheduler);
+  <span class="hljs-keyword">if</span> (scheduler != <span class="hljs-keyword">null</span>) {
+    <span class="hljs-keyword">return</span> observable.subscribeOn(scheduler);
   }
-  return observable;
+  <span class="hljs-keyword">return</span> observable;
 }
 </code></pre>
 <p>&#x8FD9;&#x91CC;&#x521B;&#x5EFA;&#x4E86;&#x4E00;&#x4E2A; <code>Observable</code>&#xFF0C;&#x5B83;&#x7684;&#x903B;&#x8F91;&#x7531; <code>CallOnSubscribe</code> &#x7C7B;&#x5B9E;&#x73B0;&#xFF0C;&#x540C;&#x65F6;&#x4F7F;&#x7528;&#x4E86;&#x4E00;&#x4E2A; <code>OperatorMapResponseToBodyOrError</code> &#x64CD;&#x4F5C;&#x7B26;&#xFF0C;&#x7528;&#x6765;&#x628A; <code>retrofit2.Response</code> &#x8F6C;&#x4E3A;&#x6211;&#x4EEC;&#x58F0;&#x660E;&#x7684;&#x7C7B;&#x578B;&#xFF0C;&#x6216;&#x8005;&#x9519;&#x8BEF;&#x5F02;&#x5E38;&#x7C7B;&#x578B;&#x3002;</p>
 <p>&#x6211;&#x4EEC;&#x63A5;&#x7740;&#x770B; <code>CallOnSubscribe#call</code>&#xFF1A;</p>
-<pre><code class="lang-Java">@Override
-public void call(final Subscriber&lt;? super Response&lt;T&gt;&gt; subscriber) {
-  // Since Call is a one-shot type, clone it for each new subscriber.
+<pre><code class="lang-Java"><span class="hljs-meta">@Override</span>
+<span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">call</span><span class="hljs-params">(<span class="hljs-keyword">final</span> Subscriber&lt;? <span class="hljs-keyword">super</span> Response&lt;T&gt;&gt; subscriber)</span> </span>{
+  <span class="hljs-comment">// Since Call is a one-shot type, clone it for each new subscriber.</span>
   Call&lt;T&gt; call = originalCall.clone();
 
-  // Wrap the call in a helper which handles both unsubscription and backpressure.
-  RequestArbiter&lt;T&gt; requestArbiter = new RequestArbiter&lt;&gt;(call, subscriber);
+  <span class="hljs-comment">// Wrap the call in a helper which handles both unsubscription and backpressure.</span>
+  RequestArbiter&lt;T&gt; requestArbiter = <span class="hljs-keyword">new</span> RequestArbiter&lt;&gt;(call, subscriber);
   subscriber.add(requestArbiter);
   subscriber.setProducer(requestArbiter);
 }
@@ -3969,51 +3973,51 @@ public void call(final Subscriber&lt;? super Response&lt;T&gt;&gt; subscriber) {
 </ol>
 <p>&#x7B80;&#x8A00;&#x4E4B;&#xFF0C;&#x5927;&#x90E8;&#x5206;&#x60C5;&#x51B5;&#x4E0B; Subscriber &#x90FD;&#x662F;&#x88AB;&#x52A8;&#x63A5;&#x53D7; Observable push &#x8FC7;&#x6765;&#x7684;&#x6570;&#x636E;&#xFF0C;&#x4F46;&#x8981;&#x662F; Observable &#x53D1;&#x5F97;&#x592A;&#x5FEB;&#xFF0C;Subscriber &#x5904;&#x7406;&#x4E0D;&#x8FC7;&#x6765;&#xFF0C;&#x90A3;&#x5C31;&#x6709;&#x95EE;&#x9898;&#x4E86;&#xFF0C;&#x6240;&#x4EE5;&#x5C31;&#x6709;&#x4E86;&#x4E00;&#x79CD; Subscriber &#x4E3B;&#x52A8; pull &#x7684;&#x673A;&#x5236;&#xFF0C;&#x800C;&#x8FD9;&#x79CD;&#x673A;&#x5236;&#x5C31;&#x662F;&#x901A;&#x8FC7; Producer &#x5B9E;&#x73B0;&#x7684;&#x3002;&#x7ED9; Subscriber &#x8BBE;&#x7F6E; Producer &#x4E4B;&#x540E;&#xFF08;&#x901A;&#x8FC7; <code>Subscriber#setProducer</code> &#x65B9;&#x6CD5;&#xFF09;&#xFF0C;Subscriber &#x5C31;&#x4F1A;&#x901A;&#x8FC7; Producer &#x5411;&#x4E0A;&#x6E38;&#x6839;&#x636E;&#x81EA;&#x5DF1;&#x7684;&#x80FD;&#x529B;&#x8BF7;&#x6C42;&#x6570;&#x636E;&#xFF08;&#x901A;&#x8FC7; <code>Producer#request</code> &#x65B9;&#x6CD5;&#xFF09;&#xFF0C;&#x800C; Producer &#x6536;&#x5230;&#x8BF7;&#x6C42;&#x4E4B;&#x540E;&#xFF08;&#x901A;&#x5E38;&#x90FD;&#x662F; Observable &#x7BA1;&#x7406; Producer&#xFF0C;&#x6240;&#x4EE5;&#x201C;&#x76F8;&#x5F53;&#x4E8E;&#x201D;&#x5C31;&#x662F; Observable &#x6536;&#x5230;&#x4E86;&#x8BF7;&#x6C42;&#xFF09;&#xFF0C;&#x518D;&#x6839;&#x636E;&#x8BF7;&#x6C42;&#x7684;&#x91CF;&#x7ED9; Subscriber &#x53D1;&#x6570;&#x636E;&#x3002;</p>
 <p>&#x90A3;&#x6211;&#x4EEC;&#x5C31;&#x770B;&#x770B; <code>RequestArbiter#request</code>&#xFF1A;</p>
-<pre><code class="lang-java">@Override
-public void request(long n) {
-  if (n &lt; 0) throw new IllegalArgumentException(&quot;n &lt; 0: &quot; + n);
-  if (n == 0) return; // Nothing to do when requesting 0.
-  if (!compareAndSet(false, true)) return; // Request was already triggered.
+<pre><code class="lang-java"><span class="hljs-meta">@Override</span>
+<span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">request</span><span class="hljs-params">(<span class="hljs-keyword">long</span> n)</span> </span>{
+  <span class="hljs-keyword">if</span> (n &lt; <span class="hljs-number">0</span>) <span class="hljs-keyword">throw</span> <span class="hljs-keyword">new</span> IllegalArgumentException(<span class="hljs-string">&quot;n &lt; 0: &quot;</span> + n);
+  <span class="hljs-keyword">if</span> (n == <span class="hljs-number">0</span>) <span class="hljs-keyword">return</span>; <span class="hljs-comment">// Nothing to do when requesting 0.</span>
+  <span class="hljs-keyword">if</span> (!compareAndSet(<span class="hljs-keyword">false</span>, <span class="hljs-keyword">true</span>)) <span class="hljs-keyword">return</span>; <span class="hljs-comment">// Request was already triggered.</span>
 
-  try {
+  <span class="hljs-keyword">try</span> {
     Response&lt;T&gt; response = call.execute();
-    if (!subscriber.isUnsubscribed()) {
+    <span class="hljs-keyword">if</span> (!subscriber.isUnsubscribed()) {
       subscriber.onNext(response);
     }
-  } catch (Throwable t) {
+  } <span class="hljs-keyword">catch</span> (Throwable t) {
     Exceptions.throwIfFatal(t);
-    if (!subscriber.isUnsubscribed()) {
+    <span class="hljs-keyword">if</span> (!subscriber.isUnsubscribed()) {
       subscriber.onError(t);
     }
-    return;
+    <span class="hljs-keyword">return</span>;
   }
 
-  if (!subscriber.isUnsubscribed()) {
+  <span class="hljs-keyword">if</span> (!subscriber.isUnsubscribed()) {
     subscriber.onCompleted();
   }
 }
 </code></pre>
 <p>producer &#x76F8;&#x5173;&#x7684;&#x903B;&#x8F91;&#x975E;&#x5E38;&#x7B80;&#x5355;&#xFF0C;&#x770B;&#x770B;<a href="https://blog.piasy.com/AdvancedRxJava/2016/06/04/operator-concurrency-primitives-4/" target="_blank">Operator &#x5E76;&#x53D1;&#x539F;&#x8BED;&#xFF1A; producers&#xFF08;&#x4E8C;&#xFF09;&#xFF0C;SingleDelayedProducer</a>&#x5C31;&#x80FD;&#x61C2;&#x4E86;&#xFF0C;&#x8FD9;&#x91CC;&#x5C31;&#x4E0D;&#x5728;&#x8D58;&#x8FF0;&#x3002;&#x5B9E;&#x9645;&#x5E72;&#x6D3B;&#x7684;&#x903B;&#x8F91;&#x5C31;&#x662F;&#x6267;&#x884C; <code>call.execute()</code>&#xFF0C;&#x5E76;&#x628A;&#x8FD4;&#x56DE;&#x503C;&#x53D1;&#x9001;&#x7ED9;&#x4E0B;&#x6E38;&#x3002;</p>
 <p>&#x800C; <code>OperatorMapResponseToBodyOrError#call</code> &#x4E5F;&#x76F8;&#x5F53;&#x7B80;&#x77ED;&#xFF1A;</p>
-<pre><code class="lang-java">@Override
-public Subscriber&lt;? super Response&lt;T&gt;&gt; call(final Subscriber&lt;? super T&gt; child) {
-  return new Subscriber&lt;Response&lt;T&gt;&gt;(child) {
-    @Override
-    public void onNext(Response&lt;T&gt; response) {
-      if (response.isSuccessful()) {
+<pre><code class="lang-java"><span class="hljs-meta">@Override</span>
+<span class="hljs-keyword">public</span> Subscriber&lt;? <span class="hljs-keyword">super</span> Response&lt;T&gt;&gt; call(<span class="hljs-keyword">final</span> Subscriber&lt;? <span class="hljs-keyword">super</span> T&gt; child) {
+  <span class="hljs-keyword">return</span> <span class="hljs-keyword">new</span> Subscriber&lt;Response&lt;T&gt;&gt;(child) {
+    <span class="hljs-meta">@Override</span>
+    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">onNext</span><span class="hljs-params">(Response&lt;T&gt; response)</span> </span>{
+      <span class="hljs-keyword">if</span> (response.isSuccessful()) {
         child.onNext(response.body());
-      } else {
-        child.onError(new HttpException(response));
+      } <span class="hljs-keyword">else</span> {
+        child.onError(<span class="hljs-keyword">new</span> HttpException(response));
       }
     }
 
-    @Override
-    public void onCompleted() {
+    <span class="hljs-meta">@Override</span>
+    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">onCompleted</span><span class="hljs-params">()</span> </span>{
       child.onCompleted();
     }
 
-    @Override
-    public void onError(Throwable e) {
+    <span class="hljs-meta">@Override</span>
+    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">onError</span><span class="hljs-params">(Throwable e)</span> </span>{
       child.onError(e);
     }
   };
@@ -4033,27 +4037,27 @@ public Subscriber&lt;? super Response&lt;T&gt;&gt; call(final Subscriber&lt;? su
 <h2 id="&#x56DB;&#x3001;retrofit-converters-&#x6A21;&#x5757;"><a name="&#x56DB;&#x3001;retrofit-converters-&#x6A21;&#x5757;" class="anchor-navigation-ex-anchor" href="#&#x56DB;&#x3001;retrofit-converters-&#x6A21;&#x5757;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x56DB;&#x3001;retrofit-converters &#x6A21;&#x5757;</h2>
 <p>retrofit &#x6A21;&#x5757;&#x5185;&#x7F6E;&#x4E86; <code>BuiltInConverters</code>&#xFF0C;&#x53EA;&#x80FD;&#x5904;&#x7406; <code>ResponseBody</code>&#xFF0C; <code>RequestBody</code> &#x548C; <code>String</code>&#x7C7B;&#x578B;&#x7684;&#x8F6C;&#x5316;&#xFF08;&#x5B9E;&#x9645;&#x4E0A;&#x4E0D;&#x9700;&#x8981;&#x8F6C;&#xFF09;&#x3002;&#x800C; retrofit-converters &#x4E2D;&#x7684;&#x5B50;&#x6A21;&#x5757;&#x5219;&#x63D0;&#x4F9B;&#x4E86; JSON&#xFF0C;XML&#xFF0C;ProtoBuf &#x7B49;&#x7C7B;&#x578B;&#x6570;&#x636E;&#x7684;&#x8F6C;&#x6362;&#x529F;&#x80FD;&#xFF0C;&#x800C;&#x4E14;&#x8FD8;&#x6709;&#x591A;&#x79CD;&#x8F6C;&#x6362;&#x65B9;&#x5F0F;&#x53EF;&#x4EE5;&#x9009;&#x62E9;&#x3002;&#x8FD9;&#x91CC;&#x6211;&#x4E3B;&#x8981;&#x5173;&#x6CE8; <code>GsonConverterFactory</code>&#x3002;</p>
 <p>&#x4EE3;&#x7801;&#x975E;&#x5E38;&#x7B80;&#x5355;&#xFF1A;</p>
-<pre><code class="lang-java">@Override
-public Converter&lt;ResponseBody, ?&gt; responseBodyConverter(Type type, 
+<pre><code class="lang-java"><span class="hljs-meta">@Override</span>
+<span class="hljs-keyword">public</span> Converter&lt;ResponseBody, ?&gt; responseBodyConverter(Type type, 
     Annotation[] annotations, Retrofit retrofit) {
   TypeAdapter&lt;?&gt; adapter = gson.getAdapter(TypeToken.get(type));
-  return new GsonResponseBodyConverter&lt;&gt;(gson, adapter);
+  <span class="hljs-keyword">return</span> <span class="hljs-keyword">new</span> GsonResponseBodyConverter&lt;&gt;(gson, adapter);
 }
 
-final class GsonResponseBodyConverter&lt;T&gt; implements Converter&lt;ResponseBody, T&gt; {
-  private final Gson gson;
-  private final TypeAdapter&lt;T&gt; adapter;
+<span class="hljs-keyword">final</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">GsonResponseBodyConverter</span>&lt;<span class="hljs-title">T</span>&gt; <span class="hljs-keyword">implements</span> <span class="hljs-title">Converter</span>&lt;<span class="hljs-title">ResponseBody</span>, <span class="hljs-title">T</span>&gt; </span>{
+  <span class="hljs-keyword">private</span> <span class="hljs-keyword">final</span> Gson gson;
+  <span class="hljs-keyword">private</span> <span class="hljs-keyword">final</span> TypeAdapter&lt;T&gt; adapter;
 
   GsonResponseBodyConverter(Gson gson, TypeAdapter&lt;T&gt; adapter) {
-    this.gson = gson;
-    this.adapter = adapter;
+    <span class="hljs-keyword">this</span>.gson = gson;
+    <span class="hljs-keyword">this</span>.adapter = adapter;
   }
 
-  @Override public T convert(ResponseBody value) throws IOException {
+  <span class="hljs-meta">@Override</span> <span class="hljs-function"><span class="hljs-keyword">public</span> T <span class="hljs-title">convert</span><span class="hljs-params">(ResponseBody value)</span> <span class="hljs-keyword">throws</span> IOException </span>{
     JsonReader jsonReader = gson.newJsonReader(value.charStream());
-    try {
-      return adapter.read(jsonReader);
-    } finally {
+    <span class="hljs-keyword">try</span> {
+      <span class="hljs-keyword">return</span> adapter.read(jsonReader);
+    } <span class="hljs-keyword">finally</span> {
       value.close();
     }
   }
@@ -4105,7 +4109,7 @@ final class GsonResponseBodyConverter&lt;T&gt; implements Converter&lt;ResponseB
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"Retrofit解析","level":"3.3.2","depth":2,"next":{"title":"EventBus解析","level":"3.3.3","depth":2,"path":"android/open-source-framework/EventBus.md","ref":"android/open-source-framework/EventBus.md","articles":[]},"previous":{"title":"OkHttp解析","level":"3.3.1","depth":2,"path":"android/open-source-framework/okhttp.md","ref":"android/open-source-framework/okhttp.md","articles":[]},"dir":"ltr"},"config":{"plugins":["-lunr","-search","-highlight","-livereload","search-plus@^0.0.11","simple-page-toc@^0.1.1","github@^2.0.0","github-buttons@2.1.0","edit-link@^2.0.2","advanced-emoji@^0.2.1","anchors@^0.7.1","include-codeblock@^3.0.2","ace@^0.3.2","emphasize@^1.1.0","katex@^1.1.3","splitter@^0.0.8","tbfed-pagefooter@^0.0.1","expandable-chapters-small@^0.1.7","sectionx@^3.1.0","local-video@^1.0.1","anchor-navigation-ex@0.1.8","favicon@^0.0.2"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"tbfed-pagefooter":{"copyright":"Copyright © ruheng.com 2017","modify_label":"该文件修订时间：","modify_format":"YYYY-MM-DD HH:mm:ss"},"emphasize":{},"ace":{},"github":{"url":"https://github.com/LRH1993/android_interview"},"simple-page-toc":{"maxDepth":3,"skipFirstH1":true},"splitter":{},"katex":{},"fontsettings":{"theme":"white","family":"sans","size":2},"sectionx":{"tag":"b"},"anchor-navigation-ex":{"isRewritePageTitle":false,"tocLevel1Icon":"fa fa-hand-o-right","tocLevel2Icon":"fa fa-hand-o-right","tocLevel3Icon":"fa fa-hand-o-right"},"favicon":{"shortcut":"favicon.ico","bookmark":"favicon.ico"},"github-buttons":{"repo":"LRH1993/android_interview","types":["star"],"size":"small"},"expandable-chapters-small":{},"local-video":{},"advanced-emoji":{"embedEmojis":false},"include-codeblock":{"check":false,"edit":true,"fixlang":false,"lang":"","template":"ace","theme":"chrome","unindent":true},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":true,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"edit-link":{"label":"Edit This Page","base":"https://github.com/LRH1993/android_interview/edit/master"},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":true},"anchors":{},"search-plus":{}},"theme":"default","author":"ruheng","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"Android校招面试指南","language":"zh-hans","output.name":"site","links":{"sidebar":{"Home":"http://lruheng.com/"}},"gitbook":"3.2.3","description":"Android面试必备，记录自己的秋招之路"},"file":{"path":"android/open-source-framework/Retrofit.md","mtime":"2017-08-27T02:25:36.000Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2017-10-16T12:05:21.906Z"},"basePath":"../..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"Retrofit解析","level":"3.3.2","depth":2,"next":{"title":"EventBus解析","level":"3.3.3","depth":2,"path":"android/open-source-framework/EventBus.md","ref":"android/open-source-framework/EventBus.md","articles":[]},"previous":{"title":"OkHttp解析","level":"3.3.1","depth":2,"path":"android/open-source-framework/okhttp.md","ref":"android/open-source-framework/okhttp.md","articles":[]},"dir":"ltr"},"config":{"plugins":["-lunr","-search","-livereload","search-plus@^0.0.11","simple-page-toc@^0.1.1","github@^2.0.0","github-buttons@2.1.0","edit-link@^2.0.2","advanced-emoji@^0.2.1","anchors@^0.7.1","include-codeblock@^3.0.2","ace@^0.3.2","emphasize@^1.1.0","katex@^1.1.3","splitter@^0.0.8","tbfed-pagefooter@^0.0.1","expandable-chapters-small@^0.1.7","sectionx@^3.1.0","local-video@^1.0.1","anchor-navigation-ex@0.1.8","favicon@^0.0.2"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"tbfed-pagefooter":{"copyright":"Copyright © ruheng.com 2017","modify_label":"该文件修订时间：","modify_format":"YYYY-MM-DD HH:mm:ss"},"emphasize":{},"ace":{},"github":{"url":"https://github.com/LRH1993/android_interview"},"simple-page-toc":{"maxDepth":3,"skipFirstH1":true},"splitter":{},"katex":{},"fontsettings":{"theme":"white","family":"sans","size":2},"sectionx":{"tag":"b"},"highlight":{},"anchor-navigation-ex":{"isRewritePageTitle":false,"tocLevel1Icon":"fa fa-hand-o-right","tocLevel2Icon":"fa fa-hand-o-right","tocLevel3Icon":"fa fa-hand-o-right"},"favicon":{"shortcut":"favicon.ico","bookmark":"favicon.ico"},"github-buttons":{"repo":"LRH1993/android_interview","types":["star"],"size":"small"},"expandable-chapters-small":{},"local-video":{},"advanced-emoji":{"embedEmojis":false},"include-codeblock":{"check":false,"edit":false,"fixlang":false,"lang":"","template":"default","theme":"chrome","unindent":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":true,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"edit-link":{"label":"Edit This Page","base":"https://github.com/LRH1993/android_interview/edit/master"},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":true},"anchors":{},"search-plus":{}},"theme":"default","author":"ruheng","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"Android校招面试指南","language":"zh-hans","output.name":"site","links":{"sidebar":{"Home":"http://lruheng.com/"}},"gitbook":"3.2.3","description":"Android面试必备，记录自己的秋招之路"},"file":{"path":"android/open-source-framework/Retrofit.md","mtime":"2017-08-27T02:25:36.000Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2017-10-16T13:00:43.989Z"},"basePath":"../..","book":{"language":""}});
         });
     </script>
 </div>

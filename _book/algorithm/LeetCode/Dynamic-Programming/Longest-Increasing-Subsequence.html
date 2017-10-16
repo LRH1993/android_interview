@@ -69,6 +69,10 @@
                 
             
                 
+                <link rel="stylesheet" href="../../../gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
                 <link rel="stylesheet" href="../../../gitbook/gitbook-plugin-fontsettings/website.css">
                 
             
@@ -3722,56 +3726,56 @@
 <p>&#x6808;&#x4E3A;1&#xFF0C;5&#xFF0C;8&#xFF0C;&#x6B64;&#x65F6;&#x8BFB;&#x5230;3&#xFF0C;&#x7528;3&#x66FF;&#x6362;5&#xFF0C;&#x5F97;&#x5230;1&#xFF0C;3&#xFF0C;8&#xFF1B; &#x518D;&#x8BFB;6&#xFF0C;&#x7528;6&#x66FF;&#x6362;8&#xFF0C;&#x5F97;&#x5230;1&#xFF0C;3&#xFF0C;6&#xFF1B;&#x518D;&#x8BFB;7&#xFF0C;&#x5F97;&#x5230;&#x6700;&#x7EC8;&#x6808;&#x4E3A;1&#xFF0C;3&#xFF0C;6&#xFF0C;7&#x3002;&#x6700;&#x957F;&#x9012;&#x589E;&#x5B50;&#x5E8F;&#x5217;&#x4E3A;&#x957F;&#x5EA6;4&#x3002;</p>
 <h2 id="&#x4E09;&#x3001;&#x89E3;&#x9898;&#x4EE3;&#x7801;"><a name="&#x4E09;&#x3001;&#x89E3;&#x9898;&#x4EE3;&#x7801;" class="anchor-navigation-ex-anchor" href="#&#x4E09;&#x3001;&#x89E3;&#x9898;&#x4EE3;&#x7801;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x4E09;&#x3001;&#x89E3;&#x9898;&#x4EE3;&#x7801;</h2>
 <p>&#x65B9;&#x6848;&#x4E00;&#xFF1A;</p>
-<pre><code class="lang-java">public int longestIncreasingSubsequence(int[] nums) {
-        int []f = new int[nums.length];
-        int max = 0;
-        for (int i = 0; i &lt; nums.length; i++) {
-            f[i] = 1;
-            for (int j = 0; j &lt; i; j++) {
-                if (nums[j] &lt; nums[i]) {
-                    f[i] = f[i] &gt; f[j] + 1 ? f[i] : f[j] + 1;
+<pre><code class="lang-java"><span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">int</span> <span class="hljs-title">longestIncreasingSubsequence</span><span class="hljs-params">(<span class="hljs-keyword">int</span>[] nums)</span> </span>{
+        <span class="hljs-keyword">int</span> []f = <span class="hljs-keyword">new</span> <span class="hljs-keyword">int</span>[nums.length];
+        <span class="hljs-keyword">int</span> max = <span class="hljs-number">0</span>;
+        <span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> i = <span class="hljs-number">0</span>; i &lt; nums.length; i++) {
+            f[i] = <span class="hljs-number">1</span>;
+            <span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> j = <span class="hljs-number">0</span>; j &lt; i; j++) {
+                <span class="hljs-keyword">if</span> (nums[j] &lt; nums[i]) {
+                    f[i] = f[i] &gt; f[j] + <span class="hljs-number">1</span> ? f[i] : f[j] + <span class="hljs-number">1</span>;
                 }
             }
-            if (f[i] &gt; max) {
+            <span class="hljs-keyword">if</span> (f[i] &gt; max) {
                 max = f[i];
             }
         }
-        return max;
+        <span class="hljs-keyword">return</span> max;
     }
 </code></pre>
 <p>&#x65B9;&#x6848;&#x4E8C;&#xFF1A;</p>
-<pre><code class="lang-java">public int findLongest(int[] A, int n) {
-        int length = A.length;
-        int[] B = new int[length];
-        B[0] = A[0];
-        int end = 0;
-        for (int i = 1; i &lt; length; ++i) {
-            // &#x5982;&#x679C;&#x5F53;&#x524D;&#x6570;&#x6BD4;B&#x4E2D;&#x6700;&#x540E;&#x4E00;&#x4E2A;&#x6570;&#x8FD8;&#x5927;&#xFF0C;&#x76F4;&#x63A5;&#x6DFB;&#x52A0;
-            if (A[i] &gt;= B[end]) { B[++end] = A[i]; continue;
+<pre><code class="lang-java"><span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">int</span> <span class="hljs-title">findLongest</span><span class="hljs-params">(<span class="hljs-keyword">int</span>[] A, <span class="hljs-keyword">int</span> n)</span> </span>{
+        <span class="hljs-keyword">int</span> length = A.length;
+        <span class="hljs-keyword">int</span>[] B = <span class="hljs-keyword">new</span> <span class="hljs-keyword">int</span>[length];
+        B[<span class="hljs-number">0</span>] = A[<span class="hljs-number">0</span>];
+        <span class="hljs-keyword">int</span> end = <span class="hljs-number">0</span>;
+        <span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> i = <span class="hljs-number">1</span>; i &lt; length; ++i) {
+            <span class="hljs-comment">// &#x5982;&#x679C;&#x5F53;&#x524D;&#x6570;&#x6BD4;B&#x4E2D;&#x6700;&#x540E;&#x4E00;&#x4E2A;&#x6570;&#x8FD8;&#x5927;&#xFF0C;&#x76F4;&#x63A5;&#x6DFB;&#x52A0;</span>
+            <span class="hljs-keyword">if</span> (A[i] &gt;= B[end]) { B[++end] = A[i]; <span class="hljs-keyword">continue</span>;
             }
-            // &#x5426;&#x5219;&#xFF0C;&#x9700;&#x8981;&#x5148;&#x627E;&#x5230;&#x66FF;&#x6362;&#x4F4D;&#x7F6E;
-            int pos = findInsertPos(B, A[i], 0, end); 
+            <span class="hljs-comment">// &#x5426;&#x5219;&#xFF0C;&#x9700;&#x8981;&#x5148;&#x627E;&#x5230;&#x66FF;&#x6362;&#x4F4D;&#x7F6E;</span>
+            <span class="hljs-keyword">int</span> pos = findInsertPos(B, A[i], <span class="hljs-number">0</span>, end); 
             B[pos] = A[i];
         }
-        for (int i = 0; i &lt; B.length; ++i) {
+        <span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> i = <span class="hljs-number">0</span>; i &lt; B.length; ++i) {
             System.out.println(B[i]);
         }
-        return end+ 1; }
-    /**
+        <span class="hljs-keyword">return</span> end+ <span class="hljs-number">1</span>; }
+    <span class="hljs-comment">/**
      * &#x4E8C;&#x5206;&#x67E5;&#x627E;&#x7B2C;&#x4E00;&#x4E2A;&#x5927;&#x4E8E;&#x7B49;&#x4E8E;n&#x7684;&#x4F4D;&#x7F6E;
-     */
-    private int findInsertPos(int[] B, int n, int start, int end) {
-        while (start &lt; end) {
-            int mid = start + (end - start) / 2;// &#x76F4;&#x63A5;&#x4F7F;&#x7528;(high + low) / 2 &#x53EF;&#x80FD;&#x5BFC;&#x81F4;&#x6EA2;&#x51FA;
-            if (B[mid] &lt; n) {
-                start = mid + 1;
-            } else if (B[mid] &gt; n) {
+     */</span>
+    <span class="hljs-function"><span class="hljs-keyword">private</span> <span class="hljs-keyword">int</span> <span class="hljs-title">findInsertPos</span><span class="hljs-params">(<span class="hljs-keyword">int</span>[] B, <span class="hljs-keyword">int</span> n, <span class="hljs-keyword">int</span> start, <span class="hljs-keyword">int</span> end)</span> </span>{
+        <span class="hljs-keyword">while</span> (start &lt; end) {
+            <span class="hljs-keyword">int</span> mid = start + (end - start) / <span class="hljs-number">2</span>;<span class="hljs-comment">// &#x76F4;&#x63A5;&#x4F7F;&#x7528;(high + low) / 2 &#x53EF;&#x80FD;&#x5BFC;&#x81F4;&#x6EA2;&#x51FA;</span>
+            <span class="hljs-keyword">if</span> (B[mid] &lt; n) {
+                start = mid + <span class="hljs-number">1</span>;
+            } <span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span> (B[mid] &gt; n) {
                 end = mid ;
-            } else {
-                return mid;
+            } <span class="hljs-keyword">else</span> {
+                <span class="hljs-keyword">return</span> mid;
             }
         }
-        return start;
+        <span class="hljs-keyword">return</span> start;
     }
 </code></pre>
 <footer class="page-footer"><span class="copyright">Copyright &#xA9; ruheng.com 2017 all right reserved&#xFF0C;powered by Gitbook</span><span class="footer-modification">&#x8BE5;&#x6587;&#x4EF6;&#x4FEE;&#x8BA2;&#x65F6;&#x95F4;&#xFF1A;
@@ -3819,7 +3823,7 @@
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"Longest Increasing Subsequence","level":"5.2.1.3","depth":3,"next":{"title":"Best Time to Buy and Sell Stock","level":"5.2.1.4","depth":3,"path":"algorithm/LeetCode/Dynamic-Programming/stock.md","ref":"algorithm/LeetCode/Dynamic-Programming/stock.md","articles":[]},"previous":{"title":"Longest Common Subsequence","level":"5.2.1.2","depth":3,"path":"algorithm/LeetCode/Dynamic-Programming/Longest-Common-Subsequence.md","ref":"algorithm/LeetCode/Dynamic-Programming/Longest-Common-Subsequence.md","articles":[]},"dir":"ltr"},"config":{"plugins":["-lunr","-search","-highlight","-livereload","search-plus@^0.0.11","simple-page-toc@^0.1.1","github@^2.0.0","github-buttons@2.1.0","edit-link@^2.0.2","advanced-emoji@^0.2.1","anchors@^0.7.1","include-codeblock@^3.0.2","ace@^0.3.2","emphasize@^1.1.0","katex@^1.1.3","splitter@^0.0.8","tbfed-pagefooter@^0.0.1","expandable-chapters-small@^0.1.7","sectionx@^3.1.0","local-video@^1.0.1","anchor-navigation-ex@0.1.8","favicon@^0.0.2"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"tbfed-pagefooter":{"copyright":"Copyright © ruheng.com 2017","modify_label":"该文件修订时间：","modify_format":"YYYY-MM-DD HH:mm:ss"},"emphasize":{},"ace":{},"github":{"url":"https://github.com/LRH1993/android_interview"},"simple-page-toc":{"maxDepth":3,"skipFirstH1":true},"splitter":{},"katex":{},"fontsettings":{"theme":"white","family":"sans","size":2},"sectionx":{"tag":"b"},"anchor-navigation-ex":{"isRewritePageTitle":false,"tocLevel1Icon":"fa fa-hand-o-right","tocLevel2Icon":"fa fa-hand-o-right","tocLevel3Icon":"fa fa-hand-o-right"},"favicon":{"shortcut":"favicon.ico","bookmark":"favicon.ico"},"github-buttons":{"repo":"LRH1993/android_interview","types":["star"],"size":"small"},"expandable-chapters-small":{},"local-video":{},"advanced-emoji":{"embedEmojis":false},"include-codeblock":{"check":false,"edit":true,"fixlang":false,"lang":"","template":"ace","theme":"chrome","unindent":true},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":true,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"edit-link":{"label":"Edit This Page","base":"https://github.com/LRH1993/android_interview/edit/master"},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":true},"anchors":{},"search-plus":{}},"theme":"default","author":"ruheng","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"Android校招面试指南","language":"zh-hans","output.name":"site","links":{"sidebar":{"Home":"http://lruheng.com/"}},"gitbook":"3.2.3","description":"Android面试必备，记录自己的秋招之路"},"file":{"path":"algorithm/LeetCode/Dynamic-Programming/Longest-Increasing-Subsequence.md","mtime":"2017-09-05T07:39:30.000Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2017-10-16T12:05:21.906Z"},"basePath":"../../..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"Longest Increasing Subsequence","level":"5.2.1.3","depth":3,"next":{"title":"Best Time to Buy and Sell Stock","level":"5.2.1.4","depth":3,"path":"algorithm/LeetCode/Dynamic-Programming/stock.md","ref":"algorithm/LeetCode/Dynamic-Programming/stock.md","articles":[]},"previous":{"title":"Longest Common Subsequence","level":"5.2.1.2","depth":3,"path":"algorithm/LeetCode/Dynamic-Programming/Longest-Common-Subsequence.md","ref":"algorithm/LeetCode/Dynamic-Programming/Longest-Common-Subsequence.md","articles":[]},"dir":"ltr"},"config":{"plugins":["-lunr","-search","-livereload","search-plus@^0.0.11","simple-page-toc@^0.1.1","github@^2.0.0","github-buttons@2.1.0","edit-link@^2.0.2","advanced-emoji@^0.2.1","anchors@^0.7.1","include-codeblock@^3.0.2","ace@^0.3.2","emphasize@^1.1.0","katex@^1.1.3","splitter@^0.0.8","tbfed-pagefooter@^0.0.1","expandable-chapters-small@^0.1.7","sectionx@^3.1.0","local-video@^1.0.1","anchor-navigation-ex@0.1.8","favicon@^0.0.2"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"tbfed-pagefooter":{"copyright":"Copyright © ruheng.com 2017","modify_label":"该文件修订时间：","modify_format":"YYYY-MM-DD HH:mm:ss"},"emphasize":{},"ace":{},"github":{"url":"https://github.com/LRH1993/android_interview"},"simple-page-toc":{"maxDepth":3,"skipFirstH1":true},"splitter":{},"katex":{},"fontsettings":{"theme":"white","family":"sans","size":2},"sectionx":{"tag":"b"},"highlight":{},"anchor-navigation-ex":{"isRewritePageTitle":false,"tocLevel1Icon":"fa fa-hand-o-right","tocLevel2Icon":"fa fa-hand-o-right","tocLevel3Icon":"fa fa-hand-o-right"},"favicon":{"shortcut":"favicon.ico","bookmark":"favicon.ico"},"github-buttons":{"repo":"LRH1993/android_interview","types":["star"],"size":"small"},"expandable-chapters-small":{},"local-video":{},"advanced-emoji":{"embedEmojis":false},"include-codeblock":{"check":false,"edit":false,"fixlang":false,"lang":"","template":"default","theme":"chrome","unindent":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":true,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"edit-link":{"label":"Edit This Page","base":"https://github.com/LRH1993/android_interview/edit/master"},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":true},"anchors":{},"search-plus":{}},"theme":"default","author":"ruheng","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"Android校招面试指南","language":"zh-hans","output.name":"site","links":{"sidebar":{"Home":"http://lruheng.com/"}},"gitbook":"3.2.3","description":"Android面试必备，记录自己的秋招之路"},"file":{"path":"algorithm/LeetCode/Dynamic-Programming/Longest-Increasing-Subsequence.md","mtime":"2017-09-05T07:39:30.000Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2017-10-16T13:00:43.989Z"},"basePath":"../../..","book":{"language":""}});
         });
     </script>
 </div>

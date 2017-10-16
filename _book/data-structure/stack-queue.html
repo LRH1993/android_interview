@@ -69,6 +69,10 @@
                 
             
                 
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
                 <link rel="stylesheet" href="../gitbook/gitbook-plugin-fontsettings/website.css">
                 
             
@@ -3726,67 +3730,67 @@ pop  -- &#x8FD4;&#x56DE;&#x5E76;&#x5220;&#x9664;&#x6808;&#x9876;&#x5143;&#x7D20;
 <strong>&#x5165;&#x6808;&#x540E;</strong>&#xFF1A;40&#x5165;&#x6808;&#x4E4B;&#x540E;&#xFF0C;&#x6808;&#x9876;&#x5143;&#x7D20;&#x53D8;&#x6210;40&#x3002;&#x6B64;&#x65F6;&#xFF0C;&#x6808;&#x4E2D;&#x7684;&#x5143;&#x7D20;&#x4F9D;&#x6B21;&#x662F; 40 --&gt; 20 --&gt; 10</p>
 <h3 id="4&#x6808;&#x7684;java&#x5B9E;&#x73B0;"><a name="4&#x6808;&#x7684;java&#x5B9E;&#x73B0;" class="anchor-navigation-ex-anchor" href="#4&#x6808;&#x7684;java&#x5B9E;&#x73B0;"><i class="fa fa-link" aria-hidden="true"></i></a>4.&#x6808;&#x7684;Java&#x5B9E;&#x73B0;</h3>
 <p>JDK&#x5305;&#x4E2D;&#x4E5F;&#x63D0;&#x4F9B;&#x4E86;&quot;&#x6808;&quot;&#x7684;&#x5B9E;&#x73B0;&#xFF0C;&#x5B83;&#x5C31;&#x662F;&#x96C6;&#x5408;&#x6846;&#x67B6;&#x4E2D;&#x7684;Stack&#x7C7B;&#x3002; &#x672C;&#x90E8;&#x5206;&#x4F7F;&#x7528;&#x6570;&#x7EC4;&#x5B9E;&#x73B0;&#x6808;&#xFF0C;&#x80FD;&#x5B58;&#x50A8;&#x4EFB;&#x610F;&#x7C7B;&#x578B;&#x7684;&#x6570;&#x636E;&#x3002;</p>
-<pre><code class="lang-Java">/**
+<pre><code class="lang-Java"><span class="hljs-comment">/**
  * Java : &#x6570;&#x7EC4;&#x5B9E;&#x73B0;&#x7684;&#x6808;&#xFF0C;&#x80FD;&#x5B58;&#x50A8;&#x4EFB;&#x610F;&#x7C7B;&#x578B;&#x7684;&#x6570;&#x636E;
  *
- * @author skywang
- * @date 2013/11/07
- */
-import java.lang.reflect.Array;
+ * <span class="hljs-doctag">@author</span> skywang
+ * <span class="hljs-doctag">@date</span> 2013/11/07
+ */</span>
+<span class="hljs-keyword">import</span> java.lang.reflect.Array;
 
-public class GeneralArrayStack&lt;T&gt; {
+<span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">GeneralArrayStack</span>&lt;<span class="hljs-title">T</span>&gt; </span>{
 
-    private static final int DEFAULT_SIZE = 12;
-    private T[] mArray;
-    private int count;
+    <span class="hljs-keyword">private</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">final</span> <span class="hljs-keyword">int</span> DEFAULT_SIZE = <span class="hljs-number">12</span>;
+    <span class="hljs-keyword">private</span> T[] mArray;
+    <span class="hljs-keyword">private</span> <span class="hljs-keyword">int</span> count;
 
-    public GeneralArrayStack(Class&lt;T&gt; type) {
-        this(type, DEFAULT_SIZE);
+    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-title">GeneralArrayStack</span><span class="hljs-params">(Class&lt;T&gt; type)</span> </span>{
+        <span class="hljs-keyword">this</span>(type, DEFAULT_SIZE);
     }
 
-    public GeneralArrayStack(Class&lt;T&gt; type, int size) {
-        // &#x4E0D;&#x80FD;&#x76F4;&#x63A5;&#x4F7F;&#x7528;mArray = new T[DEFAULT_SIZE];
+    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-title">GeneralArrayStack</span><span class="hljs-params">(Class&lt;T&gt; type, <span class="hljs-keyword">int</span> size)</span> </span>{
+        <span class="hljs-comment">// &#x4E0D;&#x80FD;&#x76F4;&#x63A5;&#x4F7F;&#x7528;mArray = new T[DEFAULT_SIZE];</span>
         mArray = (T[]) Array.newInstance(type, size);
-        count = 0;
+        count = <span class="hljs-number">0</span>;
     }
 
-    // &#x5C06;val&#x6DFB;&#x52A0;&#x5230;&#x6808;&#x4E2D;
-    public void push(T val) {
+    <span class="hljs-comment">// &#x5C06;val&#x6DFB;&#x52A0;&#x5230;&#x6808;&#x4E2D;</span>
+    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">push</span><span class="hljs-params">(T val)</span> </span>{
         mArray[count++] = val;
     }
 
-    // &#x8FD4;&#x56DE;&#x201C;&#x6808;&#x9876;&#x5143;&#x7D20;&#x503C;&#x201D;
-    public T peek() {
-        return mArray[count-1];
+    <span class="hljs-comment">// &#x8FD4;&#x56DE;&#x201C;&#x6808;&#x9876;&#x5143;&#x7D20;&#x503C;&#x201D;</span>
+    <span class="hljs-function"><span class="hljs-keyword">public</span> T <span class="hljs-title">peek</span><span class="hljs-params">()</span> </span>{
+        <span class="hljs-keyword">return</span> mArray[count-<span class="hljs-number">1</span>];
     }
 
-    // &#x8FD4;&#x56DE;&#x201C;&#x6808;&#x9876;&#x5143;&#x7D20;&#x503C;&#x201D;&#xFF0C;&#x5E76;&#x5220;&#x9664;&#x201C;&#x6808;&#x9876;&#x5143;&#x7D20;&#x201D;
-    public T pop() {
-        T ret = mArray[count-1];
+    <span class="hljs-comment">// &#x8FD4;&#x56DE;&#x201C;&#x6808;&#x9876;&#x5143;&#x7D20;&#x503C;&#x201D;&#xFF0C;&#x5E76;&#x5220;&#x9664;&#x201C;&#x6808;&#x9876;&#x5143;&#x7D20;&#x201D;</span>
+    <span class="hljs-function"><span class="hljs-keyword">public</span> T <span class="hljs-title">pop</span><span class="hljs-params">()</span> </span>{
+        T ret = mArray[count-<span class="hljs-number">1</span>];
         count--;
-        return ret;
+        <span class="hljs-keyword">return</span> ret;
     }
 
-    // &#x8FD4;&#x56DE;&#x201C;&#x6808;&#x201D;&#x7684;&#x5927;&#x5C0F;
-    public int size() {
-        return count;
+    <span class="hljs-comment">// &#x8FD4;&#x56DE;&#x201C;&#x6808;&#x201D;&#x7684;&#x5927;&#x5C0F;</span>
+    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">int</span> <span class="hljs-title">size</span><span class="hljs-params">()</span> </span>{
+        <span class="hljs-keyword">return</span> count;
     }
 
-    // &#x8FD4;&#x56DE;&#x201C;&#x6808;&#x201D;&#x662F;&#x5426;&#x4E3A;&#x7A7A;
-    public boolean isEmpty() {
-        return size()==0;
+    <span class="hljs-comment">// &#x8FD4;&#x56DE;&#x201C;&#x6808;&#x201D;&#x662F;&#x5426;&#x4E3A;&#x7A7A;</span>
+    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">boolean</span> <span class="hljs-title">isEmpty</span><span class="hljs-params">()</span> </span>{
+        <span class="hljs-keyword">return</span> size()==<span class="hljs-number">0</span>;
     }
 
-    // &#x6253;&#x5370;&#x201C;&#x6808;&#x201D;
-    public void PrintArrayStack() {
-        if (isEmpty()) {
-            System.out.printf(&quot;stack is Empty\n&quot;);
+    <span class="hljs-comment">// &#x6253;&#x5370;&#x201C;&#x6808;&#x201D;</span>
+    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">PrintArrayStack</span><span class="hljs-params">()</span> </span>{
+        <span class="hljs-keyword">if</span> (isEmpty()) {
+            System.out.printf(<span class="hljs-string">&quot;stack is Empty\n&quot;</span>);
         }
 
-        System.out.printf(&quot;stack size()=%d\n&quot;, size());
+        System.out.printf(<span class="hljs-string">&quot;stack size()=%d\n&quot;</span>, size());
 
-        int i=size()-1;
-        while (i&gt;=0) {
+        <span class="hljs-keyword">int</span> i=size()-<span class="hljs-number">1</span>;
+        <span class="hljs-keyword">while</span> (i&gt;=<span class="hljs-number">0</span>) {
             System.out.println(mArray[i]);
             i--;
         }
@@ -3811,49 +3815,49 @@ public class GeneralArrayStack&lt;T&gt; {
 <strong>&#x5165;&#x961F;&#x5217;&#x540E;</strong>&#xFF1A;40&#x5165;&#x961F;&#x5217;(&#x961F;&#x5C3E;)&#x4E4B;&#x540E;&#x3002;&#x961F;&#x9996;&#x662F;20&#xFF0C;&#x961F;&#x5C3E;&#x662F;40&#x3002;</p>
 <h3 id="4&#x961F;&#x5217;&#x7684;java&#x5B9E;&#x73B0;"><a name="4&#x961F;&#x5217;&#x7684;java&#x5B9E;&#x73B0;" class="anchor-navigation-ex-anchor" href="#4&#x961F;&#x5217;&#x7684;java&#x5B9E;&#x73B0;"><i class="fa fa-link" aria-hidden="true"></i></a>4.&#x961F;&#x5217;&#x7684;Java&#x5B9E;&#x73B0;</h3>
 <p>JDK&#x4E2D;&#x7684;Queue&#x63A5;&#x53E3;&#x5C31;&#x662F;&quot;&#x961F;&#x5217;&quot;&#xFF0C;&#x5B83;&#x7684;&#x5B9E;&#x73B0;&#x7C7B;&#x4E5F;&#x90FD;&#x662F;&#x961F;&#x5217;&#xFF0C;&#x7528;&#x7684;&#x6700;&#x591A;&#x7684;&#x662F;LinkedList&#x3002;&#x672C;&#x90E8;&#x5206;&#x4F7F;&#x7528;&#x6570;&#x7EC4;&#x5B9E;&#x73B0;&#x961F;&#x5217;&#xFF0C;&#x80FD;&#x5B58;&#x50A8;&#x4EFB;&#x610F;&#x7C7B;&#x578B;&#x7684;&#x6570;&#x636E;&#x3002;</p>
-<pre><code class="lang-java">/**
+<pre><code class="lang-java"><span class="hljs-comment">/**
  * Java : &#x6570;&#x7EC4;&#x5B9E;&#x73B0;&#x201C;&#x961F;&#x5217;&#x201D;&#xFF0C;&#x53EA;&#x80FD;&#x5B58;&#x50A8;int&#x6570;&#x636E;&#x3002;
  *
- * @author skywang
- * @date 2013/11/07
- */
-public class ArrayQueue {
+ * <span class="hljs-doctag">@author</span> skywang
+ * <span class="hljs-doctag">@date</span> 2013/11/07
+ */</span>
+<span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">ArrayQueue</span> </span>{
 
-    private int[] mArray;
-    private int mCount;
+    <span class="hljs-keyword">private</span> <span class="hljs-keyword">int</span>[] mArray;
+    <span class="hljs-keyword">private</span> <span class="hljs-keyword">int</span> mCount;
 
-    public ArrayQueue(int sz) {
-        mArray = new int[sz];
-        mCount = 0;
+    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-title">ArrayQueue</span><span class="hljs-params">(<span class="hljs-keyword">int</span> sz)</span> </span>{
+        mArray = <span class="hljs-keyword">new</span> <span class="hljs-keyword">int</span>[sz];
+        mCount = <span class="hljs-number">0</span>;
     }
 
-    // &#x5C06;val&#x6DFB;&#x52A0;&#x5230;&#x961F;&#x5217;&#x7684;&#x672B;&#x5C3E;
-    public void add(int val) {
+    <span class="hljs-comment">// &#x5C06;val&#x6DFB;&#x52A0;&#x5230;&#x961F;&#x5217;&#x7684;&#x672B;&#x5C3E;</span>
+    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">add</span><span class="hljs-params">(<span class="hljs-keyword">int</span> val)</span> </span>{
         mArray[mCount++] = val;
     }
 
-    // &#x8FD4;&#x56DE;&#x201C;&#x961F;&#x5217;&#x5F00;&#x5934;&#x5143;&#x7D20;&#x201D;
-    public int front() {
-        return mArray[0];
+    <span class="hljs-comment">// &#x8FD4;&#x56DE;&#x201C;&#x961F;&#x5217;&#x5F00;&#x5934;&#x5143;&#x7D20;&#x201D;</span>
+    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">int</span> <span class="hljs-title">front</span><span class="hljs-params">()</span> </span>{
+        <span class="hljs-keyword">return</span> mArray[<span class="hljs-number">0</span>];
     }
 
-    // &#x8FD4;&#x56DE;&#x201C;&#x961F;&#x9996;&#x5143;&#x7D20;&#x503C;&#x201D;&#xFF0C;&#x5E76;&#x5220;&#x9664;&#x201C;&#x961F;&#x9996;&#x5143;&#x7D20;&#x201D;
-    public int pop() {
-        int ret = mArray[0];
+    <span class="hljs-comment">// &#x8FD4;&#x56DE;&#x201C;&#x961F;&#x9996;&#x5143;&#x7D20;&#x503C;&#x201D;&#xFF0C;&#x5E76;&#x5220;&#x9664;&#x201C;&#x961F;&#x9996;&#x5143;&#x7D20;&#x201D;</span>
+    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">int</span> <span class="hljs-title">pop</span><span class="hljs-params">()</span> </span>{
+        <span class="hljs-keyword">int</span> ret = mArray[<span class="hljs-number">0</span>];
         mCount--;
-        for (int i=1; i&lt;=mCount; i++)
-            mArray[i-1] = mArray[i];
-        return ret;
+        <span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> i=<span class="hljs-number">1</span>; i&lt;=mCount; i++)
+            mArray[i-<span class="hljs-number">1</span>] = mArray[i];
+        <span class="hljs-keyword">return</span> ret;
     }
 
-    // &#x8FD4;&#x56DE;&#x201C;&#x6808;&#x201D;&#x7684;&#x5927;&#x5C0F;
-    public int size() {
-        return mCount;
+    <span class="hljs-comment">// &#x8FD4;&#x56DE;&#x201C;&#x6808;&#x201D;&#x7684;&#x5927;&#x5C0F;</span>
+    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">int</span> <span class="hljs-title">size</span><span class="hljs-params">()</span> </span>{
+        <span class="hljs-keyword">return</span> mCount;
     }
 
-    // &#x8FD4;&#x56DE;&#x201C;&#x6808;&#x201D;&#x662F;&#x5426;&#x4E3A;&#x7A7A;
-    public boolean isEmpty() {
-        return size()==0;
+    <span class="hljs-comment">// &#x8FD4;&#x56DE;&#x201C;&#x6808;&#x201D;&#x662F;&#x5426;&#x4E3A;&#x7A7A;</span>
+    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">boolean</span> <span class="hljs-title">isEmpty</span><span class="hljs-params">()</span> </span>{
+        <span class="hljs-keyword">return</span> size()==<span class="hljs-number">0</span>;
     }
 }
 </code></pre>
@@ -3902,7 +3906,7 @@ public class ArrayQueue {
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"栈和队","level":"4.2","depth":1,"next":{"title":"树","level":"4.3","depth":1,"path":"data-structure/tree.md","ref":"data-structure/tree.md","articles":[{"title":"树的基础","level":"4.3.1","depth":2,"path":"data-structure/tree/tree-introduction.md","ref":"data-structure/tree/tree-introduction.md","articles":[]},{"title":"其他常见的树","level":"4.3.2","depth":2,"path":"data-structure/tree/other-tree.md","ref":"data-structure/tree/other-tree.md","articles":[]},{"title":"并查集","level":"4.3.3","depth":2,"path":"data-structure/tree/Union-Find.md","ref":"data-structure/tree/Union-Find.md","articles":[]},{"title":"B-树，B+树，B*树","level":"4.3.4","depth":2,"path":"data-structure/tree/b-tree.md","ref":"data-structure/tree/b-tree.md","articles":[]}]},"previous":{"title":"线性表","level":"4.1","depth":1,"path":"data-structure/linear-list.md","ref":"data-structure/linear-list.md","articles":[]},"dir":"ltr"},"config":{"plugins":["-lunr","-search","-highlight","-livereload","search-plus@^0.0.11","simple-page-toc@^0.1.1","github@^2.0.0","github-buttons@2.1.0","edit-link@^2.0.2","advanced-emoji@^0.2.1","anchors@^0.7.1","include-codeblock@^3.0.2","ace@^0.3.2","emphasize@^1.1.0","katex@^1.1.3","splitter@^0.0.8","tbfed-pagefooter@^0.0.1","expandable-chapters-small@^0.1.7","sectionx@^3.1.0","local-video@^1.0.1","anchor-navigation-ex@0.1.8","favicon@^0.0.2"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"tbfed-pagefooter":{"copyright":"Copyright © ruheng.com 2017","modify_label":"该文件修订时间：","modify_format":"YYYY-MM-DD HH:mm:ss"},"emphasize":{},"ace":{},"github":{"url":"https://github.com/LRH1993/android_interview"},"simple-page-toc":{"maxDepth":3,"skipFirstH1":true},"splitter":{},"katex":{},"fontsettings":{"theme":"white","family":"sans","size":2},"sectionx":{"tag":"b"},"anchor-navigation-ex":{"isRewritePageTitle":false,"tocLevel1Icon":"fa fa-hand-o-right","tocLevel2Icon":"fa fa-hand-o-right","tocLevel3Icon":"fa fa-hand-o-right"},"favicon":{"shortcut":"favicon.ico","bookmark":"favicon.ico"},"github-buttons":{"repo":"LRH1993/android_interview","types":["star"],"size":"small"},"expandable-chapters-small":{},"local-video":{},"advanced-emoji":{"embedEmojis":false},"include-codeblock":{"check":false,"edit":true,"fixlang":false,"lang":"","template":"ace","theme":"chrome","unindent":true},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":true,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"edit-link":{"label":"Edit This Page","base":"https://github.com/LRH1993/android_interview/edit/master"},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":true},"anchors":{},"search-plus":{}},"theme":"default","author":"ruheng","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"Android校招面试指南","language":"zh-hans","output.name":"site","links":{"sidebar":{"Home":"http://lruheng.com/"}},"gitbook":"3.2.3","description":"Android面试必备，记录自己的秋招之路"},"file":{"path":"data-structure/stack-queue.md","mtime":"2017-09-03T06:54:43.000Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2017-10-16T12:05:21.906Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"栈和队","level":"4.2","depth":1,"next":{"title":"树","level":"4.3","depth":1,"path":"data-structure/tree.md","ref":"data-structure/tree.md","articles":[{"title":"树的基础","level":"4.3.1","depth":2,"path":"data-structure/tree/tree-introduction.md","ref":"data-structure/tree/tree-introduction.md","articles":[]},{"title":"其他常见的树","level":"4.3.2","depth":2,"path":"data-structure/tree/other-tree.md","ref":"data-structure/tree/other-tree.md","articles":[]},{"title":"并查集","level":"4.3.3","depth":2,"path":"data-structure/tree/Union-Find.md","ref":"data-structure/tree/Union-Find.md","articles":[]},{"title":"B-树，B+树，B*树","level":"4.3.4","depth":2,"path":"data-structure/tree/b-tree.md","ref":"data-structure/tree/b-tree.md","articles":[]}]},"previous":{"title":"线性表","level":"4.1","depth":1,"path":"data-structure/linear-list.md","ref":"data-structure/linear-list.md","articles":[]},"dir":"ltr"},"config":{"plugins":["-lunr","-search","-livereload","search-plus@^0.0.11","simple-page-toc@^0.1.1","github@^2.0.0","github-buttons@2.1.0","edit-link@^2.0.2","advanced-emoji@^0.2.1","anchors@^0.7.1","include-codeblock@^3.0.2","ace@^0.3.2","emphasize@^1.1.0","katex@^1.1.3","splitter@^0.0.8","tbfed-pagefooter@^0.0.1","expandable-chapters-small@^0.1.7","sectionx@^3.1.0","local-video@^1.0.1","anchor-navigation-ex@0.1.8","favicon@^0.0.2"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"tbfed-pagefooter":{"copyright":"Copyright © ruheng.com 2017","modify_label":"该文件修订时间：","modify_format":"YYYY-MM-DD HH:mm:ss"},"emphasize":{},"ace":{},"github":{"url":"https://github.com/LRH1993/android_interview"},"simple-page-toc":{"maxDepth":3,"skipFirstH1":true},"splitter":{},"katex":{},"fontsettings":{"theme":"white","family":"sans","size":2},"sectionx":{"tag":"b"},"highlight":{},"anchor-navigation-ex":{"isRewritePageTitle":false,"tocLevel1Icon":"fa fa-hand-o-right","tocLevel2Icon":"fa fa-hand-o-right","tocLevel3Icon":"fa fa-hand-o-right"},"favicon":{"shortcut":"favicon.ico","bookmark":"favicon.ico"},"github-buttons":{"repo":"LRH1993/android_interview","types":["star"],"size":"small"},"expandable-chapters-small":{},"local-video":{},"advanced-emoji":{"embedEmojis":false},"include-codeblock":{"check":false,"edit":false,"fixlang":false,"lang":"","template":"default","theme":"chrome","unindent":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":true,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"edit-link":{"label":"Edit This Page","base":"https://github.com/LRH1993/android_interview/edit/master"},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":true},"anchors":{},"search-plus":{}},"theme":"default","author":"ruheng","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"Android校招面试指南","language":"zh-hans","output.name":"site","links":{"sidebar":{"Home":"http://lruheng.com/"}},"gitbook":"3.2.3","description":"Android面试必备，记录自己的秋招之路"},"file":{"path":"data-structure/stack-queue.md","mtime":"2017-09-03T06:54:43.000Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2017-10-16T13:00:43.989Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>

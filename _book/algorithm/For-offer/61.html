@@ -69,6 +69,10 @@
                 
             
                 
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
                 <link rel="stylesheet" href="../../gitbook/gitbook-plugin-fontsettings/website.css">
                 
             
@@ -3715,285 +3719,285 @@
 <p>&#x5F53;&#x9700;&#x8981;&#x628A;&#x4E00;&#x4E2A;&#x6570;&#x636E;&#x63D2;&#x5165;&#x5230;&#x6700;&#x5927;&#x5806;&#x4E2D;&#xFF0C;&#x4F46;&#x8FD9;&#x4E2A;&#x6570;&#x636E;&#x5C0F;&#x4E8E;&#x6700;&#x5C0F;&#x5806;&#x91CC;&#x7684;&#x4E00;&#x4E9B;&#x6570;&#x636E;&#x65F6;&#xFF0C;&#x8FD9;&#x4E2A;&#x60C5;&#x5F62;&#x548C;&#x524D;&#x9762;&#x7C7B;&#x4F3C;&#x3002;</p>
 <h2 id="&#x4E09;&#x3001;&#x89E3;&#x9898;&#x4EE3;&#x7801;"><a name="&#x4E09;&#x3001;&#x89E3;&#x9898;&#x4EE3;&#x7801;" class="anchor-navigation-ex-anchor" href="#&#x4E09;&#x3001;&#x89E3;&#x9898;&#x4EE3;&#x7801;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x4E09;&#x3001;&#x89E3;&#x9898;&#x4EE3;&#x7801;</h2>
 <pre><code class="lang-Java">
-public class Test {
-    private static class Heap&lt;T&gt; {
-        // &#x5806;&#x4E2D;&#x5143;&#x7D20;&#x5B58;&#x653E;&#x7684;&#x96C6;&#x5408;
-        private List&lt;T&gt; data;
-        // &#x6BD4;&#x8F83;&#x5668;
-        private Comparator&lt;T&gt; cmp;
+<span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Test</span> </span>{
+    <span class="hljs-keyword">private</span> <span class="hljs-keyword">static</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Heap</span>&lt;<span class="hljs-title">T</span>&gt; </span>{
+        <span class="hljs-comment">// &#x5806;&#x4E2D;&#x5143;&#x7D20;&#x5B58;&#x653E;&#x7684;&#x96C6;&#x5408;</span>
+        <span class="hljs-keyword">private</span> List&lt;T&gt; data;
+        <span class="hljs-comment">// &#x6BD4;&#x8F83;&#x5668;</span>
+        <span class="hljs-keyword">private</span> Comparator&lt;T&gt; cmp;
 
-        /**
+        <span class="hljs-comment">/**
          * &#x6784;&#x9020;&#x51FD;&#x6570;
          *
-         * @param cmp &#x6BD4;&#x8F83;&#x5668;&#x5BF9;&#x8C61;
-         */
-        public Heap(Comparator&lt;T&gt; cmp) {
-            this.cmp = cmp;
-            this.data = new ArrayList&lt;&gt;(64);
+         * <span class="hljs-doctag">@param</span> cmp &#x6BD4;&#x8F83;&#x5668;&#x5BF9;&#x8C61;
+         */</span>
+        <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-title">Heap</span><span class="hljs-params">(Comparator&lt;T&gt; cmp)</span> </span>{
+            <span class="hljs-keyword">this</span>.cmp = cmp;
+            <span class="hljs-keyword">this</span>.data = <span class="hljs-keyword">new</span> ArrayList&lt;&gt;(<span class="hljs-number">64</span>);
         }
 
-        /**
+        <span class="hljs-comment">/**
          * &#x5411;&#x4E0A;&#x8C03;&#x6574;&#x5806;
          *
-         * @param idx &#x88AB;&#x4E0A;&#x79FB;&#x5143;&#x7D20;&#x7684;&#x8D77;&#x59CB;&#x4F4D;&#x7F6E;
-         */
-        public void shiftUp(int idx) {
-            // &#x68C0;&#x67E5;&#x662F;&#x4F4D;&#x7F6E;&#x662F;&#x5426;&#x6B63;&#x786E;
-            if (idx &lt; 0 || idx &gt;= data.size()) {
-                throw new IllegalArgumentException(idx + &quot;&quot;);
+         * <span class="hljs-doctag">@param</span> idx &#x88AB;&#x4E0A;&#x79FB;&#x5143;&#x7D20;&#x7684;&#x8D77;&#x59CB;&#x4F4D;&#x7F6E;
+         */</span>
+        <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">shiftUp</span><span class="hljs-params">(<span class="hljs-keyword">int</span> idx)</span> </span>{
+            <span class="hljs-comment">// &#x68C0;&#x67E5;&#x662F;&#x4F4D;&#x7F6E;&#x662F;&#x5426;&#x6B63;&#x786E;</span>
+            <span class="hljs-keyword">if</span> (idx &lt; <span class="hljs-number">0</span> || idx &gt;= data.size()) {
+                <span class="hljs-keyword">throw</span> <span class="hljs-keyword">new</span> IllegalArgumentException(idx + <span class="hljs-string">&quot;&quot;</span>);
             }
 
-            // &#x83B7;&#x53D6;&#x5F00;&#x59CB;&#x8C03;&#x6574;&#x7684;&#x5143;&#x7D20;&#x5BF9;&#x8C61;
+            <span class="hljs-comment">// &#x83B7;&#x53D6;&#x5F00;&#x59CB;&#x8C03;&#x6574;&#x7684;&#x5143;&#x7D20;&#x5BF9;&#x8C61;</span>
             T intent = data.get(idx);
 
-            // &#x5982;&#x679C;&#x4E0D;&#x662F;&#x6839;&#x5143;&#x7D20;&#xFF0C;&#x5219;&#x9700;&#x8981;&#x4E0A;&#x79FB;
-            while (idx &gt; 0) {
-                // &#x627E;&#x7236;&#x5143;&#x7D20;&#x5BF9;&#x8C61;&#x7684;&#x4F4D;&#x7F6E;
-                int parentIdx = (idx - 1) / 2;
-                // &#x83B7;&#x53D6;&#x7236;&#x5143;&#x7D20;&#x5BF9;&#x8C61;
+            <span class="hljs-comment">// &#x5982;&#x679C;&#x4E0D;&#x662F;&#x6839;&#x5143;&#x7D20;&#xFF0C;&#x5219;&#x9700;&#x8981;&#x4E0A;&#x79FB;</span>
+            <span class="hljs-keyword">while</span> (idx &gt; <span class="hljs-number">0</span>) {
+                <span class="hljs-comment">// &#x627E;&#x7236;&#x5143;&#x7D20;&#x5BF9;&#x8C61;&#x7684;&#x4F4D;&#x7F6E;</span>
+                <span class="hljs-keyword">int</span> parentIdx = (idx - <span class="hljs-number">1</span>) / <span class="hljs-number">2</span>;
+                <span class="hljs-comment">// &#x83B7;&#x53D6;&#x7236;&#x5143;&#x7D20;&#x5BF9;&#x8C61;</span>
                 T parent = data.get(parentIdx);
-                //&#x4E0A;&#x79FB;&#x7684;&#x6761;&#x4EF6;&#xFF0C;&#x5B50;&#x8282;&#x70B9;&#x6BD4;&#x7236;&#x8282;&#x70B9;&#x5927;&#xFF0C;&#x6B64;&#x5904;&#x5B9A;&#x4E49;&#x7684;&#x5927;&#x662F;&#x4EE5;&#x6BD4;&#x8F83;&#x5668;&#x8FD4;&#x56DE;&#x503C;&#x4E3A;&#x51C6;
-                if (cmp.compare(intent, parent) &gt; 0) {
-                    // &#x5C06;&#x7236;&#x8282;&#x70B9;&#x5411;&#x4E0B;&#x653E;
+                <span class="hljs-comment">//&#x4E0A;&#x79FB;&#x7684;&#x6761;&#x4EF6;&#xFF0C;&#x5B50;&#x8282;&#x70B9;&#x6BD4;&#x7236;&#x8282;&#x70B9;&#x5927;&#xFF0C;&#x6B64;&#x5904;&#x5B9A;&#x4E49;&#x7684;&#x5927;&#x662F;&#x4EE5;&#x6BD4;&#x8F83;&#x5668;&#x8FD4;&#x56DE;&#x503C;&#x4E3A;&#x51C6;</span>
+                <span class="hljs-keyword">if</span> (cmp.compare(intent, parent) &gt; <span class="hljs-number">0</span>) {
+                    <span class="hljs-comment">// &#x5C06;&#x7236;&#x8282;&#x70B9;&#x5411;&#x4E0B;&#x653E;</span>
                     data.set(idx, parent);
                     idx = parentIdx;
-                    // &#x8BB0;&#x5F55;&#x7236;&#x8282;&#x70B9;&#x4E0B;&#x653E;&#x7684;&#x4F4D;&#x7F6E;
+                    <span class="hljs-comment">// &#x8BB0;&#x5F55;&#x7236;&#x8282;&#x70B9;&#x4E0B;&#x653E;&#x7684;&#x4F4D;&#x7F6E;</span>
                 }
-                // &#x5B50;&#x8282;&#x70B9;&#x4E0D;&#x6BD4;&#x7236;&#x8282;&#x70B9;&#x5927;&#xFF0C;&#x8BF4;&#x660E;&#x7236;&#x5B50;&#x8DEF;&#x5F84;&#x5DF2;&#x7ECF;&#x6309;&#x4ECE;&#x5927;&#x5230;&#x5C0F;&#x6392;&#x597D;&#x987A;&#x5E8F;&#x4E86;&#xFF0C;&#x4E0D;&#x9700;&#x8981;&#x8C03;&#x6574;&#x4E86;
-                else {
-                    break;
+                <span class="hljs-comment">// &#x5B50;&#x8282;&#x70B9;&#x4E0D;&#x6BD4;&#x7236;&#x8282;&#x70B9;&#x5927;&#xFF0C;&#x8BF4;&#x660E;&#x7236;&#x5B50;&#x8DEF;&#x5F84;&#x5DF2;&#x7ECF;&#x6309;&#x4ECE;&#x5927;&#x5230;&#x5C0F;&#x6392;&#x597D;&#x987A;&#x5E8F;&#x4E86;&#xFF0C;&#x4E0D;&#x9700;&#x8981;&#x8C03;&#x6574;&#x4E86;</span>
+                <span class="hljs-keyword">else</span> {
+                    <span class="hljs-keyword">break</span>;
                 }
             }
 
-            // index&#x6B64;&#x65F6;&#x8BB0;&#x5F55;&#x662F;&#x7684;&#x6700;&#x540E;&#x4E00;&#x4E2A;&#x88AB;&#x4E0B;&#x653E;&#x7684;&#x7236;&#x8282;&#x70B9;&#x7684;&#x4F4D;&#x7F6E;&#xFF08;&#x4E5F;&#x53EF;&#x80FD;&#x662F;&#x81EA;&#x8EAB;&#xFF09;&#xFF0C;
-            // &#x6240;&#x4EE5;&#x5C06;&#x6700;&#x5F00;&#x59CB;&#x7684;&#x8C03;&#x6574;&#x7684;&#x5143;&#x7D20;&#x503C;&#x653E;&#x5165;index&#x4F4D;&#x7F6E;&#x5373;&#x53EF;
+            <span class="hljs-comment">// index&#x6B64;&#x65F6;&#x8BB0;&#x5F55;&#x662F;&#x7684;&#x6700;&#x540E;&#x4E00;&#x4E2A;&#x88AB;&#x4E0B;&#x653E;&#x7684;&#x7236;&#x8282;&#x70B9;&#x7684;&#x4F4D;&#x7F6E;&#xFF08;&#x4E5F;&#x53EF;&#x80FD;&#x662F;&#x81EA;&#x8EAB;&#xFF09;&#xFF0C;</span>
+            <span class="hljs-comment">// &#x6240;&#x4EE5;&#x5C06;&#x6700;&#x5F00;&#x59CB;&#x7684;&#x8C03;&#x6574;&#x7684;&#x5143;&#x7D20;&#x503C;&#x653E;&#x5165;index&#x4F4D;&#x7F6E;&#x5373;&#x53EF;</span>
             data.set(idx, intent);
         }
 
-        /**
+        <span class="hljs-comment">/**
          * &#x5411;&#x4E0B;&#x8C03;&#x6574;&#x5806;
          *
-         * @param idx &#x88AB;&#x4E0B;&#x79FB;&#x7684;&#x5143;&#x7D20;&#x7684;&#x8D77;&#x59CB;&#x4F4D;&#x7F6E;
-         */
-        public void shiftDown(int idx) {
-            // &#x68C0;&#x67E5;&#x662F;&#x4F4D;&#x7F6E;&#x662F;&#x5426;&#x6B63;&#x786E;
-            if (idx &lt; 0 || idx &gt;= data.size()) {
-                throw new IllegalArgumentException(idx + &quot;&quot;);
+         * <span class="hljs-doctag">@param</span> idx &#x88AB;&#x4E0B;&#x79FB;&#x7684;&#x5143;&#x7D20;&#x7684;&#x8D77;&#x59CB;&#x4F4D;&#x7F6E;
+         */</span>
+        <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">shiftDown</span><span class="hljs-params">(<span class="hljs-keyword">int</span> idx)</span> </span>{
+            <span class="hljs-comment">// &#x68C0;&#x67E5;&#x662F;&#x4F4D;&#x7F6E;&#x662F;&#x5426;&#x6B63;&#x786E;</span>
+            <span class="hljs-keyword">if</span> (idx &lt; <span class="hljs-number">0</span> || idx &gt;= data.size()) {
+                <span class="hljs-keyword">throw</span> <span class="hljs-keyword">new</span> IllegalArgumentException(idx + <span class="hljs-string">&quot;&quot;</span>);
             }
 
-            // &#x83B7;&#x53D6;&#x5F00;&#x59CB;&#x8C03;&#x6574;&#x7684;&#x5143;&#x7D20;&#x5BF9;&#x8C61;
+            <span class="hljs-comment">// &#x83B7;&#x53D6;&#x5F00;&#x59CB;&#x8C03;&#x6574;&#x7684;&#x5143;&#x7D20;&#x5BF9;&#x8C61;</span>
             T intent = data.get(idx);
-            // &#x83B7;&#x53D6;&#x5F00;&#x59CB;&#x8C03;&#x6574;&#x7684;&#x5143;&#x7D20;&#x5BF9;&#x8C61;&#x7684;&#x5DE6;&#x5B50;&#x7ED3;&#x70B9;&#x7684;&#x5143;&#x7D20;&#x4F4D;&#x7F6E;
-            int leftIdx = idx * 2 + 1;
-            // &#x5982;&#x679C;&#x6709;&#x5DE6;&#x5B50;&#x7ED3;&#x70B9;
-            while (leftIdx &lt; data.size()) {
-                // &#x53D6;&#x5DE6;&#x5B50;&#x7ED3;&#x70B9;&#x7684;&#x5143;&#x7D20;&#x5BF9;&#x8C61;&#xFF0C;&#x5E76;&#x4E14;&#x5047;&#x5B9A;&#x5176;&#x4E3A;&#x4E24;&#x4E2A;&#x5B50;&#x7ED3;&#x70B9;&#x4E2D;&#x6700;&#x5927;&#x7684;
+            <span class="hljs-comment">// &#x83B7;&#x53D6;&#x5F00;&#x59CB;&#x8C03;&#x6574;&#x7684;&#x5143;&#x7D20;&#x5BF9;&#x8C61;&#x7684;&#x5DE6;&#x5B50;&#x7ED3;&#x70B9;&#x7684;&#x5143;&#x7D20;&#x4F4D;&#x7F6E;</span>
+            <span class="hljs-keyword">int</span> leftIdx = idx * <span class="hljs-number">2</span> + <span class="hljs-number">1</span>;
+            <span class="hljs-comment">// &#x5982;&#x679C;&#x6709;&#x5DE6;&#x5B50;&#x7ED3;&#x70B9;</span>
+            <span class="hljs-keyword">while</span> (leftIdx &lt; data.size()) {
+                <span class="hljs-comment">// &#x53D6;&#x5DE6;&#x5B50;&#x7ED3;&#x70B9;&#x7684;&#x5143;&#x7D20;&#x5BF9;&#x8C61;&#xFF0C;&#x5E76;&#x4E14;&#x5047;&#x5B9A;&#x5176;&#x4E3A;&#x4E24;&#x4E2A;&#x5B50;&#x7ED3;&#x70B9;&#x4E2D;&#x6700;&#x5927;&#x7684;</span>
                 T maxChild = data.get(leftIdx);
-                // &#x4E24;&#x4E2A;&#x5B50;&#x8282;&#x70B9;&#x4E2D;&#x6700;&#x5927;&#x8282;&#x70B9;&#x5143;&#x7D20;&#x7684;&#x4F4D;&#x7F6E;&#xFF0C;&#x5047;&#x5B9A;&#x5F00;&#x59CB;&#x65F6;&#x4E3A;&#x5DE6;&#x5B50;&#x7ED3;&#x70B9;&#x7684;&#x4F4D;&#x7F6E;
-                int maxIdx = leftIdx;
+                <span class="hljs-comment">// &#x4E24;&#x4E2A;&#x5B50;&#x8282;&#x70B9;&#x4E2D;&#x6700;&#x5927;&#x8282;&#x70B9;&#x5143;&#x7D20;&#x7684;&#x4F4D;&#x7F6E;&#xFF0C;&#x5047;&#x5B9A;&#x5F00;&#x59CB;&#x65F6;&#x4E3A;&#x5DE6;&#x5B50;&#x7ED3;&#x70B9;&#x7684;&#x4F4D;&#x7F6E;</span>
+                <span class="hljs-keyword">int</span> maxIdx = leftIdx;
 
-                // &#x83B7;&#x53D6;&#x53F3;&#x5B50;&#x7ED3;&#x70B9;&#x7684;&#x4F4D;&#x7F6E;
-                int rightIdx = leftIdx + 1;
-                // &#x5982;&#x679C;&#x6709;&#x53F3;&#x5B50;&#x7ED3;&#x70B9;
-                if (rightIdx &lt; data.size()) {
+                <span class="hljs-comment">// &#x83B7;&#x53D6;&#x53F3;&#x5B50;&#x7ED3;&#x70B9;&#x7684;&#x4F4D;&#x7F6E;</span>
+                <span class="hljs-keyword">int</span> rightIdx = leftIdx + <span class="hljs-number">1</span>;
+                <span class="hljs-comment">// &#x5982;&#x679C;&#x6709;&#x53F3;&#x5B50;&#x7ED3;&#x70B9;</span>
+                <span class="hljs-keyword">if</span> (rightIdx &lt; data.size()) {
                     T rightChild = data.get(rightIdx);
-                    // &#x627E;&#x51FA;&#x4E24;&#x4E2A;&#x5B50;&#x8282;&#x70B9;&#x4E2D;&#x7684;&#x6700;&#x5927;&#x5B50;&#x7ED3;&#x70B9;
-                    if (cmp.compare(rightChild, maxChild) &gt; 0) {
+                    <span class="hljs-comment">// &#x627E;&#x51FA;&#x4E24;&#x4E2A;&#x5B50;&#x8282;&#x70B9;&#x4E2D;&#x7684;&#x6700;&#x5927;&#x5B50;&#x7ED3;&#x70B9;</span>
+                    <span class="hljs-keyword">if</span> (cmp.compare(rightChild, maxChild) &gt; <span class="hljs-number">0</span>) {
                         maxChild = rightChild;
                         maxIdx = rightIdx;
                     }
                 }
 
-                // &#x5982;&#x679C;&#x6700;&#x5927;&#x5B50;&#x8282;&#x70B9;&#x6BD4;&#x7236;&#x8282;&#x70B9;&#x5927;&#xFF0C;&#x5219;&#x9700;&#x8981;&#x5411;&#x4E0B;&#x8C03;&#x6574;
-                if (cmp.compare(maxChild, intent) &gt; 0) {
-                    // &#x5C06;&#x8F83;&#x5927;&#x7684;&#x5B50;&#x8282;&#x70B9;&#x5411;&#x4E0A;&#x79FB;
+                <span class="hljs-comment">// &#x5982;&#x679C;&#x6700;&#x5927;&#x5B50;&#x8282;&#x70B9;&#x6BD4;&#x7236;&#x8282;&#x70B9;&#x5927;&#xFF0C;&#x5219;&#x9700;&#x8981;&#x5411;&#x4E0B;&#x8C03;&#x6574;</span>
+                <span class="hljs-keyword">if</span> (cmp.compare(maxChild, intent) &gt; <span class="hljs-number">0</span>) {
+                    <span class="hljs-comment">// &#x5C06;&#x8F83;&#x5927;&#x7684;&#x5B50;&#x8282;&#x70B9;&#x5411;&#x4E0A;&#x79FB;</span>
                     data.set(idx, maxChild);
-                    // &#x8BB0;&#x5F55;&#x4E0A;&#x79FB;&#x8282;&#x70B9;&#x7684;&#x4F4D;&#x7F6E;
+                    <span class="hljs-comment">// &#x8BB0;&#x5F55;&#x4E0A;&#x79FB;&#x8282;&#x70B9;&#x7684;&#x4F4D;&#x7F6E;</span>
                     idx = maxIdx;
-                    // &#x627E;&#x5230;&#x4E0A;&#x79FB;&#x8282;&#x70B9;&#x7684;&#x5DE6;&#x5B50;&#x8282;&#x70B9;&#x7684;&#x4F4D;&#x7F6E;
-                    leftIdx = 2 * idx + 1;
+                    <span class="hljs-comment">// &#x627E;&#x5230;&#x4E0A;&#x79FB;&#x8282;&#x70B9;&#x7684;&#x5DE6;&#x5B50;&#x8282;&#x70B9;&#x7684;&#x4F4D;&#x7F6E;</span>
+                    leftIdx = <span class="hljs-number">2</span> * idx + <span class="hljs-number">1</span>;
                 }
-                // &#x6700;&#x5927;&#x5B50;&#x8282;&#x70B9;&#x4E0D;&#x6BD4;&#x7236;&#x8282;&#x70B9;&#x5927;&#xFF0C;&#x8BF4;&#x660E;&#x7236;&#x5B50;&#x8DEF;&#x5F84;&#x5DF2;&#x7ECF;&#x6309;&#x4ECE;&#x5927;&#x5230;&#x5C0F;&#x6392;&#x597D;&#x987A;&#x5E8F;&#x4E86;&#xFF0C;&#x4E0D;&#x9700;&#x8981;&#x8C03;&#x6574;&#x4E86;
-                else {
-                    break;
+                <span class="hljs-comment">// &#x6700;&#x5927;&#x5B50;&#x8282;&#x70B9;&#x4E0D;&#x6BD4;&#x7236;&#x8282;&#x70B9;&#x5927;&#xFF0C;&#x8BF4;&#x660E;&#x7236;&#x5B50;&#x8DEF;&#x5F84;&#x5DF2;&#x7ECF;&#x6309;&#x4ECE;&#x5927;&#x5230;&#x5C0F;&#x6392;&#x597D;&#x987A;&#x5E8F;&#x4E86;&#xFF0C;&#x4E0D;&#x9700;&#x8981;&#x8C03;&#x6574;&#x4E86;</span>
+                <span class="hljs-keyword">else</span> {
+                    <span class="hljs-keyword">break</span>;
                 }
 
             }
-            // index&#x6B64;&#x65F6;&#x8BB0;&#x5F55;&#x662F;&#x7684;&#x6700;&#x540E;&#x4E00;&#x4E2A;&#x88AB;&#x4E0A;&#x79FB;&#x7684;&#x5B50;&#x8282;&#x70B9;&#x7684;&#x4F4D;&#x7F6E;&#xFF08;&#x4E5F;&#x53EF;&#x80FD;&#x662F;&#x81EA;&#x8EAB;&#xFF09;&#xFF0C;
-            // &#x6240;&#x4EE5;&#x5C06;&#x6700;&#x5F00;&#x59CB;&#x7684;&#x8C03;&#x6574;&#x7684;&#x5143;&#x7D20;&#x503C;&#x653E;&#x5165;index&#x4F4D;&#x7F6E;&#x5373;&#x53EF;
+            <span class="hljs-comment">// index&#x6B64;&#x65F6;&#x8BB0;&#x5F55;&#x662F;&#x7684;&#x6700;&#x540E;&#x4E00;&#x4E2A;&#x88AB;&#x4E0A;&#x79FB;&#x7684;&#x5B50;&#x8282;&#x70B9;&#x7684;&#x4F4D;&#x7F6E;&#xFF08;&#x4E5F;&#x53EF;&#x80FD;&#x662F;&#x81EA;&#x8EAB;&#xFF09;&#xFF0C;</span>
+            <span class="hljs-comment">// &#x6240;&#x4EE5;&#x5C06;&#x6700;&#x5F00;&#x59CB;&#x7684;&#x8C03;&#x6574;&#x7684;&#x5143;&#x7D20;&#x503C;&#x653E;&#x5165;index&#x4F4D;&#x7F6E;&#x5373;&#x53EF;</span>
             data.set(idx, intent);
         }
 
-        /**
+        <span class="hljs-comment">/**
          * &#x6DFB;&#x52A0;&#x4E00;&#x4E2A;&#x5143;&#x7D20;
          *
-         * @param item &#x6DFB;&#x52A0;&#x7684;&#x5143;&#x7D20;
-         */
-        public void add(T item) {
-            // &#x5C06;&#x5143;&#x7D20;&#x6DFB;&#x52A0;&#x5230;&#x6700;&#x540E;
+         * <span class="hljs-doctag">@param</span> item &#x6DFB;&#x52A0;&#x7684;&#x5143;&#x7D20;
+         */</span>
+        <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">add</span><span class="hljs-params">(T item)</span> </span>{
+            <span class="hljs-comment">// &#x5C06;&#x5143;&#x7D20;&#x6DFB;&#x52A0;&#x5230;&#x6700;&#x540E;</span>
             data.add(item);
-            // &#x4E0A;&#x79FB;&#xFF0C;&#x4EE5;&#x5B8C;&#x6210;&#x91CD;&#x6784;
-            shiftUp(data.size() - 1);
+            <span class="hljs-comment">// &#x4E0A;&#x79FB;&#xFF0C;&#x4EE5;&#x5B8C;&#x6210;&#x91CD;&#x6784;</span>
+            shiftUp(data.size() - <span class="hljs-number">1</span>);
         }
 
-        /**
+        <span class="hljs-comment">/**
          * &#x5220;&#x9664;&#x5806;&#x9876;&#x7ED3;&#x70B9;
          *
-         * @return &#x5806;&#x9876;&#x7ED3;&#x70B9;
-         */
-        public T deleteTop() {
-            // &#x5982;&#x679C;&#x5806;&#x5DF2;&#x7ECF;&#x4E3A;&#x7A7A;&#xFF0C;&#x5C31;&#x629B;&#x51FA;&#x5F02;&#x5E38;
-            if (data.isEmpty()) {
-                throw new RuntimeException(&quot;The heap is empty.&quot;);
+         * <span class="hljs-doctag">@return</span> &#x5806;&#x9876;&#x7ED3;&#x70B9;
+         */</span>
+        <span class="hljs-function"><span class="hljs-keyword">public</span> T <span class="hljs-title">deleteTop</span><span class="hljs-params">()</span> </span>{
+            <span class="hljs-comment">// &#x5982;&#x679C;&#x5806;&#x5DF2;&#x7ECF;&#x4E3A;&#x7A7A;&#xFF0C;&#x5C31;&#x629B;&#x51FA;&#x5F02;&#x5E38;</span>
+            <span class="hljs-keyword">if</span> (data.isEmpty()) {
+                <span class="hljs-keyword">throw</span> <span class="hljs-keyword">new</span> RuntimeException(<span class="hljs-string">&quot;The heap is empty.&quot;</span>);
             }
 
-            // &#x83B7;&#x53D6;&#x5806;&#x9876;&#x5143;&#x7D20;
-            T first = data.get(0);
-            // &#x5220;&#x9664;&#x6700;&#x540E;&#x4E00;&#x4E2A;&#x5143;&#x7D20;
-            T last = data.remove(data.size() - 1);
+            <span class="hljs-comment">// &#x83B7;&#x53D6;&#x5806;&#x9876;&#x5143;&#x7D20;</span>
+            T first = data.get(<span class="hljs-number">0</span>);
+            <span class="hljs-comment">// &#x5220;&#x9664;&#x6700;&#x540E;&#x4E00;&#x4E2A;&#x5143;&#x7D20;</span>
+            T last = data.remove(data.size() - <span class="hljs-number">1</span>);
 
-            // &#x5220;&#x9664;&#x5143;&#x7D20;&#x540E;&#xFF0C;&#x5982;&#x679C;&#x5806;&#x4E3A;&#x7A7A;&#x7684;&#x60C5;&#x51B5;&#xFF0C;&#x8BF4;&#x660E;&#x5220;&#x9664;&#x7684;&#x5143;&#x7D20;&#x4E5F;&#x662F;&#x5806;&#x9876;&#x5143;&#x7D20;
-            if (data.size() == 0) {
-                return last;
-            } else {
-                // &#x5C06;&#x5220;&#x9664;&#x7684;&#x5143;&#x7D20;&#x653E;&#x5165;&#x5806;&#x9876;
-                data.set(0, last);
-                // &#x81EA;&#x4E0A;&#x5411;&#x4E0B;&#x8C03;&#x6574;&#x5806;
-                shiftDown(0);
-                // &#x8FD4;&#x56DE;&#x5806;&#x9876;&#x5143;&#x7D20;
-                return first;
+            <span class="hljs-comment">// &#x5220;&#x9664;&#x5143;&#x7D20;&#x540E;&#xFF0C;&#x5982;&#x679C;&#x5806;&#x4E3A;&#x7A7A;&#x7684;&#x60C5;&#x51B5;&#xFF0C;&#x8BF4;&#x660E;&#x5220;&#x9664;&#x7684;&#x5143;&#x7D20;&#x4E5F;&#x662F;&#x5806;&#x9876;&#x5143;&#x7D20;</span>
+            <span class="hljs-keyword">if</span> (data.size() == <span class="hljs-number">0</span>) {
+                <span class="hljs-keyword">return</span> last;
+            } <span class="hljs-keyword">else</span> {
+                <span class="hljs-comment">// &#x5C06;&#x5220;&#x9664;&#x7684;&#x5143;&#x7D20;&#x653E;&#x5165;&#x5806;&#x9876;</span>
+                data.set(<span class="hljs-number">0</span>, last);
+                <span class="hljs-comment">// &#x81EA;&#x4E0A;&#x5411;&#x4E0B;&#x8C03;&#x6574;&#x5806;</span>
+                shiftDown(<span class="hljs-number">0</span>);
+                <span class="hljs-comment">// &#x8FD4;&#x56DE;&#x5806;&#x9876;&#x5143;&#x7D20;</span>
+                <span class="hljs-keyword">return</span> first;
             }
         }
 
-        /**
+        <span class="hljs-comment">/**
          * &#x83B7;&#x53D6;&#x5806;&#x9876;&#x5143;&#x7D20;&#xFF0C;&#x4F46;&#x4E0D;&#x5220;&#x9664;
          *
-         * @return &#x5806;&#x9876;&#x5143;&#x7D20;
-         */
-        public T getTop() {
-            // &#x5982;&#x679C;&#x5806;&#x5DF2;&#x7ECF;&#x4E3A;&#x7A7A;&#xFF0C;&#x5C31;&#x629B;&#x51FA;&#x5F02;&#x5E38;
-            if (data.isEmpty()) {
-                throw new RuntimeException(&quot;The heap is empty.&quot;);
+         * <span class="hljs-doctag">@return</span> &#x5806;&#x9876;&#x5143;&#x7D20;
+         */</span>
+        <span class="hljs-function"><span class="hljs-keyword">public</span> T <span class="hljs-title">getTop</span><span class="hljs-params">()</span> </span>{
+            <span class="hljs-comment">// &#x5982;&#x679C;&#x5806;&#x5DF2;&#x7ECF;&#x4E3A;&#x7A7A;&#xFF0C;&#x5C31;&#x629B;&#x51FA;&#x5F02;&#x5E38;</span>
+            <span class="hljs-keyword">if</span> (data.isEmpty()) {
+                <span class="hljs-keyword">throw</span> <span class="hljs-keyword">new</span> RuntimeException(<span class="hljs-string">&quot;The heap is empty.&quot;</span>);
             }
 
-            return data.get(0);
+            <span class="hljs-keyword">return</span> data.get(<span class="hljs-number">0</span>);
         }
 
-        /**
+        <span class="hljs-comment">/**
          * &#x83B7;&#x53D6;&#x5806;&#x7684;&#x5927;&#x5C0F;
          *
-         * @return &#x5806;&#x7684;&#x5927;&#x5C0F;
-         */
-        public int size() {
-            return data.size();
+         * <span class="hljs-doctag">@return</span> &#x5806;&#x7684;&#x5927;&#x5C0F;
+         */</span>
+        <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">int</span> <span class="hljs-title">size</span><span class="hljs-params">()</span> </span>{
+            <span class="hljs-keyword">return</span> data.size();
         }
 
-        /**
+        <span class="hljs-comment">/**
          * &#x5224;&#x65AD;&#x5806;&#x662F;&#x5426;&#x4E3A;&#x7A7A;
          *
-         * @return &#x5806;&#x662F;&#x5426;&#x4E3A;&#x7A7A;
-         */
-        public boolean isEmpty() {
-            return data.isEmpty();
+         * <span class="hljs-doctag">@return</span> &#x5806;&#x662F;&#x5426;&#x4E3A;&#x7A7A;
+         */</span>
+        <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">boolean</span> <span class="hljs-title">isEmpty</span><span class="hljs-params">()</span> </span>{
+            <span class="hljs-keyword">return</span> data.isEmpty();
         }
 
-        /**
+        <span class="hljs-comment">/**
          * &#x6E05;&#x7A7A;&#x5806;
-         */
-        public void clear() {
+         */</span>
+        <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">clear</span><span class="hljs-params">()</span> </span>{
             data.clear();
         }
 
-        /**
+        <span class="hljs-comment">/**
          * &#x83B7;&#x53D6;&#x5806;&#x4E2D;&#x6240;&#x6709;&#x7684;&#x6570;&#x636E;
          *
-         * @return &#x5806;&#x4E2D;&#x6240;&#x5728;&#x7684;&#x6570;&#x636E;
-         */
-        public List&lt;T&gt; getData() {
-            return data;
+         * <span class="hljs-doctag">@return</span> &#x5806;&#x4E2D;&#x6240;&#x5728;&#x7684;&#x6570;&#x636E;
+         */</span>
+        <span class="hljs-function"><span class="hljs-keyword">public</span> List&lt;T&gt; <span class="hljs-title">getData</span><span class="hljs-params">()</span> </span>{
+            <span class="hljs-keyword">return</span> data;
         }
     }
 
-    /**
+    <span class="hljs-comment">/**
      * &#x5347;&#x5E8F;&#x6BD4;&#x8F83;&#x5668;
-     */
-    private static class IncComparator implements Comparator&lt;Integer&gt; {
+     */</span>
+    <span class="hljs-keyword">private</span> <span class="hljs-keyword">static</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">IncComparator</span> <span class="hljs-keyword">implements</span> <span class="hljs-title">Comparator</span>&lt;<span class="hljs-title">Integer</span>&gt; </span>{
 
-        @Override
-        public int compare(Integer o1, Integer o2) {
-            return o1 - o2;
+        <span class="hljs-meta">@Override</span>
+        <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">int</span> <span class="hljs-title">compare</span><span class="hljs-params">(Integer o1, Integer o2)</span> </span>{
+            <span class="hljs-keyword">return</span> o1 - o2;
         }
     }
 
-    /**
+    <span class="hljs-comment">/**
      * &#x964D;&#x5E8F;&#x6BD4;&#x8F83;&#x5668;
-     */
-    private static class DescComparator implements Comparator&lt;Integer&gt; {
+     */</span>
+    <span class="hljs-keyword">private</span> <span class="hljs-keyword">static</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">DescComparator</span> <span class="hljs-keyword">implements</span> <span class="hljs-title">Comparator</span>&lt;<span class="hljs-title">Integer</span>&gt; </span>{
 
-        @Override
-        public int compare(Integer o1, Integer o2) {
-            return o2 - o1;
+        <span class="hljs-meta">@Override</span>
+        <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">int</span> <span class="hljs-title">compare</span><span class="hljs-params">(Integer o1, Integer o2)</span> </span>{
+            <span class="hljs-keyword">return</span> o2 - o1;
         }
     }
 
-    private static class DynamicArray {
-        private Heap&lt;Integer&gt; max;
-        private Heap&lt;Integer&gt; min;
+    <span class="hljs-keyword">private</span> <span class="hljs-keyword">static</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">DynamicArray</span> </span>{
+        <span class="hljs-keyword">private</span> Heap&lt;Integer&gt; max;
+        <span class="hljs-keyword">private</span> Heap&lt;Integer&gt; min;
 
-        public DynamicArray() {
-            max = new Heap&lt;&gt;(new IncComparator());
-            min = new Heap&lt;&gt;(new DescComparator());
+        <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-title">DynamicArray</span><span class="hljs-params">()</span> </span>{
+            max = <span class="hljs-keyword">new</span> Heap&lt;&gt;(<span class="hljs-keyword">new</span> IncComparator());
+            min = <span class="hljs-keyword">new</span> Heap&lt;&gt;(<span class="hljs-keyword">new</span> DescComparator());
         }
 
-        /**
+        <span class="hljs-comment">/**
          * &#x63D2;&#x5165;&#x6570;&#x636E;
          *
-         * @param num &#x5F85;&#x63D2;&#x5165;&#x7684;&#x6570;&#x636E;
-         */
-        public void insert(Integer num) {
-            // &#x5DF2;&#x7ECF;&#x6709;&#x5076;&#x6570;&#x4E2A;&#x6570;&#x636E;&#x4E86;&#xFF08;&#x53EF;&#x80FD;&#x6CA1;&#x6709;&#x6570;&#x636E;&#xFF09;
-            // &#x6570;&#x636E;&#x603B;&#x6570;&#x662F;&#x5076;&#x6570;&#x4E2A;&#x65F6;&#x628A;&#x65B0;&#x6570;&#x636E;&#x63D2;&#x5165;&#x5230;&#x5C0F;&#x5806;&#x4E2D;
-            if ((min.size() + max.size()) % 2 == 0) {
-                // &#x5927;&#x5806;&#x4E2D;&#x6709;&#x6570;&#x636E;&#xFF0C;&#x5E76;&#x4E14;&#x63D2;&#x5165;&#x7684;&#x5143;&#x7D20;&#x6BD4;&#x5927;&#x5806;&#x4E2D;&#x7684;&#x5143;&#x7D20;&#x5C0F;
-                if (max.size() &gt; 0 &amp;&amp; num &lt; max.getTop()) {
-                    // &#x5C06;num&#x52A0;&#x5165;&#x7684;&#x5927;&#x5806;&#x4E2D;&#x53BB;
+         * <span class="hljs-doctag">@param</span> num &#x5F85;&#x63D2;&#x5165;&#x7684;&#x6570;&#x636E;
+         */</span>
+        <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">insert</span><span class="hljs-params">(Integer num)</span> </span>{
+            <span class="hljs-comment">// &#x5DF2;&#x7ECF;&#x6709;&#x5076;&#x6570;&#x4E2A;&#x6570;&#x636E;&#x4E86;&#xFF08;&#x53EF;&#x80FD;&#x6CA1;&#x6709;&#x6570;&#x636E;&#xFF09;</span>
+            <span class="hljs-comment">// &#x6570;&#x636E;&#x603B;&#x6570;&#x662F;&#x5076;&#x6570;&#x4E2A;&#x65F6;&#x628A;&#x65B0;&#x6570;&#x636E;&#x63D2;&#x5165;&#x5230;&#x5C0F;&#x5806;&#x4E2D;</span>
+            <span class="hljs-keyword">if</span> ((min.size() + max.size()) % <span class="hljs-number">2</span> == <span class="hljs-number">0</span>) {
+                <span class="hljs-comment">// &#x5927;&#x5806;&#x4E2D;&#x6709;&#x6570;&#x636E;&#xFF0C;&#x5E76;&#x4E14;&#x63D2;&#x5165;&#x7684;&#x5143;&#x7D20;&#x6BD4;&#x5927;&#x5806;&#x4E2D;&#x7684;&#x5143;&#x7D20;&#x5C0F;</span>
+                <span class="hljs-keyword">if</span> (max.size() &gt; <span class="hljs-number">0</span> &amp;&amp; num &lt; max.getTop()) {
+                    <span class="hljs-comment">// &#x5C06;num&#x52A0;&#x5165;&#x7684;&#x5927;&#x5806;&#x4E2D;&#x53BB;</span>
                     max.add(num);
-                    // &#x5220;&#x9664;&#x5806;&#x9876;&#x5143;&#x7D20;&#xFF0C;&#x5927;&#x5806;&#x4E2D;&#x7684;&#x6700;&#x5927;&#x5143;&#x7D20;
+                    <span class="hljs-comment">// &#x5220;&#x9664;&#x5806;&#x9876;&#x5143;&#x7D20;&#xFF0C;&#x5927;&#x5806;&#x4E2D;&#x7684;&#x6700;&#x5927;&#x5143;&#x7D20;</span>
                     num = max.deleteTop();
                 }
 
-                // num&#x63D2;&#x5165;&#x5230;&#x5C0F;&#x5806;&#x4E2D;&#xFF0C;&#x5F53;num&#x5C0F;&#x4E8E;&#x5927;&#x5806;&#x4E2D;&#x7684;&#x6700;&#x5927;&#x503C;&#x8FDB;&#xFF0C;
-                // num&#x5C31;&#x4F1A;&#x53D8;&#x6210;&#x5927;&#x5806;&#x4E2D;&#x7684;&#x6700;&#x5927;&#x503C;&#xFF0C;&#x89C1;&#x4E0A;&#x9762;&#x7684;if&#x64CD;&#x4F5C;
-                // &#x5982;&#x679C;num&#x4E0D;&#x5C0F;&#x4E8E;&#x5927;&#x5806;&#x4E2D;&#x7684;&#x6700;&#x5927;&#x503C;&#xFF0C;num&#x5C31;&#x662F;&#x81EA;&#x8EAB;
+                <span class="hljs-comment">// num&#x63D2;&#x5165;&#x5230;&#x5C0F;&#x5806;&#x4E2D;&#xFF0C;&#x5F53;num&#x5C0F;&#x4E8E;&#x5927;&#x5806;&#x4E2D;&#x7684;&#x6700;&#x5927;&#x503C;&#x8FDB;&#xFF0C;</span>
+                <span class="hljs-comment">// num&#x5C31;&#x4F1A;&#x53D8;&#x6210;&#x5927;&#x5806;&#x4E2D;&#x7684;&#x6700;&#x5927;&#x503C;&#xFF0C;&#x89C1;&#x4E0A;&#x9762;&#x7684;if&#x64CD;&#x4F5C;</span>
+                <span class="hljs-comment">// &#x5982;&#x679C;num&#x4E0D;&#x5C0F;&#x4E8E;&#x5927;&#x5806;&#x4E2D;&#x7684;&#x6700;&#x5927;&#x503C;&#xFF0C;num&#x5C31;&#x662F;&#x81EA;&#x8EAB;</span>
                 min.add(num);
             }
-            // &#x6570;&#x636E;&#x603B;&#x6570;&#x662F;&#x5947;&#x6570;&#x4E2A;&#x65F6;&#x628A;&#x65B0;&#x6570;&#x636E;&#x63D2;&#x5165;&#x5230;&#x5927;&#x5806;&#x4E2D;
-            else {
-                // &#x5C0F;&#x5806;&#x4E2D;&#x6709;&#x6570;&#x636E;&#xFF0C;&#x5E76;&#x4E14;&#x63D2;&#x5165;&#x7684;&#x5143;&#x7D20;&#x6BD4;&#x5C0F;&#x5806;&#x4E2D;&#x7684;&#x5143;&#x7D20;&#x5927;
-                if (min.size() &gt; 0 &amp;&amp; num &gt; min.size()) {
-                    // &#x5C06;num&#x52A0;&#x5165;&#x7684;&#x5C0F;&#x5806;&#x4E2D;&#x53BB;
+            <span class="hljs-comment">// &#x6570;&#x636E;&#x603B;&#x6570;&#x662F;&#x5947;&#x6570;&#x4E2A;&#x65F6;&#x628A;&#x65B0;&#x6570;&#x636E;&#x63D2;&#x5165;&#x5230;&#x5927;&#x5806;&#x4E2D;</span>
+            <span class="hljs-keyword">else</span> {
+                <span class="hljs-comment">// &#x5C0F;&#x5806;&#x4E2D;&#x6709;&#x6570;&#x636E;&#xFF0C;&#x5E76;&#x4E14;&#x63D2;&#x5165;&#x7684;&#x5143;&#x7D20;&#x6BD4;&#x5C0F;&#x5806;&#x4E2D;&#x7684;&#x5143;&#x7D20;&#x5927;</span>
+                <span class="hljs-keyword">if</span> (min.size() &gt; <span class="hljs-number">0</span> &amp;&amp; num &gt; min.size()) {
+                    <span class="hljs-comment">// &#x5C06;num&#x52A0;&#x5165;&#x7684;&#x5C0F;&#x5806;&#x4E2D;&#x53BB;</span>
                     min.add(num);
-                    // &#x5220;&#x9664;&#x5806;&#x9876;&#x5143;&#x7D20;&#xFF0C;&#x5C0F;&#x5806;&#x4E2D;&#x7684;&#x6700;&#x5C0F;&#x5143;&#x7D20;
+                    <span class="hljs-comment">// &#x5220;&#x9664;&#x5806;&#x9876;&#x5143;&#x7D20;&#xFF0C;&#x5C0F;&#x5806;&#x4E2D;&#x7684;&#x6700;&#x5C0F;&#x5143;&#x7D20;</span>
                     num = min.deleteTop();
                 }
-                // num&#x63D2;&#x5165;&#x5230;&#x5927;&#x5806;&#x4E2D;&#xFF0C;&#x5F53;num&#x5927;&#x4E8E;&#x5C0F;&#x5806;&#x4E2D;&#x7684;&#x6700;&#x5C0F;&#x503C;&#x8FDB;&#xFF0C;
-                // num&#x5C31;&#x4F1A;&#x53D8;&#x6210;&#x5C0F;&#x5806;&#x4E2D;&#x7684;&#x6700;&#x5C0F;&#x503C;&#xFF0C;&#x89C1;&#x4E0A;&#x9762;&#x7684;if&#x64CD;&#x4F5C;
-                // &#x5982;&#x679C;num&#x4E0D;&#x5927;&#x4E8E;&#x5927;&#x5806;&#x4E2D;&#x7684;&#x6700;&#x5C0F;&#x503C;&#xFF0C;num&#x5C31;&#x662F;&#x81EA;&#x8EAB;
+                <span class="hljs-comment">// num&#x63D2;&#x5165;&#x5230;&#x5927;&#x5806;&#x4E2D;&#xFF0C;&#x5F53;num&#x5927;&#x4E8E;&#x5C0F;&#x5806;&#x4E2D;&#x7684;&#x6700;&#x5C0F;&#x503C;&#x8FDB;&#xFF0C;</span>
+                <span class="hljs-comment">// num&#x5C31;&#x4F1A;&#x53D8;&#x6210;&#x5C0F;&#x5806;&#x4E2D;&#x7684;&#x6700;&#x5C0F;&#x503C;&#xFF0C;&#x89C1;&#x4E0A;&#x9762;&#x7684;if&#x64CD;&#x4F5C;</span>
+                <span class="hljs-comment">// &#x5982;&#x679C;num&#x4E0D;&#x5927;&#x4E8E;&#x5927;&#x5806;&#x4E2D;&#x7684;&#x6700;&#x5C0F;&#x503C;&#xFF0C;num&#x5C31;&#x662F;&#x81EA;&#x8EAB;</span>
                 max.add(num);
             }
         }
 
-        public double getMedian() {
-            int size = max.size() + min.size();
+        <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">double</span> <span class="hljs-title">getMedian</span><span class="hljs-params">()</span> </span>{
+            <span class="hljs-keyword">int</span> size = max.size() + min.size();
 
-            if (size == 0) {
-                throw new RuntimeException(&quot;No numbers are available&quot;);
+            <span class="hljs-keyword">if</span> (size == <span class="hljs-number">0</span>) {
+                <span class="hljs-keyword">throw</span> <span class="hljs-keyword">new</span> RuntimeException(<span class="hljs-string">&quot;No numbers are available&quot;</span>);
             }
 
-            if ((size &amp; 1) == 1) {
-                return min.getTop();
-            } else {
-                return (max.getTop() + min.getTop()) / 2.0;
+            <span class="hljs-keyword">if</span> ((size &amp; <span class="hljs-number">1</span>) == <span class="hljs-number">1</span>) {
+                <span class="hljs-keyword">return</span> min.getTop();
+            } <span class="hljs-keyword">else</span> {
+                <span class="hljs-keyword">return</span> (max.getTop() + min.getTop()) / <span class="hljs-number">2.0</span>;
             }
         }
     }
@@ -4044,7 +4048,7 @@ public class Test {
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"61.数据流中的中位数","level":"5.1.61","depth":2,"next":{"title":"62.滑动窗口的最大值","level":"5.1.62","depth":2,"path":"algorithm/For-offer/62.md","ref":"algorithm/For-offer/62.md","articles":[]},"previous":{"title":"60.二叉搜索树的第k个结点","level":"5.1.60","depth":2,"path":"algorithm/For-offer/60.md","ref":"algorithm/For-offer/60.md","articles":[]},"dir":"ltr"},"config":{"plugins":["-lunr","-search","-highlight","-livereload","search-plus@^0.0.11","simple-page-toc@^0.1.1","github@^2.0.0","github-buttons@2.1.0","edit-link@^2.0.2","advanced-emoji@^0.2.1","anchors@^0.7.1","include-codeblock@^3.0.2","ace@^0.3.2","emphasize@^1.1.0","katex@^1.1.3","splitter@^0.0.8","tbfed-pagefooter@^0.0.1","expandable-chapters-small@^0.1.7","sectionx@^3.1.0","local-video@^1.0.1","anchor-navigation-ex@0.1.8","favicon@^0.0.2"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"tbfed-pagefooter":{"copyright":"Copyright © ruheng.com 2017","modify_label":"该文件修订时间：","modify_format":"YYYY-MM-DD HH:mm:ss"},"emphasize":{},"ace":{},"github":{"url":"https://github.com/LRH1993/android_interview"},"simple-page-toc":{"maxDepth":3,"skipFirstH1":true},"splitter":{},"katex":{},"fontsettings":{"theme":"white","family":"sans","size":2},"sectionx":{"tag":"b"},"anchor-navigation-ex":{"isRewritePageTitle":false,"tocLevel1Icon":"fa fa-hand-o-right","tocLevel2Icon":"fa fa-hand-o-right","tocLevel3Icon":"fa fa-hand-o-right"},"favicon":{"shortcut":"favicon.ico","bookmark":"favicon.ico"},"github-buttons":{"repo":"LRH1993/android_interview","types":["star"],"size":"small"},"expandable-chapters-small":{},"local-video":{},"advanced-emoji":{"embedEmojis":false},"include-codeblock":{"check":false,"edit":true,"fixlang":false,"lang":"","template":"ace","theme":"chrome","unindent":true},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":true,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"edit-link":{"label":"Edit This Page","base":"https://github.com/LRH1993/android_interview/edit/master"},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":true},"anchors":{},"search-plus":{}},"theme":"default","author":"ruheng","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"Android校招面试指南","language":"zh-hans","output.name":"site","links":{"sidebar":{"Home":"http://lruheng.com/"}},"gitbook":"3.2.3","description":"Android面试必备，记录自己的秋招之路"},"file":{"path":"algorithm/For-offer/61.md","mtime":"2017-09-10T02:54:21.000Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2017-10-16T12:05:21.906Z"},"basePath":"../..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"61.数据流中的中位数","level":"5.1.61","depth":2,"next":{"title":"62.滑动窗口的最大值","level":"5.1.62","depth":2,"path":"algorithm/For-offer/62.md","ref":"algorithm/For-offer/62.md","articles":[]},"previous":{"title":"60.二叉搜索树的第k个结点","level":"5.1.60","depth":2,"path":"algorithm/For-offer/60.md","ref":"algorithm/For-offer/60.md","articles":[]},"dir":"ltr"},"config":{"plugins":["-lunr","-search","-livereload","search-plus@^0.0.11","simple-page-toc@^0.1.1","github@^2.0.0","github-buttons@2.1.0","edit-link@^2.0.2","advanced-emoji@^0.2.1","anchors@^0.7.1","include-codeblock@^3.0.2","ace@^0.3.2","emphasize@^1.1.0","katex@^1.1.3","splitter@^0.0.8","tbfed-pagefooter@^0.0.1","expandable-chapters-small@^0.1.7","sectionx@^3.1.0","local-video@^1.0.1","anchor-navigation-ex@0.1.8","favicon@^0.0.2"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"tbfed-pagefooter":{"copyright":"Copyright © ruheng.com 2017","modify_label":"该文件修订时间：","modify_format":"YYYY-MM-DD HH:mm:ss"},"emphasize":{},"ace":{},"github":{"url":"https://github.com/LRH1993/android_interview"},"simple-page-toc":{"maxDepth":3,"skipFirstH1":true},"splitter":{},"katex":{},"fontsettings":{"theme":"white","family":"sans","size":2},"sectionx":{"tag":"b"},"highlight":{},"anchor-navigation-ex":{"isRewritePageTitle":false,"tocLevel1Icon":"fa fa-hand-o-right","tocLevel2Icon":"fa fa-hand-o-right","tocLevel3Icon":"fa fa-hand-o-right"},"favicon":{"shortcut":"favicon.ico","bookmark":"favicon.ico"},"github-buttons":{"repo":"LRH1993/android_interview","types":["star"],"size":"small"},"expandable-chapters-small":{},"local-video":{},"advanced-emoji":{"embedEmojis":false},"include-codeblock":{"check":false,"edit":false,"fixlang":false,"lang":"","template":"default","theme":"chrome","unindent":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":true,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"edit-link":{"label":"Edit This Page","base":"https://github.com/LRH1993/android_interview/edit/master"},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":true},"anchors":{},"search-plus":{}},"theme":"default","author":"ruheng","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"Android校招面试指南","language":"zh-hans","output.name":"site","links":{"sidebar":{"Home":"http://lruheng.com/"}},"gitbook":"3.2.3","description":"Android面试必备，记录自己的秋招之路"},"file":{"path":"algorithm/For-offer/61.md","mtime":"2017-09-10T02:54:21.000Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2017-10-16T13:00:43.989Z"},"basePath":"../..","book":{"language":""}});
         });
     </script>
 </div>

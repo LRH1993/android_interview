@@ -69,6 +69,10 @@
                 
             
                 
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
                 <link rel="stylesheet" href="../../gitbook/gitbook-plugin-fontsettings/website.css">
                 
             
@@ -3724,43 +3728,43 @@
 <h5 id="waitnotify&#x534F;&#x4F5C;&#x7684;&#x4E24;&#x4E2A;&#x6CE8;&#x610F;&#x4E8B;&#x9879;"><a name="waitnotify&#x534F;&#x4F5C;&#x7684;&#x4E24;&#x4E2A;&#x6CE8;&#x610F;&#x4E8B;&#x9879;" class="anchor-navigation-ex-anchor" href="#waitnotify&#x534F;&#x4F5C;&#x7684;&#x4E24;&#x4E2A;&#x6CE8;&#x610F;&#x4E8B;&#x9879;"><i class="fa fa-link" aria-hidden="true"></i></a>wait()/notify()&#x534F;&#x4F5C;&#x7684;&#x4E24;&#x4E2A;&#x6CE8;&#x610F;&#x4E8B;&#x9879;</h5>
 <p>&#x2460;&#x901A;&#x77E5;&#x8FC7;&#x65E9;</p>
 <p>&#x5982;&#x679C;&#x901A;&#x77E5;&#x8FC7;&#x65E9;&#xFF0C;&#x5219;&#x4F1A;&#x6253;&#x4E71;&#x7A0B;&#x5E8F;&#x7684;&#x8FD0;&#x884C;&#x903B;&#x8F91;&#x3002;</p>
-<pre><code class="lang-java">public class MyRun {
-    private String lock = new String(&quot;&quot;);
-    public Runnable runnableA = new Runnable() {
+<pre><code class="lang-java"><span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">MyRun</span> </span>{
+    <span class="hljs-keyword">private</span> String lock = <span class="hljs-keyword">new</span> String(<span class="hljs-string">&quot;&quot;</span>);
+    <span class="hljs-keyword">public</span> Runnable runnableA = <span class="hljs-keyword">new</span> Runnable() {
 
-        @Override
-        public void run() {
-            try {
-                synchronized (lock) {
-                    System.out.println(&quot;begin wait&quot;);
+        <span class="hljs-meta">@Override</span>
+        <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">run</span><span class="hljs-params">()</span> </span>{
+            <span class="hljs-keyword">try</span> {
+                <span class="hljs-keyword">synchronized</span> (lock) {
+                    System.out.println(<span class="hljs-string">&quot;begin wait&quot;</span>);
                     lock.wait();
-                    System.out.println(&quot;end wait&quot;);
+                    System.out.println(<span class="hljs-string">&quot;end wait&quot;</span>);
                 }
-            } catch (InterruptedException e) {
+            } <span class="hljs-keyword">catch</span> (InterruptedException e) {
                 e.printStackTrace();
             }
 
         }
     };
-    public Runnable runnableB = new Runnable() {
-        @Override
-        public void run() {
-            synchronized (lock) {
-                System.out.println(&quot;begin notify&quot;);
+    <span class="hljs-keyword">public</span> Runnable runnableB = <span class="hljs-keyword">new</span> Runnable() {
+        <span class="hljs-meta">@Override</span>
+        <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">run</span><span class="hljs-params">()</span> </span>{
+            <span class="hljs-keyword">synchronized</span> (lock) {
+                System.out.println(<span class="hljs-string">&quot;begin notify&quot;</span>);
                 lock.notify();
-                System.out.println(&quot;end notify&quot;);
+                System.out.println(<span class="hljs-string">&quot;end notify&quot;</span>);
             }
         }
     };
 }
 </code></pre>
 <p>&#x4E24;&#x4E2A;&#x65B9;&#x6CD5;&#xFF0C;&#x5206;&#x522B;&#x6267;&#x884C;wait()/notify()&#x65B9;&#x6CD5;&#x3002;</p>
-<pre><code class="lang-java">public static void main(String[] args) throws InterruptedException {
-        MyRun run = new MyRun();
-        Thread bThread = new Thread(run.runnableB);
+<pre><code class="lang-java"><span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title">main</span><span class="hljs-params">(String[] args)</span> <span class="hljs-keyword">throws</span> InterruptedException </span>{
+        MyRun run = <span class="hljs-keyword">new</span> MyRun();
+        Thread bThread = <span class="hljs-keyword">new</span> Thread(run.runnableB);
         bThread.start();
-        Thread.sleep(100);
-        Thread aThread = new Thread(run.runnableA);
+        Thread.sleep(<span class="hljs-number">100</span>);
+        Thread aThread = <span class="hljs-keyword">new</span> Thread(run.runnableA);
         aThread.start();
     }
 </code></pre>
@@ -3768,90 +3772,90 @@
 <p>&#x2461;&#x7B49;&#x5F85;wait&#x7684;&#x6761;&#x4EF6;&#x53D1;&#x751F;&#x53D8;&#x5316;</p>
 <p>&#x5728;&#x4F7F;&#x7528;wait/notify&#x6A21;&#x5F0F;&#x65F6;&#xFF0C;&#x8FD8;&#x9700;&#x8981;&#x6CE8;&#x610F;&#x53E6;&#x5916;&#x4E00;&#x79CD;&#x60C5;&#x51B5;&#xFF0C;&#x4E5F;&#x5C31;&#x662F;wait&#x7B49;&#x5F85;&#x6761;&#x4EF6;&#x53D1;&#x751F;&#x4E86;&#x53D8;&#x5316;&#xFF0C;&#x4E5F;&#x5BB9;&#x6613;&#x9020;&#x6210;&#x7A0B;&#x5E8F;&#x903B;&#x8F91;&#x7684;&#x6DF7;&#x4E71;&#x3002;</p>
 <p><strong>Add&#x7C7B;&#xFF0C;&#x6267;&#x884C;&#x52A0;&#x6CD5;&#x64CD;&#x4F5C;&#xFF0C;&#x7136;&#x540E;&#x901A;&#x77E5;Subtract&#x7C7B;</strong></p>
-<pre><code class="lang-java">public class Add {
-    private String lock;
+<pre><code class="lang-java"><span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Add</span> </span>{
+    <span class="hljs-keyword">private</span> String lock;
 
-    public Add(String lock) {
-        super();
-        this.lock = lock;
+    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-title">Add</span><span class="hljs-params">(String lock)</span> </span>{
+        <span class="hljs-keyword">super</span>();
+        <span class="hljs-keyword">this</span>.lock = lock;
     }
-    public void add(){
-        synchronized (lock) {
-            ValueObject.list.add(&quot;anyThing&quot;);
+    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">add</span><span class="hljs-params">()</span></span>{
+        <span class="hljs-keyword">synchronized</span> (lock) {
+            ValueObject.list.add(<span class="hljs-string">&quot;anyThing&quot;</span>);
             lock.notifyAll();
         }
     }
 }
 </code></pre>
 <p><strong>Subtract&#x7C7B;&#xFF0C;&#x6267;&#x884C;&#x51CF;&#x6CD5;&#x64CD;&#x4F5C;&#xFF0C;&#x6267;&#x884C;&#x5B8C;&#x540E;&#x8FDB;&#x5165;&#x7B49;&#x5F85;&#x72B6;&#x6001;&#xFF0C;&#x7B49;&#x5F85;Add&#x7C7B;&#x5524;&#x9192;notify</strong></p>
-<pre><code class="lang-java">public class Subtract {
-    private String lock;
+<pre><code class="lang-java"><span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Subtract</span> </span>{
+    <span class="hljs-keyword">private</span> String lock;
 
-    public Subtract(String lock) {
-        super();
-        this.lock = lock;
+    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-title">Subtract</span><span class="hljs-params">(String lock)</span> </span>{
+        <span class="hljs-keyword">super</span>();
+        <span class="hljs-keyword">this</span>.lock = lock;
     }
-    public void subtract(){
-        try {
-            synchronized (lock) {
-                if(ValueObject.list.size()==0){
-                    System.out.println(&quot;wait begin ThreadName=&quot;+Thread.currentThread().getName());
+    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">subtract</span><span class="hljs-params">()</span></span>{
+        <span class="hljs-keyword">try</span> {
+            <span class="hljs-keyword">synchronized</span> (lock) {
+                <span class="hljs-keyword">if</span>(ValueObject.list.size()==<span class="hljs-number">0</span>){
+                    System.out.println(<span class="hljs-string">&quot;wait begin ThreadName=&quot;</span>+Thread.currentThread().getName());
                     lock.wait();
-                    System.out.println(&quot;wait end ThreadName=&quot;+Thread.currentThread().getName());
+                    System.out.println(<span class="hljs-string">&quot;wait end ThreadName=&quot;</span>+Thread.currentThread().getName());
                 }
-                ValueObject.list.remove(0);
-                System.out.println(&quot;list size =&quot;+ValueObject.list.size());
+                ValueObject.list.remove(<span class="hljs-number">0</span>);
+                System.out.println(<span class="hljs-string">&quot;list size =&quot;</span>+ValueObject.list.size());
             }
-        } catch (InterruptedException e) {
+        } <span class="hljs-keyword">catch</span> (InterruptedException e) {
             e.printStackTrace();
         }
     }
 }
 </code></pre>
 <p><strong>&#x7EBF;&#x7A0B;ThreadAdd </strong></p>
-<pre><code class="lang-java">public class ThreadAdd extends Thread{
-    private Add pAdd;
+<pre><code class="lang-java"><span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">ThreadAdd</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">Thread</span></span>{
+    <span class="hljs-keyword">private</span> Add pAdd;
 
-    public ThreadAdd(Add pAdd) {
-        super();
-        this.pAdd = pAdd;
+    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-title">ThreadAdd</span><span class="hljs-params">(Add pAdd)</span> </span>{
+        <span class="hljs-keyword">super</span>();
+        <span class="hljs-keyword">this</span>.pAdd = pAdd;
     }
-    @Override
-    public void run() {
+    <span class="hljs-meta">@Override</span>
+    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">run</span><span class="hljs-params">()</span> </span>{
         pAdd.add();
     }
 
 }
 </code></pre>
 <p><strong>&#x7EBF;&#x7A0B;ThreadSubtract </strong></p>
-<pre><code class="lang-java">public class ThreadSubtract extends Thread{
-    private Subtract rSubtract;
+<pre><code class="lang-java"><span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">ThreadSubtract</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">Thread</span></span>{
+    <span class="hljs-keyword">private</span> Subtract rSubtract;
 
-    public ThreadSubtract(Subtract rSubtract) {
-        super();
-        this.rSubtract = rSubtract;
+    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-title">ThreadSubtract</span><span class="hljs-params">(Subtract rSubtract)</span> </span>{
+        <span class="hljs-keyword">super</span>();
+        <span class="hljs-keyword">this</span>.rSubtract = rSubtract;
     }
-    @Override
-    public void run() {
+    <span class="hljs-meta">@Override</span>
+    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">run</span><span class="hljs-params">()</span> </span>{
         rSubtract.subtract();
     }
 
 }
 </code></pre>
 <p><strong>&#x5148;&#x5F00;&#x542F;&#x4E24;&#x4E2A;ThreadSubtract&#x7EBF;&#x7A0B;&#xFF0C;&#x7531;&#x4E8E;list&#x4E2D;&#x6CA1;&#x6709;&#x5143;&#x7D20;&#xFF0C;&#x8FDB;&#x5165;&#x7B49;&#x5F85;&#x72B6;&#x6001;&#x3002;&#x518D;&#x5F00;&#x542F;&#x4E00;&#x4E2A;ThreadAdd&#x7EBF;&#x7A0B;&#xFF0C;&#x5411;list&#x4E2D;&#x589E;&#x52A0;&#x4E00;&#x4E2A;&#x5143;&#x7D20;&#xFF0C;&#x7136;&#x540E;&#x5524;&#x9192;&#x4E24;&#x4E2A;ThreadSubtract&#x7EBF;&#x7A0B;</strong></p>
-<pre><code class="lang-java">public static void main(String[] args) throws InterruptedException {
-        String lock = new String(&quot;&quot;);
-        Add add = new Add(lock);
-        Subtract subtract = new Subtract(lock);
-        ThreadSubtract subtractThread1 = new ThreadSubtract(subtract);
-        subtractThread1.setName(&quot;subtractThread1&quot;);
+<pre><code class="lang-java"><span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title">main</span><span class="hljs-params">(String[] args)</span> <span class="hljs-keyword">throws</span> InterruptedException </span>{
+        String lock = <span class="hljs-keyword">new</span> String(<span class="hljs-string">&quot;&quot;</span>);
+        Add add = <span class="hljs-keyword">new</span> Add(lock);
+        Subtract subtract = <span class="hljs-keyword">new</span> Subtract(lock);
+        ThreadSubtract subtractThread1 = <span class="hljs-keyword">new</span> ThreadSubtract(subtract);
+        subtractThread1.setName(<span class="hljs-string">&quot;subtractThread1&quot;</span>);
         subtractThread1.start();
-        ThreadSubtract subtractThread2 = new ThreadSubtract(subtract);
-        subtractThread2.setName(&quot;subtractThread2&quot;);
+        ThreadSubtract subtractThread2 = <span class="hljs-keyword">new</span> ThreadSubtract(subtract);
+        subtractThread2.setName(<span class="hljs-string">&quot;subtractThread2&quot;</span>);
         subtractThread2.start();
-        Thread.sleep(1000);
-        ThreadAdd addThread = new ThreadAdd(add);
-        addThread.setName(&quot;addThread&quot;);
+        Thread.sleep(<span class="hljs-number">1000</span>);
+        ThreadAdd addThread = <span class="hljs-keyword">new</span> ThreadAdd(add);
+        addThread.setName(<span class="hljs-string">&quot;addThread&quot;</span>);
         addThread.start();
     }
 </code></pre>
@@ -3862,18 +3866,18 @@
 <p><strong>&#x5F53;&#x7B2C;&#x4E8C;&#x4E2A;ThreadSubtract&#x7EBF;&#x7A0B;&#x6267;&#x884C;&#x51CF;&#x6CD5;&#x64CD;&#x4F5C;&#x65F6;&#xFF0C;&#x629B;&#x51FA;&#x4E0B;&#x6807;&#x8D8A;&#x754C;&#x5F02;&#x5E38;&#x3002;</strong></p>
 <p><strong>&#x539F;&#x56E0;&#x5206;&#x6790;&#xFF1A;&#x4E00;&#x5F00;&#x59CB;&#x4E24;&#x4E2A;ThreadSubtract&#x7EBF;&#x7A0B;&#x7B49;&#x5F85;&#x72B6;&#x6001;&#xFF0C;&#x5F53;ThreadAdd&#x7EBF;&#x7A0B;&#x6DFB;&#x52A0;&#x4E00;&#x4E2A;&#x5143;&#x7D20;&#x5E76;&#x5524;&#x9192;&#x6240;&#x6709;&#x7EBF;&#x7A0B;&#x540E;&#xFF0C;&#x7B2C;&#x4E00;&#x4E2A;ThreadSubtract&#x7EBF;&#x7A0B;&#x63A5;&#x7740;&#x539F;&#x6765;&#x7684;&#x6267;&#x884C;&#x5230;&#x7684;&#x5730;&#x70B9;&#x5F00;&#x59CB;&#x7EE7;&#x7EED;&#x6267;&#x884C;&#xFF0C;&#x5220;&#x9664;&#x4E00;&#x4E2A;&#x5143;&#x7D20;&#x5E76;&#x8F93;&#x51FA;&#x96C6;&#x5408;&#x5927;&#x5C0F;&#x3002;&#x540C;&#x6837;&#xFF0C;&#x7B2C;&#x4E8C;&#x4E2A;ThreadSubtract&#x7EBF;&#x7A0B;&#x4E5F;&#x5982;&#x6B64;&#xFF0C;&#x53EF;&#x662F;&#x6B64;&#x65F6;&#x96C6;&#x5408;&#x4E2D;&#x5DF2;&#x7ECF;&#x6CA1;&#x6709;&#x5143;&#x7D20;&#x4E86;&#xFF0C;&#x6240;&#x4EE5;&#x629B;&#x51FA;&#x5F02;&#x5E38;&#x3002;</strong></p>
 <p><strong>&#x89E3;&#x51B3;&#x529E;&#x6CD5;&#xFF1A;&#x4ECE;&#x7B49;&#x5F85;&#x72B6;&#x6001;&#x88AB;&#x5524;&#x9192;&#x540E;&#xFF0C;&#x91CD;&#x65B0;&#x5224;&#x65AD;&#x6761;&#x4EF6;&#xFF0C;&#x770B;&#x770B;&#x662F;&#x5426;&#x6254;&#x9700;&#x8981;&#x8FDB;&#x5165;&#x7B49;&#x5F85;&#x72B6;&#x6001;&#xFF0C;&#x4E0D;&#x9700;&#x8981;&#x8FDB;&#x5165;&#x518D;&#x8FDB;&#x884C;&#x4E0B;&#x4E00;&#x6B65;&#x64CD;&#x4F5C;&#x3002;&#x5373;&#x628A;if()&#x5224;&#x65AD;&#xFF0C;&#x6539;&#x6210;while()&#x3002;</strong></p>
-<pre><code class="lang-java">public void subtract(){
-        try {
-            synchronized (lock) {
-                while(ValueObject.list.size()==0){
-                    System.out.println(&quot;wait begin ThreadName=&quot;+Thread.currentThread().getName());
+<pre><code class="lang-java"><span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">subtract</span><span class="hljs-params">()</span></span>{
+        <span class="hljs-keyword">try</span> {
+            <span class="hljs-keyword">synchronized</span> (lock) {
+                <span class="hljs-keyword">while</span>(ValueObject.list.size()==<span class="hljs-number">0</span>){
+                    System.out.println(<span class="hljs-string">&quot;wait begin ThreadName=&quot;</span>+Thread.currentThread().getName());
                     lock.wait();
-                    System.out.println(&quot;wait end ThreadName=&quot;+Thread.currentThread().getName());
+                    System.out.println(<span class="hljs-string">&quot;wait end ThreadName=&quot;</span>+Thread.currentThread().getName());
                 }
-                ValueObject.list.remove(0);
-                System.out.println(&quot;list size =&quot;+ValueObject.list.size());
+                ValueObject.list.remove(<span class="hljs-number">0</span>);
+                System.out.println(<span class="hljs-string">&quot;list size =&quot;</span>+ValueObject.list.size());
             }
-        } catch (InterruptedException e) {
+        } <span class="hljs-keyword">catch</span> (InterruptedException e) {
             e.printStackTrace();
         }
     }
@@ -3893,68 +3897,68 @@
 <p>&#x4E0B;&#x9762;&#x60C5;&#x5F62;&#x662F;&#x4E00;&#x4E2A;&#x751F;&#x4EA7;&#x8005;&#xFF0C;&#x4E00;&#x4E2A;&#x6D88;&#x8D39;&#x8005;&#x7684;&#x6A21;&#x5F0F;&#x3002;&#x5047;&#x8BBE;&#x573A;&#x666F;&#xFF1A;&#x4E00;&#x4E2A;String&#x5BF9;&#x8C61;&#xFF0C;&#x5176;&#x4E2D;&#x751F;&#x4EA7;&#x8005;&#x4E3A;&#x5176;&#x8BBE;&#x7F6E;&#x503C;&#xFF0C;&#x6D88;&#x8D39;&#x8005;&#x62FF;&#x8D70;&#x5176;&#x4E2D;&#x7684;&#x503C;&#xFF0C;&#x4E0D;&#x65AD;&#x7684;&#x5FAA;&#x73AF;&#x5F80;&#x590D;&#xFF0C;&#x5B9E;&#x73B0;&#x751F;&#x4EA7;&#x8005;/&#x6D88;&#x8D39;&#x8005;&#x7684;&#x60C5;&#x5F62;&#x3002;</p>
 <p><strong>wait()/notify()&#x5B9E;&#x73B0;</strong></p>
 <p>&#x751F;&#x4EA7;&#x8005;</p>
-<pre><code class="lang-java">public class Product {
-    private String lock;
+<pre><code class="lang-java"><span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Product</span> </span>{
+    <span class="hljs-keyword">private</span> String lock;
 
-    public Product(String lock) {
-        super();
-        this.lock = lock;
+    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-title">Product</span><span class="hljs-params">(String lock)</span> </span>{
+        <span class="hljs-keyword">super</span>();
+        <span class="hljs-keyword">this</span>.lock = lock;
     }
-    public void setValue(){
-        try {
-            synchronized (lock) {
-                if(!StringObject.value.equals(&quot;&quot;)){
-                    //&#x6709;&#x503C;&#xFF0C;&#x4E0D;&#x751F;&#x4EA7;
+    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">setValue</span><span class="hljs-params">()</span></span>{
+        <span class="hljs-keyword">try</span> {
+            <span class="hljs-keyword">synchronized</span> (lock) {
+                <span class="hljs-keyword">if</span>(!StringObject.value.equals(<span class="hljs-string">&quot;&quot;</span>)){
+                    <span class="hljs-comment">//&#x6709;&#x503C;&#xFF0C;&#x4E0D;&#x751F;&#x4EA7;</span>
                     lock.wait();
                 }
-                String  value = System.currentTimeMillis()+&quot;&quot;+System.nanoTime();
-                System.out.println(&quot;set&#x7684;&#x503C;&#x662F;&#xFF1A;&quot;+value);
+                String  value = System.currentTimeMillis()+<span class="hljs-string">&quot;&quot;</span>+System.nanoTime();
+                System.out.println(<span class="hljs-string">&quot;set&#x7684;&#x503C;&#x662F;&#xFF1A;&quot;</span>+value);
                 StringObject.value = value;
                 lock.notify();
             }
-        } catch (InterruptedException e) {
+        } <span class="hljs-keyword">catch</span> (InterruptedException e) {
             e.printStackTrace();
         }
     }
 }
 </code></pre>
 <p>&#x6D88;&#x8D39;&#x8005;</p>
-<pre><code class="lang-java">public class Consumer {
-    private String lock;
+<pre><code class="lang-java"><span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Consumer</span> </span>{
+    <span class="hljs-keyword">private</span> String lock;
 
-    public Consumer(String lock) {
-        super();
-        this.lock = lock;
+    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-title">Consumer</span><span class="hljs-params">(String lock)</span> </span>{
+        <span class="hljs-keyword">super</span>();
+        <span class="hljs-keyword">this</span>.lock = lock;
     }
-    public void getValue(){
-        try {
-            synchronized (lock) {
-                if(StringObject.value.equals(&quot;&quot;)){
-                    //&#x6CA1;&#x503C;&#xFF0C;&#x4E0D;&#x8FDB;&#x884C;&#x6D88;&#x8D39;
+    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">getValue</span><span class="hljs-params">()</span></span>{
+        <span class="hljs-keyword">try</span> {
+            <span class="hljs-keyword">synchronized</span> (lock) {
+                <span class="hljs-keyword">if</span>(StringObject.value.equals(<span class="hljs-string">&quot;&quot;</span>)){
+                    <span class="hljs-comment">//&#x6CA1;&#x503C;&#xFF0C;&#x4E0D;&#x8FDB;&#x884C;&#x6D88;&#x8D39;</span>
                     lock.wait();
                 }
-                System.out.println(&quot;get&#x7684;&#x503C;&#x662F;&#xFF1A;&quot;+StringObject.value);
-                StringObject.value = &quot;&quot;;
+                System.out.println(<span class="hljs-string">&quot;get&#x7684;&#x503C;&#x662F;&#xFF1A;&quot;</span>+StringObject.value);
+                StringObject.value = <span class="hljs-string">&quot;&quot;</span>;
                 lock.notify();
             }
-        } catch (InterruptedException e) {
+        } <span class="hljs-keyword">catch</span> (InterruptedException e) {
             e.printStackTrace();
         }
     }
 }
 </code></pre>
 <p>&#x751F;&#x4EA7;&#x8005;&#x7EBF;&#x7A0B;</p>
-<pre><code class="lang-java">public class ThreadProduct extends Thread{
-    private Product product;
+<pre><code class="lang-java"><span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">ThreadProduct</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">Thread</span></span>{
+    <span class="hljs-keyword">private</span> Product product;
 
-    public ThreadProduct(Product product) {
-        super();
-        this.product = product;
+    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-title">ThreadProduct</span><span class="hljs-params">(Product product)</span> </span>{
+        <span class="hljs-keyword">super</span>();
+        <span class="hljs-keyword">this</span>.product = product;
     }
-    @Override
-    public void run() {
-        //&#x6B7B;&#x5FAA;&#x73AF;&#xFF0C;&#x4E0D;&#x65AD;&#x7684;&#x751F;&#x4EA7;
-        while(true){
+    <span class="hljs-meta">@Override</span>
+    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">run</span><span class="hljs-params">()</span> </span>{
+        <span class="hljs-comment">//&#x6B7B;&#x5FAA;&#x73AF;&#xFF0C;&#x4E0D;&#x65AD;&#x7684;&#x751F;&#x4EA7;</span>
+        <span class="hljs-keyword">while</span>(<span class="hljs-keyword">true</span>){
             product.setValue();
         }
     }
@@ -3962,17 +3966,17 @@
 }
 </code></pre>
 <p>&#x6D88;&#x8D39;&#x8005;&#x7EBF;&#x7A0B;</p>
-<pre><code class="lang-java">public class ThreadConsumer extends Thread{
-    private Consumer consumer;
+<pre><code class="lang-java"><span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">ThreadConsumer</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">Thread</span></span>{
+    <span class="hljs-keyword">private</span> Consumer consumer;
 
-    public ThreadConsumer(Consumer consumer) {
-        super();
-        this.consumer = consumer;
+    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-title">ThreadConsumer</span><span class="hljs-params">(Consumer consumer)</span> </span>{
+        <span class="hljs-keyword">super</span>();
+        <span class="hljs-keyword">this</span>.consumer = consumer;
     }
-    @Override
-    public void run() {
-        //&#x6B7B;&#x5FAA;&#x73AF;&#xFF0C;&#x4E0D;&#x65AD;&#x7684;&#x6D88;&#x8D39;
-        while(true){
+    <span class="hljs-meta">@Override</span>
+    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">run</span><span class="hljs-params">()</span> </span>{
+        <span class="hljs-comment">//&#x6B7B;&#x5FAA;&#x73AF;&#xFF0C;&#x4E0D;&#x65AD;&#x7684;&#x6D88;&#x8D39;</span>
+        <span class="hljs-keyword">while</span>(<span class="hljs-keyword">true</span>){
             consumer.getValue();
         }
     }
@@ -3980,14 +3984,14 @@
 }
 </code></pre>
 <p>&#x5F00;&#x542F;&#x751F;&#x4EA7;&#x8005;/&#x6D88;&#x8D39;&#x8005;&#x6A21;&#x5F0F;</p>
-<pre><code class="lang-java">public class Test {
+<pre><code class="lang-java"><span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Test</span> </span>{
 
-    public static void main(String[] args) throws InterruptedException {
-        String lock = new String(&quot;&quot;);
-        Product product = new Product(lock);
-        Consumer consumer = new Consumer(lock);
-        ThreadProduct pThread = new ThreadProduct(product);
-        ThreadConsumer cThread = new ThreadConsumer(consumer);
+    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title">main</span><span class="hljs-params">(String[] args)</span> <span class="hljs-keyword">throws</span> InterruptedException </span>{
+        String lock = <span class="hljs-keyword">new</span> String(<span class="hljs-string">&quot;&quot;</span>);
+        Product product = <span class="hljs-keyword">new</span> Product(lock);
+        Consumer consumer = <span class="hljs-keyword">new</span> Consumer(lock);
+        ThreadProduct pThread = <span class="hljs-keyword">new</span> ThreadProduct(product);
+        ThreadConsumer cThread = <span class="hljs-keyword">new</span> ThreadConsumer(consumer);
         pThread.start();
         cThread.start();
     }
@@ -4004,30 +4008,30 @@
 <p><strong>&#x5177;&#x4F53;&#x539F;&#x56E0;&#xFF1A;</strong>&#x591A;&#x4E2A;&#x751F;&#x4EA7;&#x8005;&#x548C;&#x6D88;&#x8D39;&#x8005;&#x7EBF;&#x7A0B;&#x3002;&#x5F53;&#x5168;&#x90E8;&#x8FD0;&#x884C;&#x540E;&#xFF0C;&#x751F;&#x4EA7;&#x8005;&#x7EBF;&#x7A0B;&#x751F;&#x4EA7;&#x6570;&#x636E;&#x540E;&#xFF0C;&#x53EF;&#x80FD;&#x5524;&#x9192;&#x7684;&#x540C;&#x7C7B;&#x5373;&#x751F;&#x4EA7;&#x8005;&#x7EBF;&#x7A0B;&#x3002;&#x6B64;&#x65F6;&#x53EF;&#x80FD;&#x4F1A;&#x51FA;&#x73B0;&#x5982;&#x4E0B;&#x60C5;&#x51B5;&#xFF1A;&#x6240;&#x6709;&#x751F;&#x4EA7;&#x8005;&#x7EBF;&#x7A0B;&#x8FDB;&#x5165;&#x7B49;&#x5F85;&#x72B6;&#x6001;&#xFF0C;&#x7136;&#x540E;&#x6D88;&#x8D39;&#x8005;&#x7EBF;&#x7A0B;&#x6D88;&#x8D39;&#x5B8C;&#x6570;&#x636E;&#x540E;&#xFF0C;&#x518D;&#x6B21;&#x5524;&#x9192;&#x7684;&#x8FD8;&#x662F;&#x6D88;&#x8D39;&#x8005;&#x7EBF;&#x7A0B;&#xFF0C;&#x76F4;&#x81F3;&#x6240;&#x6709;&#x6D88;&#x8D39;&#x8005;&#x7EBF;&#x7A0B;&#x90FD;&#x8FDB;&#x5165;&#x7B49;&#x5F85;&#x72B6;&#x6001;&#xFF0C;&#x6B64;&#x65F6;&#x5C06;&#x8FDB;&#x5165;&#x201C;&#x5047;&#x6B7B;&#x201D;&#x3002;</p>
 <p><strong>&#x89E3;&#x51B3;&#x65B9;&#x6CD5;&#xFF1A;</strong>&#x5C06;notify()&#x6216;signal()&#x65B9;&#x6CD5;&#x6539;&#x4E3A;notifyAll()&#x6216;signalAll()&#x65B9;&#x6CD5;&#xFF0C;&#x8FD9;&#x6837;&#x5C31;&#x4E0D;&#x6015;&#x56E0;&#x4E3A;&#x5524;&#x9192;&#x540C;&#x7C7B;&#x800C;&#x8FDB;&#x5165;&#x201C;&#x5047;&#x6B7B;&#x201D;&#x72B6;&#x6001;&#x4E86;&#x3002;</p>
 <p><strong>Condition&#x65B9;&#x5F0F;&#x5B9E;&#x73B0;</strong><br>&#x751F;&#x4EA7;&#x8005;</p>
-<pre><code class="lang-java">public class Product {
-    private ReentrantLock lock;
-    private Condition condition;
+<pre><code class="lang-java"><span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Product</span> </span>{
+    <span class="hljs-keyword">private</span> ReentrantLock lock;
+    <span class="hljs-keyword">private</span> Condition condition;
 
-    public Product(ReentrantLock lock, Condition condition) {
-        super();
-        this.lock = lock;
-        this.condition = condition;
+    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-title">Product</span><span class="hljs-params">(ReentrantLock lock, Condition condition)</span> </span>{
+        <span class="hljs-keyword">super</span>();
+        <span class="hljs-keyword">this</span>.lock = lock;
+        <span class="hljs-keyword">this</span>.condition = condition;
     }
 
-    public void setValue() {
-        try {
+    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">setValue</span><span class="hljs-params">()</span> </span>{
+        <span class="hljs-keyword">try</span> {
             lock.lock();
-            while (!StringObject.value.equals(&quot;&quot;)) {
-                // &#x6709;&#x503C;&#xFF0C;&#x4E0D;&#x751F;&#x4EA7;
+            <span class="hljs-keyword">while</span> (!StringObject.value.equals(<span class="hljs-string">&quot;&quot;</span>)) {
+                <span class="hljs-comment">// &#x6709;&#x503C;&#xFF0C;&#x4E0D;&#x751F;&#x4EA7;</span>
                 condition.await();
             }
-            String value = System.currentTimeMillis() + &quot;&quot; + System.nanoTime();
-            System.out.println(&quot;set&#x7684;&#x503C;&#x662F;&#xFF1A;&quot; + value);
+            String value = System.currentTimeMillis() + <span class="hljs-string">&quot;&quot;</span> + System.nanoTime();
+            System.out.println(<span class="hljs-string">&quot;set&#x7684;&#x503C;&#x662F;&#xFF1A;&quot;</span> + value);
             StringObject.value = value;
             condition.signalAll();
-        } catch (InterruptedException e) {
+        } <span class="hljs-keyword">catch</span> (InterruptedException e) {
             e.printStackTrace();
-        }finally {
+        }<span class="hljs-keyword">finally</span> {
             lock.unlock();
         }
 
@@ -4036,29 +4040,29 @@
 }
 </code></pre>
 <p>&#x6D88;&#x8D39;&#x8005;</p>
-<pre><code class="lang-java">public class Consumer {
-    private ReentrantLock lock;
-    private Condition condition;
+<pre><code class="lang-java"><span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Consumer</span> </span>{
+    <span class="hljs-keyword">private</span> ReentrantLock lock;
+    <span class="hljs-keyword">private</span> Condition condition;
 
-    public Consumer(ReentrantLock lock,Condition condition) {
-        super();
-        this.lock = lock;
-        this.condition = condition;
+    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-title">Consumer</span><span class="hljs-params">(ReentrantLock lock,Condition condition)</span> </span>{
+        <span class="hljs-keyword">super</span>();
+        <span class="hljs-keyword">this</span>.lock = lock;
+        <span class="hljs-keyword">this</span>.condition = condition;
     }
-    public void getValue(){
-        try {
+    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">getValue</span><span class="hljs-params">()</span></span>{
+        <span class="hljs-keyword">try</span> {
                 lock.lock();
-                while(StringObject.value.equals(&quot;&quot;)){
-                    //&#x6CA1;&#x503C;&#xFF0C;&#x4E0D;&#x8FDB;&#x884C;&#x6D88;&#x8D39;
+                <span class="hljs-keyword">while</span>(StringObject.value.equals(<span class="hljs-string">&quot;&quot;</span>)){
+                    <span class="hljs-comment">//&#x6CA1;&#x503C;&#xFF0C;&#x4E0D;&#x8FDB;&#x884C;&#x6D88;&#x8D39;</span>
                     condition.await();
                 }
-                System.out.println(&quot;get&#x7684;&#x503C;&#x662F;&#xFF1A;&quot;+StringObject.value);
-                StringObject.value = &quot;&quot;;
+                System.out.println(<span class="hljs-string">&quot;get&#x7684;&#x503C;&#x662F;&#xFF1A;&quot;</span>+StringObject.value);
+                StringObject.value = <span class="hljs-string">&quot;&quot;</span>;
                 condition.signalAll();
 
-        } catch (InterruptedException e) {
+        } <span class="hljs-keyword">catch</span> (InterruptedException e) {
             e.printStackTrace();
-        }finally {
+        }<span class="hljs-keyword">finally</span> {
             lock.unlock();
         }
     }
@@ -4066,14 +4070,14 @@
 </code></pre>
 <p>&#x751F;&#x4EA7;&#x8005;&#x7EBF;&#x7A0B;&#x548C;&#x6D88;&#x8D39;&#x8005;&#x7EBF;&#x7A0B;&#x4E0E;&#x4E00;&#x751F;&#x4EA7;&#x4E00;&#x6D88;&#x8D39;&#x7684;&#x6A21;&#x5F0F;&#x76F8;&#x540C;&#x3002;</p>
 <p>&#x5F00;&#x542F;&#x591A;&#x751F;&#x4EA7;/&#x591A;&#x6D88;&#x8D39;&#x6A21;&#x5F0F;</p>
-<pre><code class="lang-java">public static void main(String[] args) throws InterruptedException {
-        ReentrantLock lock = new ReentrantLock();
+<pre><code class="lang-java"><span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title">main</span><span class="hljs-params">(String[] args)</span> <span class="hljs-keyword">throws</span> InterruptedException </span>{
+        ReentrantLock lock = <span class="hljs-keyword">new</span> ReentrantLock();
         Condition newCondition = lock.newCondition();
-        Product product = new Product(lock,newCondition);
-        Consumer consumer = new Consumer(lock,newCondition);
-        for(int i=0;i&lt;3;i++){
-            ThreadProduct pThread = new ThreadProduct(product);
-            ThreadConsumer cThread = new ThreadConsumer(consumer);
+        Product product = <span class="hljs-keyword">new</span> Product(lock,newCondition);
+        Consumer consumer = <span class="hljs-keyword">new</span> Consumer(lock,newCondition);
+        <span class="hljs-keyword">for</span>(<span class="hljs-keyword">int</span> i=<span class="hljs-number">0</span>;i&lt;<span class="hljs-number">3</span>;i++){
+            ThreadProduct pThread = <span class="hljs-keyword">new</span> ThreadProduct(product);
+            ThreadConsumer cThread = <span class="hljs-keyword">new</span> ThreadConsumer(consumer);
             pThread.start();
             cThread.start();
         }
@@ -4131,7 +4135,7 @@
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"生产者/消费者模式","level":"2.2.5","depth":2,"next":{"title":"volatile关键字","level":"2.2.6","depth":2,"path":"java/concurrence/volatile.md","ref":"java/concurrence/volatile.md","articles":[]},"previous":{"title":"Synchronized/ReentrantLock","level":"2.2.4","depth":2,"path":"java/concurrence/synchronized-reentrantlock.md","ref":"java/concurrence/synchronized-reentrantlock.md","articles":[]},"dir":"ltr"},"config":{"plugins":["-lunr","-search","-highlight","-livereload","search-plus@^0.0.11","simple-page-toc@^0.1.1","github@^2.0.0","github-buttons@2.1.0","edit-link@^2.0.2","advanced-emoji@^0.2.1","anchors@^0.7.1","include-codeblock@^3.0.2","ace@^0.3.2","emphasize@^1.1.0","katex@^1.1.3","splitter@^0.0.8","tbfed-pagefooter@^0.0.1","expandable-chapters-small@^0.1.7","sectionx@^3.1.0","local-video@^1.0.1","anchor-navigation-ex@0.1.8","favicon@^0.0.2"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"tbfed-pagefooter":{"copyright":"Copyright © ruheng.com 2017","modify_label":"该文件修订时间：","modify_format":"YYYY-MM-DD HH:mm:ss"},"emphasize":{},"ace":{},"github":{"url":"https://github.com/LRH1993/android_interview"},"simple-page-toc":{"maxDepth":3,"skipFirstH1":true},"splitter":{},"katex":{},"fontsettings":{"theme":"white","family":"sans","size":2},"sectionx":{"tag":"b"},"anchor-navigation-ex":{"isRewritePageTitle":false,"tocLevel1Icon":"fa fa-hand-o-right","tocLevel2Icon":"fa fa-hand-o-right","tocLevel3Icon":"fa fa-hand-o-right"},"favicon":{"shortcut":"favicon.ico","bookmark":"favicon.ico"},"github-buttons":{"repo":"LRH1993/android_interview","types":["star"],"size":"small"},"expandable-chapters-small":{},"local-video":{},"advanced-emoji":{"embedEmojis":false},"include-codeblock":{"check":false,"edit":true,"fixlang":false,"lang":"","template":"ace","theme":"chrome","unindent":true},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":true,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"edit-link":{"label":"Edit This Page","base":"https://github.com/LRH1993/android_interview/edit/master"},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":true},"anchors":{},"search-plus":{}},"theme":"default","author":"ruheng","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"Android校招面试指南","language":"zh-hans","output.name":"site","links":{"sidebar":{"Home":"http://lruheng.com/"}},"gitbook":"3.2.3","description":"Android面试必备，记录自己的秋招之路"},"file":{"path":"java/concurrence/producer-consumer.md","mtime":"2017-08-22T07:53:58.000Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2017-10-16T12:05:21.906Z"},"basePath":"../..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"生产者/消费者模式","level":"2.2.5","depth":2,"next":{"title":"volatile关键字","level":"2.2.6","depth":2,"path":"java/concurrence/volatile.md","ref":"java/concurrence/volatile.md","articles":[]},"previous":{"title":"Synchronized/ReentrantLock","level":"2.2.4","depth":2,"path":"java/concurrence/synchronized-reentrantlock.md","ref":"java/concurrence/synchronized-reentrantlock.md","articles":[]},"dir":"ltr"},"config":{"plugins":["-lunr","-search","-livereload","search-plus@^0.0.11","simple-page-toc@^0.1.1","github@^2.0.0","github-buttons@2.1.0","edit-link@^2.0.2","advanced-emoji@^0.2.1","anchors@^0.7.1","include-codeblock@^3.0.2","ace@^0.3.2","emphasize@^1.1.0","katex@^1.1.3","splitter@^0.0.8","tbfed-pagefooter@^0.0.1","expandable-chapters-small@^0.1.7","sectionx@^3.1.0","local-video@^1.0.1","anchor-navigation-ex@0.1.8","favicon@^0.0.2"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"tbfed-pagefooter":{"copyright":"Copyright © ruheng.com 2017","modify_label":"该文件修订时间：","modify_format":"YYYY-MM-DD HH:mm:ss"},"emphasize":{},"ace":{},"github":{"url":"https://github.com/LRH1993/android_interview"},"simple-page-toc":{"maxDepth":3,"skipFirstH1":true},"splitter":{},"katex":{},"fontsettings":{"theme":"white","family":"sans","size":2},"sectionx":{"tag":"b"},"highlight":{},"anchor-navigation-ex":{"isRewritePageTitle":false,"tocLevel1Icon":"fa fa-hand-o-right","tocLevel2Icon":"fa fa-hand-o-right","tocLevel3Icon":"fa fa-hand-o-right"},"favicon":{"shortcut":"favicon.ico","bookmark":"favicon.ico"},"github-buttons":{"repo":"LRH1993/android_interview","types":["star"],"size":"small"},"expandable-chapters-small":{},"local-video":{},"advanced-emoji":{"embedEmojis":false},"include-codeblock":{"check":false,"edit":false,"fixlang":false,"lang":"","template":"default","theme":"chrome","unindent":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":true,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"edit-link":{"label":"Edit This Page","base":"https://github.com/LRH1993/android_interview/edit/master"},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":true},"anchors":{},"search-plus":{}},"theme":"default","author":"ruheng","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"Android校招面试指南","language":"zh-hans","output.name":"site","links":{"sidebar":{"Home":"http://lruheng.com/"}},"gitbook":"3.2.3","description":"Android面试必备，记录自己的秋招之路"},"file":{"path":"java/concurrence/producer-consumer.md","mtime":"2017-08-22T07:53:58.000Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2017-10-16T13:00:43.989Z"},"basePath":"../..","book":{"language":""}});
         });
     </script>
 </div>

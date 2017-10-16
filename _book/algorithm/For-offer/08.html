@@ -69,6 +69,10 @@
                 
             
                 
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
                 <link rel="stylesheet" href="../../gitbook/gitbook-plugin-fontsettings/website.css">
                 
             
@@ -3711,48 +3715,48 @@
 <p>&#x2460;&#x4F4D;&#x79FB;&#xFF0B;&#x8BA1;&#x6570; &#x6BCF;&#x6B21;&#x53F3;&#x79FB;&#x4E00;&#x4F4D;&#xFF0C;&#x4E0D;&#x65AD;&#x548C;1&#x8FDB;&#x884C;&#x4E0E;&#x8FD0;&#x7B97;&#xFF0C;&#x76F4;&#x5230;&#x4F4D;0&#x3002;</p>
 <p>&#x2461;&#x5FAA;&#x73AF;&#x8BA9;(n - 1) &amp; n&#x3002;&#x5982;&#x679C;n&#x7684;&#x4E8C;&#x8FDB;&#x5236;&#x8868;&#x793A;&#x4E2D;&#x6709;k&#x4E2A;1&#xFF0C;&#x90A3;&#x4E48;&#x8FD9;&#x4E2A;&#x65B9;&#x6CD5;&#x53EA;&#x9700;&#x8981;&#x5FAA;&#x73AF;k&#x6B21;&#x5373;&#x53EF;&#x3002;<strong>&#x5176;&#x539F;&#x7406;&#x662F;&#x4E0D;&#x65AD;&#x6E05;&#x9664;n&#x7684;&#x4E8C;&#x8FDB;&#x5236;&#x8868;&#x793A;&#x4E2D;&#x6700;&#x53F3;&#x8FB9;&#x7684;1&#xFF0C;&#x540C;&#x65F6;&#x7D2F;&#x52A0;&#x8BA1;&#x6570;&#x5668;&#xFF0C;&#x76F4;&#x81F3;n&#x4E3A;0&#x3002;</strong>&#x56E0;&#x4E3A;&#x4ECE;&#x4E8C;&#x8FDB;&#x5236;&#x7684;&#x89D2;&#x5EA6;&#x8BB2;&#xFF0C;n&#x76F8;&#x5F53;&#x4E8E;&#x5728;n - 1&#x7684;&#x6700;&#x4F4E;&#x4F4D;&#x52A0;&#x4E0A;1&#x3002;&#x4E3E;&#x4E2A;&#x4F8B;&#x5B50;&#xFF0C;8&#xFF08;1000&#xFF09;= 7&#xFF08;0111&#xFF09;+ 1&#xFF08;0001&#xFF09;&#xFF0C;&#x6240;&#x4EE5;8 &amp; 7 = &#xFF08;1000&#xFF09;&amp;&#xFF08;0111&#xFF09;= 0&#xFF08;0000&#xFF09;&#xFF0C;&#x6E05;&#x9664;&#x4E86;8&#x6700;&#x53F3;&#x8FB9;&#x7684;1&#xFF08;&#x5176;&#x5B9E;&#x5C31;&#x662F;&#x6700;&#x9AD8;&#x4F4D;&#x7684;1&#xFF0C;&#x56E0;&#x4E3A;8&#x7684;&#x4E8C;&#x8FDB;&#x5236;&#x4E2D;&#x53EA;&#x6709;&#x4E00;&#x4E2A;1&#xFF09;&#x3002;&#x518D;&#x6BD4;&#x5982;7&#xFF08;0111&#xFF09;= 6&#xFF08;0110&#xFF09;+ 1&#xFF08;0001&#xFF09;&#xFF0C;&#x6240;&#x4EE5;7 &amp; 6 = &#xFF08;0111&#xFF09;&amp;&#xFF08;0110&#xFF09;= 6&#xFF08;0110&#xFF09;&#xFF0C;&#x6E05;&#x9664;&#x4E86;7&#x7684;&#x4E8C;&#x8FDB;&#x5236;&#x8868;&#x793A;&#x4E2D;&#x6700;&#x53F3;&#x8FB9;&#x7684;1&#xFF08;&#x4E5F;&#x5C31;&#x662F;&#x6700;&#x4F4E;&#x4F4D;&#x7684;1&#xFF09;&#x3002;</p>
 <h2 id="&#x4E09;&#x3001;&#x89E3;&#x9898;&#x4EE3;&#x7801;"><a name="&#x4E09;&#x3001;&#x89E3;&#x9898;&#x4EE3;&#x7801;" class="anchor-navigation-ex-anchor" href="#&#x4E09;&#x3001;&#x89E3;&#x9898;&#x4EE3;&#x7801;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x4E09;&#x3001;&#x89E3;&#x9898;&#x4EE3;&#x7801;</h2>
-<pre><code class="lang-java">public class Test {  
+<pre><code class="lang-java"><span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Test</span> </span>{  
 
-    /** 
+    <span class="hljs-comment">/** 
      * &#x8BF7;&#x5B9E;&#x73B0;&#x4E00;&#x4E2A;&#x51FD;&#x6570;&#xFF0C; &#x8F93;&#x5165;&#x4E00;&#x4E2A;&#x6574;&#x6570;&#xFF0C;&#x8F93;&#x51FA;&#x8BE5;&#x6570;&#x4E8C;&#x8FDB;&#x5236;&#x8868;&#x793A;&#x4E2D;1&#x7684;&#x4E2A;&#x6570;&#x3002; 
      * &#x4F8B;&#x5982;&#x628A;9&#x8868;&#x793A;&#x6210;&#x4E8C;&#x8FDB;&#x5236;&#x662F;1001 &#xFF0C;&#x6709;2&#x4F4D;&#x662F;1. &#x56E0;&#x6B64;&#x5982;&#x679C;&#x8F93;&#x5165;9&#xFF0C;&#x8BE5;&#x51FA;2&#x3002; 
      * 
-     * @param n &#x5F85;&#x7684;&#x6570;&#x5B57; 
-     * @return &#x6570;&#x5B57;&#x4E2D;&#x4E8C;&#x8FDB;&#x5236;&#x8868;&#x8868;&#x7684;1&#x7684;&#x6570;&#x76EE; 
-     */  
-    public static int numberOfOne(int n) {  
-        // &#x8BB0;&#x5F55;&#x6570;&#x5B57;&#x4E2D;1&#x7684;&#x4F4D;&#x6570;  
-        int result = 0;  
+     * <span class="hljs-doctag">@param</span> n &#x5F85;&#x7684;&#x6570;&#x5B57; 
+     * <span class="hljs-doctag">@return</span> &#x6570;&#x5B57;&#x4E2D;&#x4E8C;&#x8FDB;&#x5236;&#x8868;&#x8868;&#x7684;1&#x7684;&#x6570;&#x76EE; 
+     */</span>  
+    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">int</span> <span class="hljs-title">numberOfOne</span><span class="hljs-params">(<span class="hljs-keyword">int</span> n)</span> </span>{  
+        <span class="hljs-comment">// &#x8BB0;&#x5F55;&#x6570;&#x5B57;&#x4E2D;1&#x7684;&#x4F4D;&#x6570;  </span>
+        <span class="hljs-keyword">int</span> result = <span class="hljs-number">0</span>;  
 
-        // JAVA&#x8BED;&#x8A00;&#x89C4;&#x8303;&#x4E2D;&#xFF0C;int&#x6574;&#x5F62;&#x5360;&#x56DB;&#x4E2A;&#x5B57;&#x8282;&#xFF0C;&#x603B;&#x8BA1;32&#x4F4D;  
-        // &#x5BF9;&#x6BCF;&#x4E00;&#x4E2A;&#x4F4D;&#x7F6E;&#x4E0E;1&#x8FDB;&#x884C;&#x6C42;&#x4E0E;&#x64CD;&#x4F5C;&#xFF0C;&#x518D;&#x7D2F;&#x52A0;&#x5C31;&#x53EF;&#x4EE5;&#x6C42;&#x51FA;&#x5F53;&#x524D;&#x6570;&#x5B57;&#x7684;&#x8868;&#x793A;&#x662F;&#x591A;&#x5C11;&#x4F4D;1  
-        for (int i = 0; i &lt; 32; i++) {  
-            result += (n &amp; 1);  
-            n &gt;&gt;&gt;= 1;  
+        <span class="hljs-comment">// JAVA&#x8BED;&#x8A00;&#x89C4;&#x8303;&#x4E2D;&#xFF0C;int&#x6574;&#x5F62;&#x5360;&#x56DB;&#x4E2A;&#x5B57;&#x8282;&#xFF0C;&#x603B;&#x8BA1;32&#x4F4D;  </span>
+        <span class="hljs-comment">// &#x5BF9;&#x6BCF;&#x4E00;&#x4E2A;&#x4F4D;&#x7F6E;&#x4E0E;1&#x8FDB;&#x884C;&#x6C42;&#x4E0E;&#x64CD;&#x4F5C;&#xFF0C;&#x518D;&#x7D2F;&#x52A0;&#x5C31;&#x53EF;&#x4EE5;&#x6C42;&#x51FA;&#x5F53;&#x524D;&#x6570;&#x5B57;&#x7684;&#x8868;&#x793A;&#x662F;&#x591A;&#x5C11;&#x4F4D;1  </span>
+        <span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> i = <span class="hljs-number">0</span>; i &lt; <span class="hljs-number">32</span>; i++) {  
+            result += (n &amp; <span class="hljs-number">1</span>);  
+            n &gt;&gt;&gt;= <span class="hljs-number">1</span>;  
         }  
 
-        // &#x8FD4;&#x56DE;&#x6C42;&#x5F97;&#x7684;&#x7ED3;&#x679C;  
-        return result;  
+        <span class="hljs-comment">// &#x8FD4;&#x56DE;&#x6C42;&#x5F97;&#x7684;&#x7ED3;&#x679C;  </span>
+        <span class="hljs-keyword">return</span> result;  
     }  
 
-    /**
-     * @param n &#x5F85;&#x7684;&#x6570;&#x5B57; 
-     * @return &#x6570;&#x5B57;&#x4E2D;&#x4E8C;&#x8FDB;&#x5236;&#x8868;&#x8868;&#x7684;1&#x7684;&#x6570;&#x76EE; 
-     */  
-    public static int numberOfOne2(int n) {  
-        // &#x8BB0;&#x5F55;&#x6570;&#x5B57;&#x4E2D;1&#x7684;&#x4F4D;&#x6570;  
-        int result = 0;  
+    <span class="hljs-comment">/**
+     * <span class="hljs-doctag">@param</span> n &#x5F85;&#x7684;&#x6570;&#x5B57; 
+     * <span class="hljs-doctag">@return</span> &#x6570;&#x5B57;&#x4E2D;&#x4E8C;&#x8FDB;&#x5236;&#x8868;&#x8868;&#x7684;1&#x7684;&#x6570;&#x76EE; 
+     */</span>  
+    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">int</span> <span class="hljs-title">numberOfOne2</span><span class="hljs-params">(<span class="hljs-keyword">int</span> n)</span> </span>{  
+        <span class="hljs-comment">// &#x8BB0;&#x5F55;&#x6570;&#x5B57;&#x4E2D;1&#x7684;&#x4F4D;&#x6570;  </span>
+        <span class="hljs-keyword">int</span> result = <span class="hljs-number">0</span>;  
 
-        // &#x6570;&#x5B57;&#x7684;&#x4E8C;&#x8FDB;&#x5236;&#x8868;&#x793A;&#x4E2D;&#x6709;&#x591A;&#x5C11;&#x4E2A;1&#x5C31;&#x8FDB;&#x884C;&#x591A;&#x5C11;&#x6B21;&#x64CD;&#x4F5C;  
-        while (n != 0) {  
+        <span class="hljs-comment">// &#x6570;&#x5B57;&#x7684;&#x4E8C;&#x8FDB;&#x5236;&#x8868;&#x793A;&#x4E2D;&#x6709;&#x591A;&#x5C11;&#x4E2A;1&#x5C31;&#x8FDB;&#x884C;&#x591A;&#x5C11;&#x6B21;&#x64CD;&#x4F5C;  </span>
+        <span class="hljs-keyword">while</span> (n != <span class="hljs-number">0</span>) {  
             result++;  
-            // &#x4ECE;&#x6700;&#x53F3;&#x8FB9;&#x7684;1&#x5F00;&#x59CB;&#xFF0C;&#x6BCF;&#x4E00;&#x6B21;&#x64CD;&#x4F5C;&#x90FD;&#x4F7F;n&#x7684;&#x6700;&#x53F3;&#x7684;&#x4E00;&#x4E2A;1&#x53D8;&#x6210;&#x4E86;0&#xFF0C;  
-            // &#x5373;&#x4F7F;&#x662F;&#x7B26;&#x53F7;&#x4F4D;&#x4E5F;&#x4F1A;&#x8FDB;&#x884C;&#x64CD;&#x4F5C;&#x3002;  
-            n = (n - 1) &amp; n;  
+            <span class="hljs-comment">// &#x4ECE;&#x6700;&#x53F3;&#x8FB9;&#x7684;1&#x5F00;&#x59CB;&#xFF0C;&#x6BCF;&#x4E00;&#x6B21;&#x64CD;&#x4F5C;&#x90FD;&#x4F7F;n&#x7684;&#x6700;&#x53F3;&#x7684;&#x4E00;&#x4E2A;1&#x53D8;&#x6210;&#x4E86;0&#xFF0C;  </span>
+            <span class="hljs-comment">// &#x5373;&#x4F7F;&#x662F;&#x7B26;&#x53F7;&#x4F4D;&#x4E5F;&#x4F1A;&#x8FDB;&#x884C;&#x64CD;&#x4F5C;&#x3002;  </span>
+            n = (n - <span class="hljs-number">1</span>) &amp; n;  
         }  
 
-        // &#x8FD4;&#x56DE;&#x6C42;&#x5F97;&#x7684;&#x7ED3;&#x679C;  
-        return result;  
+        <span class="hljs-comment">// &#x8FD4;&#x56DE;&#x6C42;&#x5F97;&#x7684;&#x7ED3;&#x679C;  </span>
+        <span class="hljs-keyword">return</span> result;  
     }    
 }
 </code></pre>
@@ -3801,7 +3805,7 @@
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"08.二进制中1的个数","level":"5.1.8","depth":2,"next":{"title":"09.打印1到最大的n位数","level":"5.1.9","depth":2,"path":"algorithm/For-offer/09.md","ref":"algorithm/For-offer/09.md","articles":[]},"previous":{"title":"07.斐波那契数列","level":"5.1.7","depth":2,"path":"algorithm/For-offer/07.md","ref":"algorithm/For-offer/07.md","articles":[]},"dir":"ltr"},"config":{"plugins":["-lunr","-search","-highlight","-livereload","search-plus@^0.0.11","simple-page-toc@^0.1.1","github@^2.0.0","github-buttons@2.1.0","edit-link@^2.0.2","advanced-emoji@^0.2.1","anchors@^0.7.1","include-codeblock@^3.0.2","ace@^0.3.2","emphasize@^1.1.0","katex@^1.1.3","splitter@^0.0.8","tbfed-pagefooter@^0.0.1","expandable-chapters-small@^0.1.7","sectionx@^3.1.0","local-video@^1.0.1","anchor-navigation-ex@0.1.8","favicon@^0.0.2"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"tbfed-pagefooter":{"copyright":"Copyright © ruheng.com 2017","modify_label":"该文件修订时间：","modify_format":"YYYY-MM-DD HH:mm:ss"},"emphasize":{},"ace":{},"github":{"url":"https://github.com/LRH1993/android_interview"},"simple-page-toc":{"maxDepth":3,"skipFirstH1":true},"splitter":{},"katex":{},"fontsettings":{"theme":"white","family":"sans","size":2},"sectionx":{"tag":"b"},"anchor-navigation-ex":{"isRewritePageTitle":false,"tocLevel1Icon":"fa fa-hand-o-right","tocLevel2Icon":"fa fa-hand-o-right","tocLevel3Icon":"fa fa-hand-o-right"},"favicon":{"shortcut":"favicon.ico","bookmark":"favicon.ico"},"github-buttons":{"repo":"LRH1993/android_interview","types":["star"],"size":"small"},"expandable-chapters-small":{},"local-video":{},"advanced-emoji":{"embedEmojis":false},"include-codeblock":{"check":false,"edit":true,"fixlang":false,"lang":"","template":"ace","theme":"chrome","unindent":true},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":true,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"edit-link":{"label":"Edit This Page","base":"https://github.com/LRH1993/android_interview/edit/master"},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":true},"anchors":{},"search-plus":{}},"theme":"default","author":"ruheng","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"Android校招面试指南","language":"zh-hans","output.name":"site","links":{"sidebar":{"Home":"http://lruheng.com/"}},"gitbook":"3.2.3","description":"Android面试必备，记录自己的秋招之路"},"file":{"path":"algorithm/For-offer/08.md","mtime":"2017-08-22T07:53:58.000Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2017-10-16T12:05:21.906Z"},"basePath":"../..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"08.二进制中1的个数","level":"5.1.8","depth":2,"next":{"title":"09.打印1到最大的n位数","level":"5.1.9","depth":2,"path":"algorithm/For-offer/09.md","ref":"algorithm/For-offer/09.md","articles":[]},"previous":{"title":"07.斐波那契数列","level":"5.1.7","depth":2,"path":"algorithm/For-offer/07.md","ref":"algorithm/For-offer/07.md","articles":[]},"dir":"ltr"},"config":{"plugins":["-lunr","-search","-livereload","search-plus@^0.0.11","simple-page-toc@^0.1.1","github@^2.0.0","github-buttons@2.1.0","edit-link@^2.0.2","advanced-emoji@^0.2.1","anchors@^0.7.1","include-codeblock@^3.0.2","ace@^0.3.2","emphasize@^1.1.0","katex@^1.1.3","splitter@^0.0.8","tbfed-pagefooter@^0.0.1","expandable-chapters-small@^0.1.7","sectionx@^3.1.0","local-video@^1.0.1","anchor-navigation-ex@0.1.8","favicon@^0.0.2"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"tbfed-pagefooter":{"copyright":"Copyright © ruheng.com 2017","modify_label":"该文件修订时间：","modify_format":"YYYY-MM-DD HH:mm:ss"},"emphasize":{},"ace":{},"github":{"url":"https://github.com/LRH1993/android_interview"},"simple-page-toc":{"maxDepth":3,"skipFirstH1":true},"splitter":{},"katex":{},"fontsettings":{"theme":"white","family":"sans","size":2},"sectionx":{"tag":"b"},"highlight":{},"anchor-navigation-ex":{"isRewritePageTitle":false,"tocLevel1Icon":"fa fa-hand-o-right","tocLevel2Icon":"fa fa-hand-o-right","tocLevel3Icon":"fa fa-hand-o-right"},"favicon":{"shortcut":"favicon.ico","bookmark":"favicon.ico"},"github-buttons":{"repo":"LRH1993/android_interview","types":["star"],"size":"small"},"expandable-chapters-small":{},"local-video":{},"advanced-emoji":{"embedEmojis":false},"include-codeblock":{"check":false,"edit":false,"fixlang":false,"lang":"","template":"default","theme":"chrome","unindent":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":true,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"edit-link":{"label":"Edit This Page","base":"https://github.com/LRH1993/android_interview/edit/master"},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":true},"anchors":{},"search-plus":{}},"theme":"default","author":"ruheng","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"Android校招面试指南","language":"zh-hans","output.name":"site","links":{"sidebar":{"Home":"http://lruheng.com/"}},"gitbook":"3.2.3","description":"Android面试必备，记录自己的秋招之路"},"file":{"path":"algorithm/For-offer/08.md","mtime":"2017-08-22T07:53:58.000Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2017-10-16T13:00:43.989Z"},"basePath":"../..","book":{"language":""}});
         });
     </script>
 </div>

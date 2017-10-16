@@ -69,6 +69,10 @@
                 
             
                 
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
                 <link rel="stylesheet" href="../../gitbook/gitbook-plugin-fontsettings/website.css">
                 
             
@@ -3721,350 +3725,350 @@
 <p><img src="http://design-patterns.readthedocs.io/zh_CN/latest/_images/seq_Builder.jpg" alt=""></p>
 <h2 id="&#x56DB;&#x3001;&#x7B80;&#x5355;&#x5B9E;&#x73B0;"><a name="&#x56DB;&#x3001;&#x7B80;&#x5355;&#x5B9E;&#x73B0;" class="anchor-navigation-ex-anchor" href="#&#x56DB;&#x3001;&#x7B80;&#x5355;&#x5B9E;&#x73B0;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x56DB;&#x3001;&#x7B80;&#x5355;&#x5B9E;&#x73B0;</h2>
 <p>&#x7535;&#x8111;&#x7684;&#x7EC4;&#x88C5;&#x8FC7;&#x7A0B;&#x8F83;&#x4E3A;&#x590D;&#x6742;&#xFF0C;&#x6B65;&#x9AA4;&#x7E41;&#x591A;&#xFF0C;&#x4F46;&#x662F;&#x987A;&#x5E8F;&#x5374;&#x662F;&#x4E0D;&#x56FA;&#x5B9A;&#x7684;&#x3002;&#x4E0B;&#x9762;&#x6211;&#x4EEC;&#x4EE5;&#x7EC4;&#x88C5;&#x7535;&#x8111;&#x4E3A;&#x4F8B;&#x6765;&#x6F14;&#x793A;&#x4E00;&#x4E0B;&#x7B80;&#x5355;&#x4E14;&#x7ECF;&#x5178;&#x7684;builder&#x6A21;&#x5F0F;</p>
-<pre><code class="lang-java">package com.dp.example.builder;
+<pre><code class="lang-java"><span class="hljs-keyword">package</span> com.dp.example.builder;
 
-/**
+<span class="hljs-comment">/**
  * Computer&#x4EA7;&#x54C1;&#x62BD;&#x8C61;&#x7C7B;, &#x4E3A;&#x4E86;&#x4F8B;&#x5B50;&#x7B80;&#x5355;, &#x53EA;&#x5217;&#x51FA;&#x8FD9;&#x51E0;&#x4E2A;&#x5C5E;&#x6027;
  * 
- * @author mrsimple
+ * <span class="hljs-doctag">@author</span> mrsimple
  *
- */
-public abstract class Computer {
+ */</span>
+<span class="hljs-keyword">public</span> <span class="hljs-keyword">abstract</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Computer</span> </span>{
 
-    protected int mCpuCore = 1;
-    protected int mRamSize = 0;
-    protected String mOs = &quot;Dos&quot;;
+    <span class="hljs-keyword">protected</span> <span class="hljs-keyword">int</span> mCpuCore = <span class="hljs-number">1</span>;
+    <span class="hljs-keyword">protected</span> <span class="hljs-keyword">int</span> mRamSize = <span class="hljs-number">0</span>;
+    <span class="hljs-keyword">protected</span> String mOs = <span class="hljs-string">&quot;Dos&quot;</span>;
 
-    protected Computer() {
+    <span class="hljs-function"><span class="hljs-keyword">protected</span> <span class="hljs-title">Computer</span><span class="hljs-params">()</span> </span>{
 
     }
 
-    // &#x8BBE;&#x7F6E;CPU&#x6838;&#x5FC3;&#x6570;
-    public abstract void setCPU(int core);
+    <span class="hljs-comment">// &#x8BBE;&#x7F6E;CPU&#x6838;&#x5FC3;&#x6570;</span>
+    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">abstract</span> <span class="hljs-keyword">void</span> <span class="hljs-title">setCPU</span><span class="hljs-params">(<span class="hljs-keyword">int</span> core)</span></span>;
 
-    // &#x8BBE;&#x7F6E;&#x5185;&#x5B58;
-    public abstract void setRAM(int gb);
+    <span class="hljs-comment">// &#x8BBE;&#x7F6E;&#x5185;&#x5B58;</span>
+    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">abstract</span> <span class="hljs-keyword">void</span> <span class="hljs-title">setRAM</span><span class="hljs-params">(<span class="hljs-keyword">int</span> gb)</span></span>;
 
-    // &#x8BBE;&#x7F6E;&#x64CD;&#x4F5C;&#x7CFB;&#x7EDF;
-    public abstract void setOs(String os);
+    <span class="hljs-comment">// &#x8BBE;&#x7F6E;&#x64CD;&#x4F5C;&#x7CFB;&#x7EDF;</span>
+    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">abstract</span> <span class="hljs-keyword">void</span> <span class="hljs-title">setOs</span><span class="hljs-params">(String os)</span></span>;
 
-    @Override
-    public String toString() {
-        return &quot;Computer [mCpuCore=&quot; + mCpuCore + &quot;, mRamSize=&quot; + mRamSize
-                + &quot;, mOs=&quot; + mOs + &quot;]&quot;;
+    <span class="hljs-meta">@Override</span>
+    <span class="hljs-function"><span class="hljs-keyword">public</span> String <span class="hljs-title">toString</span><span class="hljs-params">()</span> </span>{
+        <span class="hljs-keyword">return</span> <span class="hljs-string">&quot;Computer [mCpuCore=&quot;</span> + mCpuCore + <span class="hljs-string">&quot;, mRamSize=&quot;</span> + mRamSize
+                + <span class="hljs-string">&quot;, mOs=&quot;</span> + mOs + <span class="hljs-string">&quot;]&quot;</span>;
     }
 
 }
 
-package com.dp.example.builder;
+<span class="hljs-keyword">package</span> com.dp.example.builder;
 
-/**
+<span class="hljs-comment">/**
  * Apple&#x7535;&#x8111;
- */
-public class AppleComputer extends Computer {
+ */</span>
+<span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">AppleComputer</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">Computer</span> </span>{
 
-    protected AppleComputer() {
+    <span class="hljs-function"><span class="hljs-keyword">protected</span> <span class="hljs-title">AppleComputer</span><span class="hljs-params">()</span> </span>{
 
     }
 
-    @Override
-    public void setCPU(int core) {
+    <span class="hljs-meta">@Override</span>
+    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">setCPU</span><span class="hljs-params">(<span class="hljs-keyword">int</span> core)</span> </span>{
         mCpuCore = core;
     }
 
-    @Override
-    public void setRAM(int gb) {
+    <span class="hljs-meta">@Override</span>
+    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">setRAM</span><span class="hljs-params">(<span class="hljs-keyword">int</span> gb)</span> </span>{
         mRamSize = gb;
     }
 
-    @Override
-    public void setOs(String os) {
+    <span class="hljs-meta">@Override</span>
+    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">setOs</span><span class="hljs-params">(String os)</span> </span>{
         mOs = os;
     }
 
 }
 
-package com.dp.example.builder;
+<span class="hljs-keyword">package</span> com.dp.example.builder;
 
 
-package com.dp.example.builder;
+<span class="hljs-keyword">package</span> com.dp.example.builder;
 
-/**
+<span class="hljs-comment">/**
  * builder&#x62BD;&#x8C61;&#x7C7B;
  *
- */
-public abstract class Builder {
-    // &#x8BBE;&#x7F6E;CPU&#x6838;&#x5FC3;&#x6570;
-    public abstract void buildCPU(int core);
+ */</span>
+<span class="hljs-keyword">public</span> <span class="hljs-keyword">abstract</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Builder</span> </span>{
+    <span class="hljs-comment">// &#x8BBE;&#x7F6E;CPU&#x6838;&#x5FC3;&#x6570;</span>
+    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">abstract</span> <span class="hljs-keyword">void</span> <span class="hljs-title">buildCPU</span><span class="hljs-params">(<span class="hljs-keyword">int</span> core)</span></span>;
 
-    // &#x8BBE;&#x7F6E;&#x5185;&#x5B58;
-    public abstract void buildRAM(int gb);
+    <span class="hljs-comment">// &#x8BBE;&#x7F6E;&#x5185;&#x5B58;</span>
+    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">abstract</span> <span class="hljs-keyword">void</span> <span class="hljs-title">buildRAM</span><span class="hljs-params">(<span class="hljs-keyword">int</span> gb)</span></span>;
 
-    // &#x8BBE;&#x7F6E;&#x64CD;&#x4F5C;&#x7CFB;&#x7EDF;
-    public abstract void buildOs(String os);
+    <span class="hljs-comment">// &#x8BBE;&#x7F6E;&#x64CD;&#x4F5C;&#x7CFB;&#x7EDF;</span>
+    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">abstract</span> <span class="hljs-keyword">void</span> <span class="hljs-title">buildOs</span><span class="hljs-params">(String os)</span></span>;
 
-    // &#x521B;&#x5EFA;Computer
-    public abstract Computer create();
+    <span class="hljs-comment">// &#x521B;&#x5EFA;Computer</span>
+    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">abstract</span> Computer <span class="hljs-title">create</span><span class="hljs-params">()</span></span>;
 
 }
 
-package com.dp.example.builder;
+<span class="hljs-keyword">package</span> com.dp.example.builder;
 
-public class ApplePCBuilder extends Builder {
-    private Computer mApplePc = new AppleComputer();
+<span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">ApplePCBuilder</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">Builder</span> </span>{
+    <span class="hljs-keyword">private</span> Computer mApplePc = <span class="hljs-keyword">new</span> AppleComputer();
 
-    @Override
-    public void buildCPU(int core) {
+    <span class="hljs-meta">@Override</span>
+    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">buildCPU</span><span class="hljs-params">(<span class="hljs-keyword">int</span> core)</span> </span>{
         mApplePc.setCPU(core);
     }
 
-    @Override
-    public void buildRAM(int gb) {
+    <span class="hljs-meta">@Override</span>
+    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">buildRAM</span><span class="hljs-params">(<span class="hljs-keyword">int</span> gb)</span> </span>{
         mApplePc.setRAM(gb);
     }
 
-    @Override
-    public void buildOs(String os) {
+    <span class="hljs-meta">@Override</span>
+    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">buildOs</span><span class="hljs-params">(String os)</span> </span>{
         mApplePc.setOs(os);
     }
 
-    @Override
-    public Computer create() {
-        return mApplePc;
+    <span class="hljs-meta">@Override</span>
+    <span class="hljs-function"><span class="hljs-keyword">public</span> Computer <span class="hljs-title">create</span><span class="hljs-params">()</span> </span>{
+        <span class="hljs-keyword">return</span> mApplePc;
     }
 
 }
 
-package com.dp.example.builder;
+<span class="hljs-keyword">package</span> com.dp.example.builder;
 
-public class Director {
-    Builder mBuilder = null;
+<span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Director</span> </span>{
+    Builder mBuilder = <span class="hljs-keyword">null</span>;
 
-    /**
+    <span class="hljs-comment">/**
      * 
-     * @param builder
-     */
-    public Director(Builder builder) {
+     * <span class="hljs-doctag">@param</span> builder
+     */</span>
+    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-title">Director</span><span class="hljs-params">(Builder builder)</span> </span>{
         mBuilder = builder;
     }
 
-    /**
+    <span class="hljs-comment">/**
      * &#x6784;&#x5EFA;&#x5BF9;&#x8C61;
      * 
-     * @param cpu
-     * @param ram
-     * @param os
-     */
-    public void construct(int cpu, int ram, String os) {
+     * <span class="hljs-doctag">@param</span> cpu
+     * <span class="hljs-doctag">@param</span> ram
+     * <span class="hljs-doctag">@param</span> os
+     */</span>
+    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">construct</span><span class="hljs-params">(<span class="hljs-keyword">int</span> cpu, <span class="hljs-keyword">int</span> ram, String os)</span> </span>{
         mBuilder.buildCPU(cpu);
         mBuilder.buildRAM(ram);
         mBuilder.buildOs(os);
     }
 }
 
-/**
+<span class="hljs-comment">/**
  * &#x7ECF;&#x5178;&#x5B9E;&#x73B0;&#x8F83;&#x4E3A;&#x7E41;&#x7410;
  * 
- * @author mrsimple
+ * <span class="hljs-doctag">@author</span> mrsimple
  *
- */
-public class Test {
-    public static void main(String[] args) {
-        // &#x6784;&#x5EFA;&#x5668;
-        Builder builder = new ApplePCBuilder();
-        // Director
-        Director pcDirector = new Director(builder);
-        // &#x5C01;&#x88C5;&#x6784;&#x5EFA;&#x8FC7;&#x7A0B;, 4&#x6838;, &#x5185;&#x5B58;2GB, Mac&#x7CFB;&#x7EDF;
-        pcDirector.construct(4, 2, &quot;Mac OS X 10.9.1&quot;);
-        // &#x6784;&#x5EFA;&#x7535;&#x8111;, &#x8F93;&#x51FA;&#x76F8;&#x5173;&#x4FE1;&#x606F;
-        System.out.println(&quot;Computer Info : &quot; + builder.create().toString());
+ */</span>
+<span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Test</span> </span>{
+    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title">main</span><span class="hljs-params">(String[] args)</span> </span>{
+        <span class="hljs-comment">// &#x6784;&#x5EFA;&#x5668;</span>
+        Builder builder = <span class="hljs-keyword">new</span> ApplePCBuilder();
+        <span class="hljs-comment">// Director</span>
+        Director pcDirector = <span class="hljs-keyword">new</span> Director(builder);
+        <span class="hljs-comment">// &#x5C01;&#x88C5;&#x6784;&#x5EFA;&#x8FC7;&#x7A0B;, 4&#x6838;, &#x5185;&#x5B58;2GB, Mac&#x7CFB;&#x7EDF;</span>
+        pcDirector.construct(<span class="hljs-number">4</span>, <span class="hljs-number">2</span>, <span class="hljs-string">&quot;Mac OS X 10.9.1&quot;</span>);
+        <span class="hljs-comment">// &#x6784;&#x5EFA;&#x7535;&#x8111;, &#x8F93;&#x51FA;&#x76F8;&#x5173;&#x4FE1;&#x606F;</span>
+        System.out.println(<span class="hljs-string">&quot;Computer Info : &quot;</span> + builder.create().toString());
     }
 }
 </code></pre>
 <h2 id="&#x4E94;&#x3001;android&#x6E90;&#x7801;&#x4E2D;&#x6A21;&#x5F0F;&#x5B9E;&#x73B0;"><a name="&#x4E94;&#x3001;android&#x6E90;&#x7801;&#x4E2D;&#x6A21;&#x5F0F;&#x5B9E;&#x73B0;" class="anchor-navigation-ex-anchor" href="#&#x4E94;&#x3001;android&#x6E90;&#x7801;&#x4E2D;&#x6A21;&#x5F0F;&#x5B9E;&#x73B0;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x4E94;&#x3001;Android&#x6E90;&#x7801;&#x4E2D;&#x6A21;&#x5F0F;&#x5B9E;&#x73B0;</h2>
 <p>&#x5728;Android&#x6E90;&#x7801;&#x4E2D;&#xFF0C;&#x6211;&#x4EEC;&#x6700;&#x5E38;&#x7528;&#x5230;&#x7684;Builder&#x6A21;&#x5F0F;&#x5C31;&#x662F;AlertDialog.Builder&#xFF0C; &#x4F7F;&#x7528;&#x8BE5;Builder&#x6765;&#x6784;&#x5EFA;&#x590D;&#x6742;&#x7684;AlertDialog&#x5BF9;&#x8C61;&#x3002;&#x7B80;&#x5355;&#x793A;&#x4F8B;&#x5982;&#x4E0B; :</p>
-<pre><code class="lang-java">    //&#x663E;&#x793A;&#x57FA;&#x672C;&#x7684;AlertDialog  
-    private void showDialog(Context context) {  
-        AlertDialog.Builder builder = new AlertDialog.Builder(context);  
+<pre><code class="lang-java">    <span class="hljs-comment">//&#x663E;&#x793A;&#x57FA;&#x672C;&#x7684;AlertDialog  </span>
+    <span class="hljs-function"><span class="hljs-keyword">private</span> <span class="hljs-keyword">void</span> <span class="hljs-title">showDialog</span><span class="hljs-params">(Context context)</span> </span>{  
+        AlertDialog.Builder builder = <span class="hljs-keyword">new</span> AlertDialog.Builder(context);  
         builder.setIcon(R.drawable.icon);  
-        builder.setTitle(&quot;Title&quot;);  
-        builder.setMessage(&quot;Message&quot;);  
-        builder.setPositiveButton(&quot;Button1&quot;,  
-                new DialogInterface.OnClickListener() {  
-                    public void onClick(DialogInterface dialog, int whichButton) {  
-                        setTitle(&quot;&#x70B9;&#x51FB;&#x4E86;&#x5BF9;&#x8BDD;&#x6846;&#x4E0A;&#x7684;Button1&quot;);  
+        builder.setTitle(<span class="hljs-string">&quot;Title&quot;</span>);  
+        builder.setMessage(<span class="hljs-string">&quot;Message&quot;</span>);  
+        builder.setPositiveButton(<span class="hljs-string">&quot;Button1&quot;</span>,  
+                <span class="hljs-keyword">new</span> DialogInterface.OnClickListener() {  
+                    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">onClick</span><span class="hljs-params">(DialogInterface dialog, <span class="hljs-keyword">int</span> whichButton)</span> </span>{  
+                        setTitle(<span class="hljs-string">&quot;&#x70B9;&#x51FB;&#x4E86;&#x5BF9;&#x8BDD;&#x6846;&#x4E0A;&#x7684;Button1&quot;</span>);  
                     }  
                 });  
-        builder.setNeutralButton(&quot;Button2&quot;,  
-                new DialogInterface.OnClickListener() {  
-                    public void onClick(DialogInterface dialog, int whichButton) {  
-                        setTitle(&quot;&#x70B9;&#x51FB;&#x4E86;&#x5BF9;&#x8BDD;&#x6846;&#x4E0A;&#x7684;Button2&quot;);  
+        builder.setNeutralButton(<span class="hljs-string">&quot;Button2&quot;</span>,  
+                <span class="hljs-keyword">new</span> DialogInterface.OnClickListener() {  
+                    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">onClick</span><span class="hljs-params">(DialogInterface dialog, <span class="hljs-keyword">int</span> whichButton)</span> </span>{  
+                        setTitle(<span class="hljs-string">&quot;&#x70B9;&#x51FB;&#x4E86;&#x5BF9;&#x8BDD;&#x6846;&#x4E0A;&#x7684;Button2&quot;</span>);  
                     }  
                 });  
-        builder.setNegativeButton(&quot;Button3&quot;,  
-                new DialogInterface.OnClickListener() {  
-                    public void onClick(DialogInterface dialog, int whichButton) {  
-                        setTitle(&quot;&#x70B9;&#x51FB;&#x4E86;&#x5BF9;&#x8BDD;&#x6846;&#x4E0A;&#x7684;Button3&quot;);  
+        builder.setNegativeButton(<span class="hljs-string">&quot;Button3&quot;</span>,  
+                <span class="hljs-keyword">new</span> DialogInterface.OnClickListener() {  
+                    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">onClick</span><span class="hljs-params">(DialogInterface dialog, <span class="hljs-keyword">int</span> whichButton)</span> </span>{  
+                        setTitle(<span class="hljs-string">&quot;&#x70B9;&#x51FB;&#x4E86;&#x5BF9;&#x8BDD;&#x6846;&#x4E0A;&#x7684;Button3&quot;</span>);  
                     }  
                 });  
-        builder.create().show();  // &#x6784;&#x5EFA;AlertDialog&#xFF0C; &#x5E76;&#x4E14;&#x663E;&#x793A;
+        builder.create().show();  <span class="hljs-comment">// &#x6784;&#x5EFA;AlertDialog&#xFF0C; &#x5E76;&#x4E14;&#x663E;&#x793A;</span>
     }
 </code></pre>
 <p>&#x7ED3;&#x679C; : <a href="https://github.com/simple-android-framework-exchange/android_design_patterns_analysis/blob/master/builder/mr.simple/images/result.png" target="_blank"><img src="https://github.com/simple-android-framework-exchange/android_design_patterns_analysis/raw/master/builder/mr.simple/images/result.png" alt="result"></a></p>
 <p>&#x4E0B;&#x9762;&#x6211;&#x4EEC;&#x770B;&#x770B;AlertDialog&#x7684;&#x76F8;&#x5173;&#x6E90;&#x7801; :</p>
-<pre><code class="lang-java">// AlertDialog
-public class AlertDialog extends Dialog implements DialogInterface {
-    // Controller, &#x63A5;&#x53D7;Builder&#x6210;&#x5458;&#x53D8;&#x91CF;P&#x4E2D;&#x7684;&#x5404;&#x4E2A;&#x53C2;&#x6570;
-    private AlertController mAlert;
+<pre><code class="lang-java"><span class="hljs-comment">// AlertDialog</span>
+<span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">AlertDialog</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">Dialog</span> <span class="hljs-keyword">implements</span> <span class="hljs-title">DialogInterface</span> </span>{
+    <span class="hljs-comment">// Controller, &#x63A5;&#x53D7;Builder&#x6210;&#x5458;&#x53D8;&#x91CF;P&#x4E2D;&#x7684;&#x5404;&#x4E2A;&#x53C2;&#x6570;</span>
+    <span class="hljs-keyword">private</span> AlertController mAlert;
 
-    // &#x6784;&#x9020;&#x51FD;&#x6570;
-    protected AlertDialog(Context context, int theme) {
-        this(context, theme, true);
+    <span class="hljs-comment">// &#x6784;&#x9020;&#x51FD;&#x6570;</span>
+    <span class="hljs-function"><span class="hljs-keyword">protected</span> <span class="hljs-title">AlertDialog</span><span class="hljs-params">(Context context, <span class="hljs-keyword">int</span> theme)</span> </span>{
+        <span class="hljs-keyword">this</span>(context, theme, <span class="hljs-keyword">true</span>);
     }
 
-    // 4 : &#x6784;&#x9020;AlertDialog
-    AlertDialog(Context context, int theme, boolean createContextWrapper) {
-        super(context, resolveDialogTheme(context, theme), createContextWrapper);
+    <span class="hljs-comment">// 4 : &#x6784;&#x9020;AlertDialog</span>
+    AlertDialog(Context context, <span class="hljs-keyword">int</span> theme, <span class="hljs-keyword">boolean</span> createContextWrapper) {
+        <span class="hljs-keyword">super</span>(context, resolveDialogTheme(context, theme), createContextWrapper);
         mWindow.alwaysReadCloseOnTouchAttr();
-        mAlert = new AlertController(getContext(), this, getWindow());
+        mAlert = <span class="hljs-keyword">new</span> AlertController(getContext(), <span class="hljs-keyword">this</span>, getWindow());
     }
 
-    // &#x5B9E;&#x9645;&#x4E0A;&#x8C03;&#x7528;&#x7684;&#x662F;mAlert&#x7684;setTitle&#x65B9;&#x6CD5;
-    @Override
-    public void setTitle(CharSequence title) {
-        super.setTitle(title);
+    <span class="hljs-comment">// &#x5B9E;&#x9645;&#x4E0A;&#x8C03;&#x7528;&#x7684;&#x662F;mAlert&#x7684;setTitle&#x65B9;&#x6CD5;</span>
+    <span class="hljs-meta">@Override</span>
+    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">setTitle</span><span class="hljs-params">(CharSequence title)</span> </span>{
+        <span class="hljs-keyword">super</span>.setTitle(title);
         mAlert.setTitle(title);
     }
 
-    // &#x5B9E;&#x9645;&#x4E0A;&#x8C03;&#x7528;&#x7684;&#x662F;mAlert&#x7684;setCustomTitle&#x65B9;&#x6CD5;
-    public void setCustomTitle(View customTitleView) {
+    <span class="hljs-comment">// &#x5B9E;&#x9645;&#x4E0A;&#x8C03;&#x7528;&#x7684;&#x662F;mAlert&#x7684;setCustomTitle&#x65B9;&#x6CD5;</span>
+    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">setCustomTitle</span><span class="hljs-params">(View customTitleView)</span> </span>{
         mAlert.setCustomTitle(customTitleView);
     }
 
-    public void setMessage(CharSequence message) {
+    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">setMessage</span><span class="hljs-params">(CharSequence message)</span> </span>{
         mAlert.setMessage(message);
     }
 
-    // AlertDialog&#x5176;&#x4ED6;&#x7684;&#x4EE3;&#x7801;&#x7701;&#x7565;
+    <span class="hljs-comment">// AlertDialog&#x5176;&#x4ED6;&#x7684;&#x4EE3;&#x7801;&#x7701;&#x7565;</span>
 
-    // ************  Builder&#x4E3A;AlertDialog&#x7684;&#x5185;&#x90E8;&#x7C7B;   *******************
-    public static class Builder {
-        // 1 : &#x5B58;&#x50A8;AlertDialog&#x7684;&#x5404;&#x4E2A;&#x53C2;&#x6570;, &#x4F8B;&#x5982;title, message, icon&#x7B49;.
-        private final AlertController.AlertParams P;
-        // &#x5C5E;&#x6027;&#x7701;&#x7565;
+    <span class="hljs-comment">// ************  Builder&#x4E3A;AlertDialog&#x7684;&#x5185;&#x90E8;&#x7C7B;   *******************</span>
+    <span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Builder</span> </span>{
+        <span class="hljs-comment">// 1 : &#x5B58;&#x50A8;AlertDialog&#x7684;&#x5404;&#x4E2A;&#x53C2;&#x6570;, &#x4F8B;&#x5982;title, message, icon&#x7B49;.</span>
+        <span class="hljs-keyword">private</span> <span class="hljs-keyword">final</span> AlertController.AlertParams P;
+        <span class="hljs-comment">// &#x5C5E;&#x6027;&#x7701;&#x7565;</span>
 
-        /**
-         * Constructor using a context for this builder and the {@link AlertDialog} it creates.
-         */
-        public Builder(Context context) {
-            this(context, resolveDialogTheme(context, 0));
+        <span class="hljs-comment">/**
+         * Constructor using a context for this builder and the {<span class="hljs-doctag">@link</span> AlertDialog} it creates.
+         */</span>
+        <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-title">Builder</span><span class="hljs-params">(Context context)</span> </span>{
+            <span class="hljs-keyword">this</span>(context, resolveDialogTheme(context, <span class="hljs-number">0</span>));
         }
 
 
-        public Builder(Context context, int theme) {
-            P = new AlertController.AlertParams(new ContextThemeWrapper(
+        <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-title">Builder</span><span class="hljs-params">(Context context, <span class="hljs-keyword">int</span> theme)</span> </span>{
+            P = <span class="hljs-keyword">new</span> AlertController.AlertParams(<span class="hljs-keyword">new</span> ContextThemeWrapper(
                     context, resolveDialogTheme(context, theme)));
             mTheme = theme;
         }
 
-        // Builder&#x7684;&#x5176;&#x4ED6;&#x4EE3;&#x7801;&#x7701;&#x7565; ......
+        <span class="hljs-comment">// Builder&#x7684;&#x5176;&#x4ED6;&#x4EE3;&#x7801;&#x7701;&#x7565; ......</span>
 
-        // 2 : &#x8BBE;&#x7F6E;&#x5404;&#x79CD;&#x53C2;&#x6570;
-        public Builder setTitle(CharSequence title) {
+        <span class="hljs-comment">// 2 : &#x8BBE;&#x7F6E;&#x5404;&#x79CD;&#x53C2;&#x6570;</span>
+        <span class="hljs-function"><span class="hljs-keyword">public</span> Builder <span class="hljs-title">setTitle</span><span class="hljs-params">(CharSequence title)</span> </span>{
             P.mTitle = title;
-            return this;
+            <span class="hljs-keyword">return</span> <span class="hljs-keyword">this</span>;
         }
 
 
-        public Builder setMessage(CharSequence message) {
+        <span class="hljs-function"><span class="hljs-keyword">public</span> Builder <span class="hljs-title">setMessage</span><span class="hljs-params">(CharSequence message)</span> </span>{
             P.mMessage = message;
-            return this;
+            <span class="hljs-keyword">return</span> <span class="hljs-keyword">this</span>;
         }
 
-        public Builder setIcon(int iconId) {
+        <span class="hljs-function"><span class="hljs-keyword">public</span> Builder <span class="hljs-title">setIcon</span><span class="hljs-params">(<span class="hljs-keyword">int</span> iconId)</span> </span>{
             P.mIconId = iconId;
-            return this;
+            <span class="hljs-keyword">return</span> <span class="hljs-keyword">this</span>;
         }
 
-        public Builder setPositiveButton(CharSequence text, final OnClickListener listener) {
+        <span class="hljs-function"><span class="hljs-keyword">public</span> Builder <span class="hljs-title">setPositiveButton</span><span class="hljs-params">(CharSequence text, <span class="hljs-keyword">final</span> OnClickListener listener)</span> </span>{
             P.mPositiveButtonText = text;
             P.mPositiveButtonListener = listener;
-            return this;
+            <span class="hljs-keyword">return</span> <span class="hljs-keyword">this</span>;
         }
 
 
-        public Builder setView(View view) {
+        <span class="hljs-function"><span class="hljs-keyword">public</span> Builder <span class="hljs-title">setView</span><span class="hljs-params">(View view)</span> </span>{
             P.mView = view;
-            P.mViewSpacingSpecified = false;
-            return this;
+            P.mViewSpacingSpecified = <span class="hljs-keyword">false</span>;
+            <span class="hljs-keyword">return</span> <span class="hljs-keyword">this</span>;
         }
 
-        // 3 : &#x6784;&#x5EFA;AlertDialog, &#x4F20;&#x9012;&#x53C2;&#x6570;
-        public AlertDialog create() {
-            // &#x8C03;&#x7528;new AlertDialog&#x6784;&#x9020;&#x5BF9;&#x8C61;&#xFF0C; &#x5E76;&#x4E14;&#x5C06;&#x53C2;&#x6570;&#x4F20;&#x9012;&#x4E2A;&#x4F53;AlertDialog 
-            final AlertDialog dialog = new AlertDialog(P.mContext, mTheme, false);
-            // 5 : &#x5C06;P&#x4E2D;&#x7684;&#x53C2;&#x6570;&#x5E94;&#x7528;&#x7684;dialog&#x4E2D;&#x7684;mAlert&#x5BF9;&#x8C61;&#x4E2D;
+        <span class="hljs-comment">// 3 : &#x6784;&#x5EFA;AlertDialog, &#x4F20;&#x9012;&#x53C2;&#x6570;</span>
+        <span class="hljs-function"><span class="hljs-keyword">public</span> AlertDialog <span class="hljs-title">create</span><span class="hljs-params">()</span> </span>{
+            <span class="hljs-comment">// &#x8C03;&#x7528;new AlertDialog&#x6784;&#x9020;&#x5BF9;&#x8C61;&#xFF0C; &#x5E76;&#x4E14;&#x5C06;&#x53C2;&#x6570;&#x4F20;&#x9012;&#x4E2A;&#x4F53;AlertDialog </span>
+            <span class="hljs-keyword">final</span> AlertDialog dialog = <span class="hljs-keyword">new</span> AlertDialog(P.mContext, mTheme, <span class="hljs-keyword">false</span>);
+            <span class="hljs-comment">// 5 : &#x5C06;P&#x4E2D;&#x7684;&#x53C2;&#x6570;&#x5E94;&#x7528;&#x7684;dialog&#x4E2D;&#x7684;mAlert&#x5BF9;&#x8C61;&#x4E2D;</span>
             P.apply(dialog.mAlert);
             dialog.setCancelable(P.mCancelable);
-            if (P.mCancelable) {
-                dialog.setCanceledOnTouchOutside(true);
+            <span class="hljs-keyword">if</span> (P.mCancelable) {
+                dialog.setCanceledOnTouchOutside(<span class="hljs-keyword">true</span>);
             }
             dialog.setOnCancelListener(P.mOnCancelListener);
-            if (P.mOnKeyListener != null) {
+            <span class="hljs-keyword">if</span> (P.mOnKeyListener != <span class="hljs-keyword">null</span>) {
                 dialog.setOnKeyListener(P.mOnKeyListener);
             }
-            return dialog;
+            <span class="hljs-keyword">return</span> dialog;
         }
     }
 
 }
 </code></pre>
 <p>&#x53EF;&#x4EE5;&#x770B;&#x5230;&#xFF0C;&#x901A;&#x8FC7;Builder&#x6765;&#x8BBE;&#x7F6E;AlertDialog&#x4E2D;&#x7684;title, message, button&#x7B49;&#x53C2;&#x6570;&#xFF0C; &#x8FD9;&#x4E9B;&#x53C2;&#x6570;&#x90FD;&#x5B58;&#x50A8;&#x5728;&#x7C7B;&#x578B;&#x4E3A;AlertController.AlertParams&#x7684;&#x6210;&#x5458;&#x53D8;&#x91CF;P&#x4E2D;&#xFF0C;AlertController.AlertParams&#x4E2D;&#x5305;&#x542B;&#x4E86;&#x4E0E;&#x4E4B;&#x5BF9;&#x5E94;&#x7684;&#x6210;&#x5458;&#x53D8;&#x91CF;&#x3002;&#x5728;&#x8C03;&#x7528;Builder&#x7C7B;&#x7684;create&#x51FD;&#x6570;&#x65F6;&#x624D;&#x521B;&#x5EFA;AlertDialog, &#x5E76;&#x4E14;&#x5C06;Builder&#x6210;&#x5458;&#x53D8;&#x91CF;P&#x4E2D;&#x4FDD;&#x5B58;&#x7684;&#x53C2;&#x6570;&#x5E94;&#x7528;&#x5230;AlertDialog&#x7684;mAlert&#x5BF9;&#x8C61;&#x4E2D;&#xFF0C;&#x5373;P.apply(dialog.mAlert)&#x4EE3;&#x7801;&#x6BB5;&#x3002;&#x6211;&#x4EEC;&#x770B;&#x770B;apply&#x51FD;&#x6570;&#x7684;&#x5B9E;&#x73B0; :</p>
-<pre><code class="lang-java">        public void apply(AlertController dialog) {
-            if (mCustomTitleView != null) {
+<pre><code class="lang-java">        <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">apply</span><span class="hljs-params">(AlertController dialog)</span> </span>{
+            <span class="hljs-keyword">if</span> (mCustomTitleView != <span class="hljs-keyword">null</span>) {
                 dialog.setCustomTitle(mCustomTitleView);
-            } else {
-                if (mTitle != null) {
+            } <span class="hljs-keyword">else</span> {
+                <span class="hljs-keyword">if</span> (mTitle != <span class="hljs-keyword">null</span>) {
                     dialog.setTitle(mTitle);
                 }
-                if (mIcon != null) {
+                <span class="hljs-keyword">if</span> (mIcon != <span class="hljs-keyword">null</span>) {
                     dialog.setIcon(mIcon);
                 }
-                if (mIconId &gt;= 0) {
+                <span class="hljs-keyword">if</span> (mIconId &gt;= <span class="hljs-number">0</span>) {
                     dialog.setIcon(mIconId);
                 }
-                if (mIconAttrId &gt; 0) {
+                <span class="hljs-keyword">if</span> (mIconAttrId &gt; <span class="hljs-number">0</span>) {
                     dialog.setIcon(dialog.getIconAttributeResId(mIconAttrId));
                 }
             }
-            if (mMessage != null) {
+            <span class="hljs-keyword">if</span> (mMessage != <span class="hljs-keyword">null</span>) {
                 dialog.setMessage(mMessage);
             }
-            if (mPositiveButtonText != null) {
+            <span class="hljs-keyword">if</span> (mPositiveButtonText != <span class="hljs-keyword">null</span>) {
                 dialog.setButton(DialogInterface.BUTTON_POSITIVE, mPositiveButtonText,
-                        mPositiveButtonListener, null);
+                        mPositiveButtonListener, <span class="hljs-keyword">null</span>);
             }
-            if (mNegativeButtonText != null) {
+            <span class="hljs-keyword">if</span> (mNegativeButtonText != <span class="hljs-keyword">null</span>) {
                 dialog.setButton(DialogInterface.BUTTON_NEGATIVE, mNegativeButtonText,
-                        mNegativeButtonListener, null);
+                        mNegativeButtonListener, <span class="hljs-keyword">null</span>);
             }
-            if (mNeutralButtonText != null) {
+            <span class="hljs-keyword">if</span> (mNeutralButtonText != <span class="hljs-keyword">null</span>) {
                 dialog.setButton(DialogInterface.BUTTON_NEUTRAL, mNeutralButtonText,
-                        mNeutralButtonListener, null);
+                        mNeutralButtonListener, <span class="hljs-keyword">null</span>);
             }
-            if (mForceInverseBackground) {
-                dialog.setInverseBackgroundForced(true);
+            <span class="hljs-keyword">if</span> (mForceInverseBackground) {
+                dialog.setInverseBackgroundForced(<span class="hljs-keyword">true</span>);
             }
-            // For a list, the client can either supply an array of items or an
-            // adapter or a cursor
-            if ((mItems != null) || (mCursor != null) || (mAdapter != null)) {
+            <span class="hljs-comment">// For a list, the client can either supply an array of items or an</span>
+            <span class="hljs-comment">// adapter or a cursor</span>
+            <span class="hljs-keyword">if</span> ((mItems != <span class="hljs-keyword">null</span>) || (mCursor != <span class="hljs-keyword">null</span>) || (mAdapter != <span class="hljs-keyword">null</span>)) {
                 createListView(dialog);
             }
-            if (mView != null) {
-                if (mViewSpacingSpecified) {
+            <span class="hljs-keyword">if</span> (mView != <span class="hljs-keyword">null</span>) {
+                <span class="hljs-keyword">if</span> (mViewSpacingSpecified) {
                     dialog.setView(mView, mViewSpacingLeft, mViewSpacingTop, mViewSpacingRight,
                             mViewSpacingBottom);
-                } else {
+                } <span class="hljs-keyword">else</span> {
                     dialog.setView(mView);
                 }
             }
@@ -4128,7 +4132,7 @@ public class AlertDialog extends Dialog implements DialogInterface {
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"建造者模式","level":"6.1.5","depth":2,"next":{"title":"结构型模式","level":"6.2","depth":1,"path":"design-mode/Structural-Patterns.md","ref":"design-mode/Structural-Patterns.md","articles":[{"title":"适配器模式","level":"6.2.1","depth":2,"path":"design-mode/Structural-Patterns/Adapter-Pattern.md","ref":"design-mode/Structural-Patterns/Adapter-Pattern.md","articles":[]},{"title":"外观模式","level":"6.2.2","depth":2,"path":"design-mode/Structural-Patterns/Facade-Pattern.md","ref":"design-mode/Structural-Patterns/Facade-Pattern.md","articles":[]},{"title":"装饰者模式","level":"6.2.3","depth":2,"path":"design-mode/Structural-Patterns/Decorator-Pattern.md","ref":"design-mode/Structural-Patterns/Decorator-Pattern.md","articles":[]},{"title":"代理模式","level":"6.2.4","depth":2,"path":"design-mode/Structural-Patterns/Proxy-Pattern.md","ref":"design-mode/Structural-Patterns/Proxy-Pattern.md","articles":[]}]},"previous":{"title":"单例模式","level":"6.1.4","depth":2,"path":"design-mode/Builder-Pattern/Singleton-Pattern.md","ref":"design-mode/Builder-Pattern/Singleton-Pattern.md","articles":[]},"dir":"ltr"},"config":{"plugins":["-lunr","-search","-highlight","-livereload","search-plus@^0.0.11","simple-page-toc@^0.1.1","github@^2.0.0","github-buttons@2.1.0","edit-link@^2.0.2","advanced-emoji@^0.2.1","anchors@^0.7.1","include-codeblock@^3.0.2","ace@^0.3.2","emphasize@^1.1.0","katex@^1.1.3","splitter@^0.0.8","tbfed-pagefooter@^0.0.1","expandable-chapters-small@^0.1.7","sectionx@^3.1.0","local-video@^1.0.1","anchor-navigation-ex@0.1.8","favicon@^0.0.2"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"tbfed-pagefooter":{"copyright":"Copyright © ruheng.com 2017","modify_label":"该文件修订时间：","modify_format":"YYYY-MM-DD HH:mm:ss"},"emphasize":{},"ace":{},"github":{"url":"https://github.com/LRH1993/android_interview"},"simple-page-toc":{"maxDepth":3,"skipFirstH1":true},"splitter":{},"katex":{},"fontsettings":{"theme":"white","family":"sans","size":2},"sectionx":{"tag":"b"},"anchor-navigation-ex":{"isRewritePageTitle":false,"tocLevel1Icon":"fa fa-hand-o-right","tocLevel2Icon":"fa fa-hand-o-right","tocLevel3Icon":"fa fa-hand-o-right"},"favicon":{"shortcut":"favicon.ico","bookmark":"favicon.ico"},"github-buttons":{"repo":"LRH1993/android_interview","types":["star"],"size":"small"},"expandable-chapters-small":{},"local-video":{},"advanced-emoji":{"embedEmojis":false},"include-codeblock":{"check":false,"edit":true,"fixlang":false,"lang":"","template":"ace","theme":"chrome","unindent":true},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":true,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"edit-link":{"label":"Edit This Page","base":"https://github.com/LRH1993/android_interview/edit/master"},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":true},"anchors":{},"search-plus":{}},"theme":"default","author":"ruheng","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"Android校招面试指南","language":"zh-hans","output.name":"site","links":{"sidebar":{"Home":"http://lruheng.com/"}},"gitbook":"3.2.3","description":"Android面试必备，记录自己的秋招之路"},"file":{"path":"design-mode/Builder-Pattern/Builder-Pattern.md","mtime":"2017-09-11T02:33:30.000Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2017-10-16T12:05:21.906Z"},"basePath":"../..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"建造者模式","level":"6.1.5","depth":2,"next":{"title":"结构型模式","level":"6.2","depth":1,"path":"design-mode/Structural-Patterns.md","ref":"design-mode/Structural-Patterns.md","articles":[{"title":"适配器模式","level":"6.2.1","depth":2,"path":"design-mode/Structural-Patterns/Adapter-Pattern.md","ref":"design-mode/Structural-Patterns/Adapter-Pattern.md","articles":[]},{"title":"外观模式","level":"6.2.2","depth":2,"path":"design-mode/Structural-Patterns/Facade-Pattern.md","ref":"design-mode/Structural-Patterns/Facade-Pattern.md","articles":[]},{"title":"装饰者模式","level":"6.2.3","depth":2,"path":"design-mode/Structural-Patterns/Decorator-Pattern.md","ref":"design-mode/Structural-Patterns/Decorator-Pattern.md","articles":[]},{"title":"代理模式","level":"6.2.4","depth":2,"path":"design-mode/Structural-Patterns/Proxy-Pattern.md","ref":"design-mode/Structural-Patterns/Proxy-Pattern.md","articles":[]}]},"previous":{"title":"单例模式","level":"6.1.4","depth":2,"path":"design-mode/Builder-Pattern/Singleton-Pattern.md","ref":"design-mode/Builder-Pattern/Singleton-Pattern.md","articles":[]},"dir":"ltr"},"config":{"plugins":["-lunr","-search","-livereload","search-plus@^0.0.11","simple-page-toc@^0.1.1","github@^2.0.0","github-buttons@2.1.0","edit-link@^2.0.2","advanced-emoji@^0.2.1","anchors@^0.7.1","include-codeblock@^3.0.2","ace@^0.3.2","emphasize@^1.1.0","katex@^1.1.3","splitter@^0.0.8","tbfed-pagefooter@^0.0.1","expandable-chapters-small@^0.1.7","sectionx@^3.1.0","local-video@^1.0.1","anchor-navigation-ex@0.1.8","favicon@^0.0.2"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"tbfed-pagefooter":{"copyright":"Copyright © ruheng.com 2017","modify_label":"该文件修订时间：","modify_format":"YYYY-MM-DD HH:mm:ss"},"emphasize":{},"ace":{},"github":{"url":"https://github.com/LRH1993/android_interview"},"simple-page-toc":{"maxDepth":3,"skipFirstH1":true},"splitter":{},"katex":{},"fontsettings":{"theme":"white","family":"sans","size":2},"sectionx":{"tag":"b"},"highlight":{},"anchor-navigation-ex":{"isRewritePageTitle":false,"tocLevel1Icon":"fa fa-hand-o-right","tocLevel2Icon":"fa fa-hand-o-right","tocLevel3Icon":"fa fa-hand-o-right"},"favicon":{"shortcut":"favicon.ico","bookmark":"favicon.ico"},"github-buttons":{"repo":"LRH1993/android_interview","types":["star"],"size":"small"},"expandable-chapters-small":{},"local-video":{},"advanced-emoji":{"embedEmojis":false},"include-codeblock":{"check":false,"edit":false,"fixlang":false,"lang":"","template":"default","theme":"chrome","unindent":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":true,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"edit-link":{"label":"Edit This Page","base":"https://github.com/LRH1993/android_interview/edit/master"},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":true},"anchors":{},"search-plus":{}},"theme":"default","author":"ruheng","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"Android校招面试指南","language":"zh-hans","output.name":"site","links":{"sidebar":{"Home":"http://lruheng.com/"}},"gitbook":"3.2.3","description":"Android面试必备，记录自己的秋招之路"},"file":{"path":"design-mode/Builder-Pattern/Builder-Pattern.md","mtime":"2017-09-11T02:33:30.000Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2017-10-16T13:00:43.989Z"},"basePath":"../..","book":{"language":""}});
         });
     </script>
 </div>

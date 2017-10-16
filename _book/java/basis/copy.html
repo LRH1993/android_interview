@@ -69,6 +69,10 @@
                 
             
                 
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
                 <link rel="stylesheet" href="../../gitbook/gitbook-plugin-fontsettings/website.css">
                 
             
@@ -3714,85 +3718,85 @@
 <p>&#x5728;&#x4E0A;&#x56FE;&#x4E2D;&#xFF0C;SourceObject&#x6709;&#x4E00;&#x4E2A;int&#x7C7B;&#x578B;&#x7684;&#x5C5E;&#x6027; &quot;field1&quot;&#x548C;&#x4E00;&#x4E2A;&#x5F15;&#x7528;&#x7C7B;&#x578B;&#x5C5E;&#x6027;&quot;refObj&quot;&#xFF08;&#x5F15;&#x7528;ContainedObject&#x7C7B;&#x578B;&#x7684;&#x5BF9;&#x8C61;&#xFF09;&#x3002;&#x5F53;&#x5BF9;SourceObject&#x505A;&#x6D45;&#x62F7;&#x8D1D;&#x65F6;&#xFF0C;&#x521B;&#x5EFA;&#x4E86;CopiedObject&#xFF0C;&#x5B83;&#x6709;&#x4E00;&#x4E2A;&#x5305;&#x542B;&quot;field1&quot;&#x62F7;&#x8D1D;&#x503C;&#x7684;&#x5C5E;&#x6027;&quot;field2&quot;&#x4EE5;&#x53CA;&#x4ECD;&#x6307;&#x5411;refObj&#x672C;&#x8EAB;&#x7684;&#x5F15;&#x7528;&#x3002;&#x7531;&#x4E8E;&quot;field1&quot;&#x662F;&#x57FA;&#x672C;&#x7C7B;&#x578B;&#xFF0C;&#x6240;&#x4EE5;&#x53EA;&#x662F;&#x5C06;&#x5B83;&#x7684;&#x503C;&#x62F7;&#x8D1D;&#x7ED9;&quot;field2&quot;&#xFF0C;&#x4F46;&#x662F;&#x7531;&#x4E8E;&quot;refObj&quot;&#x662F;&#x4E00;&#x4E2A;&#x5F15;&#x7528;&#x7C7B;&#x578B;, &#x6240;&#x4EE5;CopiedObject&#x6307;&#x5411;&quot;refObj&quot;&#x76F8;&#x540C;&#x7684;&#x5730;&#x5740;&#x3002;&#x56E0;&#x6B64;&#x5BF9;SourceObject&#x4E2D;&#x7684;&quot;refObj&quot;&#x6240;&#x505A;&#x7684;&#x4EFB;&#x4F55;&#x6539;&#x53D8;&#x90FD;&#x4F1A;&#x5F71;&#x54CD;&#x5230;CopiedObject&#x3002;</p>
 <h3 id="2&#x3001;&#x5982;&#x4F55;&#x5B9E;&#x73B0;&#x6D45;&#x62F7;&#x8D1D;"><a name="2&#x3001;&#x5982;&#x4F55;&#x5B9E;&#x73B0;&#x6D45;&#x62F7;&#x8D1D;" class="anchor-navigation-ex-anchor" href="#2&#x3001;&#x5982;&#x4F55;&#x5B9E;&#x73B0;&#x6D45;&#x62F7;&#x8D1D;"><i class="fa fa-link" aria-hidden="true"></i></a>2&#x3001;&#x5982;&#x4F55;&#x5B9E;&#x73B0;&#x6D45;&#x62F7;&#x8D1D;</h3>
 <p>&#x4E0B;&#x9762;&#x662F;&#x5B9E;&#x73B0;&#x6D45;&#x62F7;&#x8D1D;&#x7684;&#x4E00;&#x4E2A;&#x4F8B;&#x5B50; </p>
-<pre><code class="lang-java">public class Subject {
+<pre><code class="lang-java"><span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Subject</span> </span>{
 
-   private String name; 
+   <span class="hljs-keyword">private</span> String name; 
 
-   public Subject(String s) { 
+   <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-title">Subject</span><span class="hljs-params">(String s)</span> </span>{ 
       name = s; 
    } 
 
-   public String getName() { 
-      return name; 
+   <span class="hljs-function"><span class="hljs-keyword">public</span> String <span class="hljs-title">getName</span><span class="hljs-params">()</span> </span>{ 
+      <span class="hljs-keyword">return</span> name; 
    } 
 
-   public void setName(String s) { 
+   <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">setName</span><span class="hljs-params">(String s)</span> </span>{ 
       name = s; 
    } 
 }
 </code></pre>
-<pre><code class="lang-java">public class Student implements Cloneable { 
+<pre><code class="lang-java"><span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Student</span> <span class="hljs-keyword">implements</span> <span class="hljs-title">Cloneable</span> </span>{ 
 
-   // &#x5BF9;&#x8C61;&#x5F15;&#x7528; 
-   private Subject subj; 
+   <span class="hljs-comment">// &#x5BF9;&#x8C61;&#x5F15;&#x7528; </span>
+   <span class="hljs-keyword">private</span> Subject subj; 
 
-   private String name; 
+   <span class="hljs-keyword">private</span> String name; 
 
-   public Student(String s, String sub) { 
+   <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-title">Student</span><span class="hljs-params">(String s, String sub)</span> </span>{ 
       name = s; 
-      subj = new Subject(sub); 
+      subj = <span class="hljs-keyword">new</span> Subject(sub); 
    } 
 
-   public Subject getSubj() { 
-      return subj; 
+   <span class="hljs-function"><span class="hljs-keyword">public</span> Subject <span class="hljs-title">getSubj</span><span class="hljs-params">()</span> </span>{ 
+      <span class="hljs-keyword">return</span> subj; 
    } 
 
-   public String getName() { 
-      return name; 
+   <span class="hljs-function"><span class="hljs-keyword">public</span> String <span class="hljs-title">getName</span><span class="hljs-params">()</span> </span>{ 
+      <span class="hljs-keyword">return</span> name; 
    } 
 
-   public void setName(String s) { 
+   <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">setName</span><span class="hljs-params">(String s)</span> </span>{ 
       name = s; 
    } 
 
-   /** 
+   <span class="hljs-comment">/** 
     *  &#x91CD;&#x5199;clone()&#x65B9;&#x6CD5; 
-    * @return 
-    */ 
-   public Object clone() { 
-      //&#x6D45;&#x62F7;&#x8D1D; 
-      try { 
-         // &#x76F4;&#x63A5;&#x8C03;&#x7528;&#x7236;&#x7C7B;&#x7684;clone()&#x65B9;&#x6CD5;
-         return super.clone(); 
-      } catch (CloneNotSupportedException e) { 
-         return null; 
+    * <span class="hljs-doctag">@return</span> 
+    */</span> 
+   <span class="hljs-function"><span class="hljs-keyword">public</span> Object <span class="hljs-title">clone</span><span class="hljs-params">()</span> </span>{ 
+      <span class="hljs-comment">//&#x6D45;&#x62F7;&#x8D1D; </span>
+      <span class="hljs-keyword">try</span> { 
+         <span class="hljs-comment">// &#x76F4;&#x63A5;&#x8C03;&#x7528;&#x7236;&#x7C7B;&#x7684;clone()&#x65B9;&#x6CD5;</span>
+         <span class="hljs-keyword">return</span> <span class="hljs-keyword">super</span>.clone(); 
+      } <span class="hljs-keyword">catch</span> (CloneNotSupportedException e) { 
+         <span class="hljs-keyword">return</span> <span class="hljs-keyword">null</span>; 
       } 
    } 
 }
 </code></pre>
-<pre><code class="lang-java">public class CopyTest {
+<pre><code class="lang-java"><span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">CopyTest</span> </span>{
 
-    public static void main(String[] args) {
-        // &#x539F;&#x59CB;&#x5BF9;&#x8C61;
-        Student stud = new Student(&quot;John&quot;, &quot;Algebra&quot;);
-        System.out.println(&quot;Original Object: &quot; + stud.getName() + &quot; - &quot; + stud.getSubj().getName());
+    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title">main</span><span class="hljs-params">(String[] args)</span> </span>{
+        <span class="hljs-comment">// &#x539F;&#x59CB;&#x5BF9;&#x8C61;</span>
+        Student stud = <span class="hljs-keyword">new</span> Student(<span class="hljs-string">&quot;John&quot;</span>, <span class="hljs-string">&quot;Algebra&quot;</span>);
+        System.out.println(<span class="hljs-string">&quot;Original Object: &quot;</span> + stud.getName() + <span class="hljs-string">&quot; - &quot;</span> + stud.getSubj().getName());
 
-        // &#x62F7;&#x8D1D;&#x5BF9;&#x8C61;
+        <span class="hljs-comment">// &#x62F7;&#x8D1D;&#x5BF9;&#x8C61;</span>
         Student clonedStud = (Student) stud.clone();
-        System.out.println(&quot;Cloned Object: &quot; + clonedStud.getName() + &quot; - &quot; + clonedStud.getSubj().getName());
+        System.out.println(<span class="hljs-string">&quot;Cloned Object: &quot;</span> + clonedStud.getName() + <span class="hljs-string">&quot; - &quot;</span> + clonedStud.getSubj().getName());
 
-        // &#x539F;&#x59CB;&#x5BF9;&#x8C61;&#x548C;&#x62F7;&#x8D1D;&#x5BF9;&#x8C61;&#x662F;&#x5426;&#x4E00;&#x6837;&#xFF1A;
-        System.out.println(&quot;Is Original Object the same with Cloned Object: &quot; + (stud == clonedStud));
-        // &#x539F;&#x59CB;&#x5BF9;&#x8C61;&#x548C;&#x62F7;&#x8D1D;&#x5BF9;&#x8C61;&#x7684;name&#x5C5E;&#x6027;&#x662F;&#x5426;&#x4E00;&#x6837;
-        System.out.println(&quot;Is Original Object&apos;s field name the same with Cloned Object: &quot; + (stud.getName() == clonedStud.getName()));
-        // &#x539F;&#x59CB;&#x5BF9;&#x8C61;&#x548C;&#x62F7;&#x8D1D;&#x5BF9;&#x8C61;&#x7684;subj&#x5C5E;&#x6027;&#x662F;&#x5426;&#x4E00;&#x6837;
-        System.out.println(&quot;Is Original Object&apos;s field subj the same with Cloned Object: &quot; + (stud.getSubj() == clonedStud.getSubj()));
+        <span class="hljs-comment">// &#x539F;&#x59CB;&#x5BF9;&#x8C61;&#x548C;&#x62F7;&#x8D1D;&#x5BF9;&#x8C61;&#x662F;&#x5426;&#x4E00;&#x6837;&#xFF1A;</span>
+        System.out.println(<span class="hljs-string">&quot;Is Original Object the same with Cloned Object: &quot;</span> + (stud == clonedStud));
+        <span class="hljs-comment">// &#x539F;&#x59CB;&#x5BF9;&#x8C61;&#x548C;&#x62F7;&#x8D1D;&#x5BF9;&#x8C61;&#x7684;name&#x5C5E;&#x6027;&#x662F;&#x5426;&#x4E00;&#x6837;</span>
+        System.out.println(<span class="hljs-string">&quot;Is Original Object&apos;s field name the same with Cloned Object: &quot;</span> + (stud.getName() == clonedStud.getName()));
+        <span class="hljs-comment">// &#x539F;&#x59CB;&#x5BF9;&#x8C61;&#x548C;&#x62F7;&#x8D1D;&#x5BF9;&#x8C61;&#x7684;subj&#x5C5E;&#x6027;&#x662F;&#x5426;&#x4E00;&#x6837;</span>
+        System.out.println(<span class="hljs-string">&quot;Is Original Object&apos;s field subj the same with Cloned Object: &quot;</span> + (stud.getSubj() == clonedStud.getSubj()));
 
-        stud.setName(&quot;Dan&quot;);
-        stud.getSubj().setName(&quot;Physics&quot;);
+        stud.setName(<span class="hljs-string">&quot;Dan&quot;</span>);
+        stud.getSubj().setName(<span class="hljs-string">&quot;Physics&quot;</span>);
 
-        System.out.println(&quot;Original Object after it is updated: &quot; + stud.getName() + &quot; - &quot; + stud.getSubj().getName());
-        System.out.println(&quot;Cloned Object after updating original object: &quot; + clonedStud.getName() + &quot; - &quot; + clonedStud.getSubj().getName());
+        System.out.println(<span class="hljs-string">&quot;Original Object after it is updated: &quot;</span> + stud.getName() + <span class="hljs-string">&quot; - &quot;</span> + stud.getSubj().getName());
+        System.out.println(<span class="hljs-string">&quot;Cloned Object after updating original object: &quot;</span> + clonedStud.getName() + <span class="hljs-string">&quot; - &quot;</span> + clonedStud.getSubj().getName());
     }
 }
 </code></pre>
@@ -3813,38 +3817,38 @@ Cloned Object after updating original object: John - Physics
 <p>&#x5728;&#x4E0A;&#x56FE;&#x4E2D;&#xFF0C;SourceObject&#x6709;&#x4E00;&#x4E2A;int&#x7C7B;&#x578B;&#x7684;&#x5C5E;&#x6027; &quot;field1&quot;&#x548C;&#x4E00;&#x4E2A;&#x5F15;&#x7528;&#x7C7B;&#x578B;&#x5C5E;&#x6027;&quot;refObj1&quot;&#xFF08;&#x5F15;&#x7528;ContainedObject&#x7C7B;&#x578B;&#x7684;&#x5BF9;&#x8C61;&#xFF09;&#x3002;&#x5F53;&#x5BF9;SourceObject&#x505A;&#x6DF1;&#x62F7;&#x8D1D;&#x65F6;&#xFF0C;&#x521B;&#x5EFA;&#x4E86;CopiedObject&#xFF0C;&#x5B83;&#x6709;&#x4E00;&#x4E2A;&#x5305;&#x542B;&quot;field1&quot;&#x62F7;&#x8D1D;&#x503C;&#x7684;&#x5C5E;&#x6027;&quot;field2&quot;&#x4EE5;&#x53CA;&#x5305;&#x542B;&quot;refObj1&quot;&#x62F7;&#x8D1D;&#x503C;&#x7684;&#x5F15;&#x7528;&#x7C7B;&#x578B;&#x5C5E;&#x6027;&quot;refObj2&quot; &#x3002;&#x56E0;&#x6B64;&#x5BF9;SourceObject&#x4E2D;&#x7684;&quot;refObj&quot;&#x6240;&#x505A;&#x7684;&#x4EFB;&#x4F55;&#x6539;&#x53D8;&#x90FD;&#x4E0D;&#x4F1A;&#x5F71;&#x54CD;&#x5230;CopiedObject</p>
 <h3 id="2&#x3001;&#x5982;&#x4F55;&#x5B9E;&#x73B0;&#x6DF1;&#x62F7;&#x8D1D;"><a name="2&#x3001;&#x5982;&#x4F55;&#x5B9E;&#x73B0;&#x6DF1;&#x62F7;&#x8D1D;" class="anchor-navigation-ex-anchor" href="#2&#x3001;&#x5982;&#x4F55;&#x5B9E;&#x73B0;&#x6DF1;&#x62F7;&#x8D1D;"><i class="fa fa-link" aria-hidden="true"></i></a>2&#x3001;&#x5982;&#x4F55;&#x5B9E;&#x73B0;&#x6DF1;&#x62F7;&#x8D1D;</h3>
 <p>&#x4E0B;&#x9762;&#x662F;&#x5B9E;&#x73B0;&#x6DF1;&#x62F7;&#x8D1D;&#x7684;&#x4E00;&#x4E2A;&#x4F8B;&#x5B50;&#x3002;&#x53EA;&#x662F;&#x5728;&#x6D45;&#x62F7;&#x8D1D;&#x7684;&#x4F8B;&#x5B50;&#x4E0A;&#x505A;&#x4E86;&#x4E00;&#x70B9;&#x5C0F;&#x6539;&#x52A8;&#xFF0C;Subject &#x548C;CopyTest &#x7C7B;&#x90FD;&#x6CA1;&#x6709;&#x53D8;&#x5316;&#x3002;</p>
-<pre><code class="lang-java">public class Student implements Cloneable { 
-   // &#x5BF9;&#x8C61;&#x5F15;&#x7528; 
-   private Subject subj; 
+<pre><code class="lang-java"><span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Student</span> <span class="hljs-keyword">implements</span> <span class="hljs-title">Cloneable</span> </span>{ 
+   <span class="hljs-comment">// &#x5BF9;&#x8C61;&#x5F15;&#x7528; </span>
+   <span class="hljs-keyword">private</span> Subject subj; 
 
-   private String name; 
+   <span class="hljs-keyword">private</span> String name; 
 
-   public Student(String s, String sub) { 
+   <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-title">Student</span><span class="hljs-params">(String s, String sub)</span> </span>{ 
       name = s; 
-      subj = new Subject(sub); 
+      subj = <span class="hljs-keyword">new</span> Subject(sub); 
    } 
 
-   public Subject getSubj() { 
-      return subj; 
+   <span class="hljs-function"><span class="hljs-keyword">public</span> Subject <span class="hljs-title">getSubj</span><span class="hljs-params">()</span> </span>{ 
+      <span class="hljs-keyword">return</span> subj; 
    } 
 
-   public String getName() { 
-      return name; 
+   <span class="hljs-function"><span class="hljs-keyword">public</span> String <span class="hljs-title">getName</span><span class="hljs-params">()</span> </span>{ 
+      <span class="hljs-keyword">return</span> name; 
    } 
 
-   public void setName(String s) { 
+   <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">setName</span><span class="hljs-params">(String s)</span> </span>{ 
       name = s; 
    } 
 
-   /** 
+   <span class="hljs-comment">/** 
     * &#x91CD;&#x5199;clone()&#x65B9;&#x6CD5; 
     * 
-    * @return 
-    */ 
-   public Object clone() { 
-      // &#x6DF1;&#x62F7;&#x8D1D;&#xFF0C;&#x521B;&#x5EFA;&#x62F7;&#x8D1D;&#x7C7B;&#x7684;&#x4E00;&#x4E2A;&#x65B0;&#x5BF9;&#x8C61;&#xFF0C;&#x8FD9;&#x6837;&#x5C31;&#x548C;&#x539F;&#x59CB;&#x5BF9;&#x8C61;&#x76F8;&#x4E92;&#x72EC;&#x7ACB;
-      Student s = new Student(name, subj.getName()); 
-      return s; 
+    * <span class="hljs-doctag">@return</span> 
+    */</span> 
+   <span class="hljs-function"><span class="hljs-keyword">public</span> Object <span class="hljs-title">clone</span><span class="hljs-params">()</span> </span>{ 
+      <span class="hljs-comment">// &#x6DF1;&#x62F7;&#x8D1D;&#xFF0C;&#x521B;&#x5EFA;&#x62F7;&#x8D1D;&#x7C7B;&#x7684;&#x4E00;&#x4E2A;&#x65B0;&#x5BF9;&#x8C61;&#xFF0C;&#x8FD9;&#x6837;&#x5C31;&#x548C;&#x539F;&#x59CB;&#x5BF9;&#x8C61;&#x76F8;&#x4E92;&#x72EC;&#x7ACB;</span>
+      Student s = <span class="hljs-keyword">new</span> Student(name, subj.getName()); 
+      <span class="hljs-keyword">return</span> s; 
    } 
 }
 </code></pre>
@@ -3860,73 +3864,73 @@ Cloned Object after updating original object: John - Algebra
 <p>&#x5F88;&#x5BB9;&#x6613;&#x53D1;&#x73B0;clone()&#x65B9;&#x6CD5;&#x4E2D;&#x7684;&#x4E00;&#x70B9;&#x53D8;&#x5316;&#x3002;&#x56E0;&#x4E3A;&#x5B83;&#x662F;&#x6DF1;&#x62F7;&#x8D1D;&#xFF0C;&#x6240;&#x4EE5;&#x4F60;&#x9700;&#x8981;&#x521B;&#x5EFA;&#x62F7;&#x8D1D;&#x7C7B;&#x7684;&#x4E00;&#x4E2A;&#x5BF9;&#x8C61;&#x3002;&#x56E0;&#x4E3A;&#x5728;Student&#x7C7B;&#x4E2D;&#x6709;&#x5BF9;&#x8C61;&#x5F15;&#x7528;&#xFF0C;&#x6240;&#x4EE5;&#x9700;&#x8981;&#x5728;Student&#x7C7B;&#x4E2D;&#x5B9E;&#x73B0;Cloneable&#x63A5;&#x53E3;&#x5E76;&#x4E14;&#x91CD;&#x5199;clone&#x65B9;&#x6CD5;&#x3002;</p>
 <h3 id="3&#x3001;&#x901A;&#x8FC7;&#x5E8F;&#x5217;&#x5316;&#x5B9E;&#x73B0;&#x6DF1;&#x62F7;&#x8D1D;"><a name="3&#x3001;&#x901A;&#x8FC7;&#x5E8F;&#x5217;&#x5316;&#x5B9E;&#x73B0;&#x6DF1;&#x62F7;&#x8D1D;" class="anchor-navigation-ex-anchor" href="#3&#x3001;&#x901A;&#x8FC7;&#x5E8F;&#x5217;&#x5316;&#x5B9E;&#x73B0;&#x6DF1;&#x62F7;&#x8D1D;"><i class="fa fa-link" aria-hidden="true"></i></a>3&#x3001;&#x901A;&#x8FC7;&#x5E8F;&#x5217;&#x5316;&#x5B9E;&#x73B0;&#x6DF1;&#x62F7;&#x8D1D;</h3>
 <p>&#x4E5F;&#x53EF;&#x4EE5;&#x901A;&#x8FC7;&#x5E8F;&#x5217;&#x5316;&#x6765;&#x5B9E;&#x73B0;&#x6DF1;&#x62F7;&#x8D1D;&#x3002;&#x5E8F;&#x5217;&#x5316;&#x662F;&#x5E72;&#x4EC0;&#x4E48;&#x7684;?&#x5B83;&#x5C06;&#x6574;&#x4E2A;&#x5BF9;&#x8C61;&#x56FE;&#x5199;&#x5165;&#x5230;&#x4E00;&#x4E2A;&#x6301;&#x4E45;&#x5316;&#x5B58;&#x50A8;&#x6587;&#x4EF6;&#x4E2D;&#x5E76;&#x4E14;&#x5F53;&#x9700;&#x8981;&#x7684;&#x65F6;&#x5019;&#x628A;&#x5B83;&#x8BFB;&#x53D6;&#x56DE;&#x6765;, &#x8FD9;&#x610F;&#x5473;&#x7740;&#x5F53;&#x4F60;&#x9700;&#x8981;&#x628A;&#x5B83;&#x8BFB;&#x53D6;&#x56DE;&#x6765;&#x65F6;&#x4F60;&#x9700;&#x8981;&#x6574;&#x4E2A;&#x5BF9;&#x8C61;&#x56FE;&#x7684;&#x4E00;&#x4E2A;&#x62F7;&#x8D1D;&#x3002;&#x8FD9;&#x5C31;&#x662F;&#x5F53;&#x4F60;&#x6DF1;&#x62F7;&#x8D1D;&#x4E00;&#x4E2A;&#x5BF9;&#x8C61;&#x65F6;&#x771F;&#x6B63;&#x9700;&#x8981;&#x7684;&#x4E1C;&#x897F;&#x3002;&#x8BF7;&#x6CE8;&#x610F;&#xFF0C;&#x5F53;&#x4F60;&#x901A;&#x8FC7;&#x5E8F;&#x5217;&#x5316;&#x8FDB;&#x884C;&#x6DF1;&#x62F7;&#x8D1D;&#x65F6;&#xFF0C;&#x5FC5;&#x987B;&#x786E;&#x4FDD;&#x5BF9;&#x8C61;&#x56FE;&#x4E2D;&#x6240;&#x6709;&#x7C7B;&#x90FD;&#x662F;&#x53EF;&#x5E8F;&#x5217;&#x5316;&#x7684;&#x3002;</p>
-<pre><code class="lang-java">public class ColoredCircle implements Serializable { 
+<pre><code class="lang-java"><span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">ColoredCircle</span> <span class="hljs-keyword">implements</span> <span class="hljs-title">Serializable</span> </span>{ 
 
-   private int x; 
-   private int y; 
+   <span class="hljs-keyword">private</span> <span class="hljs-keyword">int</span> x; 
+   <span class="hljs-keyword">private</span> <span class="hljs-keyword">int</span> y; 
 
-   public ColoredCircle(int x, int y) { 
-      this.x = x; 
-      this.y = y; 
+   <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-title">ColoredCircle</span><span class="hljs-params">(<span class="hljs-keyword">int</span> x, <span class="hljs-keyword">int</span> y)</span> </span>{ 
+      <span class="hljs-keyword">this</span>.x = x; 
+      <span class="hljs-keyword">this</span>.y = y; 
    } 
 
-   public int getX() { 
-      return x; 
+   <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">int</span> <span class="hljs-title">getX</span><span class="hljs-params">()</span> </span>{ 
+      <span class="hljs-keyword">return</span> x; 
    } 
 
-   public void setX(int x) { 
-      this.x = x; 
+   <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">setX</span><span class="hljs-params">(<span class="hljs-keyword">int</span> x)</span> </span>{ 
+      <span class="hljs-keyword">this</span>.x = x; 
    } 
 
-   public int getY() { 
-      return y; 
+   <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">int</span> <span class="hljs-title">getY</span><span class="hljs-params">()</span> </span>{ 
+      <span class="hljs-keyword">return</span> y; 
    } 
 
-   public void setY(int y) { 
-      this.y = y; 
+   <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">setY</span><span class="hljs-params">(<span class="hljs-keyword">int</span> y)</span> </span>{ 
+      <span class="hljs-keyword">this</span>.y = y; 
    } 
 
-   @Override 
-   public String toString() { 
-      return &quot;x=&quot; + x + &quot;, y=&quot; + y; 
+   <span class="hljs-meta">@Override</span> 
+   <span class="hljs-function"><span class="hljs-keyword">public</span> String <span class="hljs-title">toString</span><span class="hljs-params">()</span> </span>{ 
+      <span class="hljs-keyword">return</span> <span class="hljs-string">&quot;x=&quot;</span> + x + <span class="hljs-string">&quot;, y=&quot;</span> + y; 
    } 
 }
 </code></pre>
-<pre><code class="lang-java">public class DeepCopy {
+<pre><code class="lang-java"><span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">DeepCopy</span> </span>{
 
-   public static void main(String[] args) throws IOException { 
-      ObjectOutputStream oos = null; 
-      ObjectInputStream ois = null; 
+   <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title">main</span><span class="hljs-params">(String[] args)</span> <span class="hljs-keyword">throws</span> IOException </span>{ 
+      ObjectOutputStream oos = <span class="hljs-keyword">null</span>; 
+      ObjectInputStream ois = <span class="hljs-keyword">null</span>; 
 
-      try { 
-         // &#x521B;&#x5EFA;&#x539F;&#x59CB;&#x7684;&#x53EF;&#x5E8F;&#x5217;&#x5316;&#x5BF9;&#x8C61; 
-         ColoredCircle c1 = new ColoredCircle(100, 100); 
-         System.out.println(&quot;Original = &quot; + c1); 
+      <span class="hljs-keyword">try</span> { 
+         <span class="hljs-comment">// &#x521B;&#x5EFA;&#x539F;&#x59CB;&#x7684;&#x53EF;&#x5E8F;&#x5217;&#x5316;&#x5BF9;&#x8C61; </span>
+         ColoredCircle c1 = <span class="hljs-keyword">new</span> ColoredCircle(<span class="hljs-number">100</span>, <span class="hljs-number">100</span>); 
+         System.out.println(<span class="hljs-string">&quot;Original = &quot;</span> + c1); 
 
-         ColoredCircle c2 = null; 
+         ColoredCircle c2 = <span class="hljs-keyword">null</span>; 
 
-         // &#x901A;&#x8FC7;&#x5E8F;&#x5217;&#x5316;&#x5B9E;&#x73B0;&#x6DF1;&#x62F7;&#x8D1D; 
-         ByteArrayOutputStream bos = new ByteArrayOutputStream(); 
-         oos = new ObjectOutputStream(bos); 
-         // &#x5E8F;&#x5217;&#x5316;&#x4EE5;&#x53CA;&#x4F20;&#x9012;&#x8FD9;&#x4E2A;&#x5BF9;&#x8C61; 
+         <span class="hljs-comment">// &#x901A;&#x8FC7;&#x5E8F;&#x5217;&#x5316;&#x5B9E;&#x73B0;&#x6DF1;&#x62F7;&#x8D1D; </span>
+         ByteArrayOutputStream bos = <span class="hljs-keyword">new</span> ByteArrayOutputStream(); 
+         oos = <span class="hljs-keyword">new</span> ObjectOutputStream(bos); 
+         <span class="hljs-comment">// &#x5E8F;&#x5217;&#x5316;&#x4EE5;&#x53CA;&#x4F20;&#x9012;&#x8FD9;&#x4E2A;&#x5BF9;&#x8C61; </span>
          oos.writeObject(c1); 
          oos.flush(); 
-         ByteArrayInputStream bin = new        ByteArrayInputStream(bos.toByteArray()); 
-         ois = new ObjectInputStream(bin); 
-         // &#x8FD4;&#x56DE;&#x65B0;&#x7684;&#x5BF9;&#x8C61; 
+         ByteArrayInputStream bin = <span class="hljs-keyword">new</span>        ByteArrayInputStream(bos.toByteArray()); 
+         ois = <span class="hljs-keyword">new</span> ObjectInputStream(bin); 
+         <span class="hljs-comment">// &#x8FD4;&#x56DE;&#x65B0;&#x7684;&#x5BF9;&#x8C61; </span>
          c2 = (ColoredCircle) ois.readObject(); 
 
-         // &#x6821;&#x9A8C;&#x5185;&#x5BB9;&#x662F;&#x5426;&#x76F8;&#x540C; 
-         System.out.println(&quot;Copied   = &quot; + c2); 
-         // &#x6539;&#x53D8;&#x539F;&#x59CB;&#x5BF9;&#x8C61;&#x7684;&#x5185;&#x5BB9; 
-         c1.setX(200); 
-         c1.setY(200); 
-         // &#x67E5;&#x770B;&#x6BCF;&#x4E00;&#x4E2A;&#x73B0;&#x5728;&#x7684;&#x5185;&#x5BB9; 
-         System.out.println(&quot;Original = &quot; + c1); 
-         System.out.println(&quot;Copied   = &quot; + c2); 
-      } catch (Exception e) { 
-         System.out.println(&quot;Exception in main = &quot; + e); 
-      } finally { 
+         <span class="hljs-comment">// &#x6821;&#x9A8C;&#x5185;&#x5BB9;&#x662F;&#x5426;&#x76F8;&#x540C; </span>
+         System.out.println(<span class="hljs-string">&quot;Copied   = &quot;</span> + c2); 
+         <span class="hljs-comment">// &#x6539;&#x53D8;&#x539F;&#x59CB;&#x5BF9;&#x8C61;&#x7684;&#x5185;&#x5BB9; </span>
+         c1.setX(<span class="hljs-number">200</span>); 
+         c1.setY(<span class="hljs-number">200</span>); 
+         <span class="hljs-comment">// &#x67E5;&#x770B;&#x6BCF;&#x4E00;&#x4E2A;&#x73B0;&#x5728;&#x7684;&#x5185;&#x5BB9; </span>
+         System.out.println(<span class="hljs-string">&quot;Original = &quot;</span> + c1); 
+         System.out.println(<span class="hljs-string">&quot;Copied   = &quot;</span> + c2); 
+      } <span class="hljs-keyword">catch</span> (Exception e) { 
+         System.out.println(<span class="hljs-string">&quot;Exception in main = &quot;</span> + e); 
+      } <span class="hljs-keyword">finally</span> { 
          oos.close(); 
          ois.close(); 
       } 
@@ -3935,10 +3939,10 @@ Cloned Object after updating original object: John - Algebra
 </code></pre>
 <p>&#x200B;      </p>
 <p>&#x200B;     &#x8F93;&#x51FA;&#x7ED3;&#x679C;&#x5982;&#x4E0B;&#xFF1A;</p>
-<pre><code class="lang-java">Original = x=100, y=100
-Copied   = x=100, y=100
-Original = x=200, y=200
-Copied   = x=100, y=100
+<pre><code class="lang-java">Original = x=<span class="hljs-number">100</span>, y=<span class="hljs-number">100</span>
+Copied   = x=<span class="hljs-number">100</span>, y=<span class="hljs-number">100</span>
+Original = x=<span class="hljs-number">200</span>, y=<span class="hljs-number">200</span>
+Copied   = x=<span class="hljs-number">100</span>, y=<span class="hljs-number">100</span>
 </code></pre>
 <p>&#x8FD9;&#x91CC;&#xFF0C;&#x4F60;&#x53EA;&#x9700;&#x8981;&#x505A;&#x4EE5;&#x4E0B;&#x51E0;&#x4EF6;&#x4E8B;&#x513F;:</p>
 <ul>
@@ -4002,7 +4006,7 @@ Copied   = x=100, y=100
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"Java深拷贝和浅拷贝","level":"2.1.18","depth":2,"next":{"title":"Java transient关键字","level":"2.1.19","depth":2,"path":"java/basis/transient.md","ref":"java/basis/transient.md","articles":[]},"previous":{"title":"Java抽象类和接口的区别","level":"2.1.17","depth":2,"path":"java/basis/abstract_interface.md","ref":"java/basis/abstract_interface.md","articles":[]},"dir":"ltr"},"config":{"plugins":["-lunr","-search","-highlight","-livereload","search-plus@^0.0.11","simple-page-toc@^0.1.1","github@^2.0.0","github-buttons@2.1.0","edit-link@^2.0.2","advanced-emoji@^0.2.1","anchors@^0.7.1","include-codeblock@^3.0.2","ace@^0.3.2","emphasize@^1.1.0","katex@^1.1.3","splitter@^0.0.8","tbfed-pagefooter@^0.0.1","expandable-chapters-small@^0.1.7","sectionx@^3.1.0","local-video@^1.0.1","anchor-navigation-ex@0.1.8","favicon@^0.0.2"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"tbfed-pagefooter":{"copyright":"Copyright © ruheng.com 2017","modify_label":"该文件修订时间：","modify_format":"YYYY-MM-DD HH:mm:ss"},"emphasize":{},"ace":{},"github":{"url":"https://github.com/LRH1993/android_interview"},"simple-page-toc":{"maxDepth":3,"skipFirstH1":true},"splitter":{},"katex":{},"fontsettings":{"theme":"white","family":"sans","size":2},"sectionx":{"tag":"b"},"anchor-navigation-ex":{"isRewritePageTitle":false,"tocLevel1Icon":"fa fa-hand-o-right","tocLevel2Icon":"fa fa-hand-o-right","tocLevel3Icon":"fa fa-hand-o-right"},"favicon":{"shortcut":"favicon.ico","bookmark":"favicon.ico"},"github-buttons":{"repo":"LRH1993/android_interview","types":["star"],"size":"small"},"expandable-chapters-small":{},"local-video":{},"advanced-emoji":{"embedEmojis":false},"include-codeblock":{"check":false,"edit":true,"fixlang":false,"lang":"","template":"ace","theme":"chrome","unindent":true},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":true,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"edit-link":{"label":"Edit This Page","base":"https://github.com/LRH1993/android_interview/edit/master"},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":true},"anchors":{},"search-plus":{}},"theme":"default","author":"ruheng","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"Android校招面试指南","language":"zh-hans","output.name":"site","links":{"sidebar":{"Home":"http://lruheng.com/"}},"gitbook":"3.2.3","description":"Android面试必备，记录自己的秋招之路"},"file":{"path":"java/basis/copy.md","mtime":"2017-09-07T01:33:23.000Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2017-10-16T12:05:21.906Z"},"basePath":"../..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"Java深拷贝和浅拷贝","level":"2.1.18","depth":2,"next":{"title":"Java transient关键字","level":"2.1.19","depth":2,"path":"java/basis/transient.md","ref":"java/basis/transient.md","articles":[]},"previous":{"title":"Java抽象类和接口的区别","level":"2.1.17","depth":2,"path":"java/basis/abstract_interface.md","ref":"java/basis/abstract_interface.md","articles":[]},"dir":"ltr"},"config":{"plugins":["-lunr","-search","-livereload","search-plus@^0.0.11","simple-page-toc@^0.1.1","github@^2.0.0","github-buttons@2.1.0","edit-link@^2.0.2","advanced-emoji@^0.2.1","anchors@^0.7.1","include-codeblock@^3.0.2","ace@^0.3.2","emphasize@^1.1.0","katex@^1.1.3","splitter@^0.0.8","tbfed-pagefooter@^0.0.1","expandable-chapters-small@^0.1.7","sectionx@^3.1.0","local-video@^1.0.1","anchor-navigation-ex@0.1.8","favicon@^0.0.2"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"tbfed-pagefooter":{"copyright":"Copyright © ruheng.com 2017","modify_label":"该文件修订时间：","modify_format":"YYYY-MM-DD HH:mm:ss"},"emphasize":{},"ace":{},"github":{"url":"https://github.com/LRH1993/android_interview"},"simple-page-toc":{"maxDepth":3,"skipFirstH1":true},"splitter":{},"katex":{},"fontsettings":{"theme":"white","family":"sans","size":2},"sectionx":{"tag":"b"},"highlight":{},"anchor-navigation-ex":{"isRewritePageTitle":false,"tocLevel1Icon":"fa fa-hand-o-right","tocLevel2Icon":"fa fa-hand-o-right","tocLevel3Icon":"fa fa-hand-o-right"},"favicon":{"shortcut":"favicon.ico","bookmark":"favicon.ico"},"github-buttons":{"repo":"LRH1993/android_interview","types":["star"],"size":"small"},"expandable-chapters-small":{},"local-video":{},"advanced-emoji":{"embedEmojis":false},"include-codeblock":{"check":false,"edit":false,"fixlang":false,"lang":"","template":"default","theme":"chrome","unindent":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":true,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"edit-link":{"label":"Edit This Page","base":"https://github.com/LRH1993/android_interview/edit/master"},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":true},"anchors":{},"search-plus":{}},"theme":"default","author":"ruheng","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"Android校招面试指南","language":"zh-hans","output.name":"site","links":{"sidebar":{"Home":"http://lruheng.com/"}},"gitbook":"3.2.3","description":"Android面试必备，记录自己的秋招之路"},"file":{"path":"java/basis/copy.md","mtime":"2017-09-07T01:33:23.000Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2017-10-16T13:00:43.989Z"},"basePath":"../..","book":{"language":""}});
         });
     </script>
 </div>

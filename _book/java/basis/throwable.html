@@ -69,6 +69,10 @@
                 
             
                 
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
                 <link rel="stylesheet" href="../../gitbook/gitbook-plugin-fontsettings/website.css">
                 
             
@@ -3716,17 +3720,17 @@
 <p>&#x2022; <strong>throws</strong> -- &#x7528;&#x5728;&#x65B9;&#x6CD5;&#x7B7E;&#x540D;&#x4E2D;&#xFF0C;&#x7528;&#x4E8E;&#x58F0;&#x660E;&#x8BE5;&#x65B9;&#x6CD5;&#x53EF;&#x80FD;&#x629B;&#x51FA;&#x7684;&#x5F02;&#x5E38;&#x3002;</p>
 <p> &#x4E0B;&#x9762;&#x901A;&#x8FC7;&#x51E0;&#x4E2A;&#x793A;&#x4F8B;&#x5BF9;&#x8FD9;&#x51E0;&#x4E2A;&#x5173;&#x952E;&#x5B57;&#x8FDB;&#x884C;&#x7B80;&#x5355;&#x4E86;&#x89E3;&#x3002;</p>
 <p><strong>&#x793A;&#x4F8B;&#x4E00;: &#x4E86;&#x89E3;try&#x548C;catch&#x57FA;&#x672C;&#x7528;&#x6CD5;</strong></p>
-<pre><code class="lang-java">public class Demo1 {
+<pre><code class="lang-java"><span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Demo1</span> </span>{
 
-    public static void main(String[] args) {
-        try {
-            int i = 10/0;
-              System.out.println(&quot;i=&quot;+i); 
-        } catch (ArithmeticException e) {
-              System.out.println(&quot;Caught Exception&quot;); 
-            System.out.println(&quot;e.getMessage(): &quot; + e.getMessage()); 
-            System.out.println(&quot;e.toString(): &quot; + e.toString()); 
-            System.out.println(&quot;e.printStackTrace():&quot;);
+    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title">main</span><span class="hljs-params">(String[] args)</span> </span>{
+        <span class="hljs-keyword">try</span> {
+            <span class="hljs-keyword">int</span> i = <span class="hljs-number">10</span>/<span class="hljs-number">0</span>;
+              System.out.println(<span class="hljs-string">&quot;i=&quot;</span>+i); 
+        } <span class="hljs-keyword">catch</span> (ArithmeticException e) {
+              System.out.println(<span class="hljs-string">&quot;Caught Exception&quot;</span>); 
+            System.out.println(<span class="hljs-string">&quot;e.getMessage(): &quot;</span> + e.getMessage()); 
+            System.out.println(<span class="hljs-string">&quot;e.toString(): &quot;</span> + e.toString()); 
+            System.out.println(<span class="hljs-string">&quot;e.printStackTrace():&quot;</span>);
             e.printStackTrace(); 
         }
     }
@@ -3738,26 +3742,26 @@ e.getMessage(): / by zero
 e.toString(): java.lang.ArithmeticException: / by zero
 e.printStackTrace():
 java.lang.ArithmeticException: / by zero
-    at Demo1.main(Demo1.java:6)
+    at Demo1.main(Demo1.java:<span class="hljs-number">6</span>)
 </code></pre>
 <p><strong>&#x7ED3;&#x679C;&#x8BF4;&#x660E;</strong>&#xFF1A;&#x5728;try&#x8BED;&#x53E5;&#x5757;&#x4E2D;&#x6709;&#x9664;&#x6570;&#x4E3A;0&#x7684;&#x64CD;&#x4F5C;&#xFF0C;&#x8BE5;&#x64CD;&#x4F5C;&#x4F1A;&#x629B;&#x51FA;java.lang.ArithmeticException&#x5F02;&#x5E38;&#x3002;&#x901A;&#x8FC7;catch&#xFF0C;&#x5BF9;&#x8BE5;&#x5F02;&#x5E38;&#x8FDB;&#x884C;&#x6355;&#x83B7;&#x3002;</p>
 <p>&#x89C2;&#x5BDF;&#x7ED3;&#x679C;&#x6211;&#x4EEC;&#x53D1;&#x73B0;&#xFF0C;&#x5E76;&#x6CA1;&#x6709;&#x6267;&#x884C;System.out.println(&quot;i=&quot;+i)&#x3002;&#x8FD9;&#x8BF4;&#x660E;try&#x8BED;&#x53E5;&#x5757;&#x53D1;&#x751F;&#x5F02;&#x5E38;&#x4E4B;&#x540E;&#xFF0C;try&#x8BED;&#x53E5;&#x5757;&#x4E2D;&#x7684;&#x5269;&#x4F59;&#x5185;&#x5BB9;&#x5C31;&#x4E0D;&#x4F1A;&#x518D;&#x88AB;&#x6267;&#x884C;&#x4E86;&#x3002;</p>
 <p> <strong>&#x793A;&#x4F8B;&#x4E8C;: &#x4E86;&#x89E3;finally&#x7684;&#x57FA;&#x672C;&#x7528;&#x6CD5;</strong></p>
 <p>&#x5728;&quot;&#x793A;&#x4F8B;&#x4E00;&quot;&#x7684;&#x57FA;&#x7840;&#x4E0A;&#xFF0C;&#x6211;&#x4EEC;&#x6DFB;&#x52A0;finally&#x8BED;&#x53E5;&#x3002;</p>
-<pre><code class="lang-java">public class Demo2 {
+<pre><code class="lang-java"><span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Demo2</span> </span>{
 
-    public static void main(String[] args) {
-        try {
-            int i = 10/0;
-              System.out.println(&quot;i=&quot;+i); 
-        } catch (ArithmeticException e) {
-              System.out.println(&quot;Caught Exception&quot;); 
-            System.out.println(&quot;e.getMessage(): &quot; + e.getMessage()); 
-            System.out.println(&quot;e.toString(): &quot; + e.toString()); 
-            System.out.println(&quot;e.printStackTrace():&quot;);
+    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title">main</span><span class="hljs-params">(String[] args)</span> </span>{
+        <span class="hljs-keyword">try</span> {
+            <span class="hljs-keyword">int</span> i = <span class="hljs-number">10</span>/<span class="hljs-number">0</span>;
+              System.out.println(<span class="hljs-string">&quot;i=&quot;</span>+i); 
+        } <span class="hljs-keyword">catch</span> (ArithmeticException e) {
+              System.out.println(<span class="hljs-string">&quot;Caught Exception&quot;</span>); 
+            System.out.println(<span class="hljs-string">&quot;e.getMessage(): &quot;</span> + e.getMessage()); 
+            System.out.println(<span class="hljs-string">&quot;e.toString(): &quot;</span> + e.toString()); 
+            System.out.println(<span class="hljs-string">&quot;e.printStackTrace():&quot;</span>);
             e.printStackTrace(); 
-        } finally {
-            System.out.println(&quot;run finally&quot;);
+        } <span class="hljs-keyword">finally</span> {
+            System.out.println(<span class="hljs-string">&quot;run finally&quot;</span>);
         }
     }
 }
@@ -3773,29 +3777,29 @@ run finally
 </code></pre><p><strong>&#x7ED3;&#x679C;&#x8BF4;&#x660E;</strong>&#xFF1A;&#x6700;&#x7EC8;&#x6267;&#x884C;&#x4E86;finally&#x8BED;&#x53E5;&#x5757;&#x3002;</p>
 <p><strong>&#x793A;&#x4F8B;&#x4E09;: &#x4E86;&#x89E3;throws&#x548C;throw&#x7684;&#x57FA;&#x672C;&#x7528;&#x6CD5;</strong></p>
 <p>throws&#x662F;&#x7528;&#x4E8E;&#x58F0;&#x660E;&#x629B;&#x51FA;&#x7684;&#x5F02;&#x5E38;&#xFF0C;&#x800C;throw&#x662F;&#x7528;&#x4E8E;&#x629B;&#x51FA;&#x5F02;&#x5E38;&#x3002;</p>
-<pre><code class="lang-java">class MyException extends Exception {
-    public MyException() {}
-    public MyException(String msg) {
-        super(msg);
+<pre><code class="lang-java"><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">MyException</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">Exception</span> </span>{
+    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-title">MyException</span><span class="hljs-params">()</span> </span>{}
+    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-title">MyException</span><span class="hljs-params">(String msg)</span> </span>{
+        <span class="hljs-keyword">super</span>(msg);
     }
 }
 
-public class Demo3 {
+<span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Demo3</span> </span>{
 
-    public static void main(String[] args) {
-        try {
+    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title">main</span><span class="hljs-params">(String[] args)</span> </span>{
+        <span class="hljs-keyword">try</span> {
             test();
-        } catch (MyException e) {
-            System.out.println(&quot;Catch My Exception&quot;);
+        } <span class="hljs-keyword">catch</span> (MyException e) {
+            System.out.println(<span class="hljs-string">&quot;Catch My Exception&quot;</span>);
             e.printStackTrace();
         }
     }
-    public static void test() throws MyException{
-        try {
-            int i = 10/0;
-              System.out.println(&quot;i=&quot;+i); 
-        } catch (ArithmeticException e) {
-            throw new MyException(&quot;This is MyException&quot;); 
+    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title">test</span><span class="hljs-params">()</span> <span class="hljs-keyword">throws</span> MyException</span>{
+        <span class="hljs-keyword">try</span> {
+            <span class="hljs-keyword">int</span> i = <span class="hljs-number">10</span>/<span class="hljs-number">0</span>;
+              System.out.println(<span class="hljs-string">&quot;i=&quot;</span>+i); 
+        } <span class="hljs-keyword">catch</span> (ArithmeticException e) {
+            <span class="hljs-keyword">throw</span> <span class="hljs-keyword">new</span> MyException(<span class="hljs-string">&quot;This is MyException&quot;</span>); 
         }
     }
 }
@@ -3882,7 +3886,7 @@ MyException: This is MyException
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"Java异常详解","level":"2.1.16","depth":2,"next":{"title":"Java抽象类和接口的区别","level":"2.1.17","depth":2,"path":"java/basis/abstract_interface.md","ref":"java/basis/abstract_interface.md","articles":[]},"previous":{"title":"Java NIO","level":"2.1.15","depth":2,"path":"java/basis/java-nio.md","ref":"java/basis/java-nio.md","articles":[]},"dir":"ltr"},"config":{"plugins":["-lunr","-search","-highlight","-livereload","search-plus@^0.0.11","simple-page-toc@^0.1.1","github@^2.0.0","github-buttons@2.1.0","edit-link@^2.0.2","advanced-emoji@^0.2.1","anchors@^0.7.1","include-codeblock@^3.0.2","ace@^0.3.2","emphasize@^1.1.0","katex@^1.1.3","splitter@^0.0.8","tbfed-pagefooter@^0.0.1","expandable-chapters-small@^0.1.7","sectionx@^3.1.0","local-video@^1.0.1","anchor-navigation-ex@0.1.8","favicon@^0.0.2"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"tbfed-pagefooter":{"copyright":"Copyright © ruheng.com 2017","modify_label":"该文件修订时间：","modify_format":"YYYY-MM-DD HH:mm:ss"},"emphasize":{},"ace":{},"github":{"url":"https://github.com/LRH1993/android_interview"},"simple-page-toc":{"maxDepth":3,"skipFirstH1":true},"splitter":{},"katex":{},"fontsettings":{"theme":"white","family":"sans","size":2},"sectionx":{"tag":"b"},"anchor-navigation-ex":{"isRewritePageTitle":false,"tocLevel1Icon":"fa fa-hand-o-right","tocLevel2Icon":"fa fa-hand-o-right","tocLevel3Icon":"fa fa-hand-o-right"},"favicon":{"shortcut":"favicon.ico","bookmark":"favicon.ico"},"github-buttons":{"repo":"LRH1993/android_interview","types":["star"],"size":"small"},"expandable-chapters-small":{},"local-video":{},"advanced-emoji":{"embedEmojis":false},"include-codeblock":{"check":false,"edit":true,"fixlang":false,"lang":"","template":"ace","theme":"chrome","unindent":true},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":true,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"edit-link":{"label":"Edit This Page","base":"https://github.com/LRH1993/android_interview/edit/master"},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":true},"anchors":{},"search-plus":{}},"theme":"default","author":"ruheng","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"Android校招面试指南","language":"zh-hans","output.name":"site","links":{"sidebar":{"Home":"http://lruheng.com/"}},"gitbook":"3.2.3","description":"Android面试必备，记录自己的秋招之路"},"file":{"path":"java/basis/throwable.md","mtime":"2017-09-13T06:52:23.000Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2017-10-16T12:05:21.906Z"},"basePath":"../..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"Java异常详解","level":"2.1.16","depth":2,"next":{"title":"Java抽象类和接口的区别","level":"2.1.17","depth":2,"path":"java/basis/abstract_interface.md","ref":"java/basis/abstract_interface.md","articles":[]},"previous":{"title":"Java NIO","level":"2.1.15","depth":2,"path":"java/basis/java-nio.md","ref":"java/basis/java-nio.md","articles":[]},"dir":"ltr"},"config":{"plugins":["-lunr","-search","-livereload","search-plus@^0.0.11","simple-page-toc@^0.1.1","github@^2.0.0","github-buttons@2.1.0","edit-link@^2.0.2","advanced-emoji@^0.2.1","anchors@^0.7.1","include-codeblock@^3.0.2","ace@^0.3.2","emphasize@^1.1.0","katex@^1.1.3","splitter@^0.0.8","tbfed-pagefooter@^0.0.1","expandable-chapters-small@^0.1.7","sectionx@^3.1.0","local-video@^1.0.1","anchor-navigation-ex@0.1.8","favicon@^0.0.2"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"tbfed-pagefooter":{"copyright":"Copyright © ruheng.com 2017","modify_label":"该文件修订时间：","modify_format":"YYYY-MM-DD HH:mm:ss"},"emphasize":{},"ace":{},"github":{"url":"https://github.com/LRH1993/android_interview"},"simple-page-toc":{"maxDepth":3,"skipFirstH1":true},"splitter":{},"katex":{},"fontsettings":{"theme":"white","family":"sans","size":2},"sectionx":{"tag":"b"},"highlight":{},"anchor-navigation-ex":{"isRewritePageTitle":false,"tocLevel1Icon":"fa fa-hand-o-right","tocLevel2Icon":"fa fa-hand-o-right","tocLevel3Icon":"fa fa-hand-o-right"},"favicon":{"shortcut":"favicon.ico","bookmark":"favicon.ico"},"github-buttons":{"repo":"LRH1993/android_interview","types":["star"],"size":"small"},"expandable-chapters-small":{},"local-video":{},"advanced-emoji":{"embedEmojis":false},"include-codeblock":{"check":false,"edit":false,"fixlang":false,"lang":"","template":"default","theme":"chrome","unindent":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":true,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"edit-link":{"label":"Edit This Page","base":"https://github.com/LRH1993/android_interview/edit/master"},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":true},"anchors":{},"search-plus":{}},"theme":"default","author":"ruheng","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"Android校招面试指南","language":"zh-hans","output.name":"site","links":{"sidebar":{"Home":"http://lruheng.com/"}},"gitbook":"3.2.3","description":"Android面试必备，记录自己的秋招之路"},"file":{"path":"java/basis/throwable.md","mtime":"2017-09-13T06:52:23.000Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2017-10-16T13:00:43.989Z"},"basePath":"../..","book":{"language":""}});
         });
     </script>
 </div>

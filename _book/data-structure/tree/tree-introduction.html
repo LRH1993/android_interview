@@ -69,6 +69,10 @@
                 
             
                 
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
                 <link rel="stylesheet" href="../../gitbook/gitbook-plugin-fontsettings/website.css">
                 
             
@@ -3772,21 +3776,21 @@
 <p>(04) &#x6CA1;&#x6709;&#x952E;&#x503C;&#x76F8;&#x7B49;&#x7684;&#x8282;&#x70B9;&#xFF08;no duplicate nodes&#xFF09;&#x3002;</p>
 <h2 id="&#x4E09;&#x3001;&#x4E8C;&#x53C9;&#x67E5;&#x627E;&#x6811;&#x7684;java&#x5B9E;&#x73B0;"><a name="&#x4E09;&#x3001;&#x4E8C;&#x53C9;&#x67E5;&#x627E;&#x6811;&#x7684;java&#x5B9E;&#x73B0;" class="anchor-navigation-ex-anchor" href="#&#x4E09;&#x3001;&#x4E8C;&#x53C9;&#x67E5;&#x627E;&#x6811;&#x7684;java&#x5B9E;&#x73B0;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x4E09;&#x3001;&#x4E8C;&#x53C9;&#x67E5;&#x627E;&#x6811;&#x7684;Java&#x5B9E;&#x73B0;</h2>
 <h3 id="1&#x4E8C;&#x53C9;&#x67E5;&#x627E;&#x6811;&#x8282;&#x70B9;&#x7684;&#x5B9A;&#x4E49;"><a name="1&#x4E8C;&#x53C9;&#x67E5;&#x627E;&#x6811;&#x8282;&#x70B9;&#x7684;&#x5B9A;&#x4E49;" class="anchor-navigation-ex-anchor" href="#1&#x4E8C;&#x53C9;&#x67E5;&#x627E;&#x6811;&#x8282;&#x70B9;&#x7684;&#x5B9A;&#x4E49;"><i class="fa fa-link" aria-hidden="true"></i></a>1.&#x4E8C;&#x53C9;&#x67E5;&#x627E;&#x6811;&#x8282;&#x70B9;&#x7684;&#x5B9A;&#x4E49;</h3>
-<pre><code class="lang-java">public class BSTree&lt;T extends Comparable&lt;T&gt;&gt; {
+<pre><code class="lang-java"><span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">BSTree</span>&lt;<span class="hljs-title">T</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">Comparable</span>&lt;<span class="hljs-title">T</span>&gt;&gt; </span>{
 
-    private BSTNode&lt;T&gt; mRoot;    // &#x6839;&#x7ED3;&#x70B9;
+    <span class="hljs-keyword">private</span> BSTNode&lt;T&gt; mRoot;    <span class="hljs-comment">// &#x6839;&#x7ED3;&#x70B9;</span>
 
-    public class BSTNode&lt;T extends Comparable&lt;T&gt;&gt; {
-        T key;                // &#x5173;&#x952E;&#x5B57;(&#x952E;&#x503C;)
-        BSTNode&lt;T&gt; left;      // &#x5DE6;&#x5B69;&#x5B50;
-        BSTNode&lt;T&gt; right;     // &#x53F3;&#x5B69;&#x5B50;
-        BSTNode&lt;T&gt; parent;    // &#x7236;&#x7ED3;&#x70B9;
+    <span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">BSTNode</span>&lt;<span class="hljs-title">T</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">Comparable</span>&lt;<span class="hljs-title">T</span>&gt;&gt; </span>{
+        T key;                <span class="hljs-comment">// &#x5173;&#x952E;&#x5B57;(&#x952E;&#x503C;)</span>
+        BSTNode&lt;T&gt; left;      <span class="hljs-comment">// &#x5DE6;&#x5B69;&#x5B50;</span>
+        BSTNode&lt;T&gt; right;     <span class="hljs-comment">// &#x53F3;&#x5B69;&#x5B50;</span>
+        BSTNode&lt;T&gt; parent;    <span class="hljs-comment">// &#x7236;&#x7ED3;&#x70B9;</span>
 
-        public BSTNode(T key, BSTNode&lt;T&gt; parent, BSTNode&lt;T&gt; left, BSTNode&lt;T&gt; right) {
-            this.key = key;
-            this.parent = parent;
-            this.left = left;
-            this.right = right;
+        <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-title">BSTNode</span><span class="hljs-params">(T key, BSTNode&lt;T&gt; parent, BSTNode&lt;T&gt; left, BSTNode&lt;T&gt; right)</span> </span>{
+            <span class="hljs-keyword">this</span>.key = key;
+            <span class="hljs-keyword">this</span>.parent = parent;
+            <span class="hljs-keyword">this</span>.left = left;
+            <span class="hljs-keyword">this</span>.right = right;
         }
     }
 
@@ -3806,15 +3810,15 @@
 <p>(02) &#x5148;&#x5E8F;&#x904D;&#x5386;&#x5DE6;&#x5B50;&#x6811;&#xFF1B;</p>
 <p>(03) &#x5148;&#x5E8F;&#x904D;&#x5386;&#x53F3;&#x5B50;&#x6811;&#x3002;</p>
 <p>&#x524D;&#x5E8F;&#x904D;&#x5386;&#x4EE3;&#x7801;</p>
-<pre><code class="lang-java">private void preOrder(BSTNode&lt;T&gt; tree) {
-    if(tree != null) {
-        System.out.print(tree.key+&quot; &quot;);
+<pre><code class="lang-java"><span class="hljs-function"><span class="hljs-keyword">private</span> <span class="hljs-keyword">void</span> <span class="hljs-title">preOrder</span><span class="hljs-params">(BSTNode&lt;T&gt; tree)</span> </span>{
+    <span class="hljs-keyword">if</span>(tree != <span class="hljs-keyword">null</span>) {
+        System.out.print(tree.key+<span class="hljs-string">&quot; &quot;</span>);
         preOrder(tree.left);
         preOrder(tree.right);
     }
 }
 
-public void preOrder() {
+<span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">preOrder</span><span class="hljs-params">()</span> </span>{
     preOrder(mRoot);
 }
 </code></pre>
@@ -3824,15 +3828,15 @@ public void preOrder() {
 <p>(02) &#x8BBF;&#x95EE;&#x6839;&#x7ED3;&#x70B9;&#xFF1B;</p>
 <p>(03) &#x4E2D;&#x5E8F;&#x904D;&#x5386;&#x53F3;&#x5B50;&#x6811;&#x3002;</p>
 <p>&#x4E2D;&#x5E8F;&#x904D;&#x5386;&#x4EE3;&#x7801;</p>
-<pre><code class="lang-java">private void inOrder(BSTNode&lt;T&gt; tree) {
-    if(tree != null) {
+<pre><code class="lang-java"><span class="hljs-function"><span class="hljs-keyword">private</span> <span class="hljs-keyword">void</span> <span class="hljs-title">inOrder</span><span class="hljs-params">(BSTNode&lt;T&gt; tree)</span> </span>{
+    <span class="hljs-keyword">if</span>(tree != <span class="hljs-keyword">null</span>) {
         inOrder(tree.left);
-        System.out.print(tree.key+&quot; &quot;);
+        System.out.print(tree.key+<span class="hljs-string">&quot; &quot;</span>);
         inOrder(tree.right);
     }
 }
 
-public void inOrder() {
+<span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">inOrder</span><span class="hljs-params">()</span> </span>{
     inOrder(mRoot);
 }
 </code></pre>
@@ -3842,16 +3846,16 @@ public void inOrder() {
 <p>(02) &#x540E;&#x5E8F;&#x904D;&#x5386;&#x53F3;&#x5B50;&#x6811;&#xFF1B;</p>
 <p>(03) &#x8BBF;&#x95EE;&#x6839;&#x7ED3;&#x70B9;&#x3002;</p>
 <p>&#x540E;&#x5E8F;&#x904D;&#x5386;&#x4EE3;&#x7801;</p>
-<pre><code class="lang-java">private void postOrder(BSTNode&lt;T&gt; tree) {
-    if(tree != null)
+<pre><code class="lang-java"><span class="hljs-function"><span class="hljs-keyword">private</span> <span class="hljs-keyword">void</span> <span class="hljs-title">postOrder</span><span class="hljs-params">(BSTNode&lt;T&gt; tree)</span> </span>{
+    <span class="hljs-keyword">if</span>(tree != <span class="hljs-keyword">null</span>)
     {
         postOrder(tree.left);
         postOrder(tree.right);
-        System.out.print(tree.key+&quot; &quot;);
+        System.out.print(tree.key+<span class="hljs-string">&quot; &quot;</span>);
     }
 }
 
-public void postOrder() {
+<span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">postOrder</span><span class="hljs-params">()</span> </span>{
     postOrder(mRoot);
 }
 </code></pre>
@@ -3863,385 +3867,385 @@ public void postOrder() {
 <p>(03) &#x540E;&#x5E8F;&#x904D;&#x5386;&#x7ED3;&#x679C;&#xFF1A; 2 1 4 6 5 3</p>
 <h3 id="3-&#x67E5;&#x627E;"><a name="3-&#x67E5;&#x627E;" class="anchor-navigation-ex-anchor" href="#3-&#x67E5;&#x627E;"><i class="fa fa-link" aria-hidden="true"></i></a>3. &#x67E5;&#x627E;</h3>
 <p>&#x9012;&#x5F52;&#x7248;&#x672C;&#x7684;&#x4EE3;&#x7801;</p>
-<pre><code class="lang-java">/*
+<pre><code class="lang-java"><span class="hljs-comment">/*
  * (&#x9012;&#x5F52;&#x5B9E;&#x73B0;)&#x67E5;&#x627E;&quot;&#x4E8C;&#x53C9;&#x6811;x&quot;&#x4E2D;&#x952E;&#x503C;&#x4E3A;key&#x7684;&#x8282;&#x70B9;
- */
-private BSTNode&lt;T&gt; search(BSTNode&lt;T&gt; x, T key) {
-    if (x==null)
-        return x;
+ */</span>
+<span class="hljs-function"><span class="hljs-keyword">private</span> BSTNode&lt;T&gt; <span class="hljs-title">search</span><span class="hljs-params">(BSTNode&lt;T&gt; x, T key)</span> </span>{
+    <span class="hljs-keyword">if</span> (x==<span class="hljs-keyword">null</span>)
+        <span class="hljs-keyword">return</span> x;
 
-    int cmp = key.compareTo(x.key);
-    if (cmp &lt; 0)
-        return search(x.left, key);
-    else if (cmp &gt; 0)
-        return search(x.right, key);
-    else
-        return x;
+    <span class="hljs-keyword">int</span> cmp = key.compareTo(x.key);
+    <span class="hljs-keyword">if</span> (cmp &lt; <span class="hljs-number">0</span>)
+        <span class="hljs-keyword">return</span> search(x.left, key);
+    <span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span> (cmp &gt; <span class="hljs-number">0</span>)
+        <span class="hljs-keyword">return</span> search(x.right, key);
+    <span class="hljs-keyword">else</span>
+        <span class="hljs-keyword">return</span> x;
 }
 
-public BSTNode&lt;T&gt; search(T key) {
-    return search(mRoot, key);
+<span class="hljs-function"><span class="hljs-keyword">public</span> BSTNode&lt;T&gt; <span class="hljs-title">search</span><span class="hljs-params">(T key)</span> </span>{
+    <span class="hljs-keyword">return</span> search(mRoot, key);
 }
 </code></pre>
 <p>&#x975E;&#x9012;&#x5F52;&#x7248;&#x672C;&#x7684;&#x4EE3;&#x7801;</p>
-<pre><code class="lang-java">/*
+<pre><code class="lang-java"><span class="hljs-comment">/*
  * (&#x975E;&#x9012;&#x5F52;&#x5B9E;&#x73B0;)&#x67E5;&#x627E;&quot;&#x4E8C;&#x53C9;&#x6811;x&quot;&#x4E2D;&#x952E;&#x503C;&#x4E3A;key&#x7684;&#x8282;&#x70B9;
- */
-private BSTNode&lt;T&gt; iterativeSearch(BSTNode&lt;T&gt; x, T key) {
-    while (x!=null) {
-        int cmp = key.compareTo(x.key);
+ */</span>
+<span class="hljs-function"><span class="hljs-keyword">private</span> BSTNode&lt;T&gt; <span class="hljs-title">iterativeSearch</span><span class="hljs-params">(BSTNode&lt;T&gt; x, T key)</span> </span>{
+    <span class="hljs-keyword">while</span> (x!=<span class="hljs-keyword">null</span>) {
+        <span class="hljs-keyword">int</span> cmp = key.compareTo(x.key);
 
-        if (cmp &lt; 0) 
+        <span class="hljs-keyword">if</span> (cmp &lt; <span class="hljs-number">0</span>) 
             x = x.left;
-        else if (cmp &gt; 0) 
+        <span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span> (cmp &gt; <span class="hljs-number">0</span>) 
             x = x.right;
-        else
-            return x;
+        <span class="hljs-keyword">else</span>
+            <span class="hljs-keyword">return</span> x;
     }
 
-    return x;
+    <span class="hljs-keyword">return</span> x;
 }
 
-public BSTNode&lt;T&gt; iterativeSearch(T key) {
-    return iterativeSearch(mRoot, key);
+<span class="hljs-function"><span class="hljs-keyword">public</span> BSTNode&lt;T&gt; <span class="hljs-title">iterativeSearch</span><span class="hljs-params">(T key)</span> </span>{
+    <span class="hljs-keyword">return</span> iterativeSearch(mRoot, key);
 }
 </code></pre>
 <h3 id="4-&#x6700;&#x5927;&#x503C;&#x548C;&#x6700;&#x5C0F;&#x503C;"><a name="4-&#x6700;&#x5927;&#x503C;&#x548C;&#x6700;&#x5C0F;&#x503C;" class="anchor-navigation-ex-anchor" href="#4-&#x6700;&#x5927;&#x503C;&#x548C;&#x6700;&#x5C0F;&#x503C;"><i class="fa fa-link" aria-hidden="true"></i></a>4. &#x6700;&#x5927;&#x503C;&#x548C;&#x6700;&#x5C0F;&#x503C;</h3>
 <p>&#x67E5;&#x627E;&#x6700;&#x5927;&#x503C;&#x7684;&#x4EE3;&#x7801;</p>
-<pre><code class="lang-java">/* 
+<pre><code class="lang-java"><span class="hljs-comment">/* 
  * &#x67E5;&#x627E;&#x6700;&#x5927;&#x7ED3;&#x70B9;&#xFF1A;&#x8FD4;&#x56DE;tree&#x4E3A;&#x6839;&#x7ED3;&#x70B9;&#x7684;&#x4E8C;&#x53C9;&#x6811;&#x7684;&#x6700;&#x5927;&#x7ED3;&#x70B9;&#x3002;
- */
-private BSTNode&lt;T&gt; maximum(BSTNode&lt;T&gt; tree) {
-    if (tree == null)
-        return null;
+ */</span>
+<span class="hljs-function"><span class="hljs-keyword">private</span> BSTNode&lt;T&gt; <span class="hljs-title">maximum</span><span class="hljs-params">(BSTNode&lt;T&gt; tree)</span> </span>{
+    <span class="hljs-keyword">if</span> (tree == <span class="hljs-keyword">null</span>)
+        <span class="hljs-keyword">return</span> <span class="hljs-keyword">null</span>;
 
-    while(tree.right != null)
+    <span class="hljs-keyword">while</span>(tree.right != <span class="hljs-keyword">null</span>)
         tree = tree.right;
-    return tree;
+    <span class="hljs-keyword">return</span> tree;
 }
 
-public T maximum() {
+<span class="hljs-function"><span class="hljs-keyword">public</span> T <span class="hljs-title">maximum</span><span class="hljs-params">()</span> </span>{
     BSTNode&lt;T&gt; p = maximum(mRoot);
-    if (p != null)
-        return p.key;
+    <span class="hljs-keyword">if</span> (p != <span class="hljs-keyword">null</span>)
+        <span class="hljs-keyword">return</span> p.key;
 
-    return null;
+    <span class="hljs-keyword">return</span> <span class="hljs-keyword">null</span>;
 }
 </code></pre>
 <p>&#x67E5;&#x627E;&#x6700;&#x5C0F;&#x503C;&#x7684;&#x4EE3;&#x7801;</p>
-<pre><code class="lang-java">/* 
+<pre><code class="lang-java"><span class="hljs-comment">/* 
  * &#x67E5;&#x627E;&#x6700;&#x5C0F;&#x7ED3;&#x70B9;&#xFF1A;&#x8FD4;&#x56DE;tree&#x4E3A;&#x6839;&#x7ED3;&#x70B9;&#x7684;&#x4E8C;&#x53C9;&#x6811;&#x7684;&#x6700;&#x5C0F;&#x7ED3;&#x70B9;&#x3002;
- */
-private BSTNode&lt;T&gt; minimum(BSTNode&lt;T&gt; tree) {
-    if (tree == null)
-        return null;
+ */</span>
+<span class="hljs-function"><span class="hljs-keyword">private</span> BSTNode&lt;T&gt; <span class="hljs-title">minimum</span><span class="hljs-params">(BSTNode&lt;T&gt; tree)</span> </span>{
+    <span class="hljs-keyword">if</span> (tree == <span class="hljs-keyword">null</span>)
+        <span class="hljs-keyword">return</span> <span class="hljs-keyword">null</span>;
 
-    while(tree.left != null)
+    <span class="hljs-keyword">while</span>(tree.left != <span class="hljs-keyword">null</span>)
         tree = tree.left;
-    return tree;
+    <span class="hljs-keyword">return</span> tree;
 }
 
-public T minimum() {
+<span class="hljs-function"><span class="hljs-keyword">public</span> T <span class="hljs-title">minimum</span><span class="hljs-params">()</span> </span>{
     BSTNode&lt;T&gt; p = minimum(mRoot);
-    if (p != null)
-        return p.key;
+    <span class="hljs-keyword">if</span> (p != <span class="hljs-keyword">null</span>)
+        <span class="hljs-keyword">return</span> p.key;
 
-    return null;
+    <span class="hljs-keyword">return</span> <span class="hljs-keyword">null</span>;
 }
 </code></pre>
 <h3 id="5-&#x524D;&#x9A71;&#x548C;&#x540E;&#x7EE7;"><a name="5-&#x524D;&#x9A71;&#x548C;&#x540E;&#x7EE7;" class="anchor-navigation-ex-anchor" href="#5-&#x524D;&#x9A71;&#x548C;&#x540E;&#x7EE7;"><i class="fa fa-link" aria-hidden="true"></i></a>5. &#x524D;&#x9A71;&#x548C;&#x540E;&#x7EE7;</h3>
 <p>&#x8282;&#x70B9;&#x7684;&#x524D;&#x9A71;&#xFF1A;&#x662F;&#x8BE5;&#x8282;&#x70B9;&#x7684;&#x5DE6;&#x5B50;&#x6811;&#x4E2D;&#x7684;&#x6700;&#x5927;&#x8282;&#x70B9;&#x3002;</p>
 <p>&#x8282;&#x70B9;&#x7684;&#x540E;&#x7EE7;&#xFF1A;&#x662F;&#x8BE5;&#x8282;&#x70B9;&#x7684;&#x53F3;&#x5B50;&#x6811;&#x4E2D;&#x7684;&#x6700;&#x5C0F;&#x8282;&#x70B9;&#x3002;</p>
 <p>&#x67E5;&#x627E;&#x524D;&#x9A71;&#x8282;&#x70B9;&#x7684;&#x4EE3;&#x7801;</p>
-<pre><code class="lang-java">/* 
+<pre><code class="lang-java"><span class="hljs-comment">/* 
  * &#x627E;&#x7ED3;&#x70B9;(x)&#x7684;&#x524D;&#x9A71;&#x7ED3;&#x70B9;&#x3002;&#x5373;&#xFF0C;&#x67E5;&#x627E;&quot;&#x4E8C;&#x53C9;&#x6811;&#x4E2D;&#x6570;&#x636E;&#x503C;&#x5C0F;&#x4E8E;&#x8BE5;&#x7ED3;&#x70B9;&quot;&#x7684;&quot;&#x6700;&#x5927;&#x7ED3;&#x70B9;&quot;&#x3002;
- */
-public BSTNode&lt;T&gt; predecessor(BSTNode&lt;T&gt; x) {
-    // &#x5982;&#x679C;x&#x5B58;&#x5728;&#x5DE6;&#x5B69;&#x5B50;&#xFF0C;&#x5219;&quot;x&#x7684;&#x524D;&#x9A71;&#x7ED3;&#x70B9;&quot;&#x4E3A; &quot;&#x4EE5;&#x5176;&#x5DE6;&#x5B69;&#x5B50;&#x4E3A;&#x6839;&#x7684;&#x5B50;&#x6811;&#x7684;&#x6700;&#x5927;&#x7ED3;&#x70B9;&quot;&#x3002;
-    if (x.left != null)
-        return maximum(x.left);
+ */</span>
+<span class="hljs-function"><span class="hljs-keyword">public</span> BSTNode&lt;T&gt; <span class="hljs-title">predecessor</span><span class="hljs-params">(BSTNode&lt;T&gt; x)</span> </span>{
+    <span class="hljs-comment">// &#x5982;&#x679C;x&#x5B58;&#x5728;&#x5DE6;&#x5B69;&#x5B50;&#xFF0C;&#x5219;&quot;x&#x7684;&#x524D;&#x9A71;&#x7ED3;&#x70B9;&quot;&#x4E3A; &quot;&#x4EE5;&#x5176;&#x5DE6;&#x5B69;&#x5B50;&#x4E3A;&#x6839;&#x7684;&#x5B50;&#x6811;&#x7684;&#x6700;&#x5927;&#x7ED3;&#x70B9;&quot;&#x3002;</span>
+    <span class="hljs-keyword">if</span> (x.left != <span class="hljs-keyword">null</span>)
+        <span class="hljs-keyword">return</span> maximum(x.left);
 
-    // &#x5982;&#x679C;x&#x6CA1;&#x6709;&#x5DE6;&#x5B69;&#x5B50;&#x3002;&#x5219;x&#x6709;&#x4EE5;&#x4E0B;&#x4E24;&#x79CD;&#x53EF;&#x80FD;&#xFF1A;
-    // (01) x&#x662F;&quot;&#x4E00;&#x4E2A;&#x53F3;&#x5B69;&#x5B50;&quot;&#xFF0C;&#x5219;&quot;x&#x7684;&#x524D;&#x9A71;&#x7ED3;&#x70B9;&quot;&#x4E3A; &quot;&#x5B83;&#x7684;&#x7236;&#x7ED3;&#x70B9;&quot;&#x3002;
-    // (02) x&#x662F;&quot;&#x4E00;&#x4E2A;&#x5DE6;&#x5B69;&#x5B50;&quot;&#xFF0C;&#x5219;&#x67E5;&#x627E;&quot;x&#x7684;&#x6700;&#x4F4E;&#x7684;&#x7236;&#x7ED3;&#x70B9;&#xFF0C;&#x5E76;&#x4E14;&#x8BE5;&#x7236;&#x7ED3;&#x70B9;&#x8981;&#x5177;&#x6709;&#x53F3;&#x5B69;&#x5B50;&quot;&#xFF0C;&#x627E;&#x5230;&#x7684;&#x8FD9;&#x4E2A;&quot;&#x6700;&#x4F4E;&#x7684;&#x7236;&#x7ED3;&#x70B9;&quot;&#x5C31;&#x662F;&quot;x&#x7684;&#x524D;&#x9A71;&#x7ED3;&#x70B9;&quot;&#x3002;
+    <span class="hljs-comment">// &#x5982;&#x679C;x&#x6CA1;&#x6709;&#x5DE6;&#x5B69;&#x5B50;&#x3002;&#x5219;x&#x6709;&#x4EE5;&#x4E0B;&#x4E24;&#x79CD;&#x53EF;&#x80FD;&#xFF1A;</span>
+    <span class="hljs-comment">// (01) x&#x662F;&quot;&#x4E00;&#x4E2A;&#x53F3;&#x5B69;&#x5B50;&quot;&#xFF0C;&#x5219;&quot;x&#x7684;&#x524D;&#x9A71;&#x7ED3;&#x70B9;&quot;&#x4E3A; &quot;&#x5B83;&#x7684;&#x7236;&#x7ED3;&#x70B9;&quot;&#x3002;</span>
+    <span class="hljs-comment">// (02) x&#x662F;&quot;&#x4E00;&#x4E2A;&#x5DE6;&#x5B69;&#x5B50;&quot;&#xFF0C;&#x5219;&#x67E5;&#x627E;&quot;x&#x7684;&#x6700;&#x4F4E;&#x7684;&#x7236;&#x7ED3;&#x70B9;&#xFF0C;&#x5E76;&#x4E14;&#x8BE5;&#x7236;&#x7ED3;&#x70B9;&#x8981;&#x5177;&#x6709;&#x53F3;&#x5B69;&#x5B50;&quot;&#xFF0C;&#x627E;&#x5230;&#x7684;&#x8FD9;&#x4E2A;&quot;&#x6700;&#x4F4E;&#x7684;&#x7236;&#x7ED3;&#x70B9;&quot;&#x5C31;&#x662F;&quot;x&#x7684;&#x524D;&#x9A71;&#x7ED3;&#x70B9;&quot;&#x3002;</span>
     BSTNode&lt;T&gt; y = x.parent;
-    while ((y!=null) &amp;&amp; (x==y.left)) {
+    <span class="hljs-keyword">while</span> ((y!=<span class="hljs-keyword">null</span>) &amp;&amp; (x==y.left)) {
         x = y;
         y = y.parent;
     }
 
-    return y;
+    <span class="hljs-keyword">return</span> y;
 }
 </code></pre>
 <p>&#x67E5;&#x627E;&#x540E;&#x7EE7;&#x8282;&#x70B9;&#x7684;&#x4EE3;&#x7801;</p>
-<pre><code class="lang-java">/* 
+<pre><code class="lang-java"><span class="hljs-comment">/* 
  * &#x627E;&#x7ED3;&#x70B9;(x)&#x7684;&#x540E;&#x7EE7;&#x7ED3;&#x70B9;&#x3002;&#x5373;&#xFF0C;&#x67E5;&#x627E;&quot;&#x4E8C;&#x53C9;&#x6811;&#x4E2D;&#x6570;&#x636E;&#x503C;&#x5927;&#x4E8E;&#x8BE5;&#x7ED3;&#x70B9;&quot;&#x7684;&quot;&#x6700;&#x5C0F;&#x7ED3;&#x70B9;&quot;&#x3002;
- */
-public BSTNode&lt;T&gt; successor(BSTNode&lt;T&gt; x) {
-    // &#x5982;&#x679C;x&#x5B58;&#x5728;&#x53F3;&#x5B69;&#x5B50;&#xFF0C;&#x5219;&quot;x&#x7684;&#x540E;&#x7EE7;&#x7ED3;&#x70B9;&quot;&#x4E3A; &quot;&#x4EE5;&#x5176;&#x53F3;&#x5B69;&#x5B50;&#x4E3A;&#x6839;&#x7684;&#x5B50;&#x6811;&#x7684;&#x6700;&#x5C0F;&#x7ED3;&#x70B9;&quot;&#x3002;
-    if (x.right != null)
-        return minimum(x.right);
+ */</span>
+<span class="hljs-function"><span class="hljs-keyword">public</span> BSTNode&lt;T&gt; <span class="hljs-title">successor</span><span class="hljs-params">(BSTNode&lt;T&gt; x)</span> </span>{
+    <span class="hljs-comment">// &#x5982;&#x679C;x&#x5B58;&#x5728;&#x53F3;&#x5B69;&#x5B50;&#xFF0C;&#x5219;&quot;x&#x7684;&#x540E;&#x7EE7;&#x7ED3;&#x70B9;&quot;&#x4E3A; &quot;&#x4EE5;&#x5176;&#x53F3;&#x5B69;&#x5B50;&#x4E3A;&#x6839;&#x7684;&#x5B50;&#x6811;&#x7684;&#x6700;&#x5C0F;&#x7ED3;&#x70B9;&quot;&#x3002;</span>
+    <span class="hljs-keyword">if</span> (x.right != <span class="hljs-keyword">null</span>)
+        <span class="hljs-keyword">return</span> minimum(x.right);
 
-    // &#x5982;&#x679C;x&#x6CA1;&#x6709;&#x53F3;&#x5B69;&#x5B50;&#x3002;&#x5219;x&#x6709;&#x4EE5;&#x4E0B;&#x4E24;&#x79CD;&#x53EF;&#x80FD;&#xFF1A;
-    // (01) x&#x662F;&quot;&#x4E00;&#x4E2A;&#x5DE6;&#x5B69;&#x5B50;&quot;&#xFF0C;&#x5219;&quot;x&#x7684;&#x540E;&#x7EE7;&#x7ED3;&#x70B9;&quot;&#x4E3A; &quot;&#x5B83;&#x7684;&#x7236;&#x7ED3;&#x70B9;&quot;&#x3002;
-    // (02) x&#x662F;&quot;&#x4E00;&#x4E2A;&#x53F3;&#x5B69;&#x5B50;&quot;&#xFF0C;&#x5219;&#x67E5;&#x627E;&quot;x&#x7684;&#x6700;&#x4F4E;&#x7684;&#x7236;&#x7ED3;&#x70B9;&#xFF0C;&#x5E76;&#x4E14;&#x8BE5;&#x7236;&#x7ED3;&#x70B9;&#x8981;&#x5177;&#x6709;&#x5DE6;&#x5B69;&#x5B50;&quot;&#xFF0C;&#x627E;&#x5230;&#x7684;&#x8FD9;&#x4E2A;&quot;&#x6700;&#x4F4E;&#x7684;&#x7236;&#x7ED3;&#x70B9;&quot;&#x5C31;&#x662F;&quot;x&#x7684;&#x540E;&#x7EE7;&#x7ED3;&#x70B9;&quot;&#x3002;
+    <span class="hljs-comment">// &#x5982;&#x679C;x&#x6CA1;&#x6709;&#x53F3;&#x5B69;&#x5B50;&#x3002;&#x5219;x&#x6709;&#x4EE5;&#x4E0B;&#x4E24;&#x79CD;&#x53EF;&#x80FD;&#xFF1A;</span>
+    <span class="hljs-comment">// (01) x&#x662F;&quot;&#x4E00;&#x4E2A;&#x5DE6;&#x5B69;&#x5B50;&quot;&#xFF0C;&#x5219;&quot;x&#x7684;&#x540E;&#x7EE7;&#x7ED3;&#x70B9;&quot;&#x4E3A; &quot;&#x5B83;&#x7684;&#x7236;&#x7ED3;&#x70B9;&quot;&#x3002;</span>
+    <span class="hljs-comment">// (02) x&#x662F;&quot;&#x4E00;&#x4E2A;&#x53F3;&#x5B69;&#x5B50;&quot;&#xFF0C;&#x5219;&#x67E5;&#x627E;&quot;x&#x7684;&#x6700;&#x4F4E;&#x7684;&#x7236;&#x7ED3;&#x70B9;&#xFF0C;&#x5E76;&#x4E14;&#x8BE5;&#x7236;&#x7ED3;&#x70B9;&#x8981;&#x5177;&#x6709;&#x5DE6;&#x5B69;&#x5B50;&quot;&#xFF0C;&#x627E;&#x5230;&#x7684;&#x8FD9;&#x4E2A;&quot;&#x6700;&#x4F4E;&#x7684;&#x7236;&#x7ED3;&#x70B9;&quot;&#x5C31;&#x662F;&quot;x&#x7684;&#x540E;&#x7EE7;&#x7ED3;&#x70B9;&quot;&#x3002;</span>
     BSTNode&lt;T&gt; y = x.parent;
-    while ((y!=null) &amp;&amp; (x==y.right)) {
+    <span class="hljs-keyword">while</span> ((y!=<span class="hljs-keyword">null</span>) &amp;&amp; (x==y.right)) {
         x = y;
         y = y.parent;
     }
 
-    return y;
+    <span class="hljs-keyword">return</span> y;
 }
 </code></pre>
 <h3 id="6-&#x63D2;&#x5165;"><a name="6-&#x63D2;&#x5165;" class="anchor-navigation-ex-anchor" href="#6-&#x63D2;&#x5165;"><i class="fa fa-link" aria-hidden="true"></i></a>6. &#x63D2;&#x5165;</h3>
 <p>&#x63D2;&#x5165;&#x8282;&#x70B9;&#x7684;&#x4EE3;&#x7801;</p>
-<pre><code class="lang-java">/* 
+<pre><code class="lang-java"><span class="hljs-comment">/* 
  * &#x5C06;&#x7ED3;&#x70B9;&#x63D2;&#x5165;&#x5230;&#x4E8C;&#x53C9;&#x6811;&#x4E2D;
  *
  * &#x53C2;&#x6570;&#x8BF4;&#x660E;&#xFF1A;
  *     tree &#x4E8C;&#x53C9;&#x6811;&#x7684;
  *     z &#x63D2;&#x5165;&#x7684;&#x7ED3;&#x70B9;
- */
-private void insert(BSTree&lt;T&gt; bst, BSTNode&lt;T&gt; z) {
-    int cmp;
-    BSTNode&lt;T&gt; y = null;
+ */</span>
+<span class="hljs-function"><span class="hljs-keyword">private</span> <span class="hljs-keyword">void</span> <span class="hljs-title">insert</span><span class="hljs-params">(BSTree&lt;T&gt; bst, BSTNode&lt;T&gt; z)</span> </span>{
+    <span class="hljs-keyword">int</span> cmp;
+    BSTNode&lt;T&gt; y = <span class="hljs-keyword">null</span>;
     BSTNode&lt;T&gt; x = bst.mRoot;
 
-    // &#x67E5;&#x627E;z&#x7684;&#x63D2;&#x5165;&#x4F4D;&#x7F6E;
-    while (x != null) {
+    <span class="hljs-comment">// &#x67E5;&#x627E;z&#x7684;&#x63D2;&#x5165;&#x4F4D;&#x7F6E;</span>
+    <span class="hljs-keyword">while</span> (x != <span class="hljs-keyword">null</span>) {
         y = x;
         cmp = z.key.compareTo(x.key);
-        if (cmp &lt; 0)
+        <span class="hljs-keyword">if</span> (cmp &lt; <span class="hljs-number">0</span>)
             x = x.left;
-        else
+        <span class="hljs-keyword">else</span>
             x = x.right;
     }
 
     z.parent = y;
-    if (y==null)
+    <span class="hljs-keyword">if</span> (y==<span class="hljs-keyword">null</span>)
         bst.mRoot = z;
-    else {
+    <span class="hljs-keyword">else</span> {
         cmp = z.key.compareTo(y.key);
-        if (cmp &lt; 0)
+        <span class="hljs-keyword">if</span> (cmp &lt; <span class="hljs-number">0</span>)
             y.left = z;
-        else
+        <span class="hljs-keyword">else</span>
             y.right = z;
     }
 }
 
-/* 
+<span class="hljs-comment">/* 
  * &#x65B0;&#x5EFA;&#x7ED3;&#x70B9;(key)&#xFF0C;&#x5E76;&#x5C06;&#x5176;&#x63D2;&#x5165;&#x5230;&#x4E8C;&#x53C9;&#x6811;&#x4E2D;
  *
  * &#x53C2;&#x6570;&#x8BF4;&#x660E;&#xFF1A;
  *     tree &#x4E8C;&#x53C9;&#x6811;&#x7684;&#x6839;&#x7ED3;&#x70B9;
  *     key &#x63D2;&#x5165;&#x7ED3;&#x70B9;&#x7684;&#x952E;&#x503C;
- */
-public void insert(T key) {
-    BSTNode&lt;T&gt; z=new BSTNode&lt;T&gt;(key,null,null,null);
+ */</span>
+<span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">insert</span><span class="hljs-params">(T key)</span> </span>{
+    BSTNode&lt;T&gt; z=<span class="hljs-keyword">new</span> BSTNode&lt;T&gt;(key,<span class="hljs-keyword">null</span>,<span class="hljs-keyword">null</span>,<span class="hljs-keyword">null</span>);
 
-    // &#x5982;&#x679C;&#x65B0;&#x5EFA;&#x7ED3;&#x70B9;&#x5931;&#x8D25;&#xFF0C;&#x5219;&#x8FD4;&#x56DE;&#x3002;
-    if (z != null)
-        insert(this, z);
+    <span class="hljs-comment">// &#x5982;&#x679C;&#x65B0;&#x5EFA;&#x7ED3;&#x70B9;&#x5931;&#x8D25;&#xFF0C;&#x5219;&#x8FD4;&#x56DE;&#x3002;</span>
+    <span class="hljs-keyword">if</span> (z != <span class="hljs-keyword">null</span>)
+        insert(<span class="hljs-keyword">this</span>, z);
 }
 </code></pre>
 <p>&#x6CE8;&#xFF1A;&#x672C;&#x6587;&#x5B9E;&#x73B0;&#x7684;&#x4E8C;&#x53C9;&#x67E5;&#x627E;&#x6811;&#x662F;&#x5141;&#x8BB8;&#x63D2;&#x5165;&#x76F8;&#x540C;&#x952E;&#x503C;&#x7684;&#x8282;&#x70B9;&#x7684;&#x3002;</p>
 <h3 id="7-&#x5220;&#x9664;"><a name="7-&#x5220;&#x9664;" class="anchor-navigation-ex-anchor" href="#7-&#x5220;&#x9664;"><i class="fa fa-link" aria-hidden="true"></i></a>7. &#x5220;&#x9664;</h3>
 <p>&#x5220;&#x9664;&#x8282;&#x70B9;&#x7684;&#x4EE3;&#x7801;</p>
-<pre><code class="lang-java">/* 
+<pre><code class="lang-java"><span class="hljs-comment">/* 
  * &#x5220;&#x9664;&#x7ED3;&#x70B9;(z)&#xFF0C;&#x5E76;&#x8FD4;&#x56DE;&#x88AB;&#x5220;&#x9664;&#x7684;&#x7ED3;&#x70B9;
  *
  * &#x53C2;&#x6570;&#x8BF4;&#x660E;&#xFF1A;
  *     bst &#x4E8C;&#x53C9;&#x6811;
  *     z &#x5220;&#x9664;&#x7684;&#x7ED3;&#x70B9;
- */
-private BSTNode&lt;T&gt; remove(BSTree&lt;T&gt; bst, BSTNode&lt;T&gt; z) {
-    BSTNode&lt;T&gt; x=null;
-    BSTNode&lt;T&gt; y=null;
+ */</span>
+<span class="hljs-function"><span class="hljs-keyword">private</span> BSTNode&lt;T&gt; <span class="hljs-title">remove</span><span class="hljs-params">(BSTree&lt;T&gt; bst, BSTNode&lt;T&gt; z)</span> </span>{
+    BSTNode&lt;T&gt; x=<span class="hljs-keyword">null</span>;
+    BSTNode&lt;T&gt; y=<span class="hljs-keyword">null</span>;
 
-    if ((z.left == null) || (z.right == null) )
+    <span class="hljs-keyword">if</span> ((z.left == <span class="hljs-keyword">null</span>) || (z.right == <span class="hljs-keyword">null</span>) )
         y = z;
-    else
+    <span class="hljs-keyword">else</span>
         y = successor(z);
 
-    if (y.left != null)
+    <span class="hljs-keyword">if</span> (y.left != <span class="hljs-keyword">null</span>)
         x = y.left;
-    else
+    <span class="hljs-keyword">else</span>
         x = y.right;
 
-    if (x != null)
+    <span class="hljs-keyword">if</span> (x != <span class="hljs-keyword">null</span>)
         x.parent = y.parent;
 
-    if (y.parent == null)
+    <span class="hljs-keyword">if</span> (y.parent == <span class="hljs-keyword">null</span>)
         bst.mRoot = x;
-    else if (y == y.parent.left)
+    <span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span> (y == y.parent.left)
         y.parent.left = x;
-    else
+    <span class="hljs-keyword">else</span>
         y.parent.right = x;
 
-    if (y != z) 
+    <span class="hljs-keyword">if</span> (y != z) 
         z.key = y.key;
 
-    return y;
+    <span class="hljs-keyword">return</span> y;
 }
 
-/* 
+<span class="hljs-comment">/* 
  * &#x5220;&#x9664;&#x7ED3;&#x70B9;(z)&#xFF0C;&#x5E76;&#x8FD4;&#x56DE;&#x88AB;&#x5220;&#x9664;&#x7684;&#x7ED3;&#x70B9;
  *
  * &#x53C2;&#x6570;&#x8BF4;&#x660E;&#xFF1A;
  *     tree &#x4E8C;&#x53C9;&#x6811;&#x7684;&#x6839;&#x7ED3;&#x70B9;
  *     z &#x5220;&#x9664;&#x7684;&#x7ED3;&#x70B9;
- */
-public void remove(T key) {
+ */</span>
+<span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">remove</span><span class="hljs-params">(T key)</span> </span>{
     BSTNode&lt;T&gt; z, node; 
 
-    if ((z = search(mRoot, key)) != null)
-        if ( (node = remove(this, z)) != null)
-            node = null;
+    <span class="hljs-keyword">if</span> ((z = search(mRoot, key)) != <span class="hljs-keyword">null</span>)
+        <span class="hljs-keyword">if</span> ( (node = remove(<span class="hljs-keyword">this</span>, z)) != <span class="hljs-keyword">null</span>)
+            node = <span class="hljs-keyword">null</span>;
 }
 </code></pre>
 <h3 id="8-&#x6253;&#x5370;"><a name="8-&#x6253;&#x5370;" class="anchor-navigation-ex-anchor" href="#8-&#x6253;&#x5370;"><i class="fa fa-link" aria-hidden="true"></i></a>8. &#x6253;&#x5370;</h3>
 <p>&#x6253;&#x5370;&#x4E8C;&#x53C9;&#x67E5;&#x627E;&#x6811;&#x7684;&#x4EE3;&#x7801;</p>
-<pre><code class="lang-java">/*
+<pre><code class="lang-java"><span class="hljs-comment">/*
  * &#x6253;&#x5370;&quot;&#x4E8C;&#x53C9;&#x67E5;&#x627E;&#x6811;&quot;
  *
  * key        -- &#x8282;&#x70B9;&#x7684;&#x952E;&#x503C; 
  * direction  --  0&#xFF0C;&#x8868;&#x793A;&#x8BE5;&#x8282;&#x70B9;&#x662F;&#x6839;&#x8282;&#x70B9;;
  *               -1&#xFF0C;&#x8868;&#x793A;&#x8BE5;&#x8282;&#x70B9;&#x662F;&#x5B83;&#x7684;&#x7236;&#x7ED3;&#x70B9;&#x7684;&#x5DE6;&#x5B69;&#x5B50;;
  *                1&#xFF0C;&#x8868;&#x793A;&#x8BE5;&#x8282;&#x70B9;&#x662F;&#x5B83;&#x7684;&#x7236;&#x7ED3;&#x70B9;&#x7684;&#x53F3;&#x5B69;&#x5B50;&#x3002;
- */
-private void print(BSTNode&lt;T&gt; tree, T key, int direction) {
+ */</span>
+<span class="hljs-function"><span class="hljs-keyword">private</span> <span class="hljs-keyword">void</span> <span class="hljs-title">print</span><span class="hljs-params">(BSTNode&lt;T&gt; tree, T key, <span class="hljs-keyword">int</span> direction)</span> </span>{
 
-    if(tree != null) {
+    <span class="hljs-keyword">if</span>(tree != <span class="hljs-keyword">null</span>) {
 
-        if(direction==0)    // tree&#x662F;&#x6839;&#x8282;&#x70B9;
-            System.out.printf(&quot;%2d is root\n&quot;, tree.key);
-        else                // tree&#x662F;&#x5206;&#x652F;&#x8282;&#x70B9;
-            System.out.printf(&quot;%2d is %2d&apos;s %6s child\n&quot;, tree.key, key, direction==1?&quot;right&quot; : &quot;left&quot;);
+        <span class="hljs-keyword">if</span>(direction==<span class="hljs-number">0</span>)    <span class="hljs-comment">// tree&#x662F;&#x6839;&#x8282;&#x70B9;</span>
+            System.out.printf(<span class="hljs-string">&quot;%2d is root\n&quot;</span>, tree.key);
+        <span class="hljs-keyword">else</span>                <span class="hljs-comment">// tree&#x662F;&#x5206;&#x652F;&#x8282;&#x70B9;</span>
+            System.out.printf(<span class="hljs-string">&quot;%2d is %2d&apos;s %6s child\n&quot;</span>, tree.key, key, direction==<span class="hljs-number">1</span>?<span class="hljs-string">&quot;right&quot;</span> : <span class="hljs-string">&quot;left&quot;</span>);
 
-        print(tree.left, tree.key, -1);
-        print(tree.right,tree.key,  1);
+        print(tree.left, tree.key, -<span class="hljs-number">1</span>);
+        print(tree.right,tree.key,  <span class="hljs-number">1</span>);
     }
 }
 
-public void print() {
-    if (mRoot != null)
-        print(mRoot, mRoot.key, 0);
+<span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">print</span><span class="hljs-params">()</span> </span>{
+    <span class="hljs-keyword">if</span> (mRoot != <span class="hljs-keyword">null</span>)
+        print(mRoot, mRoot.key, <span class="hljs-number">0</span>);
 }
 </code></pre>
 <h3 id="9-&#x9500;&#x6BC1;"><a name="9-&#x9500;&#x6BC1;" class="anchor-navigation-ex-anchor" href="#9-&#x9500;&#x6BC1;"><i class="fa fa-link" aria-hidden="true"></i></a>9. &#x9500;&#x6BC1;</h3>
 <p>&#x9500;&#x6BC1;&#x4E8C;&#x53C9;&#x67E5;&#x627E;&#x6811;&#x7684;&#x4EE3;&#x7801;</p>
-<pre><code class="lang-java">/*
+<pre><code class="lang-java"><span class="hljs-comment">/*
  * &#x9500;&#x6BC1;&#x4E8C;&#x53C9;&#x6811;
- */
-private void destroy(BSTNode&lt;T&gt; tree) {
-    if (tree==null)
-        return ;
+ */</span>
+<span class="hljs-function"><span class="hljs-keyword">private</span> <span class="hljs-keyword">void</span> <span class="hljs-title">destroy</span><span class="hljs-params">(BSTNode&lt;T&gt; tree)</span> </span>{
+    <span class="hljs-keyword">if</span> (tree==<span class="hljs-keyword">null</span>)
+        <span class="hljs-keyword">return</span> ;
 
-    if (tree.left != null)
+    <span class="hljs-keyword">if</span> (tree.left != <span class="hljs-keyword">null</span>)
         destroy(tree.left);
-    if (tree.right != null)
+    <span class="hljs-keyword">if</span> (tree.right != <span class="hljs-keyword">null</span>)
         destroy(tree.right);
 
-    tree=null;
+    tree=<span class="hljs-keyword">null</span>;
 }
 
-public void clear() {
+<span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">clear</span><span class="hljs-params">()</span> </span>{
     destroy(mRoot);
-    mRoot = null;
+    mRoot = <span class="hljs-keyword">null</span>;
 }
 </code></pre>
 <h2 id="&#x56DB;&#x3001;&#x6811;&#x7684;&#x6DF1;&#x5EA6;&#x5E7F;&#x5EA6;&#x4F18;&#x5148;&#x904D;&#x5386;"><a name="&#x56DB;&#x3001;&#x6811;&#x7684;&#x6DF1;&#x5EA6;&#x5E7F;&#x5EA6;&#x4F18;&#x5148;&#x904D;&#x5386;" class="anchor-navigation-ex-anchor" href="#&#x56DB;&#x3001;&#x6811;&#x7684;&#x6DF1;&#x5EA6;&#x5E7F;&#x5EA6;&#x4F18;&#x5148;&#x904D;&#x5386;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x56DB;&#x3001;&#x6811;&#x7684;&#x6DF1;&#x5EA6;/&#x5E7F;&#x5EA6;&#x4F18;&#x5148;&#x904D;&#x5386;</h2>
 <p>&#x6811;&#x7684;&#x6DF1;&#x5EA6;&#x4F18;&#x5148;&#x904D;&#x5386;&#x9700;&#x8981;&#x7528;&#x5230;&#x989D;&#x5916;&#x7684;&#x6570;&#x636E;&#x7ED3;&#x6784;---&gt;&#x6808;&#xFF1B;&#x800C;&#x5E7F;&#x5EA6;&#x4F18;&#x5148;&#x904D;&#x5386;&#x9700;&#x8981;&#x961F;&#x5217;&#x6765;&#x8F85;&#x52A9;&#xFF1B;&#x8FD9;&#x91CC;&#x4EE5;&#x4E8C;&#x53C9;&#x6811;&#x4E3A;&#x4F8B;&#x6765;&#x5B9E;&#x73B0;&#x3002;</p>
-<pre><code class="lang-java">import java.util.ArrayDeque;
+<pre><code class="lang-java"><span class="hljs-keyword">import</span> java.util.ArrayDeque;
 
-public class BinaryTree {
-    static class TreeNode{
-        int value;
+<span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">BinaryTree</span> </span>{
+    <span class="hljs-keyword">static</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">TreeNode</span></span>{
+        <span class="hljs-keyword">int</span> value;
         TreeNode left;
         TreeNode right;
 
-        public TreeNode(int value){
-            this.value=value;
+        <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-title">TreeNode</span><span class="hljs-params">(<span class="hljs-keyword">int</span> value)</span></span>{
+            <span class="hljs-keyword">this</span>.value=value;
         }
     }
 
     TreeNode root;
 
-    public BinaryTree(int[] array){
-        root=makeBinaryTreeByArray(array,1);
+    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-title">BinaryTree</span><span class="hljs-params">(<span class="hljs-keyword">int</span>[] array)</span></span>{
+        root=makeBinaryTreeByArray(array,<span class="hljs-number">1</span>);
     }
 
-    /**
+    <span class="hljs-comment">/**
      * &#x91C7;&#x7528;&#x9012;&#x5F52;&#x7684;&#x65B9;&#x5F0F;&#x521B;&#x5EFA;&#x4E00;&#x9897;&#x4E8C;&#x53C9;&#x6811;
      * &#x4F20;&#x5165;&#x7684;&#x662F;&#x4E8C;&#x53C9;&#x6811;&#x7684;&#x6570;&#x7EC4;&#x8868;&#x793A;&#x6CD5;
      * &#x6784;&#x9020;&#x540E;&#x662F;&#x4E8C;&#x53C9;&#x6811;&#x7684;&#x4E8C;&#x53C9;&#x94FE;&#x8868;&#x8868;&#x793A;&#x6CD5;
-     */
-    public static TreeNode makeBinaryTreeByArray(int[] array,int index){
-        if(index&lt;array.length){
-            int value=array[index];
-            if(value!=0){
-                TreeNode t=new TreeNode(value);
-                array[index]=0;
-                t.left=makeBinaryTreeByArray(array,index*2);
-                t.right=makeBinaryTreeByArray(array,index*2+1);
-                return t;
+     */</span>
+    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> TreeNode <span class="hljs-title">makeBinaryTreeByArray</span><span class="hljs-params">(<span class="hljs-keyword">int</span>[] array,<span class="hljs-keyword">int</span> index)</span></span>{
+        <span class="hljs-keyword">if</span>(index&lt;array.length){
+            <span class="hljs-keyword">int</span> value=array[index];
+            <span class="hljs-keyword">if</span>(value!=<span class="hljs-number">0</span>){
+                TreeNode t=<span class="hljs-keyword">new</span> TreeNode(value);
+                array[index]=<span class="hljs-number">0</span>;
+                t.left=makeBinaryTreeByArray(array,index*<span class="hljs-number">2</span>);
+                t.right=makeBinaryTreeByArray(array,index*<span class="hljs-number">2</span>+<span class="hljs-number">1</span>);
+                <span class="hljs-keyword">return</span> t;
             }
         }
-        return null;
+        <span class="hljs-keyword">return</span> <span class="hljs-keyword">null</span>;
     }
 
-    /**
+    <span class="hljs-comment">/**
      * &#x6DF1;&#x5EA6;&#x4F18;&#x5148;&#x904D;&#x5386;&#xFF0C;&#x76F8;&#x5F53;&#x4E8E;&#x5148;&#x6839;&#x904D;&#x5386;
      * &#x91C7;&#x7528;&#x975E;&#x9012;&#x5F52;&#x5B9E;&#x73B0;
      * &#x9700;&#x8981;&#x8F85;&#x52A9;&#x6570;&#x636E;&#x7ED3;&#x6784;&#xFF1A;&#x6808;
-     */
-    public void depthOrderTraversal(){
-        if(root==null){
-            System.out.println(&quot;empty tree&quot;);
-            return;
+     */</span>
+    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">depthOrderTraversal</span><span class="hljs-params">()</span></span>{
+        <span class="hljs-keyword">if</span>(root==<span class="hljs-keyword">null</span>){
+            System.out.println(<span class="hljs-string">&quot;empty tree&quot;</span>);
+            <span class="hljs-keyword">return</span>;
         }       
-        ArrayDeque&lt;TreeNode&gt; stack=new ArrayDeque&lt;TreeNode&gt;();
+        ArrayDeque&lt;TreeNode&gt; stack=<span class="hljs-keyword">new</span> ArrayDeque&lt;TreeNode&gt;();
         stack.push(root);       
-        while(stack.isEmpty()==false){
+        <span class="hljs-keyword">while</span>(stack.isEmpty()==<span class="hljs-keyword">false</span>){
             TreeNode node=stack.pop();
-            System.out.print(node.value+&quot;    &quot;);
-            if(node.right!=null){
+            System.out.print(node.value+<span class="hljs-string">&quot;    &quot;</span>);
+            <span class="hljs-keyword">if</span>(node.right!=<span class="hljs-keyword">null</span>){
                 stack.push(node.right);
             }
-            if(node.left!=null){
+            <span class="hljs-keyword">if</span>(node.left!=<span class="hljs-keyword">null</span>){
                 stack.push(node.left);
             }           
         }
-        System.out.print(&quot;\n&quot;);
+        System.out.print(<span class="hljs-string">&quot;\n&quot;</span>);
     }
 
-    /**
+    <span class="hljs-comment">/**
      * &#x5E7F;&#x5EA6;&#x4F18;&#x5148;&#x904D;&#x5386;
      * &#x91C7;&#x7528;&#x975E;&#x9012;&#x5F52;&#x5B9E;&#x73B0;
      * &#x9700;&#x8981;&#x8F85;&#x52A9;&#x6570;&#x636E;&#x7ED3;&#x6784;&#xFF1A;&#x961F;&#x5217;
-     */
-    public void levelOrderTraversal(){
-        if(root==null){
-            System.out.println(&quot;empty tree&quot;);
-            return;
+     */</span>
+    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">levelOrderTraversal</span><span class="hljs-params">()</span></span>{
+        <span class="hljs-keyword">if</span>(root==<span class="hljs-keyword">null</span>){
+            System.out.println(<span class="hljs-string">&quot;empty tree&quot;</span>);
+            <span class="hljs-keyword">return</span>;
         }
-        ArrayDeque&lt;TreeNode&gt; queue=new ArrayDeque&lt;TreeNode&gt;();
+        ArrayDeque&lt;TreeNode&gt; queue=<span class="hljs-keyword">new</span> ArrayDeque&lt;TreeNode&gt;();
         queue.add(root);
-        while(queue.isEmpty()==false){
+        <span class="hljs-keyword">while</span>(queue.isEmpty()==<span class="hljs-keyword">false</span>){
             TreeNode node=queue.remove();
-            System.out.print(node.value+&quot;    &quot;);
-            if(node.left!=null){
+            System.out.print(node.value+<span class="hljs-string">&quot;    &quot;</span>);
+            <span class="hljs-keyword">if</span>(node.left!=<span class="hljs-keyword">null</span>){
                 queue.add(node.left);
             }
-            if(node.right!=null){
+            <span class="hljs-keyword">if</span>(node.right!=<span class="hljs-keyword">null</span>){
                 queue.add(node.right);
             }
         }
-        System.out.print(&quot;\n&quot;);
+        System.out.print(<span class="hljs-string">&quot;\n&quot;</span>);
     }
 
-    /** 
+    <span class="hljs-comment">/** 
      *                  13
      *                 /  \
      *               65    5
@@ -4249,10 +4253,10 @@ public class BinaryTree {
      *             97  25   37
      *            /    /\   /
      *           22   4 28 32
-     */
-    public static void main(String[] args) {
-        int[] arr={0,13,65,5,97,25,0,37,22,0,4,28,0,0,32,0};
-        BinaryTree tree=new BinaryTree(arr);
+     */</span>
+    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title">main</span><span class="hljs-params">(String[] args)</span> </span>{
+        <span class="hljs-keyword">int</span>[] arr={<span class="hljs-number">0</span>,<span class="hljs-number">13</span>,<span class="hljs-number">65</span>,<span class="hljs-number">5</span>,<span class="hljs-number">97</span>,<span class="hljs-number">25</span>,<span class="hljs-number">0</span>,<span class="hljs-number">37</span>,<span class="hljs-number">22</span>,<span class="hljs-number">0</span>,<span class="hljs-number">4</span>,<span class="hljs-number">28</span>,<span class="hljs-number">0</span>,<span class="hljs-number">0</span>,<span class="hljs-number">32</span>,<span class="hljs-number">0</span>};
+        BinaryTree tree=<span class="hljs-keyword">new</span> BinaryTree(arr);
         tree.depthOrderTraversal();
         tree.levelOrderTraversal();
     }
@@ -4303,7 +4307,7 @@ public class BinaryTree {
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"树的基础","level":"4.3.1","depth":2,"next":{"title":"其他常见的树","level":"4.3.2","depth":2,"path":"data-structure/tree/other-tree.md","ref":"data-structure/tree/other-tree.md","articles":[]},"previous":{"title":"树","level":"4.3","depth":1,"path":"data-structure/tree.md","ref":"data-structure/tree.md","articles":[{"title":"树的基础","level":"4.3.1","depth":2,"path":"data-structure/tree/tree-introduction.md","ref":"data-structure/tree/tree-introduction.md","articles":[]},{"title":"其他常见的树","level":"4.3.2","depth":2,"path":"data-structure/tree/other-tree.md","ref":"data-structure/tree/other-tree.md","articles":[]},{"title":"并查集","level":"4.3.3","depth":2,"path":"data-structure/tree/Union-Find.md","ref":"data-structure/tree/Union-Find.md","articles":[]},{"title":"B-树，B+树，B*树","level":"4.3.4","depth":2,"path":"data-structure/tree/b-tree.md","ref":"data-structure/tree/b-tree.md","articles":[]}]},"dir":"ltr"},"config":{"plugins":["-lunr","-search","-highlight","-livereload","search-plus@^0.0.11","simple-page-toc@^0.1.1","github@^2.0.0","github-buttons@2.1.0","edit-link@^2.0.2","advanced-emoji@^0.2.1","anchors@^0.7.1","include-codeblock@^3.0.2","ace@^0.3.2","emphasize@^1.1.0","katex@^1.1.3","splitter@^0.0.8","tbfed-pagefooter@^0.0.1","expandable-chapters-small@^0.1.7","sectionx@^3.1.0","local-video@^1.0.1","anchor-navigation-ex@0.1.8","favicon@^0.0.2"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"tbfed-pagefooter":{"copyright":"Copyright © ruheng.com 2017","modify_label":"该文件修订时间：","modify_format":"YYYY-MM-DD HH:mm:ss"},"emphasize":{},"ace":{},"github":{"url":"https://github.com/LRH1993/android_interview"},"simple-page-toc":{"maxDepth":3,"skipFirstH1":true},"splitter":{},"katex":{},"fontsettings":{"theme":"white","family":"sans","size":2},"sectionx":{"tag":"b"},"anchor-navigation-ex":{"isRewritePageTitle":false,"tocLevel1Icon":"fa fa-hand-o-right","tocLevel2Icon":"fa fa-hand-o-right","tocLevel3Icon":"fa fa-hand-o-right"},"favicon":{"shortcut":"favicon.ico","bookmark":"favicon.ico"},"github-buttons":{"repo":"LRH1993/android_interview","types":["star"],"size":"small"},"expandable-chapters-small":{},"local-video":{},"advanced-emoji":{"embedEmojis":false},"include-codeblock":{"check":false,"edit":true,"fixlang":false,"lang":"","template":"ace","theme":"chrome","unindent":true},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":true,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"edit-link":{"label":"Edit This Page","base":"https://github.com/LRH1993/android_interview/edit/master"},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":true},"anchors":{},"search-plus":{}},"theme":"default","author":"ruheng","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"Android校招面试指南","language":"zh-hans","output.name":"site","links":{"sidebar":{"Home":"http://lruheng.com/"}},"gitbook":"3.2.3","description":"Android面试必备，记录自己的秋招之路"},"file":{"path":"data-structure/tree/tree-introduction.md","mtime":"2017-09-04T02:46:49.000Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2017-10-16T12:05:21.906Z"},"basePath":"../..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"树的基础","level":"4.3.1","depth":2,"next":{"title":"其他常见的树","level":"4.3.2","depth":2,"path":"data-structure/tree/other-tree.md","ref":"data-structure/tree/other-tree.md","articles":[]},"previous":{"title":"树","level":"4.3","depth":1,"path":"data-structure/tree.md","ref":"data-structure/tree.md","articles":[{"title":"树的基础","level":"4.3.1","depth":2,"path":"data-structure/tree/tree-introduction.md","ref":"data-structure/tree/tree-introduction.md","articles":[]},{"title":"其他常见的树","level":"4.3.2","depth":2,"path":"data-structure/tree/other-tree.md","ref":"data-structure/tree/other-tree.md","articles":[]},{"title":"并查集","level":"4.3.3","depth":2,"path":"data-structure/tree/Union-Find.md","ref":"data-structure/tree/Union-Find.md","articles":[]},{"title":"B-树，B+树，B*树","level":"4.3.4","depth":2,"path":"data-structure/tree/b-tree.md","ref":"data-structure/tree/b-tree.md","articles":[]}]},"dir":"ltr"},"config":{"plugins":["-lunr","-search","-livereload","search-plus@^0.0.11","simple-page-toc@^0.1.1","github@^2.0.0","github-buttons@2.1.0","edit-link@^2.0.2","advanced-emoji@^0.2.1","anchors@^0.7.1","include-codeblock@^3.0.2","ace@^0.3.2","emphasize@^1.1.0","katex@^1.1.3","splitter@^0.0.8","tbfed-pagefooter@^0.0.1","expandable-chapters-small@^0.1.7","sectionx@^3.1.0","local-video@^1.0.1","anchor-navigation-ex@0.1.8","favicon@^0.0.2"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"tbfed-pagefooter":{"copyright":"Copyright © ruheng.com 2017","modify_label":"该文件修订时间：","modify_format":"YYYY-MM-DD HH:mm:ss"},"emphasize":{},"ace":{},"github":{"url":"https://github.com/LRH1993/android_interview"},"simple-page-toc":{"maxDepth":3,"skipFirstH1":true},"splitter":{},"katex":{},"fontsettings":{"theme":"white","family":"sans","size":2},"sectionx":{"tag":"b"},"highlight":{},"anchor-navigation-ex":{"isRewritePageTitle":false,"tocLevel1Icon":"fa fa-hand-o-right","tocLevel2Icon":"fa fa-hand-o-right","tocLevel3Icon":"fa fa-hand-o-right"},"favicon":{"shortcut":"favicon.ico","bookmark":"favicon.ico"},"github-buttons":{"repo":"LRH1993/android_interview","types":["star"],"size":"small"},"expandable-chapters-small":{},"local-video":{},"advanced-emoji":{"embedEmojis":false},"include-codeblock":{"check":false,"edit":false,"fixlang":false,"lang":"","template":"default","theme":"chrome","unindent":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":true,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"edit-link":{"label":"Edit This Page","base":"https://github.com/LRH1993/android_interview/edit/master"},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":true},"anchors":{},"search-plus":{}},"theme":"default","author":"ruheng","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"Android校招面试指南","language":"zh-hans","output.name":"site","links":{"sidebar":{"Home":"http://lruheng.com/"}},"gitbook":"3.2.3","description":"Android面试必备，记录自己的秋招之路"},"file":{"path":"data-structure/tree/tree-introduction.md","mtime":"2017-09-04T02:46:49.000Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2017-10-16T13:00:43.989Z"},"basePath":"../..","book":{"language":""}});
         });
     </script>
 </div>

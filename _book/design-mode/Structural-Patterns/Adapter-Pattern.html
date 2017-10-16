@@ -69,6 +69,10 @@
                 
             
                 
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
                 <link rel="stylesheet" href="../../gitbook/gitbook-plugin-fontsettings/website.css">
                 
             
@@ -3721,33 +3725,33 @@
 <p>&#x25CF;&#x3000;&#x3000;&#x76EE;&#x6807;(Target)&#x89D2;&#x8272;&#xFF1A;&#x8FD9;&#x5C31;&#x662F;&#x6240;&#x671F;&#x5F85;&#x5F97;&#x5230;&#x7684;&#x63A5;&#x53E3;&#x3002;&#x6CE8;&#x610F;&#xFF1A;&#x7531;&#x4E8E;&#x8FD9;&#x91CC;&#x8BA8;&#x8BBA;&#x7684;&#x662F;&#x7C7B;&#x9002;&#x914D;&#x5668;&#x6A21;&#x5F0F;&#xFF0C;&#x56E0;&#x6B64;&#x76EE;&#x6807;&#x4E0D;&#x53EF;&#x4EE5;&#x662F;&#x7C7B;&#x3002;</p>
 <p>&#x25CF;&#x3000;&#x3000;&#x6E90;(Adapee)&#x89D2;&#x8272;&#xFF1A;&#x73B0;&#x5728;&#x9700;&#x8981;&#x9002;&#x914D;&#x7684;&#x63A5;&#x53E3;&#x3002;</p>
 <p>&#x25CF;&#x3000;&#x3000;&#x9002;&#x914D;&#x5668;(Adaper)&#x89D2;&#x8272;&#xFF1A;&#x9002;&#x914D;&#x5668;&#x7C7B;&#x662F;&#x672C;&#x6A21;&#x5F0F;&#x7684;&#x6838;&#x5FC3;&#x3002;&#x9002;&#x914D;&#x5668;&#x628A;&#x6E90;&#x63A5;&#x53E3;&#x8F6C;&#x6362;&#x6210;&#x76EE;&#x6807;&#x63A5;&#x53E3;&#x3002;&#x663E;&#x7136;&#xFF0C;&#x8FD9;&#x4E00;&#x89D2;&#x8272;&#x4E0D;&#x53EF;&#x4EE5;&#x662F;&#x63A5;&#x53E3;&#xFF0C;&#x800C;&#x5FC5;&#x987B;&#x662F;&#x5177;&#x4F53;&#x7C7B;&#x3002;</p>
-<pre><code class="lang-java">public interface Target {
-    /**
+<pre><code class="lang-java"><span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">interface</span> <span class="hljs-title">Target</span> </span>{
+    <span class="hljs-comment">/**
      * &#x8FD9;&#x662F;&#x6E90;&#x7C7B;Adaptee&#x4E5F;&#x6709;&#x7684;&#x65B9;&#x6CD5;
-     */
-    public void sampleOperation1(); 
-    /**
+     */</span>
+    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">sampleOperation1</span><span class="hljs-params">()</span></span>; 
+    <span class="hljs-comment">/**
      * &#x8FD9;&#x662F;&#x6E90;&#x7C7B;Adapteee&#x6CA1;&#x6709;&#x7684;&#x65B9;&#x6CD5;
-     */
-    public void sampleOperation2(); 
+     */</span>
+    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">sampleOperation2</span><span class="hljs-params">()</span></span>; 
 }
 </code></pre>
 <p>&#x4E0A;&#x9762;&#x7ED9;&#x51FA;&#x7684;&#x662F;&#x76EE;&#x6807;&#x89D2;&#x8272;&#x7684;&#x6E90;&#x4EE3;&#x7801;&#xFF0C;&#x8FD9;&#x4E2A;&#x89D2;&#x8272;&#x662F;&#x4EE5;&#x4E00;&#x4E2A;JAVA&#x63A5;&#x53E3;&#x7684;&#x5F62;&#x5F0F;&#x5B9E;&#x73B0;&#x7684;&#x3002;&#x53EF;&#x4EE5;&#x770B;&#x51FA;&#xFF0C;&#x8FD9;&#x4E2A;&#x63A5;&#x53E3;&#x58F0;&#x660E;&#x4E86;&#x4E24;&#x4E2A;&#x65B9;&#x6CD5;&#xFF1A;sampleOperation1()&#x548C;sampleOperation2()&#x3002;&#x800C;&#x6E90;&#x89D2;&#x8272;Adaptee&#x662F;&#x4E00;&#x4E2A;&#x5177;&#x4F53;&#x7C7B;&#xFF0C;&#x5B83;&#x6709;&#x4E00;&#x4E2A;sampleOperation1()&#x65B9;&#x6CD5;&#xFF0C;&#x4F46;&#x662F;&#x6CA1;&#x6709;sampleOperation2()&#x65B9;&#x6CD5;&#x3002;</p>
-<pre><code class="lang-java">public class Adaptee {
+<pre><code class="lang-java"><span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Adaptee</span> </span>{
 
-    public void sampleOperation1(){}
+    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">sampleOperation1</span><span class="hljs-params">()</span></span>{}
 
 }
 </code></pre>
 <p>&#x9002;&#x914D;&#x5668;&#x89D2;&#x8272;Adapter&#x6269;&#x5C55;&#x4E86;Adaptee,&#x540C;&#x65F6;&#x53C8;&#x5B9E;&#x73B0;&#x4E86;&#x76EE;&#x6807;(Target)&#x63A5;&#x53E3;&#x3002;&#x7531;&#x4E8E;Adaptee&#x6CA1;&#x6709;&#x63D0;&#x4F9B;sampleOperation2()&#x65B9;&#x6CD5;&#xFF0C;&#x800C;&#x76EE;&#x6807;&#x63A5;&#x53E3;&#x53C8;&#x8981;&#x6C42;&#x8FD9;&#x4E2A;&#x65B9;&#x6CD5;&#xFF0C;&#x56E0;&#x6B64;&#x9002;&#x914D;&#x5668;&#x89D2;&#x8272;Adapter&#x5B9E;&#x73B0;&#x4E86;&#x8FD9;&#x4E2A;&#x65B9;&#x6CD5;&#x3002;</p>
-<pre><code class="lang-java">public class Adapter extends Adaptee implements Target {
-    /**
+<pre><code class="lang-java"><span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Adapter</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">Adaptee</span> <span class="hljs-keyword">implements</span> <span class="hljs-title">Target</span> </span>{
+    <span class="hljs-comment">/**
      * &#x7531;&#x4E8E;&#x6E90;&#x7C7B;Adaptee&#x6CA1;&#x6709;&#x65B9;&#x6CD5;sampleOperation2()
      * &#x56E0;&#x6B64;&#x9002;&#x914D;&#x5668;&#x8865;&#x5145;&#x4E0A;&#x8FD9;&#x4E2A;&#x65B9;&#x6CD5;
-     */
-    @Override
-    public void sampleOperation2() {
-        //&#x5199;&#x76F8;&#x5173;&#x7684;&#x4EE3;&#x7801;
+     */</span>
+    <span class="hljs-meta">@Override</span>
+    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">sampleOperation2</span><span class="hljs-params">()</span> </span>{
+        <span class="hljs-comment">//&#x5199;&#x76F8;&#x5173;&#x7684;&#x4EE3;&#x7801;</span>
     }
 
 }
@@ -3756,42 +3760,42 @@
 <p>&#x4E0E;&#x7C7B;&#x7684;&#x9002;&#x914D;&#x5668;&#x6A21;&#x5F0F;&#x4E00;&#x6837;&#xFF0C;&#x5BF9;&#x8C61;&#x7684;&#x9002;&#x914D;&#x5668;&#x6A21;&#x5F0F;&#x628A;&#x88AB;&#x9002;&#x914D;&#x7684;&#x7C7B;&#x7684;API&#x8F6C;&#x6362;&#x6210;&#x4E3A;&#x76EE;&#x6807;&#x7C7B;&#x7684;API&#xFF0C;&#x4E0E;&#x7C7B;&#x7684;&#x9002;&#x914D;&#x5668;&#x6A21;&#x5F0F;&#x4E0D;&#x540C;&#x7684;&#x662F;&#xFF0C;&#x5BF9;&#x8C61;&#x7684;&#x9002;&#x914D;&#x5668;&#x6A21;&#x5F0F;&#x4E0D;&#x662F;&#x4F7F;&#x7528;&#x7EE7;&#x627F;&#x5173;&#x7CFB;&#x8FDE;&#x63A5;&#x5230;Adaptee&#x7C7B;&#xFF0C;&#x800C;&#x662F;&#x4F7F;&#x7528;&#x59D4;&#x6D3E;&#x5173;&#x7CFB;&#x8FDE;&#x63A5;&#x5230;Adaptee&#x7C7B;&#x3002;</p>
 <p><img src="http://upload-images.jianshu.io/upload_images/3985563-202c3c1af705b68e.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></p>
 <p>&#x4ECE;&#x4E0A;&#x56FE;&#x53EF;&#x4EE5;&#x770B;&#x51FA;&#xFF0C;Adaptee&#x7C7B;&#x5E76;&#x6CA1;&#x6709;sampleOperation2()&#x65B9;&#x6CD5;&#xFF0C;&#x800C;&#x5BA2;&#x6237;&#x7AEF;&#x5219;&#x671F;&#x5F85;&#x8FD9;&#x4E2A;&#x65B9;&#x6CD5;&#x3002;&#x4E3A;&#x4F7F;&#x5BA2;&#x6237;&#x7AEF;&#x80FD;&#x591F;&#x4F7F;&#x7528;Adaptee&#x7C7B;&#xFF0C;&#x9700;&#x8981;&#x63D0;&#x4F9B;&#x4E00;&#x4E2A;&#x5305;&#x88C5;(Wrapper)&#x7C7B;Adapter&#x3002;&#x8FD9;&#x4E2A;&#x5305;&#x88C5;&#x7C7B;&#x5305;&#x88C5;&#x4E86;&#x4E00;&#x4E2A;Adaptee&#x7684;&#x5B9E;&#x4F8B;&#xFF0C;&#x4ECE;&#x800C;&#x6B64;&#x5305;&#x88C5;&#x7C7B;&#x80FD;&#x591F;&#x628A;Adaptee&#x7684;API&#x4E0E;Target&#x7C7B;&#x7684;API&#x8854;&#x63A5;&#x8D77;&#x6765;&#x3002;Adapter&#x4E0E;Adaptee&#x662F;&#x59D4;&#x6D3E;&#x5173;&#x7CFB;&#xFF0C;&#x8FD9;&#x51B3;&#x5B9A;&#x4E86;&#x9002;&#x914D;&#x5668;&#x6A21;&#x5F0F;&#x662F;&#x5BF9;&#x8C61;&#x7684;&#x3002;</p>
-<pre><code class="lang-java">public interface Target {
-    /**
+<pre><code class="lang-java"><span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">interface</span> <span class="hljs-title">Target</span> </span>{
+    <span class="hljs-comment">/**
      * &#x8FD9;&#x662F;&#x6E90;&#x7C7B;Adaptee&#x4E5F;&#x6709;&#x7684;&#x65B9;&#x6CD5;
-     */
-    public void sampleOperation1(); 
-    /**
+     */</span>
+    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">sampleOperation1</span><span class="hljs-params">()</span></span>; 
+    <span class="hljs-comment">/**
      * &#x8FD9;&#x662F;&#x6E90;&#x7C7B;Adapteee&#x6CA1;&#x6709;&#x7684;&#x65B9;&#x6CD5;
-     */
-    public void sampleOperation2(); 
+     */</span>
+    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">sampleOperation2</span><span class="hljs-params">()</span></span>; 
 }
 </code></pre>
-<pre><code class="lang-java">public class Adaptee {
+<pre><code class="lang-java"><span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Adaptee</span> </span>{
 
-    public void sampleOperation1(){}
+    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">sampleOperation1</span><span class="hljs-params">()</span></span>{}
 
 }
 </code></pre>
-<pre><code class="lang-java">public class Adapter {
-    private Adaptee adaptee;
+<pre><code class="lang-java"><span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Adapter</span> </span>{
+    <span class="hljs-keyword">private</span> Adaptee adaptee;
 
-    public Adapter(Adaptee adaptee){
-        this.adaptee = adaptee;
+    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-title">Adapter</span><span class="hljs-params">(Adaptee adaptee)</span></span>{
+        <span class="hljs-keyword">this</span>.adaptee = adaptee;
     }
-    /**
+    <span class="hljs-comment">/**
      * &#x6E90;&#x7C7B;Adaptee&#x6709;&#x65B9;&#x6CD5;sampleOperation1
      * &#x56E0;&#x6B64;&#x9002;&#x914D;&#x5668;&#x7C7B;&#x76F4;&#x63A5;&#x59D4;&#x6D3E;&#x5373;&#x53EF;
-     */
-    public void sampleOperation1(){
-        this.adaptee.sampleOperation1();
+     */</span>
+    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">sampleOperation1</span><span class="hljs-params">()</span></span>{
+        <span class="hljs-keyword">this</span>.adaptee.sampleOperation1();
     }
-    /**
+    <span class="hljs-comment">/**
      * &#x6E90;&#x7C7B;Adaptee&#x6CA1;&#x6709;&#x65B9;&#x6CD5;sampleOperation2
      * &#x56E0;&#x6B64;&#x7531;&#x9002;&#x914D;&#x5668;&#x7C7B;&#x9700;&#x8981;&#x8865;&#x5145;&#x6B64;&#x65B9;&#x6CD5;
-     */
-    public void sampleOperation2(){
-        //&#x5199;&#x76F8;&#x5173;&#x7684;&#x4EE3;&#x7801;
+     */</span>
+    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">sampleOperation2</span><span class="hljs-params">()</span></span>{
+        <span class="hljs-comment">//&#x5199;&#x76F8;&#x5173;&#x7684;&#x4EE3;&#x7801;</span>
     }
 }
 </code></pre>
@@ -3811,45 +3815,45 @@
 <p>&#x5F53;&#x4E0D;&#x9700;&#x8981;&#x5168;&#x90E8;&#x5B9E;&#x73B0;&#x63A5;&#x53E3;&#x63D0;&#x4F9B;&#x7684;&#x65B9;&#x6CD5;&#x65F6;&#xFF0C;&#x53EF;&#x5148;&#x8BBE;&#x8BA1;&#x4E00;&#x4E2A;&#x62BD;&#x8C61;&#x7C7B;&#x5B9E;&#x73B0;&#x63A5;&#x53E3;&#xFF0C;&#x5E76;&#x4E3A;&#x8BE5;&#x63A5;&#x53E3;&#x4E2D;&#x6BCF;&#x4E2A;&#x65B9;&#x6CD5;&#x63D0;&#x4F9B;&#x4E00;&#x4E2A;&#x9ED8;&#x8BA4;&#x5B9E;&#x73B0;&#xFF08;&#x7A7A;&#x65B9;&#x6CD5;&#xFF09;&#xFF0C;&#x90A3;&#x4E48;&#x8BE5;&#x62BD;&#x8C61;&#x7C7B;&#x7684;&#x5B50;&#x7C7B;&#x53EF;&#x6709;&#x9009;&#x62E9;&#x5730;&#x8986;&#x76D6;&#x7236;&#x7C7B;&#x7684;&#x67D0;&#x4E9B;&#x65B9;&#x6CD5;&#x6765;&#x5B9E;&#x73B0;&#x9700;&#x6C42;&#xFF0C;&#x5B83;&#x9002;&#x7528;&#x4E8E;&#x4E00;&#x4E2A;&#x63A5;&#x53E3;&#x4E0D;&#x60F3;&#x4F7F;&#x7528;&#x5176;&#x6240;&#x6709;&#x7684;&#x65B9;&#x6CD5;&#x7684;&#x60C5;&#x51B5;&#x3002;</p>
 <h3 id="&#x4E94;&#x3001;java&#x4E2D;&#x9002;&#x914D;&#x5668;&#x6A21;&#x5F0F;&#x7684;&#x4F7F;&#x7528;"><a name="&#x4E94;&#x3001;java&#x4E2D;&#x9002;&#x914D;&#x5668;&#x6A21;&#x5F0F;&#x7684;&#x4F7F;&#x7528;" class="anchor-navigation-ex-anchor" href="#&#x4E94;&#x3001;java&#x4E2D;&#x9002;&#x914D;&#x5668;&#x6A21;&#x5F0F;&#x7684;&#x4F7F;&#x7528;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x4E94;&#x3001;Java&#x4E2D;&#x9002;&#x914D;&#x5668;&#x6A21;&#x5F0F;&#x7684;&#x4F7F;&#x7528;</h3>
 <p>JDK1.1 &#x4E4B;&#x524D;&#x63D0;&#x4F9B;&#x7684;&#x5BB9;&#x5668;&#x6709; Arrays,Vector,Stack,Hashtable,Properties,BitSet&#xFF0C;&#x5176;&#x4E2D;&#x5B9A;&#x4E49;&#x4E86;&#x4E00;&#x79CD;&#x8BBF;&#x95EE;&#x7FA4;&#x96C6;&#x5185;&#x5404;&#x5143;&#x7D20;&#x7684;&#x6807;&#x51C6;&#x65B9;&#x5F0F;&#xFF0C;&#x79F0;&#x4E3A; Enumeration&#xFF08;&#x5217;&#x4E3E;&#x5668;&#xFF09;&#x63A5;&#x53E3;&#x3002;</p>
-<pre><code class="lang-java">Vector v=new Vector();
-for (Enumeration enum =v.elements(); enum.hasMoreElements();) {
-Object o = enum.nextElement();
+<pre><code class="lang-java">Vector v=<span class="hljs-keyword">new</span> Vector();
+<span class="hljs-keyword">for</span> (Enumeration <span class="hljs-keyword">enum</span> =v.elements(); <span class="hljs-keyword">enum</span>.hasMoreElements();) {
+Object o = <span class="hljs-keyword">enum</span>.nextElement();
 processObject(o);
 }
 </code></pre>
 <p>JDK1.2 &#x7248;&#x672C;&#x4E2D;&#x5F15;&#x5165;&#x4E86; Iterator &#x63A5;&#x53E3;&#xFF0C;&#x65B0;&#x7248;&#x672C;&#x7684;&#x96C6;&#x5408;&#x5BF9;&#xFF08;HashSet,HashMap,WeakHeahMap,ArrayList,TreeSet,TreeMap, LinkedList&#xFF09;&#x662F;&#x901A;&#x8FC7; Iterator &#x63A5;&#x53E3;&#x8BBF;&#x95EE;&#x96C6;&#x5408;&#x5143;&#x7D20;&#x3002;</p>
-<pre><code class="lang-java">List list=new ArrayList();
-for(Iterator it=list.iterator();it.hasNext();)
+<pre><code class="lang-java">List list=<span class="hljs-keyword">new</span> ArrayList();
+<span class="hljs-keyword">for</span>(Iterator it=list.iterator();it.hasNext();)
 {
  System.out.println(it.next());
 }
 </code></pre>
 <p>&#x8FD9;&#x6837;&#xFF0C;&#x5982;&#x679C;&#x5C06;&#x8001;&#x7248;&#x672C;&#x7684;&#x7A0B;&#x5E8F;&#x8FD0;&#x884C;&#x5728;&#x65B0;&#x7684; Java &#x7F16;&#x8BD1;&#x5668;&#x4E0A;&#x5C31;&#x4F1A;&#x51FA;&#x9519;&#x3002;&#x56E0;&#x4E3A; List &#x63A5;&#x53E3;&#x4E2D;&#x5DF2;&#x7ECF;&#x6CA1;&#x6709; elements()&#xFF0C;&#x800C;&#x53EA;&#x6709; iterator() &#x4E86;&#x3002;&#x90A3;&#x4E48;&#x5982;&#x4F55;&#x5C06;&#x8001;&#x7248;&#x672C;&#x7684;&#x7A0B;&#x5E8F;&#x8FD0;&#x884C;&#x5728;&#x65B0;&#x7684; Java &#x7F16;&#x8BD1;&#x5668;&#x4E0A;&#x5462;? &#x5982;&#x679C;&#x4E0D;&#x52A0;&#x4FEE;&#x6539;&#xFF0C;&#x662F;&#x80AF;&#x5B9A;&#x4E0D;&#x884C;&#x7684;&#xFF0C;&#x4F46;&#x662F;&#x4FEE;&#x6539;&#x8981;&#x9075;&#x5FAA;&#x201C;&#x5F00;&#xFF0D;&#x95ED;&#x201D;&#x539F;&#x5219;&#x3002;&#x6211;&#x4EEC;&#x53EF;&#x4EE5;&#x7528; Java &#x8BBE;&#x8BA1;&#x6A21;&#x5F0F;&#x4E2D;&#x7684;&#x9002;&#x914D;&#x5668;&#x6A21;&#x5F0F;&#x89E3;&#x51B3;&#x8FD9;&#x4E2A;&#x95EE;&#x9898;&#x3002;</p>
-<pre><code class="lang-java">public class NewEnumeration implements Enumeration
-{
+<pre><code class="lang-java"><span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">NewEnumeration</span> <span class="hljs-keyword">implements</span> <span class="hljs-title">Enumeration</span>
+</span>{
 
  Iterator it;
- public NewEnumeration(Iterator it)
- {
- this.it=it;
+ <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-title">NewEnumeration</span><span class="hljs-params">(Iterator it)</span>
+ </span>{
+ <span class="hljs-keyword">this</span>.it=it;
  }
 
- public boolean hasMoreElements()
- {
- return it.hasNext();
+ <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">boolean</span> <span class="hljs-title">hasMoreElements</span><span class="hljs-params">()</span>
+ </span>{
+ <span class="hljs-keyword">return</span> it.hasNext();
  }
 
- public Object nextElement()
- {
- return it.next();
+ <span class="hljs-function"><span class="hljs-keyword">public</span> Object <span class="hljs-title">nextElement</span><span class="hljs-params">()</span>
+ </span>{
+ <span class="hljs-keyword">return</span> it.next();
  }
- public static void main(String[] args)
- {
- List list=new ArrayList();
- list.add(&quot;a&quot;);
- list.add(&quot;b&quot;);
- list.add(&quot;C&quot;);
- for(Enumeration e=new NewEnumeration(list.iterator());e.hasMoreElements();)
+ <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title">main</span><span class="hljs-params">(String[] args)</span>
+ </span>{
+ List list=<span class="hljs-keyword">new</span> ArrayList();
+ list.add(<span class="hljs-string">&quot;a&quot;</span>);
+ list.add(<span class="hljs-string">&quot;b&quot;</span>);
+ list.add(<span class="hljs-string">&quot;C&quot;</span>);
+ <span class="hljs-keyword">for</span>(Enumeration e=<span class="hljs-keyword">new</span> NewEnumeration(list.iterator());e.hasMoreElements();)
  {
  System.out.println(e.nextElement());
  }
@@ -3859,60 +3863,60 @@ for(Iterator it=list.iterator();it.hasNext();)
 <p>NewEnumeration &#x662F;&#x4E00;&#x4E2A;&#x9002;&#x914D;&#x5668;&#x7C7B;&#xFF0C;&#x901A;&#x8FC7;&#x5B83;&#x5B9E;&#x73B0;&#x4E86;&#x4ECE; Iterator &#x63A5;&#x53E3;&#x5230; Enumeration &#x63A5;&#x53E3;&#x7684;&#x9002;&#x914D;&#xFF0C;&#x8FD9;&#x6837;&#x6211;&#x4EEC;&#x5C31;&#x53EF;&#x4EE5;&#x4F7F;&#x7528;&#x8001;&#x7248;&#x672C;&#x7684;&#x4EE3;&#x7801;&#x6765;&#x4F7F;&#x7528;&#x65B0;&#x7684;&#x96C6;&#x5408;&#x5BF9;&#x8C61;&#x4E86;&#x3002;</p>
 <h3 id="&#x516D;&#x3001;android&#x4E2D;&#x9002;&#x914D;&#x5668;&#x6A21;&#x5F0F;&#x7684;&#x4F7F;&#x7528;"><a name="&#x516D;&#x3001;android&#x4E2D;&#x9002;&#x914D;&#x5668;&#x6A21;&#x5F0F;&#x7684;&#x4F7F;&#x7528;" class="anchor-navigation-ex-anchor" href="#&#x516D;&#x3001;android&#x4E2D;&#x9002;&#x914D;&#x5668;&#x6A21;&#x5F0F;&#x7684;&#x4F7F;&#x7528;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x516D;&#x3001;Android&#x4E2D;&#x9002;&#x914D;&#x5668;&#x6A21;&#x5F0F;&#x7684;&#x4F7F;&#x7528;</h3>
 <p>&#x5728;&#x5F00;&#x53D1;&#x8FC7;&#x7A0B;&#x4E2D;,ListView&#x7684;Adapter&#x662F;&#x6211;&#x4EEC;&#x6700;&#x4E3A;&#x5E38;&#x89C1;&#x7684;&#x7C7B;&#x578B;&#x4E4B;&#x4E00;&#x3002;&#x4E00;&#x822C;&#x7684;&#x7528;&#x6CD5;&#x5927;&#x81F4;&#x5982;&#x4E0B;:</p>
-<pre><code class="lang-java">// &#x4EE3;&#x7801;&#x7701;&#x7565;
+<pre><code class="lang-java"><span class="hljs-comment">// &#x4EE3;&#x7801;&#x7701;&#x7565;</span>
  ListView myListView = (ListView)findViewById(listview_id);
- // &#x8BBE;&#x7F6E;&#x9002;&#x914D;&#x5668;
- myListView.setAdapter(new MyAdapter(context, myDatas));
+ <span class="hljs-comment">// &#x8BBE;&#x7F6E;&#x9002;&#x914D;&#x5668;</span>
+ myListView.setAdapter(<span class="hljs-keyword">new</span> MyAdapter(context, myDatas));
 
-// &#x9002;&#x914D;&#x5668;
-public class MyAdapter extends BaseAdapter{
+<span class="hljs-comment">// &#x9002;&#x914D;&#x5668;</span>
+<span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">MyAdapter</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">BaseAdapter</span></span>{
 
-        private LayoutInflater mInflater;
+        <span class="hljs-keyword">private</span> LayoutInflater mInflater;
         List
 &lt;
 String
 &gt;
  mDatas ; 
 
-        public MyAdapter(Context context, List
+        <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-title">MyAdapter</span><span class="hljs-params">(Context context, List
 &lt;
 String
 &gt;
- datas){
-            this.mInflater = LayoutInflater.from(context);
+ datas)</span></span>{
+            <span class="hljs-keyword">this</span>.mInflater = LayoutInflater.from(context);
             mDatas = datas ;
         }
-        @Override
-        public int getCount() {
-            return mDatas.size();
+        <span class="hljs-meta">@Override</span>
+        <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">int</span> <span class="hljs-title">getCount</span><span class="hljs-params">()</span> </span>{
+            <span class="hljs-keyword">return</span> mDatas.size();
         }
 
-        @Override
-        public String getItem(int pos) {
-            return mDatas.get(pos);
+        <span class="hljs-meta">@Override</span>
+        <span class="hljs-function"><span class="hljs-keyword">public</span> String <span class="hljs-title">getItem</span><span class="hljs-params">(<span class="hljs-keyword">int</span> pos)</span> </span>{
+            <span class="hljs-keyword">return</span> mDatas.get(pos);
         }
 
-        @Override
-        public long getItemId(int pos) {
-            return pos;
+        <span class="hljs-meta">@Override</span>
+        <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">long</span> <span class="hljs-title">getItemId</span><span class="hljs-params">(<span class="hljs-keyword">int</span> pos)</span> </span>{
+            <span class="hljs-keyword">return</span> pos;
         }
 
-        // &#x89E3;&#x6790;&#x3001;&#x8BBE;&#x7F6E;&#x3001;&#x7F13;&#x5B58;convertView&#x4EE5;&#x53CA;&#x76F8;&#x5173;&#x5185;&#x5BB9;
-        @Override
-        public View getView(int position, View convertView, ViewGroup parent) { 
-            ViewHolder holder = null;
-            // Item View&#x7684;&#x590D;&#x7528;
-            if (convertView == null) {
-                holder = new ViewHolder();  
-                convertView = mInflater.inflate(R.layout.my_listview_item, null);
-                // &#x83B7;&#x53D6;title
+        <span class="hljs-comment">// &#x89E3;&#x6790;&#x3001;&#x8BBE;&#x7F6E;&#x3001;&#x7F13;&#x5B58;convertView&#x4EE5;&#x53CA;&#x76F8;&#x5173;&#x5185;&#x5BB9;</span>
+        <span class="hljs-meta">@Override</span>
+        <span class="hljs-function"><span class="hljs-keyword">public</span> View <span class="hljs-title">getView</span><span class="hljs-params">(<span class="hljs-keyword">int</span> position, View convertView, ViewGroup parent)</span> </span>{ 
+            ViewHolder holder = <span class="hljs-keyword">null</span>;
+            <span class="hljs-comment">// Item View&#x7684;&#x590D;&#x7528;</span>
+            <span class="hljs-keyword">if</span> (convertView == <span class="hljs-keyword">null</span>) {
+                holder = <span class="hljs-keyword">new</span> ViewHolder();  
+                convertView = mInflater.inflate(R.layout.my_listview_item, <span class="hljs-keyword">null</span>);
+                <span class="hljs-comment">// &#x83B7;&#x53D6;title</span>
                 holder.title = (TextView)convertView.findViewById(R.id.title);
                 convertView.setTag(holder);
-            } else {
+            } <span class="hljs-keyword">else</span> {
                 holder = (ViewHolder)convertView.getTag();
             }
             holder.title.setText(mDatas.get(position));
-            return convertView;
+            <span class="hljs-keyword">return</span> convertView;
         }
 
     }
@@ -3921,49 +3925,49 @@ String
 <p>Android&#x7684;&#x505A;&#x6CD5;&#x662F;&#x589E;&#x52A0;&#x4E00;&#x4E2A;Adapter&#x5C42;&#x6765;&#x5E94;&#x5BF9;&#x53D8;&#x5316;&#xFF0C;<strong>&#x5C06;ListView&#x9700;&#x8981;&#x7684;&#x63A5;&#x53E3;&#x62BD;&#x8C61;&#x5230;Adapter&#x5BF9;&#x8C61;&#x4E2D;</strong>&#xFF0C;<strong>&#x8FD9;&#x6837;&#x53EA;&#x8981;&#x7528;&#x6237;&#x5B9E;&#x73B0;&#x4E86;Adapter&#x7684;&#x63A5;&#x53E3;&#xFF0C;ListView&#x5C31;&#x53EF;&#x4EE5;&#x6309;&#x7167;&#x7528;&#x6237;&#x8BBE;&#x5B9A;&#x7684;&#x663E;&#x793A;&#x6548;&#x679C;&#x3001;&#x6570;&#x91CF;&#x3001;&#x6570;&#x636E;&#x6765;&#x663E;&#x793A;&#x7279;&#x5B9A;&#x7684;Item View&#x3002;</strong></p>
 <p>&#x901A;&#x8FC7;&#x4EE3;&#x7406;&#x6570;&#x636E;&#x96C6;&#x6765;&#x544A;&#x77E5;ListView&#x6570;&#x636E;&#x7684;&#x4E2A;&#x6570;( getCount&#x51FD;&#x6570; )&#x4EE5;&#x53CA;&#x6BCF;&#x4E2A;&#x6570;&#x636E;&#x7684;&#x7C7B;&#x578B;( getItem&#x51FD;&#x6570; )&#xFF0C;&#x6700;&#x91CD;&#x8981;&#x7684;&#x662F;&#x8981;&#x89E3;&#x51B3;Item View&#x7684;&#x8F93;&#x51FA;&#x3002;Item View&#x5343;&#x53D8;&#x4E07;&#x5316;&#xFF0C;&#x4F46;&#x7EC8;&#x7A76;&#x5B83;&#x90FD;&#x662F;View&#x7C7B;&#x578B;&#xFF0C;Adapter&#x7EDF;&#x4E00;&#x5C06;Item View&#x8F93;&#x51FA;&#x4E3A;View ( getView&#x51FD;&#x6570; )&#xFF0C;&#x8FD9;&#x6837;&#x5C31;&#x5F88;&#x597D;&#x7684;&#x5E94;&#x5BF9;&#x4E86;Item View&#x7684;&#x53EF;&#x53D8;&#x6027;&#x3002;</p>
 <p>&#x90A3;&#x4E48;ListView&#x662F;&#x5982;&#x4F55;&#x901A;&#x8FC7;Adapter&#x6A21;&#x5F0F; ( &#x4E0D;&#x6B62;Adapter&#x6A21;&#x5F0F; )&#x6765;&#x8FD0;&#x4F5C;&#x7684;&#x5462; &#xFF1F;&#x6211;&#x4EEC;&#x4E00;&#x8D77;&#x6765;&#x770B;&#x4E00;&#x770B;&#x3002;<br>ListView&#x7EE7;&#x627F;&#x81EA;AbsListView&#xFF0C;Adapter&#x5B9A;&#x4E49;&#x5728;AbsListView&#x4E2D;&#xFF0C;&#x6211;&#x4EEC;&#x770B;&#x4E00;&#x770B;&#x8FD9;&#x4E2A;&#x7C7B;&#x3002;</p>
-<pre><code class="lang-java">public abstract class AbsListView extends AdapterView
+<pre><code class="lang-java"><span class="hljs-keyword">public</span> <span class="hljs-keyword">abstract</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">AbsListView</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">AdapterView</span>
 &lt;
-ListAdapter
+<span class="hljs-title">ListAdapter</span>
 &gt;
- implements TextWatcher,
-        ViewTreeObserver.OnGlobalLayoutListener, Filter.FilterListener,
-        ViewTreeObserver.OnTouchModeChangeListener,
-        RemoteViewsAdapter.RemoteAdapterConnectionCallback {
+ <span class="hljs-keyword">implements</span> <span class="hljs-title">TextWatcher</span>,
+        <span class="hljs-title">ViewTreeObserver</span>.<span class="hljs-title">OnGlobalLayoutListener</span>, <span class="hljs-title">Filter</span>.<span class="hljs-title">FilterListener</span>,
+        <span class="hljs-title">ViewTreeObserver</span>.<span class="hljs-title">OnTouchModeChangeListener</span>,
+        <span class="hljs-title">RemoteViewsAdapter</span>.<span class="hljs-title">RemoteAdapterConnectionCallback</span> </span>{
 
     ListAdapter mAdapter ;
 
-    // &#x5173;&#x8054;&#x5230;Window&#x65F6;&#x8C03;&#x7528;&#x7684;&#x51FD;&#x6570;
-    @Override
-    protected void onAttachedToWindow() {
-        super.onAttachedToWindow();
-        // &#x4EE3;&#x7801;&#x7701;&#x7565;
-        // &#x7ED9;&#x9002;&#x914D;&#x5668;&#x6CE8;&#x518C;&#x4E00;&#x4E2A;&#x89C2;&#x5BDF;&#x8005;&#x3002;
-        if (mAdapter != null 
+    <span class="hljs-comment">// &#x5173;&#x8054;&#x5230;Window&#x65F6;&#x8C03;&#x7528;&#x7684;&#x51FD;&#x6570;</span>
+    <span class="hljs-meta">@Override</span>
+    <span class="hljs-function"><span class="hljs-keyword">protected</span> <span class="hljs-keyword">void</span> <span class="hljs-title">onAttachedToWindow</span><span class="hljs-params">()</span> </span>{
+        <span class="hljs-keyword">super</span>.onAttachedToWindow();
+        <span class="hljs-comment">// &#x4EE3;&#x7801;&#x7701;&#x7565;</span>
+        <span class="hljs-comment">// &#x7ED9;&#x9002;&#x914D;&#x5668;&#x6CE8;&#x518C;&#x4E00;&#x4E2A;&#x89C2;&#x5BDF;&#x8005;&#x3002;</span>
+        <span class="hljs-keyword">if</span> (mAdapter != <span class="hljs-keyword">null</span> 
 &amp;
 &amp;
- mDataSetObserver == null) {
-            mDataSetObserver = new AdapterDataSetObserver();
+ mDataSetObserver == <span class="hljs-keyword">null</span>) {
+            mDataSetObserver = <span class="hljs-keyword">new</span> AdapterDataSetObserver();
             mAdapter.registerDataSetObserver(mDataSetObserver);
 
-            // Data may have changed while we were detached. Refresh.
-            mDataChanged = true;
+            <span class="hljs-comment">// Data may have changed while we were detached. Refresh.</span>
+            mDataChanged = <span class="hljs-keyword">true</span>;
             mOldItemCount = mItemCount
-            // &#x83B7;&#x53D6;Item&#x7684;&#x6570;&#x91CF;,&#x8C03;&#x7528;&#x7684;&#x662F;mAdapter&#x7684;getCount&#x65B9;&#x6CD5;
+            <span class="hljs-comment">// &#x83B7;&#x53D6;Item&#x7684;&#x6570;&#x91CF;,&#x8C03;&#x7528;&#x7684;&#x662F;mAdapter&#x7684;getCount&#x65B9;&#x6CD5;</span>
             mItemCount = mAdapter.getCount();
         }
-        mIsAttached = true;
+        mIsAttached = <span class="hljs-keyword">true</span>;
     }
 
-  /**
+  <span class="hljs-comment">/**
      * &#x5B50;&#x7C7B;&#x9700;&#x8981;&#x8986;&#x5199;layoutChildren()&#x51FD;&#x6570;&#x6765;&#x5E03;&#x5C40;child view,&#x4E5F;&#x5C31;&#x662F;Item View
-     */
-    @Override
-    protected void onLayout(boolean changed, int l, int t, int r, int b) {
-        super.onLayout(changed, l, t, r, b);
-        mInLayout = true;
-        if (changed) {
-            int childCount = getChildCount();
-            for (int i = 0; i 
+     */</span>
+    <span class="hljs-meta">@Override</span>
+    <span class="hljs-function"><span class="hljs-keyword">protected</span> <span class="hljs-keyword">void</span> <span class="hljs-title">onLayout</span><span class="hljs-params">(<span class="hljs-keyword">boolean</span> changed, <span class="hljs-keyword">int</span> l, <span class="hljs-keyword">int</span> t, <span class="hljs-keyword">int</span> r, <span class="hljs-keyword">int</span> b)</span> </span>{
+        <span class="hljs-keyword">super</span>.onLayout(changed, l, t, r, b);
+        mInLayout = <span class="hljs-keyword">true</span>;
+        <span class="hljs-keyword">if</span> (changed) {
+            <span class="hljs-keyword">int</span> childCount = getChildCount();
+            <span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> i = <span class="hljs-number">0</span>; i 
 &lt;
  childCount; i++) {
                 getChildAt(i).forceLayout();
@@ -3971,37 +3975,37 @@ ListAdapter
             mRecycler.markChildrenDirty();
         }
 
-        if (mFastScroller != null 
+        <span class="hljs-keyword">if</span> (mFastScroller != <span class="hljs-keyword">null</span> 
 &amp;
 &amp;
  mItemCount != mOldItemCount) {
             mFastScroller.onItemCountChanged(mOldItemCount, mItemCount);
         }
-        // &#x5E03;&#x5C40;Child View
+        <span class="hljs-comment">// &#x5E03;&#x5C40;Child View</span>
         layoutChildren();
-        mInLayout = false;
+        mInLayout = <span class="hljs-keyword">false</span>;
 
         mOverscrollMax = (b - t) / OVERSCROLL_LIMIT_DIVISOR;
     }
 
-    // &#x83B7;&#x53D6;&#x4E00;&#x4E2A;Item View
-    View obtainView(int position, boolean[] isScrap) {
-        isScrap[0] = false;
+    <span class="hljs-comment">// &#x83B7;&#x53D6;&#x4E00;&#x4E2A;Item View</span>
+    <span class="hljs-function">View <span class="hljs-title">obtainView</span><span class="hljs-params">(<span class="hljs-keyword">int</span> position, <span class="hljs-keyword">boolean</span>[] isScrap)</span> </span>{
+        isScrap[<span class="hljs-number">0</span>] = <span class="hljs-keyword">false</span>;
         View scrapView;
-        // &#x4ECE;&#x7F13;&#x5B58;&#x7684;Item View&#x4E2D;&#x83B7;&#x53D6;,ListView&#x7684;&#x590D;&#x7528;&#x673A;&#x5236;&#x5C31;&#x5728;&#x8FD9;&#x91CC;
+        <span class="hljs-comment">// &#x4ECE;&#x7F13;&#x5B58;&#x7684;Item View&#x4E2D;&#x83B7;&#x53D6;,ListView&#x7684;&#x590D;&#x7528;&#x673A;&#x5236;&#x5C31;&#x5728;&#x8FD9;&#x91CC;</span>
         scrapView = mRecycler.getScrapView(position);
 
         View child;
-        if (scrapView != null) {
-            // &#x4EE3;&#x7801;&#x7701;&#x7565;
-            child = mAdapter.getView(position, scrapView, this);
-            // &#x4EE3;&#x7801;&#x7701;&#x7565;
-        } else {
-            child = mAdapter.getView(position, null, this);
-            // &#x4EE3;&#x7801;&#x7701;&#x7565;
+        <span class="hljs-keyword">if</span> (scrapView != <span class="hljs-keyword">null</span>) {
+            <span class="hljs-comment">// &#x4EE3;&#x7801;&#x7701;&#x7565;</span>
+            child = mAdapter.getView(position, scrapView, <span class="hljs-keyword">this</span>);
+            <span class="hljs-comment">// &#x4EE3;&#x7801;&#x7701;&#x7565;</span>
+        } <span class="hljs-keyword">else</span> {
+            child = mAdapter.getView(position, <span class="hljs-keyword">null</span>, <span class="hljs-keyword">this</span>);
+            <span class="hljs-comment">// &#x4EE3;&#x7801;&#x7701;&#x7565;</span>
         }
 
-        return child;
+        <span class="hljs-keyword">return</span> child;
     }
     }
 </code></pre>
@@ -4060,7 +4064,7 @@ ListAdapter
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"适配器模式","level":"6.2.1","depth":2,"next":{"title":"外观模式","level":"6.2.2","depth":2,"path":"design-mode/Structural-Patterns/Facade-Pattern.md","ref":"design-mode/Structural-Patterns/Facade-Pattern.md","articles":[]},"previous":{"title":"结构型模式","level":"6.2","depth":1,"path":"design-mode/Structural-Patterns.md","ref":"design-mode/Structural-Patterns.md","articles":[{"title":"适配器模式","level":"6.2.1","depth":2,"path":"design-mode/Structural-Patterns/Adapter-Pattern.md","ref":"design-mode/Structural-Patterns/Adapter-Pattern.md","articles":[]},{"title":"外观模式","level":"6.2.2","depth":2,"path":"design-mode/Structural-Patterns/Facade-Pattern.md","ref":"design-mode/Structural-Patterns/Facade-Pattern.md","articles":[]},{"title":"装饰者模式","level":"6.2.3","depth":2,"path":"design-mode/Structural-Patterns/Decorator-Pattern.md","ref":"design-mode/Structural-Patterns/Decorator-Pattern.md","articles":[]},{"title":"代理模式","level":"6.2.4","depth":2,"path":"design-mode/Structural-Patterns/Proxy-Pattern.md","ref":"design-mode/Structural-Patterns/Proxy-Pattern.md","articles":[]}]},"dir":"ltr"},"config":{"plugins":["-lunr","-search","-highlight","-livereload","search-plus@^0.0.11","simple-page-toc@^0.1.1","github@^2.0.0","github-buttons@2.1.0","edit-link@^2.0.2","advanced-emoji@^0.2.1","anchors@^0.7.1","include-codeblock@^3.0.2","ace@^0.3.2","emphasize@^1.1.0","katex@^1.1.3","splitter@^0.0.8","tbfed-pagefooter@^0.0.1","expandable-chapters-small@^0.1.7","sectionx@^3.1.0","local-video@^1.0.1","anchor-navigation-ex@0.1.8","favicon@^0.0.2"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"tbfed-pagefooter":{"copyright":"Copyright © ruheng.com 2017","modify_label":"该文件修订时间：","modify_format":"YYYY-MM-DD HH:mm:ss"},"emphasize":{},"ace":{},"github":{"url":"https://github.com/LRH1993/android_interview"},"simple-page-toc":{"maxDepth":3,"skipFirstH1":true},"splitter":{},"katex":{},"fontsettings":{"theme":"white","family":"sans","size":2},"sectionx":{"tag":"b"},"anchor-navigation-ex":{"isRewritePageTitle":false,"tocLevel1Icon":"fa fa-hand-o-right","tocLevel2Icon":"fa fa-hand-o-right","tocLevel3Icon":"fa fa-hand-o-right"},"favicon":{"shortcut":"favicon.ico","bookmark":"favicon.ico"},"github-buttons":{"repo":"LRH1993/android_interview","types":["star"],"size":"small"},"expandable-chapters-small":{},"local-video":{},"advanced-emoji":{"embedEmojis":false},"include-codeblock":{"check":false,"edit":true,"fixlang":false,"lang":"","template":"ace","theme":"chrome","unindent":true},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":true,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"edit-link":{"label":"Edit This Page","base":"https://github.com/LRH1993/android_interview/edit/master"},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":true},"anchors":{},"search-plus":{}},"theme":"default","author":"ruheng","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"Android校招面试指南","language":"zh-hans","output.name":"site","links":{"sidebar":{"Home":"http://lruheng.com/"}},"gitbook":"3.2.3","description":"Android面试必备，记录自己的秋招之路"},"file":{"path":"design-mode/Structural-Patterns/Adapter-Pattern.md","mtime":"2017-08-22T07:53:58.000Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2017-10-16T12:05:21.906Z"},"basePath":"../..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"适配器模式","level":"6.2.1","depth":2,"next":{"title":"外观模式","level":"6.2.2","depth":2,"path":"design-mode/Structural-Patterns/Facade-Pattern.md","ref":"design-mode/Structural-Patterns/Facade-Pattern.md","articles":[]},"previous":{"title":"结构型模式","level":"6.2","depth":1,"path":"design-mode/Structural-Patterns.md","ref":"design-mode/Structural-Patterns.md","articles":[{"title":"适配器模式","level":"6.2.1","depth":2,"path":"design-mode/Structural-Patterns/Adapter-Pattern.md","ref":"design-mode/Structural-Patterns/Adapter-Pattern.md","articles":[]},{"title":"外观模式","level":"6.2.2","depth":2,"path":"design-mode/Structural-Patterns/Facade-Pattern.md","ref":"design-mode/Structural-Patterns/Facade-Pattern.md","articles":[]},{"title":"装饰者模式","level":"6.2.3","depth":2,"path":"design-mode/Structural-Patterns/Decorator-Pattern.md","ref":"design-mode/Structural-Patterns/Decorator-Pattern.md","articles":[]},{"title":"代理模式","level":"6.2.4","depth":2,"path":"design-mode/Structural-Patterns/Proxy-Pattern.md","ref":"design-mode/Structural-Patterns/Proxy-Pattern.md","articles":[]}]},"dir":"ltr"},"config":{"plugins":["-lunr","-search","-livereload","search-plus@^0.0.11","simple-page-toc@^0.1.1","github@^2.0.0","github-buttons@2.1.0","edit-link@^2.0.2","advanced-emoji@^0.2.1","anchors@^0.7.1","include-codeblock@^3.0.2","ace@^0.3.2","emphasize@^1.1.0","katex@^1.1.3","splitter@^0.0.8","tbfed-pagefooter@^0.0.1","expandable-chapters-small@^0.1.7","sectionx@^3.1.0","local-video@^1.0.1","anchor-navigation-ex@0.1.8","favicon@^0.0.2"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"tbfed-pagefooter":{"copyright":"Copyright © ruheng.com 2017","modify_label":"该文件修订时间：","modify_format":"YYYY-MM-DD HH:mm:ss"},"emphasize":{},"ace":{},"github":{"url":"https://github.com/LRH1993/android_interview"},"simple-page-toc":{"maxDepth":3,"skipFirstH1":true},"splitter":{},"katex":{},"fontsettings":{"theme":"white","family":"sans","size":2},"sectionx":{"tag":"b"},"highlight":{},"anchor-navigation-ex":{"isRewritePageTitle":false,"tocLevel1Icon":"fa fa-hand-o-right","tocLevel2Icon":"fa fa-hand-o-right","tocLevel3Icon":"fa fa-hand-o-right"},"favicon":{"shortcut":"favicon.ico","bookmark":"favicon.ico"},"github-buttons":{"repo":"LRH1993/android_interview","types":["star"],"size":"small"},"expandable-chapters-small":{},"local-video":{},"advanced-emoji":{"embedEmojis":false},"include-codeblock":{"check":false,"edit":false,"fixlang":false,"lang":"","template":"default","theme":"chrome","unindent":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":true,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"edit-link":{"label":"Edit This Page","base":"https://github.com/LRH1993/android_interview/edit/master"},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":true},"anchors":{},"search-plus":{}},"theme":"default","author":"ruheng","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"Android校招面试指南","language":"zh-hans","output.name":"site","links":{"sidebar":{"Home":"http://lruheng.com/"}},"gitbook":"3.2.3","description":"Android面试必备，记录自己的秋招之路"},"file":{"path":"design-mode/Structural-Patterns/Adapter-Pattern.md","mtime":"2017-08-22T07:53:58.000Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2017-10-16T13:00:43.989Z"},"basePath":"../..","book":{"language":""}});
         });
     </script>
 </div>

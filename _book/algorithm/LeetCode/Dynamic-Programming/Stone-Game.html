@@ -69,6 +69,10 @@
                 
             
                 
+                <link rel="stylesheet" href="../../../gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
                 <link rel="stylesheet" href="../../../gitbook/gitbook-plugin-fontsettings/website.css">
                 
             
@@ -3753,44 +3757,44 @@
 </ul>
 <p>&#x533A;&#x95F4;&#x578B;DP&#xFF0C;&#x5229;&#x7528;&#x4E8C;&#x7EF4;&#x6570;&#x7EC4;&#x4E0B;&#x6807;&#x8868;&#x793A;&#x4E0B;&#x6807;&#x8303;&#x56F4;&#x3002; &#x9700;&#x8981;&#x6CE8;&#x610F;&#x7684;&#x662F;&#x5BF9;&#x72B6;&#x6001;&#x8F6C;&#x79FB;&#x65B9;&#x7A0B;&#x7684;&#x7406;&#x89E3;&#xFF0C;&#x4E5F;&#x5C31;&#x662F;&#x5BF9;&#x6BCF;&#x4E00;&#x79CD;&#x5206;&#x5272;&#x65B9;&#x5F0F;&#x8FDB;&#x884C;&#x904D;&#x5386;&#x3002;</p>
 <h2 id="&#x4E09;&#x3001;&#x89E3;&#x9898;&#x4EE3;&#x7801;"><a name="&#x4E09;&#x3001;&#x89E3;&#x9898;&#x4EE3;&#x7801;" class="anchor-navigation-ex-anchor" href="#&#x4E09;&#x3001;&#x89E3;&#x9898;&#x4EE3;&#x7801;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x4E09;&#x3001;&#x89E3;&#x9898;&#x4EE3;&#x7801;</h2>
-<pre><code class="lang-java">public class Solution {
-    /**
-     * @param A an integer array
-     * @return an integer
-     */
-    public int stoneGame(int[] A) {
-        // Write your code here
-        // DP
-        if(A == null || A.length == 0){
-            return 0;
+<pre><code class="lang-java"><span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Solution</span> </span>{
+    <span class="hljs-comment">/**
+     * <span class="hljs-doctag">@param</span> A an integer array
+     * <span class="hljs-doctag">@return</span> an integer
+     */</span>
+    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">int</span> <span class="hljs-title">stoneGame</span><span class="hljs-params">(<span class="hljs-keyword">int</span>[] A)</span> </span>{
+        <span class="hljs-comment">// Write your code here</span>
+        <span class="hljs-comment">// DP</span>
+        <span class="hljs-keyword">if</span>(A == <span class="hljs-keyword">null</span> || A.length == <span class="hljs-number">0</span>){
+            <span class="hljs-keyword">return</span> <span class="hljs-number">0</span>;
         }
 
-        int n = A.length;
-        int[][] sum = new int[n][n];
-        for(int i = 0; i &lt; n; i++){
+        <span class="hljs-keyword">int</span> n = A.length;
+        <span class="hljs-keyword">int</span>[][] sum = <span class="hljs-keyword">new</span> <span class="hljs-keyword">int</span>[n][n];
+        <span class="hljs-keyword">for</span>(<span class="hljs-keyword">int</span> i = <span class="hljs-number">0</span>; i &lt; n; i++){
             sum[i][i] = A[i];
-            for(int j = i + 1; j &lt; n; j++){
-                sum[i][j] = sum[i][j - 1] + A[j];
+            <span class="hljs-keyword">for</span>(<span class="hljs-keyword">int</span> j = i + <span class="hljs-number">1</span>; j &lt; n; j++){
+                sum[i][j] = sum[i][j - <span class="hljs-number">1</span>] + A[j];
             }
         }
 
-        int[][] dp = new int[n][n];
-        for(int i = 0; i &lt; n; i++){
-            dp[i][i] = 0;
+        <span class="hljs-keyword">int</span>[][] dp = <span class="hljs-keyword">new</span> <span class="hljs-keyword">int</span>[n][n];
+        <span class="hljs-keyword">for</span>(<span class="hljs-keyword">int</span> i = <span class="hljs-number">0</span>; i &lt; n; i++){
+            dp[i][i] = <span class="hljs-number">0</span>;
         }
 
-        for(int len = 2; len &lt;= n; len++){
-            for(int i = 0; i + len - 1 &lt; n; i++){
-                int j = i + len - 1;
-                int min = Integer.MAX_VALUE;
-                for(int k = i; k &lt; j; k++){
-                    min = Math.min(min, dp[i][k] + dp[k + 1][j]);
+        <span class="hljs-keyword">for</span>(<span class="hljs-keyword">int</span> len = <span class="hljs-number">2</span>; len &lt;= n; len++){
+            <span class="hljs-keyword">for</span>(<span class="hljs-keyword">int</span> i = <span class="hljs-number">0</span>; i + len - <span class="hljs-number">1</span> &lt; n; i++){
+                <span class="hljs-keyword">int</span> j = i + len - <span class="hljs-number">1</span>;
+                <span class="hljs-keyword">int</span> min = Integer.MAX_VALUE;
+                <span class="hljs-keyword">for</span>(<span class="hljs-keyword">int</span> k = i; k &lt; j; k++){
+                    min = Math.min(min, dp[i][k] + dp[k + <span class="hljs-number">1</span>][j]);
                 }
                 dp[i][j] = min + sum[i][j];
             }
         }
 
-        return dp[0][n - 1];
+        <span class="hljs-keyword">return</span> dp[<span class="hljs-number">0</span>][n - <span class="hljs-number">1</span>];
     }
 }
 </code></pre>
@@ -3839,7 +3843,7 @@
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"Stone Game","level":"5.2.1.10","depth":3,"next":{"title":"Array","level":"5.2.2","depth":2,"path":"algorithm/LeetCode/Array.md","ref":"algorithm/LeetCode/Array.md","articles":[{"title":"Partition Array","level":"5.2.2.1","depth":3,"path":"algorithm/LeetCode/Array/Partition-Array.md","ref":"algorithm/LeetCode/Array/Partition-Array.md","articles":[]},{"title":"Subarray Sum","level":"5.2.2.2","depth":3,"path":"algorithm/LeetCode/Array/Subarray-Sum.md","ref":"algorithm/LeetCode/Array/Subarray-Sum.md","articles":[]},{"title":"Plus One","level":"5.2.2.3","depth":3,"path":"algorithm/LeetCode/Array/plus-one.md","ref":"algorithm/LeetCode/Array/plus-one.md","articles":[]},{"title":"Palindrome Number","level":"5.2.2.4","depth":3,"path":"algorithm/LeetCode/Array/Palindrome-Number.md","ref":"algorithm/LeetCode/Array/Palindrome-Number.md","articles":[]},{"title":"Two Sum","level":"5.2.2.5","depth":3,"path":"algorithm/LeetCode/Array/Two-Sum.md","ref":"algorithm/LeetCode/Array/Two-Sum.md","articles":[]}]},"previous":{"title":"Maximal Square","level":"5.2.1.9","depth":3,"path":"algorithm/LeetCode/Dynamic-Programming/Maximal-Square.md","ref":"algorithm/LeetCode/Dynamic-Programming/Maximal-Square.md","articles":[]},"dir":"ltr"},"config":{"plugins":["-lunr","-search","-highlight","-livereload","search-plus@^0.0.11","simple-page-toc@^0.1.1","github@^2.0.0","github-buttons@2.1.0","edit-link@^2.0.2","advanced-emoji@^0.2.1","anchors@^0.7.1","include-codeblock@^3.0.2","ace@^0.3.2","emphasize@^1.1.0","katex@^1.1.3","splitter@^0.0.8","tbfed-pagefooter@^0.0.1","expandable-chapters-small@^0.1.7","sectionx@^3.1.0","local-video@^1.0.1","anchor-navigation-ex@0.1.8","favicon@^0.0.2"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"tbfed-pagefooter":{"copyright":"Copyright © ruheng.com 2017","modify_label":"该文件修订时间：","modify_format":"YYYY-MM-DD HH:mm:ss"},"emphasize":{},"ace":{},"github":{"url":"https://github.com/LRH1993/android_interview"},"simple-page-toc":{"maxDepth":3,"skipFirstH1":true},"splitter":{},"katex":{},"fontsettings":{"theme":"white","family":"sans","size":2},"sectionx":{"tag":"b"},"anchor-navigation-ex":{"isRewritePageTitle":false,"tocLevel1Icon":"fa fa-hand-o-right","tocLevel2Icon":"fa fa-hand-o-right","tocLevel3Icon":"fa fa-hand-o-right"},"favicon":{"shortcut":"favicon.ico","bookmark":"favicon.ico"},"github-buttons":{"repo":"LRH1993/android_interview","types":["star"],"size":"small"},"expandable-chapters-small":{},"local-video":{},"advanced-emoji":{"embedEmojis":false},"include-codeblock":{"check":false,"edit":true,"fixlang":false,"lang":"","template":"ace","theme":"chrome","unindent":true},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":true,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"edit-link":{"label":"Edit This Page","base":"https://github.com/LRH1993/android_interview/edit/master"},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":true},"anchors":{},"search-plus":{}},"theme":"default","author":"ruheng","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"Android校招面试指南","language":"zh-hans","output.name":"site","links":{"sidebar":{"Home":"http://lruheng.com/"}},"gitbook":"3.2.3","description":"Android面试必备，记录自己的秋招之路"},"file":{"path":"algorithm/LeetCode/Dynamic-Programming/Stone-Game.md","mtime":"2017-09-13T02:43:16.000Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2017-10-16T12:05:21.906Z"},"basePath":"../../..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"Stone Game","level":"5.2.1.10","depth":3,"next":{"title":"Array","level":"5.2.2","depth":2,"path":"algorithm/LeetCode/Array.md","ref":"algorithm/LeetCode/Array.md","articles":[{"title":"Partition Array","level":"5.2.2.1","depth":3,"path":"algorithm/LeetCode/Array/Partition-Array.md","ref":"algorithm/LeetCode/Array/Partition-Array.md","articles":[]},{"title":"Subarray Sum","level":"5.2.2.2","depth":3,"path":"algorithm/LeetCode/Array/Subarray-Sum.md","ref":"algorithm/LeetCode/Array/Subarray-Sum.md","articles":[]},{"title":"Plus One","level":"5.2.2.3","depth":3,"path":"algorithm/LeetCode/Array/plus-one.md","ref":"algorithm/LeetCode/Array/plus-one.md","articles":[]},{"title":"Palindrome Number","level":"5.2.2.4","depth":3,"path":"algorithm/LeetCode/Array/Palindrome-Number.md","ref":"algorithm/LeetCode/Array/Palindrome-Number.md","articles":[]},{"title":"Two Sum","level":"5.2.2.5","depth":3,"path":"algorithm/LeetCode/Array/Two-Sum.md","ref":"algorithm/LeetCode/Array/Two-Sum.md","articles":[]}]},"previous":{"title":"Maximal Square","level":"5.2.1.9","depth":3,"path":"algorithm/LeetCode/Dynamic-Programming/Maximal-Square.md","ref":"algorithm/LeetCode/Dynamic-Programming/Maximal-Square.md","articles":[]},"dir":"ltr"},"config":{"plugins":["-lunr","-search","-livereload","search-plus@^0.0.11","simple-page-toc@^0.1.1","github@^2.0.0","github-buttons@2.1.0","edit-link@^2.0.2","advanced-emoji@^0.2.1","anchors@^0.7.1","include-codeblock@^3.0.2","ace@^0.3.2","emphasize@^1.1.0","katex@^1.1.3","splitter@^0.0.8","tbfed-pagefooter@^0.0.1","expandable-chapters-small@^0.1.7","sectionx@^3.1.0","local-video@^1.0.1","anchor-navigation-ex@0.1.8","favicon@^0.0.2"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"tbfed-pagefooter":{"copyright":"Copyright © ruheng.com 2017","modify_label":"该文件修订时间：","modify_format":"YYYY-MM-DD HH:mm:ss"},"emphasize":{},"ace":{},"github":{"url":"https://github.com/LRH1993/android_interview"},"simple-page-toc":{"maxDepth":3,"skipFirstH1":true},"splitter":{},"katex":{},"fontsettings":{"theme":"white","family":"sans","size":2},"sectionx":{"tag":"b"},"highlight":{},"anchor-navigation-ex":{"isRewritePageTitle":false,"tocLevel1Icon":"fa fa-hand-o-right","tocLevel2Icon":"fa fa-hand-o-right","tocLevel3Icon":"fa fa-hand-o-right"},"favicon":{"shortcut":"favicon.ico","bookmark":"favicon.ico"},"github-buttons":{"repo":"LRH1993/android_interview","types":["star"],"size":"small"},"expandable-chapters-small":{},"local-video":{},"advanced-emoji":{"embedEmojis":false},"include-codeblock":{"check":false,"edit":false,"fixlang":false,"lang":"","template":"default","theme":"chrome","unindent":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":true,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"edit-link":{"label":"Edit This Page","base":"https://github.com/LRH1993/android_interview/edit/master"},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":true},"anchors":{},"search-plus":{}},"theme":"default","author":"ruheng","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"Android校招面试指南","language":"zh-hans","output.name":"site","links":{"sidebar":{"Home":"http://lruheng.com/"}},"gitbook":"3.2.3","description":"Android面试必备，记录自己的秋招之路"},"file":{"path":"algorithm/LeetCode/Dynamic-Programming/Stone-Game.md","mtime":"2017-09-13T02:43:16.000Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2017-10-16T13:00:43.989Z"},"basePath":"../../..","book":{"language":""}});
         });
     </script>
 </div>

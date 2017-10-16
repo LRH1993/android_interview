@@ -69,6 +69,10 @@
                 
             
                 
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
                 <link rel="stylesheet" href="../../gitbook/gitbook-plugin-fontsettings/website.css">
                 
             
@@ -3730,76 +3734,76 @@
 <p>&#x4E0A;&#x9762;&#x7684;&#x7C7B;&#x56FE;&#x4E2D;&#xFF0C;&#x5728;&#x706F;&#x8FD9;&#x4E2A;&#x54C1;&#x7C7B;&#x4E0B;&#xFF0C;&#x6709;<strong>&#x706F;&#x6CE1;</strong>&#x548C;<strong>&#x706F;&#x7BA1;</strong>&#x4E24;&#x79CD;&#x4EA7;&#x54C1;&#xFF0C;&#x5E76;&#x4E14;&#x90FD;&#x5B9E;&#x73B0;&#x4E86;&#x706F;&#x7684;&#x901A;&#x7528;&#x65B9;&#x6CD5;&#xFF1A;&#x5173;&#x706F;&#x548C;&#x5F00;&#x706F;&#x3002;&#x5728;&#x5DE5;&#x5382;&#x7C7B;&#x4E0B;&#xFF0C;&#x6709;&#x5404;&#x79CD;&#x751F;&#x4EA7;&#x5177;&#x4F53;&#x4EA7;&#x54C1;&#x7684;&#x5B50;&#x5DE5;&#x5382;&#x8D1F;&#x8D23;&#x751F;&#x4EA7;&#x76F8;&#x5E94;&#x7684;&#x4E24;&#x79CD;&#x706F;&#x5177;&#x3002;</p>
 <p>&#x5982;&#x679C;&#x8FD8;&#x4E0D;&#x662F;&#x592A;&#x660E;&#x767D;&#xFF0C;&#x90A3;&#x6211;&#x4EEC;&#x6765;&#x5047;&#x8BBE;&#x4E00;&#x4E2A;&#x60C5;&#x666F;&#x3002;&#x5C0F;&#x660E;&#xFF08;&#x5BA2;&#x6237;&#x7AEF;&#xFF09;&#x60F3;&#x8981;&#x4E70;&#x4E00;&#x4E2A;&#x706F;&#x6CE1;&#xFF0C;&#x4ED6;&#x4E0D;&#x8BA4;&#x8BC6;&#x5DE5;&#x5382;&#xFF0C;&#x53EA;&#x80FD;&#x53BB;&#x4F9B;&#x9500;&#x5E97;&#xFF08;&#x5DE5;&#x5382;&#x7C7B;&#xFF09;&#x4E70;&#xFF0C;&#x4E8E;&#x662F;&#x548C;&#x8001;&#x677F;&#x8BF4;&#x201C;&#x6211;&#x8981;&#x4E00;&#x4E2A;&#x706F;&#x6CE1;&#x201D;&#xFF0C;&#x8001;&#x677F;&#x8BF4; &#x201C;&#x6CA1;&#x95EE;&#x9898;&#xFF01;&#x60A8;&#x7A0D;&#x7B49;&#x201D;&#x3002;&#x8F6C;&#x8EAB;&#x5230;&#x4E86;&#x540E;&#x9662;&#xFF0C;&#x5BF9;&#x751F;&#x4EA7;&#x706F;&#x6CE1;&#x7684;&#x5C0F;&#x5F1F;&#xFF08;&#x706F;&#x6CE1;&#x5DE5;&#x5382;&#x5B50;&#x7C7B;&#xFF09;&#x5406;&#x559D;&#x4E00;&#x58F0;&#xFF0C;&#x7ED9;&#x6211;&#x9020;&#x4E2A;&#x706F;&#x6CE1;&#xFF01;&#x4E0D;&#x4E00;&#x4F1A;&#x706F;&#x6CE1;&#x9020;&#x597D;&#x4E86;&#xFF0C;&#x8001;&#x677F;&#x62FF;&#x7ED9;&#x5C0F;&#x660E;&#xFF0C;&#x201C;&#x563F;&#x563F;&#xFF0C;&#x706F;&#x6CE1;&#x7ED9;&#x60A8;&#x4F5C;&#x4E86;&#x4E00;&#x4E2A;&#xFF0C;&#x60A8;&#x8BD5;&#x8BD5;&#xFF1F;&#x201D;&#xFF0C;&#x5C0F;&#x660E;&#x628A;&#x706F;&#x6CE1;&#x62E7;&#x5728;&#x706F;&#x53E3;&#x4E0A;&#xFF0C;&#x5F00;&#x5173;&#x4E86;&#x4E24;&#x4E0B;&#xFF08;&#x706F;&#x7684;&#x901A;&#x7528;&#x65B9;&#x6CD5;&#xFF09;&#x201C;&#x563F;&#xFF01;&#x633A;&#x597D;&#xFF0C;&#x6CA1;&#x95EE;&#x9898;&#xFF01;&#x201D;&#xFF0C;&#x4ED8;&#x4E86;&#x94B1;&#x9AD8;&#x9AD8;&#x5174;&#x5174;&#x8D70;&#x4E86;&#x3002;</p>
 <p><strong>&#x62BD;&#x8C61;&#x7684;&#x4EA7;&#x54C1;&#x63A5;&#x53E3;ILight</strong></p>
-<pre><code class="lang-java"> public interface ILight
-    {
-        void TurnOn();
-        void TurnOff();
+<pre><code class="lang-java"> <span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">interface</span> <span class="hljs-title">ILight</span>
+    </span>{
+        <span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">TurnOn</span><span class="hljs-params">()</span></span>;
+        <span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">TurnOff</span><span class="hljs-params">()</span></span>;
     }
 </code></pre>
 <p><strong>&#x5177;&#x4F53;&#x7684;&#x4EA7;&#x54C1;&#x7C7B;&#xFF1A;BulbLight</strong></p>
-<pre><code class="lang-java"> public class BulbLight implements ILight
-    {
-        public void TurnOn()
-        {
-            Console.WriteLine(&quot;BulbLight turns on.&quot;);
+<pre><code class="lang-java"> <span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">BulbLight</span> <span class="hljs-keyword">implements</span> <span class="hljs-title">ILight</span>
+    </span>{
+        <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">TurnOn</span><span class="hljs-params">()</span>
+        </span>{
+            Console.WriteLine(<span class="hljs-string">&quot;BulbLight turns on.&quot;</span>);
         }
-        public void TurnOff()
-        {
-            Console.WriteLine(&quot;BulbLight turns off.&quot;);
+        <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">TurnOff</span><span class="hljs-params">()</span>
+        </span>{
+            Console.WriteLine(<span class="hljs-string">&quot;BulbLight turns off.&quot;</span>);
         }
     }
 </code></pre>
 <p><strong>&#x5177;&#x4F53;&#x7684;&#x4EA7;&#x54C1;&#x7C7B;&#xFF1A;TubeLight</strong></p>
-<pre><code class="lang-java"> public class TubeLight implements ILight
-    {
-        public void TurnOn()
-        {
-            Console.WriteLine(&quot;TubeLight turns on.&quot;);
+<pre><code class="lang-java"> <span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">TubeLight</span> <span class="hljs-keyword">implements</span> <span class="hljs-title">ILight</span>
+    </span>{
+        <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">TurnOn</span><span class="hljs-params">()</span>
+        </span>{
+            Console.WriteLine(<span class="hljs-string">&quot;TubeLight turns on.&quot;</span>);
         }
 
-        public void TurnOff()
-        {
-            Console.WriteLine(&quot;TubeLight turns off.&quot;);
+        <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">TurnOff</span><span class="hljs-params">()</span>
+        </span>{
+            Console.WriteLine(<span class="hljs-string">&quot;TubeLight turns off.&quot;</span>);
         }
 
     }
 </code></pre>
 <p><strong>&#x62BD;&#x8C61;&#x7684;&#x5DE5;&#x5382;&#x7C7B;</strong></p>
-<pre><code class="lang-java">public interface ICreator
-    {
-        ILight CreateLight();
+<pre><code class="lang-java"><span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">interface</span> <span class="hljs-title">ICreator</span>
+    </span>{
+        <span class="hljs-function">ILight <span class="hljs-title">CreateLight</span><span class="hljs-params">()</span></span>;
     }
 </code></pre>
 <p><strong>&#x5177;&#x4F53;&#x7684;&#x5DE5;&#x5382;&#x7C7B;:BulbCreator</strong></p>
-<pre><code class="lang-java"> public class BulbCreator implements ICreator
-    {
-        public ILight CreateLight()
-        {
-            return new BulbLight();
+<pre><code class="lang-java"> <span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">BulbCreator</span> <span class="hljs-keyword">implements</span> <span class="hljs-title">ICreator</span>
+    </span>{
+        <span class="hljs-function"><span class="hljs-keyword">public</span> ILight <span class="hljs-title">CreateLight</span><span class="hljs-params">()</span>
+        </span>{
+            <span class="hljs-keyword">return</span> <span class="hljs-keyword">new</span> BulbLight();
         }
 
     }
 </code></pre>
 <p><strong>&#x5177;&#x4F53;&#x7684;&#x5DE5;&#x5382;&#x7C7B;:TubeCreator</strong></p>
-<pre><code class="lang-java"> public class TubeCreator implements ICreator
-    {
-        public ILight CreateLight()
-        {
-            return new TubeLight();
+<pre><code class="lang-java"> <span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">TubeCreator</span> <span class="hljs-keyword">implements</span> <span class="hljs-title">ICreator</span>
+    </span>{
+        <span class="hljs-function"><span class="hljs-keyword">public</span> ILight <span class="hljs-title">CreateLight</span><span class="hljs-params">()</span>
+        </span>{
+            <span class="hljs-keyword">return</span> <span class="hljs-keyword">new</span> TubeLight();
         }
     }
 </code></pre>
 <p><strong>&#x5BA2;&#x6237;&#x7AEF;&#x8C03;&#x7528;</strong></p>
-<pre><code class="lang-java">static void Main(string[] args)
-        {
-            //&#x5148;&#x7ED9;&#x6211;&#x6765;&#x4E2A;&#x706F;&#x6CE1;
-            ICreator creator = new BulbCreator();
+<pre><code class="lang-java"><span class="hljs-function"><span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title">Main</span><span class="hljs-params">(string[] args)</span>
+        </span>{
+            <span class="hljs-comment">//&#x5148;&#x7ED9;&#x6211;&#x6765;&#x4E2A;&#x706F;&#x6CE1;</span>
+            ICreator creator = <span class="hljs-keyword">new</span> BulbCreator();
             ILight light = creator.CreateLight();
             light.TurnOn();
             light.TurnOff();
 
-            //&#x518D;&#x6765;&#x4E2A;&#x706F;&#x7BA1;&#x770B;&#x770B;
-            creator = new TubeCreator();
+            <span class="hljs-comment">//&#x518D;&#x6765;&#x4E2A;&#x706F;&#x7BA1;&#x770B;&#x770B;</span>
+            creator = <span class="hljs-keyword">new</span> TubeCreator();
             light = creator.CreateLight();
             light.TurnOn();
             light.TurnOff();
@@ -3823,9 +3827,9 @@
 <p>&#x2462;&#x5C06;&#x521B;&#x5EFA;&#x5BF9;&#x8C61;&#x7684;&#x4EFB;&#x52A1;&#x59D4;&#x6258;&#x7ED9;&#x591A;&#x4E2A;&#x5DE5;&#x5382;&#x5B50;&#x7C7B;&#x4E2D;&#x7684;&#x67D0;&#x4E00;&#x4E2A;&#xFF0C;&#x5BA2;&#x6237;&#x7AEF;&#x5728;&#x4F7F;&#x7528;&#x65F6;&#x53EF;&#x4EE5;&#x65E0;&#x987B;&#x5173;&#x5FC3;&#x662F;&#x54EA;&#x4E00;&#x4E2A;&#x5DE5;&#x5382;&#x5B50;&#x7C7B;&#x521B;&#x5EFA;&#x4EA7;&#x54C1;&#x5B50;&#x7C7B;&#xFF0C;&#x9700;&#x8981;&#x65F6;&#x518D;&#x52A8;&#x6001;&#x6307;&#x5B9A;&#xFF0C;&#x53EF;&#x5C06;&#x5177;&#x4F53;&#x5DE5;&#x5382;&#x7C7B;&#x7684;&#x7C7B;&#x540D;&#x5B58;&#x50A8;&#x5728;&#x914D;&#x7F6E;&#x6587;&#x4EF6;&#x6216;&#x6570;&#x636E;&#x5E93;&#x4E2D;&#x3002;</p>
 <h3 id="&#x4E94;&#x3001;&#x5DE5;&#x5382;&#x65B9;&#x6CD5;&#x6A21;&#x5F0F;&#x5728;java&#x4E2D;&#x5E94;&#x7528;"><a name="&#x4E94;&#x3001;&#x5DE5;&#x5382;&#x65B9;&#x6CD5;&#x6A21;&#x5F0F;&#x5728;java&#x4E2D;&#x5E94;&#x7528;" class="anchor-navigation-ex-anchor" href="#&#x4E94;&#x3001;&#x5DE5;&#x5382;&#x65B9;&#x6CD5;&#x6A21;&#x5F0F;&#x5728;java&#x4E2D;&#x5E94;&#x7528;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x4E94;&#x3001;&#x5DE5;&#x5382;&#x65B9;&#x6CD5;&#x6A21;&#x5F0F;&#x5728;Java&#x4E2D;&#x5E94;&#x7528;</h3>
 <p>JDBC&#x4E2D;&#x7684;&#x5DE5;&#x5382;&#x65B9;&#x6CD5;:</p>
-<pre><code class="lang-java">Connection conn=DriverManager.getConnection(&quot;jdbc:microsoft:sqlserver://localhost:1433; DatabaseName=DB;user=sa;password=&quot;);
+<pre><code class="lang-java">Connection conn=DriverManager.getConnection(<span class="hljs-string">&quot;jdbc:microsoft:sqlserver://localhost:1433; DatabaseName=DB;user=sa;password=&quot;</span>);
 Statement statement=conn.createStatement();
-ResultSet rs=statement.executeQuery(&quot;select * from UserInfo&quot;);
+ResultSet rs=statement.executeQuery(<span class="hljs-string">&quot;select * from UserInfo&quot;</span>);
 </code></pre>
 <footer class="page-footer"><span class="copyright">Copyright &#xA9; ruheng.com 2017 all right reserved&#xFF0C;powered by Gitbook</span><span class="footer-modification">&#x8BE5;&#x6587;&#x4EF6;&#x4FEE;&#x8BA2;&#x65F6;&#x95F4;&#xFF1A;
 2017-08-22 15:53:58
@@ -3872,7 +3876,7 @@ ResultSet rs=statement.executeQuery(&quot;select * from UserInfo&quot;);
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"工厂方法模式","level":"6.1.2","depth":2,"next":{"title":"抽象工厂模式","level":"6.1.3","depth":2,"path":"design-mode/Builder-Pattern/Abstract-Factory.md","ref":"design-mode/Builder-Pattern/Abstract-Factory.md","articles":[]},"previous":{"title":"简单工厂模式","level":"6.1.1","depth":2,"path":"design-mode/Builder-Pattern/Simple-Factory.md","ref":"design-mode/Builder-Pattern/Simple-Factory.md","articles":[]},"dir":"ltr"},"config":{"plugins":["-lunr","-search","-highlight","-livereload","search-plus@^0.0.11","simple-page-toc@^0.1.1","github@^2.0.0","github-buttons@2.1.0","edit-link@^2.0.2","advanced-emoji@^0.2.1","anchors@^0.7.1","include-codeblock@^3.0.2","ace@^0.3.2","emphasize@^1.1.0","katex@^1.1.3","splitter@^0.0.8","tbfed-pagefooter@^0.0.1","expandable-chapters-small@^0.1.7","sectionx@^3.1.0","local-video@^1.0.1","anchor-navigation-ex@0.1.8","favicon@^0.0.2"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"tbfed-pagefooter":{"copyright":"Copyright © ruheng.com 2017","modify_label":"该文件修订时间：","modify_format":"YYYY-MM-DD HH:mm:ss"},"emphasize":{},"ace":{},"github":{"url":"https://github.com/LRH1993/android_interview"},"simple-page-toc":{"maxDepth":3,"skipFirstH1":true},"splitter":{},"katex":{},"fontsettings":{"theme":"white","family":"sans","size":2},"sectionx":{"tag":"b"},"anchor-navigation-ex":{"isRewritePageTitle":false,"tocLevel1Icon":"fa fa-hand-o-right","tocLevel2Icon":"fa fa-hand-o-right","tocLevel3Icon":"fa fa-hand-o-right"},"favicon":{"shortcut":"favicon.ico","bookmark":"favicon.ico"},"github-buttons":{"repo":"LRH1993/android_interview","types":["star"],"size":"small"},"expandable-chapters-small":{},"local-video":{},"advanced-emoji":{"embedEmojis":false},"include-codeblock":{"check":false,"edit":true,"fixlang":false,"lang":"","template":"ace","theme":"chrome","unindent":true},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":true,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"edit-link":{"label":"Edit This Page","base":"https://github.com/LRH1993/android_interview/edit/master"},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":true},"anchors":{},"search-plus":{}},"theme":"default","author":"ruheng","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"Android校招面试指南","language":"zh-hans","output.name":"site","links":{"sidebar":{"Home":"http://lruheng.com/"}},"gitbook":"3.2.3","description":"Android面试必备，记录自己的秋招之路"},"file":{"path":"design-mode/Builder-Pattern/Factory-Method.md","mtime":"2017-08-22T07:53:58.000Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2017-10-16T12:05:21.906Z"},"basePath":"../..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"工厂方法模式","level":"6.1.2","depth":2,"next":{"title":"抽象工厂模式","level":"6.1.3","depth":2,"path":"design-mode/Builder-Pattern/Abstract-Factory.md","ref":"design-mode/Builder-Pattern/Abstract-Factory.md","articles":[]},"previous":{"title":"简单工厂模式","level":"6.1.1","depth":2,"path":"design-mode/Builder-Pattern/Simple-Factory.md","ref":"design-mode/Builder-Pattern/Simple-Factory.md","articles":[]},"dir":"ltr"},"config":{"plugins":["-lunr","-search","-livereload","search-plus@^0.0.11","simple-page-toc@^0.1.1","github@^2.0.0","github-buttons@2.1.0","edit-link@^2.0.2","advanced-emoji@^0.2.1","anchors@^0.7.1","include-codeblock@^3.0.2","ace@^0.3.2","emphasize@^1.1.0","katex@^1.1.3","splitter@^0.0.8","tbfed-pagefooter@^0.0.1","expandable-chapters-small@^0.1.7","sectionx@^3.1.0","local-video@^1.0.1","anchor-navigation-ex@0.1.8","favicon@^0.0.2"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"tbfed-pagefooter":{"copyright":"Copyright © ruheng.com 2017","modify_label":"该文件修订时间：","modify_format":"YYYY-MM-DD HH:mm:ss"},"emphasize":{},"ace":{},"github":{"url":"https://github.com/LRH1993/android_interview"},"simple-page-toc":{"maxDepth":3,"skipFirstH1":true},"splitter":{},"katex":{},"fontsettings":{"theme":"white","family":"sans","size":2},"sectionx":{"tag":"b"},"highlight":{},"anchor-navigation-ex":{"isRewritePageTitle":false,"tocLevel1Icon":"fa fa-hand-o-right","tocLevel2Icon":"fa fa-hand-o-right","tocLevel3Icon":"fa fa-hand-o-right"},"favicon":{"shortcut":"favicon.ico","bookmark":"favicon.ico"},"github-buttons":{"repo":"LRH1993/android_interview","types":["star"],"size":"small"},"expandable-chapters-small":{},"local-video":{},"advanced-emoji":{"embedEmojis":false},"include-codeblock":{"check":false,"edit":false,"fixlang":false,"lang":"","template":"default","theme":"chrome","unindent":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":true,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"edit-link":{"label":"Edit This Page","base":"https://github.com/LRH1993/android_interview/edit/master"},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":true},"anchors":{},"search-plus":{}},"theme":"default","author":"ruheng","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"Android校招面试指南","language":"zh-hans","output.name":"site","links":{"sidebar":{"Home":"http://lruheng.com/"}},"gitbook":"3.2.3","description":"Android面试必备，记录自己的秋招之路"},"file":{"path":"design-mode/Builder-Pattern/Factory-Method.md","mtime":"2017-08-22T07:53:58.000Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2017-10-16T13:00:43.989Z"},"basePath":"../..","book":{"language":""}});
         });
     </script>
 </div>

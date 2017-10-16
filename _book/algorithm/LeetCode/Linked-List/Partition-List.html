@@ -69,6 +69,10 @@
                 
             
                 
+                <link rel="stylesheet" href="../../../gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
                 <link rel="stylesheet" href="../../../gitbook/gitbook-plugin-fontsettings/website.css">
                 
             
@@ -3719,38 +3723,38 @@ return <code>1-&gt;2-&gt;2-&gt;4-&gt;3-&gt;5</code>.</p>
 <p>&#x4F9D;&#x636E;&#x9898;&#x610F;&#xFF0C;&#x662F;&#x8981;&#x6839;&#x636E;&#x503C;x&#x5BF9;&#x94FE;&#x8868;&#x8FDB;&#x884C;&#x5206;&#x5272;&#x64CD;&#x4F5C;&#xFF0C;&#x5177;&#x4F53;&#x662F;&#x6307;&#x5C06;&#x6240;&#x6709;&#x5C0F;&#x4E8E;x&#x7684;&#x8282;&#x70B9;&#x653E;&#x5230;&#x4E0D;&#x5C0F;&#x4E8E;x&#x7684;&#x8282;&#x70B9;&#x4E4B;&#x524D;&#xFF0C;&#x548B;&#x4E00;&#x770B;&#x548C;&#x5FEB;&#x901F;&#x6392;&#x5E8F;&#x7684;&#x5206;&#x5272;&#x6709;&#x4E9B;&#x7C7B;&#x4F3C;&#xFF0C;&#x4F46;&#x662F;&#x8FD9;&#x4E2A;&#x9898;&#x7684;&#x4E0D;&#x540C;&#x4E4B;&#x5904;&#x5728;&#x4E8E;&#x53EA;&#x8981;&#x6C42;&#x5C06;&#x5C0F;&#x4E8E;x&#x7684;&#x8282;&#x70B9;&#x653E;&#x5230;&#x524D;&#x9762;&#xFF0C;&#x800C;&#x5E76;&#x4E0D;&#x8981;&#x6C42;&#x5BF9;&#x5143;&#x7D20;&#x8FDB;&#x884C;&#x6392;&#x5E8F;&#x3002;</p>
 <p>&#x8FD9;&#x79CD;&#x5206;&#x5272;&#x7684;&#x9898;&#x4F7F;&#x7528;&#x4E24;&#x8DEF;&#x6307;&#x9488;&#x5373;&#x53EF;&#x8F7B;&#x677E;&#x89E3;&#x51B3;&#x3002;&#x5DE6;&#x8FB9;&#x6307;&#x9488;&#x6307;&#x5411;&#x5C0F;&#x4E8E;x&#x7684;&#x8282;&#x70B9;&#xFF0C;&#x53F3;&#x8FB9;&#x6307;&#x9488;&#x6307;&#x5411;&#x4E0D;&#x5C0F;&#x4E8E;x&#x7684;&#x8282;&#x70B9;&#x3002;&#x7531;&#x4E8E;&#x5DE6;&#x53F3;&#x5934;&#x8282;&#x70B9;&#x4E0D;&#x786E;&#x5B9A;&#xFF0C;&#x6211;&#x4EEC;&#x53EF;&#x4EE5;&#x4F7F;&#x7528;&#x4E24;&#x4E2A;dummy&#x8282;&#x70B9;&#x3002;</p>
 <h2 id="&#x4E09;&#x3001;&#x89E3;&#x9898;&#x4EE3;&#x7801;"><a name="&#x4E09;&#x3001;&#x89E3;&#x9898;&#x4EE3;&#x7801;" class="anchor-navigation-ex-anchor" href="#&#x4E09;&#x3001;&#x89E3;&#x9898;&#x4EE3;&#x7801;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x4E09;&#x3001;&#x89E3;&#x9898;&#x4EE3;&#x7801;</h2>
-<pre><code class="lang-java">/**
+<pre><code class="lang-java"><span class="hljs-comment">/**
  * Definition for singly-linked list.
  * public class ListNode {
  *     int val;
  *     ListNode next;
  *     ListNode(int x) { val = x; }
  * }
- */
-public class Solution {
-    public ListNode partition(ListNode head, int x) {
-        ListNode leftDummy = new ListNode(0);
+ */</span>
+<span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Solution</span> </span>{
+    <span class="hljs-function"><span class="hljs-keyword">public</span> ListNode <span class="hljs-title">partition</span><span class="hljs-params">(ListNode head, <span class="hljs-keyword">int</span> x)</span> </span>{
+        ListNode leftDummy = <span class="hljs-keyword">new</span> ListNode(<span class="hljs-number">0</span>);
         ListNode leftCurr = leftDummy;
-        ListNode rightDummy = new ListNode(0);
+        ListNode rightDummy = <span class="hljs-keyword">new</span> ListNode(<span class="hljs-number">0</span>);
         ListNode rightCurr = rightDummy;
 
         ListNode runner = head;
-        while (runner != null) {
-            if (runner.val &lt; x) {
+        <span class="hljs-keyword">while</span> (runner != <span class="hljs-keyword">null</span>) {
+            <span class="hljs-keyword">if</span> (runner.val &lt; x) {
                 leftCurr.next = runner;
                 leftCurr = leftCurr.next;
-            } else {
+            } <span class="hljs-keyword">else</span> {
                 rightCurr.next = runner;
                 rightCurr = rightCurr.next;
             }
             runner = runner.next;
         }
 
-        // cut off ListNode after rightCurr to avoid cylic
-        rightCurr.next = null;
+        <span class="hljs-comment">// cut off ListNode after rightCurr to avoid cylic</span>
+        rightCurr.next = <span class="hljs-keyword">null</span>;
         leftCurr.next = rightDummy.next;
 
-        return leftDummy.next;
+        <span class="hljs-keyword">return</span> leftDummy.next;
     }
 }
 </code></pre>
@@ -3799,7 +3803,7 @@ public class Solution {
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"Partition List","level":"5.2.4.2","depth":3,"next":{"title":"Merge Two Sorted Lists","level":"5.2.4.3","depth":3,"path":"algorithm/LeetCode/Linked-List/Merge-Two-Sorted-Lists.md","ref":"algorithm/LeetCode/Linked-List/Merge-Two-Sorted-Lists.md","articles":[]},"previous":{"title":"Remove Duplicates from Sorted List","level":"5.2.4.1","depth":3,"path":"algorithm/LeetCode/Linked-List/Remove-Duplicates-from-Sorted-List.md","ref":"algorithm/LeetCode/Linked-List/Remove-Duplicates-from-Sorted-List.md","articles":[]},"dir":"ltr"},"config":{"plugins":["-lunr","-search","-highlight","-livereload","search-plus@^0.0.11","simple-page-toc@^0.1.1","github@^2.0.0","github-buttons@2.1.0","edit-link@^2.0.2","advanced-emoji@^0.2.1","anchors@^0.7.1","include-codeblock@^3.0.2","ace@^0.3.2","emphasize@^1.1.0","katex@^1.1.3","splitter@^0.0.8","tbfed-pagefooter@^0.0.1","expandable-chapters-small@^0.1.7","sectionx@^3.1.0","local-video@^1.0.1","anchor-navigation-ex@0.1.8","favicon@^0.0.2"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"tbfed-pagefooter":{"copyright":"Copyright © ruheng.com 2017","modify_label":"该文件修订时间：","modify_format":"YYYY-MM-DD HH:mm:ss"},"emphasize":{},"ace":{},"github":{"url":"https://github.com/LRH1993/android_interview"},"simple-page-toc":{"maxDepth":3,"skipFirstH1":true},"splitter":{},"katex":{},"fontsettings":{"theme":"white","family":"sans","size":2},"sectionx":{"tag":"b"},"anchor-navigation-ex":{"isRewritePageTitle":false,"tocLevel1Icon":"fa fa-hand-o-right","tocLevel2Icon":"fa fa-hand-o-right","tocLevel3Icon":"fa fa-hand-o-right"},"favicon":{"shortcut":"favicon.ico","bookmark":"favicon.ico"},"github-buttons":{"repo":"LRH1993/android_interview","types":["star"],"size":"small"},"expandable-chapters-small":{},"local-video":{},"advanced-emoji":{"embedEmojis":false},"include-codeblock":{"check":false,"edit":true,"fixlang":false,"lang":"","template":"ace","theme":"chrome","unindent":true},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":true,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"edit-link":{"label":"Edit This Page","base":"https://github.com/LRH1993/android_interview/edit/master"},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":true},"anchors":{},"search-plus":{}},"theme":"default","author":"ruheng","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"Android校招面试指南","language":"zh-hans","output.name":"site","links":{"sidebar":{"Home":"http://lruheng.com/"}},"gitbook":"3.2.3","description":"Android面试必备，记录自己的秋招之路"},"file":{"path":"algorithm/LeetCode/Linked-List/Partition-List.md","mtime":"2017-10-14T01:59:57.000Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2017-10-16T12:05:21.906Z"},"basePath":"../../..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"Partition List","level":"5.2.4.2","depth":3,"next":{"title":"Merge Two Sorted Lists","level":"5.2.4.3","depth":3,"path":"algorithm/LeetCode/Linked-List/Merge-Two-Sorted-Lists.md","ref":"algorithm/LeetCode/Linked-List/Merge-Two-Sorted-Lists.md","articles":[]},"previous":{"title":"Remove Duplicates from Sorted List","level":"5.2.4.1","depth":3,"path":"algorithm/LeetCode/Linked-List/Remove-Duplicates-from-Sorted-List.md","ref":"algorithm/LeetCode/Linked-List/Remove-Duplicates-from-Sorted-List.md","articles":[]},"dir":"ltr"},"config":{"plugins":["-lunr","-search","-livereload","search-plus@^0.0.11","simple-page-toc@^0.1.1","github@^2.0.0","github-buttons@2.1.0","edit-link@^2.0.2","advanced-emoji@^0.2.1","anchors@^0.7.1","include-codeblock@^3.0.2","ace@^0.3.2","emphasize@^1.1.0","katex@^1.1.3","splitter@^0.0.8","tbfed-pagefooter@^0.0.1","expandable-chapters-small@^0.1.7","sectionx@^3.1.0","local-video@^1.0.1","anchor-navigation-ex@0.1.8","favicon@^0.0.2"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"tbfed-pagefooter":{"copyright":"Copyright © ruheng.com 2017","modify_label":"该文件修订时间：","modify_format":"YYYY-MM-DD HH:mm:ss"},"emphasize":{},"ace":{},"github":{"url":"https://github.com/LRH1993/android_interview"},"simple-page-toc":{"maxDepth":3,"skipFirstH1":true},"splitter":{},"katex":{},"fontsettings":{"theme":"white","family":"sans","size":2},"sectionx":{"tag":"b"},"highlight":{},"anchor-navigation-ex":{"isRewritePageTitle":false,"tocLevel1Icon":"fa fa-hand-o-right","tocLevel2Icon":"fa fa-hand-o-right","tocLevel3Icon":"fa fa-hand-o-right"},"favicon":{"shortcut":"favicon.ico","bookmark":"favicon.ico"},"github-buttons":{"repo":"LRH1993/android_interview","types":["star"],"size":"small"},"expandable-chapters-small":{},"local-video":{},"advanced-emoji":{"embedEmojis":false},"include-codeblock":{"check":false,"edit":false,"fixlang":false,"lang":"","template":"default","theme":"chrome","unindent":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":true,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"edit-link":{"label":"Edit This Page","base":"https://github.com/LRH1993/android_interview/edit/master"},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":true},"anchors":{},"search-plus":{}},"theme":"default","author":"ruheng","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"Android校招面试指南","language":"zh-hans","output.name":"site","links":{"sidebar":{"Home":"http://lruheng.com/"}},"gitbook":"3.2.3","description":"Android面试必备，记录自己的秋招之路"},"file":{"path":"algorithm/LeetCode/Linked-List/Partition-List.md","mtime":"2017-10-14T01:59:57.000Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2017-10-16T13:00:43.989Z"},"basePath":"../../..","book":{"language":""}});
         });
     </script>
 </div>

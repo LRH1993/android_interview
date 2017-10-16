@@ -69,6 +69,10 @@
                 
             
                 
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
                 <link rel="stylesheet" href="../../gitbook/gitbook-plugin-fontsettings/website.css">
                 
             
@@ -3714,27 +3718,27 @@
 <h5 id="2&#x6CDB;&#x578B;&#x521D;&#x63A2;"><a name="2&#x6CDB;&#x578B;&#x521D;&#x63A2;" class="anchor-navigation-ex-anchor" href="#2&#x6CDB;&#x578B;&#x521D;&#x63A2;"><i class="fa fa-link" aria-hidden="true"></i></a>2.&#x6CDB;&#x578B;&#x521D;&#x63A2;</h5>
 <p>JDK 1.5 &#x65F6;&#x624D;&#x589E;&#x52A0;&#x4E86;&#x6CDB;&#x578B;&#xFF0C;&#x5E76;&#x5728;&#x5F88;&#x5927;&#x7A0B;&#x5EA6;&#x4E0A;&#x90FD;&#x662F;&#x65B9;&#x4FBF;&#x96C6;&#x5408;&#x7684;&#x4F7F;&#x7528;&#xFF0C;&#x4F7F;&#x5176;&#x80FD;&#x591F;&#x8BB0;&#x4F4F;&#x5176;&#x5143;&#x7D20;&#x7684;&#x6570;&#x636E;&#x7C7B;&#x578B;&#x3002;</p>
 <p>&#x5728;&#x6CDB;&#x578B;&#xFF08;Generic type&#x6216;Generics&#xFF09;&#x51FA;&#x73B0;&#x4E4B;&#x524D;&#xFF0C;&#x662F;&#x8FD9;&#x4E48;&#x5199;&#x4EE3;&#x7801;&#x7684;&#xFF1A;</p>
-<pre><code class="lang-java">public static void main(String[] args)
-{
-    List list = new ArrayList();
-    list.add(&quot;123&quot;);
-    list.add(&quot;456&quot;);
+<pre><code class="lang-java"><span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title">main</span><span class="hljs-params">(String[] args)</span>
+</span>{
+    List list = <span class="hljs-keyword">new</span> ArrayList();
+    list.add(<span class="hljs-string">&quot;123&quot;</span>);
+    list.add(<span class="hljs-string">&quot;456&quot;</span>);
 
-    System.out.println((String)list.get(0));
+    System.out.println((String)list.get(<span class="hljs-number">0</span>));
 }
 </code></pre>
 <p>&#x5F53;&#x7136;&#x8FD9;&#x662F;&#x5B8C;&#x5168;&#x5141;&#x8BB8;&#x7684;&#xFF0C;&#x56E0;&#x4E3A;List&#x91CC;&#x9762;&#x7684;&#x5185;&#x5BB9;&#x662F;Object&#x7C7B;&#x578B;&#x7684;&#xFF0C;&#x81EA;&#x7136;&#x4EFB;&#x4F55;&#x5BF9;&#x8C61;&#x7C7B;&#x578B;&#x90FD;&#x53EF;&#x4EE5;&#x653E;&#x5165;&#x3001;&#x90FD;&#x53EF;&#x4EE5;&#x53D6;&#x51FA;&#xFF0C;&#x4F46;&#x662F;&#x8FD9;&#x4E48;&#x5199;&#x4F1A;&#x6709;&#x4E24;&#x4E2A;&#x95EE;&#x9898;&#xFF1A;</p>
 <p>1&#x3001;&#x5F53;&#x4E00;&#x4E2A;&#x5BF9;&#x8C61;&#x653E;&#x5165;&#x96C6;&#x5408;&#x65F6;&#xFF0C;&#x96C6;&#x5408;&#x4E0D;&#x4F1A;&#x8BB0;&#x4F4F;&#x6B64;&#x5BF9;&#x8C61;&#x7684;&#x7C7B;&#x578B;&#xFF0C;&#x5F53;&#x518D;&#x6B21;&#x4ECE;&#x96C6;&#x5408;&#x4E2D;&#x53D6;&#x51FA;&#x6B64;&#x5BF9;&#x8C61;&#x65F6;&#xFF0C;&#x8BE5;&#x5BF9;&#x8C61;&#x7684;&#x7F16;&#x8BD1;&#x7C7B;&#x578B;&#x53D8;&#x6210;&#x4E86;Object&#x3002;</p>
 <p>2&#x3001;&#x8FD0;&#x884C;&#x65F6;&#x9700;&#x8981;&#x4EBA;&#x4E3A;&#x5730;&#x5F3A;&#x5236;&#x8F6C;&#x6362;&#x7C7B;&#x578B;&#x5230;&#x5177;&#x4F53;&#x76EE;&#x6807;&#xFF0C;&#x5B9E;&#x9645;&#x7684;&#x7A0B;&#x5E8F;&#x7EDD;&#x4E0D;&#x4F1A;&#x8FD9;&#x4E48;&#x7B80;&#x5355;&#xFF0C;&#x4E00;&#x4E2A;&#x4E0D;&#x5C0F;&#x5FC3;&#x5C31;&#x4F1A;&#x51FA;&#x73B0;java.lang.ClassCastException&#x3002;</p>
 <p>&#x6240;&#x4EE5;&#xFF0C;&#x6CDB;&#x578B;&#x51FA;&#x73B0;&#x4E4B;&#x540E;&#xFF0C;&#x4E0A;&#x9762;&#x7684;&#x4EE3;&#x7801;&#x5C31;&#x6539;&#x6210;&#x4E86;&#x5927;&#x5BB6;&#x90FD;&#x719F;&#x77E5;&#x7684;&#x5199;&#x6CD5;&#xFF1A;</p>
-<pre><code class="lang-java">public static void main(String[] args)
-{
+<pre><code class="lang-java"><span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title">main</span><span class="hljs-params">(String[] args)</span>
+</span>{
     List&lt;String&gt;
-    list = new ArrayList&lt;String&gt;();
-    list.add(&quot;123&quot;);
-    list.add(&quot;456&quot;);
+    list = <span class="hljs-keyword">new</span> ArrayList&lt;String&gt;();
+    list.add(<span class="hljs-string">&quot;123&quot;</span>);
+    list.add(<span class="hljs-string">&quot;456&quot;</span>);
 
-    System.out.println(list.get(0));
+    System.out.println(list.get(<span class="hljs-number">0</span>));
 }
 </code></pre>
 <p>&#x8FD9;&#x5C31;&#x662F;&#x6CDB;&#x578B;&#x3002;&#x6CDB;&#x578B;&#x662F;&#x5BF9;Java&#x8BED;&#x8A00;&#x7C7B;&#x578B;&#x7CFB;&#x7EDF;&#x7684;&#x4E00;&#x79CD;&#x6269;&#x5C55;&#xFF0C;&#x6709;&#x70B9;&#x7C7B;&#x4F3C;&#x4E8E;C++&#x7684;&#x6A21;&#x677F;&#xFF0C;&#x53EF;&#x4EE5;&#x628A;&#x7C7B;&#x578B;&#x53C2;&#x6570;&#x770B;&#x4F5C;&#x662F;&#x4F7F;&#x7528;&#x53C2;&#x6570;&#x5316;&#x7C7B;&#x578B;&#x65F6;&#x6307;&#x5B9A;&#x7684;&#x7C7B;&#x578B;&#x7684;&#x4E00;&#x4E2A;&#x5360;&#x4F4D;&#x7B26;&#x3002;&#x5F15;&#x5165;&#x6CDB;&#x578B;&#xFF0C;&#x662F;&#x5BF9;Java&#x8BED;&#x8A00;&#x4E00;&#x4E2A;&#x8F83;&#x5927;&#x7684;&#x529F;&#x80FD;&#x589E;&#x5F3A;&#xFF0C;&#x5E26;&#x6765;&#x4E86;&#x5F88;&#x591A;&#x7684;&#x597D;&#x5904;&#x3002;</p>
@@ -3745,19 +3749,19 @@
 <h3 id="&#x4E8C;&#x3001;&#x6CDB;&#x578B;&#x7684;&#x4F7F;&#x7528;"><a name="&#x4E8C;&#x3001;&#x6CDB;&#x578B;&#x7684;&#x4F7F;&#x7528;" class="anchor-navigation-ex-anchor" href="#&#x4E8C;&#x3001;&#x6CDB;&#x578B;&#x7684;&#x4F7F;&#x7528;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x4E8C;&#x3001;&#x6CDB;&#x578B;&#x7684;&#x4F7F;&#x7528;</h3>
 <h6 id="1&#x6CDB;&#x578B;&#x7C7B;&#x548C;&#x6CDB;&#x578B;&#x63A5;&#x53E3;"><a name="1&#x6CDB;&#x578B;&#x7C7B;&#x548C;&#x6CDB;&#x578B;&#x63A5;&#x53E3;" class="anchor-navigation-ex-anchor" href="#1&#x6CDB;&#x578B;&#x7C7B;&#x548C;&#x6CDB;&#x578B;&#x63A5;&#x53E3;"><i class="fa fa-link" aria-hidden="true"></i></a>1.&#x6CDB;&#x578B;&#x7C7B;&#x548C;&#x6CDB;&#x578B;&#x63A5;&#x53E3;</h6>
 <p>&#x4E0B;&#x9762;&#x662F;JDK 1.5 &#x4EE5;&#x540E;&#xFF0C;List&#x63A5;&#x53E3;&#xFF0C;&#x4EE5;&#x53CA;ArrayList&#x7C7B;&#x7684;&#x4EE3;&#x7801;&#x7247;&#x6BB5;&#x3002;</p>
-<pre><code class="lang-java">//&#x5B9A;&#x4E49;&#x63A5;&#x53E3;&#x65F6;&#x6307;&#x5B9A;&#x4E86;&#x4E00;&#x4E2A;&#x7C7B;&#x578B;&#x5F62;&#x53C2;&#xFF0C;&#x8BE5;&#x5F62;&#x53C2;&#x540D;&#x4E3A;E
-public interface List&lt;E&gt; extends Collection&lt;E&gt;
- {
-   //&#x5728;&#x8BE5;&#x63A5;&#x53E3;&#x91CC;&#xFF0C;E&#x53EF;&#x4EE5;&#x4F5C;&#x4E3A;&#x7C7B;&#x578B;&#x4F7F;&#x7528;
-   public E get(int index) {}
-   public void add(E e) {} 
+<pre><code class="lang-java"><span class="hljs-comment">//&#x5B9A;&#x4E49;&#x63A5;&#x53E3;&#x65F6;&#x6307;&#x5B9A;&#x4E86;&#x4E00;&#x4E2A;&#x7C7B;&#x578B;&#x5F62;&#x53C2;&#xFF0C;&#x8BE5;&#x5F62;&#x53C2;&#x540D;&#x4E3A;E</span>
+<span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">interface</span> <span class="hljs-title">List</span>&lt;<span class="hljs-title">E</span>&gt; <span class="hljs-keyword">extends</span> <span class="hljs-title">Collection</span>&lt;<span class="hljs-title">E</span>&gt;
+ </span>{
+   <span class="hljs-comment">//&#x5728;&#x8BE5;&#x63A5;&#x53E3;&#x91CC;&#xFF0C;E&#x53EF;&#x4EE5;&#x4F5C;&#x4E3A;&#x7C7B;&#x578B;&#x4F7F;&#x7528;</span>
+   <span class="hljs-function"><span class="hljs-keyword">public</span> E <span class="hljs-title">get</span><span class="hljs-params">(<span class="hljs-keyword">int</span> index)</span> </span>{}
+   <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">add</span><span class="hljs-params">(E e)</span> </span>{} 
 }
 
-//&#x5B9A;&#x4E49;&#x7C7B;&#x65F6;&#x6307;&#x5B9A;&#x4E86;&#x4E00;&#x4E2A;&#x7C7B;&#x578B;&#x5F62;&#x53C2;&#xFF0C;&#x8BE5;&#x5F62;&#x53C2;&#x540D;&#x4E3A;E
-public class ArrayList&lt;E&gt; extends AbstractList&lt;E&gt; implements List&lt;E&gt;
-{
-   //&#x5728;&#x8BE5;&#x7C7B;&#x91CC;&#xFF0C;E&#x53EF;&#x4EE5;&#x4F5C;&#x4E3A;&#x7C7B;&#x578B;&#x4F7F;&#x7528;
-   public void set(E e) {
+<span class="hljs-comment">//&#x5B9A;&#x4E49;&#x7C7B;&#x65F6;&#x6307;&#x5B9A;&#x4E86;&#x4E00;&#x4E2A;&#x7C7B;&#x578B;&#x5F62;&#x53C2;&#xFF0C;&#x8BE5;&#x5F62;&#x53C2;&#x540D;&#x4E3A;E</span>
+<span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">ArrayList</span>&lt;<span class="hljs-title">E</span>&gt; <span class="hljs-keyword">extends</span> <span class="hljs-title">AbstractList</span>&lt;<span class="hljs-title">E</span>&gt; <span class="hljs-keyword">implements</span> <span class="hljs-title">List</span>&lt;<span class="hljs-title">E</span>&gt;
+</span>{
+   <span class="hljs-comment">//&#x5728;&#x8BE5;&#x7C7B;&#x91CC;&#xFF0C;E&#x53EF;&#x4EE5;&#x4F5C;&#x4E3A;&#x7C7B;&#x578B;&#x4F7F;&#x7528;</span>
+   <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">set</span><span class="hljs-params">(E e)</span> </span>{
    .......................
    }
 }
@@ -3766,82 +3770,82 @@ public class ArrayList&lt;E&gt; extends AbstractList&lt;E&gt; implements List&lt
 <p>&#x4E0B;&#x9762;&#x5177;&#x4F53;&#x8BB2;&#x89E3;&#x6CDB;&#x578B;&#x7C7B;&#x7684;&#x4F7F;&#x7528;&#x3002;&#x6CDB;&#x578B;&#x63A5;&#x53E3;&#x7684;&#x4F7F;&#x7528;&#x4E0E;&#x6CDB;&#x578B;&#x7C7B;&#x51E0;&#x4E4E;&#x76F8;&#x540C;&#xFF0C;&#x53EF;&#x4EE5;&#x6BD4;&#x5BF9;&#x81EA;&#x884C;&#x5B66;&#x4E60;&#x3002;</p>
 <p><strong>&#x6CDB;&#x578B;&#x7C7B;</strong></p>
 <p>&#x5B9A;&#x4E49;&#x4E00;&#x4E2A;&#x5BB9;&#x5668;&#x7C7B;&#xFF0C;&#x5B58;&#x653E;&#x952E;&#x503C;&#x5BF9;key-value&#xFF0C;&#x952E;&#x503C;&#x5BF9;&#x7684;&#x7C7B;&#x578B;&#x4E0D;&#x786E;&#x5B9A;&#xFF0C;&#x53EF;&#x4EE5;&#x4F7F;&#x7528;&#x6CDB;&#x578B;&#x6765;&#x5B9A;&#x4E49;&#xFF0C;&#x5206;&#x522B;&#x6307;&#x5B9A;&#x4E3A;K&#x548C;V</p>
-<pre><code class="lang-java">public class Container&lt;K, V&gt;
- {
+<pre><code class="lang-java"><span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Container</span>&lt;<span class="hljs-title">K</span>, <span class="hljs-title">V</span>&gt;
+ </span>{
 
-    private K key;
-    private V value;
+    <span class="hljs-keyword">private</span> K key;
+    <span class="hljs-keyword">private</span> V value;
 
-    public Container(K k, V v) {
+    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-title">Container</span><span class="hljs-params">(K k, V v)</span> </span>{
         key = k;
         value = v;
     }
 
-    public K getkey() {
-        return key;
+    <span class="hljs-function"><span class="hljs-keyword">public</span> K <span class="hljs-title">getkey</span><span class="hljs-params">()</span> </span>{
+        <span class="hljs-keyword">return</span> key;
     }
 
-    public V getValue() {
-        return value;
+    <span class="hljs-function"><span class="hljs-keyword">public</span> V <span class="hljs-title">getValue</span><span class="hljs-params">()</span> </span>{
+        <span class="hljs-keyword">return</span> value;
     }
 
-    public void setKey() {
-        this.key = key;
+    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">setKey</span><span class="hljs-params">()</span> </span>{
+        <span class="hljs-keyword">this</span>.key = key;
     }
 
-    public void setValue() {
-        this.value = value;
+    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">setValue</span><span class="hljs-params">()</span> </span>{
+        <span class="hljs-keyword">this</span>.value = value;
     }
 
 }
 </code></pre>
 <p>&#x5728;&#x4F7F;&#x7528;Container&#x7C7B;&#x65F6;&#xFF0C;&#x53EA;&#x9700;&#x8981;&#x6307;&#x5B9A;K&#xFF0C;V&#x7684;&#x5177;&#x4F53;&#x7C7B;&#x578B;&#x5373;&#x53EF;&#xFF0C;&#x4ECE;&#x800C;&#x521B;&#x5EFA;&#x51FA;&#x903B;&#x8F91;&#x4E0A;&#x4E0D;&#x540C;&#x7684;Container&#x5B9E;&#x4F8B;&#xFF0C;&#x7528;&#x6765;&#x5B58;&#x653E;&#x4E0D;&#x540C;&#x7684;&#x6570;&#x636E;&#x7C7B;&#x578B;&#x3002;</p>
-<pre><code class="lang-java"> public static void main(String[] args){
-     Container&lt;String,String&gt;  c1=new Container&lt;String ,String&gt;(&quot;name&quot;,&quot;hello&quot;);
-     Container&lt;String,Integer&gt; c2=new Container&lt;String,Integer&gt;(&quot;age&quot;,22);
-     Container&lt;Double,Double&gt;  c3=new Container&lt;Double,Double&gt;(1.1,1.3);
-     System.out.println(c1.getKey() + &quot; : &quot; + c1.getValue());      
-     System.out.println(c2.getKey() + &quot; : &quot; + c2.getValue());                                                               
-     System.out.println(c3.getKey() + &quot; : &quot; + c3.getValue());
+<pre><code class="lang-java"> <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title">main</span><span class="hljs-params">(String[] args)</span></span>{
+     Container&lt;String,String&gt;  c1=<span class="hljs-keyword">new</span> Container&lt;String ,String&gt;(<span class="hljs-string">&quot;name&quot;</span>,<span class="hljs-string">&quot;hello&quot;</span>);
+     Container&lt;String,Integer&gt; c2=<span class="hljs-keyword">new</span> Container&lt;String,Integer&gt;(<span class="hljs-string">&quot;age&quot;</span>,<span class="hljs-number">22</span>);
+     Container&lt;Double,Double&gt;  c3=<span class="hljs-keyword">new</span> Container&lt;Double,Double&gt;(<span class="hljs-number">1.1</span>,<span class="hljs-number">1.3</span>);
+     System.out.println(c1.getKey() + <span class="hljs-string">&quot; : &quot;</span> + c1.getValue());      
+     System.out.println(c2.getKey() + <span class="hljs-string">&quot; : &quot;</span> + c2.getValue());                                                               
+     System.out.println(c3.getKey() + <span class="hljs-string">&quot; : &quot;</span> + c3.getValue());
  }
 </code></pre>
 <p>&#x5728;JDK 1.7 &#x589E;&#x52A0;&#x4E86;&#x6CDB;&#x578B;&#x7684;&#x201C;&#x83F1;&#x5F62;&#x201D;&#x8BED;&#x6CD5;&#xFF1A;<strong>Java&#x5141;&#x8BB8;&#x5728;&#x6784;&#x9020;&#x5668;&#x540E;&#x4E0D;&#x9700;&#x8981;&#x5E26;&#x5B8C;&#x6210;&#x7684;&#x6CDB;&#x578B;&#x4FE1;&#x606F;&#xFF0C;&#x53EA;&#x8981;&#x7ED9;&#x51FA;&#x4E00;&#x5BF9;&#x5C16;&#x62EC;&#x53F7;&#xFF08;&lt;&gt;&#xFF09;&#x5373;&#x53EF;&#xFF0C;Java&#x53EF;&#x4EE5;&#x63A8;&#x65AD;&#x5C16;&#x62EC;&#x53F7;&#x91CC;&#x5E94;&#x8BE5;&#x662F;&#x4EC0;&#x4E48;&#x6CDB;&#x578B;&#x4FE1;&#x606F;&#x3002;</strong><br>&#x5982;&#x4E0B;&#x6240;&#x793A;&#xFF1A;</p>
-<pre><code class="lang-java">Container&lt;String,String&gt; c1=new Container&lt;&gt;(&quot;name&quot;,&quot;hello&quot;);
-Container&lt;String,Integer&gt; c2=new Container&lt;&gt;(&quot;age&quot;,22);
+<pre><code class="lang-java">Container&lt;String,String&gt; c1=<span class="hljs-keyword">new</span> Container&lt;&gt;(<span class="hljs-string">&quot;name&quot;</span>,<span class="hljs-string">&quot;hello&quot;</span>);
+Container&lt;String,Integer&gt; c2=<span class="hljs-keyword">new</span> Container&lt;&gt;(<span class="hljs-string">&quot;age&quot;</span>,<span class="hljs-number">22</span>);
 </code></pre>
 <p><strong>&#x6CDB;&#x578B;&#x7C7B;&#x6D3E;&#x751F;&#x5B50;&#x7C7B;</strong></p>
 <p>&#x5F53;&#x521B;&#x5EFA;&#x4E86;&#x5E26;&#x6CDB;&#x578B;&#x58F0;&#x660E;&#x7684;&#x63A5;&#x53E3;&#x3001;&#x7236;&#x7C7B;&#x4E4B;&#x540E;&#xFF0C;&#x53EF;&#x4EE5;&#x4E3A;&#x8BE5;&#x63A5;&#x53E3;&#x521B;&#x5EFA;&#x5B9E;&#x73B0;&#x7C7B;&#xFF0C;&#x6216;&#x8005;&#x4ECE;&#x8BE5;&#x7236;&#x7C7B;&#x6D3E;&#x751F;&#x5B50;&#x7C7B;&#xFF0C;&#x9700;&#x8981;&#x6CE8;&#x610F;&#xFF1A;<strong>&#x4F7F;&#x7528;&#x8FD9;&#x4E9B;&#x63A5;&#x53E3;&#x3001;&#x7236;&#x7C7B;&#x6D3E;&#x751F;&#x5B50;&#x7C7B;&#x65F6;&#x4E0D;&#x80FD;&#x518D;&#x5305;&#x542B;&#x7C7B;&#x578B;&#x5F62;&#x53C2;&#xFF0C;&#x9700;&#x8981;&#x4F20;&#x5165;&#x5177;&#x4F53;&#x7684;&#x7C7B;&#x578B;&#x3002;</strong><br>&#x9519;&#x8BEF;&#x7684;&#x65B9;&#x5F0F;&#xFF1A;</p>
-<pre><code class="lang-java">public class A extends Container&lt;K, V&gt;{}
+<pre><code class="lang-java"><span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">A</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">Container</span>&lt;<span class="hljs-title">K</span>, <span class="hljs-title">V</span>&gt;</span>{}
 </code></pre>
 <p>&#x6B63;&#x786E;&#x7684;&#x65B9;&#x5F0F;&#xFF1A;</p>
-<pre><code class="lang-java">public class A extends Container&lt;Integer, String&gt;{}
+<pre><code class="lang-java"><span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">A</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">Container</span>&lt;<span class="hljs-title">Integer</span>, <span class="hljs-title">String</span>&gt;</span>{}
 </code></pre>
 <p>&#x4E5F;&#x53EF;&#x4EE5;&#x4E0D;&#x6307;&#x5B9A;&#x5177;&#x4F53;&#x7684;&#x7C7B;&#x578B;&#xFF0C;&#x5982;&#x4E0B;&#xFF1A;</p>
-<pre><code class="lang-java">public class A extends Container{}
+<pre><code class="lang-java"><span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">A</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">Container</span></span>{}
 </code></pre>
 <p>&#x6B64;&#x65F6;&#x7CFB;&#x7EDF;&#x4F1A;&#x628A;K,V&#x5F62;&#x53C2;&#x5F53;&#x6210;Object&#x7C7B;&#x578B;&#x5904;&#x7406;&#x3002;</p>
 <h6 id="2&#x6CDB;&#x578B;&#x7684;&#x65B9;&#x6CD5;"><a name="2&#x6CDB;&#x578B;&#x7684;&#x65B9;&#x6CD5;" class="anchor-navigation-ex-anchor" href="#2&#x6CDB;&#x578B;&#x7684;&#x65B9;&#x6CD5;"><i class="fa fa-link" aria-hidden="true"></i></a>2.&#x6CDB;&#x578B;&#x7684;&#x65B9;&#x6CD5;</h6>
 <p>&#x524D;&#x9762;&#x5728;&#x4ECB;&#x7ECD;&#x6CDB;&#x578B;&#x7C7B;&#x548C;&#x6CDB;&#x578B;&#x63A5;&#x53E3;&#x4E2D;&#x63D0;&#x5230;&#xFF0C;&#x53EF;&#x4EE5;&#x5728;&#x6CDB;&#x578B;&#x7C7B;&#x3001;&#x6CDB;&#x578B;&#x63A5;&#x53E3;&#x7684;&#x65B9;&#x6CD5;&#x4E2D;&#xFF0C;&#x628A;&#x6CDB;&#x578B;&#x4E2D;&#x58F0;&#x660E;&#x7684;&#x7C7B;&#x578B;&#x5F62;&#x53C2;&#x5F53;&#x6210;&#x666E;&#x901A;&#x7C7B;&#x578B;&#x4F7F;&#x7528;&#x3002; &#x5982;&#x4E0B;&#x9762;&#x7684;&#x65B9;&#x5F0F;&#xFF1A;</p>
-<pre><code class="lang-java">public class Container&lt;K, V&gt;
- {
+<pre><code class="lang-java"><span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Container</span>&lt;<span class="hljs-title">K</span>, <span class="hljs-title">V</span>&gt;
+ </span>{
 ........................
-    public K getkey() {
-        return key;
+    <span class="hljs-function"><span class="hljs-keyword">public</span> K <span class="hljs-title">getkey</span><span class="hljs-params">()</span> </span>{
+        <span class="hljs-keyword">return</span> key;
     }
-    public void setKey() {
-        this.key = key;
+    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">setKey</span><span class="hljs-params">()</span> </span>{
+        <span class="hljs-keyword">this</span>.key = key;
     }
 ....................
 }
 </code></pre>
 <p>&#x4F46;&#x5728;&#x53E6;&#x5916;&#x4E00;&#x4E9B;&#x60C5;&#x51B5;&#x4E0B;&#xFF0C;&#x5728;&#x7C7B;&#x3001;&#x63A5;&#x53E3;&#x4E2D;&#x6CA1;&#x6709;&#x4F7F;&#x7528;&#x6CDB;&#x578B;&#x65F6;&#xFF0C;&#x5B9A;&#x4E49;&#x65B9;&#x6CD5;&#x65F6;&#x60F3;&#x5B9A;&#x4E49;&#x7C7B;&#x578B;&#x5F62;&#x53C2;&#xFF0C;&#x5C31;&#x4F1A;&#x4F7F;&#x7528;&#x6CDB;&#x578B;&#x65B9;&#x6CD5;&#x3002;&#x5982;&#x4E0B;&#x65B9;&#x5F0F;&#xFF1A;</p>
-<pre><code class="lang-java">public class Main{
-  public static &lt;T&gt; void out(T t){
+<pre><code class="lang-java"><span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Main</span></span>{
+  <span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> &lt;T&gt; <span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">out</span><span class="hljs-params">(T t)</span></span>{
        System.out.println(t);
   }
-  public static void main(String[] args){
-       out(&quot;hansheng&quot;);
-       out(123);
+  <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title">main</span><span class="hljs-params">(String[] args)</span></span>{
+       out(<span class="hljs-string">&quot;hansheng&quot;</span>);
+       out(<span class="hljs-number">123</span>);
   }
 }
 </code></pre>
@@ -3851,41 +3855,41 @@ Container&lt;String,Integer&gt; c2=new Container&lt;&gt;(&quot;age&quot;,22);
 &#xFF5D;
 </code></pre>
 <p><strong>&#x6CE8;&#x610F;&#xFF1A;</strong>&#x65B9;&#x6CD5;&#x58F0;&#x660E;&#x4E2D;&#x5B9A;&#x4E49;&#x7684;&#x5F62;&#x53C2;&#x53EA;&#x80FD;&#x5728;&#x8BE5;&#x65B9;&#x6CD5;&#x91CC;&#x4F7F;&#x7528;&#xFF0C;&#x800C;&#x63A5;&#x53E3;&#x3001;&#x7C7B;&#x58F0;&#x660E;&#x4E2D;&#x5B9A;&#x4E49;&#x7684;&#x7C7B;&#x578B;&#x5F62;&#x53C2;&#x5219;&#x53EF;&#x4EE5;&#x5728;&#x6574;&#x4E2A;&#x63A5;&#x53E3;&#x3001;&#x7C7B;&#x4E2D;&#x4F7F;&#x7528;&#x3002;</p>
-<pre><code class="lang-java">class Demo{  
-  public &lt;T&gt; T fun(T t){   // &#x53EF;&#x4EE5;&#x63A5;&#x6536;&#x4EFB;&#x610F;&#x7C7B;&#x578B;&#x7684;&#x6570;&#x636E;  
-   return t ;     // &#x76F4;&#x63A5;&#x628A;&#x53C2;&#x6570;&#x8FD4;&#x56DE;  
+<pre><code class="lang-java"><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Demo</span></span>{  
+  <span class="hljs-keyword">public</span> &lt;T&gt; <span class="hljs-function">T <span class="hljs-title">fun</span><span class="hljs-params">(T t)</span></span>{   <span class="hljs-comment">// &#x53EF;&#x4EE5;&#x63A5;&#x6536;&#x4EFB;&#x610F;&#x7C7B;&#x578B;&#x7684;&#x6570;&#x636E;  </span>
+   <span class="hljs-keyword">return</span> t ;     <span class="hljs-comment">// &#x76F4;&#x63A5;&#x628A;&#x53C2;&#x6570;&#x8FD4;&#x56DE;  </span>
   }  
 };  
-public class GenericsDemo26{  
-  public static void main(String args[]){  
-    Demo d = new Demo() ; // &#x5B9E;&#x4F8B;&#x5316;Demo&#x5BF9;&#x8C61;  
-    String str = d.fun(&quot;&#x6C64;&#x59C6;&quot;) ; // &#x4F20;&#x9012;&#x5B57;&#x7B26;&#x4E32;  
-    int i = d.fun(30) ;  // &#x4F20;&#x9012;&#x6570;&#x5B57;&#xFF0C;&#x81EA;&#x52A8;&#x88C5;&#x7BB1;  
-    System.out.println(str) ; // &#x8F93;&#x51FA;&#x5185;&#x5BB9;  
-    System.out.println(i) ;  // &#x8F93;&#x51FA;&#x5185;&#x5BB9;  
+<span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">GenericsDemo26</span></span>{  
+  <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title">main</span><span class="hljs-params">(String args[])</span></span>{  
+    Demo d = <span class="hljs-keyword">new</span> Demo() ; <span class="hljs-comment">// &#x5B9E;&#x4F8B;&#x5316;Demo&#x5BF9;&#x8C61;  </span>
+    String str = d.fun(<span class="hljs-string">&quot;&#x6C64;&#x59C6;&quot;</span>) ; <span class="hljs-comment">// &#x4F20;&#x9012;&#x5B57;&#x7B26;&#x4E32;  </span>
+    <span class="hljs-keyword">int</span> i = d.fun(<span class="hljs-number">30</span>) ;  <span class="hljs-comment">// &#x4F20;&#x9012;&#x6570;&#x5B57;&#xFF0C;&#x81EA;&#x52A8;&#x88C5;&#x7BB1;  </span>
+    System.out.println(str) ; <span class="hljs-comment">// &#x8F93;&#x51FA;&#x5185;&#x5BB9;  </span>
+    System.out.println(i) ;  <span class="hljs-comment">// &#x8F93;&#x51FA;&#x5185;&#x5BB9;  </span>
   }  
 };
 </code></pre>
 <p>&#x5F53;&#x8C03;&#x7528;<code>fun()</code>&#x65B9;&#x6CD5;&#x65F6;&#xFF0C;&#x6839;&#x636E;&#x4F20;&#x5165;&#x7684;&#x5B9E;&#x9645;&#x5BF9;&#x8C61;&#xFF0C;&#x7F16;&#x8BD1;&#x5668;&#x5C31;&#x4F1A;&#x5224;&#x65AD;&#x51FA;&#x7C7B;&#x578B;&#x5F62;&#x53C2;T&#x6240;&#x4EE3;&#x8868;&#x7684;&#x5B9E;&#x9645;&#x7C7B;&#x578B;&#x3002;</p>
 <h5 id="3&#x6CDB;&#x578B;&#x6784;&#x9020;&#x5668;"><a name="3&#x6CDB;&#x578B;&#x6784;&#x9020;&#x5668;" class="anchor-navigation-ex-anchor" href="#3&#x6CDB;&#x578B;&#x6784;&#x9020;&#x5668;"><i class="fa fa-link" aria-hidden="true"></i></a>3.&#x6CDB;&#x578B;&#x6784;&#x9020;&#x5668;</h5>
 <p>&#x6B63;&#x5982;&#x6CDB;&#x578B;&#x65B9;&#x6CD5;&#x5141;&#x8BB8;&#x5728;&#x65B9;&#x6CD5;&#x7B7E;&#x540D;&#x4E2D;&#x58F0;&#x660E;&#x7C7B;&#x578B;&#x5F62;&#x53C2;&#x4E00;&#x6837;&#xFF0C;Java&#x4E5F;&#x5141;&#x8BB8;&#x5728;&#x6784;&#x9020;&#x5668;&#x7B7E;&#x540D;&#x4E2D;&#x58F0;&#x660E;&#x7C7B;&#x578B;&#x5F62;&#x53C2;&#xFF0C;&#x8FD9;&#x6837;&#x5C31;&#x4EA7;&#x751F;&#x4E86;&#x6240;&#x8C13;&#x7684;&#x6CDB;&#x578B;&#x6784;&#x9020;&#x5668;&#x3002;<br>&#x548C;&#x4F7F;&#x7528;&#x666E;&#x901A;&#x6CDB;&#x578B;&#x65B9;&#x6CD5;&#x4E00;&#x6837;&#x6CA1;&#x533A;&#x522B;&#xFF0C;&#x4E00;&#x79CD;&#x662F;&#x663E;&#x5F0F;&#x6307;&#x5B9A;&#x6CDB;&#x578B;&#x53C2;&#x6570;&#xFF0C;&#x53E6;&#x4E00;&#x79CD;&#x662F;&#x9690;&#x5F0F;&#x63A8;&#x65AD;&#xFF0C;&#x5982;&#x679C;&#x662F;&#x663E;&#x5F0F;&#x6307;&#x5B9A;&#x5219;&#x4EE5;&#x663E;&#x5F0F;&#x6307;&#x5B9A;&#x7684;&#x7C7B;&#x578B;&#x53C2;&#x6570;&#x4E3A;&#x51C6;&#xFF0C;&#x5982;&#x679C;&#x4F20;&#x5165;&#x7684;&#x53C2;&#x6570;&#x7684;&#x7C7B;&#x578B;&#x548C;&#x6307;&#x5B9A;&#x7684;&#x7C7B;&#x578B;&#x5B9E;&#x53C2;&#x4E0D;&#x7B26;&#xFF0C;&#x5C06;&#x4F1A;&#x7F16;&#x8BD1;&#x62A5;&#x9519;&#x3002;</p>
-<pre><code class="lang-java">public class Person {
-    public &lt;T&gt; Person(T t) {
+<pre><code class="lang-java"><span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Person</span> </span>{
+    <span class="hljs-keyword">public</span> &lt;T&gt; Person(T t) {
         System.out.println(t);
     }
 
 }
 </code></pre>
-<pre><code class="lang-java">public static void main(String[] args){
-        //&#x9690;&#x5F0F;
-        new Person(22);
-        //&#x663E;&#x793A;
-        new&lt;String&gt; Person(&quot;hello&quot;);
+<pre><code class="lang-java"><span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title">main</span><span class="hljs-params">(String[] args)</span></span>{
+        <span class="hljs-comment">//&#x9690;&#x5F0F;</span>
+        <span class="hljs-keyword">new</span> Person(<span class="hljs-number">22</span>);
+        <span class="hljs-comment">//&#x663E;&#x793A;</span>
+        <span class="hljs-keyword">new</span>&lt;String&gt; Person(<span class="hljs-string">&quot;hello&quot;</span>);
 }
 </code></pre>
 <p>&#x8FD9;&#x91CC;&#x552F;&#x4E00;&#x9700;&#x8981;&#x7279;&#x6B8A;&#x6CE8;&#x660E;&#x7684;&#x5C31;&#x662F;&#xFF0C;&#x5982;&#x679C;&#x6784;&#x9020;&#x5668;&#x662F;&#x6CDB;&#x578B;&#x6784;&#x9020;&#x5668;&#xFF0C;&#x540C;&#x65F6;&#x8BE5;&#x7C7B;&#x4E5F;&#x662F;&#x4E00;&#x4E2A;&#x6CDB;&#x578B;&#x7C7B;&#x7684;&#x60C5;&#x51B5;&#x4E0B;&#x5E94;&#x8BE5;&#x5982;&#x4F55;&#x4F7F;&#x7528;&#x6CDB;&#x578B;&#x6784;&#x9020;&#x5668;&#xFF1A;<br>&#x56E0;&#x4E3A;&#x6CDB;&#x578B;&#x6784;&#x9020;&#x5668;&#x53EF;&#x4EE5;&#x663E;&#x5F0F;&#x6307;&#x5B9A;&#x81EA;&#x5DF1;&#x7684;&#x7C7B;&#x578B;&#x53C2;&#x6570;&#xFF08;&#x9700;&#x8981;&#x7528;&#x5230;&#x83F1;&#x5F62;&#xFF0C;&#x653E;&#x5728;&#x6784;&#x9020;&#x5668;&#x4E4B;&#x524D;&#xFF09;&#xFF0C;&#x800C;&#x6CDB;&#x578B;&#x7C7B;&#x81EA;&#x5DF1;&#x7684;&#x7C7B;&#x578B;&#x5B9E;&#x53C2;&#x4E5F;&#x9700;&#x8981;&#x6307;&#x5B9A;&#xFF08;&#x83F1;&#x5F62;&#x653E;&#x5728;&#x6784;&#x9020;&#x5668;&#x4E4B;&#x540E;&#xFF09;&#xFF0C;&#x8FD9;&#x5C31;&#x540C;&#x65F6;&#x51FA;&#x73B0;&#x4E86;&#x4E24;&#x4E2A;&#x83F1;&#x5F62;&#x4E86;&#xFF0C;&#x8FD9;&#x5C31;&#x4F1A;&#x6709;&#x4E00;&#x4E9B;&#x5C0F;&#x95EE;&#x9898;&#xFF0C;&#x5177;&#x4F53;&#x7528;&#x6CD5;&#x518D;&#x8FD9;&#x91CC;&#x603B;&#x7ED3;&#x4E00;&#x4E0B;&#x3002;<br>&#x4EE5;&#x4E0B;&#x9762;&#x8FD9;&#x4E2A;&#x4F8B;&#x5B50;&#x4E3A;&#x4EE3;&#x8868;</p>
-<pre><code class="lang-java">public class Person&lt;E&gt; {
-    public &lt;T&gt; Person(T t) {
+<pre><code class="lang-java"><span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Person</span>&lt;<span class="hljs-title">E</span>&gt; </span>{
+    <span class="hljs-keyword">public</span> &lt;T&gt; Person(T t) {
         System.out.println(t);
     }
 
@@ -3895,16 +3899,16 @@ public class GenericsDemo26{
 <h3 id="&#x4E09;&#x3001;&#x7C7B;&#x578B;&#x901A;&#x914D;&#x7B26;"><a name="&#x4E09;&#x3001;&#x7C7B;&#x578B;&#x901A;&#x914D;&#x7B26;" class="anchor-navigation-ex-anchor" href="#&#x4E09;&#x3001;&#x7C7B;&#x578B;&#x901A;&#x914D;&#x7B26;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x4E09;&#x3001;&#x7C7B;&#x578B;&#x901A;&#x914D;&#x7B26;</h3>
 <p>&#x987E;&#x540D;&#x601D;&#x4E49;&#x5C31;&#x662F;&#x5339;&#x914D;&#x4EFB;&#x610F;&#x7C7B;&#x578B;&#x7684;&#x7C7B;&#x578B;&#x5B9E;&#x53C2;&#x3002;</p>
 <p>&#x7C7B;&#x578B;&#x901A;&#x914D;&#x7B26;&#x662F;&#x4E00;&#x4E2A;&#x95EE;&#x53F7;&#xFF08;&#xFF1F;)&#xFF0C;&#x5C06;&#x4E00;&#x4E2A;&#x95EE;&#x53F7;&#x4F5C;&#x4E3A;&#x7C7B;&#x578B;&#x5B9E;&#x53C2;&#x4F20;&#x7ED9;List&#x96C6;&#x5408;&#xFF0C;&#x5199;&#x4F5C;&#xFF1A;<code>List&lt;?&gt;</code>&#xFF08;&#x610F;&#x601D;&#x662F;&#x5143;&#x7D20;&#x7C7B;&#x578B;&#x672A;&#x77E5;&#x7684;List&#xFF09;&#x3002;&#x8FD9;&#x4E2A;&#x95EE;&#x53F7;&#xFF08;&#xFF1F;&#xFF09;&#x88AB;&#x6210;&#x4E3A;&#x901A;&#x914D;&#x7B26;&#xFF0C;&#x5B83;&#x7684;&#x5143;&#x7D20;&#x7C7B;&#x578B;&#x53EF;&#x4EE5;&#x5339;&#x914D;&#x4EFB;&#x4F55;&#x7C7B;&#x578B;&#x3002;</p>
-<pre><code class="lang-java">public void test(List&lt;?&gt; c){
-  for(int i =0;i&lt;c.size();i++){
+<pre><code class="lang-java"><span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">test</span><span class="hljs-params">(List&lt;?&gt; c)</span></span>{
+  <span class="hljs-keyword">for</span>(<span class="hljs-keyword">int</span> i =<span class="hljs-number">0</span>;i&lt;c.size();i++){
     System.out.println(c.get(i));
   }
 }
 </code></pre>
 <p>&#x73B0;&#x5728;&#x53EF;&#x4EE5;&#x4F20;&#x5165;&#x4EFB;&#x4F55;&#x7C7B;&#x578B;&#x7684;List&#x6765;&#x8C03;&#x7528;test()&#x65B9;&#x6CD5;&#xFF0C;&#x7A0B;&#x5E8F;&#x4F9D;&#x7136;&#x53EF;&#x4EE5;&#x8BBF;&#x95EE;&#x96C6;&#x5408;c&#x4E2D;&#x7684;&#x5143;&#x7D20;&#xFF0C;&#x5176;&#x7C7B;&#x578B;&#x662F;Object&#x3002;</p>
-<pre><code class="lang-java">List&lt;?&gt; c = new ArrayList&lt;String&gt;();
-//&#x7F16;&#x8BD1;&#x5668;&#x62A5;&#x9519;
-c.add(new Object());
+<pre><code class="lang-java">List&lt;?&gt; c = <span class="hljs-keyword">new</span> ArrayList&lt;String&gt;();
+<span class="hljs-comment">//&#x7F16;&#x8BD1;&#x5668;&#x62A5;&#x9519;</span>
+c.add(<span class="hljs-keyword">new</span> Object());
 </code></pre>
 <p>&#x4F46;&#x662F;&#x5E76;&#x4E0D;&#x80FD;&#x628A;&#x5143;&#x7D20;&#x52A0;&#x5165;&#x5230;&#x5176;&#x4E2D;&#x3002;&#x56E0;&#x4E3A;&#x7A0B;&#x5E8F;&#x65E0;&#x6CD5;&#x786E;&#x5B9A;c&#x96C6;&#x5408;&#x4E2D;&#x5143;&#x7D20;&#x7684;&#x7C7B;&#x578B;&#xFF0C;&#x6240;&#x4EE5;&#x4E0D;&#x80FD;&#x5411;&#x5176;&#x6DFB;&#x52A0;&#x5BF9;&#x8C61;&#x3002;<br>&#x4E0B;&#x9762;&#x5C31;&#x8BE5;&#x5F15;&#x5165;&#x5E26;&#x9650;&#x901A;&#x914D;&#x7B26;&#xFF0C;&#x6765;&#x786E;&#x5B9A;&#x96C6;&#x5408;&#x5143;&#x7D20;&#x4E2D;&#x7684;&#x7C7B;&#x578B;&#x3002;</p>
 <h4 id="&#x5E26;&#x9650;&#x901A;&#x914D;&#x7B26;"><a name="&#x5E26;&#x9650;&#x901A;&#x914D;&#x7B26;" class="anchor-navigation-ex-anchor" href="#&#x5E26;&#x9650;&#x901A;&#x914D;&#x7B26;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x5E26;&#x9650;&#x901A;&#x914D;&#x7B26;</h4>
@@ -3916,22 +3920,22 @@ c.add(new Object());
 List&lt;? extends Shape&gt;
 </code></pre>
 <p>&#x8FD9;&#x5C31;&#x662F;&#x6240;&#x8C13;&#x7684;&#x4E0A;&#x9650;&#x901A;&#x914D;&#x7B26;&#xFF0C;&#x4F7F;&#x7528;&#x5173;&#x952E;&#x5B57;extends&#x6765;&#x5B9E;&#x73B0;&#xFF0C;&#x5B9E;&#x4F8B;&#x5316;&#x65F6;&#xFF0C;&#x6307;&#x5B9A;&#x7C7B;&#x578B;&#x5B9E;&#x53C2;&#x53EA;&#x80FD;&#x662F;extends&#x540E;&#x7C7B;&#x578B;&#x7684;&#x5B50;&#x7C7B;&#x6216;&#x5176;&#x672C;&#x8EAB;&#x3002;<br>&#x4F8B;&#x5982;&#xFF1A;</p>
-<pre><code class="lang-java">//Circle&#x662F;&#x5176;&#x5B50;&#x7C7B;
-List&lt;? extends Shape&gt; list = new ArrayList&lt;Circle&gt;();
+<pre><code class="lang-java"><span class="hljs-comment">//Circle&#x662F;&#x5176;&#x5B50;&#x7C7B;</span>
+List&lt;? extends Shape&gt; list = <span class="hljs-keyword">new</span> ArrayList&lt;Circle&gt;();
 </code></pre>
 <p>&#x8FD9;&#x6837;&#x5C31;&#x786E;&#x5B9A;&#x96C6;&#x5408;&#x4E2D;&#x5143;&#x7D20;&#x7684;&#x7C7B;&#x578B;&#xFF0C;&#x867D;&#x7136;&#x4E0D;&#x786E;&#x5B9A;&#x5177;&#x4F53;&#x7684;&#x7C7B;&#x578B;&#xFF0C;&#x4F46;&#x6700;&#x8D77;&#x7801;&#x77E5;&#x9053;&#x5176;&#x7236;&#x7C7B;&#x3002;&#x7136;&#x540E;&#x8FDB;&#x884C;&#x5176;&#x4ED6;&#x64CD;&#x4F5C;&#x3002;</p>
 <h5 id="2&#x4E0B;&#x9650;&#x901A;&#x914D;&#x7B26;"><a name="2&#x4E0B;&#x9650;&#x901A;&#x914D;&#x7B26;" class="anchor-navigation-ex-anchor" href="#2&#x4E0B;&#x9650;&#x901A;&#x914D;&#x7B26;"><i class="fa fa-link" aria-hidden="true"></i></a>2.&#x4E0B;&#x9650;&#x901A;&#x914D;&#x7B26;</h5>
 <p>&#x5982;&#x679C;&#x60F3;&#x9650;&#x5236;&#x4F7F;&#x7528;&#x6CDB;&#x578B;&#x7C7B;&#x522B;&#x65F6;&#xFF0C;&#x53EA;&#x80FD;&#x7528;&#x67D0;&#x4E2A;&#x7279;&#x5B9A;&#x7C7B;&#x578B;&#x6216;&#x8005;&#x662F;&#x5176;&#x7236;&#x7C7B;&#x578B;&#x624D;&#x80FD;&#x5B9E;&#x4F8B;&#x5316;&#x8BE5;&#x7C7B;&#x578B;&#x65F6;&#xFF0C;&#x53EF;&#x4EE5;&#x5728;&#x5B9A;&#x4E49;&#x7C7B;&#x578B;&#x65F6;&#xFF0C;<strong>&#x4F7F;&#x7528;super&#x5173;&#x952E;&#x5B57;&#x6307;&#x5B9A;&#x8FD9;&#x4E2A;&#x7C7B;&#x578B;&#x5FC5;&#x987B;&#x662F;&#x662F;&#x67D0;&#x4E2A;&#x7C7B;&#x7684;&#x7236;&#x7C7B;&#xFF0C;&#x6216;&#x8005;&#x662F;&#x67D0;&#x4E2A;&#x63A5;&#x53E3;&#x7684;&#x7236;&#x63A5;&#x53E3;&#xFF0C;&#x4E5F;&#x53EF;&#x4EE5;&#x662F;&#x8FD9;&#x4E2A;&#x7C7B;&#x6216;&#x63A5;&#x53E3;&#x672C;&#x8EAB;&#x3002;</strong></p>
 <pre><code class="lang-java">&#x5B83;&#x8868;&#x793A;&#x96C6;&#x5408;&#x4E2D;&#x7684;&#x6240;&#x6709;&#x5143;&#x7D20;&#x90FD;&#x662F;Circle&#x7C7B;&#x578B;&#x6216;&#x8005;&#x5176;&#x7236;&#x7C7B;
-List &lt;? super Circle&gt;
+List &lt;? <span class="hljs-keyword">super</span> Circle&gt;
 </code></pre>
 <p>&#x8FD9;&#x5C31;&#x662F;&#x6240;&#x8C13;&#x7684;&#x4E0B;&#x9650;&#x901A;&#x914D;&#x7B26;&#xFF0C;&#x4F7F;&#x7528;&#x5173;&#x952E;&#x5B57;super&#x6765;&#x5B9E;&#x73B0;&#xFF0C;&#x5B9E;&#x4F8B;&#x5316;&#x65F6;&#xFF0C;&#x6307;&#x5B9A;&#x7C7B;&#x578B;&#x5B9E;&#x53C2;&#x53EA;&#x80FD;&#x662F;extends&#x540E;&#x7C7B;&#x578B;&#x7684;&#x5B50;&#x7C7B;&#x6216;&#x5176;&#x672C;&#x8EAB;&#x3002;<br>&#x4F8B;&#x5982;&#xFF1A;</p>
-<pre><code class="lang-java">//Shape&#x662F;&#x5176;&#x7236;&#x7C7B;
-List&lt;? super Circle&gt; list = new ArrayList&lt;Shape&gt;();
+<pre><code class="lang-java"><span class="hljs-comment">//Shape&#x662F;&#x5176;&#x7236;&#x7C7B;</span>
+List&lt;? <span class="hljs-keyword">super</span> Circle&gt; list = <span class="hljs-keyword">new</span> ArrayList&lt;Shape&gt;();
 </code></pre>
 <h3 id="&#x56DB;&#x3001;&#x7C7B;&#x578B;&#x64E6;&#x9664;"><a name="&#x56DB;&#x3001;&#x7C7B;&#x578B;&#x64E6;&#x9664;" class="anchor-navigation-ex-anchor" href="#&#x56DB;&#x3001;&#x7C7B;&#x578B;&#x64E6;&#x9664;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x56DB;&#x3001;&#x7C7B;&#x578B;&#x64E6;&#x9664;</h3>
-<pre><code class="lang-java">Class c1=new ArrayList&lt;Integer&gt;().getClass();
-Class c2=new ArrayList&lt;String&gt;().getClass();
+<pre><code class="lang-java">Class c1=<span class="hljs-keyword">new</span> ArrayList&lt;Integer&gt;().getClass();
+Class c2=<span class="hljs-keyword">new</span> ArrayList&lt;String&gt;().getClass();
 System.out.println(c1==c2);
 </code></pre>
 <p>&#x7A0B;&#x5E8F;&#x8F93;&#x51FA;&#xFF1A;</p>
@@ -3985,7 +3989,7 @@ System.out.println(c1==c2);
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"Java泛型","level":"2.1.7","depth":2,"next":{"title":"Java反射(一)","level":"2.1.8","depth":2,"path":"java/basis/reflection1.md","ref":"java/basis/reflection1.md","articles":[]},"previous":{"title":"Java集合——LinkedHashMap","level":"2.1.6","depth":2,"path":"java/basis/LinkedHashMap.md","ref":"java/basis/LinkedHashMap.md","articles":[]},"dir":"ltr"},"config":{"plugins":["-lunr","-search","-highlight","-livereload","search-plus@^0.0.11","simple-page-toc@^0.1.1","github@^2.0.0","github-buttons@2.1.0","edit-link@^2.0.2","advanced-emoji@^0.2.1","anchors@^0.7.1","include-codeblock@^3.0.2","ace@^0.3.2","emphasize@^1.1.0","katex@^1.1.3","splitter@^0.0.8","tbfed-pagefooter@^0.0.1","expandable-chapters-small@^0.1.7","sectionx@^3.1.0","local-video@^1.0.1","anchor-navigation-ex@0.1.8","favicon@^0.0.2"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"tbfed-pagefooter":{"copyright":"Copyright © ruheng.com 2017","modify_label":"该文件修订时间：","modify_format":"YYYY-MM-DD HH:mm:ss"},"emphasize":{},"ace":{},"github":{"url":"https://github.com/LRH1993/android_interview"},"simple-page-toc":{"maxDepth":3,"skipFirstH1":true},"splitter":{},"katex":{},"fontsettings":{"theme":"white","family":"sans","size":2},"sectionx":{"tag":"b"},"anchor-navigation-ex":{"isRewritePageTitle":false,"tocLevel1Icon":"fa fa-hand-o-right","tocLevel2Icon":"fa fa-hand-o-right","tocLevel3Icon":"fa fa-hand-o-right"},"favicon":{"shortcut":"favicon.ico","bookmark":"favicon.ico"},"github-buttons":{"repo":"LRH1993/android_interview","types":["star"],"size":"small"},"expandable-chapters-small":{},"local-video":{},"advanced-emoji":{"embedEmojis":false},"include-codeblock":{"check":false,"edit":true,"fixlang":false,"lang":"","template":"ace","theme":"chrome","unindent":true},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":true,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"edit-link":{"label":"Edit This Page","base":"https://github.com/LRH1993/android_interview/edit/master"},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":true},"anchors":{},"search-plus":{}},"theme":"default","author":"ruheng","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"Android校招面试指南","language":"zh-hans","output.name":"site","links":{"sidebar":{"Home":"http://lruheng.com/"}},"gitbook":"3.2.3","description":"Android面试必备，记录自己的秋招之路"},"file":{"path":"java/basis/genericity.md","mtime":"2017-08-22T07:53:58.000Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2017-10-16T12:05:21.906Z"},"basePath":"../..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"Java泛型","level":"2.1.7","depth":2,"next":{"title":"Java反射(一)","level":"2.1.8","depth":2,"path":"java/basis/reflection1.md","ref":"java/basis/reflection1.md","articles":[]},"previous":{"title":"Java集合——LinkedHashMap","level":"2.1.6","depth":2,"path":"java/basis/LinkedHashMap.md","ref":"java/basis/LinkedHashMap.md","articles":[]},"dir":"ltr"},"config":{"plugins":["-lunr","-search","-livereload","search-plus@^0.0.11","simple-page-toc@^0.1.1","github@^2.0.0","github-buttons@2.1.0","edit-link@^2.0.2","advanced-emoji@^0.2.1","anchors@^0.7.1","include-codeblock@^3.0.2","ace@^0.3.2","emphasize@^1.1.0","katex@^1.1.3","splitter@^0.0.8","tbfed-pagefooter@^0.0.1","expandable-chapters-small@^0.1.7","sectionx@^3.1.0","local-video@^1.0.1","anchor-navigation-ex@0.1.8","favicon@^0.0.2"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"tbfed-pagefooter":{"copyright":"Copyright © ruheng.com 2017","modify_label":"该文件修订时间：","modify_format":"YYYY-MM-DD HH:mm:ss"},"emphasize":{},"ace":{},"github":{"url":"https://github.com/LRH1993/android_interview"},"simple-page-toc":{"maxDepth":3,"skipFirstH1":true},"splitter":{},"katex":{},"fontsettings":{"theme":"white","family":"sans","size":2},"sectionx":{"tag":"b"},"highlight":{},"anchor-navigation-ex":{"isRewritePageTitle":false,"tocLevel1Icon":"fa fa-hand-o-right","tocLevel2Icon":"fa fa-hand-o-right","tocLevel3Icon":"fa fa-hand-o-right"},"favicon":{"shortcut":"favicon.ico","bookmark":"favicon.ico"},"github-buttons":{"repo":"LRH1993/android_interview","types":["star"],"size":"small"},"expandable-chapters-small":{},"local-video":{},"advanced-emoji":{"embedEmojis":false},"include-codeblock":{"check":false,"edit":false,"fixlang":false,"lang":"","template":"default","theme":"chrome","unindent":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":true,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"edit-link":{"label":"Edit This Page","base":"https://github.com/LRH1993/android_interview/edit/master"},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":true},"anchors":{},"search-plus":{}},"theme":"default","author":"ruheng","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"Android校招面试指南","language":"zh-hans","output.name":"site","links":{"sidebar":{"Home":"http://lruheng.com/"}},"gitbook":"3.2.3","description":"Android面试必备，记录自己的秋招之路"},"file":{"path":"java/basis/genericity.md","mtime":"2017-08-22T07:53:58.000Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2017-10-16T13:00:43.989Z"},"basePath":"../..","book":{"language":""}});
         });
     </script>
 </div>

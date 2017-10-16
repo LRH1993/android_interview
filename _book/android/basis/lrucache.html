@@ -69,6 +69,10 @@
                 
             
                 
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
                 <link rel="stylesheet" href="../../gitbook/gitbook-plugin-fontsettings/website.css">
                 
             
@@ -3714,12 +3718,12 @@
 <p>LruCache&#x662F;&#x4E2A;&#x6CDB;&#x578B;&#x7C7B;&#xFF0C;&#x4E3B;&#x8981;&#x7B97;&#x6CD5;&#x539F;&#x7406;&#x662F;&#x628A;&#x6700;&#x8FD1;&#x4F7F;&#x7528;&#x7684;&#x5BF9;&#x8C61;&#x7528;&#x5F3A;&#x5F15;&#x7528;&#xFF08;&#x5373;&#x6211;&#x4EEC;&#x5E73;&#x5E38;&#x4F7F;&#x7528;&#x7684;&#x5BF9;&#x8C61;&#x5F15;&#x7528;&#x65B9;&#x5F0F;&#xFF09;&#x5B58;&#x50A8;&#x5728; LinkedHashMap &#x4E2D;&#x3002;&#x5F53;&#x7F13;&#x5B58;&#x6EE1;&#x65F6;&#xFF0C;&#x628A;&#x6700;&#x8FD1;&#x6700;&#x5C11;&#x4F7F;&#x7528;&#x7684;&#x5BF9;&#x8C61;&#x4ECE;&#x5185;&#x5B58;&#x4E2D;&#x79FB;&#x9664;&#xFF0C;&#x5E76;&#x63D0;&#x4F9B;&#x4E86;get&#x548C;put&#x65B9;&#x6CD5;&#x6765;&#x5B8C;&#x6210;&#x7F13;&#x5B58;&#x7684;&#x83B7;&#x53D6;&#x548C;&#x6DFB;&#x52A0;&#x64CD;&#x4F5C;&#x3002;</p>
 <h3 id="2lrucache&#x7684;&#x4F7F;&#x7528;"><a name="2lrucache&#x7684;&#x4F7F;&#x7528;" class="anchor-navigation-ex-anchor" href="#2lrucache&#x7684;&#x4F7F;&#x7528;"><i class="fa fa-link" aria-hidden="true"></i></a>2.LruCache&#x7684;&#x4F7F;&#x7528;</h3>
 <p>LruCache&#x7684;&#x4F7F;&#x7528;&#x975E;&#x5E38;&#x7B80;&#x5355;&#xFF0C;&#x6211;&#x4EEC;&#x5C31;&#x5DF2;&#x56FE;&#x7247;&#x7F13;&#x5B58;&#x4E3A;&#x4F8B;&#x3002;</p>
-<pre><code class="lang-java"> int maxMemory = (int) (Runtime.getRuntime().totalMemory()/1024);
-        int cacheSize = maxMemory/8;
-        mMemoryCache = new LruCache&lt;String,Bitmap&gt;(cacheSize){
-            @Override
-            protected int sizeOf(String key, Bitmap value) {
-                return value.getRowBytes()*value.getHeight()/1024;
+<pre><code class="lang-java"> <span class="hljs-keyword">int</span> maxMemory = (<span class="hljs-keyword">int</span>) (Runtime.getRuntime().totalMemory()/<span class="hljs-number">1024</span>);
+        <span class="hljs-keyword">int</span> cacheSize = maxMemory/<span class="hljs-number">8</span>;
+        mMemoryCache = <span class="hljs-keyword">new</span> LruCache&lt;String,Bitmap&gt;(cacheSize){
+            <span class="hljs-meta">@Override</span>
+            <span class="hljs-function"><span class="hljs-keyword">protected</span> <span class="hljs-keyword">int</span> <span class="hljs-title">sizeOf</span><span class="hljs-params">(String key, Bitmap value)</span> </span>{
+                <span class="hljs-keyword">return</span> value.getRowBytes()*value.getHeight()/<span class="hljs-number">1024</span>;
             }
         };
 </code></pre>
@@ -3733,30 +3737,30 @@
 <p>&#x90A3;&#x4E48;&#x8FD9;&#x4E2A;&#x961F;&#x5217;&#x5230;&#x5E95;&#x662F;&#x7531;&#x8C01;&#x6765;&#x7EF4;&#x62A4;&#x7684;&#xFF0C;&#x524D;&#x9762;&#x5DF2;&#x7ECF;&#x4ECB;&#x7ECD;&#x4E86;&#x662F;&#x7531;LinkedHashMap&#x6765;&#x7EF4;&#x62A4;&#x3002;</p>
 <p>&#x800C;LinkedHashMap&#x662F;&#x7531;&#x6570;&#x7EC4;+&#x53CC;&#x5411;&#x94FE;&#x8868;&#x7684;&#x6570;&#x636E;&#x7ED3;&#x6784;&#x6765;&#x5B9E;&#x73B0;&#x7684;&#x3002;&#x5176;&#x4E2D;&#x53CC;&#x5411;&#x94FE;&#x8868;&#x7684;&#x7ED3;&#x6784;&#x53EF;&#x4EE5;&#x5B9E;&#x73B0;&#x8BBF;&#x95EE;&#x987A;&#x5E8F;&#x548C;&#x63D2;&#x5165;&#x987A;&#x5E8F;&#xFF0C;&#x4F7F;&#x5F97;LinkedHashMap&#x4E2D;&#x7684;<key,value>&#x5BF9;&#x6309;&#x7167;&#x4E00;&#x5B9A;&#x987A;&#x5E8F;&#x6392;&#x5217;&#x8D77;&#x6765;&#x3002;</key,value></p>
 <p>&#x901A;&#x8FC7;&#x4E0B;&#x9762;&#x6784;&#x9020;&#x51FD;&#x6570;&#x6765;&#x6307;&#x5B9A;LinkedHashMap&#x4E2D;&#x53CC;&#x5411;&#x94FE;&#x8868;&#x7684;&#x7ED3;&#x6784;&#x662F;&#x8BBF;&#x95EE;&#x987A;&#x5E8F;&#x8FD8;&#x662F;&#x63D2;&#x5165;&#x987A;&#x5E8F;&#x3002;</p>
-<pre><code class="lang-java">public LinkedHashMap(int initialCapacity,
-                         float loadFactor,
-                         boolean accessOrder) {
-        super(initialCapacity, loadFactor);
-        this.accessOrder = accessOrder;
+<pre><code class="lang-java"><span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-title">LinkedHashMap</span><span class="hljs-params">(<span class="hljs-keyword">int</span> initialCapacity,
+                         <span class="hljs-keyword">float</span> loadFactor,
+                         <span class="hljs-keyword">boolean</span> accessOrder)</span> </span>{
+        <span class="hljs-keyword">super</span>(initialCapacity, loadFactor);
+        <span class="hljs-keyword">this</span>.accessOrder = accessOrder;
     }
 </code></pre>
 <p>&#x5176;&#x4E2D;accessOrder&#x8BBE;&#x7F6E;&#x4E3A;true&#x5219;&#x4E3A;&#x8BBF;&#x95EE;&#x987A;&#x5E8F;&#xFF0C;&#x4E3A;false&#xFF0C;&#x5219;&#x4E3A;&#x63D2;&#x5165;&#x987A;&#x5E8F;&#x3002;</p>
 <p>&#x4EE5;&#x5177;&#x4F53;&#x4F8B;&#x5B50;&#x89E3;&#x91CA;&#xFF1A;
 &#x5F53;&#x8BBE;&#x7F6E;&#x4E3A;true&#x65F6;</p>
-<pre><code class="lang-java">public static final void main(String[] args) {
-        LinkedHashMap&lt;Integer, Integer&gt; map = new LinkedHashMap&lt;&gt;(0, 0.75f, true);
-        map.put(0, 0);
-        map.put(1, 1);
-        map.put(2, 2);
-        map.put(3, 3);
-        map.put(4, 4);
-        map.put(5, 5);
-        map.put(6, 6);
-        map.get(1);
-        map.get(2);
+<pre><code class="lang-java"><span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">final</span> <span class="hljs-keyword">void</span> <span class="hljs-title">main</span><span class="hljs-params">(String[] args)</span> </span>{
+        LinkedHashMap&lt;Integer, Integer&gt; map = <span class="hljs-keyword">new</span> LinkedHashMap&lt;&gt;(<span class="hljs-number">0</span>, <span class="hljs-number">0.75f</span>, <span class="hljs-keyword">true</span>);
+        map.put(<span class="hljs-number">0</span>, <span class="hljs-number">0</span>);
+        map.put(<span class="hljs-number">1</span>, <span class="hljs-number">1</span>);
+        map.put(<span class="hljs-number">2</span>, <span class="hljs-number">2</span>);
+        map.put(<span class="hljs-number">3</span>, <span class="hljs-number">3</span>);
+        map.put(<span class="hljs-number">4</span>, <span class="hljs-number">4</span>);
+        map.put(<span class="hljs-number">5</span>, <span class="hljs-number">5</span>);
+        map.put(<span class="hljs-number">6</span>, <span class="hljs-number">6</span>);
+        map.get(<span class="hljs-number">1</span>);
+        map.get(<span class="hljs-number">2</span>);
 
-        for (Map.Entry&lt;Integer, Integer&gt; entry : map.entrySet()) {
-            System.out.println(entry.getKey() + &quot;:&quot; + entry.getValue());
+        <span class="hljs-keyword">for</span> (Map.Entry&lt;Integer, Integer&gt; entry : map.entrySet()) {
+            System.out.println(entry.getKey() + <span class="hljs-string">&quot;:&quot;</span> + entry.getValue());
 
         }
     }
@@ -3773,70 +3777,70 @@
 </blockquote>
 <p>&#x5373;&#x6700;&#x8FD1;&#x8BBF;&#x95EE;&#x7684;&#x6700;&#x540E;&#x8F93;&#x51FA;&#xFF0C;&#x90A3;&#x4E48;&#x8FD9;&#x5C31;&#x6B63;&#x597D;&#x6EE1;&#x8DB3;&#x7684;LRU&#x7F13;&#x5B58;&#x7B97;&#x6CD5;&#x7684;&#x601D;&#x60F3;&#x3002;<strong>&#x53EF;&#x89C1;LruCache&#x5DE7;&#x5999;&#x5B9E;&#x73B0;&#xFF0C;&#x5C31;&#x662F;&#x5229;&#x7528;&#x4E86;LinkedHashMap&#x7684;&#x8FD9;&#x79CD;&#x6570;&#x636E;&#x7ED3;&#x6784;&#x3002;</strong></p>
 <p>&#x4E0B;&#x9762;&#x6211;&#x4EEC;&#x5728;LruCache&#x6E90;&#x7801;&#x4E2D;&#x5177;&#x4F53;&#x770B;&#x770B;&#xFF0C;&#x600E;&#x4E48;&#x5E94;&#x7528;LinkedHashMap&#x6765;&#x5B9E;&#x73B0;&#x7F13;&#x5B58;&#x7684;&#x6DFB;&#x52A0;&#xFF0C;&#x83B7;&#x5F97;&#x548C;&#x5220;&#x9664;&#x7684;&#x3002;</p>
-<pre><code class="lang-java"> public LruCache(int maxSize) {
-        if (maxSize &lt;= 0) {
-            throw new IllegalArgumentException(&quot;maxSize &lt;= 0&quot;);
+<pre><code class="lang-java"> <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-title">LruCache</span><span class="hljs-params">(<span class="hljs-keyword">int</span> maxSize)</span> </span>{
+        <span class="hljs-keyword">if</span> (maxSize &lt;= <span class="hljs-number">0</span>) {
+            <span class="hljs-keyword">throw</span> <span class="hljs-keyword">new</span> IllegalArgumentException(<span class="hljs-string">&quot;maxSize &lt;= 0&quot;</span>);
         }
-        this.maxSize = maxSize;
-        this.map = new LinkedHashMap&lt;K, V&gt;(0, 0.75f, true);
+        <span class="hljs-keyword">this</span>.maxSize = maxSize;
+        <span class="hljs-keyword">this</span>.map = <span class="hljs-keyword">new</span> LinkedHashMap&lt;K, V&gt;(<span class="hljs-number">0</span>, <span class="hljs-number">0.75f</span>, <span class="hljs-keyword">true</span>);
     }
 </code></pre>
 <p>&#x4ECE;LruCache&#x7684;&#x6784;&#x9020;&#x51FD;&#x6570;&#x4E2D;&#x53EF;&#x4EE5;&#x770B;&#x5230;&#x6B63;&#x662F;&#x7528;&#x4E86;LinkedHashMap&#x7684;&#x8BBF;&#x95EE;&#x987A;&#x5E8F;&#x3002;</p>
 <p><strong>put()&#x65B9;&#x6CD5;</strong></p>
-<pre><code class="lang-java">public final V put(K key, V value) {
-         //&#x4E0D;&#x53EF;&#x4E3A;&#x7A7A;&#xFF0C;&#x5426;&#x5219;&#x629B;&#x51FA;&#x5F02;&#x5E38;
-        if (key == null || value == null) {
-            throw new NullPointerException(&quot;key == null || value == null&quot;);
+<pre><code class="lang-java"><span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">final</span> V <span class="hljs-title">put</span><span class="hljs-params">(K key, V value)</span> </span>{
+         <span class="hljs-comment">//&#x4E0D;&#x53EF;&#x4E3A;&#x7A7A;&#xFF0C;&#x5426;&#x5219;&#x629B;&#x51FA;&#x5F02;&#x5E38;</span>
+        <span class="hljs-keyword">if</span> (key == <span class="hljs-keyword">null</span> || value == <span class="hljs-keyword">null</span>) {
+            <span class="hljs-keyword">throw</span> <span class="hljs-keyword">new</span> NullPointerException(<span class="hljs-string">&quot;key == null || value == null&quot;</span>);
         }
         V previous;
-        synchronized (this) {
-            //&#x63D2;&#x5165;&#x7684;&#x7F13;&#x5B58;&#x5BF9;&#x8C61;&#x503C;&#x52A0;1
+        <span class="hljs-keyword">synchronized</span> (<span class="hljs-keyword">this</span>) {
+            <span class="hljs-comment">//&#x63D2;&#x5165;&#x7684;&#x7F13;&#x5B58;&#x5BF9;&#x8C61;&#x503C;&#x52A0;1</span>
             putCount++;
-            //&#x589E;&#x52A0;&#x5DF2;&#x6709;&#x7F13;&#x5B58;&#x7684;&#x5927;&#x5C0F;
+            <span class="hljs-comment">//&#x589E;&#x52A0;&#x5DF2;&#x6709;&#x7F13;&#x5B58;&#x7684;&#x5927;&#x5C0F;</span>
             size += safeSizeOf(key, value);
-           //&#x5411;map&#x4E2D;&#x52A0;&#x5165;&#x7F13;&#x5B58;&#x5BF9;&#x8C61;
+           <span class="hljs-comment">//&#x5411;map&#x4E2D;&#x52A0;&#x5165;&#x7F13;&#x5B58;&#x5BF9;&#x8C61;</span>
             previous = map.put(key, value);
-            //&#x5982;&#x679C;&#x5DF2;&#x6709;&#x7F13;&#x5B58;&#x5BF9;&#x8C61;&#xFF0C;&#x5219;&#x7F13;&#x5B58;&#x5927;&#x5C0F;&#x6062;&#x590D;&#x5230;&#x4E4B;&#x524D;
-            if (previous != null) {
+            <span class="hljs-comment">//&#x5982;&#x679C;&#x5DF2;&#x6709;&#x7F13;&#x5B58;&#x5BF9;&#x8C61;&#xFF0C;&#x5219;&#x7F13;&#x5B58;&#x5927;&#x5C0F;&#x6062;&#x590D;&#x5230;&#x4E4B;&#x524D;</span>
+            <span class="hljs-keyword">if</span> (previous != <span class="hljs-keyword">null</span>) {
                 size -= safeSizeOf(key, previous);
             }
         }
-        //entryRemoved()&#x662F;&#x4E2A;&#x7A7A;&#x65B9;&#x6CD5;&#xFF0C;&#x53EF;&#x4EE5;&#x81EA;&#x884C;&#x5B9E;&#x73B0;
-        if (previous != null) {
-            entryRemoved(false, key, previous, value);
+        <span class="hljs-comment">//entryRemoved()&#x662F;&#x4E2A;&#x7A7A;&#x65B9;&#x6CD5;&#xFF0C;&#x53EF;&#x4EE5;&#x81EA;&#x884C;&#x5B9E;&#x73B0;</span>
+        <span class="hljs-keyword">if</span> (previous != <span class="hljs-keyword">null</span>) {
+            entryRemoved(<span class="hljs-keyword">false</span>, key, previous, value);
         }
-        //&#x8C03;&#x6574;&#x7F13;&#x5B58;&#x5927;&#x5C0F;(&#x5173;&#x952E;&#x65B9;&#x6CD5;)
+        <span class="hljs-comment">//&#x8C03;&#x6574;&#x7F13;&#x5B58;&#x5927;&#x5C0F;(&#x5173;&#x952E;&#x65B9;&#x6CD5;)</span>
         trimToSize(maxSize);
-        return previous;
+        <span class="hljs-keyword">return</span> previous;
     }
 </code></pre>
 <p>&#x53EF;&#x4EE5;&#x770B;&#x5230;put()&#x65B9;&#x6CD5;&#x5E76;&#x6CA1;&#x6709;&#x4EC0;&#x4E48;&#x96BE;&#x70B9;&#xFF0C;&#x91CD;&#x8981;&#x7684;&#x5C31;&#x662F;&#x5728;&#x6DFB;&#x52A0;&#x8FC7;&#x7F13;&#x5B58;&#x5BF9;&#x8C61;&#x540E;&#xFF0C;&#x8C03;&#x7528; trimToSize()&#x65B9;&#x6CD5;&#xFF0C;&#x6765;&#x5224;&#x65AD;&#x7F13;&#x5B58;&#x662F;&#x5426;&#x5DF2;&#x6EE1;&#xFF0C;&#x5982;&#x679C;&#x6EE1;&#x4E86;&#x5C31;&#x8981;&#x5220;&#x9664;&#x8FD1;&#x671F;&#x6700;&#x5C11;&#x4F7F;&#x7528;&#x7684;&#x7B97;&#x6CD5;&#x3002;</p>
 <p><strong>trimToSize()&#x65B9;&#x6CD5;</strong></p>
-<pre><code class="lang-java"> public void trimToSize(int maxSize) {
-        //&#x6B7B;&#x5FAA;&#x73AF;
-        while (true) {
+<pre><code class="lang-java"> <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">trimToSize</span><span class="hljs-params">(<span class="hljs-keyword">int</span> maxSize)</span> </span>{
+        <span class="hljs-comment">//&#x6B7B;&#x5FAA;&#x73AF;</span>
+        <span class="hljs-keyword">while</span> (<span class="hljs-keyword">true</span>) {
             K key;
             V value;
-            synchronized (this) {
-                //&#x5982;&#x679C;map&#x4E3A;&#x7A7A;&#x5E76;&#x4E14;&#x7F13;&#x5B58;size&#x4E0D;&#x7B49;&#x4E8E;0&#x6216;&#x8005;&#x7F13;&#x5B58;size&#x5C0F;&#x4E8E;0&#xFF0C;&#x629B;&#x51FA;&#x5F02;&#x5E38;
-                if (size &lt; 0 || (map.isEmpty() &amp;&amp; size != 0)) {
-                    throw new IllegalStateException(getClass().getName()
-                            + &quot;.sizeOf() is reporting inconsistent results!&quot;);
+            <span class="hljs-keyword">synchronized</span> (<span class="hljs-keyword">this</span>) {
+                <span class="hljs-comment">//&#x5982;&#x679C;map&#x4E3A;&#x7A7A;&#x5E76;&#x4E14;&#x7F13;&#x5B58;size&#x4E0D;&#x7B49;&#x4E8E;0&#x6216;&#x8005;&#x7F13;&#x5B58;size&#x5C0F;&#x4E8E;0&#xFF0C;&#x629B;&#x51FA;&#x5F02;&#x5E38;</span>
+                <span class="hljs-keyword">if</span> (size &lt; <span class="hljs-number">0</span> || (map.isEmpty() &amp;&amp; size != <span class="hljs-number">0</span>)) {
+                    <span class="hljs-keyword">throw</span> <span class="hljs-keyword">new</span> IllegalStateException(getClass().getName()
+                            + <span class="hljs-string">&quot;.sizeOf() is reporting inconsistent results!&quot;</span>);
                 }
-                //&#x5982;&#x679C;&#x7F13;&#x5B58;&#x5927;&#x5C0F;size&#x5C0F;&#x4E8E;&#x6700;&#x5927;&#x7F13;&#x5B58;&#xFF0C;&#x6216;&#x8005;map&#x4E3A;&#x7A7A;&#xFF0C;&#x4E0D;&#x9700;&#x8981;&#x518D;&#x5220;&#x9664;&#x7F13;&#x5B58;&#x5BF9;&#x8C61;&#xFF0C;&#x8DF3;&#x51FA;&#x5FAA;&#x73AF;
-                if (size &lt;= maxSize || map.isEmpty()) {
-                    break;
+                <span class="hljs-comment">//&#x5982;&#x679C;&#x7F13;&#x5B58;&#x5927;&#x5C0F;size&#x5C0F;&#x4E8E;&#x6700;&#x5927;&#x7F13;&#x5B58;&#xFF0C;&#x6216;&#x8005;map&#x4E3A;&#x7A7A;&#xFF0C;&#x4E0D;&#x9700;&#x8981;&#x518D;&#x5220;&#x9664;&#x7F13;&#x5B58;&#x5BF9;&#x8C61;&#xFF0C;&#x8DF3;&#x51FA;&#x5FAA;&#x73AF;</span>
+                <span class="hljs-keyword">if</span> (size &lt;= maxSize || map.isEmpty()) {
+                    <span class="hljs-keyword">break</span>;
                 }
-                //&#x8FED;&#x4EE3;&#x5668;&#x83B7;&#x53D6;&#x7B2C;&#x4E00;&#x4E2A;&#x5BF9;&#x8C61;&#xFF0C;&#x5373;&#x961F;&#x5C3E;&#x7684;&#x5143;&#x7D20;&#xFF0C;&#x8FD1;&#x671F;&#x6700;&#x5C11;&#x8BBF;&#x95EE;&#x7684;&#x5143;&#x7D20;
+                <span class="hljs-comment">//&#x8FED;&#x4EE3;&#x5668;&#x83B7;&#x53D6;&#x7B2C;&#x4E00;&#x4E2A;&#x5BF9;&#x8C61;&#xFF0C;&#x5373;&#x961F;&#x5C3E;&#x7684;&#x5143;&#x7D20;&#xFF0C;&#x8FD1;&#x671F;&#x6700;&#x5C11;&#x8BBF;&#x95EE;&#x7684;&#x5143;&#x7D20;</span>
                 Map.Entry&lt;K, V&gt; toEvict = map.entrySet().iterator().next();
                 key = toEvict.getKey();
                 value = toEvict.getValue();
-                //&#x5220;&#x9664;&#x8BE5;&#x5BF9;&#x8C61;&#xFF0C;&#x5E76;&#x66F4;&#x65B0;&#x7F13;&#x5B58;&#x5927;&#x5C0F;
+                <span class="hljs-comment">//&#x5220;&#x9664;&#x8BE5;&#x5BF9;&#x8C61;&#xFF0C;&#x5E76;&#x66F4;&#x65B0;&#x7F13;&#x5B58;&#x5927;&#x5C0F;</span>
                 map.remove(key);
                 size -= safeSizeOf(key, value);
                 evictionCount++;
             }
-            entryRemoved(true, key, value, null);
+            entryRemoved(<span class="hljs-keyword">true</span>, key, value, <span class="hljs-keyword">null</span>);
         }
     }
 </code></pre>
@@ -3844,43 +3848,43 @@
 <p>&#x5F53;&#x8C03;&#x7528;LruCache&#x7684;get()&#x65B9;&#x6CD5;&#x83B7;&#x53D6;&#x96C6;&#x5408;&#x4E2D;&#x7684;&#x7F13;&#x5B58;&#x5BF9;&#x8C61;&#x65F6;&#xFF0C;&#x5C31;&#x4EE3;&#x8868;&#x8BBF;&#x95EE;&#x4E86;&#x4E00;&#x6B21;&#x8BE5;&#x5143;&#x7D20;&#xFF0C;&#x5C06;&#x4F1A;&#x66F4;&#x65B0;&#x961F;&#x5217;&#xFF0C;&#x4FDD;&#x6301;&#x6574;&#x4E2A;&#x961F;&#x5217;&#x662F;&#x6309;&#x7167;&#x8BBF;&#x95EE;&#x987A;&#x5E8F;&#x6392;&#x5E8F;&#x3002;&#x8FD9;&#x4E2A;&#x66F4;&#x65B0;&#x8FC7;&#x7A0B;&#x5C31;&#x662F;&#x5728;LinkedHashMap&#x4E2D;&#x7684;get()&#x65B9;&#x6CD5;&#x4E2D;&#x5B8C;&#x6210;&#x7684;&#x3002;</p>
 <p>&#x5148;&#x770B;LruCache&#x7684;get()&#x65B9;&#x6CD5;</p>
 <p><strong>get()&#x65B9;&#x6CD5;</strong></p>
-<pre><code class="lang-java">public final V get(K key) {
-        //key&#x4E3A;&#x7A7A;&#x629B;&#x51FA;&#x5F02;&#x5E38;
-        if (key == null) {
-            throw new NullPointerException(&quot;key == null&quot;);
+<pre><code class="lang-java"><span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">final</span> V <span class="hljs-title">get</span><span class="hljs-params">(K key)</span> </span>{
+        <span class="hljs-comment">//key&#x4E3A;&#x7A7A;&#x629B;&#x51FA;&#x5F02;&#x5E38;</span>
+        <span class="hljs-keyword">if</span> (key == <span class="hljs-keyword">null</span>) {
+            <span class="hljs-keyword">throw</span> <span class="hljs-keyword">new</span> NullPointerException(<span class="hljs-string">&quot;key == null&quot;</span>);
         }
 
         V mapValue;
-        synchronized (this) {
-            //&#x83B7;&#x53D6;&#x5BF9;&#x5E94;&#x7684;&#x7F13;&#x5B58;&#x5BF9;&#x8C61;
-            //get()&#x65B9;&#x6CD5;&#x4F1A;&#x5B9E;&#x73B0;&#x5C06;&#x8BBF;&#x95EE;&#x7684;&#x5143;&#x7D20;&#x66F4;&#x65B0;&#x5230;&#x961F;&#x5217;&#x5934;&#x90E8;&#x7684;&#x529F;&#x80FD;
+        <span class="hljs-keyword">synchronized</span> (<span class="hljs-keyword">this</span>) {
+            <span class="hljs-comment">//&#x83B7;&#x53D6;&#x5BF9;&#x5E94;&#x7684;&#x7F13;&#x5B58;&#x5BF9;&#x8C61;</span>
+            <span class="hljs-comment">//get()&#x65B9;&#x6CD5;&#x4F1A;&#x5B9E;&#x73B0;&#x5C06;&#x8BBF;&#x95EE;&#x7684;&#x5143;&#x7D20;&#x66F4;&#x65B0;&#x5230;&#x961F;&#x5217;&#x5934;&#x90E8;&#x7684;&#x529F;&#x80FD;</span>
             mapValue = map.get(key);
-            if (mapValue != null) {
+            <span class="hljs-keyword">if</span> (mapValue != <span class="hljs-keyword">null</span>) {
                 hitCount++;
-                return mapValue;
+                <span class="hljs-keyword">return</span> mapValue;
             }
             missCount++;
         }
 </code></pre>
 <p>&#x5176;&#x4E2D;LinkedHashMap&#x7684;get()&#x65B9;&#x6CD5;&#x5982;&#x4E0B;&#xFF1A;</p>
-<pre><code class="lang-Java">public V get(Object key) {
+<pre><code class="lang-Java"><span class="hljs-function"><span class="hljs-keyword">public</span> V <span class="hljs-title">get</span><span class="hljs-params">(Object key)</span> </span>{
         LinkedHashMapEntry&lt;K,V&gt; e = (LinkedHashMapEntry&lt;K,V&gt;)getEntry(key);
-        if (e == null)
-            return null;
-        //&#x5B9E;&#x73B0;&#x6392;&#x5E8F;&#x7684;&#x5173;&#x952E;&#x65B9;&#x6CD5;
-        e.recordAccess(this);
-        return e.value;
+        <span class="hljs-keyword">if</span> (e == <span class="hljs-keyword">null</span>)
+            <span class="hljs-keyword">return</span> <span class="hljs-keyword">null</span>;
+        <span class="hljs-comment">//&#x5B9E;&#x73B0;&#x6392;&#x5E8F;&#x7684;&#x5173;&#x952E;&#x65B9;&#x6CD5;</span>
+        e.recordAccess(<span class="hljs-keyword">this</span>);
+        <span class="hljs-keyword">return</span> e.value;
     }
 </code></pre>
 <p>&#x8C03;&#x7528;recordAccess()&#x65B9;&#x6CD5;&#x5982;&#x4E0B;&#xFF1A;</p>
-<pre><code class="lang-Java"> void recordAccess(HashMap&lt;K,V&gt; m) {
+<pre><code class="lang-Java"> <span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">recordAccess</span><span class="hljs-params">(HashMap&lt;K,V&gt; m)</span> </span>{
             LinkedHashMap&lt;K,V&gt; lm = (LinkedHashMap&lt;K,V&gt;)m;
-            //&#x5224;&#x65AD;&#x662F;&#x5426;&#x662F;&#x8BBF;&#x95EE;&#x6392;&#x5E8F;
-            if (lm.accessOrder) {
+            <span class="hljs-comment">//&#x5224;&#x65AD;&#x662F;&#x5426;&#x662F;&#x8BBF;&#x95EE;&#x6392;&#x5E8F;</span>
+            <span class="hljs-keyword">if</span> (lm.accessOrder) {
                 lm.modCount++;
-                //&#x5220;&#x9664;&#x6B64;&#x5143;&#x7D20;
+                <span class="hljs-comment">//&#x5220;&#x9664;&#x6B64;&#x5143;&#x7D20;</span>
                 remove();
-                //&#x5C06;&#x6B64;&#x5143;&#x7D20;&#x79FB;&#x52A8;&#x5230;&#x961F;&#x5217;&#x7684;&#x5934;&#x90E8;
+                <span class="hljs-comment">//&#x5C06;&#x6B64;&#x5143;&#x7D20;&#x79FB;&#x52A8;&#x5230;&#x961F;&#x5217;&#x7684;&#x5934;&#x90E8;</span>
                 addBefore(lm.header);
             }
         }
@@ -3931,7 +3935,7 @@
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"LruCache原理解析","level":"3.1.11","depth":2,"next":{"title":"Window、Activity、DecorView以及ViewRoot之间的关系","level":"3.1.12","depth":2,"path":"android/basis/decorview.md","ref":"android/basis/decorview.md","articles":[]},"previous":{"title":"IntentService详解","level":"3.1.10","depth":2,"path":"android/basis/IntentService.md","ref":"android/basis/IntentService.md","articles":[]},"dir":"ltr"},"config":{"plugins":["-lunr","-search","-highlight","-livereload","search-plus@^0.0.11","simple-page-toc@^0.1.1","github@^2.0.0","github-buttons@2.1.0","edit-link@^2.0.2","advanced-emoji@^0.2.1","anchors@^0.7.1","include-codeblock@^3.0.2","ace@^0.3.2","emphasize@^1.1.0","katex@^1.1.3","splitter@^0.0.8","tbfed-pagefooter@^0.0.1","expandable-chapters-small@^0.1.7","sectionx@^3.1.0","local-video@^1.0.1","anchor-navigation-ex@0.1.8","favicon@^0.0.2"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"tbfed-pagefooter":{"copyright":"Copyright © ruheng.com 2017","modify_label":"该文件修订时间：","modify_format":"YYYY-MM-DD HH:mm:ss"},"emphasize":{},"ace":{},"github":{"url":"https://github.com/LRH1993/android_interview"},"simple-page-toc":{"maxDepth":3,"skipFirstH1":true},"splitter":{},"katex":{},"fontsettings":{"theme":"white","family":"sans","size":2},"sectionx":{"tag":"b"},"anchor-navigation-ex":{"isRewritePageTitle":false,"tocLevel1Icon":"fa fa-hand-o-right","tocLevel2Icon":"fa fa-hand-o-right","tocLevel3Icon":"fa fa-hand-o-right"},"favicon":{"shortcut":"favicon.ico","bookmark":"favicon.ico"},"github-buttons":{"repo":"LRH1993/android_interview","types":["star"],"size":"small"},"expandable-chapters-small":{},"local-video":{},"advanced-emoji":{"embedEmojis":false},"include-codeblock":{"check":false,"edit":true,"fixlang":false,"lang":"","template":"ace","theme":"chrome","unindent":true},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":true,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"edit-link":{"label":"Edit This Page","base":"https://github.com/LRH1993/android_interview/edit/master"},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":true},"anchors":{},"search-plus":{}},"theme":"default","author":"ruheng","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"Android校招面试指南","language":"zh-hans","output.name":"site","links":{"sidebar":{"Home":"http://lruheng.com/"}},"gitbook":"3.2.3","description":"Android面试必备，记录自己的秋招之路"},"file":{"path":"android/basis/lrucache.md","mtime":"2017-08-23T11:28:18.000Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2017-10-16T12:05:21.906Z"},"basePath":"../..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"LruCache原理解析","level":"3.1.11","depth":2,"next":{"title":"Window、Activity、DecorView以及ViewRoot之间的关系","level":"3.1.12","depth":2,"path":"android/basis/decorview.md","ref":"android/basis/decorview.md","articles":[]},"previous":{"title":"IntentService详解","level":"3.1.10","depth":2,"path":"android/basis/IntentService.md","ref":"android/basis/IntentService.md","articles":[]},"dir":"ltr"},"config":{"plugins":["-lunr","-search","-livereload","search-plus@^0.0.11","simple-page-toc@^0.1.1","github@^2.0.0","github-buttons@2.1.0","edit-link@^2.0.2","advanced-emoji@^0.2.1","anchors@^0.7.1","include-codeblock@^3.0.2","ace@^0.3.2","emphasize@^1.1.0","katex@^1.1.3","splitter@^0.0.8","tbfed-pagefooter@^0.0.1","expandable-chapters-small@^0.1.7","sectionx@^3.1.0","local-video@^1.0.1","anchor-navigation-ex@0.1.8","favicon@^0.0.2"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"tbfed-pagefooter":{"copyright":"Copyright © ruheng.com 2017","modify_label":"该文件修订时间：","modify_format":"YYYY-MM-DD HH:mm:ss"},"emphasize":{},"ace":{},"github":{"url":"https://github.com/LRH1993/android_interview"},"simple-page-toc":{"maxDepth":3,"skipFirstH1":true},"splitter":{},"katex":{},"fontsettings":{"theme":"white","family":"sans","size":2},"sectionx":{"tag":"b"},"highlight":{},"anchor-navigation-ex":{"isRewritePageTitle":false,"tocLevel1Icon":"fa fa-hand-o-right","tocLevel2Icon":"fa fa-hand-o-right","tocLevel3Icon":"fa fa-hand-o-right"},"favicon":{"shortcut":"favicon.ico","bookmark":"favicon.ico"},"github-buttons":{"repo":"LRH1993/android_interview","types":["star"],"size":"small"},"expandable-chapters-small":{},"local-video":{},"advanced-emoji":{"embedEmojis":false},"include-codeblock":{"check":false,"edit":false,"fixlang":false,"lang":"","template":"default","theme":"chrome","unindent":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":true,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"edit-link":{"label":"Edit This Page","base":"https://github.com/LRH1993/android_interview/edit/master"},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":true},"anchors":{},"search-plus":{}},"theme":"default","author":"ruheng","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"Android校招面试指南","language":"zh-hans","output.name":"site","links":{"sidebar":{"Home":"http://lruheng.com/"}},"gitbook":"3.2.3","description":"Android面试必备，记录自己的秋招之路"},"file":{"path":"android/basis/lrucache.md","mtime":"2017-08-23T11:28:18.000Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2017-10-16T13:00:43.989Z"},"basePath":"../..","book":{"language":""}});
         });
     </script>
 </div>

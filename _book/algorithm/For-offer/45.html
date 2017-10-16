@@ -69,6 +69,10 @@
                 
             
                 
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
                 <link rel="stylesheet" href="../../gitbook/gitbook-plugin-fontsettings/website.css">
                 
             
@@ -3710,30 +3714,30 @@
 <h2 id="&#x4E8C;&#x3001;&#x89E3;&#x9898;&#x601D;&#x8DEF;"><a name="&#x4E8C;&#x3001;&#x89E3;&#x9898;&#x601D;&#x8DEF;" class="anchor-navigation-ex-anchor" href="#&#x4E8C;&#x3001;&#x89E3;&#x9898;&#x601D;&#x8DEF;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x4E8C;&#x3001;&#x89E3;&#x9898;&#x601D;&#x8DEF;</h2>
 <p>&#x521B;&#x5EFA;&#x4E00;&#x4E2A;&#x603B;&#x5171;&#x6709;n &#x4E2A;&#x7ED3;&#x70B9;&#x7684;&#x73AF;&#x5F62;&#x94FE;&#x8868;&#xFF0C;&#x7136;&#x540E;&#x6BCF;&#x6B21;&#x5728;&#x8FD9;&#x4E2A;&#x94FE;&#x8868;&#x4E2D;&#x5220;&#x9664;&#x7B2C;m &#x4E2A;&#x7ED3;&#x70B9;&#x3002;</p>
 <h2 id="&#x4E09;&#x3001;&#x89E3;&#x9898;&#x4EE3;&#x7801;"><a name="&#x4E09;&#x3001;&#x89E3;&#x9898;&#x4EE3;&#x7801;" class="anchor-navigation-ex-anchor" href="#&#x4E09;&#x3001;&#x89E3;&#x9898;&#x4EE3;&#x7801;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x4E09;&#x3001;&#x89E3;&#x9898;&#x4EE3;&#x7801;</h2>
-<pre><code class="lang-java">public static int lastRemaining(int n, int m) {
-    if (n &lt; 1 || m &lt; 1) {
-        return -1;
+<pre><code class="lang-java"><span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">int</span> <span class="hljs-title">lastRemaining</span><span class="hljs-params">(<span class="hljs-keyword">int</span> n, <span class="hljs-keyword">int</span> m)</span> </span>{
+    <span class="hljs-keyword">if</span> (n &lt; <span class="hljs-number">1</span> || m &lt; <span class="hljs-number">1</span>) {
+        <span class="hljs-keyword">return</span> -<span class="hljs-number">1</span>;
     }
 
-    List&lt;Integer&gt; list = new LinkedList&lt;&gt;();
-    for (int i = 0; i &lt; n; i++) {
+    List&lt;Integer&gt; list = <span class="hljs-keyword">new</span> LinkedList&lt;&gt;();
+    <span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> i = <span class="hljs-number">0</span>; i &lt; n; i++) {
         list.add(i);
     }
 
-    // &#x8981;&#x5220;&#x9664;&#x5143;&#x7D20;&#x7684;&#x4F4D;&#x7F6E;
-    int idx = 0;
+    <span class="hljs-comment">// &#x8981;&#x5220;&#x9664;&#x5143;&#x7D20;&#x7684;&#x4F4D;&#x7F6E;</span>
+    <span class="hljs-keyword">int</span> idx = <span class="hljs-number">0</span>;
 
-    while (list.size() &gt; 1) {
+    <span class="hljs-keyword">while</span> (list.size() &gt; <span class="hljs-number">1</span>) {
 
-        // &#x53EA;&#x8981;&#x79FB;&#x52A8;m-1&#x6B21;&#x5C31;&#x53EF;&#x4EE5;&#x79FB;&#x52A8;&#x5230;&#x4E0B;&#x4E00;&#x4E2A;&#x8981;&#x5220;&#x9664;&#x7684;&#x5143;&#x7D20;&#x4E0A;
-        for (int i = 1; i &lt; m; i++) {
-            idx = (idx + 1) % list.size();
+        <span class="hljs-comment">// &#x53EA;&#x8981;&#x79FB;&#x52A8;m-1&#x6B21;&#x5C31;&#x53EF;&#x4EE5;&#x79FB;&#x52A8;&#x5230;&#x4E0B;&#x4E00;&#x4E2A;&#x8981;&#x5220;&#x9664;&#x7684;&#x5143;&#x7D20;&#x4E0A;</span>
+        <span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> i = <span class="hljs-number">1</span>; i &lt; m; i++) {
+            idx = (idx + <span class="hljs-number">1</span>) % list.size();
         }
 
         list.remove(idx);
     }
 
-    return list.get(0);
+    <span class="hljs-keyword">return</span> list.get(<span class="hljs-number">0</span>);
 }
 </code></pre>
 <footer class="page-footer"><span class="copyright">Copyright &#xA9; ruheng.com 2017 all right reserved&#xFF0C;powered by Gitbook</span><span class="footer-modification">&#x8BE5;&#x6587;&#x4EF6;&#x4FEE;&#x8BA2;&#x65F6;&#x95F4;&#xFF1A;
@@ -3781,7 +3785,7 @@
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"45.约瑟夫环问题","level":"5.1.45","depth":2,"next":{"title":"46.不用加减乘除做加法","level":"5.1.46","depth":2,"path":"algorithm/For-offer/46.md","ref":"algorithm/For-offer/46.md","articles":[]},"previous":{"title":"44.扑克牌的顺子","level":"5.1.44","depth":2,"path":"algorithm/For-offer/44.md","ref":"algorithm/For-offer/44.md","articles":[]},"dir":"ltr"},"config":{"plugins":["-lunr","-search","-highlight","-livereload","search-plus@^0.0.11","simple-page-toc@^0.1.1","github@^2.0.0","github-buttons@2.1.0","edit-link@^2.0.2","advanced-emoji@^0.2.1","anchors@^0.7.1","include-codeblock@^3.0.2","ace@^0.3.2","emphasize@^1.1.0","katex@^1.1.3","splitter@^0.0.8","tbfed-pagefooter@^0.0.1","expandable-chapters-small@^0.1.7","sectionx@^3.1.0","local-video@^1.0.1","anchor-navigation-ex@0.1.8","favicon@^0.0.2"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"tbfed-pagefooter":{"copyright":"Copyright © ruheng.com 2017","modify_label":"该文件修订时间：","modify_format":"YYYY-MM-DD HH:mm:ss"},"emphasize":{},"ace":{},"github":{"url":"https://github.com/LRH1993/android_interview"},"simple-page-toc":{"maxDepth":3,"skipFirstH1":true},"splitter":{},"katex":{},"fontsettings":{"theme":"white","family":"sans","size":2},"sectionx":{"tag":"b"},"anchor-navigation-ex":{"isRewritePageTitle":false,"tocLevel1Icon":"fa fa-hand-o-right","tocLevel2Icon":"fa fa-hand-o-right","tocLevel3Icon":"fa fa-hand-o-right"},"favicon":{"shortcut":"favicon.ico","bookmark":"favicon.ico"},"github-buttons":{"repo":"LRH1993/android_interview","types":["star"],"size":"small"},"expandable-chapters-small":{},"local-video":{},"advanced-emoji":{"embedEmojis":false},"include-codeblock":{"check":false,"edit":true,"fixlang":false,"lang":"","template":"ace","theme":"chrome","unindent":true},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":true,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"edit-link":{"label":"Edit This Page","base":"https://github.com/LRH1993/android_interview/edit/master"},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":true},"anchors":{},"search-plus":{}},"theme":"default","author":"ruheng","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"Android校招面试指南","language":"zh-hans","output.name":"site","links":{"sidebar":{"Home":"http://lruheng.com/"}},"gitbook":"3.2.3","description":"Android面试必备，记录自己的秋招之路"},"file":{"path":"algorithm/For-offer/45.md","mtime":"2017-08-31T02:52:50.000Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2017-10-16T12:05:21.906Z"},"basePath":"../..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"45.约瑟夫环问题","level":"5.1.45","depth":2,"next":{"title":"46.不用加减乘除做加法","level":"5.1.46","depth":2,"path":"algorithm/For-offer/46.md","ref":"algorithm/For-offer/46.md","articles":[]},"previous":{"title":"44.扑克牌的顺子","level":"5.1.44","depth":2,"path":"algorithm/For-offer/44.md","ref":"algorithm/For-offer/44.md","articles":[]},"dir":"ltr"},"config":{"plugins":["-lunr","-search","-livereload","search-plus@^0.0.11","simple-page-toc@^0.1.1","github@^2.0.0","github-buttons@2.1.0","edit-link@^2.0.2","advanced-emoji@^0.2.1","anchors@^0.7.1","include-codeblock@^3.0.2","ace@^0.3.2","emphasize@^1.1.0","katex@^1.1.3","splitter@^0.0.8","tbfed-pagefooter@^0.0.1","expandable-chapters-small@^0.1.7","sectionx@^3.1.0","local-video@^1.0.1","anchor-navigation-ex@0.1.8","favicon@^0.0.2"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"tbfed-pagefooter":{"copyright":"Copyright © ruheng.com 2017","modify_label":"该文件修订时间：","modify_format":"YYYY-MM-DD HH:mm:ss"},"emphasize":{},"ace":{},"github":{"url":"https://github.com/LRH1993/android_interview"},"simple-page-toc":{"maxDepth":3,"skipFirstH1":true},"splitter":{},"katex":{},"fontsettings":{"theme":"white","family":"sans","size":2},"sectionx":{"tag":"b"},"highlight":{},"anchor-navigation-ex":{"isRewritePageTitle":false,"tocLevel1Icon":"fa fa-hand-o-right","tocLevel2Icon":"fa fa-hand-o-right","tocLevel3Icon":"fa fa-hand-o-right"},"favicon":{"shortcut":"favicon.ico","bookmark":"favicon.ico"},"github-buttons":{"repo":"LRH1993/android_interview","types":["star"],"size":"small"},"expandable-chapters-small":{},"local-video":{},"advanced-emoji":{"embedEmojis":false},"include-codeblock":{"check":false,"edit":false,"fixlang":false,"lang":"","template":"default","theme":"chrome","unindent":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":true,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"edit-link":{"label":"Edit This Page","base":"https://github.com/LRH1993/android_interview/edit/master"},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":true},"anchors":{},"search-plus":{}},"theme":"default","author":"ruheng","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"Android校招面试指南","language":"zh-hans","output.name":"site","links":{"sidebar":{"Home":"http://lruheng.com/"}},"gitbook":"3.2.3","description":"Android面试必备，记录自己的秋招之路"},"file":{"path":"algorithm/For-offer/45.md","mtime":"2017-08-31T02:52:50.000Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2017-10-16T13:00:43.989Z"},"basePath":"../..","book":{"language":""}});
         });
     </script>
 </div>

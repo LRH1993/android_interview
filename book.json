@@ -13,7 +13,6 @@
     "plugins":[
         "-lunr",
         "-search",
-        "-highlight",
         "-livereload",
         "search-plus@^0.0.11",
         "simple-page-toc@^0.1.1",
@@ -47,11 +46,6 @@
                 "star"
             ],
             "size":"small"
-        },
-        "include-codeblock":{
-            "template":"ace",
-            "unindent":true,
-            "edit":true
         },
         "sharing":{
             "weibo":true,

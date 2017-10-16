@@ -69,6 +69,10 @@
                 
             
                 
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
                 <link rel="stylesheet" href="../../gitbook/gitbook-plugin-fontsettings/website.css">
                 
             
@@ -3723,73 +3727,73 @@
 <h5 id="&#x65F6;&#x5E8F;&#x56FE;"><a name="&#x65F6;&#x5E8F;&#x56FE;" class="anchor-navigation-ex-anchor" href="#&#x65F6;&#x5E8F;&#x56FE;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x65F6;&#x5E8F;&#x56FE;</h5>
 <p><img src="http://upload-images.jianshu.io/upload_images/3985563-8a26d6fcdcd54681.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></p>
 <p><strong>&#x63A5;&#x6536;&#x8005;&#x89D2;&#x8272;&#x7C7B;</strong></p>
-<pre><code class="lang-java">public class Receiver {
-    /**
+<pre><code class="lang-java"><span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Receiver</span> </span>{
+    <span class="hljs-comment">/**
      * &#x771F;&#x6B63;&#x6267;&#x884C;&#x547D;&#x4EE4;&#x76F8;&#x5E94;&#x7684;&#x64CD;&#x4F5C;
-     */
-    public void action(){
-        System.out.println(&quot;&#x6267;&#x884C;&#x64CD;&#x4F5C;&quot;);
+     */</span>
+    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">action</span><span class="hljs-params">()</span></span>{
+        System.out.println(<span class="hljs-string">&quot;&#x6267;&#x884C;&#x64CD;&#x4F5C;&quot;</span>);
     }
 }
 </code></pre>
 <p><strong>&#x62BD;&#x8C61;&#x547D;&#x4EE4;&#x89D2;&#x8272;&#x7C7B;</strong></p>
-<pre><code class="lang-java">public interface Command {
-    /**
+<pre><code class="lang-java"><span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">interface</span> <span class="hljs-title">Command</span> </span>{
+    <span class="hljs-comment">/**
      * &#x6267;&#x884C;&#x65B9;&#x6CD5;
-     */
-    void execute();
+     */</span>
+    <span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">execute</span><span class="hljs-params">()</span></span>;
 }
 </code></pre>
 <p><strong>&#x5177;&#x4F53;&#x547D;&#x4EE4;&#x89D2;&#x8272;&#x7C7B;</strong></p>
-<pre><code class="lang-java">public class ConcreteCommand implements Command {
-    //&#x6301;&#x6709;&#x76F8;&#x5E94;&#x7684;&#x63A5;&#x6536;&#x8005;&#x5BF9;&#x8C61;
-    private Receiver receiver = null;
-    /**
+<pre><code class="lang-java"><span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">ConcreteCommand</span> <span class="hljs-keyword">implements</span> <span class="hljs-title">Command</span> </span>{
+    <span class="hljs-comment">//&#x6301;&#x6709;&#x76F8;&#x5E94;&#x7684;&#x63A5;&#x6536;&#x8005;&#x5BF9;&#x8C61;</span>
+    <span class="hljs-keyword">private</span> Receiver receiver = <span class="hljs-keyword">null</span>;
+    <span class="hljs-comment">/**
      * &#x6784;&#x9020;&#x65B9;&#x6CD5;
-     */
-    public ConcreteCommand(Receiver receiver){
-        this.receiver = receiver;
+     */</span>
+    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-title">ConcreteCommand</span><span class="hljs-params">(Receiver receiver)</span></span>{
+        <span class="hljs-keyword">this</span>.receiver = receiver;
     }
-    @Override
-    public void execute() {
-        //&#x901A;&#x5E38;&#x4F1A;&#x8F6C;&#x8C03;&#x63A5;&#x6536;&#x8005;&#x5BF9;&#x8C61;&#x7684;&#x76F8;&#x5E94;&#x65B9;&#x6CD5;&#xFF0C;&#x8BA9;&#x63A5;&#x6536;&#x8005;&#x6765;&#x771F;&#x6B63;&#x6267;&#x884C;&#x529F;&#x80FD;
+    <span class="hljs-meta">@Override</span>
+    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">execute</span><span class="hljs-params">()</span> </span>{
+        <span class="hljs-comment">//&#x901A;&#x5E38;&#x4F1A;&#x8F6C;&#x8C03;&#x63A5;&#x6536;&#x8005;&#x5BF9;&#x8C61;&#x7684;&#x76F8;&#x5E94;&#x65B9;&#x6CD5;&#xFF0C;&#x8BA9;&#x63A5;&#x6536;&#x8005;&#x6765;&#x771F;&#x6B63;&#x6267;&#x884C;&#x529F;&#x80FD;</span>
         receiver.action();
     }
 
 }
 </code></pre>
 <p><strong>&#x8BF7;&#x6C42;&#x8005;&#x89D2;&#x8272;&#x7C7B;</strong></p>
-<pre><code class="lang-java">public class Invoker {
-    /**
+<pre><code class="lang-java"><span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Invoker</span> </span>{
+    <span class="hljs-comment">/**
      * &#x6301;&#x6709;&#x547D;&#x4EE4;&#x5BF9;&#x8C61;
-     */
-    private Command command = null;
-    /**
+     */</span>
+    <span class="hljs-keyword">private</span> Command command = <span class="hljs-keyword">null</span>;
+    <span class="hljs-comment">/**
      * &#x6784;&#x9020;&#x65B9;&#x6CD5;
-     */
-    public Invoker(Command command){
-        this.command = command;
+     */</span>
+    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-title">Invoker</span><span class="hljs-params">(Command command)</span></span>{
+        <span class="hljs-keyword">this</span>.command = command;
     }
-    /**
+    <span class="hljs-comment">/**
      * &#x884C;&#x52A8;&#x65B9;&#x6CD5;
-     */
-    public void action(){
+     */</span>
+    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">action</span><span class="hljs-params">()</span></span>{
 
         command.execute();
     }
 }
 </code></pre>
 <p><strong>&#x5BA2;&#x6237;&#x7AEF;&#x89D2;&#x8272;&#x7C7B;</strong></p>
-<pre><code class="lang-java">public class Client {
+<pre><code class="lang-java"><span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Client</span> </span>{
 
-    public static void main(String[] args) {
-        //&#x521B;&#x5EFA;&#x63A5;&#x6536;&#x8005;
-        Receiver receiver = new Receiver();
-        //&#x521B;&#x5EFA;&#x547D;&#x4EE4;&#x5BF9;&#x8C61;&#xFF0C;&#x8BBE;&#x5B9A;&#x5B83;&#x7684;&#x63A5;&#x6536;&#x8005;
-        Command command = new ConcreteCommand(receiver);
-        //&#x521B;&#x5EFA;&#x8BF7;&#x6C42;&#x8005;&#xFF0C;&#x628A;&#x547D;&#x4EE4;&#x5BF9;&#x8C61;&#x8BBE;&#x7F6E;&#x8FDB;&#x53BB;
-        Invoker invoker = new Invoker(command);
-        //&#x6267;&#x884C;&#x65B9;&#x6CD5;
+    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title">main</span><span class="hljs-params">(String[] args)</span> </span>{
+        <span class="hljs-comment">//&#x521B;&#x5EFA;&#x63A5;&#x6536;&#x8005;</span>
+        Receiver receiver = <span class="hljs-keyword">new</span> Receiver();
+        <span class="hljs-comment">//&#x521B;&#x5EFA;&#x547D;&#x4EE4;&#x5BF9;&#x8C61;&#xFF0C;&#x8BBE;&#x5B9A;&#x5B83;&#x7684;&#x63A5;&#x6536;&#x8005;</span>
+        Command command = <span class="hljs-keyword">new</span> ConcreteCommand(receiver);
+        <span class="hljs-comment">//&#x521B;&#x5EFA;&#x8BF7;&#x6C42;&#x8005;&#xFF0C;&#x628A;&#x547D;&#x4EE4;&#x5BF9;&#x8C61;&#x8BBE;&#x7F6E;&#x8FDB;&#x53BB;</span>
+        Invoker invoker = <span class="hljs-keyword">new</span> Invoker(command);
+        <span class="hljs-comment">//&#x6267;&#x884C;&#x65B9;&#x6CD5;</span>
         invoker.action();
     }
 
@@ -3801,124 +3805,124 @@
 <p>&#x5F55;&#x97F3;&#x673A;&#x662F;&#x5178;&#x578B;&#x7684;&#x547D;&#x4EE4;&#x6A21;&#x5F0F;&#x3002;&#x5F55;&#x97F3;&#x673A;&#x6309;&#x952E;&#x628A;&#x5BA2;&#x6237;&#x7AEF;&#x4E0E;&#x5F55;&#x97F3;&#x673A;&#x7684;&#x64CD;&#x4F5C;&#x7EC6;&#x8282;&#x5206;&#x5272;&#x5F00;&#x6765;&#x3002;</p>
 <p><img src="http://upload-images.jianshu.io/upload_images/3985563-06164eab0f8bab61.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></p>
 <p><strong>&#x63A5;&#x6536;&#x8005;&#x89D2;&#x8272;&#xFF0C;&#x7531;&#x5F55;&#x97F3;&#x673A;&#x7C7B;&#x626E;&#x6F14;</strong></p>
-<pre><code class="lang-java">public class AudioPlayer {
+<pre><code class="lang-java"><span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">AudioPlayer</span> </span>{
 
-    public void play(){
-        System.out.println(&quot;&#x64AD;&#x653E;...&quot;);
+    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">play</span><span class="hljs-params">()</span></span>{
+        System.out.println(<span class="hljs-string">&quot;&#x64AD;&#x653E;...&quot;</span>);
     }
 
-    public void rewind(){
-        System.out.println(&quot;&#x5012;&#x5E26;...&quot;);
+    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">rewind</span><span class="hljs-params">()</span></span>{
+        System.out.println(<span class="hljs-string">&quot;&#x5012;&#x5E26;...&quot;</span>);
     }
 
-    public void stop(){
-        System.out.println(&quot;&#x505C;&#x6B62;...&quot;);
+    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">stop</span><span class="hljs-params">()</span></span>{
+        System.out.println(<span class="hljs-string">&quot;&#x505C;&#x6B62;...&quot;</span>);
     }
 }
 </code></pre>
 <p><strong>&#x62BD;&#x8C61;&#x547D;&#x4EE4;&#x89D2;&#x8272;&#x7C7B;</strong></p>
-<pre><code class="lang-java">public interface Command {
-    /**
+<pre><code class="lang-java"><span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">interface</span> <span class="hljs-title">Command</span> </span>{
+    <span class="hljs-comment">/**
      * &#x6267;&#x884C;&#x65B9;&#x6CD5;
-     */
-    public void execute();
+     */</span>
+    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">execute</span><span class="hljs-params">()</span></span>;
 }
 </code></pre>
 <p><strong>&#x5177;&#x4F53;&#x547D;&#x4EE4;&#x89D2;&#x8272;&#x7C7B;</strong></p>
-<pre><code class="lang-java">public class PlayCommand implements Command {
+<pre><code class="lang-java"><span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">PlayCommand</span> <span class="hljs-keyword">implements</span> <span class="hljs-title">Command</span> </span>{
 
-    private AudioPlayer myAudio;
+    <span class="hljs-keyword">private</span> AudioPlayer myAudio;
 
-    public PlayCommand(AudioPlayer audioPlayer){
+    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-title">PlayCommand</span><span class="hljs-params">(AudioPlayer audioPlayer)</span></span>{
         myAudio = audioPlayer;
     }
-    /**
+    <span class="hljs-comment">/**
      * &#x6267;&#x884C;&#x65B9;&#x6CD5;
-     */
-    @Override
-    public void execute() {
+     */</span>
+    <span class="hljs-meta">@Override</span>
+    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">execute</span><span class="hljs-params">()</span> </span>{
         myAudio.play();
     }
 
 }
 </code></pre>
-<pre><code class="lang-java">public class RewindCommand implements Command {
+<pre><code class="lang-java"><span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">RewindCommand</span> <span class="hljs-keyword">implements</span> <span class="hljs-title">Command</span> </span>{
 
-    private AudioPlayer myAudio;
+    <span class="hljs-keyword">private</span> AudioPlayer myAudio;
 
-    public RewindCommand(AudioPlayer audioPlayer){
+    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-title">RewindCommand</span><span class="hljs-params">(AudioPlayer audioPlayer)</span></span>{
         myAudio = audioPlayer;
     }
-    @Override
-    public void execute() {
+    <span class="hljs-meta">@Override</span>
+    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">execute</span><span class="hljs-params">()</span> </span>{
         myAudio.rewind();
     }
 
 }
 </code></pre>
-<pre><code class="lang-java">public class StopCommand implements Command {
-    private AudioPlayer myAudio;
+<pre><code class="lang-java"><span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">StopCommand</span> <span class="hljs-keyword">implements</span> <span class="hljs-title">Command</span> </span>{
+    <span class="hljs-keyword">private</span> AudioPlayer myAudio;
 
-    public StopCommand(AudioPlayer audioPlayer){
+    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-title">StopCommand</span><span class="hljs-params">(AudioPlayer audioPlayer)</span></span>{
         myAudio = audioPlayer;
     }
-    @Override
-    public void execute() {
+    <span class="hljs-meta">@Override</span>
+    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">execute</span><span class="hljs-params">()</span> </span>{
         myAudio.stop();
     }
 
 }
 </code></pre>
 <p><strong>&#x8BF7;&#x6C42;&#x8005;&#x89D2;&#x8272;&#xFF0C;&#x7531;&#x952E;&#x76D8;&#x7C7B;&#x626E;&#x6F14;</strong></p>
-<pre><code class="lang-java">public class Keypad {
-    private Command playCommand;
-    private Command rewindCommand;
-    private Command stopCommand;
+<pre><code class="lang-java"><span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Keypad</span> </span>{
+    <span class="hljs-keyword">private</span> Command playCommand;
+    <span class="hljs-keyword">private</span> Command rewindCommand;
+    <span class="hljs-keyword">private</span> Command stopCommand;
 
-    public void setPlayCommand(Command playCommand) {
-        this.playCommand = playCommand;
+    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">setPlayCommand</span><span class="hljs-params">(Command playCommand)</span> </span>{
+        <span class="hljs-keyword">this</span>.playCommand = playCommand;
     }
-    public void setRewindCommand(Command rewindCommand) {
-        this.rewindCommand = rewindCommand;
+    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">setRewindCommand</span><span class="hljs-params">(Command rewindCommand)</span> </span>{
+        <span class="hljs-keyword">this</span>.rewindCommand = rewindCommand;
     }
-    public void setStopCommand(Command stopCommand) {
-        this.stopCommand = stopCommand;
+    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">setStopCommand</span><span class="hljs-params">(Command stopCommand)</span> </span>{
+        <span class="hljs-keyword">this</span>.stopCommand = stopCommand;
     }
-    /**
+    <span class="hljs-comment">/**
      * &#x6267;&#x884C;&#x64AD;&#x653E;&#x65B9;&#x6CD5;
-     */
-    public void play(){
+     */</span>
+    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">play</span><span class="hljs-params">()</span></span>{
         playCommand.execute();
     }
-    /**
+    <span class="hljs-comment">/**
      * &#x6267;&#x884C;&#x5012;&#x5E26;&#x65B9;&#x6CD5;
-     */
-    public void rewind(){
+     */</span>
+    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">rewind</span><span class="hljs-params">()</span></span>{
         rewindCommand.execute();
     }
-    /**
+    <span class="hljs-comment">/**
      * &#x6267;&#x884C;&#x64AD;&#x653E;&#x65B9;&#x6CD5;
-     */
-    public void stop(){
+     */</span>
+    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">stop</span><span class="hljs-params">()</span></span>{
         stopCommand.execute();
     }
 }
 </code></pre>
 <p><strong>&#x5BA2;&#x6237;&#x7AEF;&#x89D2;&#x8272;&#xFF0C;&#x7531;&#x8331;&#x4E3D;&#x5C0F;&#x5973;&#x5B69;&#x626E;&#x6F14;</strong></p>
-<pre><code class="lang-java">public class Julia {
-    public static void main(String[]args){
-        //&#x521B;&#x5EFA;&#x63A5;&#x6536;&#x8005;&#x5BF9;&#x8C61;
-        AudioPlayer audioPlayer = new AudioPlayer();
-        //&#x521B;&#x5EFA;&#x547D;&#x4EE4;&#x5BF9;&#x8C61;
-        Command playCommand = new PlayCommand(audioPlayer);
-        Command rewindCommand = new RewindCommand(audioPlayer);
-        Command stopCommand = new StopCommand(audioPlayer);
-        //&#x521B;&#x5EFA;&#x8BF7;&#x6C42;&#x8005;&#x5BF9;&#x8C61;
-        Keypad keypad = new Keypad();
+<pre><code class="lang-java"><span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Julia</span> </span>{
+    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title">main</span><span class="hljs-params">(String[]args)</span></span>{
+        <span class="hljs-comment">//&#x521B;&#x5EFA;&#x63A5;&#x6536;&#x8005;&#x5BF9;&#x8C61;</span>
+        AudioPlayer audioPlayer = <span class="hljs-keyword">new</span> AudioPlayer();
+        <span class="hljs-comment">//&#x521B;&#x5EFA;&#x547D;&#x4EE4;&#x5BF9;&#x8C61;</span>
+        Command playCommand = <span class="hljs-keyword">new</span> PlayCommand(audioPlayer);
+        Command rewindCommand = <span class="hljs-keyword">new</span> RewindCommand(audioPlayer);
+        Command stopCommand = <span class="hljs-keyword">new</span> StopCommand(audioPlayer);
+        <span class="hljs-comment">//&#x521B;&#x5EFA;&#x8BF7;&#x6C42;&#x8005;&#x5BF9;&#x8C61;</span>
+        Keypad keypad = <span class="hljs-keyword">new</span> Keypad();
         keypad.setPlayCommand(playCommand);
         keypad.setRewindCommand(rewindCommand);
         keypad.setStopCommand(stopCommand);
-        //&#x6D4B;&#x8BD5;
+        <span class="hljs-comment">//&#x6D4B;&#x8BD5;</span>
         keypad.play();
         keypad.rewind();
         keypad.stop();
@@ -3934,51 +3938,51 @@
 <p>&#x8BBE;&#x60F3;&#x8331;&#x4E3D;&#x7684;&#x5F55;&#x97F3;&#x673A;&#x6709;&#x4E00;&#x4E2A;&#x8BB0;&#x5F55;&#x529F;&#x80FD;&#xFF0C;<strong>&#x53EF;&#x4EE5;&#x628A;&#x4E00;&#x4E2A;&#x4E00;&#x4E2A;&#x7684;&#x547D;&#x4EE4;&#x8BB0;&#x5F55;&#x4E0B;&#x6765;&#xFF0C;&#x518D;&#x5728;&#x4EFB;&#x4F55;&#x9700;&#x8981;&#x7684;&#x65F6;&#x5019;&#x91CD;&#x65B0;&#x628A;&#x8FD9;&#x4E9B;&#x8BB0;&#x5F55;&#x4E0B;&#x6765;&#x7684;&#x547D;&#x4EE4;&#x4E00;&#x6B21;&#x6027;&#x6267;&#x884C;</strong>&#xFF0C;&#x8FD9;&#x5C31;&#x662F;&#x6240;&#x8C13;&#x7684;&#x5B8F;&#x547D;&#x4EE4;&#x96C6;&#x529F;&#x80FD;&#x3002;&#x56E0;&#x6B64;&#xFF0C;&#x8331;&#x4E3D;&#x7684;&#x5F55;&#x97F3;&#x673A;&#x7CFB;&#x7EDF;&#x73B0;&#x5728;&#x6709;&#x56DB;&#x4E2A;&#x952E;&#xFF0C;&#x5206;&#x522B;&#x4E3A;&#x64AD;&#x97F3;&#x3001;&#x5012;&#x5E26;&#x3001;&#x505C;&#x6B62;&#x548C;&#x5B8F;&#x547D;&#x4EE4;&#x529F;&#x80FD;&#x3002;&#x6B64;&#x65F6;&#x7CFB;&#x7EDF;&#x7684;&#x8BBE;&#x8BA1;&#x4E0E;&#x524D;&#x9762;&#x7684;&#x8BBE;&#x8BA1;&#x76F8;&#x6BD4;&#x6709;&#x6240;&#x589E;&#x5F3A;&#xFF0C;&#x4E3B;&#x8981;&#x4F53;&#x73B0;&#x5728;Julia&#x7C7B;&#x73B0;&#x5728;&#x6709;&#x4E86;&#x4E00;&#x4E2A;&#x65B0;&#x65B9;&#x6CD5;&#xFF0C;&#x7528;&#x4EE5;&#x64CD;&#x4F5C;&#x5B8F;&#x547D;&#x4EE4;&#x952E;&#x3002;  </p>
 <p><img src="http://upload-images.jianshu.io/upload_images/3985563-b8369476077da323.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></p>
 <p><strong>&#x7CFB;&#x7EDF;&#x9700;&#x8981;&#x4E00;&#x4E2A;&#x4EE3;&#x8868;&#x5B8F;&#x547D;&#x4EE4;&#x7684;&#x63A5;&#x53E3;&#xFF0C;&#x4EE5;&#x5B9A;&#x4E49;&#x51FA;&#x5177;&#x4F53;&#x5B8F;&#x547D;&#x4EE4;&#x6240;&#x9700;&#x8981;&#x7684;&#x63A5;&#x53E3;&#x3002;</strong></p>
-<pre><code class="lang-java">public interface MacroCommand extends Command {
-    /**
+<pre><code class="lang-java"><span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">interface</span> <span class="hljs-title">MacroCommand</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">Command</span> </span>{
+    <span class="hljs-comment">/**
      * &#x5B8F;&#x547D;&#x4EE4;&#x805A;&#x96C6;&#x7684;&#x7BA1;&#x7406;&#x65B9;&#x6CD5;
      * &#x53EF;&#x4EE5;&#x6DFB;&#x52A0;&#x4E00;&#x4E2A;&#x6210;&#x5458;&#x547D;&#x4EE4;
-     */
-    public void add(Command cmd);
-    /**
+     */</span>
+    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">add</span><span class="hljs-params">(Command cmd)</span></span>;
+    <span class="hljs-comment">/**
      * &#x5B8F;&#x547D;&#x4EE4;&#x805A;&#x96C6;&#x7684;&#x7BA1;&#x7406;&#x65B9;&#x6CD5;
      * &#x53EF;&#x4EE5;&#x5220;&#x9664;&#x4E00;&#x4E2A;&#x6210;&#x5458;&#x547D;&#x4EE4;
-     */
-    public void remove(Command cmd);
+     */</span>
+    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">remove</span><span class="hljs-params">(Command cmd)</span></span>;
 }
 </code></pre>
 <p><strong>&#x5177;&#x4F53;&#x7684;&#x5B8F;&#x547D;&#x4EE4;MacroAudioCommand&#x7C7B;&#x8D1F;&#x8D23;&#x628A;&#x4E2A;&#x522B;&#x7684;&#x547D;&#x4EE4;&#x5408;&#x6210;&#x5B8F;&#x547D;&#x4EE4;&#x3002;</strong></p>
-<pre><code class="lang-java">public class MacroAudioCommand implements MacroCommand {
+<pre><code class="lang-java"><span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">MacroAudioCommand</span> <span class="hljs-keyword">implements</span> <span class="hljs-title">MacroCommand</span> </span>{
 
-    private List
+    <span class="hljs-keyword">private</span> List
 &lt;
 Command
 &gt;
- commandList = new ArrayList
+ commandList = <span class="hljs-keyword">new</span> ArrayList
 &lt;
 Command
 &gt;
 ();
-    /**
+    <span class="hljs-comment">/**
      * &#x5B8F;&#x547D;&#x4EE4;&#x805A;&#x96C6;&#x7BA1;&#x7406;&#x65B9;&#x6CD5;
-     */
-    @Override
-    public void add(Command cmd) {
+     */</span>
+    <span class="hljs-meta">@Override</span>
+    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">add</span><span class="hljs-params">(Command cmd)</span> </span>{
         commandList.add(cmd);
     }
-    /**
+    <span class="hljs-comment">/**
      * &#x5B8F;&#x547D;&#x4EE4;&#x805A;&#x96C6;&#x7BA1;&#x7406;&#x65B9;&#x6CD5;
-     */
-    @Override
-    public void remove(Command cmd) {
+     */</span>
+    <span class="hljs-meta">@Override</span>
+    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">remove</span><span class="hljs-params">(Command cmd)</span> </span>{
         commandList.remove(cmd);
     }
-    /**
+    <span class="hljs-comment">/**
      * &#x6267;&#x884C;&#x65B9;&#x6CD5;
-     */
-    @Override
-    public void execute() {
-        for(Command cmd : commandList){
+     */</span>
+    <span class="hljs-meta">@Override</span>
+    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">execute</span><span class="hljs-params">()</span> </span>{
+        <span class="hljs-keyword">for</span>(Command cmd : commandList){
             cmd.execute();
         }
     }
@@ -3986,17 +3990,17 @@ Command
 }
 </code></pre>
 <p><strong>&#x5BA2;&#x6237;&#x7AEF;&#x7C7B;Julia</strong></p>
-<pre><code class="lang-java">public class Julia {
+<pre><code class="lang-java"><span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Julia</span> </span>{
 
-    public static void main(String[]args){
-        //&#x521B;&#x5EFA;&#x63A5;&#x6536;&#x8005;&#x5BF9;&#x8C61;
-        AudioPlayer audioPlayer = new AudioPlayer();
-        //&#x521B;&#x5EFA;&#x547D;&#x4EE4;&#x5BF9;&#x8C61;
-        Command playCommand = new PlayCommand(audioPlayer);
-        Command rewindCommand = new RewindCommand(audioPlayer);
-        Command stopCommand = new StopCommand(audioPlayer);
+    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title">main</span><span class="hljs-params">(String[]args)</span></span>{
+        <span class="hljs-comment">//&#x521B;&#x5EFA;&#x63A5;&#x6536;&#x8005;&#x5BF9;&#x8C61;</span>
+        AudioPlayer audioPlayer = <span class="hljs-keyword">new</span> AudioPlayer();
+        <span class="hljs-comment">//&#x521B;&#x5EFA;&#x547D;&#x4EE4;&#x5BF9;&#x8C61;</span>
+        Command playCommand = <span class="hljs-keyword">new</span> PlayCommand(audioPlayer);
+        Command rewindCommand = <span class="hljs-keyword">new</span> RewindCommand(audioPlayer);
+        Command stopCommand = <span class="hljs-keyword">new</span> StopCommand(audioPlayer);
 
-        MacroCommand marco = new MacroAudioCommand();
+        MacroCommand marco = <span class="hljs-keyword">new</span> MacroAudioCommand();
 
         marco.add(playCommand);
         marco.add(rewindCommand);
@@ -4063,7 +4067,7 @@ Command
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"命令模式","level":"6.3.1","depth":2,"next":{"title":"迭代器模式","level":"6.3.2","depth":2,"path":"design-mode/Behavioral-Pattern/Iterator-Pattern.md","ref":"design-mode/Behavioral-Pattern/Iterator-Pattern.md","articles":[]},"previous":{"title":"行为型模式","level":"6.3","depth":1,"path":"design-mode/Behavioral-Pattern.md","ref":"design-mode/Behavioral-Pattern.md","articles":[{"title":"命令模式","level":"6.3.1","depth":2,"path":"design-mode/Behavioral-Pattern/Command-Pattern.md","ref":"design-mode/Behavioral-Pattern/Command-Pattern.md","articles":[]},{"title":"迭代器模式","level":"6.3.2","depth":2,"path":"design-mode/Behavioral-Pattern/Iterator-Pattern.md","ref":"design-mode/Behavioral-Pattern/Iterator-Pattern.md","articles":[]},{"title":"观察者模式","level":"6.3.3","depth":2,"path":"design-mode/Behavioral-Pattern/Observer-Pattern.md","ref":"design-mode/Behavioral-Pattern/Observer-Pattern.md","articles":[]},{"title":"策略模式","level":"6.3.4","depth":2,"path":"design-mode/Behavioral-Pattern/Strategy-Pattern.md","ref":"design-mode/Behavioral-Pattern/Strategy-Pattern.md","articles":[]},{"title":"模板方法模式","level":"6.3.5","depth":2,"path":"design-mode/Behavioral-Pattern/Template-Method.md","ref":"design-mode/Behavioral-Pattern/Template-Method.md","articles":[]}]},"dir":"ltr"},"config":{"plugins":["-lunr","-search","-highlight","-livereload","search-plus@^0.0.11","simple-page-toc@^0.1.1","github@^2.0.0","github-buttons@2.1.0","edit-link@^2.0.2","advanced-emoji@^0.2.1","anchors@^0.7.1","include-codeblock@^3.0.2","ace@^0.3.2","emphasize@^1.1.0","katex@^1.1.3","splitter@^0.0.8","tbfed-pagefooter@^0.0.1","expandable-chapters-small@^0.1.7","sectionx@^3.1.0","local-video@^1.0.1","anchor-navigation-ex@0.1.8","favicon@^0.0.2"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"tbfed-pagefooter":{"copyright":"Copyright © ruheng.com 2017","modify_label":"该文件修订时间：","modify_format":"YYYY-MM-DD HH:mm:ss"},"emphasize":{},"ace":{},"github":{"url":"https://github.com/LRH1993/android_interview"},"simple-page-toc":{"maxDepth":3,"skipFirstH1":true},"splitter":{},"katex":{},"fontsettings":{"theme":"white","family":"sans","size":2},"sectionx":{"tag":"b"},"anchor-navigation-ex":{"isRewritePageTitle":false,"tocLevel1Icon":"fa fa-hand-o-right","tocLevel2Icon":"fa fa-hand-o-right","tocLevel3Icon":"fa fa-hand-o-right"},"favicon":{"shortcut":"favicon.ico","bookmark":"favicon.ico"},"github-buttons":{"repo":"LRH1993/android_interview","types":["star"],"size":"small"},"expandable-chapters-small":{},"local-video":{},"advanced-emoji":{"embedEmojis":false},"include-codeblock":{"check":false,"edit":true,"fixlang":false,"lang":"","template":"ace","theme":"chrome","unindent":true},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":true,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"edit-link":{"label":"Edit This Page","base":"https://github.com/LRH1993/android_interview/edit/master"},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":true},"anchors":{},"search-plus":{}},"theme":"default","author":"ruheng","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"Android校招面试指南","language":"zh-hans","output.name":"site","links":{"sidebar":{"Home":"http://lruheng.com/"}},"gitbook":"3.2.3","description":"Android面试必备，记录自己的秋招之路"},"file":{"path":"design-mode/Behavioral-Pattern/Command-Pattern.md","mtime":"2017-08-22T07:53:58.000Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2017-10-16T12:05:21.906Z"},"basePath":"../..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"命令模式","level":"6.3.1","depth":2,"next":{"title":"迭代器模式","level":"6.3.2","depth":2,"path":"design-mode/Behavioral-Pattern/Iterator-Pattern.md","ref":"design-mode/Behavioral-Pattern/Iterator-Pattern.md","articles":[]},"previous":{"title":"行为型模式","level":"6.3","depth":1,"path":"design-mode/Behavioral-Pattern.md","ref":"design-mode/Behavioral-Pattern.md","articles":[{"title":"命令模式","level":"6.3.1","depth":2,"path":"design-mode/Behavioral-Pattern/Command-Pattern.md","ref":"design-mode/Behavioral-Pattern/Command-Pattern.md","articles":[]},{"title":"迭代器模式","level":"6.3.2","depth":2,"path":"design-mode/Behavioral-Pattern/Iterator-Pattern.md","ref":"design-mode/Behavioral-Pattern/Iterator-Pattern.md","articles":[]},{"title":"观察者模式","level":"6.3.3","depth":2,"path":"design-mode/Behavioral-Pattern/Observer-Pattern.md","ref":"design-mode/Behavioral-Pattern/Observer-Pattern.md","articles":[]},{"title":"策略模式","level":"6.3.4","depth":2,"path":"design-mode/Behavioral-Pattern/Strategy-Pattern.md","ref":"design-mode/Behavioral-Pattern/Strategy-Pattern.md","articles":[]},{"title":"模板方法模式","level":"6.3.5","depth":2,"path":"design-mode/Behavioral-Pattern/Template-Method.md","ref":"design-mode/Behavioral-Pattern/Template-Method.md","articles":[]}]},"dir":"ltr"},"config":{"plugins":["-lunr","-search","-livereload","search-plus@^0.0.11","simple-page-toc@^0.1.1","github@^2.0.0","github-buttons@2.1.0","edit-link@^2.0.2","advanced-emoji@^0.2.1","anchors@^0.7.1","include-codeblock@^3.0.2","ace@^0.3.2","emphasize@^1.1.0","katex@^1.1.3","splitter@^0.0.8","tbfed-pagefooter@^0.0.1","expandable-chapters-small@^0.1.7","sectionx@^3.1.0","local-video@^1.0.1","anchor-navigation-ex@0.1.8","favicon@^0.0.2"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"tbfed-pagefooter":{"copyright":"Copyright © ruheng.com 2017","modify_label":"该文件修订时间：","modify_format":"YYYY-MM-DD HH:mm:ss"},"emphasize":{},"ace":{},"github":{"url":"https://github.com/LRH1993/android_interview"},"simple-page-toc":{"maxDepth":3,"skipFirstH1":true},"splitter":{},"katex":{},"fontsettings":{"theme":"white","family":"sans","size":2},"sectionx":{"tag":"b"},"highlight":{},"anchor-navigation-ex":{"isRewritePageTitle":false,"tocLevel1Icon":"fa fa-hand-o-right","tocLevel2Icon":"fa fa-hand-o-right","tocLevel3Icon":"fa fa-hand-o-right"},"favicon":{"shortcut":"favicon.ico","bookmark":"favicon.ico"},"github-buttons":{"repo":"LRH1993/android_interview","types":["star"],"size":"small"},"expandable-chapters-small":{},"local-video":{},"advanced-emoji":{"embedEmojis":false},"include-codeblock":{"check":false,"edit":false,"fixlang":false,"lang":"","template":"default","theme":"chrome","unindent":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":true,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"edit-link":{"label":"Edit This Page","base":"https://github.com/LRH1993/android_interview/edit/master"},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":true},"anchors":{},"search-plus":{}},"theme":"default","author":"ruheng","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"Android校招面试指南","language":"zh-hans","output.name":"site","links":{"sidebar":{"Home":"http://lruheng.com/"}},"gitbook":"3.2.3","description":"Android面试必备，记录自己的秋招之路"},"file":{"path":"design-mode/Behavioral-Pattern/Command-Pattern.md","mtime":"2017-08-22T07:53:58.000Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2017-10-16T13:00:43.989Z"},"basePath":"../..","book":{"language":""}});
         });
     </script>
 </div>

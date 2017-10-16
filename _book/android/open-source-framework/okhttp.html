@@ -69,6 +69,10 @@
                 
             
                 
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
                 <link rel="stylesheet" href="../../gitbook/gitbook-plugin-fontsettings/website.css">
                 
             
@@ -3712,16 +3716,16 @@
 <h2 id="&#x4E8C;&#x3001;&#x57FA;&#x672C;&#x7528;&#x4F8B;"><a name="&#x4E8C;&#x3001;&#x57FA;&#x672C;&#x7528;&#x4F8B;" class="anchor-navigation-ex-anchor" href="#&#x4E8C;&#x3001;&#x57FA;&#x672C;&#x7528;&#x4F8B;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x4E8C;&#x3001;&#x57FA;&#x672C;&#x7528;&#x4F8B;</h2>
 <p>&#x6765;&#x81EA;<a href="http://square.github.io/okhttp/#examples" target="_blank">OkHttp &#x5B98;&#x65B9;&#x7F51;&#x7AD9;</a>&#x3002;</p>
 <h3 id="21&#x521B;&#x5EFA;-okhttpclient-&#x5BF9;&#x8C61;"><a name="21&#x521B;&#x5EFA;-okhttpclient-&#x5BF9;&#x8C61;" class="anchor-navigation-ex-anchor" href="#21&#x521B;&#x5EFA;-okhttpclient-&#x5BF9;&#x8C61;"><i class="fa fa-link" aria-hidden="true"></i></a>2.1.&#x521B;&#x5EFA; OkHttpClient &#x5BF9;&#x8C61;</h3>
-<pre><code class="lang-java">OkHttpClient client = new OkHttpClient();
+<pre><code class="lang-java">OkHttpClient client = <span class="hljs-keyword">new</span> OkHttpClient();
 </code></pre>
 <p>&#x54A6;&#xFF0C;&#x600E;&#x4E48;&#x4E0D;&#x89C1; builder&#xFF1F;&#x83AB;&#x6025;&#xFF0C;&#x4E14;&#x770B;&#x5176;&#x6784;&#x9020;&#x51FD;&#x6570;&#xFF1A;</p>
-<pre><code class="lang-java">public OkHttpClient() {
-  this(new Builder());
+<pre><code class="lang-java"><span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-title">OkHttpClient</span><span class="hljs-params">()</span> </span>{
+  <span class="hljs-keyword">this</span>(<span class="hljs-keyword">new</span> Builder());
 }
 </code></pre>
 <p>&#x539F;&#x6765;&#x662F;&#x65B9;&#x4FBF;&#x6211;&#x4EEC;&#x4F7F;&#x7528;&#xFF0C;&#x63D0;&#x4F9B;&#x4E86;&#x4E00;&#x4E2A;&#x201C;&#x5FEB;&#x6377;&#x64CD;&#x4F5C;&#x201D;&#xFF0C;&#x5168;&#x90E8;&#x4F7F;&#x7528;&#x4E86;&#x9ED8;&#x8BA4;&#x7684;&#x914D;&#x7F6E;&#x3002;<code>OkHttpClient.Builder</code>&#x7C7B;&#x6210;&#x5458;&#x5F88;&#x591A;&#xFF0C;&#x540E;&#x9762;&#x6211;&#x4EEC;&#x518D;&#x6162;&#x6162;&#x5206;&#x6790;&#xFF0C;&#x8FD9;&#x91CC;&#x5148;&#x6682;&#x65F6;&#x7565;&#x8FC7;&#xFF1A;</p>
-<pre><code class="lang-java">public Builder() {
-  dispatcher = new Dispatcher();
+<pre><code class="lang-java"><span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-title">Builder</span><span class="hljs-params">()</span> </span>{
+  dispatcher = <span class="hljs-keyword">new</span> Dispatcher();
   protocols = DEFAULT_PROTOCOLS;
   connectionSpecs = DEFAULT_CONNECTION_SPECS;
   proxySelector = ProxySelector.getDefault();
@@ -3731,50 +3735,50 @@
   certificatePinner = CertificatePinner.DEFAULT;
   proxyAuthenticator = Authenticator.NONE;
   authenticator = Authenticator.NONE;
-  connectionPool = new ConnectionPool();
+  connectionPool = <span class="hljs-keyword">new</span> ConnectionPool();
   dns = Dns.SYSTEM;
-  followSslRedirects = true;
-  followRedirects = true;
-  retryOnConnectionFailure = true;
-  connectTimeout = 10_000;
-  readTimeout = 10_000;
-  writeTimeout = 10_000;
+  followSslRedirects = <span class="hljs-keyword">true</span>;
+  followRedirects = <span class="hljs-keyword">true</span>;
+  retryOnConnectionFailure = <span class="hljs-keyword">true</span>;
+  connectTimeout = <span class="hljs-number">10_000</span>;
+  readTimeout = <span class="hljs-number">10_000</span>;
+  writeTimeout = <span class="hljs-number">10_000</span>;
 }
 </code></pre>
 <h3 id="22&#x53D1;&#x8D77;-http-&#x8BF7;&#x6C42;"><a name="22&#x53D1;&#x8D77;-http-&#x8BF7;&#x6C42;" class="anchor-navigation-ex-anchor" href="#22&#x53D1;&#x8D77;-http-&#x8BF7;&#x6C42;"><i class="fa fa-link" aria-hidden="true"></i></a>2.2.&#x53D1;&#x8D77; HTTP &#x8BF7;&#x6C42;</h3>
-<pre><code class="lang-java">String run(String url) throws IOException {
-  Request request = new Request.Builder()
+<pre><code class="lang-java"><span class="hljs-function">String <span class="hljs-title">run</span><span class="hljs-params">(String url)</span> <span class="hljs-keyword">throws</span> IOException </span>{
+  Request request = <span class="hljs-keyword">new</span> Request.Builder()
       .url(url)
       .build();
 
   Response response = client.newCall(request).execute();
-  return response.body().string();
+  <span class="hljs-keyword">return</span> response.body().string();
 }
 </code></pre>
 <p><code>OkHttpClient</code>&#x5B9E;&#x73B0;&#x4E86;<code>Call.Factory</code>&#xFF0C;&#x8D1F;&#x8D23;&#x6839;&#x636E;&#x8BF7;&#x6C42;&#x521B;&#x5EFA;&#x65B0;&#x7684;<code>Call</code>&#x3002;</p>
 <p>&#x90A3;&#x6211;&#x4EEC;&#x73B0;&#x5728;&#x5C31;&#x6765;&#x770B;&#x770B;&#x5B83;&#x662F;&#x5982;&#x4F55;&#x521B;&#x5EFA; Call &#x7684;&#xFF1A;</p>
-<pre><code class="lang-java">/**
-  * Prepares the {@code request} to be executed at some point in the future.
-  */
-@Override public Call newCall(Request request) {
-  return new RealCall(this, request);
+<pre><code class="lang-java"><span class="hljs-comment">/**
+  * Prepares the {<span class="hljs-doctag">@code</span> request} to be executed at some point in the future.
+  */</span>
+<span class="hljs-meta">@Override</span> <span class="hljs-function"><span class="hljs-keyword">public</span> Call <span class="hljs-title">newCall</span><span class="hljs-params">(Request request)</span> </span>{
+  <span class="hljs-keyword">return</span> <span class="hljs-keyword">new</span> RealCall(<span class="hljs-keyword">this</span>, request);
 }
 </code></pre>
 <p>&#x5982;&#x6B64;&#x770B;&#x6765;&#x529F;&#x52B3;&#x5168;&#x5728;<code>RealCall</code>&#x7C7B;&#x4E86;&#xFF0C;&#x4E0B;&#x9762;&#x6211;&#x4EEC;&#x4E00;&#x8FB9;&#x5206;&#x6790;&#x540C;&#x6B65;&#x7F51;&#x7EDC;&#x8BF7;&#x6C42;&#x7684;&#x8FC7;&#x7A0B;&#xFF0C;&#x4E00;&#x8FB9;&#x4E86;&#x89E3;<code>RealCall</code>&#x7684;&#x5177;&#x4F53;&#x5185;&#x5BB9;&#x3002;</p>
 <h4 id="221&#x540C;&#x6B65;&#x7F51;&#x7EDC;&#x8BF7;&#x6C42;"><a name="221&#x540C;&#x6B65;&#x7F51;&#x7EDC;&#x8BF7;&#x6C42;" class="anchor-navigation-ex-anchor" href="#221&#x540C;&#x6B65;&#x7F51;&#x7EDC;&#x8BF7;&#x6C42;"><i class="fa fa-link" aria-hidden="true"></i></a>2.2.1.&#x540C;&#x6B65;&#x7F51;&#x7EDC;&#x8BF7;&#x6C42;</h4>
 <p>&#x6211;&#x4EEC;&#x9996;&#x5148;&#x770B;<code>RealCall#execute</code>&#xFF1A;</p>
-<pre><code class="lang-java">@Override public Response execute() throws IOException {
-  synchronized (this) {
-    if (executed) throw new IllegalStateException(&quot;Already Executed&quot;);  // (1)
-    executed = true;
+<pre><code class="lang-java"><span class="hljs-meta">@Override</span> <span class="hljs-function"><span class="hljs-keyword">public</span> Response <span class="hljs-title">execute</span><span class="hljs-params">()</span> <span class="hljs-keyword">throws</span> IOException </span>{
+  <span class="hljs-keyword">synchronized</span> (<span class="hljs-keyword">this</span>) {
+    <span class="hljs-keyword">if</span> (executed) <span class="hljs-keyword">throw</span> <span class="hljs-keyword">new</span> IllegalStateException(<span class="hljs-string">&quot;Already Executed&quot;</span>);  <span class="hljs-comment">// (1)</span>
+    executed = <span class="hljs-keyword">true</span>;
   }
-  try {
-    client.dispatcher().executed(this);                                 // (2)
-    Response result = getResponseWithInterceptorChain();                // (3)
-    if (result == null) throw new IOException(&quot;Canceled&quot;);
-    return result;
-  } finally {
-    client.dispatcher().finished(this);                                 // (4)
+  <span class="hljs-keyword">try</span> {
+    client.dispatcher().executed(<span class="hljs-keyword">this</span>);                                 <span class="hljs-comment">// (2)</span>
+    Response result = getResponseWithInterceptorChain();                <span class="hljs-comment">// (3)</span>
+    <span class="hljs-keyword">if</span> (result == <span class="hljs-keyword">null</span>) <span class="hljs-keyword">throw</span> <span class="hljs-keyword">new</span> IOException(<span class="hljs-string">&quot;Canceled&quot;</span>);
+    <span class="hljs-keyword">return</span> result;
+  } <span class="hljs-keyword">finally</span> {
+    client.dispatcher().finished(<span class="hljs-keyword">this</span>);                                 <span class="hljs-comment">// (4)</span>
   }
 }
 </code></pre>
@@ -3787,23 +3791,23 @@
 </ol>
 <p>dispatcher &#x8FD9;&#x91CC;&#x6211;&#x4EEC;&#x4E0D;&#x8FC7;&#x5EA6;&#x5173;&#x6CE8;&#xFF0C;&#x5728;&#x540C;&#x6B65;&#x6267;&#x884C;&#x7684;&#x6D41;&#x7A0B;&#x4E2D;&#xFF0C;&#x6D89;&#x53CA;&#x5230; dispatcher &#x7684;&#x5185;&#x5BB9;&#x53EA;&#x4E0D;&#x8FC7;&#x662F;&#x544A;&#x77E5;&#x5B83;&#x6211;&#x4EEC;&#x7684;&#x6267;&#x884C;&#x72B6;&#x6001;&#xFF0C;&#x6BD4;&#x5982;&#x5F00;&#x59CB;&#x6267;&#x884C;&#x4E86;&#xFF08;&#x8C03;&#x7528;<code>executed</code>&#xFF09;&#xFF0C;&#x6BD4;&#x5982;&#x6267;&#x884C;&#x5B8C;&#x6BD5;&#x4E86;&#xFF08;&#x8C03;&#x7528;<code>finished</code>&#xFF09;&#xFF0C;&#x5728;&#x5F02;&#x6B65;&#x6267;&#x884C;&#x6D41;&#x7A0B;&#x4E2D;&#x5B83;&#x4F1A;&#x6709;&#x66F4;&#x591A;&#x7684;&#x53C2;&#x4E0E;&#x3002;</p>
 <p>&#x771F;&#x6B63;&#x53D1;&#x51FA;&#x7F51;&#x7EDC;&#x8BF7;&#x6C42;&#xFF0C;&#x89E3;&#x6790;&#x8FD4;&#x56DE;&#x7ED3;&#x679C;&#x7684;&#xFF0C;&#x8FD8;&#x662F;<code>getResponseWithInterceptorChain</code>&#xFF1A;</p>
-<pre><code class="lang-java">private Response getResponseWithInterceptorChain() throws IOException {
-  // Build a full stack of interceptors.
-  List&lt;Interceptor&gt; interceptors = new ArrayList&lt;&gt;();
+<pre><code class="lang-java"><span class="hljs-function"><span class="hljs-keyword">private</span> Response <span class="hljs-title">getResponseWithInterceptorChain</span><span class="hljs-params">()</span> <span class="hljs-keyword">throws</span> IOException </span>{
+  <span class="hljs-comment">// Build a full stack of interceptors.</span>
+  List&lt;Interceptor&gt; interceptors = <span class="hljs-keyword">new</span> ArrayList&lt;&gt;();
   interceptors.addAll(client.interceptors());
   interceptors.add(retryAndFollowUpInterceptor);
-  interceptors.add(new BridgeInterceptor(client.cookieJar()));
-  interceptors.add(new CacheInterceptor(client.internalCache()));
-  interceptors.add(new ConnectInterceptor(client));
-  if (!retryAndFollowUpInterceptor.isForWebSocket()) {
+  interceptors.add(<span class="hljs-keyword">new</span> BridgeInterceptor(client.cookieJar()));
+  interceptors.add(<span class="hljs-keyword">new</span> CacheInterceptor(client.internalCache()));
+  interceptors.add(<span class="hljs-keyword">new</span> ConnectInterceptor(client));
+  <span class="hljs-keyword">if</span> (!retryAndFollowUpInterceptor.isForWebSocket()) {
     interceptors.addAll(client.networkInterceptors());
   }
-  interceptors.add(new CallServerInterceptor(
+  interceptors.add(<span class="hljs-keyword">new</span> CallServerInterceptor(
       retryAndFollowUpInterceptor.isForWebSocket()));
 
-  Interceptor.Chain chain = new RealInterceptorChain(
-      interceptors, null, null, null, 0, originalRequest);
-  return chain.proceed(originalRequest);
+  Interceptor.Chain chain = <span class="hljs-keyword">new</span> RealInterceptorChain(
+      interceptors, <span class="hljs-keyword">null</span>, <span class="hljs-keyword">null</span>, <span class="hljs-keyword">null</span>, <span class="hljs-number">0</span>, originalRequest);
+  <span class="hljs-keyword">return</span> chain.proceed(originalRequest);
 }
 </code></pre>
 <p>&#x5728;<a href="https://publicobject.com/2016/07/03/the-last-httpurlconnection/" target="_blank">OkHttp &#x5F00;&#x53D1;&#x8005;&#x4E4B;&#x4E00;&#x4ECB;&#x7ECD; OkHttp &#x7684;&#x6587;&#x7AE0;&#x91CC;&#x9762;</a>&#xFF0C;&#x4F5C;&#x8005;&#x8BB2;&#x5230;&#xFF1A;</p>
@@ -3831,32 +3835,32 @@
 <p>&#x8D23;&#x4EFB;&#x94FE;&#x6A21;&#x5F0F;&#x5728;&#x5B89;&#x5353;&#x7CFB;&#x7EDF;&#x4E2D;&#x4E5F;&#x6709;&#x6BD4;&#x8F83;&#x5178;&#x578B;&#x7684;&#x5B9E;&#x8DF5;&#xFF0C;&#x4F8B;&#x5982; view &#x7CFB;&#x7EDF;&#x5BF9;&#x70B9;&#x51FB;&#x4E8B;&#x4EF6;&#xFF08;TouchEvent&#xFF09;&#x7684;&#x5904;&#x7406;&#x3002;</p>
 <p>&#x56DE;&#x5230; OkHttp&#xFF0C;&#x5728;&#x8FD9;&#x91CC;&#x6211;&#x4EEC;&#x5148;&#x7B80;&#x5355;&#x5206;&#x6790;&#x4E00;&#x4E0B;<code>ConnectInterceptor</code>&#x548C;<code>CallServerInterceptor</code>&#xFF0C;&#x770B;&#x770B; OkHttp &#x662F;&#x600E;&#x4E48;&#x8FDB;&#x884C;&#x548C;&#x670D;&#x52A1;&#x5668;&#x7684;&#x5B9E;&#x9645;&#x901A;&#x4FE1;&#x7684;&#x3002;</p>
 <h5 id="2211&#x5EFA;&#x7ACB;&#x8FDE;&#x63A5;&#xFF1A;connectinterceptor"><a name="2211&#x5EFA;&#x7ACB;&#x8FDE;&#x63A5;&#xFF1A;connectinterceptor" class="anchor-navigation-ex-anchor" href="#2211&#x5EFA;&#x7ACB;&#x8FDE;&#x63A5;&#xFF1A;connectinterceptor"><i class="fa fa-link" aria-hidden="true"></i></a>2.2.1.1.&#x5EFA;&#x7ACB;&#x8FDE;&#x63A5;&#xFF1A;ConnectInterceptor</h5>
-<pre><code class="lang-java">@Override public Response intercept(Chain chain) throws IOException {
+<pre><code class="lang-java"><span class="hljs-meta">@Override</span> <span class="hljs-function"><span class="hljs-keyword">public</span> Response <span class="hljs-title">intercept</span><span class="hljs-params">(Chain chain)</span> <span class="hljs-keyword">throws</span> IOException </span>{
   RealInterceptorChain realChain = (RealInterceptorChain) chain;
   Request request = realChain.request();
   StreamAllocation streamAllocation = realChain.streamAllocation();
 
-  // We need the network to satisfy this request. Possibly for validating a conditional GET.
-  boolean doExtensiveHealthChecks = !request.method().equals(&quot;GET&quot;);
+  <span class="hljs-comment">// We need the network to satisfy this request. Possibly for validating a conditional GET.</span>
+  <span class="hljs-keyword">boolean</span> doExtensiveHealthChecks = !request.method().equals(<span class="hljs-string">&quot;GET&quot;</span>);
   HttpCodec httpCodec = streamAllocation.newStream(client, doExtensiveHealthChecks);
   RealConnection connection = streamAllocation.connection();
 
-  return realChain.proceed(request, streamAllocation, httpCodec, connection);
+  <span class="hljs-keyword">return</span> realChain.proceed(request, streamAllocation, httpCodec, connection);
 }
 </code></pre>
 <p>&#x5B9E;&#x9645;&#x4E0A;&#x5EFA;&#x7ACB;&#x8FDE;&#x63A5;&#x5C31;&#x662F;&#x521B;&#x5EFA;&#x4E86;&#x4E00;&#x4E2A;<code>HttpCodec</code>&#x5BF9;&#x8C61;&#xFF0C;&#x5B83;&#x5C06;&#x5728;&#x540E;&#x9762;&#x7684;&#x6B65;&#x9AA4;&#x4E2D;&#x88AB;&#x4F7F;&#x7528;&#xFF0C;&#x90A3;&#x5B83;&#x53C8;&#x662F;&#x4F55;&#x65B9;&#x795E;&#x5723;&#x5462;&#xFF1F;&#x5B83;&#x662F;&#x5BF9; HTTP &#x534F;&#x8BAE;&#x64CD;&#x4F5C;&#x7684;&#x62BD;&#x8C61;&#xFF0C;&#x6709;&#x4E24;&#x4E2A;&#x5B9E;&#x73B0;&#xFF1A;<code>Http1Codec</code>&#x548C;<code>Http2Codec</code>&#xFF0C;&#x987E;&#x540D;&#x601D;&#x4E49;&#xFF0C;&#x5B83;&#x4EEC;&#x5206;&#x522B;&#x5BF9;&#x5E94; HTTP/1.1 &#x548C; HTTP/2 &#x7248;&#x672C;&#x7684;&#x5B9E;&#x73B0;&#x3002;</p>
 <p>&#x5728;<code>Http1Codec</code>&#x4E2D;&#xFF0C;&#x5B83;&#x5229;&#x7528;<a href="https://github.com/square/okio/" target="_blank">Okio</a>&#x5BF9;<code>Socket</code>&#x7684;&#x8BFB;&#x5199;&#x64CD;&#x4F5C;&#x8FDB;&#x884C;&#x5C01;&#x88C5;&#xFF0C;Okio &#x4EE5;&#x540E;&#x6709;&#x673A;&#x4F1A;&#x518D;&#x8FDB;&#x884C;&#x5206;&#x6790;&#xFF0C;&#x73B0;&#x5728;&#x8BA9;&#x6211;&#x4EEC;&#x5BF9;&#x5B83;&#x4EEC;&#x4FDD;&#x6301;&#x4E00;&#x4E2A;&#x7B80;&#x5355;&#x5730;&#x8BA4;&#x8BC6;&#xFF1A;&#x5B83;&#x5BF9;<code>java.io</code>&#x548C;<code>java.nio</code>&#x8FDB;&#x884C;&#x4E86;&#x5C01;&#x88C5;&#xFF0C;&#x8BA9;&#x6211;&#x4EEC;&#x66F4;&#x4FBF;&#x6377;&#x9AD8;&#x6548;&#x7684;&#x8FDB;&#x884C; IO &#x64CD;&#x4F5C;&#x3002;</p>
 <p>&#x800C;&#x521B;&#x5EFA;<code>HttpCodec</code>&#x5BF9;&#x8C61;&#x7684;&#x8FC7;&#x7A0B;&#x6D89;&#x53CA;&#x5230;<code>StreamAllocation</code>&#x3001;<code>RealConnection</code>&#xFF0C;&#x4EE3;&#x7801;&#x8F83;&#x957F;&#xFF0C;&#x8FD9;&#x91CC;&#x5C31;&#x4E0D;&#x5C55;&#x5F00;&#xFF0C;&#x8FD9;&#x4E2A;&#x8FC7;&#x7A0B;&#x6982;&#x62EC;&#x6765;&#x8BF4;&#xFF0C;&#x5C31;&#x662F;&#x627E;&#x5230;&#x4E00;&#x4E2A;&#x53EF;&#x7528;&#x7684;<code>RealConnection</code>&#xFF0C;&#x518D;&#x5229;&#x7528;<code>RealConnection</code>&#x7684;&#x8F93;&#x5165;&#x8F93;&#x51FA;&#xFF08;<code>BufferedSource</code>&#x548C;<code>BufferedSink</code>&#xFF09;&#x521B;&#x5EFA;<code>HttpCodec</code>&#x5BF9;&#x8C61;&#xFF0C;&#x4F9B;&#x540E;&#x7EED;&#x6B65;&#x9AA4;&#x4F7F;&#x7528;&#x3002;</p>
 <h5 id="2212&#x53D1;&#x9001;&#x548C;&#x63A5;&#x6536;&#x6570;&#x636E;&#xFF1A;callserverinterceptor"><a name="2212&#x53D1;&#x9001;&#x548C;&#x63A5;&#x6536;&#x6570;&#x636E;&#xFF1A;callserverinterceptor" class="anchor-navigation-ex-anchor" href="#2212&#x53D1;&#x9001;&#x548C;&#x63A5;&#x6536;&#x6570;&#x636E;&#xFF1A;callserverinterceptor"><i class="fa fa-link" aria-hidden="true"></i></a>2.2.1.2.&#x53D1;&#x9001;&#x548C;&#x63A5;&#x6536;&#x6570;&#x636E;&#xFF1A;CallServerInterceptor</h5>
-<pre><code class="lang-java">@Override public Response intercept(Chain chain) throws IOException {
+<pre><code class="lang-java"><span class="hljs-meta">@Override</span> <span class="hljs-function"><span class="hljs-keyword">public</span> Response <span class="hljs-title">intercept</span><span class="hljs-params">(Chain chain)</span> <span class="hljs-keyword">throws</span> IOException </span>{
   HttpCodec httpCodec = ((RealInterceptorChain) chain).httpStream();
   StreamAllocation streamAllocation = ((RealInterceptorChain) chain).streamAllocation();
   Request request = chain.request();
 
-  long sentRequestMillis = System.currentTimeMillis();
+  <span class="hljs-keyword">long</span> sentRequestMillis = System.currentTimeMillis();
   httpCodec.writeRequestHeaders(request);
 
-  if (HttpMethod.permitsRequestBody(request.method()) &amp;&amp; request.body() != null) {
+  <span class="hljs-keyword">if</span> (HttpMethod.permitsRequestBody(request.method()) &amp;&amp; request.body() != <span class="hljs-keyword">null</span>) {
     Sink requestBodyOut = httpCodec.createRequestBody(request, request.body().contentLength());
     BufferedSink bufferedRequestBody = Okio.buffer(requestBodyOut);
     request.body().writeTo(bufferedRequestBody);
@@ -3872,20 +3876,20 @@
       .receivedResponseAtMillis(System.currentTimeMillis())
       .build();
 
-  if (!forWebSocket || response.code() != 101) {
+  <span class="hljs-keyword">if</span> (!forWebSocket || response.code() != <span class="hljs-number">101</span>) {
     response = response.newBuilder()
         .body(httpCodec.openResponseBody(response))
         .build();
   }
 
-  if (&quot;close&quot;.equalsIgnoreCase(response.request().header(&quot;Connection&quot;))
-      || &quot;close&quot;.equalsIgnoreCase(response.header(&quot;Connection&quot;))) {
+  <span class="hljs-keyword">if</span> (<span class="hljs-string">&quot;close&quot;</span>.equalsIgnoreCase(response.request().header(<span class="hljs-string">&quot;Connection&quot;</span>))
+      || <span class="hljs-string">&quot;close&quot;</span>.equalsIgnoreCase(response.header(<span class="hljs-string">&quot;Connection&quot;</span>))) {
     streamAllocation.noNewStreams();
   }
 
-  // &#x7701;&#x7565;&#x90E8;&#x5206;&#x68C0;&#x67E5;&#x4EE3;&#x7801;
+  <span class="hljs-comment">// &#x7701;&#x7565;&#x90E8;&#x5206;&#x68C0;&#x67E5;&#x4EE3;&#x7801;</span>
 
-  return response;
+  <span class="hljs-keyword">return</span> response;
 }
 </code></pre>
 <p>&#x6211;&#x4EEC;&#x6293;&#x4F4F;&#x4E3B;&#x5E72;&#x90E8;&#x5206;&#xFF1A;</p>
@@ -3899,32 +3903,32 @@
 <p>&#x5176;&#x5B9E;<code>Interceptor</code>&#x7684;&#x8BBE;&#x8BA1;&#x4E5F;&#x662F;&#x4E00;&#x79CD;&#x5206;&#x5C42;&#x7684;&#x601D;&#x60F3;&#xFF0C;&#x6BCF;&#x4E2A;<code>Interceptor</code>&#x5C31;&#x662F;&#x4E00;&#x5C42;&#x3002;&#x4E3A;&#x4EC0;&#x4E48;&#x8981;&#x5957;&#x8FD9;&#x4E48;&#x591A;&#x5C42;&#x5462;&#xFF1F;&#x5206;&#x5C42;&#x7684;&#x601D;&#x60F3;&#x5728; TCP/IP &#x534F;&#x8BAE;&#x4E2D;&#x5C31;&#x4F53;&#x73B0;&#x5F97;&#x6DCB;&#x6F13;&#x5C3D;&#x81F4;&#xFF0C;&#x5206;&#x5C42;&#x7B80;&#x5316;&#x4E86;&#x6BCF;&#x4E00;&#x5C42;&#x7684;&#x903B;&#x8F91;&#xFF0C;&#x6BCF;&#x5C42;&#x53EA;&#x9700;&#x8981;&#x5173;&#x6CE8;&#x81EA;&#x5DF1;&#x7684;&#x8D23;&#x4EFB;&#xFF08;&#x5355;&#x4E00;&#x539F;&#x5219;&#x601D;&#x60F3;&#x4E5F;&#x5728;&#x6B64;&#x4F53;&#x73B0;&#xFF09;&#xFF0C;&#x800C;&#x5404;&#x5C42;&#x4E4B;&#x95F4;&#x901A;&#x8FC7;&#x7EA6;&#x5B9A;&#x7684;&#x63A5;&#x53E3;/&#x534F;&#x8BAE;&#x8FDB;&#x884C;&#x5408;&#x4F5C;&#xFF08;&#x9762;&#x5411;&#x63A5;&#x53E3;&#x7F16;&#x7A0B;&#x601D;&#x60F3;&#xFF09;&#xFF0C;&#x5171;&#x540C;&#x5B8C;&#x6210;&#x590D;&#x6742;&#x7684;&#x4EFB;&#x52A1;&#x3002;</p>
 <p>&#x7B80;&#x5355;&#x5E94;&#x8BE5;&#x662F;&#x6211;&#x4EEC;&#x7684;&#x7EC8;&#x6781;&#x8FFD;&#x6C42;&#x4E4B;&#x4E00;&#xFF0C;&#x5C3D;&#x7BA1;&#x6709;&#x65F6;&#x4E3A;&#x4E86;&#x8FBE;&#x6210;&#x76EE;&#x6807;&#x4E0D;&#x5F97;&#x4E0D;&#x590D;&#x6742;&#xFF0C;&#x4F46;&#x5982;&#x679C;&#x6709;&#x53E6;&#x4E00;&#x79CD;&#x66F4;&#x7B80;&#x5355;&#x7684;&#x65B9;&#x5F0F;&#xFF0C;&#x6211;&#x60F3;&#x5E94;&#x8BE5;&#x6CA1;&#x6709;&#x4EBA;&#x4E0D;&#x613F;&#x610F;&#x66FF;&#x6362;&#x3002;</p>
 <h4 id="222&#x53D1;&#x8D77;&#x5F02;&#x6B65;&#x7F51;&#x7EDC;&#x8BF7;&#x6C42;"><a name="222&#x53D1;&#x8D77;&#x5F02;&#x6B65;&#x7F51;&#x7EDC;&#x8BF7;&#x6C42;" class="anchor-navigation-ex-anchor" href="#222&#x53D1;&#x8D77;&#x5F02;&#x6B65;&#x7F51;&#x7EDC;&#x8BF7;&#x6C42;"><i class="fa fa-link" aria-hidden="true"></i></a>2.2.2.&#x53D1;&#x8D77;&#x5F02;&#x6B65;&#x7F51;&#x7EDC;&#x8BF7;&#x6C42;</h4>
-<pre><code class="lang-java">client.newCall(request).enqueue(new Callback() {
-    @Override
-    public void onFailure(Call call, IOException e) {
+<pre><code class="lang-java">client.newCall(request).enqueue(<span class="hljs-keyword">new</span> Callback() {
+    <span class="hljs-meta">@Override</span>
+    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">onFailure</span><span class="hljs-params">(Call call, IOException e)</span> </span>{
     }
 
-    @Override
-    public void onResponse(Call call, Response response) throws IOException {
+    <span class="hljs-meta">@Override</span>
+    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">onResponse</span><span class="hljs-params">(Call call, Response response)</span> <span class="hljs-keyword">throws</span> IOException </span>{
         System.out.println(response.body().string());
     }
 });
 
-// RealCall#enqueue
-@Override public void enqueue(Callback responseCallback) {
-  synchronized (this) {
-    if (executed) throw new IllegalStateException(&quot;Already Executed&quot;);
-    executed = true;
+<span class="hljs-comment">// RealCall#enqueue</span>
+<span class="hljs-meta">@Override</span> <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">enqueue</span><span class="hljs-params">(Callback responseCallback)</span> </span>{
+  <span class="hljs-keyword">synchronized</span> (<span class="hljs-keyword">this</span>) {
+    <span class="hljs-keyword">if</span> (executed) <span class="hljs-keyword">throw</span> <span class="hljs-keyword">new</span> IllegalStateException(<span class="hljs-string">&quot;Already Executed&quot;</span>);
+    executed = <span class="hljs-keyword">true</span>;
   }
-  client.dispatcher().enqueue(new AsyncCall(responseCallback));
+  client.dispatcher().enqueue(<span class="hljs-keyword">new</span> AsyncCall(responseCallback));
 }
 
-// Dispatcher#enqueue
-synchronized void enqueue(AsyncCall call) {
-  if (runningAsyncCalls.size() &lt; maxRequests &amp;&amp; runningCallsForHost(call) &lt; maxRequestsPerHost) {
+<span class="hljs-comment">// Dispatcher#enqueue</span>
+<span class="hljs-function"><span class="hljs-keyword">synchronized</span> <span class="hljs-keyword">void</span> <span class="hljs-title">enqueue</span><span class="hljs-params">(AsyncCall call)</span> </span>{
+  <span class="hljs-keyword">if</span> (runningAsyncCalls.size() &lt; maxRequests &amp;&amp; runningCallsForHost(call) &lt; maxRequestsPerHost) {
     runningAsyncCalls.add(call);
     executorService().execute(call);
-  } else {
+  } <span class="hljs-keyword">else</span> {
     readyAsyncCalls.add(call);
   }
 }
@@ -3940,7 +3944,7 @@ synchronized void enqueue(AsyncCall call) {
 <li>body &#x5FC5;&#x987B;&#x88AB;&#x5173;&#x95ED;&#xFF0C;&#x5426;&#x5219;&#x4F1A;&#x53D1;&#x751F;&#x8D44;&#x6E90;&#x6CC4;&#x6F0F;&#xFF1B;</li>
 </ol>
 <p>&#x5728;2.2.1.2.&#x53D1;&#x9001;&#x548C;&#x63A5;&#x6536;&#x6570;&#x636E;&#xFF1A;CallServerInterceptor&#x5C0F;&#x8282;&#x4E2D;&#xFF0C;&#x6211;&#x4EEC;&#x5C31;&#x770B;&#x8FC7;&#x4E86; body &#x76F8;&#x5173;&#x7684;&#x4EE3;&#x7801;&#xFF1A;</p>
-<pre><code class="lang-java">if (!forWebSocket || response.code() != 101) {
+<pre><code class="lang-java"><span class="hljs-keyword">if</span> (!forWebSocket || response.code() != <span class="hljs-number">101</span>) {
   response = response.newBuilder()
       .body(httpCodec.openResponseBody(response))
       .build();
@@ -3952,7 +3956,7 @@ synchronized void enqueue(AsyncCall call) {
 <p>&#x5728;2.2.1.&#x540C;&#x6B65;&#x7F51;&#x7EDC;&#x8BF7;&#x6C42;&#x5C0F;&#x8282;&#x4E2D;&#xFF0C;&#x6211;&#x4EEC;&#x5DF2;&#x7ECF;&#x770B;&#x5230;&#x4E86;<code>Interceptor</code>&#x7684;&#x5E03;&#x5C40;&#xFF0C;&#x5728;&#x5EFA;&#x7ACB;&#x8FDE;&#x63A5;&#x3001;&#x548C;&#x670D;&#x52A1;&#x5668;&#x901A;&#x8BAF;&#x4E4B;&#x524D;&#xFF0C;&#x5C31;&#x662F;<code>CacheInterceptor</code>&#xFF0C;&#x5728;&#x5EFA;&#x7ACB;&#x8FDE;&#x63A5;&#x4E4B;&#x524D;&#xFF0C;&#x6211;&#x4EEC;&#x68C0;&#x67E5;&#x54CD;&#x5E94;&#x662F;&#x5426;&#x5DF2;&#x7ECF;&#x88AB;&#x7F13;&#x5B58;&#x3001;&#x7F13;&#x5B58;&#x662F;&#x5426;&#x53EF;&#x7528;&#xFF0C;&#x5982;&#x679C;&#x662F;&#x5219;&#x76F4;&#x63A5;&#x8FD4;&#x56DE;&#x7F13;&#x5B58;&#x7684;&#x6570;&#x636E;&#xFF0C;&#x5426;&#x5219;&#x5C31;&#x8FDB;&#x884C;&#x540E;&#x9762;&#x7684;&#x6D41;&#x7A0B;&#xFF0C;&#x5E76;&#x5728;&#x8FD4;&#x56DE;&#x4E4B;&#x524D;&#xFF0C;&#x628A;&#x7F51;&#x7EDC;&#x7684;&#x6570;&#x636E;&#x5199;&#x5165;&#x7F13;&#x5B58;&#x3002;</p>
 <p>&#x8FD9;&#x5757;&#x4EE3;&#x7801;&#x6BD4;&#x8F83;&#x591A;&#xFF0C;&#x4F46;&#x4E5F;&#x5F88;&#x76F4;&#x89C2;&#xFF0C;&#x4E3B;&#x8981;&#x6D89;&#x53CA; HTTP &#x534F;&#x8BAE;&#x7F13;&#x5B58;&#x7EC6;&#x8282;&#x7684;&#x5B9E;&#x73B0;&#xFF0C;&#x800C;&#x5177;&#x4F53;&#x7684;&#x7F13;&#x5B58;&#x903B;&#x8F91; OkHttp &#x5185;&#x7F6E;&#x5C01;&#x88C5;&#x4E86;&#x4E00;&#x4E2A;<code>Cache</code>&#x7C7B;&#xFF0C;&#x5B83;&#x5229;&#x7528;<code>DiskLruCache</code>&#xFF0C;&#x7528;&#x78C1;&#x76D8;&#x4E0A;&#x7684;&#x6709;&#x9650;&#x5927;&#x5C0F;&#x7A7A;&#x95F4;&#x8FDB;&#x884C;&#x7F13;&#x5B58;&#xFF0C;&#x6309;&#x7167; LRU &#x7B97;&#x6CD5;&#x8FDB;&#x884C;&#x7F13;&#x5B58;&#x6DD8;&#x6C70;&#xFF0C;&#x8FD9;&#x91CC;&#x4E5F;&#x4E0D;&#x518D;&#x5C55;&#x5F00;&#x3002;</p>
 <p>&#x6211;&#x4EEC;&#x53EF;&#x4EE5;&#x5728;&#x6784;&#x9020;<code>OkHttpClient</code>&#x65F6;&#x8BBE;&#x7F6E;<code>Cache</code>&#x5BF9;&#x8C61;&#xFF0C;&#x5728;&#x5176;&#x6784;&#x9020;&#x51FD;&#x6570;&#x4E2D;&#x6211;&#x4EEC;&#x53EF;&#x4EE5;&#x6307;&#x5B9A;&#x76EE;&#x5F55;&#x548C;&#x7F13;&#x5B58;&#x5927;&#x5C0F;&#xFF1A;</p>
-<pre><code class="lang-java">public Cache(File directory, long maxSize);
+<pre><code class="lang-java"><span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-title">Cache</span><span class="hljs-params">(File directory, <span class="hljs-keyword">long</span> maxSize)</span></span>;
 </code></pre>
 <p>&#x800C;&#x5982;&#x679C;&#x6211;&#x4EEC;&#x5BF9; OkHttp &#x5185;&#x7F6E;&#x7684;<code>Cache</code>&#x7C7B;&#x4E0D;&#x6EE1;&#x610F;&#xFF0C;&#x6211;&#x4EEC;&#x53EF;&#x4EE5;&#x81EA;&#x884C;&#x5B9E;&#x73B0;<code>InternalCache</code>&#x63A5;&#x53E3;&#xFF0C;&#x5728;&#x6784;&#x9020;<code>OkHttpClient</code>&#x65F6;&#x8FDB;&#x884C;&#x8BBE;&#x7F6E;&#xFF0C;&#x8FD9;&#x6837;&#x5C31;&#x53EF;&#x4EE5;&#x4F7F;&#x7528;&#x6211;&#x4EEC;&#x81EA;&#x5B9A;&#x4E49;&#x7684;&#x7F13;&#x5B58;&#x7B56;&#x7565;&#x4E86;&#x3002;</p>
 <h2 id="&#x4E09;&#x3001;&#x603B;&#x7ED3;"><a name="&#x4E09;&#x3001;&#x603B;&#x7ED3;" class="anchor-navigation-ex-anchor" href="#&#x4E09;&#x3001;&#x603B;&#x7ED3;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x4E09;&#x3001;&#x603B;&#x7ED3;</h2>
@@ -4009,7 +4013,7 @@ synchronized void enqueue(AsyncCall call) {
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"OkHttp解析","level":"3.3.1","depth":2,"next":{"title":"Retrofit解析","level":"3.3.2","depth":2,"path":"android/open-source-framework/Retrofit.md","ref":"android/open-source-framework/Retrofit.md","articles":[]},"previous":{"title":"开源框架","level":"3.3","depth":1,"path":"android/open-source-framework.md","ref":"android/open-source-framework.md","articles":[{"title":"OkHttp解析","level":"3.3.1","depth":2,"path":"android/open-source-framework/okhttp.md","ref":"android/open-source-framework/okhttp.md","articles":[]},{"title":"Retrofit解析","level":"3.3.2","depth":2,"path":"android/open-source-framework/Retrofit.md","ref":"android/open-source-framework/Retrofit.md","articles":[]},{"title":"EventBus解析","level":"3.3.3","depth":2,"path":"android/open-source-framework/EventBus.md","ref":"android/open-source-framework/EventBus.md","articles":[]}]},"dir":"ltr"},"config":{"plugins":["-lunr","-search","-highlight","-livereload","search-plus@^0.0.11","simple-page-toc@^0.1.1","github@^2.0.0","github-buttons@2.1.0","edit-link@^2.0.2","advanced-emoji@^0.2.1","anchors@^0.7.1","include-codeblock@^3.0.2","ace@^0.3.2","emphasize@^1.1.0","katex@^1.1.3","splitter@^0.0.8","tbfed-pagefooter@^0.0.1","expandable-chapters-small@^0.1.7","sectionx@^3.1.0","local-video@^1.0.1","anchor-navigation-ex@0.1.8","favicon@^0.0.2"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"tbfed-pagefooter":{"copyright":"Copyright © ruheng.com 2017","modify_label":"该文件修订时间：","modify_format":"YYYY-MM-DD HH:mm:ss"},"emphasize":{},"ace":{},"github":{"url":"https://github.com/LRH1993/android_interview"},"simple-page-toc":{"maxDepth":3,"skipFirstH1":true},"splitter":{},"katex":{},"fontsettings":{"theme":"white","family":"sans","size":2},"sectionx":{"tag":"b"},"anchor-navigation-ex":{"isRewritePageTitle":false,"tocLevel1Icon":"fa fa-hand-o-right","tocLevel2Icon":"fa fa-hand-o-right","tocLevel3Icon":"fa fa-hand-o-right"},"favicon":{"shortcut":"favicon.ico","bookmark":"favicon.ico"},"github-buttons":{"repo":"LRH1993/android_interview","types":["star"],"size":"small"},"expandable-chapters-small":{},"local-video":{},"advanced-emoji":{"embedEmojis":false},"include-codeblock":{"check":false,"edit":true,"fixlang":false,"lang":"","template":"ace","theme":"chrome","unindent":true},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":true,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"edit-link":{"label":"Edit This Page","base":"https://github.com/LRH1993/android_interview/edit/master"},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":true},"anchors":{},"search-plus":{}},"theme":"default","author":"ruheng","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"Android校招面试指南","language":"zh-hans","output.name":"site","links":{"sidebar":{"Home":"http://lruheng.com/"}},"gitbook":"3.2.3","description":"Android面试必备，记录自己的秋招之路"},"file":{"path":"android/open-source-framework/okhttp.md","mtime":"2017-08-22T07:53:58.000Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2017-10-16T12:05:21.906Z"},"basePath":"../..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"OkHttp解析","level":"3.3.1","depth":2,"next":{"title":"Retrofit解析","level":"3.3.2","depth":2,"path":"android/open-source-framework/Retrofit.md","ref":"android/open-source-framework/Retrofit.md","articles":[]},"previous":{"title":"开源框架","level":"3.3","depth":1,"path":"android/open-source-framework.md","ref":"android/open-source-framework.md","articles":[{"title":"OkHttp解析","level":"3.3.1","depth":2,"path":"android/open-source-framework/okhttp.md","ref":"android/open-source-framework/okhttp.md","articles":[]},{"title":"Retrofit解析","level":"3.3.2","depth":2,"path":"android/open-source-framework/Retrofit.md","ref":"android/open-source-framework/Retrofit.md","articles":[]},{"title":"EventBus解析","level":"3.3.3","depth":2,"path":"android/open-source-framework/EventBus.md","ref":"android/open-source-framework/EventBus.md","articles":[]}]},"dir":"ltr"},"config":{"plugins":["-lunr","-search","-livereload","search-plus@^0.0.11","simple-page-toc@^0.1.1","github@^2.0.0","github-buttons@2.1.0","edit-link@^2.0.2","advanced-emoji@^0.2.1","anchors@^0.7.1","include-codeblock@^3.0.2","ace@^0.3.2","emphasize@^1.1.0","katex@^1.1.3","splitter@^0.0.8","tbfed-pagefooter@^0.0.1","expandable-chapters-small@^0.1.7","sectionx@^3.1.0","local-video@^1.0.1","anchor-navigation-ex@0.1.8","favicon@^0.0.2"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"tbfed-pagefooter":{"copyright":"Copyright © ruheng.com 2017","modify_label":"该文件修订时间：","modify_format":"YYYY-MM-DD HH:mm:ss"},"emphasize":{},"ace":{},"github":{"url":"https://github.com/LRH1993/android_interview"},"simple-page-toc":{"maxDepth":3,"skipFirstH1":true},"splitter":{},"katex":{},"fontsettings":{"theme":"white","family":"sans","size":2},"sectionx":{"tag":"b"},"highlight":{},"anchor-navigation-ex":{"isRewritePageTitle":false,"tocLevel1Icon":"fa fa-hand-o-right","tocLevel2Icon":"fa fa-hand-o-right","tocLevel3Icon":"fa fa-hand-o-right"},"favicon":{"shortcut":"favicon.ico","bookmark":"favicon.ico"},"github-buttons":{"repo":"LRH1993/android_interview","types":["star"],"size":"small"},"expandable-chapters-small":{},"local-video":{},"advanced-emoji":{"embedEmojis":false},"include-codeblock":{"check":false,"edit":false,"fixlang":false,"lang":"","template":"default","theme":"chrome","unindent":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":true,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"edit-link":{"label":"Edit This Page","base":"https://github.com/LRH1993/android_interview/edit/master"},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":true},"anchors":{},"search-plus":{}},"theme":"default","author":"ruheng","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"Android校招面试指南","language":"zh-hans","output.name":"site","links":{"sidebar":{"Home":"http://lruheng.com/"}},"gitbook":"3.2.3","description":"Android面试必备，记录自己的秋招之路"},"file":{"path":"android/open-source-framework/okhttp.md","mtime":"2017-08-22T07:53:58.000Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2017-10-16T13:00:43.989Z"},"basePath":"../..","book":{"language":""}});
         });
     </script>
 </div>

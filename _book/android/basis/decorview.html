@@ -69,6 +69,10 @@
                 
             
                 
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
                 <link rel="stylesheet" href="../../gitbook/gitbook-plugin-fontsettings/website.css">
                 
             
@@ -3712,39 +3716,39 @@
 <p>Window&#x662F;&#x89C6;&#x56FE;&#x7684;&#x627F;&#x8F7D;&#x5668;&#xFF0C;&#x5185;&#x90E8;&#x6301;&#x6709;&#x4E00;&#x4E2A; DecorView&#xFF0C;&#x800C;&#x8FD9;&#x4E2A;DecorView&#x624D;&#x662F; view &#x7684;&#x6839;&#x5E03;&#x5C40;&#x3002;Window&#x662F;&#x4E00;&#x4E2A;&#x62BD;&#x8C61;&#x7C7B;&#xFF0C;&#x5B9E;&#x9645;&#x5728;Activity&#x4E2D;&#x6301;&#x6709;&#x7684;&#x662F;&#x5176;&#x5B50;&#x7C7B;PhoneWindow&#x3002;PhoneWindow&#x4E2D;&#x6709;&#x4E2A;&#x5185;&#x90E8;&#x7C7B;DecorView&#xFF0C;&#x901A;&#x8FC7;&#x521B;&#x5EFA;DecorView&#x6765;&#x52A0;&#x8F7D;Activity&#x4E2D;&#x8BBE;&#x7F6E;&#x7684;&#x5E03;&#x5C40;<code>R.layout.activity_main</code>&#x3002;Window &#x901A;&#x8FC7;WindowManager&#x5C06;DecorView&#x52A0;&#x8F7D;&#x5176;&#x4E2D;&#xFF0C;&#x5E76;&#x5C06;DecorView&#x4EA4;&#x7ED9;ViewRoot&#xFF0C;&#x8FDB;&#x884C;&#x89C6;&#x56FE;&#x7ED8;&#x5236;&#x4EE5;&#x53CA;&#x5176;&#x4ED6;&#x4EA4;&#x4E92;&#x3002;</p>
 <h3 id="decorview"><a name="decorview" class="anchor-navigation-ex-anchor" href="#decorview"><i class="fa fa-link" aria-hidden="true"></i></a>DecorView</h3>
 <p>DecorView&#x662F;FrameLayout&#x7684;&#x5B50;&#x7C7B;&#xFF0C;&#x5B83;&#x53EF;&#x4EE5;&#x88AB;&#x8BA4;&#x4E3A;&#x662F;Android&#x89C6;&#x56FE;&#x6811;&#x7684;&#x6839;&#x8282;&#x70B9;&#x89C6;&#x56FE;&#x3002;DecorView&#x4F5C;&#x4E3A;&#x9876;&#x7EA7;View&#xFF0C;&#x4E00;&#x822C;&#x60C5;&#x51B5;&#x4E0B;&#x5B83;&#x5185;&#x90E8;&#x5305;&#x542B;&#x4E00;&#x4E2A;&#x7AD6;&#x76F4;&#x65B9;&#x5411;&#x7684;LinearLayout&#xFF0C;<strong>&#x5728;&#x8FD9;&#x4E2A;LinearLayout&#x91CC;&#x9762;&#x6709;&#x4E0A;&#x4E0B;&#x4E09;&#x4E2A;&#x90E8;&#x5206;&#xFF0C;&#x4E0A;&#x9762;&#x662F;&#x4E2A;ViewStub,&#x5EF6;&#x8FDF;&#x52A0;&#x8F7D;&#x7684;&#x89C6;&#x56FE;&#xFF08;&#x5E94;&#x8BE5;&#x662F;&#x8BBE;&#x7F6E;ActionBar,&#x6839;&#x636E;Theme&#x8BBE;&#x7F6E;&#xFF09;&#xFF0C;&#x4E2D;&#x95F4;&#x7684;&#x662F;&#x6807;&#x9898;&#x680F;(&#x6839;&#x636E;Theme&#x8BBE;&#x7F6E;&#xFF0C;&#x6709;&#x7684;&#x5E03;&#x5C40;&#x6CA1;&#x6709;)&#xFF0C;&#x4E0B;&#x9762;&#x7684;&#x662F;&#x5185;&#x5BB9;&#x680F;&#x3002;</strong>&#x5177;&#x4F53;&#x60C5;&#x51B5;&#x548C;Android&#x7248;&#x672C;&#x53CA;&#x4E3B;&#x4F53;&#x6709;&#x5173;&#xFF0C;&#x4EE5;&#x5176;&#x4E2D;&#x4E00;&#x4E2A;&#x5E03;&#x5C40;&#x4E3A;&#x4F8B;&#xFF0C;&#x5982;&#x4E0B;&#x6240;&#x793A;&#xFF1A;</p>
-<pre><code class="lang-Xml">&lt;LinearLayout xmlns:android=&quot;http://schemas.android.com/apk/res/android&quot;
-    android:orientation=&quot;vertical&quot;
-    android:fitsSystemWindows=&quot;true&quot;&gt;
-    &lt;!-- Popout bar for action modes --&gt;
-    &lt;ViewStub android:id=&quot;@+id/action_mode_bar_stub&quot;
-              android:inflatedId=&quot;@+id/action_mode_bar&quot;
-              android:layout=&quot;@layout/action_mode_bar&quot;
-              android:layout_width=&quot;match_parent&quot;
-              android:layout_height=&quot;wrap_content&quot;
-              android:theme=&quot;?attr/actionBarTheme&quot; /&gt;
-    &lt;FrameLayout
-        android:layout_width=&quot;match_parent&quot; 
-        android:layout_height=&quot;?android:attr/windowTitleSize&quot;
-        style=&quot;?android:attr/windowTitleBackgroundStyle&quot;&gt;
-        &lt;TextView android:id=&quot;@android:id/title&quot; 
-            style=&quot;?android:attr/windowTitleStyle&quot;
-            android:background=&quot;@null&quot;
-            android:fadingEdge=&quot;horizontal&quot;
-            android:gravity=&quot;center_vertical&quot;
-            android:layout_width=&quot;match_parent&quot;
-            android:layout_height=&quot;match_parent&quot; /&gt;
-    &lt;/FrameLayout&gt;
-    &lt;FrameLayout android:id=&quot;@android:id/content&quot;
-        android:layout_width=&quot;match_parent&quot; 
-        android:layout_height=&quot;0dip&quot;
-        android:layout_weight=&quot;1&quot;
-        android:foregroundGravity=&quot;fill_horizontal|top&quot;
-        android:foreground=&quot;?android:attr/windowContentOverlay&quot; /&gt;
-&lt;/LinearLayout&gt;
+<pre><code class="lang-Xml"><span class="hljs-tag">&lt;<span class="hljs-name">LinearLayout</span> <span class="hljs-attr">xmlns:android</span>=<span class="hljs-string">&quot;http://schemas.android.com/apk/res/android&quot;</span>
+    <span class="hljs-attr">android:orientation</span>=<span class="hljs-string">&quot;vertical&quot;</span>
+    <span class="hljs-attr">android:fitsSystemWindows</span>=<span class="hljs-string">&quot;true&quot;</span>&gt;</span>
+    <span class="hljs-comment">&lt;!-- Popout bar for action modes --&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">ViewStub</span> <span class="hljs-attr">android:id</span>=<span class="hljs-string">&quot;@+id/action_mode_bar_stub&quot;</span>
+              <span class="hljs-attr">android:inflatedId</span>=<span class="hljs-string">&quot;@+id/action_mode_bar&quot;</span>
+              <span class="hljs-attr">android:layout</span>=<span class="hljs-string">&quot;@layout/action_mode_bar&quot;</span>
+              <span class="hljs-attr">android:layout_width</span>=<span class="hljs-string">&quot;match_parent&quot;</span>
+              <span class="hljs-attr">android:layout_height</span>=<span class="hljs-string">&quot;wrap_content&quot;</span>
+              <span class="hljs-attr">android:theme</span>=<span class="hljs-string">&quot;?attr/actionBarTheme&quot;</span> /&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">FrameLayout</span>
+        <span class="hljs-attr">android:layout_width</span>=<span class="hljs-string">&quot;match_parent&quot;</span> 
+        <span class="hljs-attr">android:layout_height</span>=<span class="hljs-string">&quot;?android:attr/windowTitleSize&quot;</span>
+        <span class="hljs-attr">style</span>=<span class="hljs-string">&quot;?android:attr/windowTitleBackgroundStyle&quot;</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">TextView</span> <span class="hljs-attr">android:id</span>=<span class="hljs-string">&quot;@android:id/title&quot;</span> 
+            <span class="hljs-attr">style</span>=<span class="hljs-string">&quot;?android:attr/windowTitleStyle&quot;</span>
+            <span class="hljs-attr">android:background</span>=<span class="hljs-string">&quot;@null&quot;</span>
+            <span class="hljs-attr">android:fadingEdge</span>=<span class="hljs-string">&quot;horizontal&quot;</span>
+            <span class="hljs-attr">android:gravity</span>=<span class="hljs-string">&quot;center_vertical&quot;</span>
+            <span class="hljs-attr">android:layout_width</span>=<span class="hljs-string">&quot;match_parent&quot;</span>
+            <span class="hljs-attr">android:layout_height</span>=<span class="hljs-string">&quot;match_parent&quot;</span> /&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-name">FrameLayout</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">FrameLayout</span> <span class="hljs-attr">android:id</span>=<span class="hljs-string">&quot;@android:id/content&quot;</span>
+        <span class="hljs-attr">android:layout_width</span>=<span class="hljs-string">&quot;match_parent&quot;</span> 
+        <span class="hljs-attr">android:layout_height</span>=<span class="hljs-string">&quot;0dip&quot;</span>
+        <span class="hljs-attr">android:layout_weight</span>=<span class="hljs-string">&quot;1&quot;</span>
+        <span class="hljs-attr">android:foregroundGravity</span>=<span class="hljs-string">&quot;fill_horizontal|top&quot;</span>
+        <span class="hljs-attr">android:foreground</span>=<span class="hljs-string">&quot;?android:attr/windowContentOverlay&quot;</span> /&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">LinearLayout</span>&gt;</span>
 </code></pre>
 <p>&#x5728;Activity&#x4E2D;&#x901A;&#x8FC7;setContentView&#x6240;&#x8BBE;&#x7F6E;&#x7684;&#x5E03;&#x5C40;&#x6587;&#x4EF6;&#x5176;&#x5B9E;&#x5C31;&#x662F;&#x88AB;&#x52A0;&#x5230;&#x5185;&#x5BB9;&#x680F;&#x4E4B;&#x4E2D;&#x7684;&#xFF0C;&#x6210;&#x4E3A;&#x5176;&#x552F;&#x4E00;&#x5B50;View&#xFF0C;&#x5C31;&#x662F;&#x4E0A;&#x9762;&#x7684;id&#x4E3A;content&#x7684;FrameLayout&#x4E2D;&#xFF0C;&#x5728;&#x4EE3;&#x7801;&#x4E2D;&#x53EF;&#x4EE5;&#x901A;&#x8FC7;content&#x6765;&#x5F97;&#x5230;&#x5BF9;&#x5E94;&#x52A0;&#x8F7D;&#x7684;&#x5E03;&#x5C40;&#x3002;</p>
 <pre><code class="lang-java">ViewGroup content = (ViewGroup)findViewById(android.R.id.content);
-ViewGroup rootView = (ViewGroup) content.getChildAt(0);
+ViewGroup rootView = (ViewGroup) content.getChildAt(<span class="hljs-number">0</span>);
 </code></pre>
 <h3 id="viewroot"><a name="viewroot" class="anchor-navigation-ex-anchor" href="#viewroot"><i class="fa fa-link" aria-hidden="true"></i></a>ViewRoot</h3>
 <p>ViewRoot&#x53EF;&#x80FD;&#x6BD4;&#x8F83;&#x964C;&#x751F;&#xFF0C;&#x4F46;&#x662F;&#x5176;&#x4F5C;&#x7528;&#x975E;&#x5E38;&#x91CD;&#x5927;&#x3002;&#x6240;&#x6709;View&#x7684;&#x7ED8;&#x5236;&#x4EE5;&#x53CA;&#x4E8B;&#x4EF6;&#x5206;&#x53D1;&#x7B49;&#x4EA4;&#x4E92;&#x90FD;&#x662F;&#x901A;&#x8FC7;&#x5B83;&#x6765;&#x6267;&#x884C;&#x6216;&#x4F20;&#x9012;&#x7684;&#x3002;</p>
@@ -3756,43 +3760,43 @@ ViewGroup rootView = (ViewGroup) content.getChildAt(0);
 <p>&#x8FD9;&#x90E8;&#x5206;&#x5185;&#x5BB9;&#x4E3B;&#x8981;&#x8BB2;DecorView&#x662F;&#x600E;&#x4E48;&#x4E00;&#x5C42;&#x5C42;&#x5D4C;&#x5957;&#x5728;Actvity&#xFF0C;PhoneWindow&#x4E2D;&#x7684;&#xFF0C;&#x4EE5;&#x53CA;DecorView&#x5982;&#x4F55;&#x52A0;&#x8F7D;&#x5185;&#x90E8;&#x5E03;&#x5C40;&#x3002;</p>
 <h3 id="setcontentview"><a name="setcontentview" class="anchor-navigation-ex-anchor" href="#setcontentview"><i class="fa fa-link" aria-hidden="true"></i></a>setContentView</h3>
 <p>&#x5148;&#x662F;&#x4ECE;Activity&#x4E2D;&#x7684;setContentView()&#x5F00;&#x59CB;&#x3002;</p>
-<pre><code class="lang-java">public void setContentView(@LayoutRes int layoutResID) {
+<pre><code class="lang-java"><span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">setContentView</span><span class="hljs-params">(@LayoutRes <span class="hljs-keyword">int</span> layoutResID)</span> </span>{
         getWindow().setContentView(layoutResID);
         initWindowDecorActionBar();
     }
 </code></pre>
 <p>&#x53EF;&#x4EE5;&#x770B;&#x5230;&#x5B9E;&#x9645;&#x662F;&#x4EA4;&#x7ED9;Window&#x88C5;&#x8F7D;&#x89C6;&#x56FE;&#x3002;<strong>&#x4E0B;&#x9762;&#x6765;&#x770B;&#x770B;Activity&#x662F;&#x600E;&#x4E48;&#x83B7;&#x5F97;Window&#x5BF9;&#x8C61;&#x7684;&#xFF1F;</strong></p>
-<pre><code class="lang-java"> final void attach(Context context, ActivityThread aThread,
-            Instrumentation instr, IBinder token, int ident,
+<pre><code class="lang-java"> <span class="hljs-function"><span class="hljs-keyword">final</span> <span class="hljs-keyword">void</span> <span class="hljs-title">attach</span><span class="hljs-params">(Context context, ActivityThread aThread,
+            Instrumentation instr, IBinder token, <span class="hljs-keyword">int</span> ident,
             Application application, Intent intent, ActivityInfo info,
             CharSequence title, Activity parent, String id,
             NonConfigurationInstances lastNonConfigurationInstances,
             Configuration config, String referrer, IVoiceInteractor voiceInteractor,
-            Window window) {
+            Window window)</span> </span>{
     ..................................................................
-        mWindow = new PhoneWindow(this, window);//&#x521B;&#x5EFA;&#x4E00;&#x4E2A;Window&#x5BF9;&#x8C61;
-        mWindow.setWindowControllerCallback(this);
-        mWindow.setCallback(this);//&#x8BBE;&#x7F6E;&#x56DE;&#x8C03;&#xFF0C;&#x5411;Activity&#x5206;&#x53D1;&#x70B9;&#x51FB;&#x6216;&#x72B6;&#x6001;&#x6539;&#x53D8;&#x7B49;&#x4E8B;&#x4EF6;
-        mWindow.setOnWindowDismissedCallback(this);
+        mWindow = <span class="hljs-keyword">new</span> PhoneWindow(<span class="hljs-keyword">this</span>, window);<span class="hljs-comment">//&#x521B;&#x5EFA;&#x4E00;&#x4E2A;Window&#x5BF9;&#x8C61;</span>
+        mWindow.setWindowControllerCallback(<span class="hljs-keyword">this</span>);
+        mWindow.setCallback(<span class="hljs-keyword">this</span>);<span class="hljs-comment">//&#x8BBE;&#x7F6E;&#x56DE;&#x8C03;&#xFF0C;&#x5411;Activity&#x5206;&#x53D1;&#x70B9;&#x51FB;&#x6216;&#x72B6;&#x6001;&#x6539;&#x53D8;&#x7B49;&#x4E8B;&#x4EF6;</span>
+        mWindow.setOnWindowDismissedCallback(<span class="hljs-keyword">this</span>);
      .................................................................
         mWindow.setWindowManager(
                 (WindowManager)context.getSystemService(Context.WINDOW_SERVICE),
                 mToken, mComponent.flattenToString(),
-                (info.flags &amp; ActivityInfo.FLAG_HARDWARE_ACCELERATED) != 0);//&#x7ED9;Window&#x8BBE;&#x7F6E;WindowManager&#x5BF9;&#x8C61;
+                (info.flags &amp; ActivityInfo.FLAG_HARDWARE_ACCELERATED) != <span class="hljs-number">0</span>);<span class="hljs-comment">//&#x7ED9;Window&#x8BBE;&#x7F6E;WindowManager&#x5BF9;&#x8C61;</span>
  ....................................................................
     }
 </code></pre>
 <p>&#x5728;Activity&#x4E2D;&#x7684;attach()&#x65B9;&#x6CD5;&#x4E2D;&#xFF0C;&#x751F;&#x6210;&#x4E86;PhoneWindow&#x5B9E;&#x4F8B;&#x3002;&#x65E2;&#x7136;&#x6709;&#x4E86;Window&#x5BF9;&#x8C61;&#xFF0C;&#x90A3;&#x4E48;&#x6211;&#x4EEC;&#x5C31;&#x53EF;&#x4EE5;<strong>&#x8BBE;&#x7F6E;DecorView&#x7ED9;Window&#x5BF9;&#x8C61;&#x4E86;&#x3002;</strong></p>
-<pre><code class="lang-java"> public void setContentView(int layoutResID) {
-        if (mContentParent == null) {//mContentParent&#x4E3A;&#x7A7A;&#xFF0C;&#x521B;&#x5EFA;&#x4E00;&#x4E2A;DecroView
+<pre><code class="lang-java"> <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">setContentView</span><span class="hljs-params">(<span class="hljs-keyword">int</span> layoutResID)</span> </span>{
+        <span class="hljs-keyword">if</span> (mContentParent == <span class="hljs-keyword">null</span>) {<span class="hljs-comment">//mContentParent&#x4E3A;&#x7A7A;&#xFF0C;&#x521B;&#x5EFA;&#x4E00;&#x4E2A;DecroView</span>
             installDecor();
-        } else {
-            mContentParent.removeAllViews();//mContentParent&#x4E0D;&#x4E3A;&#x7A7A;&#xFF0C;&#x5220;&#x9664;&#x5176;&#x4E2D;&#x7684;View
+        } <span class="hljs-keyword">else</span> {
+            mContentParent.removeAllViews();<span class="hljs-comment">//mContentParent&#x4E0D;&#x4E3A;&#x7A7A;&#xFF0C;&#x5220;&#x9664;&#x5176;&#x4E2D;&#x7684;View</span>
         }
-        mLayoutInflater.inflate(layoutResID, mContentParent);//&#x4E3A;mContentParent&#x6DFB;&#x52A0;&#x5B50;View,&#x5373;Activity&#x4E2D;&#x8BBE;&#x7F6E;&#x7684;&#x5E03;&#x5C40;&#x6587;&#x4EF6;
-        final Callback cb = getCallback();
-        if (cb != null &amp;&amp; !isDestroyed()) {
-            cb.onContentChanged();//&#x56DE;&#x8C03;&#x901A;&#x77E5;&#xFF0C;&#x5185;&#x5BB9;&#x6539;&#x53D8;
+        mLayoutInflater.inflate(layoutResID, mContentParent);<span class="hljs-comment">//&#x4E3A;mContentParent&#x6DFB;&#x52A0;&#x5B50;View,&#x5373;Activity&#x4E2D;&#x8BBE;&#x7F6E;&#x7684;&#x5E03;&#x5C40;&#x6587;&#x4EF6;</span>
+        <span class="hljs-keyword">final</span> Callback cb = getCallback();
+        <span class="hljs-keyword">if</span> (cb != <span class="hljs-keyword">null</span> &amp;&amp; !isDestroyed()) {
+            cb.onContentChanged();<span class="hljs-comment">//&#x56DE;&#x8C03;&#x901A;&#x77E5;&#xFF0C;&#x5185;&#x5BB9;&#x6539;&#x53D8;</span>
         }
     }
 </code></pre>
@@ -3800,77 +3804,77 @@ ViewGroup rootView = (ViewGroup) content.getChildAt(0);
 &#x5C31;&#x662F;&#x524D;&#x9762;&#x5E03;&#x5C40;&#x4E2D;<code>@android:id/content</code>&#x6240;&#x5BF9;&#x5E94;&#x7684;FrameLayout&#x3002;</p>
 <p><strong>&#x901A;&#x8FC7;&#x4E0A;&#x9762;&#x7684;&#x6D41;&#x7A0B;&#x6211;&#x4EEC;&#x5927;&#x81F4;&#x53EF;&#x4EE5;&#x4E86;&#x89E3;&#x5148;&#x5728;PhoneWindow&#x4E2D;&#x521B;&#x5EFA;&#x4E86;&#x4E00;&#x4E2A;DecroView&#xFF0C;&#x5176;&#x4E2D;&#x521B;&#x5EFA;&#x7684;&#x8FC7;&#x7A0B;&#x4E2D;&#x53EF;&#x80FD;&#x6839;&#x636E;Theme&#x4E0D;&#x540C;&#xFF0C;&#x52A0;&#x8F7D;&#x4E0D;&#x540C;&#x7684;&#x5E03;&#x5C40;&#x683C;&#x5F0F;&#xFF0C;&#x4F8B;&#x5982;&#x6709;&#x6CA1;&#x6709;Title&#xFF0C;&#x6216;&#x6709;&#x6CA1;&#x6709;ActionBar&#x7B49;&#xFF0C;&#x7136;&#x540E;&#x518D;&#x5411;mContentParent&#x4E2D;&#x52A0;&#x5165;&#x5B50;View,&#x5373;Activity&#x4E2D;&#x8BBE;&#x7F6E;&#x7684;&#x5E03;&#x5C40;&#x3002;&#x5230;&#x6B64;&#x4F4D;&#x7F6E;&#xFF0C;&#x89C6;&#x56FE;&#x4E00;&#x5C42;&#x5C42;&#x5D4C;&#x5957;&#x6DFB;&#x52A0;&#x4E0A;&#x4E86;&#x3002;</strong></p>
 <p>&#x4E0B;&#x9762;&#x5177;&#x4F53;&#x6765;&#x770B;&#x770B;<code>installDecor();</code>&#x65B9;&#x6CD5;&#xFF0C;<strong>&#x600E;&#x4E48;&#x521B;&#x5EFA;&#x7684;DecroView&#xFF0C;&#x5E76;&#x8BBE;&#x7F6E;&#x5176;&#x6574;&#x4F53;&#x5E03;&#x5C40;&#xFF1F;</strong></p>
-<pre><code class="lang-java">private void installDecor() {
-    if (mDecor == null) {
-        mDecor = generateDecor(); //&#x751F;&#x6210;DecorView
+<pre><code class="lang-java"><span class="hljs-function"><span class="hljs-keyword">private</span> <span class="hljs-keyword">void</span> <span class="hljs-title">installDecor</span><span class="hljs-params">()</span> </span>{
+    <span class="hljs-keyword">if</span> (mDecor == <span class="hljs-keyword">null</span>) {
+        mDecor = generateDecor(); <span class="hljs-comment">//&#x751F;&#x6210;DecorView</span>
         mDecor.setDescendantFocusability(ViewGroup.FOCUS_AFTER_DESCENDANTS);
-        mDecor.setIsRootNamespace(true);
-        if (!mInvalidatePanelMenuPosted &amp;&amp; mInvalidatePanelMenuFeatures != 0) {
+        mDecor.setIsRootNamespace(<span class="hljs-keyword">true</span>);
+        <span class="hljs-keyword">if</span> (!mInvalidatePanelMenuPosted &amp;&amp; mInvalidatePanelMenuFeatures != <span class="hljs-number">0</span>) {
             mDecor.postOnAnimation(mInvalidatePanelMenuRunnable);
         }
     }
-    if (mContentParent == null) {
-        mContentParent = generateLayout(mDecor); // &#x4E3A;DecorView&#x8BBE;&#x7F6E;&#x5E03;&#x5C40;&#x683C;&#x5F0F;&#xFF0C;&#x5E76;&#x8FD4;&#x56DE;mContentParent
+    <span class="hljs-keyword">if</span> (mContentParent == <span class="hljs-keyword">null</span>) {
+        mContentParent = generateLayout(mDecor); <span class="hljs-comment">// &#x4E3A;DecorView&#x8BBE;&#x7F6E;&#x5E03;&#x5C40;&#x683C;&#x5F0F;&#xFF0C;&#x5E76;&#x8FD4;&#x56DE;mContentParent</span>
         ...
         } 
     }
 }
 </code></pre>
 <p>&#x518D;&#x6765;&#x770B;&#x770B; generateDecor()</p>
-<pre><code class="lang-java"> protected DecorView generateDecor() {
-        return new DecorView(getContext(), -1);
+<pre><code class="lang-java"> <span class="hljs-function"><span class="hljs-keyword">protected</span> DecorView <span class="hljs-title">generateDecor</span><span class="hljs-params">()</span> </span>{
+        <span class="hljs-keyword">return</span> <span class="hljs-keyword">new</span> DecorView(getContext(), -<span class="hljs-number">1</span>);
     }
 </code></pre>
 <p>&#x5F88;&#x7B80;&#x5355;&#xFF0C;&#x521B;&#x5EFA;&#x4E86;&#x4E00;&#x4E2A;DecorView&#x3002;</p>
 <p>&#x518D;&#x770B;generateLayout</p>
-<pre><code class="lang-java">protected ViewGroup generateLayout(DecorView decor) {
-        // &#x4ECE;&#x4E3B;&#x9898;&#x6587;&#x4EF6;&#x4E2D;&#x83B7;&#x53D6;&#x6837;&#x5F0F;&#x4FE1;&#x606F;
+<pre><code class="lang-java"><span class="hljs-function"><span class="hljs-keyword">protected</span> ViewGroup <span class="hljs-title">generateLayout</span><span class="hljs-params">(DecorView decor)</span> </span>{
+        <span class="hljs-comment">// &#x4ECE;&#x4E3B;&#x9898;&#x6587;&#x4EF6;&#x4E2D;&#x83B7;&#x53D6;&#x6837;&#x5F0F;&#x4FE1;&#x606F;</span>
         TypedArray a = getWindowStyle();
         ...................
-        if (a.getBoolean(R.styleable.Window_windowNoTitle, false)) {
+        <span class="hljs-keyword">if</span> (a.getBoolean(R.styleable.Window_windowNoTitle, <span class="hljs-keyword">false</span>)) {
             requestFeature(FEATURE_NO_TITLE);
-        } else if (a.getBoolean(R.styleable.Window_windowActionBar, false)) {
-            // Don&apos;t allow an action bar if there is no title.
+        } <span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span> (a.getBoolean(R.styleable.Window_windowActionBar, <span class="hljs-keyword">false</span>)) {
+            <span class="hljs-comment">// Don&apos;t allow an action bar if there is no title.</span>
             requestFeature(FEATURE_ACTION_BAR);
         }
      ................
-        // &#x6839;&#x636E;&#x4E3B;&#x9898;&#x6837;&#x5F0F;&#xFF0C;&#x52A0;&#x8F7D;&#x7A97;&#x53E3;&#x5E03;&#x5C40;
-        int layoutResource;
-        int features = getLocalFeatures();
-        // System.out.println(&quot;Features: 0x&quot; + Integer.toHexString(features));
-        if ((features &amp; (1 &lt;&lt; FEATURE_SWIPE_TO_DISMISS)) != 0) {
+        <span class="hljs-comment">// &#x6839;&#x636E;&#x4E3B;&#x9898;&#x6837;&#x5F0F;&#xFF0C;&#x52A0;&#x8F7D;&#x7A97;&#x53E3;&#x5E03;&#x5C40;</span>
+        <span class="hljs-keyword">int</span> layoutResource;
+        <span class="hljs-keyword">int</span> features = getLocalFeatures();
+        <span class="hljs-comment">// System.out.println(&quot;Features: 0x&quot; + Integer.toHexString(features));</span>
+        <span class="hljs-keyword">if</span> ((features &amp; (<span class="hljs-number">1</span> &lt;&lt; FEATURE_SWIPE_TO_DISMISS)) != <span class="hljs-number">0</span>) {
             layoutResource = R.layout.screen_swipe_dismiss;
-        } else if(...){
+        } <span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span>(...){
             ...
         }
 
-        View in = mLayoutInflater.inflate(layoutResource, null);    //&#x52A0;&#x8F7D;layoutResource
+        View in = mLayoutInflater.inflate(layoutResource, <span class="hljs-keyword">null</span>);    <span class="hljs-comment">//&#x52A0;&#x8F7D;layoutResource</span>
 
-       //&#x5F80;DecorView&#x4E2D;&#x6DFB;&#x52A0;&#x5B50;View&#xFF0C;&#x5373;&#x6587;&#x7AE0;&#x5F00;&#x5934;&#x4ECB;&#x7ECD;DecorView&#x65F6;&#x63D0;&#x5230;&#x7684;&#x5E03;&#x5C40;&#x683C;&#x5F0F;&#xFF0C;&#x90A3;&#x53EA;&#x662F;&#x4E00;&#x4E2A;&#x4F8B;&#x5B50;&#xFF0C;&#x6839;&#x636E;&#x4E3B;&#x9898;&#x6837;&#x5F0F;&#x4E0D;&#x540C;&#xFF0C;&#x52A0;&#x8F7D;&#x4E0D;&#x540C;&#x7684;&#x5E03;&#x5C40;&#x3002;
-        decor.addView(in, new ViewGroup.LayoutParams(MATCH_PARENT, MATCH_PARENT)); 
+       <span class="hljs-comment">//&#x5F80;DecorView&#x4E2D;&#x6DFB;&#x52A0;&#x5B50;View&#xFF0C;&#x5373;&#x6587;&#x7AE0;&#x5F00;&#x5934;&#x4ECB;&#x7ECD;DecorView&#x65F6;&#x63D0;&#x5230;&#x7684;&#x5E03;&#x5C40;&#x683C;&#x5F0F;&#xFF0C;&#x90A3;&#x53EA;&#x662F;&#x4E00;&#x4E2A;&#x4F8B;&#x5B50;&#xFF0C;&#x6839;&#x636E;&#x4E3B;&#x9898;&#x6837;&#x5F0F;&#x4E0D;&#x540C;&#xFF0C;&#x52A0;&#x8F7D;&#x4E0D;&#x540C;&#x7684;&#x5E03;&#x5C40;&#x3002;</span>
+        decor.addView(in, <span class="hljs-keyword">new</span> ViewGroup.LayoutParams(MATCH_PARENT, MATCH_PARENT)); 
         mContentRoot = (ViewGroup) in;
 
-        ViewGroup contentParent = (ViewGroup)findViewById(ID_ANDROID_CONTENT); // &#x8FD9;&#x91CC;&#x83B7;&#x53D6;&#x7684;&#x5C31;&#x662F;mContentParent
-        if (contentParent == null) {
-            throw new RuntimeException(&quot;Window couldn&apos;t find content container view&quot;);
+        ViewGroup contentParent = (ViewGroup)findViewById(ID_ANDROID_CONTENT); <span class="hljs-comment">// &#x8FD9;&#x91CC;&#x83B7;&#x53D6;&#x7684;&#x5C31;&#x662F;mContentParent</span>
+        <span class="hljs-keyword">if</span> (contentParent == <span class="hljs-keyword">null</span>) {
+            <span class="hljs-keyword">throw</span> <span class="hljs-keyword">new</span> RuntimeException(<span class="hljs-string">&quot;Window couldn&apos;t find content container view&quot;</span>);
         }
 
-        if ((features &amp; (1 &lt;&lt; FEATURE_INDETERMINATE_PROGRESS)) != 0) {
-            ProgressBar progress = getCircularProgressBar(false);
-            if (progress != null) {
-                progress.setIndeterminate(true);
+        <span class="hljs-keyword">if</span> ((features &amp; (<span class="hljs-number">1</span> &lt;&lt; FEATURE_INDETERMINATE_PROGRESS)) != <span class="hljs-number">0</span>) {
+            ProgressBar progress = getCircularProgressBar(<span class="hljs-keyword">false</span>);
+            <span class="hljs-keyword">if</span> (progress != <span class="hljs-keyword">null</span>) {
+                progress.setIndeterminate(<span class="hljs-keyword">true</span>);
             }
         }
 
-        if ((features &amp; (1 &lt;&lt; FEATURE_SWIPE_TO_DISMISS)) != 0) {
+        <span class="hljs-keyword">if</span> ((features &amp; (<span class="hljs-number">1</span> &lt;&lt; FEATURE_SWIPE_TO_DISMISS)) != <span class="hljs-number">0</span>) {
             registerSwipeCallbacks();
         }
 
-        // Remaining setup -- of background and title -- that only applies
-        // to top-level windows.
+        <span class="hljs-comment">// Remaining setup -- of background and title -- that only applies</span>
+        <span class="hljs-comment">// to top-level windows.</span>
         ...
 
-        return contentParent;
+        <span class="hljs-keyword">return</span> contentParent;
     }
 </code></pre>
 <p>&#x867D;&#x7136;&#x6BD4;&#x8F83;&#x590D;&#x6742;&#xFF0C;&#x4F46;&#x662F;&#x903B;&#x8F91;&#x8FD8;&#x662F;&#x5F88;&#x6E05;&#x695A;&#x7684;&#x3002;&#x5148;&#x4ECE;&#x4E3B;&#x9898;&#x4E2D;&#x83B7;&#x53D6;&#x6837;&#x5F0F;&#xFF0C;&#x7136;&#x540E;&#x6839;&#x636E;&#x6837;&#x5F0F;&#xFF0C;&#x52A0;&#x8F7D;&#x5BF9;&#x5E94;&#x7684;&#x5E03;&#x5C40;&#x5230;DecorView&#x4E2D;&#xFF0C;&#x7136;&#x540E;&#x4ECE;&#x4E2D;&#x83B7;&#x53D6;mContentParent&#x3002;&#x83B7;&#x5F97;&#x5230;&#x4E4B;&#x540E;&#xFF0C;&#x53EF;&#x4EE5;&#x56DE;&#x5230;&#x4E0A;&#x9762;&#x7684;&#x4EE3;&#x7801;&#xFF0C;&#x4E3A;mContentParent&#x6DFB;&#x52A0;View&#xFF0C;&#x5373;Activity&#x4E2D;&#x7684;&#x5E03;&#x5C40;&#x3002;</p>
@@ -3878,24 +3882,24 @@ ViewGroup rootView = (ViewGroup) content.getChildAt(0);
 <h2 id="&#x4E09;&#x3001;decorview&#x7684;&#x663E;&#x793A;"><a name="&#x4E09;&#x3001;decorview&#x7684;&#x663E;&#x793A;" class="anchor-navigation-ex-anchor" href="#&#x4E09;&#x3001;decorview&#x7684;&#x663E;&#x793A;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x4E09;&#x3001;DecorView&#x7684;&#x663E;&#x793A;</h2>
 <p>&#x4EE5;&#x4E0A;&#x4EC5;&#x4EC5;&#x662F;&#x5C06;DecorView&#x5EFA;&#x7ACB;&#x8D77;&#x6765;&#x3002;&#x901A;&#x8FC7;setContentView()&#x8BBE;&#x7F6E;&#x7684;&#x754C;&#x9762;&#xFF0C;&#x4E3A;&#x4EC0;&#x4E48;&#x5728;onResume()&#x4E4B;&#x540E;&#x624D;&#x5BF9;&#x7528;&#x6237;&#x53EF;&#x89C1;&#x5462;&#xFF1F;</p>
 <p>&#x8FD9;&#x5C31;&#x8981;&#x4ECE;ActivityThread&#x5F00;&#x59CB;&#x8BF4;&#x8D77;&#x3002;</p>
-<pre><code class="lang-Java">private void handleLaunchActivity(ActivityClientRecord r, Intent customIntent) {
+<pre><code class="lang-Java"><span class="hljs-function"><span class="hljs-keyword">private</span> <span class="hljs-keyword">void</span> <span class="hljs-title">handleLaunchActivity</span><span class="hljs-params">(ActivityClientRecord r, Intent customIntent)</span> </span>{
 
-    //&#x5C31;&#x662F;&#x5728;&#x8FD9;&#x91CC;&#x8C03;&#x7528;&#x4E86;Activity.attach()&#x5440;&#xFF0C;&#x63A5;&#x7740;&#x8C03;&#x7528;&#x4E86;Activity.onCreate()&#x548C;Activity.onStart()&#x751F;&#x547D;&#x5468;&#x671F;&#xFF0C;
-    //&#x4F46;&#x662F;&#x7531;&#x4E8E;&#x53EA;&#x662F;&#x521D;&#x59CB;&#x5316;&#x4E86;mDecor&#xFF0C;&#x6DFB;&#x52A0;&#x4E86;&#x5E03;&#x5C40;&#x6587;&#x4EF6;&#xFF0C;&#x8FD8;&#x6CA1;&#x6709;&#x628A;
-    //mDecor&#x6DFB;&#x52A0;&#x5230;&#x8D1F;&#x8D23;UI&#x663E;&#x793A;&#x7684;PhoneWindow&#x4E2D;&#xFF0C;&#x6240;&#x4EE5;&#x8FD9;&#x65F6;&#x5019;&#x5BF9;&#x7528;&#x6237;&#x6765;&#x8BF4;&#xFF0C;&#x662F;&#x4E0D;&#x53EF;&#x89C1;&#x7684;
+    <span class="hljs-comment">//&#x5C31;&#x662F;&#x5728;&#x8FD9;&#x91CC;&#x8C03;&#x7528;&#x4E86;Activity.attach()&#x5440;&#xFF0C;&#x63A5;&#x7740;&#x8C03;&#x7528;&#x4E86;Activity.onCreate()&#x548C;Activity.onStart()&#x751F;&#x547D;&#x5468;&#x671F;&#xFF0C;</span>
+    <span class="hljs-comment">//&#x4F46;&#x662F;&#x7531;&#x4E8E;&#x53EA;&#x662F;&#x521D;&#x59CB;&#x5316;&#x4E86;mDecor&#xFF0C;&#x6DFB;&#x52A0;&#x4E86;&#x5E03;&#x5C40;&#x6587;&#x4EF6;&#xFF0C;&#x8FD8;&#x6CA1;&#x6709;&#x628A;</span>
+    <span class="hljs-comment">//mDecor&#x6DFB;&#x52A0;&#x5230;&#x8D1F;&#x8D23;UI&#x663E;&#x793A;&#x7684;PhoneWindow&#x4E2D;&#xFF0C;&#x6240;&#x4EE5;&#x8FD9;&#x65F6;&#x5019;&#x5BF9;&#x7528;&#x6237;&#x6765;&#x8BF4;&#xFF0C;&#x662F;&#x4E0D;&#x53EF;&#x89C1;&#x7684;</span>
     Activity a = performLaunchActivity(r, customIntent);
 
     ......
 
-    if (a != null) {
-    //&#x8FD9;&#x91CC;&#x9762;&#x6267;&#x884C;&#x4E86;Activity.onResume()
-    handleResumeActivity(r.token, false, r.isForward,
+    <span class="hljs-keyword">if</span> (a != <span class="hljs-keyword">null</span>) {
+    <span class="hljs-comment">//&#x8FD9;&#x91CC;&#x9762;&#x6267;&#x884C;&#x4E86;Activity.onResume()</span>
+    handleResumeActivity(r.token, <span class="hljs-keyword">false</span>, r.isForward,
                     !r.activity.mFinished &amp;&amp; !r.startsNotResumed);
 
-    if (!r.activity.mFinished &amp;&amp; r.startsNotResumed) {
-        try {
-                    r.activity.mCalled = false;
-                    //&#x6267;&#x884C;Activity.onPause()
+    <span class="hljs-keyword">if</span> (!r.activity.mFinished &amp;&amp; r.startsNotResumed) {
+        <span class="hljs-keyword">try</span> {
+                    r.activity.mCalled = <span class="hljs-keyword">false</span>;
+                    <span class="hljs-comment">//&#x6267;&#x884C;Activity.onPause()</span>
                     mInstrumentation.callActivityOnPause(r.activity);
                     }
         }
@@ -3903,18 +3907,18 @@ ViewGroup rootView = (ViewGroup) content.getChildAt(0);
 }
 </code></pre>
 <p>&#x91CD;&#x70B9;&#x770B;&#x4E0B;handleResumeActivity(),&#x5728;&#x8FD9;&#x5176;&#x4E2D;&#xFF0C;DecorView&#x5C06;&#x4F1A;&#x663E;&#x793A;&#x51FA;&#x6765;&#xFF0C;&#x540C;&#x65F6;&#x91CD;&#x8981;&#x7684;&#x4E00;&#x4E2A;&#x89D2;&#x8272;&#xFF1A;ViewRoot&#x4E5F;&#x5C06;&#x767B;&#x573A;&#x3002;</p>
-<pre><code class="lang-java">final void handleResumeActivity(IBinder token,
-            boolean clearHide, boolean isForward, boolean reallyResume) {
+<pre><code class="lang-java"><span class="hljs-function"><span class="hljs-keyword">final</span> <span class="hljs-keyword">void</span> <span class="hljs-title">handleResumeActivity</span><span class="hljs-params">(IBinder token,
+            <span class="hljs-keyword">boolean</span> clearHide, <span class="hljs-keyword">boolean</span> isForward, <span class="hljs-keyword">boolean</span> reallyResume)</span> </span>{
 
-            //&#x8FD9;&#x4E2A;&#x65F6;&#x5019;&#xFF0C;Activity.onResume()&#x5DF2;&#x7ECF;&#x8C03;&#x7528;&#x4E86;&#xFF0C;&#x4F46;&#x662F;&#x73B0;&#x5728;&#x754C;&#x9762;&#x8FD8;&#x662F;&#x4E0D;&#x53EF;&#x89C1;&#x7684;
+            <span class="hljs-comment">//&#x8FD9;&#x4E2A;&#x65F6;&#x5019;&#xFF0C;Activity.onResume()&#x5DF2;&#x7ECF;&#x8C03;&#x7528;&#x4E86;&#xFF0C;&#x4F46;&#x662F;&#x73B0;&#x5728;&#x754C;&#x9762;&#x8FD8;&#x662F;&#x4E0D;&#x53EF;&#x89C1;&#x7684;</span>
             ActivityClientRecord r = performResumeActivity(token, clearHide);
 
-            if (r != null) {
-                final Activity a = r.activity;
-                  if (r.window == null &amp;&amp; !a.mFinished &amp;&amp; willBeVisible) {
+            <span class="hljs-keyword">if</span> (r != <span class="hljs-keyword">null</span>) {
+                <span class="hljs-keyword">final</span> Activity a = r.activity;
+                  <span class="hljs-keyword">if</span> (r.window == <span class="hljs-keyword">null</span> &amp;&amp; !a.mFinished &amp;&amp; willBeVisible) {
                 r.window = r.activity.getWindow();
                 View decor = r.window.getDecorView();
-                //decor&#x5BF9;&#x7528;&#x6237;&#x4E0D;&#x53EF;&#x89C1;
+                <span class="hljs-comment">//decor&#x5BF9;&#x7528;&#x6237;&#x4E0D;&#x53EF;&#x89C1;</span>
                 decor.setVisibility(View.INVISIBLE);
                 ViewManager wm = a.getWindowManager();
                 WindowManager.LayoutParams l = r.window.getAttributes();
@@ -3922,53 +3926,53 @@ ViewGroup rootView = (ViewGroup) content.getChildAt(0);
 
                 l.type = WindowManager.LayoutParams.TYPE_BASE_APPLICATION;
 
-                if (a.mVisibleFromClient) {
-                    a.mWindowAdded = true;
-                    //&#x88AB;&#x6DFB;&#x52A0;&#x8FDB;WindowManager&#x4E86;&#xFF0C;&#x4F46;&#x662F;&#x8FD9;&#x4E2A;&#x65F6;&#x5019;&#xFF0C;&#x8FD8;&#x662F;&#x4E0D;&#x53EF;&#x89C1;&#x7684;
+                <span class="hljs-keyword">if</span> (a.mVisibleFromClient) {
+                    a.mWindowAdded = <span class="hljs-keyword">true</span>;
+                    <span class="hljs-comment">//&#x88AB;&#x6DFB;&#x52A0;&#x8FDB;WindowManager&#x4E86;&#xFF0C;&#x4F46;&#x662F;&#x8FD9;&#x4E2A;&#x65F6;&#x5019;&#xFF0C;&#x8FD8;&#x662F;&#x4E0D;&#x53EF;&#x89C1;&#x7684;</span>
                     wm.addView(decor, l);
                 }
 
-                if (!r.activity.mFinished &amp;&amp; willBeVisible
-                    &amp;&amp; r.activity.mDecor != null &amp;&amp; !r.hideForNow) {
-                     //&#x5728;&#x8FD9;&#x91CC;&#xFF0C;&#x6267;&#x884C;&#x4E86;&#x91CD;&#x8981;&#x7684;&#x64CD;&#x4F5C;,&#x4F7F;&#x5F97;DecorView&#x53EF;&#x89C1;
-                     if (r.activity.mVisibleFromClient) {
+                <span class="hljs-keyword">if</span> (!r.activity.mFinished &amp;&amp; willBeVisible
+                    &amp;&amp; r.activity.mDecor != <span class="hljs-keyword">null</span> &amp;&amp; !r.hideForNow) {
+                     <span class="hljs-comment">//&#x5728;&#x8FD9;&#x91CC;&#xFF0C;&#x6267;&#x884C;&#x4E86;&#x91CD;&#x8981;&#x7684;&#x64CD;&#x4F5C;,&#x4F7F;&#x5F97;DecorView&#x53EF;&#x89C1;</span>
+                     <span class="hljs-keyword">if</span> (r.activity.mVisibleFromClient) {
                             r.activity.makeVisible();
                         }
                     }
             }
 </code></pre>
 <p>&#x5F53;&#x6211;&#x4EEC;&#x6267;&#x884C;&#x4E86;Activity.makeVisible()&#x65B9;&#x6CD5;&#x4E4B;&#x540E;&#xFF0C;&#x754C;&#x9762;&#x624D;&#x5BF9;&#x6211;&#x4EEC;&#x662F;&#x53EF;&#x89C1;&#x7684;&#x3002;</p>
-<pre><code class="lang-java">void makeVisible() {
-   if (!mWindowAdded) {
+<pre><code class="lang-java"><span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">makeVisible</span><span class="hljs-params">()</span> </span>{
+   <span class="hljs-keyword">if</span> (!mWindowAdded) {
             ViewManager wm = getWindowManager();
-            wm.addView(mDecor, getWindow().getAttributes());//&#x5C06;DecorView&#x6DFB;&#x52A0;&#x5230;WindowManager
-            mWindowAdded = true;
+            wm.addView(mDecor, getWindow().getAttributes());<span class="hljs-comment">//&#x5C06;DecorView&#x6DFB;&#x52A0;&#x5230;WindowManager</span>
+            mWindowAdded = <span class="hljs-keyword">true</span>;
         }
-        mDecor.setVisibility(View.VISIBLE);//DecorView&#x53EF;&#x89C1;
+        mDecor.setVisibility(View.VISIBLE);<span class="hljs-comment">//DecorView&#x53EF;&#x89C1;</span>
     }
 </code></pre>
 <p>&#x5230;&#x6B64;DecorView&#x4FBF;&#x53EF;&#x89C1;&#xFF0C;&#x663E;&#x793A;&#x5728;&#x5C4F;&#x5E55;&#x4E2D;&#x3002;&#x4F46;&#x662F;&#x5728;&#x8FD9;&#x5176;&#x4E2D;,<code>wm.addView(mDecor, getWindow().getAttributes());</code>&#x8D77;&#x5230;&#x4E86;&#x91CD;&#x8981;&#x7684;&#x4F5C;&#x7528;&#xFF0C;&#x56E0;&#x4E3A;&#x5176;&#x5185;&#x90E8;&#x521B;&#x5EFA;&#x4E86;&#x4E00;&#x4E2A;ViewRootImpl&#x5BF9;&#x8C61;&#xFF0C;&#x8D1F;&#x8D23;&#x7ED8;&#x5236;&#x663E;&#x793A;&#x5404;&#x4E2A;&#x5B50;View&#x3002;</p>
 <p>&#x5177;&#x4F53;&#x6765;&#x770B;<code>addView()</code>&#x65B9;&#x6CD5;&#xFF0C;&#x56E0;&#x4E3A;WindowManager&#x662F;&#x4E2A;&#x63A5;&#x53E3;&#xFF0C;&#x5177;&#x4F53;&#x662F;&#x4EA4;&#x7ED9;WindowManagerImpl&#x6765;&#x5B9E;&#x73B0;&#x7684;&#x3002;</p>
-<pre><code class="lang-java">public final class WindowManagerImpl implements WindowManager {    
-    private final WindowManagerGlobal mGlobal = WindowManagerGlobal.getInstance();
+<pre><code class="lang-java"><span class="hljs-keyword">public</span> <span class="hljs-keyword">final</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">WindowManagerImpl</span> <span class="hljs-keyword">implements</span> <span class="hljs-title">WindowManager</span> </span>{    
+    <span class="hljs-keyword">private</span> <span class="hljs-keyword">final</span> WindowManagerGlobal mGlobal = WindowManagerGlobal.getInstance();
     ...
-    @Override
-    public void addView(View view, ViewGroup.LayoutParams params) {
+    <span class="hljs-meta">@Override</span>
+    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">addView</span><span class="hljs-params">(View view, ViewGroup.LayoutParams params)</span> </span>{
         mGlobal.addView(view, params, mDisplay, mParentWindow);
     }
 }
 </code></pre>
 <p>&#x4EA4;&#x7ED9;WindowManagerGlobal &#x7684;addView()&#x65B9;&#x6CD5;&#x53BB;&#x5B9E;&#x73B0;</p>
-<pre><code class="lang-java">public void addView(View view, ViewGroup.LayoutParams params,
-            Display display, Window parentWindow) {
+<pre><code class="lang-java"><span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">addView</span><span class="hljs-params">(View view, ViewGroup.LayoutParams params,
+            Display display, Window parentWindow)</span> </span>{
 
-              final WindowManager.LayoutParams wparams = (WindowManager.LayoutParams)params;
+              <span class="hljs-keyword">final</span> WindowManager.LayoutParams wparams = (WindowManager.LayoutParams)params;
              ......
-                 synchronized (mLock) {
+                 <span class="hljs-keyword">synchronized</span> (mLock) {
 
                  ViewRootImpl root;
-                  //&#x5B9E;&#x4F8B;&#x5316;&#x4E00;&#x4E2A;ViewRootImpl&#x5BF9;&#x8C61;
-                 root = new ViewRootImpl(view.getContext(), display);
+                  <span class="hljs-comment">//&#x5B9E;&#x4F8B;&#x5316;&#x4E00;&#x4E2A;ViewRootImpl&#x5BF9;&#x8C61;</span>
+                 root = <span class="hljs-keyword">new</span> ViewRootImpl(view.getContext(), display);
                  view.setLayoutParams(wparams);
 
                 mViews.add(view);
@@ -3977,10 +3981,10 @@ ViewGroup rootView = (ViewGroup) content.getChildAt(0);
             }
              ......
 
-             try {
-                //&#x5C06;DecorView&#x4EA4;&#x7ED9;ViewRootImpl 
+             <span class="hljs-keyword">try</span> {
+                <span class="hljs-comment">//&#x5C06;DecorView&#x4EA4;&#x7ED9;ViewRootImpl </span>
                 root.setView(view, wparams, panelParentView);
-            }catch (RuntimeException e) {
+            }<span class="hljs-keyword">catch</span> (RuntimeException e) {
             }
 
             }
@@ -4041,7 +4045,7 @@ ViewGroup rootView = (ViewGroup) content.getChildAt(0);
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"Window、Activity、DecorView以及ViewRoot之间的关系","level":"3.1.12","depth":2,"next":{"title":"View测量、布局及绘制原理","level":"3.1.13","depth":2,"path":"android/basis/custom_view.md","ref":"android/basis/custom_view.md","articles":[]},"previous":{"title":"LruCache原理解析","level":"3.1.11","depth":2,"path":"android/basis/lrucache.md","ref":"android/basis/lrucache.md","articles":[]},"dir":"ltr"},"config":{"plugins":["-lunr","-search","-highlight","-livereload","search-plus@^0.0.11","simple-page-toc@^0.1.1","github@^2.0.0","github-buttons@2.1.0","edit-link@^2.0.2","advanced-emoji@^0.2.1","anchors@^0.7.1","include-codeblock@^3.0.2","ace@^0.3.2","emphasize@^1.1.0","katex@^1.1.3","splitter@^0.0.8","tbfed-pagefooter@^0.0.1","expandable-chapters-small@^0.1.7","sectionx@^3.1.0","local-video@^1.0.1","anchor-navigation-ex@0.1.8","favicon@^0.0.2"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"tbfed-pagefooter":{"copyright":"Copyright © ruheng.com 2017","modify_label":"该文件修订时间：","modify_format":"YYYY-MM-DD HH:mm:ss"},"emphasize":{},"ace":{},"github":{"url":"https://github.com/LRH1993/android_interview"},"simple-page-toc":{"maxDepth":3,"skipFirstH1":true},"splitter":{},"katex":{},"fontsettings":{"theme":"white","family":"sans","size":2},"sectionx":{"tag":"b"},"anchor-navigation-ex":{"isRewritePageTitle":false,"tocLevel1Icon":"fa fa-hand-o-right","tocLevel2Icon":"fa fa-hand-o-right","tocLevel3Icon":"fa fa-hand-o-right"},"favicon":{"shortcut":"favicon.ico","bookmark":"favicon.ico"},"github-buttons":{"repo":"LRH1993/android_interview","types":["star"],"size":"small"},"expandable-chapters-small":{},"local-video":{},"advanced-emoji":{"embedEmojis":false},"include-codeblock":{"check":false,"edit":true,"fixlang":false,"lang":"","template":"ace","theme":"chrome","unindent":true},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":true,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"edit-link":{"label":"Edit This Page","base":"https://github.com/LRH1993/android_interview/edit/master"},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":true},"anchors":{},"search-plus":{}},"theme":"default","author":"ruheng","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"Android校招面试指南","language":"zh-hans","output.name":"site","links":{"sidebar":{"Home":"http://lruheng.com/"}},"gitbook":"3.2.3","description":"Android面试必备，记录自己的秋招之路"},"file":{"path":"android/basis/decorview.md","mtime":"2017-08-27T09:23:30.000Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2017-10-16T12:05:21.906Z"},"basePath":"../..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"Window、Activity、DecorView以及ViewRoot之间的关系","level":"3.1.12","depth":2,"next":{"title":"View测量、布局及绘制原理","level":"3.1.13","depth":2,"path":"android/basis/custom_view.md","ref":"android/basis/custom_view.md","articles":[]},"previous":{"title":"LruCache原理解析","level":"3.1.11","depth":2,"path":"android/basis/lrucache.md","ref":"android/basis/lrucache.md","articles":[]},"dir":"ltr"},"config":{"plugins":["-lunr","-search","-livereload","search-plus@^0.0.11","simple-page-toc@^0.1.1","github@^2.0.0","github-buttons@2.1.0","edit-link@^2.0.2","advanced-emoji@^0.2.1","anchors@^0.7.1","include-codeblock@^3.0.2","ace@^0.3.2","emphasize@^1.1.0","katex@^1.1.3","splitter@^0.0.8","tbfed-pagefooter@^0.0.1","expandable-chapters-small@^0.1.7","sectionx@^3.1.0","local-video@^1.0.1","anchor-navigation-ex@0.1.8","favicon@^0.0.2"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"tbfed-pagefooter":{"copyright":"Copyright © ruheng.com 2017","modify_label":"该文件修订时间：","modify_format":"YYYY-MM-DD HH:mm:ss"},"emphasize":{},"ace":{},"github":{"url":"https://github.com/LRH1993/android_interview"},"simple-page-toc":{"maxDepth":3,"skipFirstH1":true},"splitter":{},"katex":{},"fontsettings":{"theme":"white","family":"sans","size":2},"sectionx":{"tag":"b"},"highlight":{},"anchor-navigation-ex":{"isRewritePageTitle":false,"tocLevel1Icon":"fa fa-hand-o-right","tocLevel2Icon":"fa fa-hand-o-right","tocLevel3Icon":"fa fa-hand-o-right"},"favicon":{"shortcut":"favicon.ico","bookmark":"favicon.ico"},"github-buttons":{"repo":"LRH1993/android_interview","types":["star"],"size":"small"},"expandable-chapters-small":{},"local-video":{},"advanced-emoji":{"embedEmojis":false},"include-codeblock":{"check":false,"edit":false,"fixlang":false,"lang":"","template":"default","theme":"chrome","unindent":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":true,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"edit-link":{"label":"Edit This Page","base":"https://github.com/LRH1993/android_interview/edit/master"},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":true},"anchors":{},"search-plus":{}},"theme":"default","author":"ruheng","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"Android校招面试指南","language":"zh-hans","output.name":"site","links":{"sidebar":{"Home":"http://lruheng.com/"}},"gitbook":"3.2.3","description":"Android面试必备，记录自己的秋招之路"},"file":{"path":"android/basis/decorview.md","mtime":"2017-08-27T09:23:30.000Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2017-10-16T13:00:43.989Z"},"basePath":"../..","book":{"language":""}});
         });
     </script>
 </div>

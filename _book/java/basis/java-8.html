@@ -69,6 +69,10 @@
                 
             
                 
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
                 <link rel="stylesheet" href="../../gitbook/gitbook-plugin-fontsettings/website.css">
                 
             
@@ -3720,48 +3724,48 @@
 <h3 id="21-lambda&#x8868;&#x8FBE;&#x5F0F;&#x548C;&#x51FD;&#x6570;&#x5F0F;&#x63A5;&#x53E3;"><a name="21-lambda&#x8868;&#x8FBE;&#x5F0F;&#x548C;&#x51FD;&#x6570;&#x5F0F;&#x63A5;&#x53E3;" class="anchor-navigation-ex-anchor" href="#21-lambda&#x8868;&#x8FBE;&#x5F0F;&#x548C;&#x51FD;&#x6570;&#x5F0F;&#x63A5;&#x53E3;"><i class="fa fa-link" aria-hidden="true"></i></a>2.1 Lambda&#x8868;&#x8FBE;&#x5F0F;&#x548C;&#x51FD;&#x6570;&#x5F0F;&#x63A5;&#x53E3;</h3>
 <p>Lambda&#x8868;&#x8FBE;&#x5F0F;&#xFF08;&#x4E5F;&#x79F0;&#x4E3A;&#x95ED;&#x5305;&#xFF09;&#x662F;Java 8&#x4E2D;&#x6700;&#x5927;&#x548C;&#x6700;&#x4EE4;&#x4EBA;&#x671F;&#x5F85;&#x7684;&#x8BED;&#x8A00;&#x6539;&#x53D8;&#x3002;&#x5B83;&#x5141;&#x8BB8;&#x6211;&#x4EEC;&#x5C06;&#x51FD;&#x6570;&#x5F53;&#x6210;&#x53C2;&#x6570;&#x4F20;&#x9012;&#x7ED9;&#x67D0;&#x4E2A;&#x65B9;&#x6CD5;&#xFF0C;&#x6216;&#x8005;&#x628A;&#x4EE3;&#x7801;&#x672C;&#x8EAB;&#x5F53;&#x4F5C;&#x6570;&#x636E;&#x5904;&#x7406;&#xFF1A;&#x51FD;&#x6570;&#x5F0F;&#x5F00;&#x53D1;&#x8005;&#x975E;&#x5E38;&#x719F;&#x6089;&#x8FD9;&#x4E9B;&#x6982;&#x5FF5;&#x3002;&#x5F88;&#x591A;JVM&#x5E73;&#x53F0;&#x4E0A;&#x7684;&#x8BED;&#x8A00;&#xFF08;Groovy&#x3001;Scala&#x7B49;&#xFF09;&#x4ECE;&#x8BDE;&#x751F;&#x4E4B;&#x65E5;&#x5C31;&#x652F;&#x6301;Lambda&#x8868;&#x8FBE;&#x5F0F;&#xFF0C;&#x4F46;&#x662F;Java&#x5F00;&#x53D1;&#x8005;&#x6CA1;&#x6709;&#x9009;&#x62E9;&#xFF0C;&#x53EA;&#x80FD;&#x4F7F;&#x7528;&#x533F;&#x540D;&#x5185;&#x90E8;&#x7C7B;&#x4EE3;&#x66FF;Lambda&#x8868;&#x8FBE;&#x5F0F;&#x3002;</p>
 <p>Lambda&#x7684;&#x8BBE;&#x8BA1;&#x8017;&#x8D39;&#x4E86;&#x5F88;&#x591A;&#x65F6;&#x95F4;&#x548C;&#x5F88;&#x5927;&#x7684;&#x793E;&#x533A;&#x529B;&#x91CF;&#xFF0C;&#x6700;&#x7EC8;&#x627E;&#x5230;&#x4E00;&#x79CD;&#x6298;&#x4E2D;&#x7684;&#x5B9E;&#x73B0;&#x65B9;&#x6848;&#xFF0C;&#x53EF;&#x4EE5;&#x5B9E;&#x73B0;&#x7B80;&#x6D01;&#x800C;&#x7D27;&#x51D1;&#x7684;&#x8BED;&#x8A00;&#x7ED3;&#x6784;&#x3002;&#x6700;&#x7B80;&#x5355;&#x7684;Lambda&#x8868;&#x8FBE;&#x5F0F;&#x53EF;&#x7531;&#x9017;&#x53F7;&#x5206;&#x9694;&#x7684;&#x53C2;&#x6570;&#x5217;&#x8868;&#x3001;<strong>-&gt;</strong>&#x7B26;&#x53F7;&#x548C;&#x8BED;&#x53E5;&#x5757;&#x7EC4;&#x6210;&#xFF0C;&#x4F8B;&#x5982;&#xFF1A;</p>
-<pre><code class="lang-java">Arrays.asList( &quot;a&quot;, &quot;b&quot;, &quot;d&quot; ).forEach( e -&gt; System.out.println( e ) );
+<pre><code class="lang-java">Arrays.asList( <span class="hljs-string">&quot;a&quot;</span>, <span class="hljs-string">&quot;b&quot;</span>, <span class="hljs-string">&quot;d&quot;</span> ).forEach( e -&gt; System.out.println( e ) );
 </code></pre>
 <p>&#x5728;&#x4E0A;&#x9762;&#x8FD9;&#x4E2A;&#x4EE3;&#x7801;&#x4E2D;&#x7684;&#x53C2;&#x6570;<strong>e</strong>&#x7684;&#x7C7B;&#x578B;&#x662F;&#x7531;&#x7F16;&#x8BD1;&#x5668;&#x63A8;&#x7406;&#x5F97;&#x51FA;&#x7684;&#xFF0C;&#x4F60;&#x4E5F;&#x53EF;&#x4EE5;&#x663E;&#x5F0F;&#x6307;&#x5B9A;&#x8BE5;&#x53C2;&#x6570;&#x7684;&#x7C7B;&#x578B;&#xFF0C;&#x4F8B;&#x5982;&#xFF1A;</p>
-<pre><code class="lang-java">Arrays.asList( &quot;a&quot;, &quot;b&quot;, &quot;d&quot; ).forEach( ( String e ) -&gt; System.out.println( e ) );
+<pre><code class="lang-java">Arrays.asList( <span class="hljs-string">&quot;a&quot;</span>, <span class="hljs-string">&quot;b&quot;</span>, <span class="hljs-string">&quot;d&quot;</span> ).forEach( ( String e ) -&gt; System.out.println( e ) );
 </code></pre>
 <p>&#x5982;&#x679C;Lambda&#x8868;&#x8FBE;&#x5F0F;&#x9700;&#x8981;&#x66F4;&#x590D;&#x6742;&#x7684;&#x8BED;&#x53E5;&#x5757;&#xFF0C;&#x5219;&#x53EF;&#x4EE5;&#x4F7F;&#x7528;&#x82B1;&#x62EC;&#x53F7;&#x5C06;&#x8BE5;&#x8BED;&#x53E5;&#x5757;&#x62EC;&#x8D77;&#x6765;&#xFF0C;&#x7C7B;&#x4F3C;&#x4E8E;Java&#x4E2D;&#x7684;&#x51FD;&#x6570;&#x4F53;&#xFF0C;&#x4F8B;&#x5982;&#xFF1A;</p>
-<pre><code class="lang-java">Arrays.asList( &quot;a&quot;, &quot;b&quot;, &quot;d&quot; ).forEach( e -&gt; {
+<pre><code class="lang-java">Arrays.asList( <span class="hljs-string">&quot;a&quot;</span>, <span class="hljs-string">&quot;b&quot;</span>, <span class="hljs-string">&quot;d&quot;</span> ).forEach( e -&gt; {
     System.out.print( e );
     System.out.print( e );
 } );
 </code></pre>
 <p>Lambda&#x8868;&#x8FBE;&#x5F0F;&#x53EF;&#x4EE5;&#x5F15;&#x7528;&#x7C7B;&#x6210;&#x5458;&#x548C;&#x5C40;&#x90E8;&#x53D8;&#x91CF;&#xFF08;&#x4F1A;&#x5C06;&#x8FD9;&#x4E9B;&#x53D8;&#x91CF;&#x9690;&#x5F0F;&#x5F97;&#x8F6C;&#x6362;&#x6210;<strong>final</strong>&#x7684;&#xFF09;&#xFF0C;&#x4F8B;&#x5982;&#x4E0B;&#x5217;&#x4E24;&#x4E2A;&#x4EE3;&#x7801;&#x5757;&#x7684;&#x6548;&#x679C;&#x5B8C;&#x5168;&#x76F8;&#x540C;&#xFF1A;</p>
-<pre><code class="lang-java">String separator = &quot;,&quot;;
-Arrays.asList( &quot;a&quot;, &quot;b&quot;, &quot;d&quot; ).forEach( 
+<pre><code class="lang-java">String separator = <span class="hljs-string">&quot;,&quot;</span>;
+Arrays.asList( <span class="hljs-string">&quot;a&quot;</span>, <span class="hljs-string">&quot;b&quot;</span>, <span class="hljs-string">&quot;d&quot;</span> ).forEach( 
     ( String e ) -&gt; System.out.print( e + separator ) );
 </code></pre>
 <p>&#x548C;</p>
-<pre><code class="lang-java">final String separator = &quot;,&quot;;
-Arrays.asList( &quot;a&quot;, &quot;b&quot;, &quot;d&quot; ).forEach( 
+<pre><code class="lang-java"><span class="hljs-keyword">final</span> String separator = <span class="hljs-string">&quot;,&quot;</span>;
+Arrays.asList( <span class="hljs-string">&quot;a&quot;</span>, <span class="hljs-string">&quot;b&quot;</span>, <span class="hljs-string">&quot;d&quot;</span> ).forEach( 
     ( String e ) -&gt; System.out.print( e + separator ) );
 </code></pre>
 <p>Lambda&#x8868;&#x8FBE;&#x5F0F;&#x6709;&#x8FD4;&#x56DE;&#x503C;&#xFF0C;&#x8FD4;&#x56DE;&#x503C;&#x7684;&#x7C7B;&#x578B;&#x4E5F;&#x7531;&#x7F16;&#x8BD1;&#x5668;&#x63A8;&#x7406;&#x5F97;&#x51FA;&#x3002;&#x5982;&#x679C;Lambda&#x8868;&#x8FBE;&#x5F0F;&#x4E2D;&#x7684;&#x8BED;&#x53E5;&#x5757;&#x53EA;&#x6709;&#x4E00;&#x884C;&#xFF0C;&#x5219;&#x53EF;&#x4EE5;&#x4E0D;&#x7528;&#x4F7F;&#x7528;<strong>return</strong>&#x8BED;&#x53E5;&#xFF0C;&#x4E0B;&#x5217;&#x4E24;&#x4E2A;&#x4EE3;&#x7801;&#x7247;&#x6BB5;&#x6548;&#x679C;&#x76F8;&#x540C;&#xFF1A;</p>
-<pre><code class="lang-java">Arrays.asList( &quot;a&quot;, &quot;b&quot;, &quot;d&quot; ).sort( ( e1, e2 ) -&gt; e1.compareTo( e2 ) );
+<pre><code class="lang-java">Arrays.asList( <span class="hljs-string">&quot;a&quot;</span>, <span class="hljs-string">&quot;b&quot;</span>, <span class="hljs-string">&quot;d&quot;</span> ).sort( ( e1, e2 ) -&gt; e1.compareTo( e2 ) );
 </code></pre>
 <p>&#x548C;</p>
-<pre><code class="lang-java">Arrays.asList( &quot;a&quot;, &quot;b&quot;, &quot;d&quot; ).sort( ( e1, e2 ) -&gt; {
-    int result = e1.compareTo( e2 );
-    return result;
+<pre><code class="lang-java">Arrays.asList( <span class="hljs-string">&quot;a&quot;</span>, <span class="hljs-string">&quot;b&quot;</span>, <span class="hljs-string">&quot;d&quot;</span> ).sort( ( e1, e2 ) -&gt; {
+    <span class="hljs-keyword">int</span> result = e1.compareTo( e2 );
+    <span class="hljs-keyword">return</span> result;
 } );
 </code></pre>
 <p>Lambda&#x7684;&#x8BBE;&#x8BA1;&#x8005;&#x4EEC;&#x4E3A;&#x4E86;&#x8BA9;&#x73B0;&#x6709;&#x7684;&#x529F;&#x80FD;&#x4E0E;Lambda&#x8868;&#x8FBE;&#x5F0F;&#x826F;&#x597D;&#x517C;&#x5BB9;&#xFF0C;&#x8003;&#x8651;&#x4E86;&#x5F88;&#x591A;&#x65B9;&#x6CD5;&#xFF0C;&#x4E8E;&#x662F;&#x4EA7;&#x751F;&#x4E86;<strong>&#x51FD;&#x6570;&#x63A5;&#x53E3;</strong>&#x8FD9;&#x4E2A;&#x6982;&#x5FF5;&#x3002;&#x51FD;&#x6570;&#x63A5;&#x53E3;&#x6307;&#x7684;&#x662F;&#x53EA;&#x6709;&#x4E00;&#x4E2A;&#x51FD;&#x6570;&#x7684;&#x63A5;&#x53E3;&#xFF0C;&#x8FD9;&#x6837;&#x7684;&#x63A5;&#x53E3;&#x53EF;&#x4EE5;&#x9690;&#x5F0F;&#x8F6C;&#x6362;&#x4E3A;Lambda&#x8868;&#x8FBE;&#x5F0F;&#x3002;<strong>java.lang.Runnable</strong>&#x548C;<strong>java.util.concurrent.Callable</strong>&#x662F;&#x51FD;&#x6570;&#x5F0F;&#x63A5;&#x53E3;&#x7684;&#x6700;&#x4F73;&#x4F8B;&#x5B50;&#x3002;&#x5728;&#x5B9E;&#x8DF5;&#x4E2D;&#xFF0C;&#x51FD;&#x6570;&#x5F0F;&#x63A5;&#x53E3;&#x975E;&#x5E38;&#x8106;&#x5F31;&#xFF1A;&#x53EA;&#x8981;&#x67D0;&#x4E2A;&#x5F00;&#x53D1;&#x8005;&#x5728;&#x8BE5;&#x63A5;&#x53E3;&#x4E2D;&#x6DFB;&#x52A0;&#x4E00;&#x4E2A;&#x51FD;&#x6570;&#xFF0C;&#x5219;&#x8BE5;&#x63A5;&#x53E3;&#x5C31;&#x4E0D;&#x518D;&#x662F;&#x51FD;&#x6570;&#x5F0F;&#x63A5;&#x53E3;&#x8FDB;&#x800C;&#x5BFC;&#x81F4;&#x7F16;&#x8BD1;&#x5931;&#x8D25;&#x3002;&#x4E3A;&#x4E86;&#x514B;&#x670D;&#x8FD9;&#x79CD;&#x4EE3;&#x7801;&#x5C42;&#x9762;&#x7684;&#x8106;&#x5F31;&#x6027;&#xFF0C;&#x5E76;&#x663E;&#x5F0F;&#x8BF4;&#x660E;&#x67D0;&#x4E2A;&#x63A5;&#x53E3;&#x662F;&#x51FD;&#x6570;&#x5F0F;&#x63A5;&#x53E3;&#xFF0C;Java 8 &#x63D0;&#x4F9B;&#x4E86;&#x4E00;&#x4E2A;&#x7279;&#x6B8A;&#x7684;&#x6CE8;&#x89E3;<strong>@FunctionalInterface</strong>&#xFF08;Java &#x5E93;&#x4E2D;&#x7684;&#x6240;&#x6709;&#x76F8;&#x5173;&#x63A5;&#x53E3;&#x90FD;&#x5DF2;&#x7ECF;&#x5E26;&#x6709;&#x8FD9;&#x4E2A;&#x6CE8;&#x89E3;&#x4E86;&#xFF09;&#xFF0C;&#x4E3E;&#x4E2A;&#x7B80;&#x5355;&#x7684;&#x51FD;&#x6570;&#x5F0F;&#x63A5;&#x53E3;&#x7684;&#x5B9A;&#x4E49;&#xFF1A;</p>
-<pre><code class="lang-java">@FunctionalInterface
-public interface Functional {
-    void method();
+<pre><code class="lang-java"><span class="hljs-meta">@FunctionalInterface</span>
+<span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">interface</span> <span class="hljs-title">Functional</span> </span>{
+    <span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">method</span><span class="hljs-params">()</span></span>;
 }
 </code></pre>
 <p>&#x4E0D;&#x8FC7;&#x6709;&#x4E00;&#x70B9;&#x9700;&#x8981;&#x6CE8;&#x610F;&#xFF0C;<a href="https://www.javacodegeeks.com/2014/05/java-8-features-tutorial.html#Interface_Default" target="_blank">&#x9ED8;&#x8BA4;&#x65B9;&#x6CD5;&#x548C;&#x9759;&#x6001;&#x65B9;&#x6CD5;</a>&#x4E0D;&#x4F1A;&#x7834;&#x574F;&#x51FD;&#x6570;&#x5F0F;&#x63A5;&#x53E3;&#x7684;&#x5B9A;&#x4E49;&#xFF0C;&#x56E0;&#x6B64;&#x5982;&#x4E0B;&#x7684;&#x4EE3;&#x7801;&#x662F;&#x5408;&#x6CD5;&#x7684;&#x3002;</p>
-<pre><code class="lang-java">@FunctionalInterface
-public interface FunctionalDefaultMethods {
-    void method();
+<pre><code class="lang-java"><span class="hljs-meta">@FunctionalInterface</span>
+<span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">interface</span> <span class="hljs-title">FunctionalDefaultMethods</span> </span>{
+    <span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">method</span><span class="hljs-params">()</span></span>;
 
-    default void defaultMethod() {            
+    <span class="hljs-function"><span class="hljs-keyword">default</span> <span class="hljs-keyword">void</span> <span class="hljs-title">defaultMethod</span><span class="hljs-params">()</span> </span>{            
     }        
 }
 </code></pre>
@@ -3769,39 +3773,39 @@ public interface FunctionalDefaultMethods {
 <h3 id="22-&#x63A5;&#x53E3;&#x7684;&#x9ED8;&#x8BA4;&#x65B9;&#x6CD5;&#x548C;&#x9759;&#x6001;&#x65B9;&#x6CD5;"><a name="22-&#x63A5;&#x53E3;&#x7684;&#x9ED8;&#x8BA4;&#x65B9;&#x6CD5;&#x548C;&#x9759;&#x6001;&#x65B9;&#x6CD5;" class="anchor-navigation-ex-anchor" href="#22-&#x63A5;&#x53E3;&#x7684;&#x9ED8;&#x8BA4;&#x65B9;&#x6CD5;&#x548C;&#x9759;&#x6001;&#x65B9;&#x6CD5;"><i class="fa fa-link" aria-hidden="true"></i></a>2.2 &#x63A5;&#x53E3;&#x7684;&#x9ED8;&#x8BA4;&#x65B9;&#x6CD5;&#x548C;&#x9759;&#x6001;&#x65B9;&#x6CD5;</h3>
 <p>Java 8&#x4F7F;&#x7528;&#x4E24;&#x4E2A;&#x65B0;&#x6982;&#x5FF5;&#x6269;&#x5C55;&#x4E86;&#x63A5;&#x53E3;&#x7684;&#x542B;&#x4E49;&#xFF1A;&#x9ED8;&#x8BA4;&#x65B9;&#x6CD5;&#x548C;&#x9759;&#x6001;&#x65B9;&#x6CD5;&#x3002;<a href="">&#x9ED8;&#x8BA4;&#x65B9;&#x6CD5;</a>&#x4F7F;&#x5F97;&#x63A5;&#x53E3;&#x6709;&#x70B9;&#x7C7B;&#x4F3C;traits&#xFF0C;&#x4E0D;&#x8FC7;&#x8981;&#x5B9E;&#x73B0;&#x7684;&#x76EE;&#x6807;&#x4E0D;&#x4E00;&#x6837;&#x3002;&#x9ED8;&#x8BA4;&#x65B9;&#x6CD5;&#x4F7F;&#x5F97;&#x5F00;&#x53D1;&#x8005;&#x53EF;&#x4EE5;&#x5728; &#x4E0D;&#x7834;&#x574F;&#x4E8C;&#x8FDB;&#x5236;&#x517C;&#x5BB9;&#x6027;&#x7684;&#x524D;&#x63D0;&#x4E0B;&#xFF0C;&#x5F80;&#x73B0;&#x5B58;&#x63A5;&#x53E3;&#x4E2D;&#x6DFB;&#x52A0;&#x65B0;&#x7684;&#x65B9;&#x6CD5;&#xFF0C;&#x5373;&#x4E0D;&#x5F3A;&#x5236;&#x90A3;&#x4E9B;&#x5B9E;&#x73B0;&#x4E86;&#x8BE5;&#x63A5;&#x53E3;&#x7684;&#x7C7B;&#x4E5F;&#x540C;&#x65F6;&#x5B9E;&#x73B0;&#x8FD9;&#x4E2A;&#x65B0;&#x52A0;&#x7684;&#x65B9;&#x6CD5;&#x3002;</p>
 <p>&#x9ED8;&#x8BA4;&#x65B9;&#x6CD5;&#x548C;&#x62BD;&#x8C61;&#x65B9;&#x6CD5;&#x4E4B;&#x95F4;&#x7684;&#x533A;&#x522B;&#x5728;&#x4E8E;&#x62BD;&#x8C61;&#x65B9;&#x6CD5;&#x9700;&#x8981;&#x5B9E;&#x73B0;&#xFF0C;&#x800C;&#x9ED8;&#x8BA4;&#x65B9;&#x6CD5;&#x4E0D;&#x9700;&#x8981;&#x3002;&#x63A5;&#x53E3;&#x63D0;&#x4F9B;&#x7684;&#x9ED8;&#x8BA4;&#x65B9;&#x6CD5;&#x4F1A;&#x88AB;&#x63A5;&#x53E3;&#x7684;&#x5B9E;&#x73B0;&#x7C7B;&#x7EE7;&#x627F;&#x6216;&#x8005;&#x8986;&#x5199;&#xFF0C;&#x4F8B;&#x5B50;&#x4EE3;&#x7801;&#x5982;&#x4E0B;&#xFF1A;</p>
-<pre><code class="lang-java">private interface Defaulable {
-    // Interfaces now allow default methods, the implementer may or 
-    // may not implement (override) them.
-    default String notRequired() { 
-        return &quot;Default implementation&quot;; 
+<pre><code class="lang-java"><span class="hljs-keyword">private</span> <span class="hljs-class"><span class="hljs-keyword">interface</span> <span class="hljs-title">Defaulable</span> </span>{
+    <span class="hljs-comment">// Interfaces now allow default methods, the implementer may or </span>
+    <span class="hljs-comment">// may not implement (override) them.</span>
+    <span class="hljs-function"><span class="hljs-keyword">default</span> String <span class="hljs-title">notRequired</span><span class="hljs-params">()</span> </span>{ 
+        <span class="hljs-keyword">return</span> <span class="hljs-string">&quot;Default implementation&quot;</span>; 
     }        
 }
 
-private static class DefaultableImpl implements Defaulable {
+<span class="hljs-keyword">private</span> <span class="hljs-keyword">static</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">DefaultableImpl</span> <span class="hljs-keyword">implements</span> <span class="hljs-title">Defaulable</span> </span>{
 }
 
-private static class OverridableImpl implements Defaulable {
-    @Override
-    public String notRequired() {
-        return &quot;Overridden implementation&quot;;
+<span class="hljs-keyword">private</span> <span class="hljs-keyword">static</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">OverridableImpl</span> <span class="hljs-keyword">implements</span> <span class="hljs-title">Defaulable</span> </span>{
+    <span class="hljs-meta">@Override</span>
+    <span class="hljs-function"><span class="hljs-keyword">public</span> String <span class="hljs-title">notRequired</span><span class="hljs-params">()</span> </span>{
+        <span class="hljs-keyword">return</span> <span class="hljs-string">&quot;Overridden implementation&quot;</span>;
     }
 }
 </code></pre>
 <p><strong>Defaulable</strong>&#x63A5;&#x53E3;&#x4F7F;&#x7528;&#x5173;&#x952E;&#x5B57;<strong>default</strong>&#x5B9A;&#x4E49;&#x4E86;&#x4E00;&#x4E2A;&#x9ED8;&#x8BA4;&#x65B9;&#x6CD5;<strong>notRequired()</strong>&#x3002;<strong>DefaultableImpl</strong>&#x7C7B;&#x5B9E;&#x73B0;&#x4E86;&#x8FD9;&#x4E2A;&#x63A5;&#x53E3;&#xFF0C;&#x540C;&#x65F6;&#x9ED8;&#x8BA4;&#x7EE7;&#x627F;&#x4E86;&#x8FD9;&#x4E2A;&#x63A5;&#x53E3;&#x4E2D;&#x7684;&#x9ED8;&#x8BA4;&#x65B9;&#x6CD5;&#xFF1B;<strong>OverridableImpl</strong>&#x7C7B;&#x4E5F;&#x5B9E;&#x73B0;&#x4E86;&#x8FD9;&#x4E2A;&#x63A5;&#x53E3;&#xFF0C;&#x4F46;&#x8986;&#x5199;&#x4E86;&#x8BE5;&#x63A5;&#x53E3;&#x7684;&#x9ED8;&#x8BA4;&#x65B9;&#x6CD5;&#xFF0C;&#x5E76;&#x63D0;&#x4F9B;&#x4E86;&#x4E00;&#x4E2A;&#x4E0D;&#x540C;&#x7684;&#x5B9E;&#x73B0;&#x3002;</p>
 <p>Java 8&#x5E26;&#x6765;&#x7684;&#x53E6;&#x4E00;&#x4E2A;&#x6709;&#x8DA3;&#x7684;&#x7279;&#x6027;&#x662F;&#x5728;&#x63A5;&#x53E3;&#x4E2D;&#x53EF;&#x4EE5;&#x5B9A;&#x4E49;&#x9759;&#x6001;&#x65B9;&#x6CD5;&#xFF0C;&#x4F8B;&#x5B50;&#x4EE3;&#x7801;&#x5982;&#x4E0B;&#xFF1A;</p>
-<pre><code class="lang-java">private interface DefaulableFactory {
-    // Interfaces now allow static methods
-    static Defaulable create( Supplier&lt; Defaulable &gt; supplier ) {
-        return supplier.get();
+<pre><code class="lang-java"><span class="hljs-keyword">private</span> <span class="hljs-class"><span class="hljs-keyword">interface</span> <span class="hljs-title">DefaulableFactory</span> </span>{
+    <span class="hljs-comment">// Interfaces now allow static methods</span>
+    <span class="hljs-function"><span class="hljs-keyword">static</span> Defaulable <span class="hljs-title">create</span><span class="hljs-params">( Supplier&lt; Defaulable &gt; supplier )</span> </span>{
+        <span class="hljs-keyword">return</span> supplier.get();
     }
 }
 </code></pre>
 <p>&#x4E0B;&#x9762;&#x7684;&#x4EE3;&#x7801;&#x7247;&#x6BB5;&#x6574;&#x5408;&#x4E86;&#x9ED8;&#x8BA4;&#x65B9;&#x6CD5;&#x548C;&#x9759;&#x6001;&#x65B9;&#x6CD5;&#x7684;&#x4F7F;&#x7528;&#x573A;&#x666F;&#xFF1A;</p>
-<pre><code class="lang-java">public static void main( String[] args ) {
-    Defaulable defaulable = DefaulableFactory.create( DefaultableImpl::new );
+<pre><code class="lang-java"><span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title">main</span><span class="hljs-params">( String[] args )</span> </span>{
+    Defaulable defaulable = DefaulableFactory.create( DefaultableImpl::<span class="hljs-keyword">new</span> );
     System.out.println( defaulable.notRequired() );
 
-    defaulable = DefaulableFactory.create( OverridableImpl::new );
+    defaulable = DefaulableFactory.create( OverridableImpl::<span class="hljs-keyword">new</span> );
     System.out.println( defaulable.notRequired() );
 }
 </code></pre>
@@ -3814,27 +3818,27 @@ Overridden implementation
 <h3 id="23-&#x65B9;&#x6CD5;&#x5F15;&#x7528;"><a name="23-&#x65B9;&#x6CD5;&#x5F15;&#x7528;" class="anchor-navigation-ex-anchor" href="#23-&#x65B9;&#x6CD5;&#x5F15;&#x7528;"><i class="fa fa-link" aria-hidden="true"></i></a>2.3 &#x65B9;&#x6CD5;&#x5F15;&#x7528;</h3>
 <p>&#x65B9;&#x6CD5;&#x5F15;&#x7528;&#x4F7F;&#x5F97;&#x5F00;&#x53D1;&#x8005;&#x53EF;&#x4EE5;&#x76F4;&#x63A5;&#x5F15;&#x7528;&#x73B0;&#x5B58;&#x7684;&#x65B9;&#x6CD5;&#x3001;Java&#x7C7B;&#x7684;&#x6784;&#x9020;&#x65B9;&#x6CD5;&#x6216;&#x8005;&#x5B9E;&#x4F8B;&#x5BF9;&#x8C61;&#x3002;&#x65B9;&#x6CD5;&#x5F15;&#x7528;&#x548C;Lambda&#x8868;&#x8FBE;&#x5F0F;&#x914D;&#x5408;&#x4F7F;&#x7528;&#xFF0C;&#x4F7F;&#x5F97;java&#x7C7B;&#x7684;&#x6784;&#x9020;&#x65B9;&#x6CD5;&#x770B;&#x8D77;&#x6765;&#x7D27;&#x51D1;&#x800C;&#x7B80;&#x6D01;&#xFF0C;&#x6CA1;&#x6709;&#x5F88;&#x591A;&#x590D;&#x6742;&#x7684;&#x6A21;&#x677F;&#x4EE3;&#x7801;&#x3002;</p>
 <p>&#x897F;&#x95E8;&#x7684;&#x4F8B;&#x5B50;&#x4E2D;&#xFF0C;<strong>Car</strong>&#x7C7B;&#x662F;&#x4E0D;&#x540C;&#x65B9;&#x6CD5;&#x5F15;&#x7528;&#x7684;&#x4F8B;&#x5B50;&#xFF0C;&#x53EF;&#x4EE5;&#x5E2E;&#x52A9;&#x8BFB;&#x8005;&#x533A;&#x5206;&#x56DB;&#x79CD;&#x7C7B;&#x578B;&#x7684;&#x65B9;&#x6CD5;&#x5F15;&#x7528;&#x3002;</p>
-<pre><code class="lang-java">public static class Car {
-    public static Car create( final Supplier&lt; Car &gt; supplier ) {
-        return supplier.get();
+<pre><code class="lang-java"><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Car</span> </span>{
+    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> Car <span class="hljs-title">create</span><span class="hljs-params">( <span class="hljs-keyword">final</span> Supplier&lt; Car &gt; supplier )</span> </span>{
+        <span class="hljs-keyword">return</span> supplier.get();
     }              
 
-    public static void collide( final Car car ) {
-        System.out.println( &quot;Collided &quot; + car.toString() );
+    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title">collide</span><span class="hljs-params">( <span class="hljs-keyword">final</span> Car car )</span> </span>{
+        System.out.println( <span class="hljs-string">&quot;Collided &quot;</span> + car.toString() );
     }
 
-    public void follow( final Car another ) {
-        System.out.println( &quot;Following the &quot; + another.toString() );
+    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">follow</span><span class="hljs-params">( <span class="hljs-keyword">final</span> Car another )</span> </span>{
+        System.out.println( <span class="hljs-string">&quot;Following the &quot;</span> + another.toString() );
     }
 
-    public void repair() {   
-        System.out.println( &quot;Repaired &quot; + this.toString() );
+    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">repair</span><span class="hljs-params">()</span> </span>{   
+        System.out.println( <span class="hljs-string">&quot;Repaired &quot;</span> + <span class="hljs-keyword">this</span>.toString() );
     }
 }
 </code></pre>
 <p>&#x7B2C;&#x4E00;&#x79CD;&#x65B9;&#x6CD5;&#x5F15;&#x7528;&#x7684;&#x7C7B;&#x578B;&#x662F;<strong>&#x6784;&#x9020;&#x5668;&#x5F15;&#x7528;</strong>&#xFF0C;&#x8BED;&#x6CD5;&#x662F;<strong>Class::new</strong>&#xFF0C;&#x6216;&#x8005;&#x66F4;&#x4E00;&#x822C;&#x7684;&#x5F62;&#x5F0F;&#xFF1A;<strong>Class<t>::new</t></strong>&#x3002;&#x6CE8;&#x610F;&#xFF1A;&#x8FD9;&#x4E2A;&#x6784;&#x9020;&#x5668;&#x6CA1;&#x6709;&#x53C2;&#x6570;&#x3002;</p>
-<pre><code class="lang-java">final Car car = Car.create( Car::new );
-final List&lt; Car &gt; cars = Arrays.asList( car );
+<pre><code class="lang-java"><span class="hljs-keyword">final</span> Car car = Car.create( Car::<span class="hljs-keyword">new</span> );
+<span class="hljs-keyword">final</span> List&lt; Car &gt; cars = Arrays.asList( car );
 </code></pre>
 <p>&#x7B2C;&#x4E8C;&#x79CD;&#x65B9;&#x6CD5;&#x5F15;&#x7528;&#x7684;&#x7C7B;&#x578B;&#x662F;&#x9759;&#x6001;&#x65B9;&#x6CD5;&#x5F15;&#x7528;&#xFF0C;&#x8BED;&#x6CD5;&#x662F;<strong>Class::static_method</strong>&#x3002;&#x6CE8;&#x610F;&#xFF1A;&#x8FD9;&#x4E2A;&#x65B9;&#x6CD5;&#x63A5;&#x53D7;&#x4E00;&#x4E2A;Car&#x7C7B;&#x578B;&#x7684;&#x53C2;&#x6570;&#x3002;</p>
 <pre><code class="lang-java">cars.forEach( Car::collide );
@@ -3843,47 +3847,47 @@ final List&lt; Car &gt; cars = Arrays.asList( car );
 <pre><code class="lang-java">cars.forEach( Car::repair );
 </code></pre>
 <p>&#x7B2C;&#x56DB;&#x79CD;&#x65B9;&#x6CD5;&#x5F15;&#x7528;&#x7684;&#x7C7B;&#x578B;&#x662F;&#x67D0;&#x4E2A;&#x5B9E;&#x4F8B;&#x5BF9;&#x8C61;&#x7684;&#x6210;&#x5458;&#x65B9;&#x6CD5;&#x7684;&#x5F15;&#x7528;&#xFF0C;&#x8BED;&#x6CD5;&#x662F;<strong>instance::method</strong>&#x3002;&#x6CE8;&#x610F;&#xFF1A;&#x8FD9;&#x4E2A;&#x65B9;&#x6CD5;&#x63A5;&#x53D7;&#x4E00;&#x4E2A;Car&#x7C7B;&#x578B;&#x7684;&#x53C2;&#x6570;&#xFF1A;</p>
-<pre><code class="lang-java">final Car police = Car.create( Car::new );
+<pre><code class="lang-java"><span class="hljs-keyword">final</span> Car police = Car.create( Car::<span class="hljs-keyword">new</span> );
 cars.forEach( police::follow );
 </code></pre>
 <p>&#x8FD0;&#x884C;&#x4E0A;&#x8FF0;&#x4F8B;&#x5B50;&#xFF0C;&#x53EF;&#x4EE5;&#x5728;&#x63A7;&#x5236;&#x53F0;&#x770B;&#x5230;&#x5982;&#x4E0B;&#x8F93;&#x51FA;&#xFF08;Car&#x5B9E;&#x4F8B;&#x53EF;&#x80FD;&#x4E0D;&#x540C;&#xFF09;&#xFF1A;</p>
-<pre><code class="lang-java">Collided com.javacodegeeks.java8.method.references.MethodReferences$Car@7a81197d
-Repaired com.javacodegeeks.java8.method.references.MethodReferences$Car@7a81197d
-Following the com.javacodegeeks.java8.method.references.MethodReferences$Car@7a81197d
+<pre><code class="lang-java">Collided com.javacodegeeks.java8.method.references.MethodReferences$Car@<span class="hljs-number">7</span>a81197d
+Repaired com.javacodegeeks.java8.method.references.MethodReferences$Car@<span class="hljs-number">7</span>a81197d
+Following the com.javacodegeeks.java8.method.references.MethodReferences$Car@<span class="hljs-number">7</span>a81197d
 </code></pre>
 <p>&#x5982;&#x679C;&#x60F3;&#x4E86;&#x89E3;&#x548C;&#x5B66;&#x4E60;&#x66F4;&#x8BE6;&#x7EC6;&#x7684;&#x5185;&#x5BB9;&#xFF0C;&#x53EF;&#x4EE5;&#x53C2;&#x8003;<a href="http://docs.oracle.com/javase/tutorial/java/javaOO/methodreferences.html" target="_blank">&#x5B98;&#x65B9;&#x6587;&#x6863;</a></p>
 <h3 id="24-&#x91CD;&#x590D;&#x6CE8;&#x89E3;"><a name="24-&#x91CD;&#x590D;&#x6CE8;&#x89E3;" class="anchor-navigation-ex-anchor" href="#24-&#x91CD;&#x590D;&#x6CE8;&#x89E3;"><i class="fa fa-link" aria-hidden="true"></i></a>2.4 &#x91CD;&#x590D;&#x6CE8;&#x89E3;</h3>
 <p>&#x81EA;&#x4ECE;Java 5&#x4E2D;&#x5F15;&#x5165;<a href="http://www.javacodegeeks.com/2012/08/java-annotations-explored-explained.html" target="_blank">&#x6CE8;&#x89E3;</a>&#x4EE5;&#x6765;&#xFF0C;&#x8FD9;&#x4E2A;&#x7279;&#x6027;&#x5F00;&#x59CB;&#x53D8;&#x5F97;&#x975E;&#x5E38;&#x6D41;&#x884C;&#xFF0C;&#x5E76;&#x5728;&#x5404;&#x4E2A;&#x6846;&#x67B6;&#x548C;&#x9879;&#x76EE;&#x4E2D;&#x88AB;&#x5E7F;&#x6CDB;&#x4F7F;&#x7528;&#x3002;&#x4E0D;&#x8FC7;&#xFF0C;&#x6CE8;&#x89E3;&#x6709;&#x4E00;&#x4E2A;&#x5F88;&#x5927;&#x7684;&#x9650;&#x5236;&#x662F;&#xFF1A;&#x5728;&#x540C;&#x4E00;&#x4E2A;&#x5730;&#x65B9;&#x4E0D;&#x80FD;&#x591A;&#x6B21;&#x4F7F;&#x7528;&#x540C;&#x4E00;&#x4E2A;&#x6CE8;&#x89E3;&#x3002;Java 8&#x6253;&#x7834;&#x4E86;&#x8FD9;&#x4E2A;&#x9650;&#x5236;&#xFF0C;&#x5F15;&#x5165;&#x4E86;&#x91CD;&#x590D;&#x6CE8;&#x89E3;&#x7684;&#x6982;&#x5FF5;&#xFF0C;&#x5141;&#x8BB8;&#x5728;&#x540C;&#x4E00;&#x4E2A;&#x5730;&#x65B9;&#x591A;&#x6B21;&#x4F7F;&#x7528;&#x540C;&#x4E00;&#x4E2A;&#x6CE8;&#x89E3;&#x3002;</p>
 <p>&#x5728;Java 8&#x4E2D;&#x4F7F;&#x7528;<strong>@Repeatable</strong>&#x6CE8;&#x89E3;&#x5B9A;&#x4E49;&#x91CD;&#x590D;&#x6CE8;&#x89E3;&#xFF0C;&#x5B9E;&#x9645;&#x4E0A;&#xFF0C;&#x8FD9;&#x5E76;&#x4E0D;&#x662F;&#x8BED;&#x8A00;&#x5C42;&#x9762;&#x7684;&#x6539;&#x8FDB;&#xFF0C;&#x800C;&#x662F;&#x7F16;&#x8BD1;&#x5668;&#x505A;&#x7684;&#x4E00;&#x4E2A;trick&#xFF0C;&#x5E95;&#x5C42;&#x7684;&#x6280;&#x672F;&#x4ECD;&#x7136;&#x76F8;&#x540C;&#x3002;&#x53EF;&#x4EE5;&#x5229;&#x7528;&#x4E0B;&#x9762;&#x7684;&#x4EE3;&#x7801;&#x8BF4;&#x660E;&#xFF1A;</p>
-<pre><code class="lang-java">package com.javacodegeeks.java8.repeatable.annotations;
+<pre><code class="lang-java"><span class="hljs-keyword">package</span> com.javacodegeeks.java8.repeatable.annotations;
 
-import java.lang.annotation.ElementType;
-import java.lang.annotation.Repeatable;
-import java.lang.annotation.Retention;
-import java.lang.annotation.RetentionPolicy;
-import java.lang.annotation.Target;
+<span class="hljs-keyword">import</span> java.lang.annotation.ElementType;
+<span class="hljs-keyword">import</span> java.lang.annotation.Repeatable;
+<span class="hljs-keyword">import</span> java.lang.annotation.Retention;
+<span class="hljs-keyword">import</span> java.lang.annotation.RetentionPolicy;
+<span class="hljs-keyword">import</span> java.lang.annotation.Target;
 
-public class RepeatingAnnotations {
-    @Target( ElementType.TYPE )
-    @Retention( RetentionPolicy.RUNTIME )
-    public @interface Filters {
+<span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">RepeatingAnnotations</span> </span>{
+    <span class="hljs-meta">@Target</span>( ElementType.TYPE )
+    <span class="hljs-meta">@Retention</span>( RetentionPolicy.RUNTIME )
+    <span class="hljs-keyword">public</span> <span class="hljs-meta">@interface</span> Filters {
         Filter[] value();
     }
 
-    @Target( ElementType.TYPE )
-    @Retention( RetentionPolicy.RUNTIME )
-    @Repeatable( Filters.class )
-    public @interface Filter {
-        String value();
+    <span class="hljs-meta">@Target</span>( ElementType.TYPE )
+    <span class="hljs-meta">@Retention</span>( RetentionPolicy.RUNTIME )
+    <span class="hljs-meta">@Repeatable</span>( Filters.class )
+    <span class="hljs-keyword">public</span> <span class="hljs-meta">@interface</span> Filter {
+        <span class="hljs-function">String <span class="hljs-title">value</span><span class="hljs-params">()</span></span>;
     };
 
-    @Filter( &quot;filter1&quot; )
-    @Filter( &quot;filter2&quot; )
-    public interface Filterable {        
+    <span class="hljs-meta">@Filter</span>( <span class="hljs-string">&quot;filter1&quot;</span> )
+    <span class="hljs-meta">@Filter</span>( <span class="hljs-string">&quot;filter2&quot;</span> )
+    <span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">interface</span> <span class="hljs-title">Filterable</span> </span>{        
     }
 
-    public static void main(String[] args) {
-        for( Filter filter: Filterable.class.getAnnotationsByType( Filter.class ) ) {
+    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title">main</span><span class="hljs-params">(String[] args)</span> </span>{
+        <span class="hljs-keyword">for</span>( Filter filter: Filterable.class.getAnnotationsByType( Filter.class ) ) {
             System.out.println( filter.value() );
         }
     }
@@ -3897,55 +3901,55 @@ filter2
 <p>&#x5982;&#x679C;&#x4F60;&#x5E0C;&#x671B;&#x4E86;&#x89E3;&#x66F4;&#x591A;&#x5185;&#x5BB9;&#xFF0C;&#x53EF;&#x4EE5;&#x53C2;&#x8003;<a href="http://docs.oracle.com/javase/tutorial/java/annotations/repeating.html" target="_blank">&#x5B98;&#x65B9;&#x6587;&#x6863;</a>&#x3002;</p>
 <h3 id="25-&#x66F4;&#x597D;&#x7684;&#x7C7B;&#x578B;&#x63A8;&#x65AD;"><a name="25-&#x66F4;&#x597D;&#x7684;&#x7C7B;&#x578B;&#x63A8;&#x65AD;" class="anchor-navigation-ex-anchor" href="#25-&#x66F4;&#x597D;&#x7684;&#x7C7B;&#x578B;&#x63A8;&#x65AD;"><i class="fa fa-link" aria-hidden="true"></i></a>2.5 &#x66F4;&#x597D;&#x7684;&#x7C7B;&#x578B;&#x63A8;&#x65AD;</h3>
 <p>Java 8&#x7F16;&#x8BD1;&#x5668;&#x5728;&#x7C7B;&#x578B;&#x63A8;&#x65AD;&#x65B9;&#x9762;&#x6709;&#x5F88;&#x5927;&#x7684;&#x63D0;&#x5347;&#xFF0C;&#x5728;&#x5F88;&#x591A;&#x573A;&#x666F;&#x4E0B;&#x7F16;&#x8BD1;&#x5668;&#x53EF;&#x4EE5;&#x63A8;&#x5BFC;&#x51FA;&#x67D0;&#x4E2A;&#x53C2;&#x6570;&#x7684;&#x6570;&#x636E;&#x7C7B;&#x578B;&#xFF0C;&#x4ECE;&#x800C;&#x4F7F;&#x5F97;&#x4EE3;&#x7801;&#x66F4;&#x4E3A;&#x7B80;&#x6D01;&#x3002;&#x4F8B;&#x5B50;&#x4EE3;&#x7801;&#x5982;&#x4E0B;&#xFF1A;</p>
-<pre><code class="lang-Java">package com.javacodegeeks.java8.type.inference;
+<pre><code class="lang-Java"><span class="hljs-keyword">package</span> com.javacodegeeks.java8.type.inference;
 
-public class Value&lt; T &gt; {
-    public static&lt; T &gt; T defaultValue() { 
-        return null; 
+<span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Value</span>&lt; <span class="hljs-title">T</span> &gt; </span>{
+    <span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span>&lt; T &gt; <span class="hljs-function">T <span class="hljs-title">defaultValue</span><span class="hljs-params">()</span> </span>{ 
+        <span class="hljs-keyword">return</span> <span class="hljs-keyword">null</span>; 
     }
 
-    public T getOrDefault( T value, T defaultValue ) {
-        return ( value != null ) ? value : defaultValue;
+    <span class="hljs-function"><span class="hljs-keyword">public</span> T <span class="hljs-title">getOrDefault</span><span class="hljs-params">( T value, T defaultValue )</span> </span>{
+        <span class="hljs-keyword">return</span> ( value != <span class="hljs-keyword">null</span> ) ? value : defaultValue;
     }
 }
 </code></pre>
 <p>&#x4E0B;&#x5217;&#x4EE3;&#x7801;&#x662F;<strong>Value<string></string></strong>&#x7C7B;&#x578B;&#x7684;&#x5E94;&#x7528;&#xFF1A;</p>
-<pre><code class="lang-java">package com.javacodegeeks.java8.type.inference;
+<pre><code class="lang-java"><span class="hljs-keyword">package</span> com.javacodegeeks.java8.type.inference;
 
-public class TypeInference {
-    public static void main(String[] args) {
-        final Value&lt; String &gt; value = new Value&lt;&gt;();
-        value.getOrDefault( &quot;22&quot;, Value.defaultValue() );
+<span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">TypeInference</span> </span>{
+    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title">main</span><span class="hljs-params">(String[] args)</span> </span>{
+        <span class="hljs-keyword">final</span> Value&lt; String &gt; value = <span class="hljs-keyword">new</span> Value&lt;&gt;();
+        value.getOrDefault( <span class="hljs-string">&quot;22&quot;</span>, Value.defaultValue() );
     }
 }
 </code></pre>
 <p>&#x53C2;&#x6570;<strong>Value.defaultValue()</strong>&#x7684;&#x7C7B;&#x578B;&#x7531;&#x7F16;&#x8BD1;&#x5668;&#x63A8;&#x5BFC;&#x5F97;&#x51FA;&#xFF0C;&#x4E0D;&#x9700;&#x8981;&#x663E;&#x5F0F;&#x6307;&#x660E;&#x3002;&#x5728;Java 7&#x4E2D;&#x8FD9;&#x6BB5;&#x4EE3;&#x7801;&#x4F1A;&#x6709;&#x7F16;&#x8BD1;&#x9519;&#x8BEF;&#xFF0C;&#x9664;&#x975E;&#x4F7F;&#x7528;<code>Value.&lt;String&gt;defaultValue()</code>&#x3002;</p>
 <h3 id="26-&#x62D3;&#x5BBD;&#x6CE8;&#x89E3;&#x7684;&#x5E94;&#x7528;&#x573A;&#x666F;"><a name="26-&#x62D3;&#x5BBD;&#x6CE8;&#x89E3;&#x7684;&#x5E94;&#x7528;&#x573A;&#x666F;" class="anchor-navigation-ex-anchor" href="#26-&#x62D3;&#x5BBD;&#x6CE8;&#x89E3;&#x7684;&#x5E94;&#x7528;&#x573A;&#x666F;"><i class="fa fa-link" aria-hidden="true"></i></a>2.6 &#x62D3;&#x5BBD;&#x6CE8;&#x89E3;&#x7684;&#x5E94;&#x7528;&#x573A;&#x666F;</h3>
 <p>Java 8&#x62D3;&#x5BBD;&#x4E86;&#x6CE8;&#x89E3;&#x7684;&#x5E94;&#x7528;&#x573A;&#x666F;&#x3002;&#x73B0;&#x5728;&#xFF0C;&#x6CE8;&#x89E3;&#x51E0;&#x4E4E;&#x53EF;&#x4EE5;&#x4F7F;&#x7528;&#x5728;&#x4EFB;&#x4F55;&#x5143;&#x7D20;&#x4E0A;&#xFF1A;&#x5C40;&#x90E8;&#x53D8;&#x91CF;&#x3001;&#x63A5;&#x53E3;&#x7C7B;&#x578B;&#x3001;&#x8D85;&#x7C7B;&#x548C;&#x63A5;&#x53E3;&#x5B9E;&#x73B0;&#x7C7B;&#xFF0C;&#x751A;&#x81F3;&#x53EF;&#x4EE5;&#x7528;&#x5728;&#x51FD;&#x6570;&#x7684;&#x5F02;&#x5E38;&#x5B9A;&#x4E49;&#x4E0A;&#x3002;&#x4E0B;&#x9762;&#x662F;&#x4E00;&#x4E9B;&#x4F8B;&#x5B50;&#xFF1A;</p>
-<pre><code class="lang-java">package com.javacodegeeks.java8.annotations;
+<pre><code class="lang-java"><span class="hljs-keyword">package</span> com.javacodegeeks.java8.annotations;
 
-import java.lang.annotation.ElementType;
-import java.lang.annotation.Retention;
-import java.lang.annotation.RetentionPolicy;
-import java.lang.annotation.Target;
-import java.util.ArrayList;
-import java.util.Collection;
+<span class="hljs-keyword">import</span> java.lang.annotation.ElementType;
+<span class="hljs-keyword">import</span> java.lang.annotation.Retention;
+<span class="hljs-keyword">import</span> java.lang.annotation.RetentionPolicy;
+<span class="hljs-keyword">import</span> java.lang.annotation.Target;
+<span class="hljs-keyword">import</span> java.util.ArrayList;
+<span class="hljs-keyword">import</span> java.util.Collection;
 
-public class Annotations {
-    @Retention( RetentionPolicy.RUNTIME )
-    @Target( { ElementType.TYPE_USE, ElementType.TYPE_PARAMETER } )
-    public @interface NonEmpty {        
+<span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Annotations</span> </span>{
+    <span class="hljs-meta">@Retention</span>( RetentionPolicy.RUNTIME )
+    <span class="hljs-meta">@Target</span>( { ElementType.TYPE_USE, ElementType.TYPE_PARAMETER } )
+    <span class="hljs-keyword">public</span> <span class="hljs-meta">@interface</span> NonEmpty {        
     }
 
-    public static class Holder&lt; @NonEmpty T &gt; extends @NonEmpty Object {
-        public void method() throws @NonEmpty Exception {            
+    <span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Holder</span>&lt; @<span class="hljs-title">NonEmpty</span> <span class="hljs-title">T</span> &gt; <span class="hljs-keyword">extends</span> @<span class="hljs-title">NonEmpty</span> <span class="hljs-title">Object</span> </span>{
+        <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">method</span><span class="hljs-params">()</span> <span class="hljs-keyword">throws</span> @NonEmpty Exception </span>{            
         }
     }
 
-    @SuppressWarnings( &quot;unused&quot; )
-    public static void main(String[] args) {
-        final Holder&lt; String &gt; holder = new @NonEmpty Holder&lt; String &gt;();        
-        @NonEmpty Collection&lt; @NonEmpty String &gt; strings = new ArrayList&lt;&gt;();        
+    <span class="hljs-meta">@SuppressWarnings</span>( <span class="hljs-string">&quot;unused&quot;</span> )
+    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title">main</span><span class="hljs-params">(String[] args)</span> </span>{
+        <span class="hljs-keyword">final</span> Holder&lt; String &gt; holder = <span class="hljs-keyword">new</span> <span class="hljs-meta">@NonEmpty</span> Holder&lt; String &gt;();        
+        <span class="hljs-meta">@NonEmpty</span> Collection&lt; <span class="hljs-meta">@NonEmpty</span> String &gt; strings = <span class="hljs-keyword">new</span> ArrayList&lt;&gt;();        
     }
 }
 </code></pre>
@@ -3953,16 +3957,16 @@ public class Annotations {
 <h2 id="3-java&#x7F16;&#x8BD1;&#x5668;&#x7684;&#x65B0;&#x7279;&#x6027;"><a name="3-java&#x7F16;&#x8BD1;&#x5668;&#x7684;&#x65B0;&#x7279;&#x6027;" class="anchor-navigation-ex-anchor" href="#3-java&#x7F16;&#x8BD1;&#x5668;&#x7684;&#x65B0;&#x7279;&#x6027;"><i class="fa fa-link" aria-hidden="true"></i></a>3. Java&#x7F16;&#x8BD1;&#x5668;&#x7684;&#x65B0;&#x7279;&#x6027;</h2>
 <h3 id="31-&#x53C2;&#x6570;&#x540D;&#x79F0;"><a name="31-&#x53C2;&#x6570;&#x540D;&#x79F0;" class="anchor-navigation-ex-anchor" href="#31-&#x53C2;&#x6570;&#x540D;&#x79F0;"><i class="fa fa-link" aria-hidden="true"></i></a>3.1 &#x53C2;&#x6570;&#x540D;&#x79F0;</h3>
 <p>&#x4E3A;&#x4E86;&#x5728;&#x8FD0;&#x884C;&#x65F6;&#x83B7;&#x5F97;Java&#x7A0B;&#x5E8F;&#x4E2D;&#x65B9;&#x6CD5;&#x7684;&#x53C2;&#x6570;&#x540D;&#x79F0;&#xFF0C;&#x8001;&#x4E00;&#x8F88;&#x7684;Java&#x7A0B;&#x5E8F;&#x5458;&#x5FC5;&#x987B;&#x4F7F;&#x7528;&#x4E0D;&#x540C;&#x65B9;&#x6CD5;&#xFF0C;&#x4F8B;&#x5982;<a href="https://github.com/paul-hammant/paranamer" target="_blank">Paranamer liberary</a>&#x3002;Java 8&#x7EC8;&#x4E8E;&#x5C06;&#x8FD9;&#x4E2A;&#x7279;&#x6027;&#x89C4;&#x8303;&#x5316;&#xFF0C;&#x5728;&#x8BED;&#x8A00;&#x5C42;&#x9762;&#xFF08;&#x4F7F;&#x7528;&#x53CD;&#x5C04;API&#x548C;<strong>Parameter.getName()&#x65B9;&#x6CD5;</strong>&#xFF09;&#x548C;&#x5B57;&#x8282;&#x7801;&#x5C42;&#x9762;&#xFF08;&#x4F7F;&#x7528;&#x65B0;&#x7684;<strong>javac</strong>&#x7F16;&#x8BD1;&#x5668;&#x4EE5;&#x53CA;<strong>-parameters</strong>&#x53C2;&#x6570;&#xFF09;&#x63D0;&#x4F9B;&#x652F;&#x6301;&#x3002;</p>
-<pre><code class="lang-java">package com.javacodegeeks.java8.parameter.names;
+<pre><code class="lang-java"><span class="hljs-keyword">package</span> com.javacodegeeks.java8.parameter.names;
 
-import java.lang.reflect.Method;
-import java.lang.reflect.Parameter;
+<span class="hljs-keyword">import</span> java.lang.reflect.Method;
+<span class="hljs-keyword">import</span> java.lang.reflect.Parameter;
 
-public class ParameterNames {
-    public static void main(String[] args) throws Exception {
-        Method method = ParameterNames.class.getMethod( &quot;main&quot;, String[].class );
-        for( final Parameter parameter: method.getParameters() ) {
-            System.out.println( &quot;Parameter: &quot; + parameter.getName() );
+<span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">ParameterNames</span> </span>{
+    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title">main</span><span class="hljs-params">(String[] args)</span> <span class="hljs-keyword">throws</span> Exception </span>{
+        Method method = ParameterNames.class.getMethod( <span class="hljs-string">&quot;main&quot;</span>, String[].class );
+        <span class="hljs-keyword">for</span>( <span class="hljs-keyword">final</span> Parameter parameter: method.getParameters() ) {
+            System.out.println( <span class="hljs-string">&quot;Parameter: &quot;</span> + parameter.getName() );
         }
     }
 }
@@ -3974,16 +3978,16 @@ public class ParameterNames {
 <pre><code class="lang-java">Parameter: args
 </code></pre>
 <p>&#x5982;&#x679C;&#x4F60;&#x4F7F;&#x7528;Maven&#x8FDB;&#x884C;&#x9879;&#x76EE;&#x7BA1;&#x7406;&#xFF0C;&#x5219;&#x53EF;&#x4EE5;&#x5728;<strong>maven-compiler-plugin</strong>&#x7F16;&#x8BD1;&#x5668;&#x7684;&#x914D;&#x7F6E;&#x9879;&#x4E2D;&#x914D;&#x7F6E;<strong>-parameters</strong>&#x53C2;&#x6570;&#xFF1A;</p>
-<pre><code class="lang-xml">&lt;plugin&gt;
-    &lt;groupId&gt;org.apache.maven.plugins&lt;/groupId&gt;
-    &lt;artifactId&gt;maven-compiler-plugin&lt;/artifactId&gt;
-    &lt;version&gt;3.1&lt;/version&gt;
-    &lt;configuration&gt;
-        &lt;compilerArgument&gt;-parameters&lt;/compilerArgument&gt;
-        &lt;source&gt;1.8&lt;/source&gt;
-        &lt;target&gt;1.8&lt;/target&gt;
-    &lt;/configuration&gt;
-&lt;/plugin&gt;
+<pre><code class="lang-xml"><span class="hljs-tag">&lt;<span class="hljs-name">plugin</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">groupId</span>&gt;</span>org.apache.maven.plugins<span class="hljs-tag">&lt;/<span class="hljs-name">groupId</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">artifactId</span>&gt;</span>maven-compiler-plugin<span class="hljs-tag">&lt;/<span class="hljs-name">artifactId</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">version</span>&gt;</span>3.1<span class="hljs-tag">&lt;/<span class="hljs-name">version</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">configuration</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">compilerArgument</span>&gt;</span>-parameters<span class="hljs-tag">&lt;/<span class="hljs-name">compilerArgument</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">source</span>&gt;</span>1.8<span class="hljs-tag">&lt;/<span class="hljs-name">source</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">target</span>&gt;</span>1.8<span class="hljs-tag">&lt;/<span class="hljs-name">target</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-name">configuration</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">plugin</span>&gt;</span>
 </code></pre>
 <h2 id="4-java&#x5B98;&#x65B9;&#x5E93;&#x7684;&#x65B0;&#x7279;&#x6027;"><a name="4-java&#x5B98;&#x65B9;&#x5E93;&#x7684;&#x65B0;&#x7279;&#x6027;" class="anchor-navigation-ex-anchor" href="#4-java&#x5B98;&#x65B9;&#x5E93;&#x7684;&#x65B0;&#x7279;&#x6027;"><i class="fa fa-link" aria-hidden="true"></i></a>4. Java&#x5B98;&#x65B9;&#x5E93;&#x7684;&#x65B0;&#x7279;&#x6027;</h2>
 <p>Java 8&#x589E;&#x52A0;&#x4E86;&#x5F88;&#x591A;&#x65B0;&#x7684;&#x5DE5;&#x5177;&#x7C7B;&#xFF08;date/time&#x7C7B;&#xFF09;&#xFF0C;&#x5E76;&#x6269;&#x5C55;&#x4E86;&#x73B0;&#x5B58;&#x7684;&#x5DE5;&#x5177;&#x7C7B;&#xFF0C;&#x4EE5;&#x652F;&#x6301;&#x73B0;&#x4EE3;&#x7684;&#x5E76;&#x53D1;&#x7F16;&#x7A0B;&#x3001;&#x51FD;&#x6570;&#x5F0F;&#x7F16;&#x7A0B;&#x7B49;&#x3002;</p>
@@ -3991,10 +3995,10 @@ public class ParameterNames {
 <p>Java&#x5E94;&#x7528;&#x4E2D;&#x6700;&#x5E38;&#x89C1;&#x7684;bug&#x5C31;&#x662F;<a href="http://examples.javacodegeeks.com/java-basics/exceptions/java-lang-nullpointerexception-how-to-handle-null-pointer-exception/" target="_blank">&#x7A7A;&#x503C;&#x5F02;&#x5E38;</a>&#x3002;&#x5728;Java 8&#x4E4B;&#x524D;&#xFF0C;<a href="http://code.google.com/p/guava-libraries/" target="_blank">Google Guava</a>&#x5F15;&#x5165;&#x4E86;<strong>Optionals</strong>&#x7C7B;&#x6765;&#x89E3;&#x51B3;<strong>NullPointerException</strong>&#xFF0C;&#x4ECE;&#x800C;&#x907F;&#x514D;&#x6E90;&#x7801;&#x88AB;&#x5404;&#x79CD;<strong>null</strong>&#x68C0;&#x67E5;&#x6C61;&#x67D3;&#xFF0C;&#x4EE5;&#x4FBF;&#x5F00;&#x53D1;&#x8005;&#x5199;&#x51FA;&#x66F4;&#x52A0;&#x6574;&#x6D01;&#x7684;&#x4EE3;&#x7801;&#x3002;Java 8&#x4E5F;&#x5C06;<strong>Optional</strong>&#x52A0;&#x5165;&#x4E86;&#x5B98;&#x65B9;&#x5E93;&#x3002;</p>
 <p><strong>Optional</strong>&#x4EC5;&#x4EC5;&#x662F;&#x4E00;&#x4E2A;&#x5BB9;&#x6613;&#xFF1A;&#x5B58;&#x653E;T&#x7C7B;&#x578B;&#x7684;&#x503C;&#x6216;&#x8005;null&#x3002;&#x5B83;&#x63D0;&#x4F9B;&#x4E86;&#x4E00;&#x4E9B;&#x6709;&#x7528;&#x7684;&#x63A5;&#x53E3;&#x6765;&#x907F;&#x514D;&#x663E;&#x5F0F;&#x7684;null&#x68C0;&#x67E5;&#xFF0C;&#x53EF;&#x4EE5;&#x53C2;&#x8003;<a href="http://docs.oracle.com/javase/8/docs/api/" target="_blank">Java 8&#x5B98;&#x65B9;&#x6587;&#x6863;</a>&#x4E86;&#x89E3;&#x66F4;&#x591A;&#x7EC6;&#x8282;&#x3002;</p>
 <p>&#x63A5;&#x4E0B;&#x6765;&#x770B;&#x4E00;&#x70B9;&#x4F7F;&#x7528;<strong>Optional</strong>&#x7684;&#x4F8B;&#x5B50;&#xFF1A;&#x53EF;&#x80FD;&#x4E3A;&#x7A7A;&#x7684;&#x503C;&#x6216;&#x8005;&#x67D0;&#x4E2A;&#x7C7B;&#x578B;&#x7684;&#x503C;&#xFF1A;</p>
-<pre><code class="lang-java">Optional&lt; String &gt; fullName = Optional.ofNullable( null );
-System.out.println( &quot;Full Name is set? &quot; + fullName.isPresent() );        
-System.out.println( &quot;Full Name: &quot; + fullName.orElseGet( () -&gt; &quot;[none]&quot; ) ); 
-System.out.println( fullName.map( s -&gt; &quot;Hey &quot; + s + &quot;!&quot; ).orElse( &quot;Hey Stranger!&quot; ) );
+<pre><code class="lang-java">Optional&lt; String &gt; fullName = Optional.ofNullable( <span class="hljs-keyword">null</span> );
+System.out.println( <span class="hljs-string">&quot;Full Name is set? &quot;</span> + fullName.isPresent() );        
+System.out.println( <span class="hljs-string">&quot;Full Name: &quot;</span> + fullName.orElseGet( () -&gt; <span class="hljs-string">&quot;[none]&quot;</span> ) ); 
+System.out.println( fullName.map( s -&gt; <span class="hljs-string">&quot;Hey &quot;</span> + s + <span class="hljs-string">&quot;!&quot;</span> ).orElse( <span class="hljs-string">&quot;Hey Stranger!&quot;</span> ) );
 </code></pre>
 <p>&#x5982;&#x679C;<strong>Optional</strong>&#x5B9E;&#x4F8B;&#x6301;&#x6709;&#x4E00;&#x4E2A;&#x975E;&#x7A7A;&#x503C;&#xFF0C;&#x5219;<strong>isPresent()</strong>&#x65B9;&#x6CD5;&#x8FD4;&#x56DE;true&#xFF0C;&#x5426;&#x5219;&#x8FD4;&#x56DE;false&#xFF1B;<strong>orElseGet()</strong>&#x65B9;&#x6CD5;&#xFF0C;<strong>Optional</strong>&#x5B9E;&#x4F8B;&#x6301;&#x6709;null&#xFF0C;&#x5219;&#x53EF;&#x4EE5;&#x63A5;&#x53D7;&#x4E00;&#x4E2A;lambda&#x8868;&#x8FBE;&#x5F0F;&#x751F;&#x6210;&#x7684;&#x9ED8;&#x8BA4;&#x503C;&#xFF1B;<strong>map()</strong>&#x65B9;&#x6CD5;&#x53EF;&#x4EE5;&#x5C06;&#x73B0;&#x6709;&#x7684;<strong>Opetional</strong>&#x5B9E;&#x4F8B;&#x7684;&#x503C;&#x8F6C;&#x6362;&#x6210;&#x65B0;&#x7684;&#x503C;&#xFF1B;<strong>orElse()</strong>&#x65B9;&#x6CD5;&#x4E0E;<strong>orElseGet()</strong>&#x65B9;&#x6CD5;&#x7C7B;&#x4F3C;&#xFF0C;&#x4F46;&#x662F;&#x5728;&#x6301;&#x6709;null&#x7684;&#x65F6;&#x5019;&#x8FD4;&#x56DE;&#x4F20;&#x5165;&#x7684;&#x9ED8;&#x8BA4;&#x503C;&#x3002;</p>
 <p>&#x4E0A;&#x8FF0;&#x4EE3;&#x7801;&#x7684;&#x8F93;&#x51FA;&#x7ED3;&#x679C;&#x5982;&#x4E0B;&#xFF1A;</p>
@@ -4002,10 +4006,10 @@ System.out.println( fullName.map( s -&gt; &quot;Hey &quot; + s + &quot;!&quot; )
 Full Name: [none]
 Hey Stranger!
 </code></pre><p>&#x518D;&#x770B;&#x4E0B;&#x53E6;&#x4E00;&#x4E2A;&#x7B80;&#x5355;&#x7684;&#x4F8B;&#x5B50;&#xFF1A;</p>
-<pre><code class="lang-java">Optional&lt; String &gt; firstName = Optional.of( &quot;Tom&quot; );
-System.out.println( &quot;First Name is set? &quot; + firstName.isPresent() );        
-System.out.println( &quot;First Name: &quot; + firstName.orElseGet( () -&gt; &quot;[none]&quot; ) ); 
-System.out.println( firstName.map( s -&gt; &quot;Hey &quot; + s + &quot;!&quot; ).orElse( &quot;Hey Stranger!&quot; ) );
+<pre><code class="lang-java">Optional&lt; String &gt; firstName = Optional.of( <span class="hljs-string">&quot;Tom&quot;</span> );
+System.out.println( <span class="hljs-string">&quot;First Name is set? &quot;</span> + firstName.isPresent() );        
+System.out.println( <span class="hljs-string">&quot;First Name: &quot;</span> + firstName.orElseGet( () -&gt; <span class="hljs-string">&quot;[none]&quot;</span> ) ); 
+System.out.println( firstName.map( s -&gt; <span class="hljs-string">&quot;Hey &quot;</span> + s + <span class="hljs-string">&quot;!&quot;</span> ).orElse( <span class="hljs-string">&quot;Hey Stranger!&quot;</span> ) );
 System.out.println();
 </code></pre>
 <p>&#x8FD9;&#x4E2A;&#x4F8B;&#x5B50;&#x7684;&#x8F93;&#x51FA;&#x662F;&#xFF1A;</p>
@@ -4016,51 +4020,51 @@ Hey Tom!
 <h3 id="42-streams"><a name="42-streams" class="anchor-navigation-ex-anchor" href="#42-streams"><i class="fa fa-link" aria-hidden="true"></i></a>4.2 Streams</h3>
 <p>&#x65B0;&#x589E;&#x7684;<a href="http://www.javacodegeeks.com/2014/05/the-effects-of-programming-with-java-8-streams-on-algorithm-performance.html" target="_blank">Stream API</a>&#xFF08;java.util.stream&#xFF09;&#x5C06;&#x751F;&#x6210;&#x73AF;&#x5883;&#x7684;&#x51FD;&#x6570;&#x5F0F;&#x7F16;&#x7A0B;&#x5F15;&#x5165;&#x4E86;Java&#x5E93;&#x4E2D;&#x3002;&#x8FD9;&#x662F;&#x76EE;&#x524D;&#x4E3A;&#x6B62;&#x6700;&#x5927;&#x7684;&#x4E00;&#x6B21;&#x5BF9;Java&#x5E93;&#x7684;&#x5B8C;&#x5584;&#xFF0C;&#x4EE5;&#x4FBF;&#x5F00;&#x53D1;&#x8005;&#x80FD;&#x591F;&#x5199;&#x51FA;&#x66F4;&#x52A0;&#x6709;&#x6548;&#x3001;&#x66F4;&#x52A0;&#x7B80;&#x6D01;&#x548C;&#x7D27;&#x51D1;&#x7684;&#x4EE3;&#x7801;&#x3002;</p>
 <p>Stream API&#x6781;&#x5927;&#x5F97;&#x7B80;&#x5316;&#x4E86;&#x96C6;&#x5408;&#x64CD;&#x4F5C;&#xFF08;&#x540E;&#x9762;&#x6211;&#x4EEC;&#x4F1A;&#x770B;&#x5230;&#x4E0D;&#x6B62;&#x662F;&#x96C6;&#x5408;&#xFF09;&#xFF0C;&#x9996;&#x5148;&#x770B;&#x4E0B;&#x8FD9;&#x4E2A;&#x53EB;Task&#x7684;&#x7C7B;&#xFF1A;</p>
-<pre><code class="lang-java">public class Streams  {
-    private enum Status {
+<pre><code class="lang-java"><span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Streams</span>  </span>{
+    <span class="hljs-keyword">private</span> <span class="hljs-keyword">enum</span> Status {
         OPEN, CLOSED
     };
 
-    private static final class Task {
-        private final Status status;
-        private final Integer points;
+    <span class="hljs-keyword">private</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">final</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Task</span> </span>{
+        <span class="hljs-keyword">private</span> <span class="hljs-keyword">final</span> Status status;
+        <span class="hljs-keyword">private</span> <span class="hljs-keyword">final</span> Integer points;
 
-        Task( final Status status, final Integer points ) {
-            this.status = status;
-            this.points = points;
+        Task( <span class="hljs-keyword">final</span> Status status, <span class="hljs-keyword">final</span> Integer points ) {
+            <span class="hljs-keyword">this</span>.status = status;
+            <span class="hljs-keyword">this</span>.points = points;
         }
 
-        public Integer getPoints() {
-            return points;
+        <span class="hljs-function"><span class="hljs-keyword">public</span> Integer <span class="hljs-title">getPoints</span><span class="hljs-params">()</span> </span>{
+            <span class="hljs-keyword">return</span> points;
         }
 
-        public Status getStatus() {
-            return status;
+        <span class="hljs-function"><span class="hljs-keyword">public</span> Status <span class="hljs-title">getStatus</span><span class="hljs-params">()</span> </span>{
+            <span class="hljs-keyword">return</span> status;
         }
 
-        @Override
-        public String toString() {
-            return String.format( &quot;[%s, %d]&quot;, status, points );
+        <span class="hljs-meta">@Override</span>
+        <span class="hljs-function"><span class="hljs-keyword">public</span> String <span class="hljs-title">toString</span><span class="hljs-params">()</span> </span>{
+            <span class="hljs-keyword">return</span> String.format( <span class="hljs-string">&quot;[%s, %d]&quot;</span>, status, points );
         }
     }
 }
 </code></pre>
 <p>Task&#x7C7B;&#x6709;&#x4E00;&#x4E2A;&#x5206;&#x6570;&#xFF08;&#x6216;&#x4F2A;&#x590D;&#x6742;&#x5EA6;&#xFF09;&#x7684;&#x6982;&#x5FF5;&#xFF0C;&#x53E6;&#x5916;&#x8FD8;&#x6709;&#x4E24;&#x79CD;&#x72B6;&#x6001;&#xFF1A;OPEN&#x6216;&#x8005;CLOSED&#x3002;&#x73B0;&#x5728;&#x5047;&#x8BBE;&#x6709;&#x4E00;&#x4E2A;task&#x96C6;&#x5408;&#xFF1A;</p>
-<pre><code class="lang-java">final Collection&lt; Task &gt; tasks = Arrays.asList(
-    new Task( Status.OPEN, 5 ),
-    new Task( Status.OPEN, 13 ),
-    new Task( Status.CLOSED, 8 ) 
+<pre><code class="lang-java"><span class="hljs-keyword">final</span> Collection&lt; Task &gt; tasks = Arrays.asList(
+    <span class="hljs-keyword">new</span> Task( Status.OPEN, <span class="hljs-number">5</span> ),
+    <span class="hljs-keyword">new</span> Task( Status.OPEN, <span class="hljs-number">13</span> ),
+    <span class="hljs-keyword">new</span> Task( Status.CLOSED, <span class="hljs-number">8</span> ) 
 );
 </code></pre>
 <p>&#x9996;&#x5148;&#x770B;&#x4E00;&#x4E2A;&#x95EE;&#x9898;&#xFF1A;&#x5728;&#x8FD9;&#x4E2A;task&#x96C6;&#x5408;&#x4E2D;&#x4E00;&#x5171;&#x6709;&#x591A;&#x5C11;&#x4E2A;OPEN&#x72B6;&#x6001;&#x7684;&#x70B9;&#xFF1F;&#x5728;Java 8&#x4E4B;&#x524D;&#xFF0C;&#x8981;&#x89E3;&#x51B3;&#x8FD9;&#x4E2A;&#x95EE;&#x9898;&#xFF0C;&#x5219;&#x9700;&#x8981;&#x4F7F;&#x7528;<strong>foreach</strong>&#x5FAA;&#x73AF;&#x904D;&#x5386;task&#x96C6;&#x5408;&#xFF1B;&#x4F46;&#x662F;&#x5728;Java 8&#x4E2D;&#x53EF;&#x4EE5;&#x5229;&#x7528;steams&#x89E3;&#x51B3;&#xFF1A;&#x5305;&#x62EC;&#x4E00;&#x7CFB;&#x5217;&#x5143;&#x7D20;&#x7684;&#x5217;&#x8868;&#xFF0C;&#x5E76;&#x4E14;&#x652F;&#x6301;&#x987A;&#x5E8F;&#x548C;&#x5E76;&#x884C;&#x5904;&#x7406;&#x3002;</p>
-<pre><code class="lang-java">// Calculate total points of all active tasks using sum()
-final long totalPointsOfOpenTasks = tasks
+<pre><code class="lang-java"><span class="hljs-comment">// Calculate total points of all active tasks using sum()</span>
+<span class="hljs-keyword">final</span> <span class="hljs-keyword">long</span> totalPointsOfOpenTasks = tasks
     .stream()
     .filter( task -&gt; task.getStatus() == Status.OPEN )
     .mapToInt( Task::getPoints )
     .sum();
 
-System.out.println( &quot;Total points: &quot; + totalPointsOfOpenTasks );
+System.out.println( <span class="hljs-string">&quot;Total points: &quot;</span> + totalPointsOfOpenTasks );
 </code></pre>
 <p>&#x8FD0;&#x884C;&#x8FD9;&#x4E2A;&#x65B9;&#x6CD5;&#x7684;&#x63A7;&#x5236;&#x53F0;&#x8F93;&#x51FA;&#x662F;&#xFF1A;</p>
 <pre><code>Total points: 18
@@ -4069,20 +4073,20 @@ System.out.println( &quot;Total points: &quot; + totalPointsOfOpenTasks );
 <p>&#x4E2D;&#x95F4;&#x64CD;&#x4F5C;&#x4F1A;&#x8FD4;&#x56DE;&#x4E00;&#x4E2A;&#x65B0;&#x7684;steam&#x2014;&#x2014;&#x6267;&#x884C;&#x4E00;&#x4E2A;&#x4E2D;&#x95F4;&#x64CD;&#x4F5C;&#xFF08;&#x4F8B;&#x5982;<strong>filter</strong>&#xFF09;&#x5E76;&#x4E0D;&#x4F1A;&#x6267;&#x884C;&#x5B9E;&#x9645;&#x7684;&#x8FC7;&#x6EE4;&#x64CD;&#x4F5C;&#xFF0C;&#x800C;&#x662F;&#x521B;&#x5EFA;&#x4E00;&#x4E2A;&#x65B0;&#x7684;steam&#xFF0C;&#x5E76;&#x5C06;&#x539F;steam&#x4E2D;&#x7B26;&#x5408;&#x6761;&#x4EF6;&#x7684;&#x5143;&#x7D20;&#x653E;&#x5165;&#x65B0;&#x521B;&#x5EFA;&#x7684;steam&#x3002;</p>
 <p>&#x665A;&#x671F;&#x64CD;&#x4F5C;&#xFF08;&#x4F8B;&#x5982;<strong>forEach</strong>&#x6216;&#x8005;<strong>sum</strong>&#xFF09;&#xFF0C;&#x4F1A;&#x904D;&#x5386;steam&#x5E76;&#x5F97;&#x51FA;&#x7ED3;&#x679C;&#x6216;&#x8005;&#x9644;&#x5E26;&#x7ED3;&#x679C;&#xFF1B;&#x5728;&#x6267;&#x884C;&#x665A;&#x671F;&#x64CD;&#x4F5C;&#x4E4B;&#x540E;&#xFF0C;steam&#x5904;&#x7406;&#x7EBF;&#x5DF2;&#x7ECF;&#x5904;&#x7406;&#x5B8C;&#x6BD5;&#xFF0C;&#x5C31;&#x4E0D;&#x80FD;&#x4F7F;&#x7528;&#x4E86;&#x3002;&#x5728;&#x51E0;&#x4E4E;&#x6240;&#x6709;&#x60C5;&#x51B5;&#x4E0B;&#xFF0C;&#x665A;&#x671F;&#x64CD;&#x4F5C;&#x90FD;&#x662F;&#x7ACB;&#x523B;&#x5BF9;steam&#x8FDB;&#x884C;&#x904D;&#x5386;&#x3002;</p>
 <p>steam&#x7684;&#x53E6;&#x4E00;&#x4E2A;&#x4EF7;&#x503C;&#x662F;&#x521B;&#x9020;&#x6027;&#x5730;&#x652F;&#x6301;&#x5E76;&#x884C;&#x5904;&#x7406;&#xFF08;parallel processing&#xFF09;&#x3002;&#x5BF9;&#x4E8E;&#x4E0A;&#x8FF0;&#x7684;tasks&#x96C6;&#x5408;&#xFF0C;&#x6211;&#x4EEC;&#x53EF;&#x4EE5;&#x7528;&#x4E0B;&#x9762;&#x7684;&#x4EE3;&#x7801;&#x8BA1;&#x7B97;&#x6240;&#x6709;&#x4EFB;&#x52A1;&#x7684;&#x70B9;&#x6570;&#x4E4B;&#x548C;&#xFF1A;</p>
-<pre><code class="lang-java">// Calculate total points of all tasks
-final double totalPoints = tasks
+<pre><code class="lang-java"><span class="hljs-comment">// Calculate total points of all tasks</span>
+<span class="hljs-keyword">final</span> <span class="hljs-keyword">double</span> totalPoints = tasks
    .stream()
    .parallel()
-   .map( task -&gt; task.getPoints() ) // or map( Task::getPoints ) 
-   .reduce( 0, Integer::sum );
+   .map( task -&gt; task.getPoints() ) <span class="hljs-comment">// or map( Task::getPoints ) </span>
+   .reduce( <span class="hljs-number">0</span>, Integer::sum );
 
-System.out.println( &quot;Total points (all tasks): &quot; + totalPoints );
+System.out.println( <span class="hljs-string">&quot;Total points (all tasks): &quot;</span> + totalPoints );
 </code></pre>
 <p>&#x8FD9;&#x91CC;&#x6211;&#x4EEC;&#x4F7F;&#x7528;<strong>parallel</strong>&#x65B9;&#x6CD5;&#x5E76;&#x884C;&#x5904;&#x7406;&#x6240;&#x6709;&#x7684;task&#xFF0C;&#x5E76;&#x4F7F;&#x7528;<strong>reduce</strong>&#x65B9;&#x6CD5;&#x8BA1;&#x7B97;&#x6700;&#x7EC8;&#x7684;&#x7ED3;&#x679C;&#x3002;&#x63A7;&#x5236;&#x53F0;&#x8F93;&#x51FA;&#x5982;&#x4E0B;&#xFF1A;</p>
 <pre><code>Total points&#xFF08;all tasks&#xFF09;: 26.0
 </code></pre><p>&#x5BF9;&#x4E8E;&#x4E00;&#x4E2A;&#x96C6;&#x5408;&#xFF0C;&#x7ECF;&#x5E38;&#x9700;&#x8981;&#x6839;&#x636E;&#x67D0;&#x4E9B;&#x6761;&#x4EF6;&#x5BF9;&#x5176;&#x4E2D;&#x7684;&#x5143;&#x7D20;&#x5206;&#x7EC4;&#x3002;&#x5229;&#x7528;steam&#x63D0;&#x4F9B;&#x7684;API&#x53EF;&#x4EE5;&#x5F88;&#x5FEB;&#x5B8C;&#x6210;&#x8FD9;&#x7C7B;&#x4EFB;&#x52A1;&#xFF0C;&#x4EE3;&#x7801;&#x5982;&#x4E0B;&#xFF1A;</p>
-<pre><code class="lang-java">// Group tasks by their status
-final Map&lt; Status, List&lt; Task &gt; &gt; map = tasks
+<pre><code class="lang-java"><span class="hljs-comment">// Group tasks by their status</span>
+<span class="hljs-keyword">final</span> Map&lt; Status, List&lt; Task &gt; &gt; map = tasks
     .stream()
     .collect( Collectors.groupingBy( Task::getStatus ) );
 System.out.println( map );
@@ -4090,25 +4094,25 @@ System.out.println( map );
 <p>&#x63A7;&#x5236;&#x53F0;&#x7684;&#x8F93;&#x51FA;&#x5982;&#x4E0B;&#xFF1A;</p>
 <pre><code>{CLOSED=[[CLOSED, 8]], OPEN=[[OPEN, 5], [OPEN, 13]]}
 </code></pre><p>&#x6700;&#x540E;&#x4E00;&#x4E2A;&#x5173;&#x4E8E;tasks&#x96C6;&#x5408;&#x7684;&#x4F8B;&#x5B50;&#x95EE;&#x9898;&#x662F;&#xFF1A;&#x5982;&#x4F55;&#x8BA1;&#x7B97;&#x96C6;&#x5408;&#x4E2D;&#x6BCF;&#x4E2A;&#x4EFB;&#x52A1;&#x7684;&#x70B9;&#x6570;&#x5728;&#x96C6;&#x5408;&#x4E2D;&#x6240;&#x5360;&#x7684;&#x6BD4;&#x91CD;&#xFF0C;&#x5177;&#x4F53;&#x5904;&#x7406;&#x7684;&#x4EE3;&#x7801;&#x5982;&#x4E0B;&#xFF1A;</p>
-<pre><code class="lang-java">// Calculate the weight of each tasks (as percent of total points) 
-final Collection&lt; String &gt; result = tasks
-    .stream()                                        // Stream&lt; String &gt;
-    .mapToInt( Task::getPoints )                     // IntStream
-    .asLongStream()                                  // LongStream
-    .mapToDouble( points -&gt; points / totalPoints )   // DoubleStream
-    .boxed()                                         // Stream&lt; Double &gt;
-    .mapToLong( weigth -&gt; ( long )( weigth * 100 ) ) // LongStream
-    .mapToObj( percentage -&gt; percentage + &quot;%&quot; )      // Stream&lt; String&gt; 
-    .collect( Collectors.toList() );                 // List&lt; String &gt; 
+<pre><code class="lang-java"><span class="hljs-comment">// Calculate the weight of each tasks (as percent of total points) </span>
+<span class="hljs-keyword">final</span> Collection&lt; String &gt; result = tasks
+    .stream()                                        <span class="hljs-comment">// Stream&lt; String &gt;</span>
+    .mapToInt( Task::getPoints )                     <span class="hljs-comment">// IntStream</span>
+    .asLongStream()                                  <span class="hljs-comment">// LongStream</span>
+    .mapToDouble( points -&gt; points / totalPoints )   <span class="hljs-comment">// DoubleStream</span>
+    .boxed()                                         <span class="hljs-comment">// Stream&lt; Double &gt;</span>
+    .mapToLong( weigth -&gt; ( <span class="hljs-keyword">long</span> )( weigth * <span class="hljs-number">100</span> ) ) <span class="hljs-comment">// LongStream</span>
+    .mapToObj( percentage -&gt; percentage + <span class="hljs-string">&quot;%&quot;</span> )      <span class="hljs-comment">// Stream&lt; String&gt; </span>
+    .collect( Collectors.toList() );                 <span class="hljs-comment">// List&lt; String &gt; </span>
 
 System.out.println( result );
 </code></pre>
 <p>&#x63A7;&#x5236;&#x53F0;&#x8F93;&#x51FA;&#x7ED3;&#x679C;&#x5982;&#x4E0B;&#xFF1A;</p>
 <pre><code>[19%, 50%, 30%]
 </code></pre><p>&#x6700;&#x540E;&#xFF0C;&#x6B63;&#x5982;&#x4E4B;&#x524D;&#x6240;&#x8BF4;&#xFF0C;Steam API&#x4E0D;&#x4EC5;&#x53EF;&#x4EE5;&#x4F5C;&#x7528;&#x4E8E;Java&#x96C6;&#x5408;&#xFF0C;&#x4F20;&#x7EDF;&#x7684;IO&#x64CD;&#x4F5C;&#xFF08;&#x4ECE;&#x6587;&#x4EF6;&#x6216;&#x8005;&#x7F51;&#x7EDC;&#x4E00;&#x884C;&#x4E00;&#x884C;&#x5F97;&#x8BFB;&#x53D6;&#x6570;&#x636E;&#xFF09;&#x53EF;&#x4EE5;&#x53D7;&#x76CA;&#x4E8E;steam&#x5904;&#x7406;&#xFF0C;&#x8FD9;&#x91CC;&#x6709;&#x4E00;&#x4E2A;&#x5C0F;&#x4F8B;&#x5B50;&#xFF1A;</p>
-<pre><code class="lang-java">final Path path = new File( filename ).toPath();
-try( Stream&lt; String &gt; lines = Files.lines( path, StandardCharsets.UTF_8 ) ) {
-    lines.onClose( () -&gt; System.out.println(&quot;Done!&quot;) ).forEach( System.out::println );
+<pre><code class="lang-java"><span class="hljs-keyword">final</span> Path path = <span class="hljs-keyword">new</span> File( filename ).toPath();
+<span class="hljs-keyword">try</span>( Stream&lt; String &gt; lines = Files.lines( path, StandardCharsets.UTF_8 ) ) {
+    lines.onClose( () -&gt; System.out.println(<span class="hljs-string">&quot;Done!&quot;</span>) ).forEach( System.out::println );
 }
 </code></pre>
 <p>Stream&#x7684;&#x65B9;&#x6CD5;<strong>onClose</strong> &#x8FD4;&#x56DE;&#x4E00;&#x4E2A;&#x7B49;&#x4EF7;&#x7684;&#x6709;&#x989D;&#x5916;&#x53E5;&#x67C4;&#x7684;Stream&#xFF0C;&#x5F53;Stream&#x7684;close&#xFF08;&#xFF09;&#x65B9;&#x6CD5;&#x88AB;&#x8C03;&#x7528;&#x7684;&#x65F6;&#x5019;&#x8FD9;&#x4E2A;&#x53E5;&#x67C4;&#x4F1A;&#x88AB;&#x6267;&#x884C;&#x3002;Stream API&#x3001;Lambda&#x8868;&#x8FBE;&#x5F0F;&#x8FD8;&#x6709;&#x63A5;&#x53E3;&#x9ED8;&#x8BA4;&#x65B9;&#x6CD5;&#x548C;&#x9759;&#x6001;&#x65B9;&#x6CD5;&#x652F;&#x6301;&#x7684;&#x65B9;&#x6CD5;&#x5F15;&#x7528;&#xFF0C;&#x662F;Java 8&#x5BF9;&#x8F6F;&#x4EF6;&#x5F00;&#x53D1;&#x7684;&#x73B0;&#x4EE3;&#x8303;&#x5F0F;&#x7684;&#x54CD;&#x5E94;&#x3002;</p>
@@ -4116,8 +4120,8 @@ try( Stream&lt; String &gt; lines = Files.lines( path, StandardCharsets.UTF_8 ) 
 <p>Java 8&#x5F15;&#x5165;&#x4E86;<a href="https://jcp.org/en/jsr/detail?id=310" target="_blank">&#x65B0;&#x7684;Date-Time API(JSR 310)</a>&#x6765;&#x6539;&#x8FDB;&#x65F6;&#x95F4;&#x3001;&#x65E5;&#x671F;&#x7684;&#x5904;&#x7406;&#x3002;&#x65F6;&#x95F4;&#x548C;&#x65E5;&#x671F;&#x7684;&#x7BA1;&#x7406;&#x4E00;&#x76F4;&#x662F;&#x6700;&#x4EE4;Java&#x5F00;&#x53D1;&#x8005;&#x75DB;&#x82E6;&#x7684;&#x95EE;&#x9898;&#x3002;<strong>java.util.Date</strong>&#x548C;&#x540E;&#x6765;&#x7684;<strong>java.util.Calendar</strong>&#x4E00;&#x76F4;&#x6CA1;&#x6709;&#x89E3;&#x51B3;&#x8FD9;&#x4E2A;&#x95EE;&#x9898;&#xFF08;&#x751A;&#x81F3;&#x4EE4;&#x5F00;&#x53D1;&#x8005;&#x66F4;&#x52A0;&#x8FF7;&#x832B;&#xFF09;&#x3002;</p>
 <p>&#x56E0;&#x4E3A;&#x4E0A;&#x9762;&#x8FD9;&#x4E9B;&#x539F;&#x56E0;&#xFF0C;&#x8BDE;&#x751F;&#x4E86;&#x7B2C;&#x4E09;&#x65B9;&#x5E93;<a href="http://www.joda.org/joda-time/" target="_blank">Joda-Time</a>&#xFF0C;&#x53EF;&#x4EE5;&#x66FF;&#x4EE3;Java&#x7684;&#x65F6;&#x95F4;&#x7BA1;&#x7406;API&#x3002;Java 8&#x4E2D;&#x65B0;&#x7684;&#x65F6;&#x95F4;&#x548C;&#x65E5;&#x671F;&#x7BA1;&#x7406;API&#x6DF1;&#x53D7;Joda-Time&#x5F71;&#x54CD;&#xFF0C;&#x5E76;&#x5438;&#x6536;&#x4E86;&#x5F88;&#x591A;Joda-Time&#x7684;&#x7CBE;&#x534E;&#x3002;&#x65B0;&#x7684;java.time&#x5305;&#x5305;&#x542B;&#x4E86;&#x6240;&#x6709;&#x5173;&#x4E8E;&#x65E5;&#x671F;&#x3001;&#x65F6;&#x95F4;&#x3001;&#x65F6;&#x533A;&#x3001;Instant&#xFF08;&#x8DDF;&#x65E5;&#x671F;&#x7C7B;&#x4F3C;&#x4F46;&#x662F;&#x7CBE;&#x786E;&#x5230;&#x7EB3;&#x79D2;&#xFF09;&#x3001;duration&#xFF08;&#x6301;&#x7EED;&#x65F6;&#x95F4;&#xFF09;&#x548C;&#x65F6;&#x949F;&#x64CD;&#x4F5C;&#x7684;&#x7C7B;&#x3002;&#x65B0;&#x8BBE;&#x8BA1;&#x7684;API&#x8BA4;&#x771F;&#x8003;&#x8651;&#x4E86;&#x8FD9;&#x4E9B;&#x7C7B;&#x7684;&#x4E0D;&#x53D8;&#x6027;&#xFF08;&#x4ECE;java.util.Calendar&#x5438;&#x53D6;&#x7684;&#x6559;&#x8BAD;&#xFF09;&#xFF0C;&#x5982;&#x679C;&#x67D0;&#x4E2A;&#x5B9E;&#x4F8B;&#x9700;&#x8981;&#x4FEE;&#x6539;&#xFF0C;&#x5219;&#x8FD4;&#x56DE;&#x4E00;&#x4E2A;&#x65B0;&#x7684;&#x5BF9;&#x8C61;&#x3002;</p>
 <p>&#x6211;&#x4EEC;&#x63A5;&#x4E0B;&#x6765;&#x770B;&#x770B;java.time&#x5305;&#x4E2D;&#x7684;&#x5173;&#x952E;&#x7C7B;&#x548C;&#x5404;&#x81EA;&#x7684;&#x4F7F;&#x7528;&#x4F8B;&#x5B50;&#x3002;&#x9996;&#x5148;&#xFF0C;<strong>Clock</strong>&#x7C7B;&#x4F7F;&#x7528;&#x65F6;&#x533A;&#x6765;&#x8FD4;&#x56DE;&#x5F53;&#x524D;&#x7684;&#x7EB3;&#x79D2;&#x65F6;&#x95F4;&#x548C;&#x65E5;&#x671F;&#x3002;<strong>Clock</strong>&#x53EF;&#x4EE5;&#x66FF;&#x4EE3;<strong>System.currentTimeMillis()</strong>&#x548C;<strong>TimeZone.getDefault()</strong>&#x3002;</p>
-<pre><code class="lang-java">// Get the system clock as UTC offset 
-final Clock clock = Clock.systemUTC();
+<pre><code class="lang-java"><span class="hljs-comment">// Get the system clock as UTC offset </span>
+<span class="hljs-keyword">final</span> Clock clock = Clock.systemUTC();
 System.out.println( clock.instant() );
 System.out.println( clock.millis() );
 </code></pre>
@@ -4125,16 +4129,16 @@ System.out.println( clock.millis() );
 <pre><code>2014-04-12T15:19:29.282Z
 1397315969360
 </code></pre><p>&#x7B2C;&#x4E8C;&#xFF0C;&#x5173;&#x6CE8;&#x4E0B;<strong>LocalDate</strong>&#x548C;<strong>LocalTime</strong>&#x7C7B;&#x3002;<strong>LocalDate</strong>&#x4EC5;&#x4EC5;&#x5305;&#x542B;ISO-8601&#x65E5;&#x5386;&#x7CFB;&#x7EDF;&#x4E2D;&#x7684;&#x65E5;&#x671F;&#x90E8;&#x5206;&#xFF1B;<strong>LocalTime</strong>&#x5219;&#x4EC5;&#x4EC5;&#x5305;&#x542B;&#x8BE5;&#x65E5;&#x5386;&#x7CFB;&#x7EDF;&#x4E2D;&#x7684;&#x65F6;&#x95F4;&#x90E8;&#x5206;&#x3002;&#x8FD9;&#x4E24;&#x4E2A;&#x7C7B;&#x7684;&#x5BF9;&#x8C61;&#x90FD;&#x53EF;&#x4EE5;&#x4F7F;&#x7528;Clock&#x5BF9;&#x8C61;&#x6784;&#x5EFA;&#x5F97;&#x5230;&#x3002;</p>
-<pre><code class="lang-java">// Get the local date and local time
-final LocalDate date = LocalDate.now();
-final LocalDate dateFromClock = LocalDate.now( clock );
+<pre><code class="lang-java"><span class="hljs-comment">// Get the local date and local time</span>
+<span class="hljs-keyword">final</span> LocalDate date = LocalDate.now();
+<span class="hljs-keyword">final</span> LocalDate dateFromClock = LocalDate.now( clock );
 
 System.out.println( date );
 System.out.println( dateFromClock );
 
-// Get the local date and local time
-final LocalTime time = LocalTime.now();
-final LocalTime timeFromClock = LocalTime.now( clock );
+<span class="hljs-comment">// Get the local date and local time</span>
+<span class="hljs-keyword">final</span> LocalTime time = LocalTime.now();
+<span class="hljs-keyword">final</span> LocalTime timeFromClock = LocalTime.now( clock );
 
 System.out.println( time );
 System.out.println( timeFromClock );
@@ -4145,9 +4149,9 @@ System.out.println( timeFromClock );
 11:25:54.568
 15:25:54.568
 </code></pre><p><strong>LocalDateTime</strong>&#x7C7B;&#x5305;&#x542B;&#x4E86;LocalDate&#x548C;LocalTime&#x7684;&#x4FE1;&#x606F;&#xFF0C;&#x4F46;&#x662F;&#x4E0D;&#x5305;&#x542B;ISO-8601&#x65E5;&#x5386;&#x7CFB;&#x7EDF;&#x4E2D;&#x7684;&#x65F6;&#x533A;&#x4FE1;&#x606F;&#x3002;&#x8FD9;&#x91CC;&#x6709;&#x4E00;&#x4E9B;<a href="https://www.javacodegeeks.com/2014/04/java-8-date-time-api-tutorial-localdatetime.html" target="_blank">&#x5173;&#x4E8E;LocalDate&#x548C;LocalTime&#x7684;&#x4F8B;&#x5B50;</a>&#xFF1A;</p>
-<pre><code class="lang-java">// Get the local date/time
-final LocalDateTime datetime = LocalDateTime.now();
-final LocalDateTime datetimeFromClock = LocalDateTime.now( clock );
+<pre><code class="lang-java"><span class="hljs-comment">// Get the local date/time</span>
+<span class="hljs-keyword">final</span> LocalDateTime datetime = LocalDateTime.now();
+<span class="hljs-keyword">final</span> LocalDateTime datetimeFromClock = LocalDateTime.now( clock );
 
 System.out.println( datetime );
 System.out.println( datetimeFromClock );
@@ -4156,10 +4160,10 @@ System.out.println( datetimeFromClock );
 <pre><code>2014-04-12T11:37:52.309
 2014-04-12T15:37:52.309
 </code></pre><p>&#x5982;&#x679C;&#x4F60;&#x9700;&#x8981;&#x7279;&#x5B9A;&#x65F6;&#x533A;&#x7684;data/time&#x4FE1;&#x606F;&#xFF0C;&#x5219;&#x53EF;&#x4EE5;&#x4F7F;&#x7528;<strong>ZoneDateTime</strong>&#xFF0C;&#x5B83;&#x4FDD;&#x5B58;&#x6709;ISO-8601&#x65E5;&#x671F;&#x7CFB;&#x7EDF;&#x7684;&#x65E5;&#x671F;&#x548C;&#x65F6;&#x95F4;&#xFF0C;&#x800C;&#x4E14;&#x6709;&#x65F6;&#x533A;&#x4FE1;&#x606F;&#x3002;&#x4E0B;&#x9762;&#x662F;&#x4E00;&#x4E9B;&#x4F7F;&#x7528;&#x4E0D;&#x540C;&#x65F6;&#x533A;&#x7684;&#x4F8B;&#x5B50;&#xFF1A;</p>
-<pre><code class="lang-java">// Get the zoned date/time
-final ZonedDateTime zonedDatetime = ZonedDateTime.now();
-final ZonedDateTime zonedDatetimeFromClock = ZonedDateTime.now( clock );
-final ZonedDateTime zonedDatetimeFromZone = ZonedDateTime.now( ZoneId.of( &quot;America/Los_Angeles&quot; ) );
+<pre><code class="lang-java"><span class="hljs-comment">// Get the zoned date/time</span>
+<span class="hljs-keyword">final</span> ZonedDateTime zonedDatetime = ZonedDateTime.now();
+<span class="hljs-keyword">final</span> ZonedDateTime zonedDatetimeFromClock = ZonedDateTime.now( clock );
+<span class="hljs-keyword">final</span> ZonedDateTime zonedDatetimeFromZone = ZonedDateTime.now( ZoneId.of( <span class="hljs-string">&quot;America/Los_Angeles&quot;</span> ) );
 
 System.out.println( zonedDatetime );
 System.out.println( zonedDatetimeFromClock );
@@ -4170,13 +4174,13 @@ System.out.println( zonedDatetimeFromZone );
 2014-04-12T15:47:01.017Z
 2014-04-12T08:47:01.017-07:00[America/Los_Angeles]
 </code></pre><p>&#x6700;&#x540E;&#x770B;&#x4E0B;<strong>Duration</strong>&#x7C7B;&#xFF0C;&#x5B83;&#x6301;&#x6709;&#x7684;&#x65F6;&#x95F4;&#x7CBE;&#x786E;&#x5230;&#x79D2;&#x548C;&#x7EB3;&#x79D2;&#x3002;&#x8FD9;&#x4F7F;&#x5F97;&#x6211;&#x4EEC;&#x53EF;&#x4EE5;&#x5F88;&#x5BB9;&#x6613;&#x5F97;&#x8BA1;&#x7B97;&#x4E24;&#x4E2A;&#x65E5;&#x671F;&#x4E4B;&#x95F4;&#x7684;&#x4E0D;&#x540C;&#xFF0C;&#x4F8B;&#x5B50;&#x4EE3;&#x7801;&#x5982;&#x4E0B;&#xFF1A;</p>
-<pre><code class="lang-Java">// Get duration between two dates
-final LocalDateTime from = LocalDateTime.of( 2014, Month.APRIL, 16, 0, 0, 0 );
-final LocalDateTime to = LocalDateTime.of( 2015, Month.APRIL, 16, 23, 59, 59 );
+<pre><code class="lang-Java"><span class="hljs-comment">// Get duration between two dates</span>
+<span class="hljs-keyword">final</span> LocalDateTime from = LocalDateTime.of( <span class="hljs-number">2014</span>, Month.APRIL, <span class="hljs-number">16</span>, <span class="hljs-number">0</span>, <span class="hljs-number">0</span>, <span class="hljs-number">0</span> );
+<span class="hljs-keyword">final</span> LocalDateTime to = LocalDateTime.of( <span class="hljs-number">2015</span>, Month.APRIL, <span class="hljs-number">16</span>, <span class="hljs-number">23</span>, <span class="hljs-number">59</span>, <span class="hljs-number">59</span> );
 
-final Duration duration = Duration.between( from, to );
-System.out.println( &quot;Duration in days: &quot; + duration.toDays() );
-System.out.println( &quot;Duration in hours: &quot; + duration.toHours() );
+<span class="hljs-keyword">final</span> Duration duration = Duration.between( from, to );
+System.out.println( <span class="hljs-string">&quot;Duration in days: &quot;</span> + duration.toDays() );
+System.out.println( <span class="hljs-string">&quot;Duration in hours: &quot;</span> + duration.toHours() );
 </code></pre>
 <p>&#x8FD9;&#x4E2A;&#x4F8B;&#x5B50;&#x7528;&#x4E8E;&#x8BA1;&#x7B97;2014&#x5E74;4&#x6708;16&#x65E5;&#x548C;2015&#x5E74;4&#x6708;16&#x65E5;&#x4E4B;&#x95F4;&#x7684;&#x5929;&#x6570;&#x548C;&#x5C0F;&#x65F6;&#x6570;&#xFF0C;&#x8F93;&#x51FA;&#x7ED3;&#x679C;&#x5982;&#x4E0B;&#xFF1A;</p>
 <pre><code>Duration in days: 365
@@ -4184,32 +4188,32 @@ Duration in hours: 8783
 </code></pre><p>&#x5BF9;&#x4E8E;Java 8&#x7684;&#x65B0;&#x65E5;&#x671F;&#x65F6;&#x95F4;&#x7684;&#x603B;&#x4F53;&#x5370;&#x8C61;&#x8FD8;&#x662F;&#x6BD4;&#x8F83;&#x79EF;&#x6781;&#x7684;&#xFF0C;&#x4E00;&#x90E8;&#x5206;&#x662F;&#x56E0;&#x4E3A;Joda-Time&#x7684;&#x79EF;&#x6781;&#x5F71;&#x54CD;&#xFF0C;&#x53E6;&#x4E00;&#x90E8;&#x5206;&#x662F;&#x56E0;&#x4E3A;&#x5B98;&#x65B9;&#x7EC8;&#x4E8E;&#x542C;&#x53D6;&#x4E86;&#x5F00;&#x53D1;&#x4EBA;&#x5458;&#x7684;&#x9700;&#x6C42;&#x3002;&#x5982;&#x679C;&#x5E0C;&#x671B;&#x4E86;&#x89E3;&#x66F4;&#x591A;&#x7EC6;&#x8282;&#xFF0C;&#x53EF;&#x4EE5;&#x53C2;&#x8003;<a href="http://docs.oracle.com/javase/tutorial/datetime/index.html" target="_blank">&#x5B98;&#x65B9;&#x6587;&#x6863;</a>&#x3002;</p>
 <h3 id="44-nashorn-javascript&#x5F15;&#x64CE;"><a name="44-nashorn-javascript&#x5F15;&#x64CE;" class="anchor-navigation-ex-anchor" href="#44-nashorn-javascript&#x5F15;&#x64CE;"><i class="fa fa-link" aria-hidden="true"></i></a>4.4 Nashorn JavaScript&#x5F15;&#x64CE;</h3>
 <p>Java 8&#x63D0;&#x4F9B;&#x4E86;&#x65B0;&#x7684;<a href="http://www.javacodegeeks.com/2014/02/java-8-compiling-lambda-expressions-in-the-new-nashorn-js-engine.html" target="_blank">Nashorn JavaScript&#x5F15;&#x64CE;</a>&#xFF0C;&#x4F7F;&#x5F97;&#x6211;&#x4EEC;&#x53EF;&#x4EE5;&#x5728;JVM&#x4E0A;&#x5F00;&#x53D1;&#x548C;&#x8FD0;&#x884C;JS&#x5E94;&#x7528;&#x3002;Nashorn JavaScript&#x5F15;&#x64CE;&#x662F;javax.script.ScriptEngine&#x7684;&#x53E6;&#x4E00;&#x4E2A;&#x5B9E;&#x73B0;&#x7248;&#x672C;&#xFF0C;&#x8FD9;&#x7C7B;Script&#x5F15;&#x64CE;&#x9075;&#x5FAA;&#x76F8;&#x540C;&#x7684;&#x89C4;&#x5219;&#xFF0C;&#x5141;&#x8BB8;Java&#x548C;JavaScript&#x4EA4;&#x4E92;&#x4F7F;&#x7528;&#xFF0C;&#x4F8B;&#x5B50;&#x4EE3;&#x7801;&#x5982;&#x4E0B;&#xFF1A;</p>
-<pre><code class="lang-java">ScriptEngineManager manager = new ScriptEngineManager();
-ScriptEngine engine = manager.getEngineByName( &quot;JavaScript&quot; );
+<pre><code class="lang-java">ScriptEngineManager manager = <span class="hljs-keyword">new</span> ScriptEngineManager();
+ScriptEngine engine = manager.getEngineByName( <span class="hljs-string">&quot;JavaScript&quot;</span> );
 
 System.out.println( engine.getClass().getName() );
-System.out.println( &quot;Result:&quot; + engine.eval( &quot;function f() { return 1; }; f() + 1;&quot; ) );
+System.out.println( <span class="hljs-string">&quot;Result:&quot;</span> + engine.eval( <span class="hljs-string">&quot;function f() { return 1; }; f() + 1;&quot;</span> ) );
 </code></pre>
 <p>&#x8FD9;&#x4E2A;&#x4EE3;&#x7801;&#x7684;&#x8F93;&#x51FA;&#x7ED3;&#x679C;&#x5982;&#x4E0B;&#xFF1A;</p>
 <pre><code>jdk.nashorn.api.scripting.NashornScriptEngine
 Result: 2
 </code></pre><h3 id="45-base64"><a name="45-base64" class="anchor-navigation-ex-anchor" href="#45-base64"><i class="fa fa-link" aria-hidden="true"></i></a>4.5 Base64</h3>
 <p><a href="http://www.javacodegeeks.com/2014/04/base64-in-java-8-its-not-too-late-to-join-in-the-fun.html" target="_blank">&#x5BF9;Base64&#x7F16;&#x7801;&#x7684;&#x652F;&#x6301;</a>&#x5DF2;&#x7ECF;&#x88AB;&#x52A0;&#x5165;&#x5230;Java 8&#x5B98;&#x65B9;&#x5E93;&#x4E2D;&#xFF0C;&#x8FD9;&#x6837;&#x4E0D;&#x9700;&#x8981;&#x4F7F;&#x7528;&#x7B2C;&#x4E09;&#x65B9;&#x5E93;&#x5C31;&#x53EF;&#x4EE5;&#x8FDB;&#x884C;Base64&#x7F16;&#x7801;&#xFF0C;&#x4F8B;&#x5B50;&#x4EE3;&#x7801;&#x5982;&#x4E0B;&#xFF1A;</p>
-<pre><code class="lang-java">package com.javacodegeeks.java8.base64;
+<pre><code class="lang-java"><span class="hljs-keyword">package</span> com.javacodegeeks.java8.base64;
 
-import java.nio.charset.StandardCharsets;
-import java.util.Base64;
+<span class="hljs-keyword">import</span> java.nio.charset.StandardCharsets;
+<span class="hljs-keyword">import</span> java.util.Base64;
 
-public class Base64s {
-    public static void main(String[] args) {
-        final String text = &quot;Base64 finally in Java 8!&quot;;
+<span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Base64s</span> </span>{
+    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title">main</span><span class="hljs-params">(String[] args)</span> </span>{
+        <span class="hljs-keyword">final</span> String text = <span class="hljs-string">&quot;Base64 finally in Java 8!&quot;</span>;
 
-        final String encoded = Base64
+        <span class="hljs-keyword">final</span> String encoded = Base64
             .getEncoder()
             .encodeToString( text.getBytes( StandardCharsets.UTF_8 ) );
         System.out.println( encoded );
 
-        final String decoded = new String( 
+        <span class="hljs-keyword">final</span> String decoded = <span class="hljs-keyword">new</span> String( 
             Base64.getDecoder().decode( encoded ),
             StandardCharsets.UTF_8 );
         System.out.println( decoded );
@@ -4223,24 +4227,24 @@ Base64 finally in Java 8!
 (<strong>Base64.getUrlEncoder()</strong> / <strong>Base64.getUrlDecoder()</strong>, <strong>Base64.getMimeEncoder()</strong> / <strong>Base64.getMimeDecoder()</strong>)&#x3002;</p>
 <h3 id="46-&#x5E76;&#x884C;&#x6570;&#x7EC4;"><a name="46-&#x5E76;&#x884C;&#x6570;&#x7EC4;" class="anchor-navigation-ex-anchor" href="#46-&#x5E76;&#x884C;&#x6570;&#x7EC4;"><i class="fa fa-link" aria-hidden="true"></i></a>4.6 &#x5E76;&#x884C;&#x6570;&#x7EC4;</h3>
 <p>Java8&#x7248;&#x672C;&#x65B0;&#x589E;&#x4E86;&#x5F88;&#x591A;&#x65B0;&#x7684;&#x65B9;&#x6CD5;&#xFF0C;&#x7528;&#x4E8E;&#x652F;&#x6301;&#x5E76;&#x884C;&#x6570;&#x7EC4;&#x5904;&#x7406;&#x3002;&#x6700;&#x91CD;&#x8981;&#x7684;&#x65B9;&#x6CD5;&#x662F;<strong>parallelSort()</strong>&#xFF0C;&#x53EF;&#x4EE5;&#x663E;&#x8457;&#x52A0;&#x5FEB;&#x591A;&#x6838;&#x673A;&#x5668;&#x4E0A;&#x7684;&#x6570;&#x7EC4;&#x6392;&#x5E8F;&#x3002;&#x4E0B;&#x9762;&#x7684;&#x4F8B;&#x5B50;&#x8BBA;&#x8BC1;&#x4E86;<strong>parallexXxx</strong>&#x7CFB;&#x5217;&#x7684;&#x65B9;&#x6CD5;&#xFF1A;</p>
-<pre><code class="lang-java">package com.javacodegeeks.java8.parallel.arrays;
+<pre><code class="lang-java"><span class="hljs-keyword">package</span> com.javacodegeeks.java8.parallel.arrays;
 
-import java.util.Arrays;
-import java.util.concurrent.ThreadLocalRandom;
+<span class="hljs-keyword">import</span> java.util.Arrays;
+<span class="hljs-keyword">import</span> java.util.concurrent.ThreadLocalRandom;
 
-public class ParallelArrays {
-    public static void main( String[] args ) {
-        long[] arrayOfLong = new long [ 20000 ];        
+<span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">ParallelArrays</span> </span>{
+    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title">main</span><span class="hljs-params">( String[] args )</span> </span>{
+        <span class="hljs-keyword">long</span>[] arrayOfLong = <span class="hljs-keyword">new</span> <span class="hljs-keyword">long</span> [ <span class="hljs-number">20000</span> ];        
 
         Arrays.parallelSetAll( arrayOfLong, 
-            index -&gt; ThreadLocalRandom.current().nextInt( 1000000 ) );
-        Arrays.stream( arrayOfLong ).limit( 10 ).forEach( 
-            i -&gt; System.out.print( i + &quot; &quot; ) );
+            index -&gt; ThreadLocalRandom.current().nextInt( <span class="hljs-number">1000000</span> ) );
+        Arrays.stream( arrayOfLong ).limit( <span class="hljs-number">10</span> ).forEach( 
+            i -&gt; System.out.print( i + <span class="hljs-string">&quot; &quot;</span> ) );
         System.out.println();
 
         Arrays.parallelSort( arrayOfLong );        
-        Arrays.stream( arrayOfLong ).limit( 10 ).forEach( 
-            i -&gt; System.out.print( i + &quot; &quot; ) );
+        Arrays.stream( arrayOfLong ).limit( <span class="hljs-number">10</span> ).forEach( 
+            i -&gt; System.out.print( i + <span class="hljs-string">&quot; &quot;</span> ) );
         System.out.println();
     }
 }
@@ -4341,7 +4345,7 @@ print( f() + 1 );
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"Java 8 新特性","level":"2.1.21","depth":2,"next":{"title":"Java并发","level":"2.2","depth":1,"path":"java/concurrence.md","ref":"java/concurrence.md","articles":[{"title":"Java创建线程的三种方式","level":"2.2.1","depth":2,"path":"java/concurrence/CreateThread.md","ref":"java/concurrence/CreateThread.md","articles":[]},{"title":"Java线程池","level":"2.2.2","depth":2,"path":"java/concurrence/thread-pool.md","ref":"java/concurrence/thread-pool.md","articles":[]},{"title":"死锁","level":"2.2.3","depth":2,"path":"java/concurrence/deadlock.md","ref":"java/concurrence/deadlock.md","articles":[]},{"title":"Synchronized/ReentrantLock","level":"2.2.4","depth":2,"path":"java/concurrence/synchronized-reentrantlock.md","ref":"java/concurrence/synchronized-reentrantlock.md","articles":[]},{"title":"生产者/消费者模式","level":"2.2.5","depth":2,"path":"java/concurrence/producer-consumer.md","ref":"java/concurrence/producer-consumer.md","articles":[]},{"title":"volatile关键字","level":"2.2.6","depth":2,"path":"java/concurrence/volatile.md","ref":"java/concurrence/volatile.md","articles":[]},{"title":"CAS原子操作","level":"2.2.7","depth":2,"path":"java/concurrence/CAS.md","ref":"java/concurrence/CAS.md","articles":[]},{"title":"AbstractQueuedSynchronizer详解","level":"2.2.8","depth":2,"path":"java/concurrence/AbstractQueuedSynchronizer.md","ref":"java/concurrence/AbstractQueuedSynchronizer.md","articles":[]},{"title":"深入理解ReentrantLock","level":"2.2.9","depth":2,"path":"java/concurrence/ReentrantLock.md","ref":"java/concurrence/ReentrantLock.md","articles":[]},{"title":"Java并发集合——ArrayBlockingQueue","level":"2.2.10","depth":2,"path":"java/concurrence/ArrayBlockingQueue.md","ref":"java/concurrence/ArrayBlockingQueue.md","articles":[]},{"title":"Java并发集合——LinkedBlockingQueue","level":"2.2.11","depth":2,"path":"java/concurrence/LinkedBlockingQueue.md","ref":"java/concurrence/LinkedBlockingQueue.md","articles":[]},{"title":"Java并发集合——ConcurrentHashMap","level":"2.2.12","depth":2,"path":"java/concurrence/ConcurrentHashMap.md","ref":"java/concurrence/ConcurrentHashMap.md","articles":[]}]},"previous":{"title":"Java finally与return执行顺序","level":"2.1.20","depth":2,"path":"java/basis/finally-return.md","ref":"java/basis/finally-return.md","articles":[]},"dir":"ltr"},"config":{"plugins":["-lunr","-search","-highlight","-livereload","search-plus@^0.0.11","simple-page-toc@^0.1.1","github@^2.0.0","github-buttons@2.1.0","edit-link@^2.0.2","advanced-emoji@^0.2.1","anchors@^0.7.1","include-codeblock@^3.0.2","ace@^0.3.2","emphasize@^1.1.0","katex@^1.1.3","splitter@^0.0.8","tbfed-pagefooter@^0.0.1","expandable-chapters-small@^0.1.7","sectionx@^3.1.0","local-video@^1.0.1","anchor-navigation-ex@0.1.8","favicon@^0.0.2"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"tbfed-pagefooter":{"copyright":"Copyright © ruheng.com 2017","modify_label":"该文件修订时间：","modify_format":"YYYY-MM-DD HH:mm:ss"},"emphasize":{},"ace":{},"github":{"url":"https://github.com/LRH1993/android_interview"},"simple-page-toc":{"maxDepth":3,"skipFirstH1":true},"splitter":{},"katex":{},"fontsettings":{"theme":"white","family":"sans","size":2},"sectionx":{"tag":"b"},"anchor-navigation-ex":{"isRewritePageTitle":false,"tocLevel1Icon":"fa fa-hand-o-right","tocLevel2Icon":"fa fa-hand-o-right","tocLevel3Icon":"fa fa-hand-o-right"},"favicon":{"shortcut":"favicon.ico","bookmark":"favicon.ico"},"github-buttons":{"repo":"LRH1993/android_interview","types":["star"],"size":"small"},"expandable-chapters-small":{},"local-video":{},"advanced-emoji":{"embedEmojis":false},"include-codeblock":{"check":false,"edit":true,"fixlang":false,"lang":"","template":"ace","theme":"chrome","unindent":true},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":true,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"edit-link":{"label":"Edit This Page","base":"https://github.com/LRH1993/android_interview/edit/master"},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":true},"anchors":{},"search-plus":{}},"theme":"default","author":"ruheng","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"Android校招面试指南","language":"zh-hans","output.name":"site","links":{"sidebar":{"Home":"http://lruheng.com/"}},"gitbook":"3.2.3","description":"Android面试必备，记录自己的秋招之路"},"file":{"path":"java/basis/java-8.md","mtime":"2017-09-12T01:09:25.000Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2017-10-16T12:05:21.906Z"},"basePath":"../..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"Java 8 新特性","level":"2.1.21","depth":2,"next":{"title":"Java并发","level":"2.2","depth":1,"path":"java/concurrence.md","ref":"java/concurrence.md","articles":[{"title":"Java创建线程的三种方式","level":"2.2.1","depth":2,"path":"java/concurrence/CreateThread.md","ref":"java/concurrence/CreateThread.md","articles":[]},{"title":"Java线程池","level":"2.2.2","depth":2,"path":"java/concurrence/thread-pool.md","ref":"java/concurrence/thread-pool.md","articles":[]},{"title":"死锁","level":"2.2.3","depth":2,"path":"java/concurrence/deadlock.md","ref":"java/concurrence/deadlock.md","articles":[]},{"title":"Synchronized/ReentrantLock","level":"2.2.4","depth":2,"path":"java/concurrence/synchronized-reentrantlock.md","ref":"java/concurrence/synchronized-reentrantlock.md","articles":[]},{"title":"生产者/消费者模式","level":"2.2.5","depth":2,"path":"java/concurrence/producer-consumer.md","ref":"java/concurrence/producer-consumer.md","articles":[]},{"title":"volatile关键字","level":"2.2.6","depth":2,"path":"java/concurrence/volatile.md","ref":"java/concurrence/volatile.md","articles":[]},{"title":"CAS原子操作","level":"2.2.7","depth":2,"path":"java/concurrence/CAS.md","ref":"java/concurrence/CAS.md","articles":[]},{"title":"AbstractQueuedSynchronizer详解","level":"2.2.8","depth":2,"path":"java/concurrence/AbstractQueuedSynchronizer.md","ref":"java/concurrence/AbstractQueuedSynchronizer.md","articles":[]},{"title":"深入理解ReentrantLock","level":"2.2.9","depth":2,"path":"java/concurrence/ReentrantLock.md","ref":"java/concurrence/ReentrantLock.md","articles":[]},{"title":"Java并发集合——ArrayBlockingQueue","level":"2.2.10","depth":2,"path":"java/concurrence/ArrayBlockingQueue.md","ref":"java/concurrence/ArrayBlockingQueue.md","articles":[]},{"title":"Java并发集合——LinkedBlockingQueue","level":"2.2.11","depth":2,"path":"java/concurrence/LinkedBlockingQueue.md","ref":"java/concurrence/LinkedBlockingQueue.md","articles":[]},{"title":"Java并发集合——ConcurrentHashMap","level":"2.2.12","depth":2,"path":"java/concurrence/ConcurrentHashMap.md","ref":"java/concurrence/ConcurrentHashMap.md","articles":[]}]},"previous":{"title":"Java finally与return执行顺序","level":"2.1.20","depth":2,"path":"java/basis/finally-return.md","ref":"java/basis/finally-return.md","articles":[]},"dir":"ltr"},"config":{"plugins":["-lunr","-search","-livereload","search-plus@^0.0.11","simple-page-toc@^0.1.1","github@^2.0.0","github-buttons@2.1.0","edit-link@^2.0.2","advanced-emoji@^0.2.1","anchors@^0.7.1","include-codeblock@^3.0.2","ace@^0.3.2","emphasize@^1.1.0","katex@^1.1.3","splitter@^0.0.8","tbfed-pagefooter@^0.0.1","expandable-chapters-small@^0.1.7","sectionx@^3.1.0","local-video@^1.0.1","anchor-navigation-ex@0.1.8","favicon@^0.0.2"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"tbfed-pagefooter":{"copyright":"Copyright © ruheng.com 2017","modify_label":"该文件修订时间：","modify_format":"YYYY-MM-DD HH:mm:ss"},"emphasize":{},"ace":{},"github":{"url":"https://github.com/LRH1993/android_interview"},"simple-page-toc":{"maxDepth":3,"skipFirstH1":true},"splitter":{},"katex":{},"fontsettings":{"theme":"white","family":"sans","size":2},"sectionx":{"tag":"b"},"highlight":{},"anchor-navigation-ex":{"isRewritePageTitle":false,"tocLevel1Icon":"fa fa-hand-o-right","tocLevel2Icon":"fa fa-hand-o-right","tocLevel3Icon":"fa fa-hand-o-right"},"favicon":{"shortcut":"favicon.ico","bookmark":"favicon.ico"},"github-buttons":{"repo":"LRH1993/android_interview","types":["star"],"size":"small"},"expandable-chapters-small":{},"local-video":{},"advanced-emoji":{"embedEmojis":false},"include-codeblock":{"check":false,"edit":false,"fixlang":false,"lang":"","template":"default","theme":"chrome","unindent":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":true,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"edit-link":{"label":"Edit This Page","base":"https://github.com/LRH1993/android_interview/edit/master"},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":true},"anchors":{},"search-plus":{}},"theme":"default","author":"ruheng","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"Android校招面试指南","language":"zh-hans","output.name":"site","links":{"sidebar":{"Home":"http://lruheng.com/"}},"gitbook":"3.2.3","description":"Android面试必备，记录自己的秋招之路"},"file":{"path":"java/basis/java-8.md","mtime":"2017-09-12T01:09:25.000Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2017-10-16T13:00:43.989Z"},"basePath":"../..","book":{"language":""}});
         });
     </script>
 </div>

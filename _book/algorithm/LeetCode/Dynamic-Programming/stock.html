@@ -69,6 +69,10 @@
                 
             
                 
+                <link rel="stylesheet" href="../../../gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
                 <link rel="stylesheet" href="../../../gitbook/gitbook-plugin-fontsettings/website.css">
                 
             
@@ -3715,20 +3719,20 @@
 <p>&#x6211;&#x4EEC;&#x9700;&#x8981;&#x5728;&#x6700;&#x4F4E;&#x4EF7;&#x4E70;&#x5165;&#xFF0C;&#x6700;&#x9AD8;&#x4EF7;&#x5356;&#x51FA;&#xFF0C;&#x5F53;&#x7136;&#x4E70;&#x5165;&#x4E00;&#x5B9A;&#x8981;&#x5728;&#x5356;&#x51FA;&#x4E4B;&#x524D;&#x3002;</p>
 <p>&#x5BF9;&#x4E8E;&#x8FD9;&#x4E00;&#x9898;&#xFF0C;&#x8FD8;&#x662F;&#x6BD4;&#x8F83;&#x7B80;&#x5355;&#x7684;&#xFF0C;&#x6211;&#x4EEC;&#x53EA;&#x9700;&#x8981;&#x904D;&#x5386;&#x4E00;&#x6B21;&#x6570;&#x7EC4;&#xFF0C;&#x901A;&#x8FC7;&#x4E00;&#x4E2A;&#x53D8;&#x91CF;&#x8BB0;&#x5F55;&#x5F53;&#x524D;&#x6700;&#x4F4E;&#x4EF7;&#x683C;&#xFF0C;&#x540C;&#x65F6;&#x7B97;&#x51FA;&#x6B64;&#x6B21;&#x4EA4;&#x6613;&#x5229;&#x6DA6;&#xFF0C;&#x5E76;&#x4E0E;&#x5F53;&#x524D;&#x6700;&#x5927;&#x503C;&#x6BD4;&#x8F83;&#x5C31;&#x53EF;&#x4EE5;&#x4E86;&#x3002;</p>
 <h2 id="13-&#x89E3;&#x9898;&#x4EE3;&#x7801;"><a name="13-&#x89E3;&#x9898;&#x4EE3;&#x7801;" class="anchor-navigation-ex-anchor" href="#13-&#x89E3;&#x9898;&#x4EE3;&#x7801;"><i class="fa fa-link" aria-hidden="true"></i></a>1.3 &#x89E3;&#x9898;&#x4EE3;&#x7801;</h2>
-<pre><code class="lang-java">public class Solution {
-    public int maxProfit(int[] prices) {
-        if (prices == null || prices.length == 0) {
-            return 0;
+<pre><code class="lang-java"><span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Solution</span> </span>{
+    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">int</span> <span class="hljs-title">maxProfit</span><span class="hljs-params">(<span class="hljs-keyword">int</span>[] prices)</span> </span>{
+        <span class="hljs-keyword">if</span> (prices == <span class="hljs-keyword">null</span> || prices.length == <span class="hljs-number">0</span>) {
+            <span class="hljs-keyword">return</span> <span class="hljs-number">0</span>;
         }
 
-        int min = Integer.MAX_VALUE;  //just remember the smallest price
-        int profit = 0;
-        for (int i : prices) {
+        <span class="hljs-keyword">int</span> min = Integer.MAX_VALUE;  <span class="hljs-comment">//just remember the smallest price</span>
+        <span class="hljs-keyword">int</span> profit = <span class="hljs-number">0</span>;
+        <span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> i : prices) {
             min = i &lt; min ? i : min;
             profit = (i - min) &gt; profit ? i - min : profit;
         }
 
-        return profit;
+        <span class="hljs-keyword">return</span> profit;
     }
 }
 </code></pre>
@@ -3741,16 +3745,16 @@
 <h2 id="22-&#x89E3;&#x9898;&#x601D;&#x8DEF;"><a name="22-&#x89E3;&#x9898;&#x601D;&#x8DEF;" class="anchor-navigation-ex-anchor" href="#22-&#x89E3;&#x9898;&#x601D;&#x8DEF;"><i class="fa fa-link" aria-hidden="true"></i></a>2.2 &#x89E3;&#x9898;&#x601D;&#x8DEF;</h2>
 <p>&#x56E0;&#x4E3A;&#x4E0D;&#x9650;&#x5236;&#x4EA4;&#x6613;&#x6B21;&#x6570;&#xFF0C;&#x6211;&#x4EEC;&#x5728;&#x7B2C;i&#x5929;&#x4E70;&#x5165;&#xFF0C;&#x5982;&#x679C;&#x53D1;&#x73B0;i + 1&#x5929;&#x6BD4;i&#x9AD8;&#xFF0C;&#x90A3;&#x4E48;&#x5C31;&#x53EF;&#x4EE5;&#x7D2F;&#x52A0;&#x5230;&#x5229;&#x6DA6;&#x91CC;&#x9762;&#x3002;</p>
 <h2 id="23-&#x89E3;&#x9898;&#x4EE3;&#x7801;"><a name="23-&#x89E3;&#x9898;&#x4EE3;&#x7801;" class="anchor-navigation-ex-anchor" href="#23-&#x89E3;&#x9898;&#x4EE3;&#x7801;"><i class="fa fa-link" aria-hidden="true"></i></a>2.3 &#x89E3;&#x9898;&#x4EE3;&#x7801;</h2>
-<pre><code class="lang-java">public class Solution {
-    public int maxProfit(int[] prices) {
-        int profit = 0;
-        for (int i = 0; i &lt; prices.length - 1; i++) {
-            int diff = prices[i+1] - prices[i];
-            if (diff &gt; 0) {
+<pre><code class="lang-java"><span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Solution</span> </span>{
+    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">int</span> <span class="hljs-title">maxProfit</span><span class="hljs-params">(<span class="hljs-keyword">int</span>[] prices)</span> </span>{
+        <span class="hljs-keyword">int</span> profit = <span class="hljs-number">0</span>;
+        <span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> i = <span class="hljs-number">0</span>; i &lt; prices.length - <span class="hljs-number">1</span>; i++) {
+            <span class="hljs-keyword">int</span> diff = prices[i+<span class="hljs-number">1</span>] - prices[i];
+            <span class="hljs-keyword">if</span> (diff &gt; <span class="hljs-number">0</span>) {
                 profit += diff;
             }
         }
-        return profit;
+        <span class="hljs-keyword">return</span> profit;
     }
 }
 </code></pre>
@@ -3765,35 +3769,35 @@
 <p>&#x6700;&#x591A;&#x5141;&#x8BB8;&#x4E24;&#x6B21;&#x4E0D;&#x76F8;&#x4EA4;&#x7684;&#x4EA4;&#x6613;&#xFF0C;&#x4E5F;&#x5C31;&#x610F;&#x5473;&#x7740;&#x8FD9;&#x4E24;&#x6B21;&#x4EA4;&#x6613;&#x95F4;&#x5B58;&#x5728;&#x67D0;&#x4E00;&#x5206;&#x754C;&#x7EBF;&#xFF0C;&#x8003;&#x8651;&#x5230;&#x53EF;&#x53EA;&#x4EA4;&#x6613;&#x4E00;&#x6B21;&#xFF0C;&#x4E5F;&#x53EF;&#x4EA4;&#x6613;&#x96F6;&#x6B21;&#xFF0C;&#x6545;&#x5206;&#x754C;&#x7EBF;&#x7684;&#x53D8;&#x5316;&#x8303;&#x56F4;&#x4E3A;&#x7B2C;&#x4E00;&#x5929;&#x81F3;&#x6700;&#x540E;&#x4E00;&#x5929;&#xFF0C;&#x53EA;&#x9700;&#x8003;&#x8651;&#x5206;&#x754C;&#x7EBF;&#x4E24;&#x8FB9;&#x5404;&#x81EA;&#x7684;&#x6700;&#x5927;&#x5229;&#x6DA6;&#xFF0C;&#x6700;&#x540E;&#x9009;&#x51FA;&#x5229;&#x6DA6;&#x548C;&#x6700;&#x5927;&#x7684;&#x5373;&#x53EF;&#x3002;</p>
 <p>&#x8FD9;&#x79CD;&#x65B9;&#x6CD5;&#x62BD;&#x8C61;&#x4E4B;&#x540E;&#x5219;&#x4E3A;&#x9996;&#x5148;&#x5C06; [1,n] &#x62C6;&#x5206;&#x4E3A; [1,i] &#x548C; [i+1,n], &#x53C2;&#x8003;&#x5356;&#x80A1;&#x7968;&#x7CFB;&#x5217;&#x7684;&#x7B2C;&#x4E00;&#x9898;&#x8BA1;&#x7B97;&#x5404;&#x81EA;&#x533A;&#x95F4;&#x5185;&#x7684;&#x6700;&#x5927;&#x5229;&#x6DA6;&#x5373;&#x53EF;&#x3002;[1,i] &#x533A;&#x95F4;&#x7684;&#x6700;&#x5927;&#x5229;&#x6DA6;&#x5F88;&#x597D;&#x7B97;&#xFF0C;&#x4F46;&#x662F;&#x5982;&#x4F55;&#x8BA1;&#x7B97; [i+1,n] &#x533A;&#x95F4;&#x7684;&#x6700;&#x5927;&#x5229;&#x6DA6;&#x503C;&#x5462;&#xFF1F;&#x96BE;&#x9053;&#x9700;&#x8981;&#x91CD;&#x590D; n &#x6B21;&#x624D;&#x80FD;&#x5F97;&#x5230;&#xFF1F;&#x6CE8;&#x610F;&#x5230;&#x533A;&#x95F4;&#x7684;&#x53F3;&#x4FA7; n &#x662F;&#x4E2A;&#x4E0D;&#x53D8;&#x503C;&#xFF0C;&#x6211;&#x4EEC;&#x4ECE; [1, i] &#x8BA1;&#x7B97;&#x6700;&#x5927;&#x5229;&#x6DA6;&#x662F;&#x66F4;&#x65B0;&#x6CE2;&#x8C37;&#x7684;&#x503C;&#xFF0C;&#x90A3;&#x4E48;&#x6211;&#x4EEC;&#x53EF;&#x5426;&#x9006;&#x5E8F;&#x8BA1;&#x7B97;&#x6700;&#x5927;&#x5229;&#x6DA6;&#x5462;&#xFF1F;&#x8FD9;&#x65F6;&#x5019;&#x5C31;&#x9700;&#x8981;&#x66F4;&#x65B0;&#x8BB0;&#x5F55;&#x6CE2;&#x5CF0;&#x7684;&#x503C;&#x4E86;</p>
 <h2 id="33-&#x89E3;&#x9898;&#x4EE3;&#x7801;"><a name="33-&#x89E3;&#x9898;&#x4EE3;&#x7801;" class="anchor-navigation-ex-anchor" href="#33-&#x89E3;&#x9898;&#x4EE3;&#x7801;"><i class="fa fa-link" aria-hidden="true"></i></a>3.3 &#x89E3;&#x9898;&#x4EE3;&#x7801;</h2>
-<pre><code class="lang-java">public class Solution {
-    /**
-     * @param prices: Given an integer array
-     * @return: Maximum profit
-     */
-    public int maxProfit(int[] prices) {
-        if (prices == null || prices.length &lt;= 1) return 0;
+<pre><code class="lang-java"><span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Solution</span> </span>{
+    <span class="hljs-comment">/**
+     * <span class="hljs-doctag">@param</span> prices: Given an integer array
+     * <span class="hljs-doctag">@return</span>: Maximum profit
+     */</span>
+    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">int</span> <span class="hljs-title">maxProfit</span><span class="hljs-params">(<span class="hljs-keyword">int</span>[] prices)</span> </span>{
+        <span class="hljs-keyword">if</span> (prices == <span class="hljs-keyword">null</span> || prices.length &lt;= <span class="hljs-number">1</span>) <span class="hljs-keyword">return</span> <span class="hljs-number">0</span>;
 
-        // get profit in the front of prices
-        int[] profitFront = new int[prices.length];
-        profitFront[0] = 0;
-        for (int i = 1, valley = prices[0]; i &lt; prices.length; i++) {
-            profitFront[i] = Math.max(profitFront[i - 1], prices[i] - valley);
+        <span class="hljs-comment">// get profit in the front of prices</span>
+        <span class="hljs-keyword">int</span>[] profitFront = <span class="hljs-keyword">new</span> <span class="hljs-keyword">int</span>[prices.length];
+        profitFront[<span class="hljs-number">0</span>] = <span class="hljs-number">0</span>;
+        <span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> i = <span class="hljs-number">1</span>, valley = prices[<span class="hljs-number">0</span>]; i &lt; prices.length; i++) {
+            profitFront[i] = Math.max(profitFront[i - <span class="hljs-number">1</span>], prices[i] - valley);
             valley = Math.min(valley, prices[i]);
         }
-        // get profit in the back of prices, (i, n)
-        int[] profitBack = new int[prices.length];
-        profitBack[prices.length - 1] = 0;
-        for (int i = prices.length - 2, peak = prices[prices.length - 1]; i &gt;= 0; i--) {
-            profitBack[i] = Math.max(profitBack[i + 1], peak - prices[i]);
+        <span class="hljs-comment">// get profit in the back of prices, (i, n)</span>
+        <span class="hljs-keyword">int</span>[] profitBack = <span class="hljs-keyword">new</span> <span class="hljs-keyword">int</span>[prices.length];
+        profitBack[prices.length - <span class="hljs-number">1</span>] = <span class="hljs-number">0</span>;
+        <span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> i = prices.length - <span class="hljs-number">2</span>, peak = prices[prices.length - <span class="hljs-number">1</span>]; i &gt;= <span class="hljs-number">0</span>; i--) {
+            profitBack[i] = Math.max(profitBack[i + <span class="hljs-number">1</span>], peak - prices[i]);
             peak = Math.max(peak, prices[i]);
         }
-        // add the profit front and back
-        int profit = 0;
-        for (int i = 0; i &lt; prices.length; i++) {
+        <span class="hljs-comment">// add the profit front and back</span>
+        <span class="hljs-keyword">int</span> profit = <span class="hljs-number">0</span>;
+        <span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> i = <span class="hljs-number">0</span>; i &lt; prices.length; i++) {
             profit = Math.max(profit, profitFront[i] + profitBack[i]);
         }
 
-        return profit;
+        <span class="hljs-keyword">return</span> profit;
     }
 };
 </code></pre>
@@ -3822,45 +3826,45 @@
 <p>&#x4E0A;&#x9762;&#x7684;&#x7B97;&#x6CD5;&#x4E2D;&#x5BF9;&#x4E8E;&#x5929;&#x6570;&#x9700;&#x8981;&#x4E00;&#x6B21;&#x626B;&#x63CF;&#xFF0C;&#x800C;&#x6BCF;&#x6B21;&#x8981;&#x5BF9;&#x4EA4;&#x6613;&#x6B21;&#x6570;&#x8FDB;&#x884C;&#x9012;&#x63A8;&#x5F0F;&#x6C42;&#x89E3;&#xFF0C;&#x6240;&#x4EE5;&#x65F6;&#x95F4;&#x590D;&#x6742;&#x5EA6;&#x662F;O(n*k)&#xFF0C;&#x5982;&#x679C;&#x662F;&#x6700;&#x591A;&#x8FDB;&#x884C;&#x4E24;&#x6B21;&#x4EA4;&#x6613;&#xFF0C;&#x90A3;&#x4E48;&#x590D;&#x6742;&#x5EA6;&#x8FD8;&#x662F;O(n)&#x3002;&#x7A7A;&#x95F4;&#x4E0A;&#x53EA;&#x9700;&#x8981;&#x7EF4;&#x62A4;&#x5F53;&#x5929;&#x6570;&#x636E;&#x7686;&#x53EF;&#x4EE5;&#xFF0C;&#x6240;&#x4EE5;&#x662F;O(k)&#xFF0C;&#x5F53;k=2&#xFF0C;&#x5219;&#x662F;O(1)&#x3002;</p>
 <p>&#x8865;&#x5145;&#xFF1A;&#x8FD9;&#x9053;&#x9898;&#x8FD8;&#x6709;&#x4E00;&#x4E2A;&#x9677;&#x9631;&#xFF0C;&#x5C31;&#x662F;&#x5F53;k&#x5927;&#x4E8E;&#x5929;&#x6570;&#x65F6;&#xFF0C;&#x5176;&#x5B9E;&#x5C31;&#x9000;&#x5316;&#x6210; Best Time to Buy and Sell Stock II &#x4E86;&#x3002;</p>
 <h2 id="43-&#x89E3;&#x9898;&#x4EE3;&#x7801;"><a name="43-&#x89E3;&#x9898;&#x4EE3;&#x7801;" class="anchor-navigation-ex-anchor" href="#43-&#x89E3;&#x9898;&#x4EE3;&#x7801;"><i class="fa fa-link" aria-hidden="true"></i></a>4.3 &#x89E3;&#x9898;&#x4EE3;&#x7801;</h2>
-<pre><code class="lang-java">public class Solution {
-    /**
-     * @param k: An integer
-     * @param prices: Given an integer array
-     * @return: Maximum profit
-     */
-    public int maxProfit(int k, int[] prices) {
-        if (prices == null || prices.length &lt; 2) {
-            return 0;
+<pre><code class="lang-java"><span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Solution</span> </span>{
+    <span class="hljs-comment">/**
+     * <span class="hljs-doctag">@param</span> k: An integer
+     * <span class="hljs-doctag">@param</span> prices: Given an integer array
+     * <span class="hljs-doctag">@return</span>: Maximum profit
+     */</span>
+    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">int</span> <span class="hljs-title">maxProfit</span><span class="hljs-params">(<span class="hljs-keyword">int</span> k, <span class="hljs-keyword">int</span>[] prices)</span> </span>{
+        <span class="hljs-keyword">if</span> (prices == <span class="hljs-keyword">null</span> || prices.length &lt; <span class="hljs-number">2</span>) {
+            <span class="hljs-keyword">return</span> <span class="hljs-number">0</span>;
         }
-        int days = prices.length;
+        <span class="hljs-keyword">int</span> days = prices.length;
 
-        if (days &lt;= k) {
-            return maxProfit2(prices);
+        <span class="hljs-keyword">if</span> (days &lt;= k) {
+            <span class="hljs-keyword">return</span> maxProfit2(prices);
         }
-        // local[i][j] &#x8868;&#x793A;&#x524D;i&#x5929;&#xFF0C;&#x81F3;&#x591A;&#x8FDB;&#x884C;j&#x6B21;&#x4EA4;&#x6613;&#xFF0C;&#x7B2C;i&#x5929;&#x5FC5;&#x987B;sell&#x7684;&#x6700;&#x5927;&#x83B7;&#x76CA;
-        int[][] local = new int[days][k + 1];
-        // global[i][j] &#x8868;&#x793A;&#x524D;i&#x5929;&#xFF0C;&#x81F3;&#x591A;&#x8FDB;&#x884C;j&#x6B21;&#x4EA4;&#x6613;&#xFF0C;&#x7B2C;i&#x5929;&#x53EF;&#x4EE5;&#x4E0D;sell&#x7684;&#x6700;&#x5927;&#x83B7;&#x76CA;
-        int[][] global = new int[days][k + 1];
+        <span class="hljs-comment">// local[i][j] &#x8868;&#x793A;&#x524D;i&#x5929;&#xFF0C;&#x81F3;&#x591A;&#x8FDB;&#x884C;j&#x6B21;&#x4EA4;&#x6613;&#xFF0C;&#x7B2C;i&#x5929;&#x5FC5;&#x987B;sell&#x7684;&#x6700;&#x5927;&#x83B7;&#x76CA;</span>
+        <span class="hljs-keyword">int</span>[][] local = <span class="hljs-keyword">new</span> <span class="hljs-keyword">int</span>[days][k + <span class="hljs-number">1</span>];
+        <span class="hljs-comment">// global[i][j] &#x8868;&#x793A;&#x524D;i&#x5929;&#xFF0C;&#x81F3;&#x591A;&#x8FDB;&#x884C;j&#x6B21;&#x4EA4;&#x6613;&#xFF0C;&#x7B2C;i&#x5929;&#x53EF;&#x4EE5;&#x4E0D;sell&#x7684;&#x6700;&#x5927;&#x83B7;&#x76CA;</span>
+        <span class="hljs-keyword">int</span>[][] global = <span class="hljs-keyword">new</span> <span class="hljs-keyword">int</span>[days][k + <span class="hljs-number">1</span>];
 
-        for (int i = 1; i &lt; days; i++) {
-            int diff = prices[i] - prices[i - 1];
-            for (int j = 1; j &lt;= k; j++) {
-                local[i][j] = Math.max(global[i - 1][j-1] + Math.max(diff, 0),
-                        local[i - 1][j] + diff);
-                global[i][j] = Math.max(global[i - 1][j], local[i][j]);
+        <span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> i = <span class="hljs-number">1</span>; i &lt; days; i++) {
+            <span class="hljs-keyword">int</span> diff = prices[i] - prices[i - <span class="hljs-number">1</span>];
+            <span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> j = <span class="hljs-number">1</span>; j &lt;= k; j++) {
+                local[i][j] = Math.max(global[i - <span class="hljs-number">1</span>][j-<span class="hljs-number">1</span>] + Math.max(diff, <span class="hljs-number">0</span>),
+                        local[i - <span class="hljs-number">1</span>][j] + diff);
+                global[i][j] = Math.max(global[i - <span class="hljs-number">1</span>][j], local[i][j]);
             }
         }
-        return global[days - 1][k];
+        <span class="hljs-keyword">return</span> global[days - <span class="hljs-number">1</span>][k];
     }
 
-    public int maxProfit2(int[] prices) {
-        int maxProfit = 0;
-        for (int i = 1; i &lt; prices.length; i++) {
-            if (prices[i] &gt; prices[i-1]) {
-                maxProfit += prices[i] - prices[i-1];
+    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">int</span> <span class="hljs-title">maxProfit2</span><span class="hljs-params">(<span class="hljs-keyword">int</span>[] prices)</span> </span>{
+        <span class="hljs-keyword">int</span> maxProfit = <span class="hljs-number">0</span>;
+        <span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> i = <span class="hljs-number">1</span>; i &lt; prices.length; i++) {
+            <span class="hljs-keyword">if</span> (prices[i] &gt; prices[i-<span class="hljs-number">1</span>]) {
+                maxProfit += prices[i] - prices[i-<span class="hljs-number">1</span>];
             }
         }
-        return maxProfit;
+        <span class="hljs-keyword">return</span> maxProfit;
     }
 };
 </code></pre>
@@ -3909,7 +3913,7 @@
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"Best Time to Buy and Sell Stock","level":"5.2.1.4","depth":3,"next":{"title":"Maximum Subarray","level":"5.2.1.5","depth":3,"path":"algorithm/LeetCode/Dynamic-Programming/Maximum-Subarray.md","ref":"algorithm/LeetCode/Dynamic-Programming/Maximum-Subarray.md","articles":[]},"previous":{"title":"Longest Increasing Subsequence","level":"5.2.1.3","depth":3,"path":"algorithm/LeetCode/Dynamic-Programming/Longest-Increasing-Subsequence.md","ref":"algorithm/LeetCode/Dynamic-Programming/Longest-Increasing-Subsequence.md","articles":[]},"dir":"ltr"},"config":{"plugins":["-lunr","-search","-highlight","-livereload","search-plus@^0.0.11","simple-page-toc@^0.1.1","github@^2.0.0","github-buttons@2.1.0","edit-link@^2.0.2","advanced-emoji@^0.2.1","anchors@^0.7.1","include-codeblock@^3.0.2","ace@^0.3.2","emphasize@^1.1.0","katex@^1.1.3","splitter@^0.0.8","tbfed-pagefooter@^0.0.1","expandable-chapters-small@^0.1.7","sectionx@^3.1.0","local-video@^1.0.1","anchor-navigation-ex@0.1.8","favicon@^0.0.2"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"tbfed-pagefooter":{"copyright":"Copyright © ruheng.com 2017","modify_label":"该文件修订时间：","modify_format":"YYYY-MM-DD HH:mm:ss"},"emphasize":{},"ace":{},"github":{"url":"https://github.com/LRH1993/android_interview"},"simple-page-toc":{"maxDepth":3,"skipFirstH1":true},"splitter":{},"katex":{},"fontsettings":{"theme":"white","family":"sans","size":2},"sectionx":{"tag":"b"},"anchor-navigation-ex":{"isRewritePageTitle":false,"tocLevel1Icon":"fa fa-hand-o-right","tocLevel2Icon":"fa fa-hand-o-right","tocLevel3Icon":"fa fa-hand-o-right"},"favicon":{"shortcut":"favicon.ico","bookmark":"favicon.ico"},"github-buttons":{"repo":"LRH1993/android_interview","types":["star"],"size":"small"},"expandable-chapters-small":{},"local-video":{},"advanced-emoji":{"embedEmojis":false},"include-codeblock":{"check":false,"edit":true,"fixlang":false,"lang":"","template":"ace","theme":"chrome","unindent":true},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":true,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"edit-link":{"label":"Edit This Page","base":"https://github.com/LRH1993/android_interview/edit/master"},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":true},"anchors":{},"search-plus":{}},"theme":"default","author":"ruheng","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"Android校招面试指南","language":"zh-hans","output.name":"site","links":{"sidebar":{"Home":"http://lruheng.com/"}},"gitbook":"3.2.3","description":"Android面试必备，记录自己的秋招之路"},"file":{"path":"algorithm/LeetCode/Dynamic-Programming/stock.md","mtime":"2017-09-07T07:37:34.000Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2017-10-16T12:05:21.906Z"},"basePath":"../../..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"Best Time to Buy and Sell Stock","level":"5.2.1.4","depth":3,"next":{"title":"Maximum Subarray","level":"5.2.1.5","depth":3,"path":"algorithm/LeetCode/Dynamic-Programming/Maximum-Subarray.md","ref":"algorithm/LeetCode/Dynamic-Programming/Maximum-Subarray.md","articles":[]},"previous":{"title":"Longest Increasing Subsequence","level":"5.2.1.3","depth":3,"path":"algorithm/LeetCode/Dynamic-Programming/Longest-Increasing-Subsequence.md","ref":"algorithm/LeetCode/Dynamic-Programming/Longest-Increasing-Subsequence.md","articles":[]},"dir":"ltr"},"config":{"plugins":["-lunr","-search","-livereload","search-plus@^0.0.11","simple-page-toc@^0.1.1","github@^2.0.0","github-buttons@2.1.0","edit-link@^2.0.2","advanced-emoji@^0.2.1","anchors@^0.7.1","include-codeblock@^3.0.2","ace@^0.3.2","emphasize@^1.1.0","katex@^1.1.3","splitter@^0.0.8","tbfed-pagefooter@^0.0.1","expandable-chapters-small@^0.1.7","sectionx@^3.1.0","local-video@^1.0.1","anchor-navigation-ex@0.1.8","favicon@^0.0.2"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"tbfed-pagefooter":{"copyright":"Copyright © ruheng.com 2017","modify_label":"该文件修订时间：","modify_format":"YYYY-MM-DD HH:mm:ss"},"emphasize":{},"ace":{},"github":{"url":"https://github.com/LRH1993/android_interview"},"simple-page-toc":{"maxDepth":3,"skipFirstH1":true},"splitter":{},"katex":{},"fontsettings":{"theme":"white","family":"sans","size":2},"sectionx":{"tag":"b"},"highlight":{},"anchor-navigation-ex":{"isRewritePageTitle":false,"tocLevel1Icon":"fa fa-hand-o-right","tocLevel2Icon":"fa fa-hand-o-right","tocLevel3Icon":"fa fa-hand-o-right"},"favicon":{"shortcut":"favicon.ico","bookmark":"favicon.ico"},"github-buttons":{"repo":"LRH1993/android_interview","types":["star"],"size":"small"},"expandable-chapters-small":{},"local-video":{},"advanced-emoji":{"embedEmojis":false},"include-codeblock":{"check":false,"edit":false,"fixlang":false,"lang":"","template":"default","theme":"chrome","unindent":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":true,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"edit-link":{"label":"Edit This Page","base":"https://github.com/LRH1993/android_interview/edit/master"},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":true},"anchors":{},"search-plus":{}},"theme":"default","author":"ruheng","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"Android校招面试指南","language":"zh-hans","output.name":"site","links":{"sidebar":{"Home":"http://lruheng.com/"}},"gitbook":"3.2.3","description":"Android面试必备，记录自己的秋招之路"},"file":{"path":"algorithm/LeetCode/Dynamic-Programming/stock.md","mtime":"2017-09-07T07:37:34.000Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2017-10-16T13:00:43.989Z"},"basePath":"../../..","book":{"language":""}});
         });
     </script>
 </div>

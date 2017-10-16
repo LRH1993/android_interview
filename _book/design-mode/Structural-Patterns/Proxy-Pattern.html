@@ -69,6 +69,10 @@
                 
             
                 
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
                 <link rel="stylesheet" href="../../gitbook/gitbook-plugin-fontsettings/website.css">
                 
             
@@ -3757,109 +3761,109 @@
 <ol>
 <li>&#x5148;&#x5B9A;&#x4E49;&#x4E00;&#x4E2A;Binder&#x63A5;&#x53E3;</li>
 </ol>
-<pre><code class="lang-java">package com.ryg.design.manualbinder;
+<pre><code class="lang-java"><span class="hljs-keyword">package</span> com.ryg.design.manualbinder;
 
-import android.os.IBinder;
-import android.os.IInterface;
-import android.os.RemoteException;
+<span class="hljs-keyword">import</span> android.os.IBinder;
+<span class="hljs-keyword">import</span> android.os.IInterface;
+<span class="hljs-keyword">import</span> android.os.RemoteException;
 
-public interface IBank extends IInterface {
+<span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">interface</span> <span class="hljs-title">IBank</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">IInterface</span> </span>{
 
-   static final String DESCRIPTOR = &quot;com.ryg.design.manualbinder.IBank&quot;;
+   <span class="hljs-keyword">static</span> <span class="hljs-keyword">final</span> String DESCRIPTOR = <span class="hljs-string">&quot;com.ryg.design.manualbinder.IBank&quot;</span>;
 
-   static final int TRANSACTION_queryMoney = (IBinder.FIRST_CALL_TRANSACTION + 0);
+   <span class="hljs-keyword">static</span> <span class="hljs-keyword">final</span> <span class="hljs-keyword">int</span> TRANSACTION_queryMoney = (IBinder.FIRST_CALL_TRANSACTION + <span class="hljs-number">0</span>);
 
-   public long queryMoney(int uid) throws RemoteException;
+   <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">long</span> <span class="hljs-title">queryMoney</span><span class="hljs-params">(<span class="hljs-keyword">int</span> uid)</span> <span class="hljs-keyword">throws</span> RemoteException</span>;
 
 }
 </code></pre>
 <p>2.&#x521B;&#x5EFA;&#x4E00;&#x4E2A;Binder&#x5E76;&#x5B9E;&#x73B0;&#x8FD9;&#x4E2A;&#x4E0A;&#x8FF0;&#x63A5;&#x53E3;</p>
-<pre><code class="lang-java">package com.ryg.design.manualbinder;
+<pre><code class="lang-java"><span class="hljs-keyword">package</span> com.ryg.design.manualbinder;
 
-import android.os.Binder;
-import android.os.IBinder;
-import android.os.Parcel;
-import android.os.RemoteException;
+<span class="hljs-keyword">import</span> android.os.Binder;
+<span class="hljs-keyword">import</span> android.os.IBinder;
+<span class="hljs-keyword">import</span> android.os.Parcel;
+<span class="hljs-keyword">import</span> android.os.RemoteException;
 
-public class BankImpl extends Binder implements IBank {
+<span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">BankImpl</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">Binder</span> <span class="hljs-keyword">implements</span> <span class="hljs-title">IBank</span> </span>{
 
-    public BankImpl() {
-        this.attachInterface(this, DESCRIPTOR);
+    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-title">BankImpl</span><span class="hljs-params">()</span> </span>{
+        <span class="hljs-keyword">this</span>.attachInterface(<span class="hljs-keyword">this</span>, DESCRIPTOR);
     }
 
-    public static IBank asInterface(IBinder obj) {
-        if ((obj == null)) {
-            return null;
+    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> IBank <span class="hljs-title">asInterface</span><span class="hljs-params">(IBinder obj)</span> </span>{
+        <span class="hljs-keyword">if</span> ((obj == <span class="hljs-keyword">null</span>)) {
+            <span class="hljs-keyword">return</span> <span class="hljs-keyword">null</span>;
         }
         android.os.IInterface iin = obj.queryLocalInterface(DESCRIPTOR);
-        if (((iin != null) &amp;&amp; (iin instanceof IBank))) {
-            return ((IBank) iin);
+        <span class="hljs-keyword">if</span> (((iin != <span class="hljs-keyword">null</span>) &amp;&amp; (iin <span class="hljs-keyword">instanceof</span> IBank))) {
+            <span class="hljs-keyword">return</span> ((IBank) iin);
         }
-        return new BankImpl.Proxy(obj);
+        <span class="hljs-keyword">return</span> <span class="hljs-keyword">new</span> BankImpl.Proxy(obj);
     }
 
-    @Override
-    public IBinder asBinder() {
-        return this;
+    <span class="hljs-meta">@Override</span>
+    <span class="hljs-function"><span class="hljs-keyword">public</span> IBinder <span class="hljs-title">asBinder</span><span class="hljs-params">()</span> </span>{
+        <span class="hljs-keyword">return</span> <span class="hljs-keyword">this</span>;
     }
 
-    @Override
-    public boolean onTransact(int code, Parcel data, Parcel reply, int flags)
-            throws RemoteException {
-        switch (code) {
-        case INTERFACE_TRANSACTION: {
+    <span class="hljs-meta">@Override</span>
+    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">boolean</span> <span class="hljs-title">onTransact</span><span class="hljs-params">(<span class="hljs-keyword">int</span> code, Parcel data, Parcel reply, <span class="hljs-keyword">int</span> flags)</span>
+            <span class="hljs-keyword">throws</span> RemoteException </span>{
+        <span class="hljs-keyword">switch</span> (code) {
+        <span class="hljs-keyword">case</span> INTERFACE_TRANSACTION: {
             reply.writeString(DESCRIPTOR);
-            return true;
+            <span class="hljs-keyword">return</span> <span class="hljs-keyword">true</span>;
         }
-        case TRANSACTION_queryMoney: {
+        <span class="hljs-keyword">case</span> TRANSACTION_queryMoney: {
             data.enforceInterface(DESCRIPTOR);
-            int uid = data.readInt();
-            long result = this.queryMoney(uid);
+            <span class="hljs-keyword">int</span> uid = data.readInt();
+            <span class="hljs-keyword">long</span> result = <span class="hljs-keyword">this</span>.queryMoney(uid);
             reply.writeNoException();
             reply.writeLong(result);
-            return true;
+            <span class="hljs-keyword">return</span> <span class="hljs-keyword">true</span>;
         }
         }
-        return super.onTransact(code, data, reply, flags);
+        <span class="hljs-keyword">return</span> <span class="hljs-keyword">super</span>.onTransact(code, data, reply, flags);
     }
 
-    @Override
-    public long queryMoney(int uid) throws RemoteException {
-        return uid * 10l;
+    <span class="hljs-meta">@Override</span>
+    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">long</span> <span class="hljs-title">queryMoney</span><span class="hljs-params">(<span class="hljs-keyword">int</span> uid)</span> <span class="hljs-keyword">throws</span> RemoteException </span>{
+        <span class="hljs-keyword">return</span> uid * <span class="hljs-number">10l</span>;
     }
 
-    private static class Proxy implements IBank {
-        private IBinder mRemote;
+    <span class="hljs-keyword">private</span> <span class="hljs-keyword">static</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Proxy</span> <span class="hljs-keyword">implements</span> <span class="hljs-title">IBank</span> </span>{
+        <span class="hljs-keyword">private</span> IBinder mRemote;
 
         Proxy(IBinder remote) {
             mRemote = remote;
         }
 
-        @Override
-        public IBinder asBinder() {
-            return mRemote;
+        <span class="hljs-meta">@Override</span>
+        <span class="hljs-function"><span class="hljs-keyword">public</span> IBinder <span class="hljs-title">asBinder</span><span class="hljs-params">()</span> </span>{
+            <span class="hljs-keyword">return</span> mRemote;
         }
 
-        public java.lang.String getInterfaceDescriptor() {
-            return DESCRIPTOR;
+        <span class="hljs-keyword">public</span> java.lang.<span class="hljs-function">String <span class="hljs-title">getInterfaceDescriptor</span><span class="hljs-params">()</span> </span>{
+            <span class="hljs-keyword">return</span> DESCRIPTOR;
         }
 
-        @Override
-        public long queryMoney(int uid) throws RemoteException {
+        <span class="hljs-meta">@Override</span>
+        <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">long</span> <span class="hljs-title">queryMoney</span><span class="hljs-params">(<span class="hljs-keyword">int</span> uid)</span> <span class="hljs-keyword">throws</span> RemoteException </span>{
             Parcel data = Parcel.obtain();
             Parcel reply = Parcel.obtain();
-            long result;
-            try {
+            <span class="hljs-keyword">long</span> result;
+            <span class="hljs-keyword">try</span> {
                 data.writeInterfaceToken(DESCRIPTOR);
                 data.writeInt(uid);
-                mRemote.transact(TRANSACTION_queryMoney, data, reply, 0);
+                mRemote.transact(TRANSACTION_queryMoney, data, reply, <span class="hljs-number">0</span>);
                 reply.readException();
                 result = reply.readLong();
-            } finally {
+            } <span class="hljs-keyword">finally</span> {
                 reply.recycle();
                 data.recycle();
             }
-            return result;
+            <span class="hljs-keyword">return</span> result;
         }
 
     }
@@ -3927,7 +3931,7 @@ public class BankImpl extends Binder implements IBank {
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"代理模式","level":"6.2.4","depth":2,"next":{"title":"行为型模式","level":"6.3","depth":1,"path":"design-mode/Behavioral-Pattern.md","ref":"design-mode/Behavioral-Pattern.md","articles":[{"title":"命令模式","level":"6.3.1","depth":2,"path":"design-mode/Behavioral-Pattern/Command-Pattern.md","ref":"design-mode/Behavioral-Pattern/Command-Pattern.md","articles":[]},{"title":"迭代器模式","level":"6.3.2","depth":2,"path":"design-mode/Behavioral-Pattern/Iterator-Pattern.md","ref":"design-mode/Behavioral-Pattern/Iterator-Pattern.md","articles":[]},{"title":"观察者模式","level":"6.3.3","depth":2,"path":"design-mode/Behavioral-Pattern/Observer-Pattern.md","ref":"design-mode/Behavioral-Pattern/Observer-Pattern.md","articles":[]},{"title":"策略模式","level":"6.3.4","depth":2,"path":"design-mode/Behavioral-Pattern/Strategy-Pattern.md","ref":"design-mode/Behavioral-Pattern/Strategy-Pattern.md","articles":[]},{"title":"模板方法模式","level":"6.3.5","depth":2,"path":"design-mode/Behavioral-Pattern/Template-Method.md","ref":"design-mode/Behavioral-Pattern/Template-Method.md","articles":[]}]},"previous":{"title":"装饰者模式","level":"6.2.3","depth":2,"path":"design-mode/Structural-Patterns/Decorator-Pattern.md","ref":"design-mode/Structural-Patterns/Decorator-Pattern.md","articles":[]},"dir":"ltr"},"config":{"plugins":["-lunr","-search","-highlight","-livereload","search-plus@^0.0.11","simple-page-toc@^0.1.1","github@^2.0.0","github-buttons@2.1.0","edit-link@^2.0.2","advanced-emoji@^0.2.1","anchors@^0.7.1","include-codeblock@^3.0.2","ace@^0.3.2","emphasize@^1.1.0","katex@^1.1.3","splitter@^0.0.8","tbfed-pagefooter@^0.0.1","expandable-chapters-small@^0.1.7","sectionx@^3.1.0","local-video@^1.0.1","anchor-navigation-ex@0.1.8","favicon@^0.0.2"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"tbfed-pagefooter":{"copyright":"Copyright © ruheng.com 2017","modify_label":"该文件修订时间：","modify_format":"YYYY-MM-DD HH:mm:ss"},"emphasize":{},"ace":{},"github":{"url":"https://github.com/LRH1993/android_interview"},"simple-page-toc":{"maxDepth":3,"skipFirstH1":true},"splitter":{},"katex":{},"fontsettings":{"theme":"white","family":"sans","size":2},"sectionx":{"tag":"b"},"anchor-navigation-ex":{"isRewritePageTitle":false,"tocLevel1Icon":"fa fa-hand-o-right","tocLevel2Icon":"fa fa-hand-o-right","tocLevel3Icon":"fa fa-hand-o-right"},"favicon":{"shortcut":"favicon.ico","bookmark":"favicon.ico"},"github-buttons":{"repo":"LRH1993/android_interview","types":["star"],"size":"small"},"expandable-chapters-small":{},"local-video":{},"advanced-emoji":{"embedEmojis":false},"include-codeblock":{"check":false,"edit":true,"fixlang":false,"lang":"","template":"ace","theme":"chrome","unindent":true},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":true,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"edit-link":{"label":"Edit This Page","base":"https://github.com/LRH1993/android_interview/edit/master"},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":true},"anchors":{},"search-plus":{}},"theme":"default","author":"ruheng","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"Android校招面试指南","language":"zh-hans","output.name":"site","links":{"sidebar":{"Home":"http://lruheng.com/"}},"gitbook":"3.2.3","description":"Android面试必备，记录自己的秋招之路"},"file":{"path":"design-mode/Structural-Patterns/Proxy-Pattern.md","mtime":"2017-09-12T01:21:09.000Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2017-10-16T12:05:21.906Z"},"basePath":"../..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"代理模式","level":"6.2.4","depth":2,"next":{"title":"行为型模式","level":"6.3","depth":1,"path":"design-mode/Behavioral-Pattern.md","ref":"design-mode/Behavioral-Pattern.md","articles":[{"title":"命令模式","level":"6.3.1","depth":2,"path":"design-mode/Behavioral-Pattern/Command-Pattern.md","ref":"design-mode/Behavioral-Pattern/Command-Pattern.md","articles":[]},{"title":"迭代器模式","level":"6.3.2","depth":2,"path":"design-mode/Behavioral-Pattern/Iterator-Pattern.md","ref":"design-mode/Behavioral-Pattern/Iterator-Pattern.md","articles":[]},{"title":"观察者模式","level":"6.3.3","depth":2,"path":"design-mode/Behavioral-Pattern/Observer-Pattern.md","ref":"design-mode/Behavioral-Pattern/Observer-Pattern.md","articles":[]},{"title":"策略模式","level":"6.3.4","depth":2,"path":"design-mode/Behavioral-Pattern/Strategy-Pattern.md","ref":"design-mode/Behavioral-Pattern/Strategy-Pattern.md","articles":[]},{"title":"模板方法模式","level":"6.3.5","depth":2,"path":"design-mode/Behavioral-Pattern/Template-Method.md","ref":"design-mode/Behavioral-Pattern/Template-Method.md","articles":[]}]},"previous":{"title":"装饰者模式","level":"6.2.3","depth":2,"path":"design-mode/Structural-Patterns/Decorator-Pattern.md","ref":"design-mode/Structural-Patterns/Decorator-Pattern.md","articles":[]},"dir":"ltr"},"config":{"plugins":["-lunr","-search","-livereload","search-plus@^0.0.11","simple-page-toc@^0.1.1","github@^2.0.0","github-buttons@2.1.0","edit-link@^2.0.2","advanced-emoji@^0.2.1","anchors@^0.7.1","include-codeblock@^3.0.2","ace@^0.3.2","emphasize@^1.1.0","katex@^1.1.3","splitter@^0.0.8","tbfed-pagefooter@^0.0.1","expandable-chapters-small@^0.1.7","sectionx@^3.1.0","local-video@^1.0.1","anchor-navigation-ex@0.1.8","favicon@^0.0.2"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"tbfed-pagefooter":{"copyright":"Copyright © ruheng.com 2017","modify_label":"该文件修订时间：","modify_format":"YYYY-MM-DD HH:mm:ss"},"emphasize":{},"ace":{},"github":{"url":"https://github.com/LRH1993/android_interview"},"simple-page-toc":{"maxDepth":3,"skipFirstH1":true},"splitter":{},"katex":{},"fontsettings":{"theme":"white","family":"sans","size":2},"sectionx":{"tag":"b"},"highlight":{},"anchor-navigation-ex":{"isRewritePageTitle":false,"tocLevel1Icon":"fa fa-hand-o-right","tocLevel2Icon":"fa fa-hand-o-right","tocLevel3Icon":"fa fa-hand-o-right"},"favicon":{"shortcut":"favicon.ico","bookmark":"favicon.ico"},"github-buttons":{"repo":"LRH1993/android_interview","types":["star"],"size":"small"},"expandable-chapters-small":{},"local-video":{},"advanced-emoji":{"embedEmojis":false},"include-codeblock":{"check":false,"edit":false,"fixlang":false,"lang":"","template":"default","theme":"chrome","unindent":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":true,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"edit-link":{"label":"Edit This Page","base":"https://github.com/LRH1993/android_interview/edit/master"},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":true},"anchors":{},"search-plus":{}},"theme":"default","author":"ruheng","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"Android校招面试指南","language":"zh-hans","output.name":"site","links":{"sidebar":{"Home":"http://lruheng.com/"}},"gitbook":"3.2.3","description":"Android面试必备，记录自己的秋招之路"},"file":{"path":"design-mode/Structural-Patterns/Proxy-Pattern.md","mtime":"2017-09-12T01:21:09.000Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2017-10-16T13:00:43.989Z"},"basePath":"../..","book":{"language":""}});
         });
     </script>
 </div>

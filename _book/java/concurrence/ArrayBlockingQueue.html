@@ -69,6 +69,10 @@
                 
             
                 
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
                 <link rel="stylesheet" href="../../gitbook/gitbook-plugin-fontsettings/website.css">
                 
             
@@ -3807,50 +3811,50 @@
 <strong>&#x6CE8;&#x610F;:&#x8FD9;&#x91CC;&#x4F7F;&#x7528;&#x7684;JDK&#x7248;&#x672C;&#x4E3A;1.7&#xFF0C;&#x4E0D;&#x540C;&#x7684;JDK&#x7248;&#x672C;&#x5728;&#x5B9E;&#x73B0;&#x4E0A;&#x5B58;&#x5728;&#x4E0D;&#x540C;</strong></p>
 <p><img src="http://upload-images.jianshu.io/upload_images/1684370-ca508b8735c40257.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></p>
 <p>&#x9996;&#x5148;&#x8BA9;&#x6211;&#x4EEC;&#x770B;&#x4E0B;ArrayBlockingQueue&#x7684;&#x6838;&#x5FC3;&#x7EC4;&#x6210;&#xFF1A;</p>
-<pre><code class="lang-java"> /** &#x5E95;&#x5C42;&#x7EF4;&#x62A4;&#x961F;&#x5217;&#x5143;&#x7D20;&#x7684;&#x6570;&#x7EC4; */
-    final Object[] items;
+<pre><code class="lang-java"> <span class="hljs-comment">/** &#x5E95;&#x5C42;&#x7EF4;&#x62A4;&#x961F;&#x5217;&#x5143;&#x7D20;&#x7684;&#x6570;&#x7EC4; */</span>
+    <span class="hljs-keyword">final</span> Object[] items;
 
-    /**  &#x5F53;&#x8BFB;&#x53D6;&#x5143;&#x7D20;&#x65F6;&#x6570;&#x7EC4;&#x7684;&#x4E0B;&#x6807;(&#x8FD9;&#x91CC;&#x79F0;&#x4E3A;&#x8BFB;&#x4E0B;&#x6807;) */
-    int takeIndex;
+    <span class="hljs-comment">/**  &#x5F53;&#x8BFB;&#x53D6;&#x5143;&#x7D20;&#x65F6;&#x6570;&#x7EC4;&#x7684;&#x4E0B;&#x6807;(&#x8FD9;&#x91CC;&#x79F0;&#x4E3A;&#x8BFB;&#x4E0B;&#x6807;) */</span>
+    <span class="hljs-keyword">int</span> takeIndex;
 
-    /** &#x6DFB;&#x52A0;&#x5143;&#x7D20;&#x65F6;&#x6570;&#x7EC4;&#x7684;&#x4E0B;&#x6807; (&#x8FD9;&#x91CC;&#x79F0;&#x4E3A;&#x5199;&#x5C0F;&#x6807;)*/
-    int putIndex;
+    <span class="hljs-comment">/** &#x6DFB;&#x52A0;&#x5143;&#x7D20;&#x65F6;&#x6570;&#x7EC4;&#x7684;&#x4E0B;&#x6807; (&#x8FD9;&#x91CC;&#x79F0;&#x4E3A;&#x5199;&#x5C0F;&#x6807;)*/</span>
+    <span class="hljs-keyword">int</span> putIndex;
 
-    /** &#x961F;&#x5217;&#x4E2D;&#x7684;&#x5143;&#x7D20;&#x4E2A;&#x6570; */
-    int count;
+    <span class="hljs-comment">/** &#x961F;&#x5217;&#x4E2D;&#x7684;&#x5143;&#x7D20;&#x4E2A;&#x6570; */</span>
+    <span class="hljs-keyword">int</span> count;
 
-    /**&#x7528;&#x4E8E;&#x5E76;&#x53D1;&#x63A7;&#x5236;&#x7684;&#x5DE5;&#x5177;&#x7C7B;**/
-    final ReentrantLock lock;
+    <span class="hljs-comment">/**&#x7528;&#x4E8E;&#x5E76;&#x53D1;&#x63A7;&#x5236;&#x7684;&#x5DE5;&#x5177;&#x7C7B;**/</span>
+    <span class="hljs-keyword">final</span> ReentrantLock lock;
 
-    /** &#x63A7;&#x5236;take&#x64CD;&#x4F5C;&#x65F6;&#x662F;&#x5426;&#x8BA9;&#x7EBF;&#x7A0B;&#x7B49;&#x5F85; */
-    private final Condition notEmpty;
+    <span class="hljs-comment">/** &#x63A7;&#x5236;take&#x64CD;&#x4F5C;&#x65F6;&#x662F;&#x5426;&#x8BA9;&#x7EBF;&#x7A0B;&#x7B49;&#x5F85; */</span>
+    <span class="hljs-keyword">private</span> <span class="hljs-keyword">final</span> Condition notEmpty;
 
-    /** &#x63A7;&#x5236;put&#x64CD;&#x4F5C;&#x65F6;&#x662F;&#x5426;&#x8BA9;&#x7EBF;&#x7A0B;&#x7B49;&#x5F85; */
-    private final Condition notFull;
+    <span class="hljs-comment">/** &#x63A7;&#x5236;put&#x64CD;&#x4F5C;&#x65F6;&#x662F;&#x5426;&#x8BA9;&#x7EBF;&#x7A0B;&#x7B49;&#x5F85; */</span>
+    <span class="hljs-keyword">private</span> <span class="hljs-keyword">final</span> Condition notFull;
 </code></pre>
 <blockquote>
 <p>take&#x65B9;&#x6CD5;&#x5206;&#x6790;(369-379&#x884C;):</p>
 </blockquote>
-<pre><code class="lang-java">    public E take() throws InterruptedException {
-        final ReentrantLock lock = this.lock;
-        /*
+<pre><code class="lang-java">    <span class="hljs-function"><span class="hljs-keyword">public</span> E <span class="hljs-title">take</span><span class="hljs-params">()</span> <span class="hljs-keyword">throws</span> InterruptedException </span>{
+        <span class="hljs-keyword">final</span> ReentrantLock lock = <span class="hljs-keyword">this</span>.lock;
+        <span class="hljs-comment">/*
             &#x5C1D;&#x8BD5;&#x83B7;&#x53D6;&#x9501;&#xFF0C;&#x5982;&#x679C;&#x6B64;&#x65F6;&#x9501;&#x88AB;&#x5176;&#x4ED6;&#x7EBF;&#x7A0B;&#x9501;&#x5360;&#x7528;&#xFF0C;&#x90A3;&#x4E48;&#x5F53;&#x524D;&#x7EBF;&#x7A0B;&#x5C31;&#x5904;&#x4E8E;Waiting&#x7684;&#x72B6;&#x6001;&#x3002;           
             &#x6CE8;&#x610F;:&#x5F53;&#x65B9;&#x6CD5;&#x662F;&#x652F;&#x6301;&#x7EBF;&#x7A0B;&#x4E2D;&#x65AD;&#x54CD;&#x5E94;&#x7684;&#x5982;&#x679C;&#x5176;&#x4ED6;&#x7EBF;&#x7A0B;&#x6B64;&#x65F6;&#x4E2D;&#x65AD;&#x5F53;&#x524D;&#x7EBF;&#x7A0B;&#xFF0C;
             &#x90A3;&#x4E48;&#x5F53;&#x524D;&#x7EBF;&#x7A0B;&#x5C31;&#x4F1A;&#x629B;&#x51FA;InterruptedException 
-         */
+         */</span>
         lock.lockInterruptibly();
-        try {
-            /*
+        <span class="hljs-keyword">try</span> {
+            <span class="hljs-comment">/*
           &#x5982;&#x679C;&#x6B64;&#x65F6;&#x961F;&#x5217;&#x4E2D;&#x7684;&#x5143;&#x7D20;&#x4E2A;&#x6570;&#x4E3A;0,&#x90A3;&#x4E48;&#x5C31;&#x8BA9;&#x5F53;&#x524D;&#x7EBF;&#x7A0B;wait,&#x5E76;&#x4E14;&#x91CA;&#x653E;&#x9501;&#x3002;
           &#x6CE8;&#x610F;:&#x8FD9;&#x91CC;&#x4F7F;&#x7528;&#x4E86;while&#x8FDB;&#x884C;&#x91CD;&#x590D;&#x68C0;&#x67E5;&#xFF0C;&#x662F;&#x4E3A;&#x4E86;&#x9632;&#x6B62;&#x5F53;&#x524D;&#x7EBF;&#x7A0B;&#x53EF;&#x80FD;&#x7531;&#x4E8E;&#x5176;&#x4ED6;&#x672A;&#x77E5;&#x7684;&#x539F;&#x56E0;&#x88AB;&#x5524;&#x9192;&#x3002;
           (&#x901A;&#x5E38;&#x8FD9;&#x79CD;&#x60C5;&#x51B5;&#x88AB;&#x79F0;&#x4E3A;&quot;spurious wakeup&quot;)
-            */    
-        while (count == 0)
+            */</span>    
+        <span class="hljs-keyword">while</span> (count == <span class="hljs-number">0</span>)
                 notEmpty.await();
-            //&#x5982;&#x679C;&#x961F;&#x5217;&#x4E0D;&#x4E3A;&#x7A7A;&#xFF0C;&#x5219;&#x4ECE;&#x961F;&#x5217;&#x7684;&#x5934;&#x90E8;&#x53D6;&#x5143;&#x7D20;
-            return extract();
-        } finally {
-             //&#x5B8C;&#x6210;&#x9501;&#x7684;&#x91CA;&#x653E;
+            <span class="hljs-comment">//&#x5982;&#x679C;&#x961F;&#x5217;&#x4E0D;&#x4E3A;&#x7A7A;&#xFF0C;&#x5219;&#x4ECE;&#x961F;&#x5217;&#x7684;&#x5934;&#x90E8;&#x53D6;&#x5143;&#x7D20;</span>
+            <span class="hljs-keyword">return</span> extract();
+        } <span class="hljs-keyword">finally</span> {
+             <span class="hljs-comment">//&#x5B8C;&#x6210;&#x9501;&#x7684;&#x91CA;&#x653E;</span>
             lock.unlock();
         }
     }
@@ -3858,67 +3862,67 @@
 <blockquote>
 <p>extract&#x65B9;&#x6CD5;&#x5206;&#x6790;(163-171):</p>
 </blockquote>
-<pre><code class="lang-java">    /*
+<pre><code class="lang-java">    <span class="hljs-comment">/*
       &#x6839;&#x636E;takeIndex&#x6765;&#x83B7;&#x53D6;&#x5F53;&#x524D;&#x7684;&#x5143;&#x7D20;,&#x7136;&#x540E;&#x901A;&#x77E5;&#x5176;&#x4ED6;&#x7B49;&#x5F85;&#x7684;&#x7EBF;&#x7A0B;&#x3002;
       Call only when holding lock.(&#x53EA;&#x6709;&#x5F53;&#x524D;&#x7EBF;&#x7A0B;&#x5DF2;&#x7ECF;&#x6301;&#x6709;&#x4E86;&#x9501;&#x4E4B;&#x540E;&#xFF0C;&#x5B83;&#x624D;&#x80FD;&#x8C03;&#x7528;&#x8BE5;&#x65B9;&#x6CD5;)
-     */
-    private E extract() {
-        final Object[] items = this.items;
+     */</span>
+    <span class="hljs-function"><span class="hljs-keyword">private</span> E <span class="hljs-title">extract</span><span class="hljs-params">()</span> </span>{
+        <span class="hljs-keyword">final</span> Object[] items = <span class="hljs-keyword">this</span>.items;
 
-        //&#x6839;&#x636E;takeIndex&#x83B7;&#x53D6;&#x5143;&#x7D20;,&#x56E0;&#x4E3A;&#x5143;&#x7D20;&#x662F;&#x4E00;&#x4E2A;Object&#x7C7B;&#x578B;&#x7684;&#x6570;&#x7EC4;,&#x56E0;&#x6B64;&#x5B83;&#x901A;&#x8FC7;cast&#x65B9;&#x6CD5;&#x5C06;&#x5176;&#x8F6C;&#x6362;&#x6210;&#x6CDB;&#x578B;&#x3002;
-        E x = this.&lt;E&gt;cast(items[takeIndex]);
+        <span class="hljs-comment">//&#x6839;&#x636E;takeIndex&#x83B7;&#x53D6;&#x5143;&#x7D20;,&#x56E0;&#x4E3A;&#x5143;&#x7D20;&#x662F;&#x4E00;&#x4E2A;Object&#x7C7B;&#x578B;&#x7684;&#x6570;&#x7EC4;,&#x56E0;&#x6B64;&#x5B83;&#x901A;&#x8FC7;cast&#x65B9;&#x6CD5;&#x5C06;&#x5176;&#x8F6C;&#x6362;&#x6210;&#x6CDB;&#x578B;&#x3002;</span>
+        E x = <span class="hljs-keyword">this</span>.&lt;E&gt;cast(items[takeIndex]);
 
-        //&#x5C06;&#x5F53;&#x524D;&#x4F4D;&#x7F6E;&#x7684;&#x5143;&#x7D20;&#x8BBE;&#x7F6E;&#x4E3A;null
-        items[takeIndex] = null;
+        <span class="hljs-comment">//&#x5C06;&#x5F53;&#x524D;&#x4F4D;&#x7F6E;&#x7684;&#x5143;&#x7D20;&#x8BBE;&#x7F6E;&#x4E3A;null</span>
+        items[takeIndex] = <span class="hljs-keyword">null</span>;
 
-        //&#x5E76;&#x4E14;&#x5C06;takeIndex++,&#x6CE8;&#x610F;&#xFF1A;&#x8FD9;&#x91CC;&#x56E0;&#x4E3A;&#x5DF2;&#x7ECF;&#x4F7F;&#x7528;&#x4E86;&#x9501;&#xFF0C;&#x56E0;&#x6B64;inc&#x65B9;&#x6CD5;&#x4E2D;&#x6CA1;&#x6709;&#x4F7F;&#x7528;&#x5230;&#x539F;&#x5B50;&#x64CD;&#x4F5C;
+        <span class="hljs-comment">//&#x5E76;&#x4E14;&#x5C06;takeIndex++,&#x6CE8;&#x610F;&#xFF1A;&#x8FD9;&#x91CC;&#x56E0;&#x4E3A;&#x5DF2;&#x7ECF;&#x4F7F;&#x7528;&#x4E86;&#x9501;&#xFF0C;&#x56E0;&#x6B64;inc&#x65B9;&#x6CD5;&#x4E2D;&#x6CA1;&#x6709;&#x4F7F;&#x7528;&#x5230;&#x539F;&#x5B50;&#x64CD;&#x4F5C;</span>
         takeIndex = inc(takeIndex);
 
-        //&#x5C06;&#x961F;&#x5217;&#x4E2D;&#x7684;&#x603B;&#x7684;&#x5143;&#x7D20;&#x51CF;1
+        <span class="hljs-comment">//&#x5C06;&#x961F;&#x5217;&#x4E2D;&#x7684;&#x603B;&#x7684;&#x5143;&#x7D20;&#x51CF;1</span>
         --count;
-        //&#x5524;&#x9192;&#x5176;&#x4ED6;&#x7B49;&#x5F85;&#x7684;&#x7EBF;&#x7A0B;
+        <span class="hljs-comment">//&#x5524;&#x9192;&#x5176;&#x4ED6;&#x7B49;&#x5F85;&#x7684;&#x7EBF;&#x7A0B;</span>
         notFull.signal();
-        return x;
+        <span class="hljs-keyword">return</span> x;
     }
 </code></pre>
 <blockquote>
 <p>put&#x65B9;&#x6CD5;&#x5206;&#x6790;(318-239)</p>
 </blockquote>
-<pre><code class="lang-java">    public void put(E e) throws InterruptedException {
-        //&#x9996;&#x5148;&#x68C0;&#x67E5;&#x5143;&#x7D20;&#x662F;&#x5426;&#x4E3A;&#x7A7A;&#xFF0C;&#x5426;&#x5219;&#x629B;&#x51FA;NullPointerException
+<pre><code class="lang-java">    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">put</span><span class="hljs-params">(E e)</span> <span class="hljs-keyword">throws</span> InterruptedException </span>{
+        <span class="hljs-comment">//&#x9996;&#x5148;&#x68C0;&#x67E5;&#x5143;&#x7D20;&#x662F;&#x5426;&#x4E3A;&#x7A7A;&#xFF0C;&#x5426;&#x5219;&#x629B;&#x51FA;NullPointerException</span>
         checkNotNull(e);
-        final ReentrantLock lock = this.lock;
-        //&#x8FDB;&#x884C;&#x9501;&#x7684;&#x62A2;&#x5360;
+        <span class="hljs-keyword">final</span> ReentrantLock lock = <span class="hljs-keyword">this</span>.lock;
+        <span class="hljs-comment">//&#x8FDB;&#x884C;&#x9501;&#x7684;&#x62A2;&#x5360;</span>
         lock.lockInterruptibly();
-        try {
-            /*&#x5F53;&#x961F;&#x5217;&#x7684;&#x957F;&#x5EA6;&#x7B49;&#x4E8E;&#x6570;&#x7EC4;&#x7684;&#x957F;&#x5EA6;,&#x6B64;&#x65F6;&#x8BF4;&#x660E;&#x961F;&#x5217;&#x5DF2;&#x7ECF;&#x6EE1;&#x4E86;,&#x8FD9;&#x91CC;&#x540C;&#x6837;
-              &#x4F7F;&#x7528;&#x4E86;while&#x6765;&#x65B9;&#x5F0F;&#x5F53;&#x524D;&#x7EBF;&#x7A0B;&#x88AB;&quot;&#x4F2A;&#x5524;&#x9192;&quot;&#x3002;*/
-            while (count == items.length)
-                //&#x5219;&#x8BA9;&#x5F53;&#x524D;&#x7EBF;&#x7A0B;&#x5904;&#x4E8E;&#x7B49;&#x5F85;&#x72B6;&#x6001;
+        <span class="hljs-keyword">try</span> {
+            <span class="hljs-comment">/*&#x5F53;&#x961F;&#x5217;&#x7684;&#x957F;&#x5EA6;&#x7B49;&#x4E8E;&#x6570;&#x7EC4;&#x7684;&#x957F;&#x5EA6;,&#x6B64;&#x65F6;&#x8BF4;&#x660E;&#x961F;&#x5217;&#x5DF2;&#x7ECF;&#x6EE1;&#x4E86;,&#x8FD9;&#x91CC;&#x540C;&#x6837;
+              &#x4F7F;&#x7528;&#x4E86;while&#x6765;&#x65B9;&#x5F0F;&#x5F53;&#x524D;&#x7EBF;&#x7A0B;&#x88AB;&quot;&#x4F2A;&#x5524;&#x9192;&quot;&#x3002;*/</span>
+            <span class="hljs-keyword">while</span> (count == items.length)
+                <span class="hljs-comment">//&#x5219;&#x8BA9;&#x5F53;&#x524D;&#x7EBF;&#x7A0B;&#x5904;&#x4E8E;&#x7B49;&#x5F85;&#x72B6;&#x6001;</span>
                 notFull.await();
-            //&#x4E00;&#x65E6;&#x83B7;&#x53D6;&#x5230;&#x9501;&#x5E76;&#x4E14;&#x961F;&#x5217;&#x8FD8;&#x672A;&#x6EE1;&#x65F6;&#xFF0C;&#x5219;&#x6267;&#x884C;insert&#x64CD;&#x4F5C;&#x3002;
+            <span class="hljs-comment">//&#x4E00;&#x65E6;&#x83B7;&#x53D6;&#x5230;&#x9501;&#x5E76;&#x4E14;&#x961F;&#x5217;&#x8FD8;&#x672A;&#x6EE1;&#x65F6;&#xFF0C;&#x5219;&#x6267;&#x884C;insert&#x64CD;&#x4F5C;&#x3002;</span>
             insert(e);
-        } finally {
-            //&#x5B8C;&#x6210;&#x9501;&#x7684;&#x91CA;&#x653E;
+        } <span class="hljs-keyword">finally</span> {
+            <span class="hljs-comment">//&#x5B8C;&#x6210;&#x9501;&#x7684;&#x91CA;&#x653E;</span>
             lock.unlock();
         }
     }
 
-      //&#x68C0;&#x67E5;&#x5143;&#x7D20;&#x662F;&#x5426;&#x4E3A;&#x7A7A;
-     private static void checkNotNull(Object v) {
-        if (v == null)
-            throw new NullPointerException();
+      <span class="hljs-comment">//&#x68C0;&#x67E5;&#x5143;&#x7D20;&#x662F;&#x5426;&#x4E3A;&#x7A7A;</span>
+     <span class="hljs-function"><span class="hljs-keyword">private</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title">checkNotNull</span><span class="hljs-params">(Object v)</span> </span>{
+        <span class="hljs-keyword">if</span> (v == <span class="hljs-keyword">null</span>)
+            <span class="hljs-keyword">throw</span> <span class="hljs-keyword">new</span> NullPointerException();
       }
 
-     //&#x8BE5;&#x65B9;&#x6CD5;&#x7684;&#x903B;&#x8F91;&#x975E;&#x5E38;&#x7B80;&#x5355;
-    private void insert(E x) {
-        //&#x5C06;&#x5F53;&#x524D;&#x5143;&#x7D20;&#x8BBE;&#x7F6E;&#x5230;putIndex&#x4F4D;&#x7F6E;   
+     <span class="hljs-comment">//&#x8BE5;&#x65B9;&#x6CD5;&#x7684;&#x903B;&#x8F91;&#x975E;&#x5E38;&#x7B80;&#x5355;</span>
+    <span class="hljs-function"><span class="hljs-keyword">private</span> <span class="hljs-keyword">void</span> <span class="hljs-title">insert</span><span class="hljs-params">(E x)</span> </span>{
+        <span class="hljs-comment">//&#x5C06;&#x5F53;&#x524D;&#x5143;&#x7D20;&#x8BBE;&#x7F6E;&#x5230;putIndex&#x4F4D;&#x7F6E;   </span>
         items[putIndex] = x;
-        //&#x8BA9;putIndex++
+        <span class="hljs-comment">//&#x8BA9;putIndex++</span>
         putIndex = inc(putIndex);
-        //&#x5C06;&#x961F;&#x5217;&#x7684;&#x5927;&#x5C0F;&#x52A0;1
+        <span class="hljs-comment">//&#x5C06;&#x961F;&#x5217;&#x7684;&#x5927;&#x5C0F;&#x52A0;1</span>
         ++count;
-        //&#x5524;&#x9192;&#x5176;&#x4ED6;&#x6B63;&#x5728;&#x5904;&#x4E8E;&#x7B49;&#x5F85;&#x72B6;&#x6001;&#x7684;&#x7EBF;&#x7A0B;
+        <span class="hljs-comment">//&#x5524;&#x9192;&#x5176;&#x4ED6;&#x6B63;&#x5728;&#x5904;&#x4E8E;&#x7B49;&#x5F85;&#x72B6;&#x6001;&#x7684;&#x7EBF;&#x7A0B;</span>
         notEmpty.signal();
     }
 </code></pre>
@@ -3931,12 +3935,12 @@
 <p>&#x5F53;&#x518D;&#x4E00;&#x6B21;&#x6267;&#x884C;put&#x7684;&#x65F6;&#x5019;,&#x5176;&#x7ED3;&#x679C;&#x4E3A;&#xFF1A;</p>
 <p><img src="http://upload-images.jianshu.io/upload_images/1684370-bdbe3fe4f43d5130.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></p>
 <p>&#x6B64;&#x65F6;&#x653E;&#x5165;&#x7684;&#x5143;&#x7D20;&#x4F1A;&#x4ECE;&#x5934;&#x5F00;&#x59CB;&#x7F6E;&#xFF0C;&#x6211;&#x4EEC;&#x901A;&#x8FC7;&#x5176;incr&#x65B9;&#x6CD5;&#x66F4;&#x52A0;&#x6E05;&#x6670;&#x7684;&#x770B;&#x51FA;&#x5176;&#x5E95;&#x5C42;&#x7684;&#x64CD;&#x4F5C;&#xFF1A;</p>
-<pre><code class="lang-java">    /**
+<pre><code class="lang-java">    <span class="hljs-comment">/**
      * Circularly increment i.
-     */
-    final int inc(int i) {
-        //&#x5F53;takeIndex&#x7684;&#x503C;&#x7B49;&#x4E8E;&#x6570;&#x7EC4;&#x7684;&#x957F;&#x5EA6;&#x65F6;,&#x5C31;&#x4F1A;&#x91CD;&#x65B0;&#x7F6E;&#x4E3A;0&#xFF0C;&#x8FD9;&#x4E2A;&#x4E00;&#x4E2A;&#x5FAA;&#x73AF;&#x9012;&#x589E;&#x7684;&#x8FC7;&#x7A0B;
-        return (++i == items.length) ? 0 : i;
+     */</span>
+    <span class="hljs-function"><span class="hljs-keyword">final</span> <span class="hljs-keyword">int</span> <span class="hljs-title">inc</span><span class="hljs-params">(<span class="hljs-keyword">int</span> i)</span> </span>{
+        <span class="hljs-comment">//&#x5F53;takeIndex&#x7684;&#x503C;&#x7B49;&#x4E8E;&#x6570;&#x7EC4;&#x7684;&#x957F;&#x5EA6;&#x65F6;,&#x5C31;&#x4F1A;&#x91CD;&#x65B0;&#x7F6E;&#x4E3A;0&#xFF0C;&#x8FD9;&#x4E2A;&#x4E00;&#x4E2A;&#x5FAA;&#x73AF;&#x9012;&#x589E;&#x7684;&#x8FC7;&#x7A0B;</span>
+        <span class="hljs-keyword">return</span> (++i == items.length) ? <span class="hljs-number">0</span> : i;
     }
 </code></pre>
 <p>&#x81F3;&#x6B64;&#xFF0C;ArrayBlockingQueue&#x7684;&#x6838;&#x5FC3;&#x90E8;&#x5206;&#x5C31;&#x5206;&#x6790;&#x5B8C;&#x4E86;&#xFF0C;&#x5176;&#x4F59;&#x7684;&#x961F;&#x5217;&#x64CD;&#x4F5C;&#x57FA;&#x672C;&#x4E0A;&#x90FD;&#x662F;&#x6362;&#x6C64;&#x4E0D;&#x6362;&#x836F;&#x7684;&#xFF0C;&#x6B64;&#x5904;&#x4E0D;&#x518D;&#x4E00;&#x4E00;&#x5217;&#x4E3E;&#x3002; </p>
@@ -3985,7 +3989,7 @@
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"Java并发集合——ArrayBlockingQueue","level":"2.2.10","depth":2,"next":{"title":"Java并发集合——LinkedBlockingQueue","level":"2.2.11","depth":2,"path":"java/concurrence/LinkedBlockingQueue.md","ref":"java/concurrence/LinkedBlockingQueue.md","articles":[]},"previous":{"title":"深入理解ReentrantLock","level":"2.2.9","depth":2,"path":"java/concurrence/ReentrantLock.md","ref":"java/concurrence/ReentrantLock.md","articles":[]},"dir":"ltr"},"config":{"plugins":["-lunr","-search","-highlight","-livereload","search-plus@^0.0.11","simple-page-toc@^0.1.1","github@^2.0.0","github-buttons@2.1.0","edit-link@^2.0.2","advanced-emoji@^0.2.1","anchors@^0.7.1","include-codeblock@^3.0.2","ace@^0.3.2","emphasize@^1.1.0","katex@^1.1.3","splitter@^0.0.8","tbfed-pagefooter@^0.0.1","expandable-chapters-small@^0.1.7","sectionx@^3.1.0","local-video@^1.0.1","anchor-navigation-ex@0.1.8","favicon@^0.0.2"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"tbfed-pagefooter":{"copyright":"Copyright © ruheng.com 2017","modify_label":"该文件修订时间：","modify_format":"YYYY-MM-DD HH:mm:ss"},"emphasize":{},"ace":{},"github":{"url":"https://github.com/LRH1993/android_interview"},"simple-page-toc":{"maxDepth":3,"skipFirstH1":true},"splitter":{},"katex":{},"fontsettings":{"theme":"white","family":"sans","size":2},"sectionx":{"tag":"b"},"anchor-navigation-ex":{"isRewritePageTitle":false,"tocLevel1Icon":"fa fa-hand-o-right","tocLevel2Icon":"fa fa-hand-o-right","tocLevel3Icon":"fa fa-hand-o-right"},"favicon":{"shortcut":"favicon.ico","bookmark":"favicon.ico"},"github-buttons":{"repo":"LRH1993/android_interview","types":["star"],"size":"small"},"expandable-chapters-small":{},"local-video":{},"advanced-emoji":{"embedEmojis":false},"include-codeblock":{"check":false,"edit":true,"fixlang":false,"lang":"","template":"ace","theme":"chrome","unindent":true},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":true,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"edit-link":{"label":"Edit This Page","base":"https://github.com/LRH1993/android_interview/edit/master"},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":true},"anchors":{},"search-plus":{}},"theme":"default","author":"ruheng","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"Android校招面试指南","language":"zh-hans","output.name":"site","links":{"sidebar":{"Home":"http://lruheng.com/"}},"gitbook":"3.2.3","description":"Android面试必备，记录自己的秋招之路"},"file":{"path":"java/concurrence/ArrayBlockingQueue.md","mtime":"2017-08-29T09:06:18.000Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2017-10-16T12:05:21.906Z"},"basePath":"../..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"Java并发集合——ArrayBlockingQueue","level":"2.2.10","depth":2,"next":{"title":"Java并发集合——LinkedBlockingQueue","level":"2.2.11","depth":2,"path":"java/concurrence/LinkedBlockingQueue.md","ref":"java/concurrence/LinkedBlockingQueue.md","articles":[]},"previous":{"title":"深入理解ReentrantLock","level":"2.2.9","depth":2,"path":"java/concurrence/ReentrantLock.md","ref":"java/concurrence/ReentrantLock.md","articles":[]},"dir":"ltr"},"config":{"plugins":["-lunr","-search","-livereload","search-plus@^0.0.11","simple-page-toc@^0.1.1","github@^2.0.0","github-buttons@2.1.0","edit-link@^2.0.2","advanced-emoji@^0.2.1","anchors@^0.7.1","include-codeblock@^3.0.2","ace@^0.3.2","emphasize@^1.1.0","katex@^1.1.3","splitter@^0.0.8","tbfed-pagefooter@^0.0.1","expandable-chapters-small@^0.1.7","sectionx@^3.1.0","local-video@^1.0.1","anchor-navigation-ex@0.1.8","favicon@^0.0.2"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"tbfed-pagefooter":{"copyright":"Copyright © ruheng.com 2017","modify_label":"该文件修订时间：","modify_format":"YYYY-MM-DD HH:mm:ss"},"emphasize":{},"ace":{},"github":{"url":"https://github.com/LRH1993/android_interview"},"simple-page-toc":{"maxDepth":3,"skipFirstH1":true},"splitter":{},"katex":{},"fontsettings":{"theme":"white","family":"sans","size":2},"sectionx":{"tag":"b"},"highlight":{},"anchor-navigation-ex":{"isRewritePageTitle":false,"tocLevel1Icon":"fa fa-hand-o-right","tocLevel2Icon":"fa fa-hand-o-right","tocLevel3Icon":"fa fa-hand-o-right"},"favicon":{"shortcut":"favicon.ico","bookmark":"favicon.ico"},"github-buttons":{"repo":"LRH1993/android_interview","types":["star"],"size":"small"},"expandable-chapters-small":{},"local-video":{},"advanced-emoji":{"embedEmojis":false},"include-codeblock":{"check":false,"edit":false,"fixlang":false,"lang":"","template":"default","theme":"chrome","unindent":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":true,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"edit-link":{"label":"Edit This Page","base":"https://github.com/LRH1993/android_interview/edit/master"},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":true},"anchors":{},"search-plus":{}},"theme":"default","author":"ruheng","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"Android校招面试指南","language":"zh-hans","output.name":"site","links":{"sidebar":{"Home":"http://lruheng.com/"}},"gitbook":"3.2.3","description":"Android面试必备，记录自己的秋招之路"},"file":{"path":"java/concurrence/ArrayBlockingQueue.md","mtime":"2017-08-29T09:06:18.000Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2017-10-16T13:00:43.989Z"},"basePath":"../..","book":{"language":""}});
         });
     </script>
 </div>

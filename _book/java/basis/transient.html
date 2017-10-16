@@ -69,6 +69,10 @@
                 
             
                 
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
                 <link rel="stylesheet" href="../../gitbook/gitbook-plugin-fontsettings/website.css">
                 
             
@@ -3710,84 +3714,84 @@
 <p>&#x7136;&#x800C;&#x5728;&#x5B9E;&#x9645;&#x5F00;&#x53D1;&#x8FC7;&#x7A0B;&#x4E2D;&#xFF0C;&#x6211;&#x4EEC;&#x5E38;&#x5E38;&#x4F1A;&#x9047;&#x5230;&#x8FD9;&#x6837;&#x7684;&#x95EE;&#x9898;&#xFF0C;&#x8FD9;&#x4E2A;&#x7C7B;&#x7684;&#x6709;&#x4E9B;&#x5C5E;&#x6027;&#x9700;&#x8981;&#x5E8F;&#x5217;&#x5316;&#xFF0C;&#x800C;&#x5176;&#x4ED6;&#x5C5E;&#x6027;&#x4E0D;&#x9700;&#x8981;&#x88AB;&#x5E8F;&#x5217;&#x5316;&#xFF0C;&#x6253;&#x4E2A;&#x6BD4;&#x65B9;&#xFF0C;&#x5982;&#x679C;&#x4E00;&#x4E2A;&#x7528;&#x6237;&#x6709;&#x4E00;&#x4E9B;&#x654F;&#x611F;&#x4FE1;&#x606F;&#xFF08;&#x5982;&#x5BC6;&#x7801;&#xFF0C;&#x94F6;&#x884C;&#x5361;&#x53F7;&#x7B49;&#xFF09;&#xFF0C;&#x4E3A;&#x4E86;&#x5B89;&#x5168;&#x8D77;&#x89C1;&#xFF0C;&#x4E0D;&#x5E0C;&#x671B;&#x5728;&#x7F51;&#x7EDC;&#x64CD;&#x4F5C;&#xFF08;&#x4E3B;&#x8981;&#x6D89;&#x53CA;&#x5230;&#x5E8F;&#x5217;&#x5316;&#x64CD;&#x4F5C;&#xFF0C;&#x672C;&#x5730;&#x5E8F;&#x5217;&#x5316;&#x7F13;&#x5B58;&#x4E5F;&#x9002;&#x7528;&#xFF09;&#x4E2D;&#x88AB;&#x4F20;&#x8F93;&#xFF0C;&#x8FD9;&#x4E9B;&#x4FE1;&#x606F;&#x5BF9;&#x5E94;&#x7684;&#x53D8;&#x91CF;&#x5C31;&#x53EF;&#x4EE5;&#x52A0;&#x4E0A;transient&#x5173;&#x952E;&#x5B57;&#x3002;&#x6362;&#x53E5;&#x8BDD;&#x8BF4;&#xFF0C;&#x8FD9;&#x4E2A;&#x5B57;&#x6BB5;&#x7684;&#x751F;&#x547D;&#x5468;&#x671F;&#x4EC5;&#x5B58;&#x4E8E;&#x8C03;&#x7528;&#x8005;&#x7684;&#x5185;&#x5B58;&#x4E2D;&#x800C;&#x4E0D;&#x4F1A;&#x5199;&#x5230;&#x78C1;&#x76D8;&#x91CC;&#x6301;&#x4E45;&#x5316;&#x3002;</p>
 <p>&#x603B;&#x4E4B;&#xFF0C;java &#x7684;transient&#x5173;&#x952E;&#x5B57;&#x4E3A;&#x6211;&#x4EEC;&#x63D0;&#x4F9B;&#x4E86;&#x4FBF;&#x5229;&#xFF0C;&#x4F60;&#x53EA;&#x9700;&#x8981;&#x5B9E;&#x73B0;Serilizable&#x63A5;&#x53E3;&#xFF0C;&#x5C06;&#x4E0D;&#x9700;&#x8981;&#x5E8F;&#x5217;&#x5316;&#x7684;&#x5C5E;&#x6027;&#x524D;&#x6DFB;&#x52A0;&#x5173;&#x952E;&#x5B57;transient&#xFF0C;&#x5E8F;&#x5217;&#x5316;&#x5BF9;&#x8C61;&#x7684;&#x65F6;&#x5019;&#xFF0C;&#x8FD9;&#x4E2A;&#x5C5E;&#x6027;&#x5C31;&#x4E0D;&#x4F1A;&#x5E8F;&#x5217;&#x5316;&#x5230;&#x6307;&#x5B9A;&#x7684;&#x76EE;&#x7684;&#x5730;&#x4E2D;&#x3002;</p>
 <p>&#x793A;&#x4F8B;code&#x5982;&#x4E0B;&#xFF1A;</p>
-<pre><code class="lang-java">import java.io.FileInputStream;
-import java.io.FileNotFoundException;
-import java.io.FileOutputStream;
-import java.io.IOException;
-import java.io.ObjectInputStream;
-import java.io.ObjectOutputStream;
-import java.io.Serializable;
+<pre><code class="lang-java"><span class="hljs-keyword">import</span> java.io.FileInputStream;
+<span class="hljs-keyword">import</span> java.io.FileNotFoundException;
+<span class="hljs-keyword">import</span> java.io.FileOutputStream;
+<span class="hljs-keyword">import</span> java.io.IOException;
+<span class="hljs-keyword">import</span> java.io.ObjectInputStream;
+<span class="hljs-keyword">import</span> java.io.ObjectOutputStream;
+<span class="hljs-keyword">import</span> java.io.Serializable;
 
-/**
- * @description &#x4F7F;&#x7528;transient&#x5173;&#x952E;&#x5B57;&#x4E0D;&#x5E8F;&#x5217;&#x5316;&#x67D0;&#x4E2A;&#x53D8;&#x91CF;
+<span class="hljs-comment">/**
+ * <span class="hljs-doctag">@description</span> &#x4F7F;&#x7528;transient&#x5173;&#x952E;&#x5B57;&#x4E0D;&#x5E8F;&#x5217;&#x5316;&#x67D0;&#x4E2A;&#x53D8;&#x91CF;
  *        &#x6CE8;&#x610F;&#x8BFB;&#x53D6;&#x7684;&#x65F6;&#x5019;&#xFF0C;&#x8BFB;&#x53D6;&#x6570;&#x636E;&#x7684;&#x987A;&#x5E8F;&#x4E00;&#x5B9A;&#x8981;&#x548C;&#x5B58;&#x653E;&#x6570;&#x636E;&#x7684;&#x987A;&#x5E8F;&#x4FDD;&#x6301;&#x4E00;&#x81F4;
  *        
- * @author Alexia
- * @date  2013-10-15
- */
-public class TransientTest {
+ * <span class="hljs-doctag">@author</span> Alexia
+ * <span class="hljs-doctag">@date</span>  2013-10-15
+ */</span>
+<span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">TransientTest</span> </span>{
 
-    public static void main(String[] args) {
+    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title">main</span><span class="hljs-params">(String[] args)</span> </span>{
 
-        User user = new User();
-        user.setUsername(&quot;Alexia&quot;);
-        user.setPasswd(&quot;123456&quot;);
+        User user = <span class="hljs-keyword">new</span> User();
+        user.setUsername(<span class="hljs-string">&quot;Alexia&quot;</span>);
+        user.setPasswd(<span class="hljs-string">&quot;123456&quot;</span>);
 
-        System.out.println(&quot;read before Serializable: &quot;);
-        System.out.println(&quot;username: &quot; + user.getUsername());
-        System.err.println(&quot;password: &quot; + user.getPasswd());
+        System.out.println(<span class="hljs-string">&quot;read before Serializable: &quot;</span>);
+        System.out.println(<span class="hljs-string">&quot;username: &quot;</span> + user.getUsername());
+        System.err.println(<span class="hljs-string">&quot;password: &quot;</span> + user.getPasswd());
 
-        try {
-            ObjectOutputStream os = new ObjectOutputStream(
-                    new FileOutputStream(&quot;C:/user.txt&quot;));
-            os.writeObject(user); // &#x5C06;User&#x5BF9;&#x8C61;&#x5199;&#x8FDB;&#x6587;&#x4EF6;
+        <span class="hljs-keyword">try</span> {
+            ObjectOutputStream os = <span class="hljs-keyword">new</span> ObjectOutputStream(
+                    <span class="hljs-keyword">new</span> FileOutputStream(<span class="hljs-string">&quot;C:/user.txt&quot;</span>));
+            os.writeObject(user); <span class="hljs-comment">// &#x5C06;User&#x5BF9;&#x8C61;&#x5199;&#x8FDB;&#x6587;&#x4EF6;</span>
             os.flush();
             os.close();
-        } catch (FileNotFoundException e) {
+        } <span class="hljs-keyword">catch</span> (FileNotFoundException e) {
             e.printStackTrace();
-        } catch (IOException e) {
+        } <span class="hljs-keyword">catch</span> (IOException e) {
             e.printStackTrace();
         }
-        try {
-            ObjectInputStream is = new ObjectInputStream(new FileInputStream(
-                    &quot;C:/user.txt&quot;));
-            user = (User) is.readObject(); // &#x4ECE;&#x6D41;&#x4E2D;&#x8BFB;&#x53D6;User&#x7684;&#x6570;&#x636E;
+        <span class="hljs-keyword">try</span> {
+            ObjectInputStream is = <span class="hljs-keyword">new</span> ObjectInputStream(<span class="hljs-keyword">new</span> FileInputStream(
+                    <span class="hljs-string">&quot;C:/user.txt&quot;</span>));
+            user = (User) is.readObject(); <span class="hljs-comment">// &#x4ECE;&#x6D41;&#x4E2D;&#x8BFB;&#x53D6;User&#x7684;&#x6570;&#x636E;</span>
             is.close();
 
-            System.out.println(&quot;\nread after Serializable: &quot;);
-            System.out.println(&quot;username: &quot; + user.getUsername());
-            System.err.println(&quot;password: &quot; + user.getPasswd());
+            System.out.println(<span class="hljs-string">&quot;\nread after Serializable: &quot;</span>);
+            System.out.println(<span class="hljs-string">&quot;username: &quot;</span> + user.getUsername());
+            System.err.println(<span class="hljs-string">&quot;password: &quot;</span> + user.getPasswd());
 
-        } catch (FileNotFoundException e) {
+        } <span class="hljs-keyword">catch</span> (FileNotFoundException e) {
             e.printStackTrace();
-        } catch (IOException e) {
+        } <span class="hljs-keyword">catch</span> (IOException e) {
             e.printStackTrace();
-        } catch (ClassNotFoundException e) {
+        } <span class="hljs-keyword">catch</span> (ClassNotFoundException e) {
             e.printStackTrace();
         }
     }
 }
 
-class User implements Serializable {
-    private static final long serialVersionUID = 8294180014912103005L;  
+<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">User</span> <span class="hljs-keyword">implements</span> <span class="hljs-title">Serializable</span> </span>{
+    <span class="hljs-keyword">private</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">final</span> <span class="hljs-keyword">long</span> serialVersionUID = <span class="hljs-number">8294180014912103005L</span>;  
 
-    private String username;
-    private transient String passwd;
+    <span class="hljs-keyword">private</span> String username;
+    <span class="hljs-keyword">private</span> <span class="hljs-keyword">transient</span> String passwd;
 
-    public String getUsername() {
-        return username;
+    <span class="hljs-function"><span class="hljs-keyword">public</span> String <span class="hljs-title">getUsername</span><span class="hljs-params">()</span> </span>{
+        <span class="hljs-keyword">return</span> username;
     }
 
-    public void setUsername(String username) {
-        this.username = username;
+    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">setUsername</span><span class="hljs-params">(String username)</span> </span>{
+        <span class="hljs-keyword">this</span>.username = username;
     }
 
-    public String getPasswd() {
-        return passwd;
+    <span class="hljs-function"><span class="hljs-keyword">public</span> String <span class="hljs-title">getPasswd</span><span class="hljs-params">()</span> </span>{
+        <span class="hljs-keyword">return</span> passwd;
     }
 
-    public void setPasswd(String passwd) {
-        this.passwd = passwd;
+    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">setPasswd</span><span class="hljs-params">(String passwd)</span> </span>{
+        <span class="hljs-keyword">this</span>.passwd = passwd;
     }
 
 }
@@ -3795,98 +3799,98 @@ class User implements Serializable {
 <p>&#x8F93;&#x51FA;&#x4E3A;&#xFF1A;</p>
 <pre><code class="lang-java">read before Serializable: 
 username: Alexia
-password: 123456
+password: <span class="hljs-number">123456</span>
 
 read after Serializable: 
 username: Alexia
-password: null
+password: <span class="hljs-keyword">null</span>
 </code></pre>
 <h2 id="&#x4E8C;&#x3001;transient&#x4F7F;&#x7528;&#x5C0F;&#x7ED3;"><a name="&#x4E8C;&#x3001;transient&#x4F7F;&#x7528;&#x5C0F;&#x7ED3;" class="anchor-navigation-ex-anchor" href="#&#x4E8C;&#x3001;transient&#x4F7F;&#x7528;&#x5C0F;&#x7ED3;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x4E8C;&#x3001;transient&#x4F7F;&#x7528;&#x5C0F;&#x7ED3;</h2>
 <p>1&#xFF09;&#x4E00;&#x65E6;&#x53D8;&#x91CF;&#x88AB;transient&#x4FEE;&#x9970;&#xFF0C;&#x53D8;&#x91CF;&#x5C06;&#x4E0D;&#x518D;&#x662F;&#x5BF9;&#x8C61;&#x6301;&#x4E45;&#x5316;&#x7684;&#x4E00;&#x90E8;&#x5206;&#xFF0C;&#x8BE5;&#x53D8;&#x91CF;&#x5185;&#x5BB9;&#x5728;&#x5E8F;&#x5217;&#x5316;&#x540E;&#x65E0;&#x6CD5;&#x83B7;&#x5F97;&#x8BBF;&#x95EE;&#x3002;</p>
 <p>2&#xFF09;transient&#x5173;&#x952E;&#x5B57;&#x53EA;&#x80FD;&#x4FEE;&#x9970;&#x53D8;&#x91CF;&#xFF0C;&#x800C;&#x4E0D;&#x80FD;&#x4FEE;&#x9970;&#x65B9;&#x6CD5;&#x548C;&#x7C7B;&#x3002;&#x6CE8;&#x610F;&#xFF0C;&#x672C;&#x5730;&#x53D8;&#x91CF;&#x662F;&#x4E0D;&#x80FD;&#x88AB;transient&#x5173;&#x952E;&#x5B57;&#x4FEE;&#x9970;&#x7684;&#x3002;&#x53D8;&#x91CF;&#x5982;&#x679C;&#x662F;&#x7528;&#x6237;&#x81EA;&#x5B9A;&#x4E49;&#x7C7B;&#x53D8;&#x91CF;&#xFF0C;&#x5219;&#x8BE5;&#x7C7B;&#x9700;&#x8981;&#x5B9E;&#x73B0;Serializable&#x63A5;&#x53E3;&#x3002;</p>
 <p>3&#xFF09;&#x88AB;transient&#x5173;&#x952E;&#x5B57;&#x4FEE;&#x9970;&#x7684;&#x53D8;&#x91CF;&#x4E0D;&#x518D;&#x80FD;&#x88AB;&#x5E8F;&#x5217;&#x5316;&#xFF0C;&#x4E00;&#x4E2A;<strong>&#x9759;&#x6001;&#x53D8;&#x91CF;</strong>&#x4E0D;&#x7BA1;&#x662F;&#x5426;&#x88AB;transient&#x4FEE;&#x9970;&#xFF0C;&#x5747;&#x4E0D;&#x80FD;&#x88AB;&#x5E8F;&#x5217;&#x5316;&#x3002;</p>
 <p>&#x7B2C;&#x4E09;&#x70B9;&#x53EF;&#x80FD;&#x6709;&#x4E9B;&#x4EBA;&#x5F88;&#x8FF7;&#x60D1;&#xFF0C;&#x56E0;&#x4E3A;&#x53D1;&#x73B0;&#x5728;User&#x7C7B;&#x4E2D;&#x7684;username&#x5B57;&#x6BB5;&#x524D;&#x52A0;&#x4E0A;static&#x5173;&#x952E;&#x5B57;&#x540E;&#xFF0C;&#x7A0B;&#x5E8F;&#x8FD0;&#x884C;&#x7ED3;&#x679C;&#x4F9D;&#x7136;&#x4E0D;&#x53D8;&#xFF0C;&#x5373;static&#x7C7B;&#x578B;&#x7684;username&#x4E5F;&#x8BFB;&#x51FA;&#x6765;&#x4E3A;&#x201C;Alexia&#x201D;&#x4E86;&#xFF0C;&#x8FD9;&#x4E0D;&#x4E0E;&#x7B2C;&#x4E09;&#x70B9;&#x8BF4;&#x7684;&#x77DB;&#x76FE;&#x5417;&#xFF1F;&#x5B9E;&#x9645;&#x4E0A;&#x662F;&#x8FD9;&#x6837;&#x7684;&#xFF1A;&#x7B2C;&#x4E09;&#x70B9;&#x786E;&#x5B9E;&#x6CA1;&#x9519;&#xFF08;&#x4E00;&#x4E2A;&#x9759;&#x6001;&#x53D8;&#x91CF;&#x4E0D;&#x7BA1;&#x662F;&#x5426;&#x88AB;transient&#x4FEE;&#x9970;&#xFF0C;&#x5747;&#x4E0D;&#x80FD;&#x88AB;&#x5E8F;&#x5217;&#x5316;&#xFF09;&#xFF0C;&#x53CD;&#x5E8F;&#x5217;&#x5316;&#x540E;&#x7C7B;&#x4E2D;static&#x578B;&#x53D8;&#x91CF;username&#x7684;&#x503C;&#x4E3A;&#x5F53;&#x524D;JVM&#x4E2D;&#x5BF9;&#x5E94;static&#x53D8;&#x91CF;&#x7684;&#x503C;&#xFF0C;&#x8FD9;&#x4E2A;&#x503C;&#x662F;JVM&#x4E2D;&#x7684;&#x4E0D;&#x662F;&#x53CD;&#x5E8F;&#x5217;&#x5316;&#x5F97;&#x51FA;&#x7684;&#xFF0C;&#x4E0D;&#x76F8;&#x4FE1;&#xFF1F;&#x597D;&#x5427;&#xFF0C;&#x4E0B;&#x9762;&#x6211;&#x6765;&#x8BC1;&#x660E;&#xFF1A;</p>
-<pre><code class="lang-java">import java.io.FileInputStream;
-import java.io.FileNotFoundException;
-import java.io.FileOutputStream;
-import java.io.IOException;
-import java.io.ObjectInputStream;
-import java.io.ObjectOutputStream;
-import java.io.Serializable;
+<pre><code class="lang-java"><span class="hljs-keyword">import</span> java.io.FileInputStream;
+<span class="hljs-keyword">import</span> java.io.FileNotFoundException;
+<span class="hljs-keyword">import</span> java.io.FileOutputStream;
+<span class="hljs-keyword">import</span> java.io.IOException;
+<span class="hljs-keyword">import</span> java.io.ObjectInputStream;
+<span class="hljs-keyword">import</span> java.io.ObjectOutputStream;
+<span class="hljs-keyword">import</span> java.io.Serializable;
 
-/**
- * @description &#x4F7F;&#x7528;transient&#x5173;&#x952E;&#x5B57;&#x4E0D;&#x5E8F;&#x5217;&#x5316;&#x67D0;&#x4E2A;&#x53D8;&#x91CF;
+<span class="hljs-comment">/**
+ * <span class="hljs-doctag">@description</span> &#x4F7F;&#x7528;transient&#x5173;&#x952E;&#x5B57;&#x4E0D;&#x5E8F;&#x5217;&#x5316;&#x67D0;&#x4E2A;&#x53D8;&#x91CF;
  *        &#x6CE8;&#x610F;&#x8BFB;&#x53D6;&#x7684;&#x65F6;&#x5019;&#xFF0C;&#x8BFB;&#x53D6;&#x6570;&#x636E;&#x7684;&#x987A;&#x5E8F;&#x4E00;&#x5B9A;&#x8981;&#x548C;&#x5B58;&#x653E;&#x6570;&#x636E;&#x7684;&#x987A;&#x5E8F;&#x4FDD;&#x6301;&#x4E00;&#x81F4;
  *        
- * @author Alexia
- * @date  2013-10-15
- */
-public class TransientTest {
+ * <span class="hljs-doctag">@author</span> Alexia
+ * <span class="hljs-doctag">@date</span>  2013-10-15
+ */</span>
+<span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">TransientTest</span> </span>{
 
-    public static void main(String[] args) {
+    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title">main</span><span class="hljs-params">(String[] args)</span> </span>{
 
-        User user = new User();
-        user.setUsername(&quot;Alexia&quot;);
-        user.setPasswd(&quot;123456&quot;);
+        User user = <span class="hljs-keyword">new</span> User();
+        user.setUsername(<span class="hljs-string">&quot;Alexia&quot;</span>);
+        user.setPasswd(<span class="hljs-string">&quot;123456&quot;</span>);
 
-        System.out.println(&quot;read before Serializable: &quot;);
-        System.out.println(&quot;username: &quot; + user.getUsername());
-        System.err.println(&quot;password: &quot; + user.getPasswd());
+        System.out.println(<span class="hljs-string">&quot;read before Serializable: &quot;</span>);
+        System.out.println(<span class="hljs-string">&quot;username: &quot;</span> + user.getUsername());
+        System.err.println(<span class="hljs-string">&quot;password: &quot;</span> + user.getPasswd());
 
-        try {
-            ObjectOutputStream os = new ObjectOutputStream(
-                    new FileOutputStream(&quot;C:/user.txt&quot;));
-            os.writeObject(user); // &#x5C06;User&#x5BF9;&#x8C61;&#x5199;&#x8FDB;&#x6587;&#x4EF6;
+        <span class="hljs-keyword">try</span> {
+            ObjectOutputStream os = <span class="hljs-keyword">new</span> ObjectOutputStream(
+                    <span class="hljs-keyword">new</span> FileOutputStream(<span class="hljs-string">&quot;C:/user.txt&quot;</span>));
+            os.writeObject(user); <span class="hljs-comment">// &#x5C06;User&#x5BF9;&#x8C61;&#x5199;&#x8FDB;&#x6587;&#x4EF6;</span>
             os.flush();
             os.close();
-        } catch (FileNotFoundException e) {
+        } <span class="hljs-keyword">catch</span> (FileNotFoundException e) {
             e.printStackTrace();
-        } catch (IOException e) {
+        } <span class="hljs-keyword">catch</span> (IOException e) {
             e.printStackTrace();
         }
-        try {
-            // &#x5728;&#x53CD;&#x5E8F;&#x5217;&#x5316;&#x4E4B;&#x524D;&#x6539;&#x53D8;username&#x7684;&#x503C;
-            User.username = &quot;jmwang&quot;;
+        <span class="hljs-keyword">try</span> {
+            <span class="hljs-comment">// &#x5728;&#x53CD;&#x5E8F;&#x5217;&#x5316;&#x4E4B;&#x524D;&#x6539;&#x53D8;username&#x7684;&#x503C;</span>
+            User.username = <span class="hljs-string">&quot;jmwang&quot;</span>;
 
-            ObjectInputStream is = new ObjectInputStream(new FileInputStream(
-                    &quot;C:/user.txt&quot;));
-            user = (User) is.readObject(); // &#x4ECE;&#x6D41;&#x4E2D;&#x8BFB;&#x53D6;User&#x7684;&#x6570;&#x636E;
+            ObjectInputStream is = <span class="hljs-keyword">new</span> ObjectInputStream(<span class="hljs-keyword">new</span> FileInputStream(
+                    <span class="hljs-string">&quot;C:/user.txt&quot;</span>));
+            user = (User) is.readObject(); <span class="hljs-comment">// &#x4ECE;&#x6D41;&#x4E2D;&#x8BFB;&#x53D6;User&#x7684;&#x6570;&#x636E;</span>
             is.close();
 
-            System.out.println(&quot;\nread after Serializable: &quot;);
-            System.out.println(&quot;username: &quot; + user.getUsername());
-            System.err.println(&quot;password: &quot; + user.getPasswd());
+            System.out.println(<span class="hljs-string">&quot;\nread after Serializable: &quot;</span>);
+            System.out.println(<span class="hljs-string">&quot;username: &quot;</span> + user.getUsername());
+            System.err.println(<span class="hljs-string">&quot;password: &quot;</span> + user.getPasswd());
 
-        } catch (FileNotFoundException e) {
+        } <span class="hljs-keyword">catch</span> (FileNotFoundException e) {
             e.printStackTrace();
-        } catch (IOException e) {
+        } <span class="hljs-keyword">catch</span> (IOException e) {
             e.printStackTrace();
-        } catch (ClassNotFoundException e) {
+        } <span class="hljs-keyword">catch</span> (ClassNotFoundException e) {
             e.printStackTrace();
         }
     }
 }
 
-class User implements Serializable {
-    private static final long serialVersionUID = 8294180014912103005L;  
+<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">User</span> <span class="hljs-keyword">implements</span> <span class="hljs-title">Serializable</span> </span>{
+    <span class="hljs-keyword">private</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">final</span> <span class="hljs-keyword">long</span> serialVersionUID = <span class="hljs-number">8294180014912103005L</span>;  
 
-    public static String username;
-    private transient String passwd;
+    <span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> String username;
+    <span class="hljs-keyword">private</span> <span class="hljs-keyword">transient</span> String passwd;
 
-    public String getUsername() {
-        return username;
+    <span class="hljs-function"><span class="hljs-keyword">public</span> String <span class="hljs-title">getUsername</span><span class="hljs-params">()</span> </span>{
+        <span class="hljs-keyword">return</span> username;
     }
 
-    public void setUsername(String username) {
-        this.username = username;
+    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">setUsername</span><span class="hljs-params">(String username)</span> </span>{
+        <span class="hljs-keyword">this</span>.username = username;
     }
 
-    public String getPasswd() {
-        return passwd;
+    <span class="hljs-function"><span class="hljs-keyword">public</span> String <span class="hljs-title">getPasswd</span><span class="hljs-params">()</span> </span>{
+        <span class="hljs-keyword">return</span> passwd;
     }
 
-    public void setPasswd(String passwd) {
-        this.passwd = passwd;
+    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">setPasswd</span><span class="hljs-params">(String passwd)</span> </span>{
+        <span class="hljs-keyword">this</span>.passwd = passwd;
     }
 
 }
@@ -3894,55 +3898,55 @@ class User implements Serializable {
 <p>&#x8F93;&#x51FA;&#x4E3A;&#xFF1A;</p>
 <pre><code class="lang-java">read before Serializable: 
 username: Alexia
-password: 123456
+password: <span class="hljs-number">123456</span>
 
 read after Serializable: 
 username: jmwang
-password: null
+password: <span class="hljs-keyword">null</span>
 </code></pre>
 <h2 id="&#x4E09;&#x3001;transient&#x4F7F;&#x7528;&#x7EC6;&#x8282;&#x2014;&#x2014;&#x88AB;transient&#x5173;&#x952E;&#x5B57;&#x4FEE;&#x9970;&#x7684;&#x53D8;&#x91CF;&#x771F;&#x7684;&#x4E0D;&#x80FD;&#x88AB;&#x5E8F;&#x5217;&#x5316;&#x5417;&#xFF1F;"><a name="&#x4E09;&#x3001;transient&#x4F7F;&#x7528;&#x7EC6;&#x8282;&#x2014;&#x2014;&#x88AB;transient&#x5173;&#x952E;&#x5B57;&#x4FEE;&#x9970;&#x7684;&#x53D8;&#x91CF;&#x771F;&#x7684;&#x4E0D;&#x80FD;&#x88AB;&#x5E8F;&#x5217;&#x5316;&#x5417;&#xFF1F;" class="anchor-navigation-ex-anchor" href="#&#x4E09;&#x3001;transient&#x4F7F;&#x7528;&#x7EC6;&#x8282;&#x2014;&#x2014;&#x88AB;transient&#x5173;&#x952E;&#x5B57;&#x4FEE;&#x9970;&#x7684;&#x53D8;&#x91CF;&#x771F;&#x7684;&#x4E0D;&#x80FD;&#x88AB;&#x5E8F;&#x5217;&#x5316;&#x5417;&#xFF1F;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x4E09;&#x3001;transient&#x4F7F;&#x7528;&#x7EC6;&#x8282;&#x2014;&#x2014;&#x88AB;transient&#x5173;&#x952E;&#x5B57;&#x4FEE;&#x9970;&#x7684;&#x53D8;&#x91CF;&#x771F;&#x7684;&#x4E0D;&#x80FD;&#x88AB;&#x5E8F;&#x5217;&#x5316;&#x5417;&#xFF1F;</h2>
 <p>&#x601D;&#x8003;&#x4E0B;&#x9762;&#x7684;&#x4F8B;&#x5B50;&#xFF1A;</p>
-<pre><code class="lang-java">import java.io.Externalizable;
-import java.io.File;
-import java.io.FileInputStream;
-import java.io.FileOutputStream;
-import java.io.IOException;
-import java.io.ObjectInput;
-import java.io.ObjectInputStream;
-import java.io.ObjectOutput;
-import java.io.ObjectOutputStream;
+<pre><code class="lang-java"><span class="hljs-keyword">import</span> java.io.Externalizable;
+<span class="hljs-keyword">import</span> java.io.File;
+<span class="hljs-keyword">import</span> java.io.FileInputStream;
+<span class="hljs-keyword">import</span> java.io.FileOutputStream;
+<span class="hljs-keyword">import</span> java.io.IOException;
+<span class="hljs-keyword">import</span> java.io.ObjectInput;
+<span class="hljs-keyword">import</span> java.io.ObjectInputStream;
+<span class="hljs-keyword">import</span> java.io.ObjectOutput;
+<span class="hljs-keyword">import</span> java.io.ObjectOutputStream;
 
-/**
- * @descripiton Externalizable&#x63A5;&#x53E3;&#x7684;&#x4F7F;&#x7528;
+<span class="hljs-comment">/**
+ * <span class="hljs-doctag">@descripiton</span> Externalizable&#x63A5;&#x53E3;&#x7684;&#x4F7F;&#x7528;
  * 
- * @author Alexia
- * @date 2013-10-15
+ * <span class="hljs-doctag">@author</span> Alexia
+ * <span class="hljs-doctag">@date</span> 2013-10-15
  *
- */
-public class ExternalizableTest implements Externalizable {
+ */</span>
+<span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">ExternalizableTest</span> <span class="hljs-keyword">implements</span> <span class="hljs-title">Externalizable</span> </span>{
 
-    private transient String content = &quot;&#x662F;&#x7684;&#xFF0C;&#x6211;&#x5C06;&#x4F1A;&#x88AB;&#x5E8F;&#x5217;&#x5316;&#xFF0C;&#x4E0D;&#x7BA1;&#x6211;&#x662F;&#x5426;&#x88AB;transient&#x5173;&#x952E;&#x5B57;&#x4FEE;&#x9970;&quot;;
+    <span class="hljs-keyword">private</span> <span class="hljs-keyword">transient</span> String content = <span class="hljs-string">&quot;&#x662F;&#x7684;&#xFF0C;&#x6211;&#x5C06;&#x4F1A;&#x88AB;&#x5E8F;&#x5217;&#x5316;&#xFF0C;&#x4E0D;&#x7BA1;&#x6211;&#x662F;&#x5426;&#x88AB;transient&#x5173;&#x952E;&#x5B57;&#x4FEE;&#x9970;&quot;</span>;
 
-    @Override
-    public void writeExternal(ObjectOutput out) throws IOException {
+    <span class="hljs-meta">@Override</span>
+    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">writeExternal</span><span class="hljs-params">(ObjectOutput out)</span> <span class="hljs-keyword">throws</span> IOException </span>{
         out.writeObject(content);
     }
 
-    @Override
-    public void readExternal(ObjectInput in) throws IOException,
-            ClassNotFoundException {
+    <span class="hljs-meta">@Override</span>
+    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">readExternal</span><span class="hljs-params">(ObjectInput in)</span> <span class="hljs-keyword">throws</span> IOException,
+            ClassNotFoundException </span>{
         content = (String) in.readObject();
     }
 
-    public static void main(String[] args) throws Exception {
+    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title">main</span><span class="hljs-params">(String[] args)</span> <span class="hljs-keyword">throws</span> Exception </span>{
 
-        ExternalizableTest et = new ExternalizableTest();
-        ObjectOutput out = new ObjectOutputStream(new FileOutputStream(
-                new File(&quot;test&quot;)));
+        ExternalizableTest et = <span class="hljs-keyword">new</span> ExternalizableTest();
+        ObjectOutput out = <span class="hljs-keyword">new</span> ObjectOutputStream(<span class="hljs-keyword">new</span> FileOutputStream(
+                <span class="hljs-keyword">new</span> File(<span class="hljs-string">&quot;test&quot;</span>)));
         out.writeObject(et);
 
-        ObjectInput in = new ObjectInputStream(new FileInputStream(new File(
-                &quot;test&quot;)));
+        ObjectInput in = <span class="hljs-keyword">new</span> ObjectInputStream(<span class="hljs-keyword">new</span> FileInputStream(<span class="hljs-keyword">new</span> File(
+                <span class="hljs-string">&quot;test&quot;</span>)));
         et = (ExternalizableTest) in.readObject();
         System.out.println(et.content);
 
@@ -4000,7 +4004,7 @@ public class ExternalizableTest implements Externalizable {
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"Java transient关键字","level":"2.1.19","depth":2,"next":{"title":"Java finally与return执行顺序","level":"2.1.20","depth":2,"path":"java/basis/finally-return.md","ref":"java/basis/finally-return.md","articles":[]},"previous":{"title":"Java深拷贝和浅拷贝","level":"2.1.18","depth":2,"path":"java/basis/copy.md","ref":"java/basis/copy.md","articles":[]},"dir":"ltr"},"config":{"plugins":["-lunr","-search","-highlight","-livereload","search-plus@^0.0.11","simple-page-toc@^0.1.1","github@^2.0.0","github-buttons@2.1.0","edit-link@^2.0.2","advanced-emoji@^0.2.1","anchors@^0.7.1","include-codeblock@^3.0.2","ace@^0.3.2","emphasize@^1.1.0","katex@^1.1.3","splitter@^0.0.8","tbfed-pagefooter@^0.0.1","expandable-chapters-small@^0.1.7","sectionx@^3.1.0","local-video@^1.0.1","anchor-navigation-ex@0.1.8","favicon@^0.0.2"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"tbfed-pagefooter":{"copyright":"Copyright © ruheng.com 2017","modify_label":"该文件修订时间：","modify_format":"YYYY-MM-DD HH:mm:ss"},"emphasize":{},"ace":{},"github":{"url":"https://github.com/LRH1993/android_interview"},"simple-page-toc":{"maxDepth":3,"skipFirstH1":true},"splitter":{},"katex":{},"fontsettings":{"theme":"white","family":"sans","size":2},"sectionx":{"tag":"b"},"anchor-navigation-ex":{"isRewritePageTitle":false,"tocLevel1Icon":"fa fa-hand-o-right","tocLevel2Icon":"fa fa-hand-o-right","tocLevel3Icon":"fa fa-hand-o-right"},"favicon":{"shortcut":"favicon.ico","bookmark":"favicon.ico"},"github-buttons":{"repo":"LRH1993/android_interview","types":["star"],"size":"small"},"expandable-chapters-small":{},"local-video":{},"advanced-emoji":{"embedEmojis":false},"include-codeblock":{"check":false,"edit":true,"fixlang":false,"lang":"","template":"ace","theme":"chrome","unindent":true},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":true,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"edit-link":{"label":"Edit This Page","base":"https://github.com/LRH1993/android_interview/edit/master"},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":true},"anchors":{},"search-plus":{}},"theme":"default","author":"ruheng","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"Android校招面试指南","language":"zh-hans","output.name":"site","links":{"sidebar":{"Home":"http://lruheng.com/"}},"gitbook":"3.2.3","description":"Android面试必备，记录自己的秋招之路"},"file":{"path":"java/basis/transient.md","mtime":"2017-09-07T01:45:02.000Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2017-10-16T12:05:21.906Z"},"basePath":"../..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"Java transient关键字","level":"2.1.19","depth":2,"next":{"title":"Java finally与return执行顺序","level":"2.1.20","depth":2,"path":"java/basis/finally-return.md","ref":"java/basis/finally-return.md","articles":[]},"previous":{"title":"Java深拷贝和浅拷贝","level":"2.1.18","depth":2,"path":"java/basis/copy.md","ref":"java/basis/copy.md","articles":[]},"dir":"ltr"},"config":{"plugins":["-lunr","-search","-livereload","search-plus@^0.0.11","simple-page-toc@^0.1.1","github@^2.0.0","github-buttons@2.1.0","edit-link@^2.0.2","advanced-emoji@^0.2.1","anchors@^0.7.1","include-codeblock@^3.0.2","ace@^0.3.2","emphasize@^1.1.0","katex@^1.1.3","splitter@^0.0.8","tbfed-pagefooter@^0.0.1","expandable-chapters-small@^0.1.7","sectionx@^3.1.0","local-video@^1.0.1","anchor-navigation-ex@0.1.8","favicon@^0.0.2"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"tbfed-pagefooter":{"copyright":"Copyright © ruheng.com 2017","modify_label":"该文件修订时间：","modify_format":"YYYY-MM-DD HH:mm:ss"},"emphasize":{},"ace":{},"github":{"url":"https://github.com/LRH1993/android_interview"},"simple-page-toc":{"maxDepth":3,"skipFirstH1":true},"splitter":{},"katex":{},"fontsettings":{"theme":"white","family":"sans","size":2},"sectionx":{"tag":"b"},"highlight":{},"anchor-navigation-ex":{"isRewritePageTitle":false,"tocLevel1Icon":"fa fa-hand-o-right","tocLevel2Icon":"fa fa-hand-o-right","tocLevel3Icon":"fa fa-hand-o-right"},"favicon":{"shortcut":"favicon.ico","bookmark":"favicon.ico"},"github-buttons":{"repo":"LRH1993/android_interview","types":["star"],"size":"small"},"expandable-chapters-small":{},"local-video":{},"advanced-emoji":{"embedEmojis":false},"include-codeblock":{"check":false,"edit":false,"fixlang":false,"lang":"","template":"default","theme":"chrome","unindent":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":true,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"edit-link":{"label":"Edit This Page","base":"https://github.com/LRH1993/android_interview/edit/master"},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":true},"anchors":{},"search-plus":{}},"theme":"default","author":"ruheng","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"Android校招面试指南","language":"zh-hans","output.name":"site","links":{"sidebar":{"Home":"http://lruheng.com/"}},"gitbook":"3.2.3","description":"Android面试必备，记录自己的秋招之路"},"file":{"path":"java/basis/transient.md","mtime":"2017-09-07T01:45:02.000Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2017-10-16T13:00:43.989Z"},"basePath":"../..","book":{"language":""}});
         });
     </script>
 </div>

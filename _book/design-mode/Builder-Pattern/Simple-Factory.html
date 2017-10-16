@@ -69,6 +69,10 @@
                 
             
                 
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
                 <link rel="stylesheet" href="../../gitbook/gitbook-plugin-fontsettings/website.css">
                 
             
@@ -3727,116 +3731,116 @@
 <p>&#x4EE5;&#x767B;&#x5F55;&#x529F;&#x80FD;&#x6765;&#x8BF4;&#xFF0C;&#x5047;&#x5982;&#x5E94;&#x7528;&#x7CFB;&#x7EDF;&#x9700;&#x8981;&#x652F;&#x6301;&#x591A;&#x79CD;&#x767B;&#x5F55;&#x65B9;&#x5F0F;&#x5982;&#xFF1A;&#x53E3;&#x4EE4;&#x8BA4;&#x8BC1;&#x3001;&#x57DF;&#x8BA4;&#x8BC1;&#xFF08;&#x53E3;&#x4EE4;&#x8BA4;&#x8BC1;&#x901A;&#x5E38;&#x662F;&#x53BB;&#x6570;&#x636E;&#x5E93;&#x4E2D;&#x9A8C;&#x8BC1;&#x7528;&#x6237;&#xFF0C;&#x800C;&#x57DF;&#x8BA4;&#x8BC1;&#x5219;&#x662F;&#x9700;&#x8981;&#x5230;&#x5FAE;&#x8F6F;&#x7684;&#x57DF;&#x4E2D;&#x9A8C;&#x8BC1;&#x7528;&#x6237;&#xFF09;&#x3002;&#x90A3;&#x4E48;&#x81EA;&#x7136;&#x7684;&#x505A;&#x6CD5;&#x5C31;&#x662F;&#x5EFA;&#x7ACB;&#x4E00;&#x4E2A;&#x5404;&#x79CD;&#x767B;&#x5F55;&#x65B9;&#x5F0F;&#x90FD;&#x9002;&#x7528;&#x7684;&#x63A5;&#x53E3;&#xFF0C;&#x5982;&#x4E0B;&#x56FE;&#x6240;&#x793A;&#xFF1A;</p>
 <p><img src="http://upload-images.jianshu.io/upload_images/3985563-c40f9e18f891d00a.png?imageMogr2/auto-orient/strip|imageView2/2/w/1240" alt=""></p>
 <p><strong>&#x62BD;&#x8C61;&#x4EA7;&#x54C1;Login</strong></p>
-<pre><code class="lang-java">public interface Login {
-    //&#x767B;&#x5F55;&#x9A8C;&#x8BC1;
-    public boolean verify(String name , String password);
+<pre><code class="lang-java"><span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">interface</span> <span class="hljs-title">Login</span> </span>{
+    <span class="hljs-comment">//&#x767B;&#x5F55;&#x9A8C;&#x8BC1;</span>
+    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">boolean</span> <span class="hljs-title">verify</span><span class="hljs-params">(String name , String password)</span></span>;
 }
 </code></pre>
 <p><strong>&#x5177;&#x4F53;&#x4EA7;&#x54C1;DomainLogin</strong></p>
-<pre><code class="lang-java">public class DomainLogin implements Login {
+<pre><code class="lang-java"><span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">DomainLogin</span> <span class="hljs-keyword">implements</span> <span class="hljs-title">Login</span> </span>{
 
-    @Override
-    public boolean verify(String name, String password) {
-        // TODO Auto-generated method stub
-        /**
+    <span class="hljs-meta">@Override</span>
+    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">boolean</span> <span class="hljs-title">verify</span><span class="hljs-params">(String name, String password)</span> </span>{
+        <span class="hljs-comment">// TODO Auto-generated method stub</span>
+        <span class="hljs-comment">/**
          * &#x4E1A;&#x52A1;&#x903B;&#x8F91;
-         */
-        return true;
+         */</span>
+        <span class="hljs-keyword">return</span> <span class="hljs-keyword">true</span>;
     }
 }
 </code></pre>
 <p><strong>&#x5177;&#x4F53;&#x4EA7;&#x54C1;PasswordLogin</strong></p>
-<pre><code class="lang-java">public class PasswordLogin implements Login {
+<pre><code class="lang-java"><span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">PasswordLogin</span> <span class="hljs-keyword">implements</span> <span class="hljs-title">Login</span> </span>{
 
-    @Override
-    public boolean verify(String name, String password) {
-        // TODO Auto-generated method stub
-        /**
+    <span class="hljs-meta">@Override</span>
+    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">boolean</span> <span class="hljs-title">verify</span><span class="hljs-params">(String name, String password)</span> </span>{
+        <span class="hljs-comment">// TODO Auto-generated method stub</span>
+        <span class="hljs-comment">/**
          * &#x4E1A;&#x52A1;&#x903B;&#x8F91;
-         */
-        return true;
+         */</span>
+        <span class="hljs-keyword">return</span> <span class="hljs-keyword">true</span>;
     }
 }
 </code></pre>
 <p><strong>&#x5DE5;&#x5382;&#x7C7B;LoginManager</strong><br>&#x6839;&#x636E;&#x8C03;&#x7528;&#x8005;&#x4E0D;&#x540C;&#x7684;&#x8981;&#x6C42;&#xFF0C;&#x521B;&#x5EFA;&#x51FA;&#x4E0D;&#x540C;&#x7684;&#x767B;&#x5F55;&#x5BF9;&#x8C61;&#x5E76;&#x8FD4;&#x56DE;&#x3002;&#x800C;&#x5982;&#x679C;&#x78B0;&#x5230;&#x4E0D;&#x5408;&#x6CD5;&#x7684;&#x8981;&#x6C42;&#xFF0C;&#x4F1A;&#x8FD4;&#x56DE;&#x4E00;&#x4E2A;Runtime&#x5F02;&#x5E38;&#x3002;</p>
-<pre><code class="lang-java">public class LoginManager {
-    public static Login factory(String type){
-        if(type.equals(&quot;password&quot;)){
+<pre><code class="lang-java"><span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">LoginManager</span> </span>{
+    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> Login <span class="hljs-title">factory</span><span class="hljs-params">(String type)</span></span>{
+        <span class="hljs-keyword">if</span>(type.equals(<span class="hljs-string">&quot;password&quot;</span>)){
 
-            return new PasswordLogin();
+            <span class="hljs-keyword">return</span> <span class="hljs-keyword">new</span> PasswordLogin();
 
-        }else if(type.equals(&quot;passcode&quot;)){
+        }<span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span>(type.equals(<span class="hljs-string">&quot;passcode&quot;</span>)){
 
-            return new DomainLogin();
+            <span class="hljs-keyword">return</span> <span class="hljs-keyword">new</span> DomainLogin();
 
-        }else{
-            /**
+        }<span class="hljs-keyword">else</span>{
+            <span class="hljs-comment">/**
              * &#x8FD9;&#x91CC;&#x629B;&#x51FA;&#x4E00;&#x4E2A;&#x81EA;&#x5B9A;&#x4E49;&#x5F02;&#x5E38;&#x4F1A;&#x66F4;&#x6070;&#x5F53;
-             */
-            throw new RuntimeException(&quot;&#x6CA1;&#x6709;&#x627E;&#x5230;&#x767B;&#x5F55;&#x7C7B;&#x578B;&quot;);
+             */</span>
+            <span class="hljs-keyword">throw</span> <span class="hljs-keyword">new</span> RuntimeException(<span class="hljs-string">&quot;&#x6CA1;&#x6709;&#x627E;&#x5230;&#x767B;&#x5F55;&#x7C7B;&#x578B;&quot;</span>);
         }
     }
 }
 </code></pre>
 <p><strong>&#x6D4B;&#x8BD5;&#x8C03;&#x7528;</strong></p>
-<pre><code class="lang-java">public class Test {
-    public static void main(String[] args) {
-        String loginType = &quot;password&quot;;
-        String name = &quot;name&quot;;
-        String password = &quot;password&quot;;
+<pre><code class="lang-java"><span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Test</span> </span>{
+    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title">main</span><span class="hljs-params">(String[] args)</span> </span>{
+        String loginType = <span class="hljs-string">&quot;password&quot;</span>;
+        String name = <span class="hljs-string">&quot;name&quot;</span>;
+        String password = <span class="hljs-string">&quot;password&quot;</span>;
         Login login = LoginManager.factory(loginType);
-        boolean bool = login.verify(name, password);
-        if (bool) {
-            /**
+        <span class="hljs-keyword">boolean</span> bool = login.verify(name, password);
+        <span class="hljs-keyword">if</span> (bool) {
+            <span class="hljs-comment">/**
              * &#x4E1A;&#x52A1;&#x903B;&#x8F91;
-             */
-        } else {
-            /**
+             */</span>
+        } <span class="hljs-keyword">else</span> {
+            <span class="hljs-comment">/**
              * &#x4E1A;&#x52A1;&#x903B;&#x8F91;
-             */
+             */</span>
         }
     }
 }
 </code></pre>
 <p>&#x5047;&#x5982;&#x4E0D;&#x4F7F;&#x7528;&#x7B80;&#x5355;&#x5DE5;&#x5382;&#x6A21;&#x5F0F;&#x5219;&#x9A8C;&#x8BC1;&#x767B;&#x5F55;Servlet&#x4EE3;&#x7801;&#x5982;&#x4E0B;&#xFF1A;</p>
-<pre><code class="lang-java">public class Test {
-    public static void main(String[] args) {
-        // TODO Auto-generated method stub
+<pre><code class="lang-java"><span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Test</span> </span>{
+    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title">main</span><span class="hljs-params">(String[] args)</span> </span>{
+        <span class="hljs-comment">// TODO Auto-generated method stub</span>
 
-        String loginType = &quot;password&quot;;
-        String name = &quot;name&quot;;
-        String password = &quot;password&quot;;
-        //&#x5904;&#x7406;&#x53E3;&#x4EE4;&#x8BA4;&#x8BC1;
-        if(loginType.equals(&quot;password&quot;)){
-            PasswordLogin passwordLogin = new PasswordLogin();
-            boolean bool = passwordLogin.verify(name, password);
-            if (bool) {
-                /**
+        String loginType = <span class="hljs-string">&quot;password&quot;</span>;
+        String name = <span class="hljs-string">&quot;name&quot;</span>;
+        String password = <span class="hljs-string">&quot;password&quot;</span>;
+        <span class="hljs-comment">//&#x5904;&#x7406;&#x53E3;&#x4EE4;&#x8BA4;&#x8BC1;</span>
+        <span class="hljs-keyword">if</span>(loginType.equals(<span class="hljs-string">&quot;password&quot;</span>)){
+            PasswordLogin passwordLogin = <span class="hljs-keyword">new</span> PasswordLogin();
+            <span class="hljs-keyword">boolean</span> bool = passwordLogin.verify(name, password);
+            <span class="hljs-keyword">if</span> (bool) {
+                <span class="hljs-comment">/**
                  * &#x4E1A;&#x52A1;&#x903B;&#x8F91;
-                 */
-            } else {
-                /**
+                 */</span>
+            } <span class="hljs-keyword">else</span> {
+                <span class="hljs-comment">/**
                  * &#x4E1A;&#x52A1;&#x903B;&#x8F91;
-                 */
+                 */</span>
             }
         }
-        //&#x5904;&#x7406;&#x57DF;&#x8BA4;&#x8BC1;
-        else if(loginType.equals(&quot;passcode&quot;)){
-            DomainLogin domainLogin = new DomainLogin();
-            boolean bool = domainLogin.verify(name, password);
-            if (bool) {
-                /**
+        <span class="hljs-comment">//&#x5904;&#x7406;&#x57DF;&#x8BA4;&#x8BC1;</span>
+        <span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span>(loginType.equals(<span class="hljs-string">&quot;passcode&quot;</span>)){
+            DomainLogin domainLogin = <span class="hljs-keyword">new</span> DomainLogin();
+            <span class="hljs-keyword">boolean</span> bool = domainLogin.verify(name, password);
+            <span class="hljs-keyword">if</span> (bool) {
+                <span class="hljs-comment">/**
                  * &#x4E1A;&#x52A1;&#x903B;&#x8F91;
-                 */
-            } else {
-                /**
+                 */</span>
+            } <span class="hljs-keyword">else</span> {
+                <span class="hljs-comment">/**
                  * &#x4E1A;&#x52A1;&#x903B;&#x8F91;
-                 */
+                 */</span>
             }    
-        }else{
-            /**
+        }<span class="hljs-keyword">else</span>{
+            <span class="hljs-comment">/**
              * &#x4E1A;&#x52A1;&#x903B;&#x8F91;
-             */
+             */</span>
         }
     }
 }
@@ -3856,16 +3860,16 @@
 <p>&#x5BA2;&#x6237;&#x7AEF;&#x53EA;&#x77E5;&#x9053;&#x4F20;&#x5165;&#x5DE5;&#x5382;&#x7C7B;&#x7684;&#x53C2;&#x6570;&#xFF0C;&#x5BF9;&#x4E8E;&#x5982;&#x4F55;&#x521B;&#x5EFA;&#x5BF9;&#x8C61;&#x4E0D;&#x5173;&#x5FC3;&#xFF1A;&#x5BA2;&#x6237;&#x7AEF;&#x65E2;&#x4E0D;&#x9700;&#x8981;&#x5173;&#x5FC3;&#x521B;&#x5EFA;&#x7EC6;&#x8282;&#xFF0C;&#x751A;&#x81F3;&#x8FDE;&#x7C7B;&#x540D;&#x90FD;&#x4E0D;&#x9700;&#x8981;&#x8BB0;&#x4F4F;&#xFF0C;&#x53EA;&#x9700;&#x8981;&#x77E5;&#x9053;&#x7C7B;&#x578B;&#x6240;&#x5BF9;&#x5E94;&#x7684;&#x53C2;&#x6570;&#x3002;</p>
 <h3 id="&#x4E94;&#x3001;&#x7B80;&#x5355;&#x5DE5;&#x5382;&#x6A21;&#x5F0F;&#x5728;java&#x4E2D;&#x7684;&#x5E94;&#x7528;"><a name="&#x4E94;&#x3001;&#x7B80;&#x5355;&#x5DE5;&#x5382;&#x6A21;&#x5F0F;&#x5728;java&#x4E2D;&#x7684;&#x5E94;&#x7528;" class="anchor-navigation-ex-anchor" href="#&#x4E94;&#x3001;&#x7B80;&#x5355;&#x5DE5;&#x5382;&#x6A21;&#x5F0F;&#x5728;java&#x4E2D;&#x7684;&#x5E94;&#x7528;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x4E94;&#x3001;&#x7B80;&#x5355;&#x5DE5;&#x5382;&#x6A21;&#x5F0F;&#x5728;Java&#x4E2D;&#x7684;&#x5E94;&#x7528;</h3>
 <p>&#x2460;JDK&#x7C7B;&#x5E93;&#x4E2D;&#x5E7F;&#x6CDB;&#x4F7F;&#x7528;&#x4E86;&#x7B80;&#x5355;&#x5DE5;&#x5382;&#x6A21;&#x5F0F;&#xFF0C;&#x5982;&#x5DE5;&#x5177;&#x7C7B;java.text.DateFormat&#xFF0C;&#x5B83;&#x7528;&#x4E8E;&#x683C;&#x5F0F;&#x5316;&#x4E00;&#x4E2A;&#x672C;&#x5730;&#x65E5;&#x671F;&#x6216;&#x8005;&#x65F6;&#x95F4;&#x3002;</p>
-<pre><code class="lang-java">public final static DateFormat getDateInstance();
-public final static DateFormat getDateInstance(int style);
-public final static DateFormat getDateInstance(int style,Locale
-locale);
+<pre><code class="lang-java"><span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">final</span> <span class="hljs-keyword">static</span> DateFormat <span class="hljs-title">getDateInstance</span><span class="hljs-params">()</span></span>;
+<span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">final</span> <span class="hljs-keyword">static</span> DateFormat <span class="hljs-title">getDateInstance</span><span class="hljs-params">(<span class="hljs-keyword">int</span> style)</span></span>;
+<span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">final</span> <span class="hljs-keyword">static</span> DateFormat <span class="hljs-title">getDateInstance</span><span class="hljs-params">(<span class="hljs-keyword">int</span> style,Locale
+locale)</span></span>;
 </code></pre>
 <p>&#x2461;Java&#x52A0;&#x5BC6;&#x6280;&#x672F;<br>&#x83B7;&#x53D6;&#x4E0D;&#x540C;&#x52A0;&#x5BC6;&#x7B97;&#x6CD5;&#x7684;&#x5BC6;&#x94A5;&#x751F;&#x6210;&#x5668;:</p>
-<pre><code class="lang-java">KeyGenerator keyGen=KeyGenerator.getInstance(&quot;DESede&quot;);
+<pre><code class="lang-java">KeyGenerator keyGen=KeyGenerator.getInstance(<span class="hljs-string">&quot;DESede&quot;</span>);
 </code></pre>
 <p>&#x521B;&#x5EFA;&#x5BC6;&#x7801;&#x5668;:</p>
-<pre><code class="lang-java">Cipher cp=Cipher.getInstance(&quot;DESede&quot;);
+<pre><code class="lang-java">Cipher cp=Cipher.getInstance(<span class="hljs-string">&quot;DESede&quot;</span>);
 </code></pre>
 <footer class="page-footer"><span class="copyright">Copyright &#xA9; ruheng.com 2017 all right reserved&#xFF0C;powered by Gitbook</span><span class="footer-modification">&#x8BE5;&#x6587;&#x4EF6;&#x4FEE;&#x8BA2;&#x65F6;&#x95F4;&#xFF1A;
 2017-08-22 15:53:58
@@ -3912,7 +3916,7 @@ locale);
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"简单工厂模式","level":"6.1.1","depth":2,"next":{"title":"工厂方法模式","level":"6.1.2","depth":2,"path":"design-mode/Builder-Pattern/Factory-Method.md","ref":"design-mode/Builder-Pattern/Factory-Method.md","articles":[]},"previous":{"title":"创建型模式","level":"6.1","depth":1,"path":"design-mode/Builder-Pattern.md","ref":"design-mode/Builder-Pattern.md","articles":[{"title":"简单工厂模式","level":"6.1.1","depth":2,"path":"design-mode/Builder-Pattern/Simple-Factory.md","ref":"design-mode/Builder-Pattern/Simple-Factory.md","articles":[]},{"title":"工厂方法模式","level":"6.1.2","depth":2,"path":"design-mode/Builder-Pattern/Factory-Method.md","ref":"design-mode/Builder-Pattern/Factory-Method.md","articles":[]},{"title":"抽象工厂模式","level":"6.1.3","depth":2,"path":"design-mode/Builder-Pattern/Abstract-Factory.md","ref":"design-mode/Builder-Pattern/Abstract-Factory.md","articles":[]},{"title":"单例模式","level":"6.1.4","depth":2,"path":"design-mode/Builder-Pattern/Singleton-Pattern.md","ref":"design-mode/Builder-Pattern/Singleton-Pattern.md","articles":[]},{"title":"建造者模式","level":"6.1.5","depth":2,"path":"design-mode/Builder-Pattern/Builder-Pattern.md","ref":"design-mode/Builder-Pattern/Builder-Pattern.md","articles":[]}]},"dir":"ltr"},"config":{"plugins":["-lunr","-search","-highlight","-livereload","search-plus@^0.0.11","simple-page-toc@^0.1.1","github@^2.0.0","github-buttons@2.1.0","edit-link@^2.0.2","advanced-emoji@^0.2.1","anchors@^0.7.1","include-codeblock@^3.0.2","ace@^0.3.2","emphasize@^1.1.0","katex@^1.1.3","splitter@^0.0.8","tbfed-pagefooter@^0.0.1","expandable-chapters-small@^0.1.7","sectionx@^3.1.0","local-video@^1.0.1","anchor-navigation-ex@0.1.8","favicon@^0.0.2"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"tbfed-pagefooter":{"copyright":"Copyright © ruheng.com 2017","modify_label":"该文件修订时间：","modify_format":"YYYY-MM-DD HH:mm:ss"},"emphasize":{},"ace":{},"github":{"url":"https://github.com/LRH1993/android_interview"},"simple-page-toc":{"maxDepth":3,"skipFirstH1":true},"splitter":{},"katex":{},"fontsettings":{"theme":"white","family":"sans","size":2},"sectionx":{"tag":"b"},"anchor-navigation-ex":{"isRewritePageTitle":false,"tocLevel1Icon":"fa fa-hand-o-right","tocLevel2Icon":"fa fa-hand-o-right","tocLevel3Icon":"fa fa-hand-o-right"},"favicon":{"shortcut":"favicon.ico","bookmark":"favicon.ico"},"github-buttons":{"repo":"LRH1993/android_interview","types":["star"],"size":"small"},"expandable-chapters-small":{},"local-video":{},"advanced-emoji":{"embedEmojis":false},"include-codeblock":{"check":false,"edit":true,"fixlang":false,"lang":"","template":"ace","theme":"chrome","unindent":true},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":true,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"edit-link":{"label":"Edit This Page","base":"https://github.com/LRH1993/android_interview/edit/master"},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":true},"anchors":{},"search-plus":{}},"theme":"default","author":"ruheng","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"Android校招面试指南","language":"zh-hans","output.name":"site","links":{"sidebar":{"Home":"http://lruheng.com/"}},"gitbook":"3.2.3","description":"Android面试必备，记录自己的秋招之路"},"file":{"path":"design-mode/Builder-Pattern/Simple-Factory.md","mtime":"2017-08-22T07:53:58.000Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2017-10-16T12:05:21.906Z"},"basePath":"../..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"简单工厂模式","level":"6.1.1","depth":2,"next":{"title":"工厂方法模式","level":"6.1.2","depth":2,"path":"design-mode/Builder-Pattern/Factory-Method.md","ref":"design-mode/Builder-Pattern/Factory-Method.md","articles":[]},"previous":{"title":"创建型模式","level":"6.1","depth":1,"path":"design-mode/Builder-Pattern.md","ref":"design-mode/Builder-Pattern.md","articles":[{"title":"简单工厂模式","level":"6.1.1","depth":2,"path":"design-mode/Builder-Pattern/Simple-Factory.md","ref":"design-mode/Builder-Pattern/Simple-Factory.md","articles":[]},{"title":"工厂方法模式","level":"6.1.2","depth":2,"path":"design-mode/Builder-Pattern/Factory-Method.md","ref":"design-mode/Builder-Pattern/Factory-Method.md","articles":[]},{"title":"抽象工厂模式","level":"6.1.3","depth":2,"path":"design-mode/Builder-Pattern/Abstract-Factory.md","ref":"design-mode/Builder-Pattern/Abstract-Factory.md","articles":[]},{"title":"单例模式","level":"6.1.4","depth":2,"path":"design-mode/Builder-Pattern/Singleton-Pattern.md","ref":"design-mode/Builder-Pattern/Singleton-Pattern.md","articles":[]},{"title":"建造者模式","level":"6.1.5","depth":2,"path":"design-mode/Builder-Pattern/Builder-Pattern.md","ref":"design-mode/Builder-Pattern/Builder-Pattern.md","articles":[]}]},"dir":"ltr"},"config":{"plugins":["-lunr","-search","-livereload","search-plus@^0.0.11","simple-page-toc@^0.1.1","github@^2.0.0","github-buttons@2.1.0","edit-link@^2.0.2","advanced-emoji@^0.2.1","anchors@^0.7.1","include-codeblock@^3.0.2","ace@^0.3.2","emphasize@^1.1.0","katex@^1.1.3","splitter@^0.0.8","tbfed-pagefooter@^0.0.1","expandable-chapters-small@^0.1.7","sectionx@^3.1.0","local-video@^1.0.1","anchor-navigation-ex@0.1.8","favicon@^0.0.2"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"tbfed-pagefooter":{"copyright":"Copyright © ruheng.com 2017","modify_label":"该文件修订时间：","modify_format":"YYYY-MM-DD HH:mm:ss"},"emphasize":{},"ace":{},"github":{"url":"https://github.com/LRH1993/android_interview"},"simple-page-toc":{"maxDepth":3,"skipFirstH1":true},"splitter":{},"katex":{},"fontsettings":{"theme":"white","family":"sans","size":2},"sectionx":{"tag":"b"},"highlight":{},"anchor-navigation-ex":{"isRewritePageTitle":false,"tocLevel1Icon":"fa fa-hand-o-right","tocLevel2Icon":"fa fa-hand-o-right","tocLevel3Icon":"fa fa-hand-o-right"},"favicon":{"shortcut":"favicon.ico","bookmark":"favicon.ico"},"github-buttons":{"repo":"LRH1993/android_interview","types":["star"],"size":"small"},"expandable-chapters-small":{},"local-video":{},"advanced-emoji":{"embedEmojis":false},"include-codeblock":{"check":false,"edit":false,"fixlang":false,"lang":"","template":"default","theme":"chrome","unindent":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":true,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"edit-link":{"label":"Edit This Page","base":"https://github.com/LRH1993/android_interview/edit/master"},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":true},"anchors":{},"search-plus":{}},"theme":"default","author":"ruheng","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"Android校招面试指南","language":"zh-hans","output.name":"site","links":{"sidebar":{"Home":"http://lruheng.com/"}},"gitbook":"3.2.3","description":"Android面试必备，记录自己的秋招之路"},"file":{"path":"design-mode/Builder-Pattern/Simple-Factory.md","mtime":"2017-08-22T07:53:58.000Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2017-10-16T13:00:43.989Z"},"basePath":"../..","book":{"language":""}});
         });
     </script>
 </div>

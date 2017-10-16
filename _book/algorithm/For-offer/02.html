@@ -69,6 +69,10 @@
                 
             
                 
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
                 <link rel="stylesheet" href="../../gitbook/gitbook-plugin-fontsettings/website.css">
                 
             
@@ -3711,57 +3715,57 @@
 <p>&#x5148;&#x5224;&#x65AD;&#x5B57;&#x7B26;&#x4E32;&#x4E2D;&#x7A7A;&#x683C;&#x7684;&#x6570;&#x91CF;&#x3002;&#x6839;&#x636E;&#x6570;&#x91CF;&#x5224;&#x65AD;&#x8BE5;&#x5B57;&#x7B26;&#x4E32;&#x6709;&#x6CA1;&#x6709;&#x8DB3;&#x591F;&#x7684;&#x7A7A;&#x95F4;&#x66FF;&#x6362;&#x6210;&quot;%20&quot;&#x3002;</p>
 <p>&#x5982;&#x679C;&#x6709;&#x8DB3;&#x591F;&#x7A7A;&#x95F4;&#xFF0C;&#x8BA1;&#x7B97;&#x51FA;&#x9700;&#x8981;&#x7684;&#x7A7A;&#x95F4;&#x3002;&#x6839;&#x636E;&#x6700;&#x7EC8;&#x9700;&#x8981;&#x7684;&#x603B;&#x7A7A;&#x95F4;&#xFF0C;&#x7EF4;&#x62A4;&#x4E00;&#x4E2A;&#x6307;&#x9488;&#x5728;&#x6700;&#x540E;&#x3002;&#x4ECE;&#x540E;&#x5230;&#x524D;&#xFF0C;&#x9047;&#x5230;&#x975E;&#x7A7A;&#x7684;&#x5C31;&#x628A;&#x8BE5;&#x503C;&#x632A;&#x5230;&#x6307;&#x9488;&#x6307;&#x5411;&#x7684;&#x4F4D;&#x7F6E;&#xFF0C;&#x7136;&#x540E;&#x6307;&#x9488;&#x5411;&#x524D;&#x4E00;&#x4F4D;&#xFF0C;&#x9047;&#x5230;&#x201C; &#x201D;&#xFF0C;&#x5219;&#x6307;&#x9488;&#x524D;&#x79FB;&#xFF0C;&#x4F9D;&#x6B21;&#x66FF;&#x6362;&#x4E3A;&#x201C;02%&#x201D;&#x3002;</p>
 <h2 id="&#x4E09;&#x3001;&#x89E3;&#x9898;&#x4EE3;&#x7801;"><a name="&#x4E09;&#x3001;&#x89E3;&#x9898;&#x4EE3;&#x7801;" class="anchor-navigation-ex-anchor" href="#&#x4E09;&#x3001;&#x89E3;&#x9898;&#x4EE3;&#x7801;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x4E09;&#x3001;&#x89E3;&#x9898;&#x4EE3;&#x7801;</h2>
-<pre><code class="lang-java">public class Test {  
-    /** 
+<pre><code class="lang-java"><span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Test</span> </span>{  
+    <span class="hljs-comment">/** 
      * &#x8BF7;&#x5B9E;&#x73B0;&#x4E00;&#x4E2A;&#x51FD;&#x6570;&#xFF0C;&#x628A;&#x5B57;&#x7B26;&#x4E32;&#x4E2D;&#x7684;&#x6BCF;&#x4E2A;&#x7A7A;&#x683C;&#x66FF;&#x6362;&#x6210;&quot;%20&quot;&#xFF0C;&#x4F8B;&#x5982;&#x201C;We are happy.&#x201C;&#xFF0C;&#x5219;&#x8F93;&#x51FA;&#x201D;We%20are%20happy.&#x201C;&#x3002; 
      * 
-     * @param string     &#x8981;&#x8F6C;&#x6362;&#x7684;&#x5B57;&#x7B26;&#x6570;&#x7EC4; 
-     * @param usedLength &#x5DF2;&#x7ECF;&#x5B57;&#x7B26;&#x6570;&#x7EC4;&#x4E2D;&#x5DF2;&#x7ECF;&#x4F7F;&#x7528;&#x7684;&#x957F;&#x5EA6; 
-     * @return &#x8F6C;&#x6362;&#x540E;&#x4F7F;&#x7528;&#x7684;&#x5B57;&#x7B26;&#x957F;&#x5EA6;&#xFF0C;-1&#x8868;&#x793A;&#x5904;&#x7406;&#x5931;&#x8D25; 
-     */  
-    public static int replaceBlank(char[] string, int usedLength) {  
-        // &#x5224;&#x65AD;&#x8F93;&#x5165;&#x662F;&#x5426;&#x5408;&#x6CD5;  
-        if (string == null || string.length &lt; usedLength) {  
-            return -1;  
+     * <span class="hljs-doctag">@param</span> string     &#x8981;&#x8F6C;&#x6362;&#x7684;&#x5B57;&#x7B26;&#x6570;&#x7EC4; 
+     * <span class="hljs-doctag">@param</span> usedLength &#x5DF2;&#x7ECF;&#x5B57;&#x7B26;&#x6570;&#x7EC4;&#x4E2D;&#x5DF2;&#x7ECF;&#x4F7F;&#x7528;&#x7684;&#x957F;&#x5EA6; 
+     * <span class="hljs-doctag">@return</span> &#x8F6C;&#x6362;&#x540E;&#x4F7F;&#x7528;&#x7684;&#x5B57;&#x7B26;&#x957F;&#x5EA6;&#xFF0C;-1&#x8868;&#x793A;&#x5904;&#x7406;&#x5931;&#x8D25; 
+     */</span>  
+    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">int</span> <span class="hljs-title">replaceBlank</span><span class="hljs-params">(<span class="hljs-keyword">char</span>[] string, <span class="hljs-keyword">int</span> usedLength)</span> </span>{  
+        <span class="hljs-comment">// &#x5224;&#x65AD;&#x8F93;&#x5165;&#x662F;&#x5426;&#x5408;&#x6CD5;  </span>
+        <span class="hljs-keyword">if</span> (string == <span class="hljs-keyword">null</span> || string.length &lt; usedLength) {  
+            <span class="hljs-keyword">return</span> -<span class="hljs-number">1</span>;  
         }  
 
-        // &#x7EDF;&#x8BA1;&#x5B57;&#x7B26;&#x6570;&#x7EC4;&#x4E2D;&#x7684;&#x7A7A;&#x767D;&#x5B57;&#x7B26;&#x6570;  
-        int whiteCount = 0;  
-        for (int i = 0; i &lt; usedLength; i++) {  
-            if (string[i] == &apos; &apos;) {  
+        <span class="hljs-comment">// &#x7EDF;&#x8BA1;&#x5B57;&#x7B26;&#x6570;&#x7EC4;&#x4E2D;&#x7684;&#x7A7A;&#x767D;&#x5B57;&#x7B26;&#x6570;  </span>
+        <span class="hljs-keyword">int</span> whiteCount = <span class="hljs-number">0</span>;  
+        <span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> i = <span class="hljs-number">0</span>; i &lt; usedLength; i++) {  
+            <span class="hljs-keyword">if</span> (string[i] == <span class="hljs-string">&apos; &apos;</span>) {  
                 whiteCount++;  
             }  
         }  
 
-        // &#x8BA1;&#x7B97;&#x8F6C;&#x6362;&#x540E;&#x7684;&#x5B57;&#x7B26;&#x957F;&#x5EA6;&#x662F;&#x591A;&#x5C11;  
-        int targetLength = whiteCount * 2 + usedLength;  
-        int tmp = targetLength; // &#x4FDD;&#x5B58;&#x957F;&#x5EA6;&#x7ED3;&#x679C;&#x7528;&#x4E8E;&#x8FD4;&#x56DE;  
-        if (targetLength &gt; string.length) { // &#x5982;&#x679C;&#x8F6C;&#x6362;&#x540E;&#x7684;&#x957F;&#x5EA6;&#x5927;&#x4E8E;&#x6570;&#x7EC4;&#x7684;&#x6700;&#x5927;&#x957F;&#x5EA6;&#xFF0C;&#x76F4;&#x63A5;&#x8FD4;&#x56DE;&#x5931;&#x8D25;  
-            return -1;  
+        <span class="hljs-comment">// &#x8BA1;&#x7B97;&#x8F6C;&#x6362;&#x540E;&#x7684;&#x5B57;&#x7B26;&#x957F;&#x5EA6;&#x662F;&#x591A;&#x5C11;  </span>
+        <span class="hljs-keyword">int</span> targetLength = whiteCount * <span class="hljs-number">2</span> + usedLength;  
+        <span class="hljs-keyword">int</span> tmp = targetLength; <span class="hljs-comment">// &#x4FDD;&#x5B58;&#x957F;&#x5EA6;&#x7ED3;&#x679C;&#x7528;&#x4E8E;&#x8FD4;&#x56DE;  </span>
+        <span class="hljs-keyword">if</span> (targetLength &gt; string.length) { <span class="hljs-comment">// &#x5982;&#x679C;&#x8F6C;&#x6362;&#x540E;&#x7684;&#x957F;&#x5EA6;&#x5927;&#x4E8E;&#x6570;&#x7EC4;&#x7684;&#x6700;&#x5927;&#x957F;&#x5EA6;&#xFF0C;&#x76F4;&#x63A5;&#x8FD4;&#x56DE;&#x5931;&#x8D25;  </span>
+            <span class="hljs-keyword">return</span> -<span class="hljs-number">1</span>;  
         }  
 
-        // &#x5982;&#x679C;&#x6CA1;&#x6709;&#x7A7A;&#x767D;&#x5B57;&#x7B26;&#x5C31;&#x4E0D;&#x7528;&#x5904;&#x7406;  
-        if (whiteCount == 0) {  
-            return usedLength;  
+        <span class="hljs-comment">// &#x5982;&#x679C;&#x6CA1;&#x6709;&#x7A7A;&#x767D;&#x5B57;&#x7B26;&#x5C31;&#x4E0D;&#x7528;&#x5904;&#x7406;  </span>
+        <span class="hljs-keyword">if</span> (whiteCount == <span class="hljs-number">0</span>) {  
+            <span class="hljs-keyword">return</span> usedLength;  
         }  
 
-        usedLength--; // &#x4ECE;&#x540E;&#x5411;&#x524D;&#xFF0C;&#x7B2C;&#x4E00;&#x4E2A;&#x5F00;&#x59CB;&#x5904;&#x7406;&#x7684;&#x5B57;&#x7B26;  
-        targetLength--; // &#x5904;&#x7406;&#x540E;&#x7684;&#x5B57;&#x7B26;&#x653E;&#x7F6E;&#x7684;&#x4F4D;&#x7F6E;  
+        usedLength--; <span class="hljs-comment">// &#x4ECE;&#x540E;&#x5411;&#x524D;&#xFF0C;&#x7B2C;&#x4E00;&#x4E2A;&#x5F00;&#x59CB;&#x5904;&#x7406;&#x7684;&#x5B57;&#x7B26;  </span>
+        targetLength--; <span class="hljs-comment">// &#x5904;&#x7406;&#x540E;&#x7684;&#x5B57;&#x7B26;&#x653E;&#x7F6E;&#x7684;&#x4F4D;&#x7F6E;  </span>
 
-        // &#x5B57;&#x7B26;&#x4E2D;&#x6709;&#x7A7A;&#x767D;&#x5B57;&#x7B26;&#xFF0C;&#x4E00;&#x76F4;&#x5904;&#x7406;&#x5230;&#x6240;&#x6709;&#x7684;&#x7A7A;&#x767D;&#x5B57;&#x7B26;&#x5904;&#x7406;&#x5B8C;  
-        while (usedLength &gt;= 0 &amp;&amp; usedLength &lt; targetLength) {  
-            // &#x5982;&#x662F;&#x5F53;&#x524D;&#x5B57;&#x7B26;&#x662F;&#x7A7A;&#x767D;&#x5B57;&#x7B26;&#xFF0C;&#x8FDB;&#x884C;&quot;%20&quot;&#x66FF;&#x6362;  
-            if (string[usedLength] == &apos; &apos;) {  
-                string[targetLength--] = &apos;0&apos;;  
-                string[targetLength--] = &apos;2&apos;;  
-                string[targetLength--] = &apos;%&apos;;  
-            } else { // &#x5426;&#x5219;&#x79FB;&#x52A8;&#x5B57;&#x7B26;  
+        <span class="hljs-comment">// &#x5B57;&#x7B26;&#x4E2D;&#x6709;&#x7A7A;&#x767D;&#x5B57;&#x7B26;&#xFF0C;&#x4E00;&#x76F4;&#x5904;&#x7406;&#x5230;&#x6240;&#x6709;&#x7684;&#x7A7A;&#x767D;&#x5B57;&#x7B26;&#x5904;&#x7406;&#x5B8C;  </span>
+        <span class="hljs-keyword">while</span> (usedLength &gt;= <span class="hljs-number">0</span> &amp;&amp; usedLength &lt; targetLength) {  
+            <span class="hljs-comment">// &#x5982;&#x662F;&#x5F53;&#x524D;&#x5B57;&#x7B26;&#x662F;&#x7A7A;&#x767D;&#x5B57;&#x7B26;&#xFF0C;&#x8FDB;&#x884C;&quot;%20&quot;&#x66FF;&#x6362;  </span>
+            <span class="hljs-keyword">if</span> (string[usedLength] == <span class="hljs-string">&apos; &apos;</span>) {  
+                string[targetLength--] = <span class="hljs-string">&apos;0&apos;</span>;  
+                string[targetLength--] = <span class="hljs-string">&apos;2&apos;</span>;  
+                string[targetLength--] = <span class="hljs-string">&apos;%&apos;</span>;  
+            } <span class="hljs-keyword">else</span> { <span class="hljs-comment">// &#x5426;&#x5219;&#x79FB;&#x52A8;&#x5B57;&#x7B26;  </span>
                 string[targetLength--] = string[usedLength];  
             }  
             usedLength--;  
         }  
 
-        return tmp;  
+        <span class="hljs-keyword">return</span> tmp;  
     }  
 }
 </code></pre>
@@ -3810,7 +3814,7 @@
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"02.替换空格","level":"5.1.2","depth":2,"next":{"title":"03.从尾到头打印链表","level":"5.1.3","depth":2,"path":"algorithm/For-offer/03.md","ref":"algorithm/For-offer/03.md","articles":[]},"previous":{"title":"01.二维数组中的查找","level":"5.1.1","depth":2,"path":"algorithm/For-offer/01.md","ref":"algorithm/For-offer/01.md","articles":[]},"dir":"ltr"},"config":{"plugins":["-lunr","-search","-highlight","-livereload","search-plus@^0.0.11","simple-page-toc@^0.1.1","github@^2.0.0","github-buttons@2.1.0","edit-link@^2.0.2","advanced-emoji@^0.2.1","anchors@^0.7.1","include-codeblock@^3.0.2","ace@^0.3.2","emphasize@^1.1.0","katex@^1.1.3","splitter@^0.0.8","tbfed-pagefooter@^0.0.1","expandable-chapters-small@^0.1.7","sectionx@^3.1.0","local-video@^1.0.1","anchor-navigation-ex@0.1.8","favicon@^0.0.2"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"tbfed-pagefooter":{"copyright":"Copyright © ruheng.com 2017","modify_label":"该文件修订时间：","modify_format":"YYYY-MM-DD HH:mm:ss"},"emphasize":{},"ace":{},"github":{"url":"https://github.com/LRH1993/android_interview"},"simple-page-toc":{"maxDepth":3,"skipFirstH1":true},"splitter":{},"katex":{},"fontsettings":{"theme":"white","family":"sans","size":2},"sectionx":{"tag":"b"},"anchor-navigation-ex":{"isRewritePageTitle":false,"tocLevel1Icon":"fa fa-hand-o-right","tocLevel2Icon":"fa fa-hand-o-right","tocLevel3Icon":"fa fa-hand-o-right"},"favicon":{"shortcut":"favicon.ico","bookmark":"favicon.ico"},"github-buttons":{"repo":"LRH1993/android_interview","types":["star"],"size":"small"},"expandable-chapters-small":{},"local-video":{},"advanced-emoji":{"embedEmojis":false},"include-codeblock":{"check":false,"edit":true,"fixlang":false,"lang":"","template":"ace","theme":"chrome","unindent":true},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":true,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"edit-link":{"label":"Edit This Page","base":"https://github.com/LRH1993/android_interview/edit/master"},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":true},"anchors":{},"search-plus":{}},"theme":"default","author":"ruheng","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"Android校招面试指南","language":"zh-hans","output.name":"site","links":{"sidebar":{"Home":"http://lruheng.com/"}},"gitbook":"3.2.3","description":"Android面试必备，记录自己的秋招之路"},"file":{"path":"algorithm/For-offer/02.md","mtime":"2017-08-22T07:53:58.000Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2017-10-16T12:05:21.906Z"},"basePath":"../..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"02.替换空格","level":"5.1.2","depth":2,"next":{"title":"03.从尾到头打印链表","level":"5.1.3","depth":2,"path":"algorithm/For-offer/03.md","ref":"algorithm/For-offer/03.md","articles":[]},"previous":{"title":"01.二维数组中的查找","level":"5.1.1","depth":2,"path":"algorithm/For-offer/01.md","ref":"algorithm/For-offer/01.md","articles":[]},"dir":"ltr"},"config":{"plugins":["-lunr","-search","-livereload","search-plus@^0.0.11","simple-page-toc@^0.1.1","github@^2.0.0","github-buttons@2.1.0","edit-link@^2.0.2","advanced-emoji@^0.2.1","anchors@^0.7.1","include-codeblock@^3.0.2","ace@^0.3.2","emphasize@^1.1.0","katex@^1.1.3","splitter@^0.0.8","tbfed-pagefooter@^0.0.1","expandable-chapters-small@^0.1.7","sectionx@^3.1.0","local-video@^1.0.1","anchor-navigation-ex@0.1.8","favicon@^0.0.2"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"tbfed-pagefooter":{"copyright":"Copyright © ruheng.com 2017","modify_label":"该文件修订时间：","modify_format":"YYYY-MM-DD HH:mm:ss"},"emphasize":{},"ace":{},"github":{"url":"https://github.com/LRH1993/android_interview"},"simple-page-toc":{"maxDepth":3,"skipFirstH1":true},"splitter":{},"katex":{},"fontsettings":{"theme":"white","family":"sans","size":2},"sectionx":{"tag":"b"},"highlight":{},"anchor-navigation-ex":{"isRewritePageTitle":false,"tocLevel1Icon":"fa fa-hand-o-right","tocLevel2Icon":"fa fa-hand-o-right","tocLevel3Icon":"fa fa-hand-o-right"},"favicon":{"shortcut":"favicon.ico","bookmark":"favicon.ico"},"github-buttons":{"repo":"LRH1993/android_interview","types":["star"],"size":"small"},"expandable-chapters-small":{},"local-video":{},"advanced-emoji":{"embedEmojis":false},"include-codeblock":{"check":false,"edit":false,"fixlang":false,"lang":"","template":"default","theme":"chrome","unindent":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":true,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"edit-link":{"label":"Edit This Page","base":"https://github.com/LRH1993/android_interview/edit/master"},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":true},"anchors":{},"search-plus":{}},"theme":"default","author":"ruheng","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"Android校招面试指南","language":"zh-hans","output.name":"site","links":{"sidebar":{"Home":"http://lruheng.com/"}},"gitbook":"3.2.3","description":"Android面试必备，记录自己的秋招之路"},"file":{"path":"algorithm/For-offer/02.md","mtime":"2017-08-22T07:53:58.000Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2017-10-16T13:00:43.989Z"},"basePath":"../..","book":{"language":""}});
         });
     </script>
 </div>

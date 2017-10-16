@@ -69,6 +69,10 @@
                 
             
                 
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
                 <link rel="stylesheet" href="../../gitbook/gitbook-plugin-fontsettings/website.css">
                 
             
@@ -3715,27 +3719,27 @@
 &#x539F;&#x7406;&#x77E5;&#x9053;&#x4E86;&#xFF0C;&#x529F;&#x80FD;&#x5B9E;&#x73B0;&#x8D77;&#x6765;&#x4E5F;&#x7B80;&#x5355;&#x3002;&#x6BCF;&#x5F53;&#x7EBF;&#x7A0B;&#x505C;&#x6B62;&#x65F6;&#x5C31;&#x628A;&#x5DF2;&#x4E0B;&#x8F7D;&#x7684;&#x6570;&#x636E;&#x957F;&#x5EA6;&#x5199;&#x5165;&#x8BB0;&#x5F55;&#x6587;&#x4EF6;&#xFF0C;&#x5F53;&#x91CD;&#x65B0;&#x4E0B;&#x8F7D;&#x65F6;&#xFF0C;&#x4ECE;&#x8BB0;&#x5F55;&#x6587;&#x4EF6;&#x8BFB;&#x53D6;&#x5DF2;&#x7ECF;&#x4E0B;&#x8F7D;&#x4E86;&#x7684;&#x957F;&#x5EA6;&#x3002;&#x800C;&#x8FD9;&#x4E2A;&#x957F;&#x5EA6;&#x5C31;&#x662F;&#x6240;&#x9700;&#x8981;&#x7684;&#x65AD;&#x70B9;&#x3002;</p>
 <p>&#x7EED;&#x4F20;&#x7684;&#x5B9E;&#x73B0;&#x4E5F;&#x7B80;&#x5355;&#xFF0C;&#x53EF;&#x4EE5;&#x901A;&#x8FC7;&#x8BBE;&#x7F6E;&#x7F51;&#x7EDC;&#x8BF7;&#x6C42;&#x53C2;&#x6570;&#xFF0C;&#x8BF7;&#x6C42;&#x670D;&#x52A1;&#x5668;&#x4ECE;&#x6307;&#x5B9A;&#x7684;&#x4F4D;&#x7F6E;&#x5F00;&#x59CB;&#x8BFB;&#x53D6;&#x6570;&#x636E;&#x3002;
 &#x800C;&#x8981;&#x5B9E;&#x73B0;&#x8FD9;&#x4E24;&#x4E2A;&#x529F;&#x80FD;&#x53EA;&#x9700;&#x8981;&#x4F7F;&#x7528;&#x5230;httpURLconnection&#x91CC;&#x9762;&#x7684;setRequestProperty&#x65B9;&#x6CD5;&#x4FBF;&#x53EF;&#x4EE5;&#x5B9E;&#x73B0;.</p>
-<pre><code class="lang-java">public void setRequestProperty(String field, String newValue)
-</code></pre>
+<pre><code class="lang-java"><span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">setRequestProperty</span><span class="hljs-params">(String field, String newValue)</span>
+</span></code></pre>
 <p>&#x5982;&#x4E0B;&#x6240;&#x793A;&#xFF0C;&#x4FBF;&#x662F;&#x5411;&#x670D;&#x52A1;&#x5668;&#x8BF7;&#x6C42;500-1000&#x4E4B;&#x95F4;&#x7684;500&#x4E2A;byte&#xFF1A;</p>
-<pre><code class="lang-Java">conn.setRequestProperty(&quot;Range&quot;, &quot;bytes=&quot; + 500 + &quot;-&quot; + 1000);
+<pre><code class="lang-Java">conn.setRequestProperty(<span class="hljs-string">&quot;Range&quot;</span>, <span class="hljs-string">&quot;bytes=&quot;</span> + <span class="hljs-number">500</span> + <span class="hljs-string">&quot;-&quot;</span> + <span class="hljs-number">1000</span>);
 </code></pre>
 <p>&#x4EE5;&#x4E0A;&#x53EA;&#x662F;&#x7EED;&#x4F20;&#x7684;&#x4E00;&#x90E8;&#x5206;&#x9700;&#x6C42;&#xFF0C;&#x5F53;&#x6211;&#x4EEC;&#x83B7;&#x53D6;&#x5230;&#x4E0B;&#x8F7D;&#x6570;&#x636E;&#x65F6;&#xFF0C;&#x8FD8;&#x9700;&#x8981;&#x5C06;&#x6570;&#x636E;&#x5199;&#x5165;&#x6587;&#x4EF6;&#xFF0C;&#x800C;&#x666E;&#x901A;&#x53D1;File&#x5BF9;&#x8C61;&#x5E76;&#x4E0D;&#x63D0;&#x4F9B;&#x4ECE;&#x6307;&#x5B9A;&#x4F4D;&#x7F6E;&#x5199;&#x5165;&#x6570;&#x636E;&#x7684;&#x529F;&#x80FD;&#xFF0C;&#x8FD9;&#x4E2A;&#x65F6;&#x5019;&#xFF0C;&#x5C31;&#x9700;&#x8981;&#x4F7F;&#x7528;&#x5230;RandomAccessFile&#x6765;&#x5B9E;&#x73B0;&#x4ECE;&#x6307;&#x5B9A;&#x4F4D;&#x7F6E;&#x7ED9;&#x6587;&#x4EF6;&#x5199;&#x5165;&#x6570;&#x636E;&#x7684;&#x529F;&#x80FD;&#x3002;</p>
-<pre><code class="lang-java">public void seek(long offset)
-</code></pre>
+<pre><code class="lang-java"><span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">seek</span><span class="hljs-params">(<span class="hljs-keyword">long</span> offset)</span>
+</span></code></pre>
 <p>&#x5982;&#x4E0B;&#x6240;&#x793A;&#xFF0C;&#x4FBF;&#x662F;&#x4ECE;&#x6587;&#x4EF6;&#x7684;&#x7684;&#x7B2C;100&#x4E2A;byte&#x540E;&#x5F00;&#x59CB;&#x5199;&#x5165;&#x6570;&#x636E;&#x3002;</p>
-<pre><code class="lang-java">raFile.seek(100);
+<pre><code class="lang-java">raFile.seek(<span class="hljs-number">100</span>);
 </code></pre>
 <p>&#x800C;&#x5F00;&#x59CB;&#x5199;&#x5165;&#x6570;&#x636E;&#x65F6;&#x8FD8;&#x9700;&#x8981;&#x7528;&#x5230;RandomAccessFile&#x91CC;&#x9762;&#x7684;&#x53E6;&#x5916;&#x4E00;&#x4E2A;&#x65B9;&#x6CD5;</p>
-<pre><code class="lang-java">public void write(byte[] buffer, int byteOffset, int byteCount)
-</code></pre>
+<pre><code class="lang-java"><span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">write</span><span class="hljs-params">(<span class="hljs-keyword">byte</span>[] buffer, <span class="hljs-keyword">int</span> byteOffset, <span class="hljs-keyword">int</span> byteCount)</span>
+</span></code></pre>
 <p>&#x8BE5;&#x65B9;&#x6CD5;&#x7684;&#x4F7F;&#x7528;&#x548C;OutputStream&#x7684;write&#x7684;&#x4F7F;&#x7528;&#x4E00;&#x6A21;&#x4E00;&#x6837;...</p>
 <p>&#x4EE5;&#x4E0A;&#x4FBF;&#x662F;&#x65AD;&#x70B9;&#x7EED;&#x4F20;&#x7684;&#x539F;&#x7406;&#x3002;</p>
 <h2 id="&#x4E8C;&#x3001;&#x591A;&#x7EBF;&#x7A0B;&#x65AD;&#x70B9;&#x7EED;&#x4F20;"><a name="&#x4E8C;&#x3001;&#x591A;&#x7EBF;&#x7A0B;&#x65AD;&#x70B9;&#x7EED;&#x4F20;" class="anchor-navigation-ex-anchor" href="#&#x4E8C;&#x3001;&#x591A;&#x7EBF;&#x7A0B;&#x65AD;&#x70B9;&#x7EED;&#x4F20;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x4E8C;&#x3001;&#x591A;&#x7EBF;&#x7A0B;&#x65AD;&#x70B9;&#x7EED;&#x4F20;</h2>
 <p>&#x591A;&#x7EBF;&#x7A0B;&#x65AD;&#x70B9;&#x7EED;&#x4F20;&#x4FBF;&#x662F;&#x5728;&#x5355;&#x7EBF;&#x7A0B;&#x7684;&#x65AD;&#x70B9;&#x7EED;&#x4F20;&#x4E0A;&#x5EF6;&#x4F38;&#x7684;&#x3002;&#x591A;&#x7EBF;&#x7A0B;&#x65AD;&#x70B9;&#x7EED;&#x4F20;&#x662F;&#x628A;&#x6574;&#x4E2A;&#x6587;&#x4EF6;&#x5206;&#x5272;&#x6210;&#x51E0;&#x4E2A;&#x90E8;&#x5206;&#xFF0C;&#x6BCF;&#x4E2A;&#x90E8;&#x5206;&#x7531;&#x4E00;&#x6761;&#x7EBF;&#x7A0B;&#x6267;&#x884C;&#x4E0B;&#x8F7D;&#xFF0C;&#x800C;&#x6BCF;&#x4E00;&#x6761;&#x4E0B;&#x8F7D;&#x7EBF;&#x7A0B;&#x90FD;&#x8981;&#x5B9E;&#x73B0;&#x65AD;&#x70B9;&#x7EED;&#x4F20;&#x529F;&#x80FD;&#x3002;
 &#x4E3A;&#x4E86;&#x5B9E;&#x73B0;&#x6587;&#x4EF6;&#x5206;&#x5272;&#x529F;&#x80FD;&#xFF0C;&#x6211;&#x4EEC;&#x9700;&#x8981;&#x4F7F;&#x7528;&#x5230;httpURLconnection&#x7684;&#x53E6;&#x5916;&#x4E00;&#x4E2A;&#x65B9;&#x6CD5;&#xFF1A;</p>
-<pre><code class="lang-java">public int getContentLength()
-</code></pre>
+<pre><code class="lang-java"><span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">int</span> <span class="hljs-title">getContentLength</span><span class="hljs-params">()</span>
+</span></code></pre>
 <p>&#x5F53;&#x8BF7;&#x6C42;&#x6210;&#x529F;&#x65F6;&#xFF0C;&#x53EF;&#x4EE5;&#x901A;&#x8FC7;&#x8BE5;&#x65B9;&#x6CD5;&#x83B7;&#x53D6;&#x5230;&#x6587;&#x4EF6;&#x7684;&#x603B;&#x957F;&#x5EA6;&#x3002;
 <code>&#x6BCF;&#x4E00;&#x6761;&#x7EBF;&#x7A0B;&#x4E0B;&#x8F7D;&#x5927;&#x5C0F; = fileLength / THREAD_NUM</code></p>
 <p>&#x5982;&#x4E0B;&#x56FE;&#x6240;&#x793A;&#xFF0C;&#x63CF;&#x8FF0;&#x7684;&#x4FBF;&#x662F;&#x591A;&#x7EBF;&#x7A0B;&#x7684;&#x4E0B;&#x8F7D;&#x6A21;&#x578B;&#xFF1A;</p>
@@ -3749,205 +3753,205 @@
 <p>&#x901A;&#x8FC7;&#x539F;&#x7406;&#x7684;&#x4E86;&#x89E3;&#xFF0C;&#x4FBF;&#x53EF;&#x4EE5;&#x5F88;&#x5FEB;&#x7684;&#x8BBE;&#x8BA1;&#x51FA;&#x65AD;&#x70B9;&#x7EED;&#x4F20;&#x5DE5;&#x5177;&#x7C7B;&#x7684;&#x57FA;&#x672C;&#x7ED3;&#x6784;&#x56FE;</p>
 <p><img src="http://upload-images.jianshu.io/upload_images/1824042-74a1e86dee5bd13c?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></p>
 <h3 id="idownloadlistenerjava"><a name="idownloadlistenerjava" class="anchor-navigation-ex-anchor" href="#idownloadlistenerjava"><i class="fa fa-link" aria-hidden="true"></i></a>IDownloadListener.java</h3>
-<pre><code class="lang-java">    package com.arialyy.frame.http.inf;
-    import java.net.HttpURLConnection;
+<pre><code class="lang-java">    <span class="hljs-keyword">package</span> com.arialyy.frame.http.inf;
+    <span class="hljs-keyword">import</span> java.net.HttpURLConnection;
 
-    /** 
+    <span class="hljs-comment">/** 
      * &#x5728;&#x8FD9;&#x91CC;&#x9762;&#x7F16;&#x5199;&#x4F60;&#x7684;&#x4E1A;&#x52A1;&#x903B;&#x8F91;
-     */
-    public interface IDownloadListener {
-        /**
+     */</span>
+    <span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">interface</span> <span class="hljs-title">IDownloadListener</span> </span>{
+        <span class="hljs-comment">/**
          * &#x53D6;&#x6D88;&#x4E0B;&#x8F7D;
-         */
-        public void onCancel();
+         */</span>
+        <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">onCancel</span><span class="hljs-params">()</span></span>;
 
-        /**
+        <span class="hljs-comment">/**
          * &#x4E0B;&#x8F7D;&#x5931;&#x8D25;
-         */
-        public void onFail();
+         */</span>
+        <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">onFail</span><span class="hljs-params">()</span></span>;
 
-        /**
+        <span class="hljs-comment">/**
          * &#x4E0B;&#x8F7D;&#x9884;&#x5904;&#x7406;,&#x53EF;&#x901A;&#x8FC7;HttpURLConnection&#x83B7;&#x53D6;&#x6587;&#x4EF6;&#x957F;&#x5EA6;
-         */
-        public void onPreDownload(HttpURLConnection connection);
+         */</span>
+        <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">onPreDownload</span><span class="hljs-params">(HttpURLConnection connection)</span></span>;
 
-        /**
+        <span class="hljs-comment">/**
          * &#x4E0B;&#x8F7D;&#x76D1;&#x542C;
-         */
-        public void onProgress(long currentLocation);
+         */</span>
+        <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">onProgress</span><span class="hljs-params">(<span class="hljs-keyword">long</span> currentLocation)</span></span>;
 
-        /**
+        <span class="hljs-comment">/**
          * &#x5355;&#x4E00;&#x7EBF;&#x7A0B;&#x7684;&#x7ED3;&#x675F;&#x4F4D;&#x7F6E;
-         */
-        public void onChildComplete(long finishLocation);
+         */</span>
+        <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">onChildComplete</span><span class="hljs-params">(<span class="hljs-keyword">long</span> finishLocation)</span></span>;
 
-        /**
+        <span class="hljs-comment">/**
          * &#x5F00;&#x59CB;
-         */
-        public void onStart(long startLocation);
+         */</span>
+        <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">onStart</span><span class="hljs-params">(<span class="hljs-keyword">long</span> startLocation)</span></span>;
 
-        /**
+        <span class="hljs-comment">/**
          * &#x5B50;&#x7A0B;&#x6062;&#x590D;&#x4E0B;&#x8F7D;&#x7684;&#x4F4D;&#x7F6E;
-         */
-        public void onChildResume(long resumeLocation);
+         */</span>
+        <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">onChildResume</span><span class="hljs-params">(<span class="hljs-keyword">long</span> resumeLocation)</span></span>;
 
-        /**
+        <span class="hljs-comment">/**
          * &#x6062;&#x590D;&#x4F4D;&#x7F6E;
-         */
-        public void onResume(long resumeLocation);
+         */</span>
+        <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">onResume</span><span class="hljs-params">(<span class="hljs-keyword">long</span> resumeLocation)</span></span>;
 
-        /**
+        <span class="hljs-comment">/**
          * &#x505C;&#x6B62;
-         */
-        public void onStop(long stopLocation);
+         */</span>
+        <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">onStop</span><span class="hljs-params">(<span class="hljs-keyword">long</span> stopLocation)</span></span>;
 
-        /**
+        <span class="hljs-comment">/**
          * &#x4E0B;&#x8F7D;&#x5B8C;&#x6210;
-         */
-        public void onComplete();
+         */</span>
+        <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">onComplete</span><span class="hljs-params">()</span></span>;
     }
 </code></pre>
 <p>&#x8BE5;&#x7C7B;&#x662F;&#x4E0B;&#x8F7D;&#x76D1;&#x542C;&#x63A5;&#x53E3;</p>
 <h3 id="downloadlistenerjava"><a name="downloadlistenerjava" class="anchor-navigation-ex-anchor" href="#downloadlistenerjava"><i class="fa fa-link" aria-hidden="true"></i></a>DownloadListener.java</h3>
-<pre><code class="lang-java">import java.net.HttpURLConnection;
+<pre><code class="lang-java"><span class="hljs-keyword">import</span> java.net.HttpURLConnection;
 
-/**
+<span class="hljs-comment">/**
  * &#x4E0B;&#x8F7D;&#x76D1;&#x542C;
- */
-public class DownloadListener implements IDownloadListener {
+ */</span>
+<span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">DownloadListener</span> <span class="hljs-keyword">implements</span> <span class="hljs-title">IDownloadListener</span> </span>{
 
-    @Override
-    public void onResume(long resumeLocation) {
-
-    }
-
-    @Override
-    public void onCancel() {
+    <span class="hljs-meta">@Override</span>
+    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">onResume</span><span class="hljs-params">(<span class="hljs-keyword">long</span> resumeLocation)</span> </span>{
 
     }
 
-    @Override
-    public void onFail() {
+    <span class="hljs-meta">@Override</span>
+    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">onCancel</span><span class="hljs-params">()</span> </span>{
 
     }
 
-    @Override
-    public void onPreDownload(HttpURLConnection connection) {
+    <span class="hljs-meta">@Override</span>
+    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">onFail</span><span class="hljs-params">()</span> </span>{
 
     }
 
-    @Override
-    public void onProgress(long currentLocation) {
+    <span class="hljs-meta">@Override</span>
+    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">onPreDownload</span><span class="hljs-params">(HttpURLConnection connection)</span> </span>{
 
     }
 
-    @Override
-    public void onChildComplete(long finishLocation) {
+    <span class="hljs-meta">@Override</span>
+    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">onProgress</span><span class="hljs-params">(<span class="hljs-keyword">long</span> currentLocation)</span> </span>{
 
     }
 
-    @Override
-    public void onStart(long startLocation) {
+    <span class="hljs-meta">@Override</span>
+    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">onChildComplete</span><span class="hljs-params">(<span class="hljs-keyword">long</span> finishLocation)</span> </span>{
 
     }
 
-    @Override
-    public void onChildResume(long resumeLocation) {
+    <span class="hljs-meta">@Override</span>
+    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">onStart</span><span class="hljs-params">(<span class="hljs-keyword">long</span> startLocation)</span> </span>{
 
     }
 
-    @Override
-    public void onStop(long stopLocation) {
+    <span class="hljs-meta">@Override</span>
+    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">onChildResume</span><span class="hljs-params">(<span class="hljs-keyword">long</span> resumeLocation)</span> </span>{
 
     }
 
-    @Override
-    public void onComplete() {
+    <span class="hljs-meta">@Override</span>
+    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">onStop</span><span class="hljs-params">(<span class="hljs-keyword">long</span> stopLocation)</span> </span>{
+
+    }
+
+    <span class="hljs-meta">@Override</span>
+    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">onComplete</span><span class="hljs-params">()</span> </span>{
 
     }
 }
 </code></pre>
 <h2 id="&#x4E0B;&#x8F7D;&#x53C2;&#x6570;&#x5B9E;&#x4F53;"><a name="&#x4E0B;&#x8F7D;&#x53C2;&#x6570;&#x5B9E;&#x4F53;" class="anchor-navigation-ex-anchor" href="#&#x4E0B;&#x8F7D;&#x53C2;&#x6570;&#x5B9E;&#x4F53;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x4E0B;&#x8F7D;&#x53C2;&#x6570;&#x5B9E;&#x4F53;</h2>
-<pre><code class="lang-java">    /**
+<pre><code class="lang-java">    <span class="hljs-comment">/**
      * &#x5B50;&#x7EBF;&#x7A0B;&#x4E0B;&#x8F7D;&#x4FE1;&#x606F;&#x7C7B;
-     */
-    private class DownloadEntity {
-        //&#x6587;&#x4EF6;&#x603B;&#x957F;&#x5EA6;
-        long fileSize;
-        //&#x4E0B;&#x8F7D;&#x94FE;&#x63A5;
+     */</span>
+    <span class="hljs-keyword">private</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">DownloadEntity</span> </span>{
+        <span class="hljs-comment">//&#x6587;&#x4EF6;&#x603B;&#x957F;&#x5EA6;</span>
+        <span class="hljs-keyword">long</span> fileSize;
+        <span class="hljs-comment">//&#x4E0B;&#x8F7D;&#x94FE;&#x63A5;</span>
         String downloadUrl;
-        //&#x7EBF;&#x7A0B;Id
-        int threadId;
-        //&#x8D77;&#x59CB;&#x4E0B;&#x8F7D;&#x4F4D;&#x7F6E;
-        long startLocation;
-        //&#x7ED3;&#x675F;&#x4E0B;&#x8F7D;&#x7684;&#x6587;&#x7AE0;
-        long endLocation;
-        //&#x4E0B;&#x8F7D;&#x6587;&#x4EF6;
+        <span class="hljs-comment">//&#x7EBF;&#x7A0B;Id</span>
+        <span class="hljs-keyword">int</span> threadId;
+        <span class="hljs-comment">//&#x8D77;&#x59CB;&#x4E0B;&#x8F7D;&#x4F4D;&#x7F6E;</span>
+        <span class="hljs-keyword">long</span> startLocation;
+        <span class="hljs-comment">//&#x7ED3;&#x675F;&#x4E0B;&#x8F7D;&#x7684;&#x6587;&#x7AE0;</span>
+        <span class="hljs-keyword">long</span> endLocation;
+        <span class="hljs-comment">//&#x4E0B;&#x8F7D;&#x6587;&#x4EF6;</span>
         File tempFile;
         Context context;
 
-        public DownloadEntity(Context context, long fileSize, String downloadUrl, File file, int threadId, long startLocation, long endLocation) {
-            this.fileSize = fileSize;
-            this.downloadUrl = downloadUrl;
-            this.tempFile = file;
-            this.threadId = threadId;
-            this.startLocation = startLocation;
-            this.endLocation = endLocation;
-            this.context = context;
+        <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-title">DownloadEntity</span><span class="hljs-params">(Context context, <span class="hljs-keyword">long</span> fileSize, String downloadUrl, File file, <span class="hljs-keyword">int</span> threadId, <span class="hljs-keyword">long</span> startLocation, <span class="hljs-keyword">long</span> endLocation)</span> </span>{
+            <span class="hljs-keyword">this</span>.fileSize = fileSize;
+            <span class="hljs-keyword">this</span>.downloadUrl = downloadUrl;
+            <span class="hljs-keyword">this</span>.tempFile = file;
+            <span class="hljs-keyword">this</span>.threadId = threadId;
+            <span class="hljs-keyword">this</span>.startLocation = startLocation;
+            <span class="hljs-keyword">this</span>.endLocation = endLocation;
+            <span class="hljs-keyword">this</span>.context = context;
         }
     }
 </code></pre>
 <p>&#x8BE5;&#x7C7B;&#x662F;&#x4E0B;&#x8F7D;&#x4FE1;&#x606F;&#x914D;&#x7F6E;&#x7C7B;&#xFF0C;&#x6BCF;&#x4E00;&#x6761;&#x5B50;&#x7EBF;&#x7A0B;&#x7684;&#x4E0B;&#x8F7D;&#x90FD;&#x9700;&#x8981;&#x4E00;&#x4E2A;&#x4E0B;&#x8F7D;&#x5B9E;&#x4F53;&#x6765;&#x914D;&#x7F6E;&#x4E0B;&#x8F7D;&#x4FE1;&#x606F;&#x3002;</p>
 <h3 id="&#x4E0B;&#x8F7D;&#x4EFB;&#x52A1;&#x7EBF;&#x7A0B;"><a name="&#x4E0B;&#x8F7D;&#x4EFB;&#x52A1;&#x7EBF;&#x7A0B;" class="anchor-navigation-ex-anchor" href="#&#x4E0B;&#x8F7D;&#x4EFB;&#x52A1;&#x7EBF;&#x7A0B;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x4E0B;&#x8F7D;&#x4EFB;&#x52A1;&#x7EBF;&#x7A0B;</h3>
-<pre><code class="lang-java">    /**
+<pre><code class="lang-java">    <span class="hljs-comment">/**
      * &#x591A;&#x7EBF;&#x7A0B;&#x4E0B;&#x8F7D;&#x4EFB;&#x52A1;&#x7C7B;
-     */
-    private class DownLoadTask implements Runnable {
-        private static final String TAG = &quot;DownLoadTask&quot;;
-        private DownloadEntity dEntity;
-        private String configFPath;
+     */</span>
+    <span class="hljs-keyword">private</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">DownLoadTask</span> <span class="hljs-keyword">implements</span> <span class="hljs-title">Runnable</span> </span>{
+        <span class="hljs-keyword">private</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">final</span> String TAG = <span class="hljs-string">&quot;DownLoadTask&quot;</span>;
+        <span class="hljs-keyword">private</span> DownloadEntity dEntity;
+        <span class="hljs-keyword">private</span> String configFPath;
 
-        public DownLoadTask(DownloadEntity downloadInfo) {
-            this.dEntity = downloadInfo;
-            configFPath = dEntity.context.getFilesDir().getPath() + &quot;/temp/&quot; + dEntity.tempFile.getName() + &quot;.properties&quot;;
+        <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-title">DownLoadTask</span><span class="hljs-params">(DownloadEntity downloadInfo)</span> </span>{
+            <span class="hljs-keyword">this</span>.dEntity = downloadInfo;
+            configFPath = dEntity.context.getFilesDir().getPath() + <span class="hljs-string">&quot;/temp/&quot;</span> + dEntity.tempFile.getName() + <span class="hljs-string">&quot;.properties&quot;</span>;
         }
 
-        @Override
-        public void run() {
-            try {
-                L.d(TAG, &quot;&#x7EBF;&#x7A0B;_&quot; + dEntity.threadId + &quot;_&#x6B63;&#x5728;&#x4E0B;&#x8F7D;&#x3010;&quot; + &quot;&#x5F00;&#x59CB;&#x4F4D;&#x7F6E; : &quot; + dEntity.startLocation + &quot;&#xFF0C;&#x7ED3;&#x675F;&#x4F4D;&#x7F6E;&#xFF1A;&quot; + dEntity.endLocation + &quot;&#x3011;&quot;);
-                URL url = new URL(dEntity.downloadUrl);
+        <span class="hljs-meta">@Override</span>
+        <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">run</span><span class="hljs-params">()</span> </span>{
+            <span class="hljs-keyword">try</span> {
+                L.d(TAG, <span class="hljs-string">&quot;&#x7EBF;&#x7A0B;_&quot;</span> + dEntity.threadId + <span class="hljs-string">&quot;_&#x6B63;&#x5728;&#x4E0B;&#x8F7D;&#x3010;&quot;</span> + <span class="hljs-string">&quot;&#x5F00;&#x59CB;&#x4F4D;&#x7F6E; : &quot;</span> + dEntity.startLocation + <span class="hljs-string">&quot;&#xFF0C;&#x7ED3;&#x675F;&#x4F4D;&#x7F6E;&#xFF1A;&quot;</span> + dEntity.endLocation + <span class="hljs-string">&quot;&#x3011;&quot;</span>);
+                URL url = <span class="hljs-keyword">new</span> URL(dEntity.downloadUrl);
                 HttpURLConnection conn = (HttpURLConnection) url.openConnection();
-                //&#x5728;&#x5934;&#x91CC;&#x9762;&#x8BF7;&#x6C42;&#x4E0B;&#x8F7D;&#x5F00;&#x59CB;&#x4F4D;&#x7F6E;&#x548C;&#x7ED3;&#x675F;&#x4F4D;&#x7F6E;
-                conn.setRequestProperty(&quot;Range&quot;, &quot;bytes=&quot; + dEntity.startLocation + &quot;-&quot; + dEntity.endLocation);
-                conn.setRequestMethod(&quot;GET&quot;);
-                conn.setRequestProperty(&quot;Charset&quot;, &quot;UTF-8&quot;);
+                <span class="hljs-comment">//&#x5728;&#x5934;&#x91CC;&#x9762;&#x8BF7;&#x6C42;&#x4E0B;&#x8F7D;&#x5F00;&#x59CB;&#x4F4D;&#x7F6E;&#x548C;&#x7ED3;&#x675F;&#x4F4D;&#x7F6E;</span>
+                conn.setRequestProperty(<span class="hljs-string">&quot;Range&quot;</span>, <span class="hljs-string">&quot;bytes=&quot;</span> + dEntity.startLocation + <span class="hljs-string">&quot;-&quot;</span> + dEntity.endLocation);
+                conn.setRequestMethod(<span class="hljs-string">&quot;GET&quot;</span>);
+                conn.setRequestProperty(<span class="hljs-string">&quot;Charset&quot;</span>, <span class="hljs-string">&quot;UTF-8&quot;</span>);
                 conn.setConnectTimeout(TIME_OUT);
-                conn.setRequestProperty(&quot;User-Agent&quot;, &quot;Mozilla/4.0 (compatible; MSIE 8.0; Windows NT 5.2; Trident/4.0; .NET CLR 1.1.4322; .NET CLR 2.0.50727; .NET CLR 3.0.04506.30; .NET CLR 3.0.4506.2152; .NET CLR 3.5.30729)&quot;);
-                conn.setRequestProperty(&quot;Accept&quot;, &quot;image/gif, image/jpeg, image/pjpeg, image/pjpeg, application/x-shockwave-flash, application/xaml+xml, application/vnd.ms-xpsdocument, application/x-ms-xbap, application/x-ms-application, application/vnd.ms-excel, application/vnd.ms-powerpoint, application/msword, */*&quot;);
-                conn.setReadTimeout(2000);  //&#x8BBE;&#x7F6E;&#x8BFB;&#x53D6;&#x6D41;&#x7684;&#x7B49;&#x5F85;&#x65F6;&#x95F4;,&#x5FC5;&#x987B;&#x8BBE;&#x7F6E;&#x8BE5;&#x53C2;&#x6570;
+                conn.setRequestProperty(<span class="hljs-string">&quot;User-Agent&quot;</span>, <span class="hljs-string">&quot;Mozilla/4.0 (compatible; MSIE 8.0; Windows NT 5.2; Trident/4.0; .NET CLR 1.1.4322; .NET CLR 2.0.50727; .NET CLR 3.0.04506.30; .NET CLR 3.0.4506.2152; .NET CLR 3.5.30729)&quot;</span>);
+                conn.setRequestProperty(<span class="hljs-string">&quot;Accept&quot;</span>, <span class="hljs-string">&quot;image/gif, image/jpeg, image/pjpeg, image/pjpeg, application/x-shockwave-flash, application/xaml+xml, application/vnd.ms-xpsdocument, application/x-ms-xbap, application/x-ms-application, application/vnd.ms-excel, application/vnd.ms-powerpoint, application/msword, */*&quot;</span>);
+                conn.setReadTimeout(<span class="hljs-number">2000</span>);  <span class="hljs-comment">//&#x8BBE;&#x7F6E;&#x8BFB;&#x53D6;&#x6D41;&#x7684;&#x7B49;&#x5F85;&#x65F6;&#x95F4;,&#x5FC5;&#x987B;&#x8BBE;&#x7F6E;&#x8BE5;&#x53C2;&#x6570;</span>
                 InputStream is = conn.getInputStream();
-                //&#x521B;&#x5EFA;&#x53EF;&#x8BBE;&#x7F6E;&#x4F4D;&#x7F6E;&#x7684;&#x6587;&#x4EF6;
-                RandomAccessFile file = new RandomAccessFile(dEntity.tempFile, &quot;rwd&quot;);
-                //&#x8BBE;&#x7F6E;&#x6BCF;&#x6761;&#x7EBF;&#x7A0B;&#x5199;&#x5165;&#x6587;&#x4EF6;&#x7684;&#x4F4D;&#x7F6E;
+                <span class="hljs-comment">//&#x521B;&#x5EFA;&#x53EF;&#x8BBE;&#x7F6E;&#x4F4D;&#x7F6E;&#x7684;&#x6587;&#x4EF6;</span>
+                RandomAccessFile file = <span class="hljs-keyword">new</span> RandomAccessFile(dEntity.tempFile, <span class="hljs-string">&quot;rwd&quot;</span>);
+                <span class="hljs-comment">//&#x8BBE;&#x7F6E;&#x6BCF;&#x6761;&#x7EBF;&#x7A0B;&#x5199;&#x5165;&#x6587;&#x4EF6;&#x7684;&#x4F4D;&#x7F6E;</span>
                 file.seek(dEntity.startLocation);
-                byte[] buffer = new byte[1024];
-                int len;
-                //&#x5F53;&#x524D;&#x5B50;&#x7EBF;&#x7A0B;&#x7684;&#x4E0B;&#x8F7D;&#x4F4D;&#x7F6E;
-                long currentLocation = dEntity.startLocation;
-                while ((len = is.read(buffer)) != -1) {
-                    if (isCancel) {
-                        L.d(TAG, &quot;++++++++++ thread_&quot; + dEntity.threadId + &quot;_cancel ++++++++++&quot;);
-                        break;
+                <span class="hljs-keyword">byte</span>[] buffer = <span class="hljs-keyword">new</span> <span class="hljs-keyword">byte</span>[<span class="hljs-number">1024</span>];
+                <span class="hljs-keyword">int</span> len;
+                <span class="hljs-comment">//&#x5F53;&#x524D;&#x5B50;&#x7EBF;&#x7A0B;&#x7684;&#x4E0B;&#x8F7D;&#x4F4D;&#x7F6E;</span>
+                <span class="hljs-keyword">long</span> currentLocation = dEntity.startLocation;
+                <span class="hljs-keyword">while</span> ((len = is.read(buffer)) != -<span class="hljs-number">1</span>) {
+                    <span class="hljs-keyword">if</span> (isCancel) {
+                        L.d(TAG, <span class="hljs-string">&quot;++++++++++ thread_&quot;</span> + dEntity.threadId + <span class="hljs-string">&quot;_cancel ++++++++++&quot;</span>);
+                        <span class="hljs-keyword">break</span>;
                     }
 
-                    if (isStop) {
-                        break;
+                    <span class="hljs-keyword">if</span> (isStop) {
+                        <span class="hljs-keyword">break</span>;
                     }
 
-                    //&#x628A;&#x4E0B;&#x8F7D;&#x6570;&#x636E;&#x6570;&#x636E;&#x5199;&#x5165;&#x6587;&#x4EF6;
-                    file.write(buffer, 0, len);
-                    synchronized (DownLoadUtil.this) {
+                    <span class="hljs-comment">//&#x628A;&#x4E0B;&#x8F7D;&#x6570;&#x636E;&#x6570;&#x636E;&#x5199;&#x5165;&#x6587;&#x4EF6;</span>
+                    file.write(buffer, <span class="hljs-number">0</span>, len);
+                    <span class="hljs-keyword">synchronized</span> (DownLoadUtil.<span class="hljs-keyword">this</span>) {
                         mCurrentLocation += len;
                         mListener.onProgress(mCurrentLocation);
                     }
@@ -3956,192 +3960,192 @@ public class DownloadListener implements IDownloadListener {
                 file.close();
                 is.close();
 
-                if (isCancel) {
-                    synchronized (DownLoadUtil.this) {
+                <span class="hljs-keyword">if</span> (isCancel) {
+                    <span class="hljs-keyword">synchronized</span> (DownLoadUtil.<span class="hljs-keyword">this</span>) {
                         mCancelNum++;
-                        if (mCancelNum == THREAD_NUM) {
-                            File configFile = new File(configFPath);
-                            if (configFile.exists()) {
+                        <span class="hljs-keyword">if</span> (mCancelNum == THREAD_NUM) {
+                            File configFile = <span class="hljs-keyword">new</span> File(configFPath);
+                            <span class="hljs-keyword">if</span> (configFile.exists()) {
                                 configFile.delete();
                             }
 
-                            if (dEntity.tempFile.exists()) {
+                            <span class="hljs-keyword">if</span> (dEntity.tempFile.exists()) {
                                 dEntity.tempFile.delete();
                             }
-                            L.d(TAG, &quot;++++++++++++++++ onCancel +++++++++++++++++&quot;);
-                            isDownloading = false;
+                            L.d(TAG, <span class="hljs-string">&quot;++++++++++++++++ onCancel +++++++++++++++++&quot;</span>);
+                            isDownloading = <span class="hljs-keyword">false</span>;
                             mListener.onCancel();
                             System.gc();
                         }
                     }
-                    return;
+                    <span class="hljs-keyword">return</span>;
                 }
 
-                //&#x505C;&#x6B62;&#x72B6;&#x6001;&#x4E0D;&#x9700;&#x8981;&#x5220;&#x9664;&#x8BB0;&#x5F55;&#x6587;&#x4EF6;
-                if (isStop) {
-                    synchronized (DownLoadUtil.this) {
+                <span class="hljs-comment">//&#x505C;&#x6B62;&#x72B6;&#x6001;&#x4E0D;&#x9700;&#x8981;&#x5220;&#x9664;&#x8BB0;&#x5F55;&#x6587;&#x4EF6;</span>
+                <span class="hljs-keyword">if</span> (isStop) {
+                    <span class="hljs-keyword">synchronized</span> (DownLoadUtil.<span class="hljs-keyword">this</span>) {
                         mStopNum++;
                         String location = String.valueOf(currentLocation);
-                        L.i(TAG, &quot;thread_&quot; + dEntity.threadId + &quot;_stop, stop location ==&gt; &quot; + currentLocation);
-                        writeConfig(dEntity.tempFile.getName() + &quot;_record_&quot; + dEntity.threadId, location);
-                        if (mStopNum == THREAD_NUM) {
-                            L.d(TAG, &quot;++++++++++++++++ onStop +++++++++++++++++&quot;);
-                            isDownloading = false;
+                        L.i(TAG, <span class="hljs-string">&quot;thread_&quot;</span> + dEntity.threadId + <span class="hljs-string">&quot;_stop, stop location ==&gt; &quot;</span> + currentLocation);
+                        writeConfig(dEntity.tempFile.getName() + <span class="hljs-string">&quot;_record_&quot;</span> + dEntity.threadId, location);
+                        <span class="hljs-keyword">if</span> (mStopNum == THREAD_NUM) {
+                            L.d(TAG, <span class="hljs-string">&quot;++++++++++++++++ onStop +++++++++++++++++&quot;</span>);
+                            isDownloading = <span class="hljs-keyword">false</span>;
                             mListener.onStop(mCurrentLocation);
                             System.gc();
                         }
                     }
-                    return;
+                    <span class="hljs-keyword">return</span>;
                 }
 
-                L.i(TAG, &quot;&#x7EBF;&#x7A0B;&#x3010;&quot; + dEntity.threadId + &quot;&#x3011;&#x4E0B;&#x8F7D;&#x5B8C;&#x6BD5;&quot;);
-                writeConfig(dEntity.tempFile.getName() + &quot;_state_&quot; + dEntity.threadId, 1 + &quot;&quot;);
+                L.i(TAG, <span class="hljs-string">&quot;&#x7EBF;&#x7A0B;&#x3010;&quot;</span> + dEntity.threadId + <span class="hljs-string">&quot;&#x3011;&#x4E0B;&#x8F7D;&#x5B8C;&#x6BD5;&quot;</span>);
+                writeConfig(dEntity.tempFile.getName() + <span class="hljs-string">&quot;_state_&quot;</span> + dEntity.threadId, <span class="hljs-number">1</span> + <span class="hljs-string">&quot;&quot;</span>);
                 mListener.onChildComplete(dEntity.endLocation);
                 mCompleteThreadNum++;
-                if (mCompleteThreadNum == THREAD_NUM) {
-                    File configFile = new File(configFPath);
-                    if (configFile.exists()) {
+                <span class="hljs-keyword">if</span> (mCompleteThreadNum == THREAD_NUM) {
+                    File configFile = <span class="hljs-keyword">new</span> File(configFPath);
+                    <span class="hljs-keyword">if</span> (configFile.exists()) {
                         configFile.delete();
                     }
                     mListener.onComplete();
-                    isDownloading = false;
+                    isDownloading = <span class="hljs-keyword">false</span>;
                     System.gc();
                 }
-            } catch (MalformedURLException e) {
+            } <span class="hljs-keyword">catch</span> (MalformedURLException e) {
                 e.printStackTrace();
-                isDownloading = false;
+                isDownloading = <span class="hljs-keyword">false</span>;
                 mListener.onFail();
-            } catch (IOException e) {
-                FL.e(this, &quot;&#x4E0B;&#x8F7D;&#x5931;&#x8D25;&#x3010;&quot; + dEntity.downloadUrl + &quot;&#x3011;&quot; + FL.getPrintException(e));
-                isDownloading = false;
+            } <span class="hljs-keyword">catch</span> (IOException e) {
+                FL.e(<span class="hljs-keyword">this</span>, <span class="hljs-string">&quot;&#x4E0B;&#x8F7D;&#x5931;&#x8D25;&#x3010;&quot;</span> + dEntity.downloadUrl + <span class="hljs-string">&quot;&#x3011;&quot;</span> + FL.getPrintException(e));
+                isDownloading = <span class="hljs-keyword">false</span>;
                 mListener.onFail();
-            } catch (Exception e) {
-                FL.e(this, &quot;&#x83B7;&#x53D6;&#x6D41;&#x5931;&#x8D25;&quot; + FL.getPrintException(e));
-                isDownloading = false;
+            } <span class="hljs-keyword">catch</span> (Exception e) {
+                FL.e(<span class="hljs-keyword">this</span>, <span class="hljs-string">&quot;&#x83B7;&#x53D6;&#x6D41;&#x5931;&#x8D25;&quot;</span> + FL.getPrintException(e));
+                isDownloading = <span class="hljs-keyword">false</span>;
                 mListener.onFail();
             }
         }
 </code></pre>
 <p>&#x8FD9;&#x4E2A;&#x662F;&#x6BCF;&#x6761;&#x4E0B;&#x8F7D;&#x5B50;&#x7EBF;&#x7A0B;&#x7684;&#x4E0B;&#x8F7D;&#x4EFB;&#x52A1;&#x7C7B;&#xFF0C;&#x5B50;&#x7EBF;&#x7A0B;&#x901A;&#x8FC7;&#x4E0B;&#x8F7D;&#x5B9E;&#x4F53;&#x5BF9;&#x6BCF;&#x4E00;&#x6761;&#x7EBF;&#x7A0B;&#x8FDB;&#x884C;&#x4E0B;&#x8F7D;&#x914D;&#x7F6E;&#xFF0C;&#x7531;&#x4E8E;&#x5728;&#x591A;&#x65AD;&#x70B9;&#x7EED;&#x4F20;&#x7684;&#x6982;&#x5FF5;&#x91CC;&#xFF0C;&#x505C;&#x6B62;&#x8868;&#x793A;&#x7684;&#x662F;&#x6682;&#x505C;&#x72B6;&#x6001;&#xFF0C;&#x800C;&#x6062;&#x590D;&#x8868;&#x793A;&#x7684;&#x662F;&#x7EBF;&#x7A0B;&#x4ECE;&#x8BB0;&#x5F55;&#x7684;&#x65AD;&#x70B9;&#x91CD;&#x65B0;&#x8FDB;&#x884C;&#x4E0B;&#x8F7D;&#xFF0C;&#x6240;&#x4EE5;&#xFF0C;&#x7EBF;&#x7A0B;&#x5904;&#x4E8E;&#x505C;&#x6B62;&#x72B6;&#x6001;&#x65F6;&#x662F;&#x4E0D;&#x80FD;&#x5220;&#x9664;&#x8BB0;&#x5F55;&#x6587;&#x4EF6;&#x7684;&#x3002;</p>
 <h3 id="&#x4E0B;&#x8F7D;&#x5165;&#x53E3;"><a name="&#x4E0B;&#x8F7D;&#x5165;&#x53E3;" class="anchor-navigation-ex-anchor" href="#&#x4E0B;&#x8F7D;&#x5165;&#x53E3;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x4E0B;&#x8F7D;&#x5165;&#x53E3;</h3>
-<pre><code class="lang-java">    /**
+<pre><code class="lang-java">    <span class="hljs-comment">/**
      * &#x591A;&#x7EBF;&#x7A0B;&#x65AD;&#x70B9;&#x7EED;&#x4F20;&#x4E0B;&#x8F7D;&#x6587;&#x4EF6;&#xFF0C;&#x6682;&#x505C;&#x548C;&#x7EE7;&#x7EED;
      *
-     * @param context          &#x5FC5;&#x987B;&#x6DFB;&#x52A0;&#x8BE5;&#x53C2;&#x6570;&#xFF0C;&#x4E0D;&#x80FD;&#x4F7F;&#x7528;&#x5168;&#x5C40;&#x53D8;&#x91CF;&#x7684;context
-     * @param downloadUrl      &#x4E0B;&#x8F7D;&#x8DEF;&#x5F84;
-     * @param filePath         &#x4FDD;&#x5B58;&#x8DEF;&#x5F84;
-     * @param downloadListener &#x4E0B;&#x8F7D;&#x8FDB;&#x5EA6;&#x76D1;&#x542C; {@link DownloadListener}
-     */
-    public void download(final Context context, @NonNull final String downloadUrl, @NonNull final String filePath,
-                         @NonNull final DownloadListener downloadListener) {
-        isDownloading = true;
-        mCurrentLocation = 0;
-        isStop = false;
-        isCancel = false;
-        mCancelNum = 0;
-        mStopNum = 0;
-        final File dFile = new File(filePath);
-        //&#x8BFB;&#x53D6;&#x5DF2;&#x5B8C;&#x6210;&#x7684;&#x7EBF;&#x7A0B;&#x6570;
-        final File configFile = new File(context.getFilesDir().getPath() + &quot;/temp/&quot; + dFile.getName() + &quot;.properties&quot;);
-        try {
-            if (!configFile.exists()) { //&#x8BB0;&#x5F55;&#x6587;&#x4EF6;&#x88AB;&#x5220;&#x9664;&#xFF0C;&#x5219;&#x91CD;&#x65B0;&#x4E0B;&#x8F7D;
-                newTask = true;
+     * <span class="hljs-doctag">@param</span> context          &#x5FC5;&#x987B;&#x6DFB;&#x52A0;&#x8BE5;&#x53C2;&#x6570;&#xFF0C;&#x4E0D;&#x80FD;&#x4F7F;&#x7528;&#x5168;&#x5C40;&#x53D8;&#x91CF;&#x7684;context
+     * <span class="hljs-doctag">@param</span> downloadUrl      &#x4E0B;&#x8F7D;&#x8DEF;&#x5F84;
+     * <span class="hljs-doctag">@param</span> filePath         &#x4FDD;&#x5B58;&#x8DEF;&#x5F84;
+     * <span class="hljs-doctag">@param</span> downloadListener &#x4E0B;&#x8F7D;&#x8FDB;&#x5EA6;&#x76D1;&#x542C; {<span class="hljs-doctag">@link</span> DownloadListener}
+     */</span>
+    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">download</span><span class="hljs-params">(<span class="hljs-keyword">final</span> Context context, @NonNull <span class="hljs-keyword">final</span> String downloadUrl, @NonNull <span class="hljs-keyword">final</span> String filePath,
+                         @NonNull <span class="hljs-keyword">final</span> DownloadListener downloadListener)</span> </span>{
+        isDownloading = <span class="hljs-keyword">true</span>;
+        mCurrentLocation = <span class="hljs-number">0</span>;
+        isStop = <span class="hljs-keyword">false</span>;
+        isCancel = <span class="hljs-keyword">false</span>;
+        mCancelNum = <span class="hljs-number">0</span>;
+        mStopNum = <span class="hljs-number">0</span>;
+        <span class="hljs-keyword">final</span> File dFile = <span class="hljs-keyword">new</span> File(filePath);
+        <span class="hljs-comment">//&#x8BFB;&#x53D6;&#x5DF2;&#x5B8C;&#x6210;&#x7684;&#x7EBF;&#x7A0B;&#x6570;</span>
+        <span class="hljs-keyword">final</span> File configFile = <span class="hljs-keyword">new</span> File(context.getFilesDir().getPath() + <span class="hljs-string">&quot;/temp/&quot;</span> + dFile.getName() + <span class="hljs-string">&quot;.properties&quot;</span>);
+        <span class="hljs-keyword">try</span> {
+            <span class="hljs-keyword">if</span> (!configFile.exists()) { <span class="hljs-comment">//&#x8BB0;&#x5F55;&#x6587;&#x4EF6;&#x88AB;&#x5220;&#x9664;&#xFF0C;&#x5219;&#x91CD;&#x65B0;&#x4E0B;&#x8F7D;</span>
+                newTask = <span class="hljs-keyword">true</span>;
                 FileUtil.createFile(configFile.getPath());
-            } else {
-                newTask = false;
+            } <span class="hljs-keyword">else</span> {
+                newTask = <span class="hljs-keyword">false</span>;
             }
-        } catch (Exception e) {
+        } <span class="hljs-keyword">catch</span> (Exception e) {
             e.printStackTrace();
             mListener.onFail();
-            return;
+            <span class="hljs-keyword">return</span>;
         }
         newTask = !dFile.exists();
-        new Thread(new Runnable() {
-            @Override
-            public void run() {
-                try {
+        <span class="hljs-keyword">new</span> Thread(<span class="hljs-keyword">new</span> Runnable() {
+            <span class="hljs-meta">@Override</span>
+            <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">run</span><span class="hljs-params">()</span> </span>{
+                <span class="hljs-keyword">try</span> {
                     mListener = downloadListener;
-                    URL url = new URL(downloadUrl);
+                    URL url = <span class="hljs-keyword">new</span> URL(downloadUrl);
                     HttpURLConnection conn = (HttpURLConnection) url.openConnection();
-                    conn.setRequestMethod(&quot;GET&quot;);
-                    conn.setRequestProperty(&quot;Charset&quot;, &quot;UTF-8&quot;);
+                    conn.setRequestMethod(<span class="hljs-string">&quot;GET&quot;</span>);
+                    conn.setRequestProperty(<span class="hljs-string">&quot;Charset&quot;</span>, <span class="hljs-string">&quot;UTF-8&quot;</span>);
                     conn.setConnectTimeout(TIME_OUT);
-                    conn.setRequestProperty(&quot;User-Agent&quot;, &quot;Mozilla/4.0 (compatible; MSIE 8.0; Windows NT 5.2; Trident/4.0; .NET CLR 1.1.4322; .NET CLR 2.0.50727; .NET CLR 3.0.04506.30; .NET CLR 3.0.4506.2152; .NET CLR 3.5.30729)&quot;);
-                    conn.setRequestProperty(&quot;Accept&quot;, &quot;image/gif, image/jpeg, image/pjpeg, image/pjpeg, application/x-shockwave-flash, application/xaml+xml, application/vnd.ms-xpsdocument, application/x-ms-xbap, application/x-ms-application, application/vnd.ms-excel, application/vnd.ms-powerpoint, application/msword, */*&quot;);
+                    conn.setRequestProperty(<span class="hljs-string">&quot;User-Agent&quot;</span>, <span class="hljs-string">&quot;Mozilla/4.0 (compatible; MSIE 8.0; Windows NT 5.2; Trident/4.0; .NET CLR 1.1.4322; .NET CLR 2.0.50727; .NET CLR 3.0.04506.30; .NET CLR 3.0.4506.2152; .NET CLR 3.5.30729)&quot;</span>);
+                    conn.setRequestProperty(<span class="hljs-string">&quot;Accept&quot;</span>, <span class="hljs-string">&quot;image/gif, image/jpeg, image/pjpeg, image/pjpeg, application/x-shockwave-flash, application/xaml+xml, application/vnd.ms-xpsdocument, application/x-ms-xbap, application/x-ms-application, application/vnd.ms-excel, application/vnd.ms-powerpoint, application/msword, */*&quot;</span>);
                     conn.connect();
-                    int len = conn.getContentLength();
-                    if (len &lt; 0) {  //&#x7F51;&#x7EDC;&#x88AB;&#x52AB;&#x6301;&#x65F6;&#x4F1A;&#x51FA;&#x73B0;&#x8FD9;&#x4E2A;&#x95EE;&#x9898;
+                    <span class="hljs-keyword">int</span> len = conn.getContentLength();
+                    <span class="hljs-keyword">if</span> (len &lt; <span class="hljs-number">0</span>) {  <span class="hljs-comment">//&#x7F51;&#x7EDC;&#x88AB;&#x52AB;&#x6301;&#x65F6;&#x4F1A;&#x51FA;&#x73B0;&#x8FD9;&#x4E2A;&#x95EE;&#x9898;</span>
                         mListener.onFail();
-                        return;
+                        <span class="hljs-keyword">return</span>;
                     }
-                    int code = conn.getResponseCode();
-                    if (code == 200) {
-                        int fileLength = conn.getContentLength();
-                        //&#x5FC5;&#x987B;&#x5EFA;&#x4E00;&#x4E2A;&#x6587;&#x4EF6;
+                    <span class="hljs-keyword">int</span> code = conn.getResponseCode();
+                    <span class="hljs-keyword">if</span> (code == <span class="hljs-number">200</span>) {
+                        <span class="hljs-keyword">int</span> fileLength = conn.getContentLength();
+                        <span class="hljs-comment">//&#x5FC5;&#x987B;&#x5EFA;&#x4E00;&#x4E2A;&#x6587;&#x4EF6;</span>
                         FileUtil.createFile(filePath);
-                        RandomAccessFile file = new RandomAccessFile(filePath, &quot;rwd&quot;);
-                        //&#x8BBE;&#x7F6E;&#x6587;&#x4EF6;&#x957F;&#x5EA6;
+                        RandomAccessFile file = <span class="hljs-keyword">new</span> RandomAccessFile(filePath, <span class="hljs-string">&quot;rwd&quot;</span>);
+                        <span class="hljs-comment">//&#x8BBE;&#x7F6E;&#x6587;&#x4EF6;&#x957F;&#x5EA6;</span>
                         file.setLength(fileLength);
                         mListener.onPreDownload(conn);
-                        //&#x5206;&#x914D;&#x6BCF;&#x6761;&#x7EBF;&#x7A0B;&#x7684;&#x4E0B;&#x8F7D;&#x533A;&#x95F4;
-                        Properties pro = null;
+                        <span class="hljs-comment">//&#x5206;&#x914D;&#x6BCF;&#x6761;&#x7EBF;&#x7A0B;&#x7684;&#x4E0B;&#x8F7D;&#x533A;&#x95F4;</span>
+                        Properties pro = <span class="hljs-keyword">null</span>;
                         pro = Util.loadConfig(configFile);
-                        int blockSize = fileLength / THREAD_NUM;
-                        SparseArray&lt;Thread&gt; tasks = new SparseArray&lt;&gt;();
-                        for (int i = 0; i &lt; THREAD_NUM; i++) {
-                            long startL = i * blockSize, endL = (i + 1) * blockSize;
-                            Object state = pro.getProperty(dFile.getName() + &quot;_state_&quot; + i);
-                            if (state != null &amp;&amp; Integer.parseInt(state + &quot;&quot;) == 1) {  //&#x8BE5;&#x7EBF;&#x7A0B;&#x5DF2;&#x7ECF;&#x5B8C;&#x6210;
+                        <span class="hljs-keyword">int</span> blockSize = fileLength / THREAD_NUM;
+                        SparseArray&lt;Thread&gt; tasks = <span class="hljs-keyword">new</span> SparseArray&lt;&gt;();
+                        <span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> i = <span class="hljs-number">0</span>; i &lt; THREAD_NUM; i++) {
+                            <span class="hljs-keyword">long</span> startL = i * blockSize, endL = (i + <span class="hljs-number">1</span>) * blockSize;
+                            Object state = pro.getProperty(dFile.getName() + <span class="hljs-string">&quot;_state_&quot;</span> + i);
+                            <span class="hljs-keyword">if</span> (state != <span class="hljs-keyword">null</span> &amp;&amp; Integer.parseInt(state + <span class="hljs-string">&quot;&quot;</span>) == <span class="hljs-number">1</span>) {  <span class="hljs-comment">//&#x8BE5;&#x7EBF;&#x7A0B;&#x5DF2;&#x7ECF;&#x5B8C;&#x6210;</span>
                                 mCurrentLocation += endL - startL;
-                                L.d(TAG, &quot;++++++++++ &#x7EBF;&#x7A0B;_&quot; + i + &quot;_&#x5DF2;&#x7ECF;&#x4E0B;&#x8F7D;&#x5B8C;&#x6210; ++++++++++&quot;);
+                                L.d(TAG, <span class="hljs-string">&quot;++++++++++ &#x7EBF;&#x7A0B;_&quot;</span> + i + <span class="hljs-string">&quot;_&#x5DF2;&#x7ECF;&#x4E0B;&#x8F7D;&#x5B8C;&#x6210; ++++++++++&quot;</span>);
                                 mCompleteThreadNum++;
-                                if (mCompleteThreadNum == THREAD_NUM) {
-                                    if (configFile.exists()) {
+                                <span class="hljs-keyword">if</span> (mCompleteThreadNum == THREAD_NUM) {
+                                    <span class="hljs-keyword">if</span> (configFile.exists()) {
                                         configFile.delete();
                                     }
                                     mListener.onComplete();
-                                    isDownloading = false;
+                                    isDownloading = <span class="hljs-keyword">false</span>;
                                     System.gc();
-                                    return;
+                                    <span class="hljs-keyword">return</span>;
                                 }
-                                continue;
+                                <span class="hljs-keyword">continue</span>;
                             }
-                            //&#x5206;&#x914D;&#x4E0B;&#x8F7D;&#x4F4D;&#x7F6E;
-                            Object record = pro.getProperty(dFile.getName() + &quot;_record_&quot; + i);
-                            if (!newTask &amp;&amp; record != null &amp;&amp; Long.parseLong(record + &quot;&quot;) &gt; 0) {       //&#x5982;&#x679C;&#x6709;&#x8BB0;&#x5F55;&#xFF0C;&#x5219;&#x6062;&#x590D;&#x4E0B;&#x8F7D;
-                                Long r = Long.parseLong(record + &quot;&quot;);
+                            <span class="hljs-comment">//&#x5206;&#x914D;&#x4E0B;&#x8F7D;&#x4F4D;&#x7F6E;</span>
+                            Object record = pro.getProperty(dFile.getName() + <span class="hljs-string">&quot;_record_&quot;</span> + i);
+                            <span class="hljs-keyword">if</span> (!newTask &amp;&amp; record != <span class="hljs-keyword">null</span> &amp;&amp; Long.parseLong(record + <span class="hljs-string">&quot;&quot;</span>) &gt; <span class="hljs-number">0</span>) {       <span class="hljs-comment">//&#x5982;&#x679C;&#x6709;&#x8BB0;&#x5F55;&#xFF0C;&#x5219;&#x6062;&#x590D;&#x4E0B;&#x8F7D;</span>
+                                Long r = Long.parseLong(record + <span class="hljs-string">&quot;&quot;</span>);
                                 mCurrentLocation += r - startL;
-                                L.d(TAG, &quot;++++++++++ &#x7EBF;&#x7A0B;_&quot; + i + &quot;_&#x6062;&#x590D;&#x4E0B;&#x8F7D; ++++++++++&quot;);
+                                L.d(TAG, <span class="hljs-string">&quot;++++++++++ &#x7EBF;&#x7A0B;_&quot;</span> + i + <span class="hljs-string">&quot;_&#x6062;&#x590D;&#x4E0B;&#x8F7D; ++++++++++&quot;</span>);
                                 mListener.onChildResume(r);
                                 startL = r;
                             }
-                            if (i == (THREAD_NUM - 1)) {
-                                endL = fileLength;//&#x5982;&#x679C;&#x6574;&#x4E2A;&#x6587;&#x4EF6;&#x7684;&#x5927;&#x5C0F;&#x4E0D;&#x4E3A;&#x7EBF;&#x7A0B;&#x4E2A;&#x6570;&#x7684;&#x6574;&#x6570;&#x500D;&#xFF0C;&#x5219;&#x6700;&#x540E;&#x4E00;&#x4E2A;&#x7EBF;&#x7A0B;&#x7684;&#x7ED3;&#x675F;&#x4F4D;&#x7F6E;&#x5373;&#x4E3A;&#x6587;&#x4EF6;&#x7684;&#x603B;&#x957F;&#x5EA6;
+                            <span class="hljs-keyword">if</span> (i == (THREAD_NUM - <span class="hljs-number">1</span>)) {
+                                endL = fileLength;<span class="hljs-comment">//&#x5982;&#x679C;&#x6574;&#x4E2A;&#x6587;&#x4EF6;&#x7684;&#x5927;&#x5C0F;&#x4E0D;&#x4E3A;&#x7EBF;&#x7A0B;&#x4E2A;&#x6570;&#x7684;&#x6574;&#x6570;&#x500D;&#xFF0C;&#x5219;&#x6700;&#x540E;&#x4E00;&#x4E2A;&#x7EBF;&#x7A0B;&#x7684;&#x7ED3;&#x675F;&#x4F4D;&#x7F6E;&#x5373;&#x4E3A;&#x6587;&#x4EF6;&#x7684;&#x603B;&#x957F;&#x5EA6;</span>
                             }
-                            DownloadEntity entity = new DownloadEntity(context, fileLength, downloadUrl, dFile, i, startL, endL);
-                            DownLoadTask task = new DownLoadTask(entity);
-                            tasks.put(i, new Thread(task));
+                            DownloadEntity entity = <span class="hljs-keyword">new</span> DownloadEntity(context, fileLength, downloadUrl, dFile, i, startL, endL);
+                            DownLoadTask task = <span class="hljs-keyword">new</span> DownLoadTask(entity);
+                            tasks.put(i, <span class="hljs-keyword">new</span> Thread(task));
                         }
-                        if (mCurrentLocation &gt; 0) {
+                        <span class="hljs-keyword">if</span> (mCurrentLocation &gt; <span class="hljs-number">0</span>) {
                             mListener.onResume(mCurrentLocation);
-                        } else {
+                        } <span class="hljs-keyword">else</span> {
                             mListener.onStart(mCurrentLocation);
                         }
-                        for (int i = 0, count = tasks.size(); i &lt; count; i++) {
+                        <span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> i = <span class="hljs-number">0</span>, count = tasks.size(); i &lt; count; i++) {
                             Thread task = tasks.get(i);
-                            if (task != null) {
+                            <span class="hljs-keyword">if</span> (task != <span class="hljs-keyword">null</span>) {
                                 task.start();
                             }
                         }
-                    } else {
-                        FL.e(TAG, &quot;&#x4E0B;&#x8F7D;&#x5931;&#x8D25;&#xFF0C;&#x8FD4;&#x56DE;&#x7801;&#xFF1A;&quot; + code);
-                        isDownloading = false;
+                    } <span class="hljs-keyword">else</span> {
+                        FL.e(TAG, <span class="hljs-string">&quot;&#x4E0B;&#x8F7D;&#x5931;&#x8D25;&#xFF0C;&#x8FD4;&#x56DE;&#x7801;&#xFF1A;&quot;</span> + code);
+                        isDownloading = <span class="hljs-keyword">false</span>;
                         System.gc();
                         mListener.onFail();
                     }
-                } catch (IOException e) {
-                    FL.e(this, &quot;&#x4E0B;&#x8F7D;&#x5931;&#x8D25;&#x3010;downloadUrl:&quot; + downloadUrl + &quot;&#x3011;\n&#x3010;filePath:&quot; + filePath + &quot;&#x3011;&quot; + FL.getPrintException(e));
-                    isDownloading = false;
+                } <span class="hljs-keyword">catch</span> (IOException e) {
+                    FL.e(<span class="hljs-keyword">this</span>, <span class="hljs-string">&quot;&#x4E0B;&#x8F7D;&#x5931;&#x8D25;&#x3010;downloadUrl:&quot;</span> + downloadUrl + <span class="hljs-string">&quot;&#x3011;\n&#x3010;filePath:&quot;</span> + filePath + <span class="hljs-string">&quot;&#x3011;&quot;</span> + FL.getPrintException(e));
+                    isDownloading = <span class="hljs-keyword">false</span>;
                     mListener.onFail();
                 }
             }
@@ -4199,7 +4203,7 @@ public class DownloadListener implements IDownloadListener {
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"Android多线程断点续传","level":"3.2.1","depth":2,"next":{"title":"Android全局异常处理","level":"3.2.2","depth":2,"path":"android/advance/exception.md","ref":"android/advance/exception.md","articles":[]},"previous":{"title":"Android进阶","level":"3.2","depth":1,"path":"android/advance.md","ref":"android/advance.md","articles":[{"title":"Android多线程断点续传","level":"3.2.1","depth":2,"path":"android/advance/breakpoint.md","ref":"android/advance/breakpoint.md","articles":[]},{"title":"Android全局异常处理","level":"3.2.2","depth":2,"path":"android/advance/exception.md","ref":"android/advance/exception.md","articles":[]},{"title":"Android MVP模式详解","level":"3.2.3","depth":2,"path":"android/advance/mvp.md","ref":"android/advance/mvp.md","articles":[]},{"title":"Android Binder机制及AIDL使用","level":"3.2.4","depth":2,"path":"android/advance/binder.md","ref":"android/advance/binder.md","articles":[]},{"title":"Android Parcelable和Serializable的区别","level":"3.2.5","depth":2,"path":"android/advance/serializable.md","ref":"android/advance/serializable.md","articles":[]},{"title":"一个APP从启动到主页面显示经历了哪些过程？","level":"3.2.6","depth":2,"path":"android/advance/app-launch.md","ref":"android/advance/app-launch.md","articles":[]},{"title":"Android性能优化总结","level":"3.2.7","depth":2,"path":"android/advance/performance-optimization.md","ref":"android/advance/performance-optimization.md","articles":[]},{"title":"Android 内存泄漏总结","level":"3.2.8","depth":2,"path":"android/advance/memory-leak.md","ref":"android/advance/memory-leak.md","articles":[]},{"title":"Android布局优化之include、merge、ViewStub的使用","level":"3.2.9","depth":2,"path":"android/advance/layout-optimization.md","ref":"android/advance/layout-optimization.md","articles":[]},{"title":"Android权限处理","level":"3.2.10","depth":2,"path":"android/advance/permission.md","ref":"android/advance/permission.md","articles":[]},{"title":"Android热修复原理","level":"3.2.11","depth":2,"path":"android/advance/hotfix.md","ref":"android/advance/hotfix.md","articles":[]},{"title":"Android插件化入门指南","level":"3.2.12","depth":2,"path":"android/advance/plugin.md","ref":"android/advance/plugin.md","articles":[]},{"title":"VirtualApk解析","level":"3.2.13","depth":2,"path":"android/advance/virtualapk.md","ref":"android/advance/virtualapk.md","articles":[]},{"title":"Android推送技术解析","level":"3.2.14","depth":2,"path":"android/advance/push.md","ref":"android/advance/push.md","articles":[]},{"title":"Android Apk安装过程","level":"3.2.15","depth":2,"path":"android/advance/apk-install.md","ref":"android/advance/apk-install.md","articles":[]},{"title":"PopupWindow和Dialog区别","level":"3.2.16","depth":2,"path":"android/advance/dialog-popupwindow","ref":"android/advance/dialog-popupwindow","articles":[]}]},"dir":"ltr"},"config":{"plugins":["-lunr","-search","-highlight","-livereload","search-plus@^0.0.11","simple-page-toc@^0.1.1","github@^2.0.0","github-buttons@2.1.0","edit-link@^2.0.2","advanced-emoji@^0.2.1","anchors@^0.7.1","include-codeblock@^3.0.2","ace@^0.3.2","emphasize@^1.1.0","katex@^1.1.3","splitter@^0.0.8","tbfed-pagefooter@^0.0.1","expandable-chapters-small@^0.1.7","sectionx@^3.1.0","local-video@^1.0.1","anchor-navigation-ex@0.1.8","favicon@^0.0.2"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"tbfed-pagefooter":{"copyright":"Copyright © ruheng.com 2017","modify_label":"该文件修订时间：","modify_format":"YYYY-MM-DD HH:mm:ss"},"emphasize":{},"ace":{},"github":{"url":"https://github.com/LRH1993/android_interview"},"simple-page-toc":{"maxDepth":3,"skipFirstH1":true},"splitter":{},"katex":{},"fontsettings":{"theme":"white","family":"sans","size":2},"sectionx":{"tag":"b"},"anchor-navigation-ex":{"isRewritePageTitle":false,"tocLevel1Icon":"fa fa-hand-o-right","tocLevel2Icon":"fa fa-hand-o-right","tocLevel3Icon":"fa fa-hand-o-right"},"favicon":{"shortcut":"favicon.ico","bookmark":"favicon.ico"},"github-buttons":{"repo":"LRH1993/android_interview","types":["star"],"size":"small"},"expandable-chapters-small":{},"local-video":{},"advanced-emoji":{"embedEmojis":false},"include-codeblock":{"check":false,"edit":true,"fixlang":false,"lang":"","template":"ace","theme":"chrome","unindent":true},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":true,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"edit-link":{"label":"Edit This Page","base":"https://github.com/LRH1993/android_interview/edit/master"},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":true},"anchors":{},"search-plus":{}},"theme":"default","author":"ruheng","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"Android校招面试指南","language":"zh-hans","output.name":"site","links":{"sidebar":{"Home":"http://lruheng.com/"}},"gitbook":"3.2.3","description":"Android面试必备，记录自己的秋招之路"},"file":{"path":"android/advance/breakpoint.md","mtime":"2017-08-31T02:23:02.000Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2017-10-16T12:05:21.906Z"},"basePath":"../..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"Android多线程断点续传","level":"3.2.1","depth":2,"next":{"title":"Android全局异常处理","level":"3.2.2","depth":2,"path":"android/advance/exception.md","ref":"android/advance/exception.md","articles":[]},"previous":{"title":"Android进阶","level":"3.2","depth":1,"path":"android/advance.md","ref":"android/advance.md","articles":[{"title":"Android多线程断点续传","level":"3.2.1","depth":2,"path":"android/advance/breakpoint.md","ref":"android/advance/breakpoint.md","articles":[]},{"title":"Android全局异常处理","level":"3.2.2","depth":2,"path":"android/advance/exception.md","ref":"android/advance/exception.md","articles":[]},{"title":"Android MVP模式详解","level":"3.2.3","depth":2,"path":"android/advance/mvp.md","ref":"android/advance/mvp.md","articles":[]},{"title":"Android Binder机制及AIDL使用","level":"3.2.4","depth":2,"path":"android/advance/binder.md","ref":"android/advance/binder.md","articles":[]},{"title":"Android Parcelable和Serializable的区别","level":"3.2.5","depth":2,"path":"android/advance/serializable.md","ref":"android/advance/serializable.md","articles":[]},{"title":"一个APP从启动到主页面显示经历了哪些过程？","level":"3.2.6","depth":2,"path":"android/advance/app-launch.md","ref":"android/advance/app-launch.md","articles":[]},{"title":"Android性能优化总结","level":"3.2.7","depth":2,"path":"android/advance/performance-optimization.md","ref":"android/advance/performance-optimization.md","articles":[]},{"title":"Android 内存泄漏总结","level":"3.2.8","depth":2,"path":"android/advance/memory-leak.md","ref":"android/advance/memory-leak.md","articles":[]},{"title":"Android布局优化之include、merge、ViewStub的使用","level":"3.2.9","depth":2,"path":"android/advance/layout-optimization.md","ref":"android/advance/layout-optimization.md","articles":[]},{"title":"Android权限处理","level":"3.2.10","depth":2,"path":"android/advance/permission.md","ref":"android/advance/permission.md","articles":[]},{"title":"Android热修复原理","level":"3.2.11","depth":2,"path":"android/advance/hotfix.md","ref":"android/advance/hotfix.md","articles":[]},{"title":"Android插件化入门指南","level":"3.2.12","depth":2,"path":"android/advance/plugin.md","ref":"android/advance/plugin.md","articles":[]},{"title":"VirtualApk解析","level":"3.2.13","depth":2,"path":"android/advance/virtualapk.md","ref":"android/advance/virtualapk.md","articles":[]},{"title":"Android推送技术解析","level":"3.2.14","depth":2,"path":"android/advance/push.md","ref":"android/advance/push.md","articles":[]},{"title":"Android Apk安装过程","level":"3.2.15","depth":2,"path":"android/advance/apk-install.md","ref":"android/advance/apk-install.md","articles":[]},{"title":"PopupWindow和Dialog区别","level":"3.2.16","depth":2,"path":"android/advance/dialog-popupwindow","ref":"android/advance/dialog-popupwindow","articles":[]}]},"dir":"ltr"},"config":{"plugins":["-lunr","-search","-livereload","search-plus@^0.0.11","simple-page-toc@^0.1.1","github@^2.0.0","github-buttons@2.1.0","edit-link@^2.0.2","advanced-emoji@^0.2.1","anchors@^0.7.1","include-codeblock@^3.0.2","ace@^0.3.2","emphasize@^1.1.0","katex@^1.1.3","splitter@^0.0.8","tbfed-pagefooter@^0.0.1","expandable-chapters-small@^0.1.7","sectionx@^3.1.0","local-video@^1.0.1","anchor-navigation-ex@0.1.8","favicon@^0.0.2"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"tbfed-pagefooter":{"copyright":"Copyright © ruheng.com 2017","modify_label":"该文件修订时间：","modify_format":"YYYY-MM-DD HH:mm:ss"},"emphasize":{},"ace":{},"github":{"url":"https://github.com/LRH1993/android_interview"},"simple-page-toc":{"maxDepth":3,"skipFirstH1":true},"splitter":{},"katex":{},"fontsettings":{"theme":"white","family":"sans","size":2},"sectionx":{"tag":"b"},"highlight":{},"anchor-navigation-ex":{"isRewritePageTitle":false,"tocLevel1Icon":"fa fa-hand-o-right","tocLevel2Icon":"fa fa-hand-o-right","tocLevel3Icon":"fa fa-hand-o-right"},"favicon":{"shortcut":"favicon.ico","bookmark":"favicon.ico"},"github-buttons":{"repo":"LRH1993/android_interview","types":["star"],"size":"small"},"expandable-chapters-small":{},"local-video":{},"advanced-emoji":{"embedEmojis":false},"include-codeblock":{"check":false,"edit":false,"fixlang":false,"lang":"","template":"default","theme":"chrome","unindent":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":true,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"edit-link":{"label":"Edit This Page","base":"https://github.com/LRH1993/android_interview/edit/master"},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":true},"anchors":{},"search-plus":{}},"theme":"default","author":"ruheng","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"Android校招面试指南","language":"zh-hans","output.name":"site","links":{"sidebar":{"Home":"http://lruheng.com/"}},"gitbook":"3.2.3","description":"Android面试必备，记录自己的秋招之路"},"file":{"path":"android/advance/breakpoint.md","mtime":"2017-08-31T02:23:02.000Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2017-10-16T13:00:43.989Z"},"basePath":"../..","book":{"language":""}});
         });
     </script>
 </div>

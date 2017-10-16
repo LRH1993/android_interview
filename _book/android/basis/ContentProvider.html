@@ -69,6 +69,10 @@
                 
             
                 
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
                 <link rel="stylesheet" href="../../gitbook/gitbook-plugin-fontsettings/website.css">
                 
             
@@ -3735,18 +3739,18 @@
 </li>
 </ul>
 <p><img src="http://upload-images.jianshu.io/upload_images/944365-96019a2054eb27cf.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></p>
-<pre><code class="lang-Java">// &#x8BBE;&#x7F6E;URI
-Uri uri = Uri.parse(&quot;content://com.carson.provider/User/1&quot;) 
-// &#x4E0A;&#x8FF0;URI&#x6307;&#x5411;&#x7684;&#x8D44;&#x6E90;&#x662F;&#xFF1A;&#x540D;&#x4E3A; `com.carson.provider`&#x7684;`ContentProvider` &#x4E2D;&#x8868;&#x540D; &#x4E3A;`User` &#x4E2D;&#x7684; `id`&#x4E3A;1&#x7684;&#x6570;&#x636E;
+<pre><code class="lang-Java"><span class="hljs-comment">// &#x8BBE;&#x7F6E;URI</span>
+Uri uri = Uri.parse(<span class="hljs-string">&quot;content://com.carson.provider/User/1&quot;</span>) 
+<span class="hljs-comment">// &#x4E0A;&#x8FF0;URI&#x6307;&#x5411;&#x7684;&#x8D44;&#x6E90;&#x662F;&#xFF1A;&#x540D;&#x4E3A; `com.carson.provider`&#x7684;`ContentProvider` &#x4E2D;&#x8868;&#x540D; &#x4E3A;`User` &#x4E2D;&#x7684; `id`&#x4E3A;1&#x7684;&#x6570;&#x636E;</span>
 
-// &#x7279;&#x522B;&#x6CE8;&#x610F;&#xFF1A;URI&#x6A21;&#x5F0F;&#x5B58;&#x5728;&#x5339;&#x914D;&#x901A;&#x914D;&#x7B26;* &amp; &#xFF03;
+<span class="hljs-comment">// &#x7279;&#x522B;&#x6CE8;&#x610F;&#xFF1A;URI&#x6A21;&#x5F0F;&#x5B58;&#x5728;&#x5339;&#x914D;&#x901A;&#x914D;&#x7B26;* &amp; &#xFF03;</span>
 
-// *&#xFF1A;&#x5339;&#x914D;&#x4EFB;&#x610F;&#x957F;&#x5EA6;&#x7684;&#x4EFB;&#x4F55;&#x6709;&#x6548;&#x5B57;&#x7B26;&#x7684;&#x5B57;&#x7B26;&#x4E32;
-// &#x4EE5;&#x4E0B;&#x7684;URI &#x8868;&#x793A; &#x5339;&#x914D;provider&#x7684;&#x4EFB;&#x4F55;&#x5185;&#x5BB9;
-content://com.example.app.provider/* 
-// &#xFF03;&#xFF1A;&#x5339;&#x914D;&#x4EFB;&#x610F;&#x957F;&#x5EA6;&#x7684;&#x6570;&#x5B57;&#x5B57;&#x7B26;&#x7684;&#x5B57;&#x7B26;&#x4E32;
-// &#x4EE5;&#x4E0B;&#x7684;URI &#x8868;&#x793A; &#x5339;&#x914D;provider&#x4E2D;&#x7684;table&#x8868;&#x7684;&#x6240;&#x6709;&#x884C;
-content://com.example.app.provider/table/#
+<span class="hljs-comment">// *&#xFF1A;&#x5339;&#x914D;&#x4EFB;&#x610F;&#x957F;&#x5EA6;&#x7684;&#x4EFB;&#x4F55;&#x6709;&#x6548;&#x5B57;&#x7B26;&#x7684;&#x5B57;&#x7B26;&#x4E32;</span>
+<span class="hljs-comment">// &#x4EE5;&#x4E0B;&#x7684;URI &#x8868;&#x793A; &#x5339;&#x914D;provider&#x7684;&#x4EFB;&#x4F55;&#x5185;&#x5BB9;</span>
+content:<span class="hljs-comment">//com.example.app.provider/* </span>
+<span class="hljs-comment">// &#xFF03;&#xFF1A;&#x5339;&#x914D;&#x4EFB;&#x610F;&#x957F;&#x5EA6;&#x7684;&#x6570;&#x5B57;&#x5B57;&#x7B26;&#x7684;&#x5B57;&#x7B26;&#x4E32;</span>
+<span class="hljs-comment">// &#x4EE5;&#x4E0B;&#x7684;URI &#x8868;&#x793A; &#x5339;&#x914D;provider&#x4E2D;&#x7684;table&#x8868;&#x7684;&#x6240;&#x6709;&#x884C;</span>
+content:<span class="hljs-comment">//com.example.app.provider/table/#</span>
 </code></pre>
 <h3 id="42--mime&#x6570;&#x636E;&#x7C7B;&#x578B;"><a name="42--mime&#x6570;&#x636E;&#x7C7B;&#x578B;" class="anchor-navigation-ex-anchor" href="#42--mime&#x6570;&#x636E;&#x7C7B;&#x578B;"><i class="fa fa-link" aria-hidden="true"></i></a>4.2  MIME&#x6570;&#x636E;&#x7C7B;&#x578B;</h3>
 <ul>
@@ -3763,7 +3767,7 @@ content://com.example.app.provider/table/#
 <p>MIME&#x7C7B;&#x578B;&#x662F; &#x4E00;&#x4E2A; &#x5305;&#x542B;2&#x90E8;&#x5206;&#x7684;&#x5B57;&#x7B26;&#x4E32;</p>
 </blockquote>
 <pre><code class="lang-java">text / html
-// &#x7C7B;&#x578B; = text&#x3001;&#x5B50;&#x7C7B;&#x578B; = html
+<span class="hljs-comment">// &#x7C7B;&#x578B; = text&#x3001;&#x5B50;&#x7C7B;&#x578B; = html</span>
 
 text/css
 text/xml
@@ -3771,33 +3775,33 @@ application/pdf
 </code></pre>
 <p><strong>4.2.3 MIME&#x7C7B;&#x578B;&#x5F62;&#x5F0F;</strong>
 <code>MIME</code>&#x7C7B;&#x578B;&#x6709;2&#x79CD;&#x5F62;&#x5F0F;&#xFF1A;</p>
-<pre><code class="lang-java">// &#x5F62;&#x5F0F;1&#xFF1A;&#x5355;&#x6761;&#x8BB0;&#x5F55;  
+<pre><code class="lang-java"><span class="hljs-comment">// &#x5F62;&#x5F0F;1&#xFF1A;&#x5355;&#x6761;&#x8BB0;&#x5F55;  </span>
 vnd.android.cursor.item/&#x81EA;&#x5B9A;&#x4E49;
-// &#x5F62;&#x5F0F;2&#xFF1A;&#x591A;&#x6761;&#x8BB0;&#x5F55;&#xFF08;&#x96C6;&#x5408;&#xFF09;
+<span class="hljs-comment">// &#x5F62;&#x5F0F;2&#xFF1A;&#x591A;&#x6761;&#x8BB0;&#x5F55;&#xFF08;&#x96C6;&#x5408;&#xFF09;</span>
 vnd.android.cursor.dir/&#x81EA;&#x5B9A;&#x4E49; 
 
-// &#x6CE8;&#xFF1A;
-  // 1. vnd&#xFF1A;&#x8868;&#x793A;&#x7236;&#x7C7B;&#x578B;&#x548C;&#x5B50;&#x7C7B;&#x578B;&#x5177;&#x6709;&#x975E;&#x6807;&#x51C6;&#x7684;&#x3001;&#x7279;&#x5B9A;&#x7684;&#x5F62;&#x5F0F;&#x3002;
-  // 2. &#x7236;&#x7C7B;&#x578B;&#x5DF2;&#x56FA;&#x5B9A;&#x597D;&#xFF08;&#x5373;&#x4E0D;&#x80FD;&#x66F4;&#x6539;&#xFF09;&#xFF0C;&#x53EA;&#x80FD;&#x533A;&#x522B;&#x662F;&#x5355;&#x6761;&#x8FD8;&#x662F;&#x591A;&#x6761;&#x8BB0;&#x5F55;
-  // 3. &#x5B50;&#x7C7B;&#x578B;&#x53EF;&#x81EA;&#x5B9A;&#x4E49;
+<span class="hljs-comment">// &#x6CE8;&#xFF1A;</span>
+  <span class="hljs-comment">// 1. vnd&#xFF1A;&#x8868;&#x793A;&#x7236;&#x7C7B;&#x578B;&#x548C;&#x5B50;&#x7C7B;&#x578B;&#x5177;&#x6709;&#x975E;&#x6807;&#x51C6;&#x7684;&#x3001;&#x7279;&#x5B9A;&#x7684;&#x5F62;&#x5F0F;&#x3002;</span>
+  <span class="hljs-comment">// 2. &#x7236;&#x7C7B;&#x578B;&#x5DF2;&#x56FA;&#x5B9A;&#x597D;&#xFF08;&#x5373;&#x4E0D;&#x80FD;&#x66F4;&#x6539;&#xFF09;&#xFF0C;&#x53EA;&#x80FD;&#x533A;&#x522B;&#x662F;&#x5355;&#x6761;&#x8FD8;&#x662F;&#x591A;&#x6761;&#x8BB0;&#x5F55;</span>
+  <span class="hljs-comment">// 3. &#x5B50;&#x7C7B;&#x578B;&#x53EF;&#x81EA;&#x5B9A;&#x4E49;</span>
 </code></pre>
 <h4 id="&#x5B9E;&#x4F8B;&#x8BF4;&#x660E;"><a name="&#x5B9E;&#x4F8B;&#x8BF4;&#x660E;" class="anchor-navigation-ex-anchor" href="#&#x5B9E;&#x4F8B;&#x8BF4;&#x660E;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x5B9E;&#x4F8B;&#x8BF4;&#x660E;</h4>
 <pre><code class="lang-java">&lt;-- &#x5355;&#x6761;&#x8BB0;&#x5F55; --&gt;
-  // &#x5355;&#x4E2A;&#x8BB0;&#x5F55;&#x7684;MIME&#x7C7B;&#x578B;
+  <span class="hljs-comment">// &#x5355;&#x4E2A;&#x8BB0;&#x5F55;&#x7684;MIME&#x7C7B;&#x578B;</span>
   vnd.android.cursor.item/vnd.yourcompanyname.contenttype 
 
-  // &#x82E5;&#x4E00;&#x4E2A;Uri&#x5982;&#x4E0B;
-  content://com.example.transportationprovider/trains/122   
-  // &#x5219;ContentProvider&#x4F1A;&#x901A;&#x8FC7;ContentProvider.geType(url)&#x8FD4;&#x56DE;&#x4EE5;&#x4E0B;MIME&#x7C7B;&#x578B;
+  <span class="hljs-comment">// &#x82E5;&#x4E00;&#x4E2A;Uri&#x5982;&#x4E0B;</span>
+  content:<span class="hljs-comment">//com.example.transportationprovider/trains/122   </span>
+  <span class="hljs-comment">// &#x5219;ContentProvider&#x4F1A;&#x901A;&#x8FC7;ContentProvider.geType(url)&#x8FD4;&#x56DE;&#x4EE5;&#x4E0B;MIME&#x7C7B;&#x578B;</span>
   vnd.android.cursor.item/vnd.example.rail
 
 
 &lt;-- &#x591A;&#x6761;&#x8BB0;&#x5F55; --&gt;
-  // &#x591A;&#x4E2A;&#x8BB0;&#x5F55;&#x7684;MIME&#x7C7B;&#x578B;
+  <span class="hljs-comment">// &#x591A;&#x4E2A;&#x8BB0;&#x5F55;&#x7684;MIME&#x7C7B;&#x578B;</span>
   vnd.android.cursor.dir/vnd.yourcompanyname.contenttype 
-  // &#x82E5;&#x4E00;&#x4E2A;Uri&#x5982;&#x4E0B;
-  content://com.example.transportationprovider/trains 
-  // &#x5219;ContentProvider&#x4F1A;&#x901A;&#x8FC7;ContentProvider.geType(url)&#x8FD4;&#x56DE;&#x4EE5;&#x4E0B;MIME&#x7C7B;&#x578B;
+  <span class="hljs-comment">// &#x82E5;&#x4E00;&#x4E2A;Uri&#x5982;&#x4E0B;</span>
+  content:<span class="hljs-comment">//com.example.transportationprovider/trains </span>
+  <span class="hljs-comment">// &#x5219;ContentProvider&#x4F1A;&#x901A;&#x8FC7;ContentProvider.geType(url)&#x8FD4;&#x56DE;&#x4EE5;&#x4E0B;MIME&#x7C7B;&#x578B;</span>
   vnd.android.cursor.dir/vnd.example.rail
 </code></pre>
 <h3 id="43-contentprovider&#x7C7B;"><a name="43-contentprovider&#x7C7B;" class="anchor-navigation-ex-anchor" href="#43-contentprovider&#x7C7B;"><i class="fa fa-link" aria-hidden="true"></i></a>4.3 ContentProvider&#x7C7B;</h3>
@@ -3819,33 +3823,33 @@ vnd.android.cursor.dir/&#x81EA;&#x5B9A;&#x4E49;
 <li><strong>&#x8FDB;&#x7A0B;</strong>&#x95F4;&#x5171;&#x4EAB;&#x6570;&#x636E;&#x7684;&#x672C;&#x8D28;&#x662F;&#xFF1A;&#x6DFB;&#x52A0;&#x3001;&#x5220;&#x9664;&#x3001;&#x83B7;&#x53D6; &amp; &#x4FEE;&#x6539;&#xFF08;&#x66F4;&#x65B0;&#xFF09;&#x6570;&#x636E;</li>
 <li>&#x6240;&#x4EE5;<code>ContentProvider</code>&#x7684;&#x6838;&#x5FC3;&#x65B9;&#x6CD5;&#x4E5F;&#x4E3B;&#x8981;&#x662F;&#x4E0A;&#x8FF0;4&#x4E2A;&#x4F5C;&#x7528;</li>
 </ul>
-<pre><code class="lang-java">&lt;-- 4&#x4E2A;&#x6838;&#x5FC3;&#x65B9;&#x6CD5; --&gt;
-  public Uri insert(Uri uri, ContentValues values) 
-  // &#x5916;&#x90E8;&#x8FDB;&#x7A0B;&#x5411; ContentProvider &#x4E2D;&#x6DFB;&#x52A0;&#x6570;&#x636E;
+<pre><code class="lang-java">&lt;-- <span class="hljs-number">4</span>&#x4E2A;&#x6838;&#x5FC3;&#x65B9;&#x6CD5; --&gt;
+  <span class="hljs-function"><span class="hljs-keyword">public</span> Uri <span class="hljs-title">insert</span><span class="hljs-params">(Uri uri, ContentValues values)</span> 
+  <span class="hljs-comment">// &#x5916;&#x90E8;&#x8FDB;&#x7A0B;&#x5411; ContentProvider &#x4E2D;&#x6DFB;&#x52A0;&#x6570;&#x636E;</span>
 
-  public int delete(Uri uri, String selection, String[] selectionArgs) 
-  // &#x5916;&#x90E8;&#x8FDB;&#x7A0B; &#x5220;&#x9664; ContentProvider &#x4E2D;&#x7684;&#x6570;&#x636E;
+  <span class="hljs-keyword">public</span> <span class="hljs-keyword">int</span> <span class="hljs-title">delete</span><span class="hljs-params">(Uri uri, String selection, String[] selectionArgs)</span> 
+  <span class="hljs-comment">// &#x5916;&#x90E8;&#x8FDB;&#x7A0B; &#x5220;&#x9664; ContentProvider &#x4E2D;&#x7684;&#x6570;&#x636E;</span>
 
-  public int update(Uri uri, ContentValues values, String selection, String[] selectionArgs)
-  // &#x5916;&#x90E8;&#x8FDB;&#x7A0B;&#x66F4;&#x65B0; ContentProvider &#x4E2D;&#x7684;&#x6570;&#x636E;
+  <span class="hljs-keyword">public</span> <span class="hljs-keyword">int</span> <span class="hljs-title">update</span><span class="hljs-params">(Uri uri, ContentValues values, String selection, String[] selectionArgs)</span>
+  <span class="hljs-comment">// &#x5916;&#x90E8;&#x8FDB;&#x7A0B;&#x66F4;&#x65B0; ContentProvider &#x4E2D;&#x7684;&#x6570;&#x636E;</span>
 
-  public Cursor query(Uri uri, String[] projection, String selection, String[] selectionArgs,  String sortOrder)&#x3000; 
-  // &#x5916;&#x90E8;&#x5E94;&#x7528; &#x83B7;&#x53D6; ContentProvider &#x4E2D;&#x7684;&#x6570;&#x636E;
+  <span class="hljs-keyword">public</span> Cursor <span class="hljs-title">query</span><span class="hljs-params">(Uri uri, String[] projection, String selection, String[] selectionArgs,  String sortOrder)</span>&#x3000; 
+  <span class="hljs-comment">// &#x5916;&#x90E8;&#x5E94;&#x7528; &#x83B7;&#x53D6; ContentProvider &#x4E2D;&#x7684;&#x6570;&#x636E;</span>
 
-// &#x6CE8;&#xFF1A;
-  // 1. &#x4E0A;&#x8FF0;4&#x4E2A;&#x65B9;&#x6CD5;&#x7531;&#x5916;&#x90E8;&#x8FDB;&#x7A0B;&#x56DE;&#x8C03;&#xFF0C;&#x5E76;&#x8FD0;&#x884C;&#x5728;ContentProvider&#x8FDB;&#x7A0B;&#x7684;Binder&#x7EBF;&#x7A0B;&#x6C60;&#x4E2D;&#xFF08;&#x4E0D;&#x662F;&#x4E3B;&#x7EBF;&#x7A0B;&#xFF09;
- // 2. &#x5B58;&#x5728;&#x591A;&#x7EBF;&#x7A0B;&#x5E76;&#x53D1;&#x8BBF;&#x95EE;&#xFF0C;&#x9700;&#x8981;&#x5B9E;&#x73B0;&#x7EBF;&#x7A0B;&#x540C;&#x6B65;
-   // a. &#x82E5;ContentProvider&#x7684;&#x6570;&#x636E;&#x5B58;&#x50A8;&#x65B9;&#x5F0F;&#x662F;&#x4F7F;&#x7528;SQLite &amp; &#x4E00;&#x4E2A;&#xFF0C;&#x5219;&#x4E0D;&#x9700;&#x8981;&#xFF0C;&#x56E0;&#x4E3A;SQLite&#x5185;&#x90E8;&#x5B9E;&#x73B0;&#x597D;&#x4E86;&#x7EBF;&#x7A0B;&#x540C;&#x6B65;&#xFF0C;&#x82E5;&#x662F;&#x591A;&#x4E2A;SQLite&#x5219;&#x9700;&#x8981;&#xFF0C;&#x56E0;&#x4E3A;SQL&#x5BF9;&#x8C61;&#x4E4B;&#x95F4;&#x65E0;&#x6CD5;&#x8FDB;&#x884C;&#x7EBF;&#x7A0B;&#x540C;&#x6B65;
-  // b. &#x82E5;ContentProvider&#x7684;&#x6570;&#x636E;&#x5B58;&#x50A8;&#x65B9;&#x5F0F;&#x662F;&#x5185;&#x5B58;&#xFF0C;&#x5219;&#x9700;&#x8981;&#x81EA;&#x5DF1;&#x5B9E;&#x73B0;&#x7EBF;&#x7A0B;&#x540C;&#x6B65;
+<span class="hljs-comment">// &#x6CE8;&#xFF1A;</span>
+  <span class="hljs-comment">// 1. &#x4E0A;&#x8FF0;4&#x4E2A;&#x65B9;&#x6CD5;&#x7531;&#x5916;&#x90E8;&#x8FDB;&#x7A0B;&#x56DE;&#x8C03;&#xFF0C;&#x5E76;&#x8FD0;&#x884C;&#x5728;ContentProvider&#x8FDB;&#x7A0B;&#x7684;Binder&#x7EBF;&#x7A0B;&#x6C60;&#x4E2D;&#xFF08;&#x4E0D;&#x662F;&#x4E3B;&#x7EBF;&#x7A0B;&#xFF09;</span>
+ <span class="hljs-comment">// 2. &#x5B58;&#x5728;&#x591A;&#x7EBF;&#x7A0B;&#x5E76;&#x53D1;&#x8BBF;&#x95EE;&#xFF0C;&#x9700;&#x8981;&#x5B9E;&#x73B0;&#x7EBF;&#x7A0B;&#x540C;&#x6B65;</span>
+   <span class="hljs-comment">// a. &#x82E5;ContentProvider&#x7684;&#x6570;&#x636E;&#x5B58;&#x50A8;&#x65B9;&#x5F0F;&#x662F;&#x4F7F;&#x7528;SQLite &amp; &#x4E00;&#x4E2A;&#xFF0C;&#x5219;&#x4E0D;&#x9700;&#x8981;&#xFF0C;&#x56E0;&#x4E3A;SQLite&#x5185;&#x90E8;&#x5B9E;&#x73B0;&#x597D;&#x4E86;&#x7EBF;&#x7A0B;&#x540C;&#x6B65;&#xFF0C;&#x82E5;&#x662F;&#x591A;&#x4E2A;SQLite&#x5219;&#x9700;&#x8981;&#xFF0C;&#x56E0;&#x4E3A;SQL&#x5BF9;&#x8C61;&#x4E4B;&#x95F4;&#x65E0;&#x6CD5;&#x8FDB;&#x884C;&#x7EBF;&#x7A0B;&#x540C;&#x6B65;</span>
+  <span class="hljs-comment">// b. &#x82E5;ContentProvider&#x7684;&#x6570;&#x636E;&#x5B58;&#x50A8;&#x65B9;&#x5F0F;&#x662F;&#x5185;&#x5B58;&#xFF0C;&#x5219;&#x9700;&#x8981;&#x81EA;&#x5DF1;&#x5B9E;&#x73B0;&#x7EBF;&#x7A0B;&#x540C;&#x6B65;</span>
 
 &lt;-- 2&#x4E2A;&#x5176;&#x4ED6;&#x65B9;&#x6CD5; --&gt;
-public boolean onCreate() 
-// ContentProvider&#x521B;&#x5EFA;&#x540E; &#x6216; &#x6253;&#x5F00;&#x7CFB;&#x7EDF;&#x540E;&#x5176;&#x5B83;&#x8FDB;&#x7A0B;&#x7B2C;&#x4E00;&#x6B21;&#x8BBF;&#x95EE;&#x8BE5;ContentProvider&#x65F6; &#x7531;&#x7CFB;&#x7EDF;&#x8FDB;&#x884C;&#x8C03;&#x7528;
-// &#x6CE8;&#xFF1A;&#x8FD0;&#x884C;&#x5728;ContentProvider&#x8FDB;&#x7A0B;&#x7684;&#x4E3B;&#x7EBF;&#x7A0B;&#xFF0C;&#x6545;&#x4E0D;&#x80FD;&#x505A;&#x8017;&#x65F6;&#x64CD;&#x4F5C;
+<span class="hljs-keyword">public</span> <span class="hljs-keyword">boolean</span> <span class="hljs-title">onCreate</span><span class="hljs-params">()</span> 
+<span class="hljs-comment">// ContentProvider&#x521B;&#x5EFA;&#x540E; &#x6216; &#x6253;&#x5F00;&#x7CFB;&#x7EDF;&#x540E;&#x5176;&#x5B83;&#x8FDB;&#x7A0B;&#x7B2C;&#x4E00;&#x6B21;&#x8BBF;&#x95EE;&#x8BE5;ContentProvider&#x65F6; &#x7531;&#x7CFB;&#x7EDF;&#x8FDB;&#x884C;&#x8C03;&#x7528;</span>
+<span class="hljs-comment">// &#x6CE8;&#xFF1A;&#x8FD0;&#x884C;&#x5728;ContentProvider&#x8FDB;&#x7A0B;&#x7684;&#x4E3B;&#x7EBF;&#x7A0B;&#xFF0C;&#x6545;&#x4E0D;&#x80FD;&#x505A;&#x8017;&#x65F6;&#x64CD;&#x4F5C;</span>
 
-public String getType(Uri uri)
-// &#x5F97;&#x5230;&#x6570;&#x636E;&#x7C7B;&#x578B;&#xFF0C;&#x5373;&#x8FD4;&#x56DE;&#x5F53;&#x524D; Url &#x6240;&#x4EE3;&#x8868;&#x6570;&#x636E;&#x7684;MIME&#x7C7B;&#x578B;
-</code></pre>
+<span class="hljs-keyword">public</span> String <span class="hljs-title">getType</span><span class="hljs-params">(Uri uri)</span>
+<span class="hljs-comment">// &#x5F97;&#x5230;&#x6570;&#x636E;&#x7C7B;&#x578B;&#xFF0C;&#x5373;&#x8FD4;&#x56DE;&#x5F53;&#x524D; Url &#x6240;&#x4EE3;&#x8868;&#x6570;&#x636E;&#x7684;MIME&#x7C7B;&#x578B;</span>
+</span></code></pre>
 <ul>
 <li><p><code>Android</code>&#x4E3A;&#x5E38;&#x89C1;&#x7684;&#x6570;&#x636E;&#xFF08;&#x5982;&#x901A;&#x8BAF;&#x5F55;&#x3001;&#x65E5;&#x7A0B;&#x8868;&#x7B49;&#xFF09;&#x63D0;&#x4F9B;&#x4E86;&#x5185;&#x7F6E;&#x4E86;&#x9ED8;&#x8BA4;&#x7684;<code>ContentProvider</code></p>
 </li>
@@ -3873,31 +3877,31 @@ public String getType(Uri uri)
 </ul>
 <p><strong>4.3 &#x5177;&#x4F53;&#x4F7F;&#x7528;</strong></p>
 <p><code>ContentResolver</code> &#x7C7B;&#x63D0;&#x4F9B;&#x4E86;&#x4E0E;<code>ContentProvider</code>&#x7C7B;&#x76F8;&#x540C;&#x540D;&#x5B57; &amp; &#x4F5C;&#x7528;&#x7684;4&#x4E2A;&#x65B9;&#x6CD5;</p>
-<pre><code class="lang-java">// &#x5916;&#x90E8;&#x8FDB;&#x7A0B;&#x5411; ContentProvider &#x4E2D;&#x6DFB;&#x52A0;&#x6570;&#x636E;
-public Uri insert(Uri uri, ContentValues values)&#x3000; 
+<pre><code class="lang-java"><span class="hljs-comment">// &#x5916;&#x90E8;&#x8FDB;&#x7A0B;&#x5411; ContentProvider &#x4E2D;&#x6DFB;&#x52A0;&#x6570;&#x636E;</span>
+<span class="hljs-function"><span class="hljs-keyword">public</span> Uri <span class="hljs-title">insert</span><span class="hljs-params">(Uri uri, ContentValues values)</span>&#x3000; 
 
-// &#x5916;&#x90E8;&#x8FDB;&#x7A0B; &#x5220;&#x9664; ContentProvider &#x4E2D;&#x7684;&#x6570;&#x636E;
-public int delete(Uri uri, String selection, String[] selectionArgs)
+<span class="hljs-comment">// &#x5916;&#x90E8;&#x8FDB;&#x7A0B; &#x5220;&#x9664; ContentProvider &#x4E2D;&#x7684;&#x6570;&#x636E;</span>
+<span class="hljs-keyword">public</span> <span class="hljs-keyword">int</span> <span class="hljs-title">delete</span><span class="hljs-params">(Uri uri, String selection, String[] selectionArgs)</span>
 
-// &#x5916;&#x90E8;&#x8FDB;&#x7A0B;&#x66F4;&#x65B0; ContentProvider &#x4E2D;&#x7684;&#x6570;&#x636E;
-public int update(Uri uri, ContentValues values, String selection, String[] selectionArgs)&#x3000; 
+<span class="hljs-comment">// &#x5916;&#x90E8;&#x8FDB;&#x7A0B;&#x66F4;&#x65B0; ContentProvider &#x4E2D;&#x7684;&#x6570;&#x636E;</span>
+<span class="hljs-keyword">public</span> <span class="hljs-keyword">int</span> <span class="hljs-title">update</span><span class="hljs-params">(Uri uri, ContentValues values, String selection, String[] selectionArgs)</span>&#x3000; 
 
-// &#x5916;&#x90E8;&#x5E94;&#x7528; &#x83B7;&#x53D6; ContentProvider &#x4E2D;&#x7684;&#x6570;&#x636E;
-public Cursor query(Uri uri, String[] projection, String selection, String[] selectionArgs, String sortOrder)
-</code></pre>
+<span class="hljs-comment">// &#x5916;&#x90E8;&#x5E94;&#x7528; &#x83B7;&#x53D6; ContentProvider &#x4E2D;&#x7684;&#x6570;&#x636E;</span>
+<span class="hljs-keyword">public</span> Cursor <span class="hljs-title">query</span><span class="hljs-params">(Uri uri, String[] projection, String selection, String[] selectionArgs, String sortOrder)</span>
+</span></code></pre>
 <ul>
 <li>&#x5B9E;&#x4F8B;&#x8BF4;&#x660E;</li>
 </ul>
-<pre><code class="lang-java">// &#x4F7F;&#x7528;ContentResolver&#x524D;&#xFF0C;&#x9700;&#x8981;&#x5148;&#x83B7;&#x53D6;ContentResolver
-// &#x53EF;&#x901A;&#x8FC7;&#x5728;&#x6240;&#x6709;&#x7EE7;&#x627F;Context&#x7684;&#x7C7B;&#x4E2D; &#x901A;&#x8FC7;&#x8C03;&#x7528;getContentResolver()&#x6765;&#x83B7;&#x5F97;ContentResolver
+<pre><code class="lang-java"><span class="hljs-comment">// &#x4F7F;&#x7528;ContentResolver&#x524D;&#xFF0C;&#x9700;&#x8981;&#x5148;&#x83B7;&#x53D6;ContentResolver</span>
+<span class="hljs-comment">// &#x53EF;&#x901A;&#x8FC7;&#x5728;&#x6240;&#x6709;&#x7EE7;&#x627F;Context&#x7684;&#x7C7B;&#x4E2D; &#x901A;&#x8FC7;&#x8C03;&#x7528;getContentResolver()&#x6765;&#x83B7;&#x5F97;ContentResolver</span>
 ContentResolver resolver =  getContentResolver(); 
 
-// &#x8BBE;&#x7F6E;ContentProvider&#x7684;URI
-Uri uri = Uri.parse(&quot;content://cn.scu.myprovider/user&quot;); 
+<span class="hljs-comment">// &#x8BBE;&#x7F6E;ContentProvider&#x7684;URI</span>
+Uri uri = Uri.parse(<span class="hljs-string">&quot;content://cn.scu.myprovider/user&quot;</span>); 
 
-// &#x6839;&#x636E;URI &#x64CD;&#x4F5C; ContentProvider&#x4E2D;&#x7684;&#x6570;&#x636E;
-// &#x6B64;&#x5904;&#x662F;&#x83B7;&#x53D6;ContentProvider&#x4E2D; user&#x8868;&#x7684;&#x6240;&#x6709;&#x8BB0;&#x5F55; 
-Cursor cursor = resolver.query(uri, null, null, null, &quot;userid desc&quot;);
+<span class="hljs-comment">// &#x6839;&#x636E;URI &#x64CD;&#x4F5C; ContentProvider&#x4E2D;&#x7684;&#x6570;&#x636E;</span>
+<span class="hljs-comment">// &#x6B64;&#x5904;&#x662F;&#x83B7;&#x53D6;ContentProvider&#x4E2D; user&#x8868;&#x7684;&#x6240;&#x6709;&#x8BB0;&#x5F55; </span>
+Cursor cursor = resolver.query(uri, <span class="hljs-keyword">null</span>, <span class="hljs-keyword">null</span>, <span class="hljs-keyword">null</span>, <span class="hljs-string">&quot;userid desc&quot;</span>);
 </code></pre>
 <p><code>Android</code> &#x63D0;&#x4F9B;&#x4E86;3&#x4E2A;&#x7528;&#x4E8E;&#x8F85;&#x52A9;<code>ContentProvide</code>&#x7684;&#x5DE5;&#x5177;&#x7C7B;&#xFF1A;</p>
 <ul>
@@ -3911,15 +3915,15 @@ Cursor cursor = resolver.query(uri, null, null, null, &quot;userid desc&quot;);
 <li>&#x5177;&#x4F53;&#x4F7F;&#x7528;
 &#x6838;&#x5FC3;&#x65B9;&#x6CD5;&#x6709;&#x4E24;&#x4E2A;&#xFF1A;<code>withAppendedId&#xFF08;&#xFF09;</code> &amp;<code>parseId&#xFF08;&#xFF09;</code></li>
 </ul>
-<pre><code class="lang-java">// withAppendedId&#xFF08;&#xFF09;&#x4F5C;&#x7528;&#xFF1A;&#x5411;URI&#x8FFD;&#x52A0;&#x4E00;&#x4E2A;id
-Uri uri = Uri.parse(&quot;content://cn.scu.myprovider/user&quot;) 
-Uri resultUri = ContentUris.withAppendedId(uri, 7);  
-// &#x6700;&#x7EC8;&#x751F;&#x6210;&#x540E;&#x7684;Uri&#x4E3A;&#xFF1A;content://cn.scu.myprovider/user/7
+<pre><code class="lang-java"><span class="hljs-comment">// withAppendedId&#xFF08;&#xFF09;&#x4F5C;&#x7528;&#xFF1A;&#x5411;URI&#x8FFD;&#x52A0;&#x4E00;&#x4E2A;id</span>
+Uri uri = Uri.parse(<span class="hljs-string">&quot;content://cn.scu.myprovider/user&quot;</span>) 
+Uri resultUri = ContentUris.withAppendedId(uri, <span class="hljs-number">7</span>);  
+<span class="hljs-comment">// &#x6700;&#x7EC8;&#x751F;&#x6210;&#x540E;&#x7684;Uri&#x4E3A;&#xFF1A;content://cn.scu.myprovider/user/7</span>
 
-// parseId&#xFF08;&#xFF09;&#x4F5C;&#x7528;&#xFF1A;&#x4ECE;URL&#x4E2D;&#x83B7;&#x53D6;ID
-Uri uri = Uri.parse(&quot;content://cn.scu.myprovider/user/7&quot;) 
-long personid = ContentUris.parseId(uri); 
-//&#x83B7;&#x53D6;&#x7684;&#x7ED3;&#x679C;&#x4E3A;:7
+<span class="hljs-comment">// parseId&#xFF08;&#xFF09;&#x4F5C;&#x7528;&#xFF1A;&#x4ECE;URL&#x4E2D;&#x83B7;&#x53D6;ID</span>
+Uri uri = Uri.parse(<span class="hljs-string">&quot;content://cn.scu.myprovider/user/7&quot;</span>) 
+<span class="hljs-keyword">long</span> personid = ContentUris.parseId(uri); 
+<span class="hljs-comment">//&#x83B7;&#x53D6;&#x7684;&#x7ED3;&#x679C;&#x4E3A;:7</span>
 </code></pre>
 <h3 id="46-urimatcher&#x7C7B;"><a name="46-urimatcher&#x7C7B;" class="anchor-navigation-ex-anchor" href="#46-urimatcher&#x7C7B;"><i class="fa fa-link" aria-hidden="true"></i></a>4.6 UriMatcher&#x7C7B;</h3>
 <ul>
@@ -3930,34 +3934,34 @@ long personid = ContentUris.parseId(uri);
 </li>
 <li>&#x5177;&#x4F53;&#x4F7F;&#x7528;</li>
 </ul>
-<pre><code class="lang-Java">// &#x6B65;&#x9AA4;1&#xFF1A;&#x521D;&#x59CB;&#x5316;UriMatcher&#x5BF9;&#x8C61;
-    UriMatcher matcher = new UriMatcher(UriMatcher.NO_MATCH); 
-    //&#x5E38;&#x91CF;UriMatcher.NO_MATCH  = &#x4E0D;&#x5339;&#x914D;&#x4EFB;&#x4F55;&#x8DEF;&#x5F84;&#x7684;&#x8FD4;&#x56DE;&#x7801;
-    // &#x5373;&#x521D;&#x59CB;&#x5316;&#x65F6;&#x4E0D;&#x5339;&#x914D;&#x4EFB;&#x4F55;&#x4E1C;&#x897F;
+<pre><code class="lang-Java"><span class="hljs-comment">// &#x6B65;&#x9AA4;1&#xFF1A;&#x521D;&#x59CB;&#x5316;UriMatcher&#x5BF9;&#x8C61;</span>
+    UriMatcher matcher = <span class="hljs-keyword">new</span> UriMatcher(UriMatcher.NO_MATCH); 
+    <span class="hljs-comment">//&#x5E38;&#x91CF;UriMatcher.NO_MATCH  = &#x4E0D;&#x5339;&#x914D;&#x4EFB;&#x4F55;&#x8DEF;&#x5F84;&#x7684;&#x8FD4;&#x56DE;&#x7801;</span>
+    <span class="hljs-comment">// &#x5373;&#x521D;&#x59CB;&#x5316;&#x65F6;&#x4E0D;&#x5339;&#x914D;&#x4EFB;&#x4F55;&#x4E1C;&#x897F;</span>
 
-// &#x6B65;&#x9AA4;2&#xFF1A;&#x5728;ContentProvider &#x4E2D;&#x6CE8;&#x518C;URI&#xFF08;addURI&#xFF08;&#xFF09;&#xFF09;
-    int URI_CODE_a = 1&#xFF1B;
-    int URI_CODE_b = 2&#xFF1B;
-    matcher.addURI(&quot;cn.scu.myprovider&quot;, &quot;user1&quot;, URI_CODE_a); 
-    matcher.addURI(&quot;cn.scu.myprovider&quot;, &quot;user2&quot;, URI_CODE_b); 
-    // &#x82E5;URI&#x8D44;&#x6E90;&#x8DEF;&#x5F84; = content://cn.scu.myprovider/user1 &#xFF0C;&#x5219;&#x8FD4;&#x56DE;&#x6CE8;&#x518C;&#x7801;URI_CODE_a
-    // &#x82E5;URI&#x8D44;&#x6E90;&#x8DEF;&#x5F84; = content://cn.scu.myprovider/user2 &#xFF0C;&#x5219;&#x8FD4;&#x56DE;&#x6CE8;&#x518C;&#x7801;URI_CODE_b
+<span class="hljs-comment">// &#x6B65;&#x9AA4;2&#xFF1A;&#x5728;ContentProvider &#x4E2D;&#x6CE8;&#x518C;URI&#xFF08;addURI&#xFF08;&#xFF09;&#xFF09;</span>
+    <span class="hljs-keyword">int</span> URI_CODE_a = <span class="hljs-number">1</span>&#xFF1B;
+    <span class="hljs-keyword">int</span> URI_CODE_b = <span class="hljs-number">2</span>&#xFF1B;
+    matcher.addURI(<span class="hljs-string">&quot;cn.scu.myprovider&quot;</span>, <span class="hljs-string">&quot;user1&quot;</span>, URI_CODE_a); 
+    matcher.addURI(<span class="hljs-string">&quot;cn.scu.myprovider&quot;</span>, <span class="hljs-string">&quot;user2&quot;</span>, URI_CODE_b); 
+    <span class="hljs-comment">// &#x82E5;URI&#x8D44;&#x6E90;&#x8DEF;&#x5F84; = content://cn.scu.myprovider/user1 &#xFF0C;&#x5219;&#x8FD4;&#x56DE;&#x6CE8;&#x518C;&#x7801;URI_CODE_a</span>
+    <span class="hljs-comment">// &#x82E5;URI&#x8D44;&#x6E90;&#x8DEF;&#x5F84; = content://cn.scu.myprovider/user2 &#xFF0C;&#x5219;&#x8FD4;&#x56DE;&#x6CE8;&#x518C;&#x7801;URI_CODE_b</span>
 
-// &#x6B65;&#x9AA4;3&#xFF1A;&#x6839;&#x636E;URI &#x5339;&#x914D; URI_CODE&#xFF0C;&#x4ECE;&#x800C;&#x5339;&#x914D;ContentProvider&#x4E2D;&#x76F8;&#x5E94;&#x7684;&#x8D44;&#x6E90;&#xFF08;match&#xFF08;&#xFF09;&#xFF09;
+<span class="hljs-comment">// &#x6B65;&#x9AA4;3&#xFF1A;&#x6839;&#x636E;URI &#x5339;&#x914D; URI_CODE&#xFF0C;&#x4ECE;&#x800C;&#x5339;&#x914D;ContentProvider&#x4E2D;&#x76F8;&#x5E94;&#x7684;&#x8D44;&#x6E90;&#xFF08;match&#xFF08;&#xFF09;&#xFF09;</span>
 
-@Override   
-    public String getType(Uri uri) {   
-      Uri uri = Uri.parse(&quot; content://cn.scu.myprovider/user1&quot;);   
+<span class="hljs-meta">@Override</span>   
+    <span class="hljs-function"><span class="hljs-keyword">public</span> String <span class="hljs-title">getType</span><span class="hljs-params">(Uri uri)</span> </span>{   
+      Uri uri = Uri.parse(<span class="hljs-string">&quot; content://cn.scu.myprovider/user1&quot;</span>);   
 
-      switch(matcher.match(uri)){   
-     // &#x6839;&#x636E;URI&#x5339;&#x914D;&#x7684;&#x8FD4;&#x56DE;&#x7801;&#x662F;URI_CODE_a
-     // &#x5373;matcher.match(uri) == URI_CODE_a
-      case URI_CODE_a:   
-        return tableNameUser1;   
-        // &#x5982;&#x679C;&#x6839;&#x636E;URI&#x5339;&#x914D;&#x7684;&#x8FD4;&#x56DE;&#x7801;&#x662F;URI_CODE_a&#xFF0C;&#x5219;&#x8FD4;&#x56DE;ContentProvider&#x4E2D;&#x7684;&#x540D;&#x4E3A;tableNameUser1&#x7684;&#x8868;
-      case URI_CODE_b:   
-        return tableNameUser2;
-        // &#x5982;&#x679C;&#x6839;&#x636E;URI&#x5339;&#x914D;&#x7684;&#x8FD4;&#x56DE;&#x7801;&#x662F;URI_CODE_b&#xFF0C;&#x5219;&#x8FD4;&#x56DE;ContentProvider&#x4E2D;&#x7684;&#x540D;&#x4E3A;tableNameUser2&#x7684;&#x8868;
+      <span class="hljs-keyword">switch</span>(matcher.match(uri)){   
+     <span class="hljs-comment">// &#x6839;&#x636E;URI&#x5339;&#x914D;&#x7684;&#x8FD4;&#x56DE;&#x7801;&#x662F;URI_CODE_a</span>
+     <span class="hljs-comment">// &#x5373;matcher.match(uri) == URI_CODE_a</span>
+      <span class="hljs-keyword">case</span> URI_CODE_a:   
+        <span class="hljs-keyword">return</span> tableNameUser1;   
+        <span class="hljs-comment">// &#x5982;&#x679C;&#x6839;&#x636E;URI&#x5339;&#x914D;&#x7684;&#x8FD4;&#x56DE;&#x7801;&#x662F;URI_CODE_a&#xFF0C;&#x5219;&#x8FD4;&#x56DE;ContentProvider&#x4E2D;&#x7684;&#x540D;&#x4E3A;tableNameUser1&#x7684;&#x8868;</span>
+      <span class="hljs-keyword">case</span> URI_CODE_b:   
+        <span class="hljs-keyword">return</span> tableNameUser2;
+        <span class="hljs-comment">// &#x5982;&#x679C;&#x6839;&#x636E;URI&#x5339;&#x914D;&#x7684;&#x8FD4;&#x56DE;&#x7801;&#x662F;URI_CODE_b&#xFF0C;&#x5219;&#x8FD4;&#x56DE;ContentProvider&#x4E2D;&#x7684;&#x540D;&#x4E3A;tableNameUser2&#x7684;&#x8868;</span>
     }   
 }
 </code></pre>
@@ -3973,22 +3977,22 @@ long personid = ContentUris.parseId(uri);
 <li><p>&#x5177;&#x4F53;&#x4F7F;&#x7528;</p>
 </li>
 </ul>
-<pre><code class="lang-Java">// &#x6B65;&#x9AA4;1&#xFF1A;&#x6CE8;&#x518C;&#x5185;&#x5BB9;&#x89C2;&#x5BDF;&#x8005;ContentObserver
+<pre><code class="lang-Java"><span class="hljs-comment">// &#x6B65;&#x9AA4;1&#xFF1A;&#x6CE8;&#x518C;&#x5185;&#x5BB9;&#x89C2;&#x5BDF;&#x8005;ContentObserver</span>
     getContentResolver().registerContentObserver&#xFF08;uri&#xFF09;&#xFF1B;
-    // &#x901A;&#x8FC7;ContentResolver&#x7C7B;&#x8FDB;&#x884C;&#x6CE8;&#x518C;&#xFF0C;&#x5E76;&#x6307;&#x5B9A;&#x9700;&#x8981;&#x89C2;&#x5BDF;&#x7684;URI
+    <span class="hljs-comment">// &#x901A;&#x8FC7;ContentResolver&#x7C7B;&#x8FDB;&#x884C;&#x6CE8;&#x518C;&#xFF0C;&#x5E76;&#x6307;&#x5B9A;&#x9700;&#x8981;&#x89C2;&#x5BDF;&#x7684;URI</span>
 
-// &#x6B65;&#x9AA4;2&#xFF1A;&#x5F53;&#x8BE5;URI&#x7684;ContentProvider&#x6570;&#x636E;&#x53D1;&#x751F;&#x53D8;&#x5316;&#x65F6;&#xFF0C;&#x901A;&#x77E5;&#x5916;&#x754C;&#xFF08;&#x5373;&#x8BBF;&#x95EE;&#x8BE5;ContentProvider&#x6570;&#x636E;&#x7684;&#x8BBF;&#x95EE;&#x8005;&#xFF09;
-    public class UserContentProvider extends ContentProvider { 
-      public Uri insert(Uri uri, ContentValues values) { 
-      db.insert(&quot;user&quot;, &quot;userid&quot;, values); 
-      getContext().getContentResolver().notifyChange(uri, null); 
-      // &#x901A;&#x77E5;&#x8BBF;&#x95EE;&#x8005;
+<span class="hljs-comment">// &#x6B65;&#x9AA4;2&#xFF1A;&#x5F53;&#x8BE5;URI&#x7684;ContentProvider&#x6570;&#x636E;&#x53D1;&#x751F;&#x53D8;&#x5316;&#x65F6;&#xFF0C;&#x901A;&#x77E5;&#x5916;&#x754C;&#xFF08;&#x5373;&#x8BBF;&#x95EE;&#x8BE5;ContentProvider&#x6570;&#x636E;&#x7684;&#x8BBF;&#x95EE;&#x8005;&#xFF09;</span>
+    <span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">UserContentProvider</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">ContentProvider</span> </span>{ 
+      <span class="hljs-function"><span class="hljs-keyword">public</span> Uri <span class="hljs-title">insert</span><span class="hljs-params">(Uri uri, ContentValues values)</span> </span>{ 
+      db.insert(<span class="hljs-string">&quot;user&quot;</span>, <span class="hljs-string">&quot;userid&quot;</span>, values); 
+      getContext().getContentResolver().notifyChange(uri, <span class="hljs-keyword">null</span>); 
+      <span class="hljs-comment">// &#x901A;&#x77E5;&#x8BBF;&#x95EE;&#x8005;</span>
    } 
 }
 
-// &#x6B65;&#x9AA4;3&#xFF1A;&#x89E3;&#x9664;&#x89C2;&#x5BDF;&#x8005;
+<span class="hljs-comment">// &#x6B65;&#x9AA4;3&#xFF1A;&#x89E3;&#x9664;&#x89C2;&#x5BDF;&#x8005;</span>
  getContentResolver().unregisterContentObserver&#xFF08;uri&#xFF09;&#xFF1B;
-    // &#x540C;&#x6837;&#x9700;&#x8981;&#x901A;&#x8FC7;ContentResolver&#x7C7B;&#x8FDB;&#x884C;&#x89E3;&#x9664;
+    <span class="hljs-comment">// &#x540C;&#x6837;&#x9700;&#x8981;&#x901A;&#x8FC7;ContentResolver&#x7C7B;&#x8FDB;&#x884C;&#x89E3;&#x9664;</span>
 </code></pre>
 <p>&#x81F3;&#x6B64;&#xFF0C;&#x5173;&#x4E8E;<code>ContentProvider</code>&#x7684;&#x4F7F;&#x7528;&#x5DF2;&#x7ECF;&#x8BB2;&#x89E3;&#x5B8C;&#x6BD5;</p>
 <h2 id="&#x4E94;&#x3001;-&#x5B9E;&#x4F8B;&#x8BF4;&#x660E;"><a name="&#x4E94;&#x3001;-&#x5B9E;&#x4F8B;&#x8BF4;&#x660E;" class="anchor-navigation-ex-anchor" href="#&#x4E94;&#x3001;-&#x5B9E;&#x4F8B;&#x8BF4;&#x660E;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x4E94;&#x3001; &#x5B9E;&#x4F8B;&#x8BF4;&#x660E;</h2>
@@ -4018,237 +4022,237 @@ long personid = ContentUris.parseId(uri);
 </ul>
 <p><strong>&#x6B65;&#x9AA4;1&#xFF1A;&#x521B;&#x5EFA;&#x6570;&#x636E;&#x5E93;&#x7C7B;</strong>
 <strong>DBHelper.java</strong></p>
-<pre><code class="lang-java">public class DBHelper extends SQLiteOpenHelper {
+<pre><code class="lang-java"><span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">DBHelper</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">SQLiteOpenHelper</span> </span>{
 
-    // &#x6570;&#x636E;&#x5E93;&#x540D;
-    private static final String DATABASE_NAME = &quot;finch.db&quot;;
+    <span class="hljs-comment">// &#x6570;&#x636E;&#x5E93;&#x540D;</span>
+    <span class="hljs-keyword">private</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">final</span> String DATABASE_NAME = <span class="hljs-string">&quot;finch.db&quot;</span>;
 
-    // &#x8868;&#x540D;
-    public static final String USER_TABLE_NAME = &quot;user&quot;;
-    public static final String JOB_TABLE_NAME = &quot;job&quot;;
+    <span class="hljs-comment">// &#x8868;&#x540D;</span>
+    <span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">final</span> String USER_TABLE_NAME = <span class="hljs-string">&quot;user&quot;</span>;
+    <span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">final</span> String JOB_TABLE_NAME = <span class="hljs-string">&quot;job&quot;</span>;
 
-    private static final int DATABASE_VERSION = 1;
-    //&#x6570;&#x636E;&#x5E93;&#x7248;&#x672C;&#x53F7;
+    <span class="hljs-keyword">private</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">final</span> <span class="hljs-keyword">int</span> DATABASE_VERSION = <span class="hljs-number">1</span>;
+    <span class="hljs-comment">//&#x6570;&#x636E;&#x5E93;&#x7248;&#x672C;&#x53F7;</span>
 
-    public DBHelper(Context context) {
-        super(context, DATABASE_NAME, null, DATABASE_VERSION);
+    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-title">DBHelper</span><span class="hljs-params">(Context context)</span> </span>{
+        <span class="hljs-keyword">super</span>(context, DATABASE_NAME, <span class="hljs-keyword">null</span>, DATABASE_VERSION);
     }
 
-    @Override
-    public void onCreate(SQLiteDatabase db) {
+    <span class="hljs-meta">@Override</span>
+    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">onCreate</span><span class="hljs-params">(SQLiteDatabase db)</span> </span>{
 
-        // &#x521B;&#x5EFA;&#x4E24;&#x4E2A;&#x8868;&#x683C;:&#x7528;&#x6237;&#x8868; &#x548C;&#x804C;&#x4E1A;&#x8868;
-        db.execSQL(&quot;CREATE TABLE IF NOT EXISTS &quot; + USER_TABLE_NAME + &quot;(_id INTEGER PRIMARY KEY AUTOINCREMENT,&quot; + &quot; name TEXT)&quot;);
-        db.execSQL(&quot;CREATE TABLE IF NOT EXISTS &quot; + JOB_TABLE_NAME + &quot;(_id INTEGER PRIMARY KEY AUTOINCREMENT,&quot; + &quot; job TEXT)&quot;);
+        <span class="hljs-comment">// &#x521B;&#x5EFA;&#x4E24;&#x4E2A;&#x8868;&#x683C;:&#x7528;&#x6237;&#x8868; &#x548C;&#x804C;&#x4E1A;&#x8868;</span>
+        db.execSQL(<span class="hljs-string">&quot;CREATE TABLE IF NOT EXISTS &quot;</span> + USER_TABLE_NAME + <span class="hljs-string">&quot;(_id INTEGER PRIMARY KEY AUTOINCREMENT,&quot;</span> + <span class="hljs-string">&quot; name TEXT)&quot;</span>);
+        db.execSQL(<span class="hljs-string">&quot;CREATE TABLE IF NOT EXISTS &quot;</span> + JOB_TABLE_NAME + <span class="hljs-string">&quot;(_id INTEGER PRIMARY KEY AUTOINCREMENT,&quot;</span> + <span class="hljs-string">&quot; job TEXT)&quot;</span>);
     }
 
-    @Override
-    public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion)   {
+    <span class="hljs-meta">@Override</span>
+    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">onUpgrade</span><span class="hljs-params">(SQLiteDatabase db, <span class="hljs-keyword">int</span> oldVersion, <span class="hljs-keyword">int</span> newVersion)</span>   </span>{
 
     }
 }
 </code></pre>
 <p><strong>&#x6B65;&#x9AA4;2&#xFF1A;&#x81EA;&#x5B9A;&#x4E49; ContentProvider &#x7C7B;</strong></p>
-<pre><code class="lang-java">public class MyProvider extends ContentProvider {
+<pre><code class="lang-java"><span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">MyProvider</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">ContentProvider</span> </span>{
 
-    private Context mContext;
-    DBHelper mDbHelper = null;
-    SQLiteDatabase db = null;
+    <span class="hljs-keyword">private</span> Context mContext;
+    DBHelper mDbHelper = <span class="hljs-keyword">null</span>;
+    SQLiteDatabase db = <span class="hljs-keyword">null</span>;
 
-    public static final String AUTOHORITY = &quot;cn.scu.myprovider&quot;;
-    // &#x8BBE;&#x7F6E;ContentProvider&#x7684;&#x552F;&#x4E00;&#x6807;&#x8BC6;
+    <span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">final</span> String AUTOHORITY = <span class="hljs-string">&quot;cn.scu.myprovider&quot;</span>;
+    <span class="hljs-comment">// &#x8BBE;&#x7F6E;ContentProvider&#x7684;&#x552F;&#x4E00;&#x6807;&#x8BC6;</span>
 
-    public static final int User_Code = 1;
-    public static final int Job_Code = 2;
+    <span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">final</span> <span class="hljs-keyword">int</span> User_Code = <span class="hljs-number">1</span>;
+    <span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">final</span> <span class="hljs-keyword">int</span> Job_Code = <span class="hljs-number">2</span>;
 
-    // UriMatcher&#x7C7B;&#x4F7F;&#x7528;:&#x5728;ContentProvider &#x4E2D;&#x6CE8;&#x518C;URI
-    private static final UriMatcher mMatcher;
-    static{
-        mMatcher = new UriMatcher(UriMatcher.NO_MATCH);
-        // &#x521D;&#x59CB;&#x5316;
-        mMatcher.addURI(AUTOHORITY,&quot;user&quot;, User_Code);
-        mMatcher.addURI(AUTOHORITY, &quot;job&quot;, Job_Code);
-        // &#x82E5;URI&#x8D44;&#x6E90;&#x8DEF;&#x5F84; = content://cn.scu.myprovider/user &#xFF0C;&#x5219;&#x8FD4;&#x56DE;&#x6CE8;&#x518C;&#x7801;User_Code
-        // &#x82E5;URI&#x8D44;&#x6E90;&#x8DEF;&#x5F84; = content://cn.scu.myprovider/job &#xFF0C;&#x5219;&#x8FD4;&#x56DE;&#x6CE8;&#x518C;&#x7801;Job_Code
+    <span class="hljs-comment">// UriMatcher&#x7C7B;&#x4F7F;&#x7528;:&#x5728;ContentProvider &#x4E2D;&#x6CE8;&#x518C;URI</span>
+    <span class="hljs-keyword">private</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">final</span> UriMatcher mMatcher;
+    <span class="hljs-keyword">static</span>{
+        mMatcher = <span class="hljs-keyword">new</span> UriMatcher(UriMatcher.NO_MATCH);
+        <span class="hljs-comment">// &#x521D;&#x59CB;&#x5316;</span>
+        mMatcher.addURI(AUTOHORITY,<span class="hljs-string">&quot;user&quot;</span>, User_Code);
+        mMatcher.addURI(AUTOHORITY, <span class="hljs-string">&quot;job&quot;</span>, Job_Code);
+        <span class="hljs-comment">// &#x82E5;URI&#x8D44;&#x6E90;&#x8DEF;&#x5F84; = content://cn.scu.myprovider/user &#xFF0C;&#x5219;&#x8FD4;&#x56DE;&#x6CE8;&#x518C;&#x7801;User_Code</span>
+        <span class="hljs-comment">// &#x82E5;URI&#x8D44;&#x6E90;&#x8DEF;&#x5F84; = content://cn.scu.myprovider/job &#xFF0C;&#x5219;&#x8FD4;&#x56DE;&#x6CE8;&#x518C;&#x7801;Job_Code</span>
     }
 
-    // &#x4EE5;&#x4E0B;&#x662F;ContentProvider&#x7684;6&#x4E2A;&#x65B9;&#x6CD5;
+    <span class="hljs-comment">// &#x4EE5;&#x4E0B;&#x662F;ContentProvider&#x7684;6&#x4E2A;&#x65B9;&#x6CD5;</span>
 
-    /**
+    <span class="hljs-comment">/**
      * &#x521D;&#x59CB;&#x5316;ContentProvider
-     */
-    @Override
-    public boolean onCreate() {
+     */</span>
+    <span class="hljs-meta">@Override</span>
+    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">boolean</span> <span class="hljs-title">onCreate</span><span class="hljs-params">()</span> </span>{
 
         mContext = getContext();
-        // &#x5728;ContentProvider&#x521B;&#x5EFA;&#x65F6;&#x5BF9;&#x6570;&#x636E;&#x5E93;&#x8FDB;&#x884C;&#x521D;&#x59CB;&#x5316;
-        // &#x8FD0;&#x884C;&#x5728;&#x4E3B;&#x7EBF;&#x7A0B;&#xFF0C;&#x6545;&#x4E0D;&#x80FD;&#x505A;&#x8017;&#x65F6;&#x64CD;&#x4F5C;,&#x6B64;&#x5904;&#x4EC5;&#x4F5C;&#x5C55;&#x793A;
-        mDbHelper = new DBHelper(getContext());
+        <span class="hljs-comment">// &#x5728;ContentProvider&#x521B;&#x5EFA;&#x65F6;&#x5BF9;&#x6570;&#x636E;&#x5E93;&#x8FDB;&#x884C;&#x521D;&#x59CB;&#x5316;</span>
+        <span class="hljs-comment">// &#x8FD0;&#x884C;&#x5728;&#x4E3B;&#x7EBF;&#x7A0B;&#xFF0C;&#x6545;&#x4E0D;&#x80FD;&#x505A;&#x8017;&#x65F6;&#x64CD;&#x4F5C;,&#x6B64;&#x5904;&#x4EC5;&#x4F5C;&#x5C55;&#x793A;</span>
+        mDbHelper = <span class="hljs-keyword">new</span> DBHelper(getContext());
         db = mDbHelper.getWritableDatabase();
 
-        // &#x521D;&#x59CB;&#x5316;&#x4E24;&#x4E2A;&#x8868;&#x7684;&#x6570;&#x636E;(&#x5148;&#x6E05;&#x7A7A;&#x4E24;&#x4E2A;&#x8868;,&#x518D;&#x5404;&#x52A0;&#x5165;&#x4E00;&#x4E2A;&#x8BB0;&#x5F55;)
-        db.execSQL(&quot;delete from user&quot;);
-        db.execSQL(&quot;insert into user values(1,&apos;Carson&apos;);&quot;);
-        db.execSQL(&quot;insert into user values(2,&apos;Kobe&apos;);&quot;);
+        <span class="hljs-comment">// &#x521D;&#x59CB;&#x5316;&#x4E24;&#x4E2A;&#x8868;&#x7684;&#x6570;&#x636E;(&#x5148;&#x6E05;&#x7A7A;&#x4E24;&#x4E2A;&#x8868;,&#x518D;&#x5404;&#x52A0;&#x5165;&#x4E00;&#x4E2A;&#x8BB0;&#x5F55;)</span>
+        db.execSQL(<span class="hljs-string">&quot;delete from user&quot;</span>);
+        db.execSQL(<span class="hljs-string">&quot;insert into user values(1,&apos;Carson&apos;);&quot;</span>);
+        db.execSQL(<span class="hljs-string">&quot;insert into user values(2,&apos;Kobe&apos;);&quot;</span>);
 
-        db.execSQL(&quot;delete from job&quot;);
-        db.execSQL(&quot;insert into job values(1,&apos;Android&apos;);&quot;);
-        db.execSQL(&quot;insert into job values(2,&apos;iOS&apos;);&quot;);
+        db.execSQL(<span class="hljs-string">&quot;delete from job&quot;</span>);
+        db.execSQL(<span class="hljs-string">&quot;insert into job values(1,&apos;Android&apos;);&quot;</span>);
+        db.execSQL(<span class="hljs-string">&quot;insert into job values(2,&apos;iOS&apos;);&quot;</span>);
 
-        return true;
+        <span class="hljs-keyword">return</span> <span class="hljs-keyword">true</span>;
     }
 
-    /**
+    <span class="hljs-comment">/**
      * &#x6DFB;&#x52A0;&#x6570;&#x636E;
-     */
+     */</span>
 
-    @Override
-    public Uri insert(Uri uri, ContentValues values) {
+    <span class="hljs-meta">@Override</span>
+    <span class="hljs-function"><span class="hljs-keyword">public</span> Uri <span class="hljs-title">insert</span><span class="hljs-params">(Uri uri, ContentValues values)</span> </span>{
 
-        // &#x6839;&#x636E;URI&#x5339;&#x914D; URI_CODE&#xFF0C;&#x4ECE;&#x800C;&#x5339;&#x914D;ContentProvider&#x4E2D;&#x76F8;&#x5E94;&#x7684;&#x8868;&#x540D;
-        // &#x8BE5;&#x65B9;&#x6CD5;&#x5728;&#x6700;&#x4E0B;&#x9762;
+        <span class="hljs-comment">// &#x6839;&#x636E;URI&#x5339;&#x914D; URI_CODE&#xFF0C;&#x4ECE;&#x800C;&#x5339;&#x914D;ContentProvider&#x4E2D;&#x76F8;&#x5E94;&#x7684;&#x8868;&#x540D;</span>
+        <span class="hljs-comment">// &#x8BE5;&#x65B9;&#x6CD5;&#x5728;&#x6700;&#x4E0B;&#x9762;</span>
         String table = getTableName(uri);
 
-        // &#x5411;&#x8BE5;&#x8868;&#x6DFB;&#x52A0;&#x6570;&#x636E;
-        db.insert(table, null, values);
+        <span class="hljs-comment">// &#x5411;&#x8BE5;&#x8868;&#x6DFB;&#x52A0;&#x6570;&#x636E;</span>
+        db.insert(table, <span class="hljs-keyword">null</span>, values);
 
-        // &#x5F53;&#x8BE5;URI&#x7684;ContentProvider&#x6570;&#x636E;&#x53D1;&#x751F;&#x53D8;&#x5316;&#x65F6;&#xFF0C;&#x901A;&#x77E5;&#x5916;&#x754C;&#xFF08;&#x5373;&#x8BBF;&#x95EE;&#x8BE5;ContentProvider&#x6570;&#x636E;&#x7684;&#x8BBF;&#x95EE;&#x8005;&#xFF09;
-        mContext.getContentResolver().notifyChange(uri, null);
+        <span class="hljs-comment">// &#x5F53;&#x8BE5;URI&#x7684;ContentProvider&#x6570;&#x636E;&#x53D1;&#x751F;&#x53D8;&#x5316;&#x65F6;&#xFF0C;&#x901A;&#x77E5;&#x5916;&#x754C;&#xFF08;&#x5373;&#x8BBF;&#x95EE;&#x8BE5;ContentProvider&#x6570;&#x636E;&#x7684;&#x8BBF;&#x95EE;&#x8005;&#xFF09;</span>
+        mContext.getContentResolver().notifyChange(uri, <span class="hljs-keyword">null</span>);
 
-//        // &#x901A;&#x8FC7;ContentUris&#x7C7B;&#x4ECE;URL&#x4E2D;&#x83B7;&#x53D6;ID
-//        long personid = ContentUris.parseId(uri);
-//        System.out.println(personid);
+<span class="hljs-comment">//        // &#x901A;&#x8FC7;ContentUris&#x7C7B;&#x4ECE;URL&#x4E2D;&#x83B7;&#x53D6;ID</span>
+<span class="hljs-comment">//        long personid = ContentUris.parseId(uri);</span>
+<span class="hljs-comment">//        System.out.println(personid);</span>
 
-        return uri;
+        <span class="hljs-keyword">return</span> uri;
         }
 
-    /**
+    <span class="hljs-comment">/**
      * &#x67E5;&#x8BE2;&#x6570;&#x636E;
-     */
-    @Override
-    public Cursor query(Uri uri, String[] projection, String selection,
-                        String[] selectionArgs, String sortOrder) {
-        // &#x6839;&#x636E;URI&#x5339;&#x914D; URI_CODE&#xFF0C;&#x4ECE;&#x800C;&#x5339;&#x914D;ContentProvider&#x4E2D;&#x76F8;&#x5E94;&#x7684;&#x8868;&#x540D;
-        // &#x8BE5;&#x65B9;&#x6CD5;&#x5728;&#x6700;&#x4E0B;&#x9762;
+     */</span>
+    <span class="hljs-meta">@Override</span>
+    <span class="hljs-function"><span class="hljs-keyword">public</span> Cursor <span class="hljs-title">query</span><span class="hljs-params">(Uri uri, String[] projection, String selection,
+                        String[] selectionArgs, String sortOrder)</span> </span>{
+        <span class="hljs-comment">// &#x6839;&#x636E;URI&#x5339;&#x914D; URI_CODE&#xFF0C;&#x4ECE;&#x800C;&#x5339;&#x914D;ContentProvider&#x4E2D;&#x76F8;&#x5E94;&#x7684;&#x8868;&#x540D;</span>
+        <span class="hljs-comment">// &#x8BE5;&#x65B9;&#x6CD5;&#x5728;&#x6700;&#x4E0B;&#x9762;</span>
         String table = getTableName(uri);
 
-//        // &#x901A;&#x8FC7;ContentUris&#x7C7B;&#x4ECE;URL&#x4E2D;&#x83B7;&#x53D6;ID
-//        long personid = ContentUris.parseId(uri);
-//        System.out.println(personid);
+<span class="hljs-comment">//        // &#x901A;&#x8FC7;ContentUris&#x7C7B;&#x4ECE;URL&#x4E2D;&#x83B7;&#x53D6;ID</span>
+<span class="hljs-comment">//        long personid = ContentUris.parseId(uri);</span>
+<span class="hljs-comment">//        System.out.println(personid);</span>
 
-        // &#x67E5;&#x8BE2;&#x6570;&#x636E;
-        return db.query(table,projection,selection,selectionArgs,null,null,sortOrder,null);
+        <span class="hljs-comment">// &#x67E5;&#x8BE2;&#x6570;&#x636E;</span>
+        <span class="hljs-keyword">return</span> db.query(table,projection,selection,selectionArgs,<span class="hljs-keyword">null</span>,<span class="hljs-keyword">null</span>,sortOrder,<span class="hljs-keyword">null</span>);
     }
 
-    /**
+    <span class="hljs-comment">/**
      * &#x66F4;&#x65B0;&#x6570;&#x636E;
-     */
-    @Override
-    public int update(Uri uri, ContentValues values, String selection,
-                      String[] selectionArgs) {
-        // &#x7531;&#x4E8E;&#x4E0D;&#x5C55;&#x793A;,&#x6B64;&#x5904;&#x4E0D;&#x4F5C;&#x5C55;&#x5F00;
-        return 0;
+     */</span>
+    <span class="hljs-meta">@Override</span>
+    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">int</span> <span class="hljs-title">update</span><span class="hljs-params">(Uri uri, ContentValues values, String selection,
+                      String[] selectionArgs)</span> </span>{
+        <span class="hljs-comment">// &#x7531;&#x4E8E;&#x4E0D;&#x5C55;&#x793A;,&#x6B64;&#x5904;&#x4E0D;&#x4F5C;&#x5C55;&#x5F00;</span>
+        <span class="hljs-keyword">return</span> <span class="hljs-number">0</span>;
     }
 
-    /**
+    <span class="hljs-comment">/**
      * &#x5220;&#x9664;&#x6570;&#x636E;
-     */
-    @Override
-    public int delete(Uri uri, String selection, String[] selectionArgs) {
-        // &#x7531;&#x4E8E;&#x4E0D;&#x5C55;&#x793A;,&#x6B64;&#x5904;&#x4E0D;&#x4F5C;&#x5C55;&#x5F00;
-        return 0;
+     */</span>
+    <span class="hljs-meta">@Override</span>
+    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">int</span> <span class="hljs-title">delete</span><span class="hljs-params">(Uri uri, String selection, String[] selectionArgs)</span> </span>{
+        <span class="hljs-comment">// &#x7531;&#x4E8E;&#x4E0D;&#x5C55;&#x793A;,&#x6B64;&#x5904;&#x4E0D;&#x4F5C;&#x5C55;&#x5F00;</span>
+        <span class="hljs-keyword">return</span> <span class="hljs-number">0</span>;
     }
 
-    @Override
-    public String getType(Uri uri) {
+    <span class="hljs-meta">@Override</span>
+    <span class="hljs-function"><span class="hljs-keyword">public</span> String <span class="hljs-title">getType</span><span class="hljs-params">(Uri uri)</span> </span>{
 
-        // &#x7531;&#x4E8E;&#x4E0D;&#x5C55;&#x793A;,&#x6B64;&#x5904;&#x4E0D;&#x4F5C;&#x5C55;&#x5F00;
-        return null;
+        <span class="hljs-comment">// &#x7531;&#x4E8E;&#x4E0D;&#x5C55;&#x793A;,&#x6B64;&#x5904;&#x4E0D;&#x4F5C;&#x5C55;&#x5F00;</span>
+        <span class="hljs-keyword">return</span> <span class="hljs-keyword">null</span>;
     }
 
-    /**
+    <span class="hljs-comment">/**
      * &#x6839;&#x636E;URI&#x5339;&#x914D; URI_CODE&#xFF0C;&#x4ECE;&#x800C;&#x5339;&#x914D;ContentProvider&#x4E2D;&#x76F8;&#x5E94;&#x7684;&#x8868;&#x540D;
-     */
-    private String getTableName(Uri uri){
-        String tableName = null;
-        switch (mMatcher.match(uri)) {
-            case User_Code:
+     */</span>
+    <span class="hljs-function"><span class="hljs-keyword">private</span> String <span class="hljs-title">getTableName</span><span class="hljs-params">(Uri uri)</span></span>{
+        String tableName = <span class="hljs-keyword">null</span>;
+        <span class="hljs-keyword">switch</span> (mMatcher.match(uri)) {
+            <span class="hljs-keyword">case</span> User_Code:
                 tableName = DBHelper.USER_TABLE_NAME;
-                break;
-            case Job_Code:
+                <span class="hljs-keyword">break</span>;
+            <span class="hljs-keyword">case</span> Job_Code:
                 tableName = DBHelper.JOB_TABLE_NAME;
-                break;
+                <span class="hljs-keyword">break</span>;
         }
-        return tableName;
+        <span class="hljs-keyword">return</span> tableName;
         }
     }
 </code></pre>
 <p><strong>&#x6B65;&#x9AA4;3&#xFF1A;&#x6CE8;&#x518C; &#x521B;&#x5EFA;&#x7684; ContentProvider&#x7C7B;</strong>
 <strong>AndroidManifest.xml</strong></p>
-<pre><code class="lang-java">&lt;provider android:name=&quot;MyProvider&quot;
-                android:authorities=&quot;cn.scu.myprovider&quot;
+<pre><code class="lang-java">&lt;provider android:name=<span class="hljs-string">&quot;MyProvider&quot;</span>
+                android:authorities=<span class="hljs-string">&quot;cn.scu.myprovider&quot;</span>
                     /&gt;
 </code></pre>
 <p><strong>&#x6B65;&#x9AA4;4&#xFF1A;&#x8FDB;&#x7A0B;&#x5185;&#x8BBF;&#x95EE; ContentProvider&#x4E2D;&#x7684;&#x6570;&#x636E;</strong></p>
 <p><strong>MainActivity.java</strong></p>
-<pre><code class="lang-java">public class MainActivity extends AppCompatActivity {
+<pre><code class="lang-java"><span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">MainActivity</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">AppCompatActivity</span> </span>{
 
-    @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
+    <span class="hljs-meta">@Override</span>
+    <span class="hljs-function"><span class="hljs-keyword">protected</span> <span class="hljs-keyword">void</span> <span class="hljs-title">onCreate</span><span class="hljs-params">(Bundle savedInstanceState)</span> </span>{
+        <span class="hljs-keyword">super</span>.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        /**
+        <span class="hljs-comment">/**
          * &#x5BF9;user&#x8868;&#x8FDB;&#x884C;&#x64CD;&#x4F5C;
-         */
+         */</span>
 
-        // &#x8BBE;&#x7F6E;URI
-        Uri uri_user = Uri.parse(&quot;content://cn.scu.myprovider/user&quot;);
+        <span class="hljs-comment">// &#x8BBE;&#x7F6E;URI</span>
+        Uri uri_user = Uri.parse(<span class="hljs-string">&quot;content://cn.scu.myprovider/user&quot;</span>);
 
-        // &#x63D2;&#x5165;&#x8868;&#x4E2D;&#x6570;&#x636E;
-        ContentValues values = new ContentValues();
-        values.put(&quot;_id&quot;, 3);
-        values.put(&quot;name&quot;, &quot;Iverson&quot;);
+        <span class="hljs-comment">// &#x63D2;&#x5165;&#x8868;&#x4E2D;&#x6570;&#x636E;</span>
+        ContentValues values = <span class="hljs-keyword">new</span> ContentValues();
+        values.put(<span class="hljs-string">&quot;_id&quot;</span>, <span class="hljs-number">3</span>);
+        values.put(<span class="hljs-string">&quot;name&quot;</span>, <span class="hljs-string">&quot;Iverson&quot;</span>);
 
 
-        // &#x83B7;&#x53D6;ContentResolver
+        <span class="hljs-comment">// &#x83B7;&#x53D6;ContentResolver</span>
         ContentResolver resolver =  getContentResolver();
-        // &#x901A;&#x8FC7;ContentResolver &#x6839;&#x636E;URI &#x5411;ContentProvider&#x4E2D;&#x63D2;&#x5165;&#x6570;&#x636E;
+        <span class="hljs-comment">// &#x901A;&#x8FC7;ContentResolver &#x6839;&#x636E;URI &#x5411;ContentProvider&#x4E2D;&#x63D2;&#x5165;&#x6570;&#x636E;</span>
         resolver.insert(uri_user,values);
 
-        // &#x901A;&#x8FC7;ContentResolver &#x5411;ContentProvider&#x4E2D;&#x67E5;&#x8BE2;&#x6570;&#x636E;
-        Cursor cursor = resolver.query(uri_user, new String[]{&quot;_id&quot;,&quot;name&quot;}, null, null, null);
-        while (cursor.moveToNext()){
-            System.out.println(&quot;query book:&quot; + cursor.getInt(0) +&quot; &quot;+ cursor.getString(1));
-            // &#x5C06;&#x8868;&#x4E2D;&#x6570;&#x636E;&#x5168;&#x90E8;&#x8F93;&#x51FA;
+        <span class="hljs-comment">// &#x901A;&#x8FC7;ContentResolver &#x5411;ContentProvider&#x4E2D;&#x67E5;&#x8BE2;&#x6570;&#x636E;</span>
+        Cursor cursor = resolver.query(uri_user, <span class="hljs-keyword">new</span> String[]{<span class="hljs-string">&quot;_id&quot;</span>,<span class="hljs-string">&quot;name&quot;</span>}, <span class="hljs-keyword">null</span>, <span class="hljs-keyword">null</span>, <span class="hljs-keyword">null</span>);
+        <span class="hljs-keyword">while</span> (cursor.moveToNext()){
+            System.out.println(<span class="hljs-string">&quot;query book:&quot;</span> + cursor.getInt(<span class="hljs-number">0</span>) +<span class="hljs-string">&quot; &quot;</span>+ cursor.getString(<span class="hljs-number">1</span>));
+            <span class="hljs-comment">// &#x5C06;&#x8868;&#x4E2D;&#x6570;&#x636E;&#x5168;&#x90E8;&#x8F93;&#x51FA;</span>
         }
         cursor.close();
-        // &#x5173;&#x95ED;&#x6E38;&#x6807;
+        <span class="hljs-comment">// &#x5173;&#x95ED;&#x6E38;&#x6807;</span>
 
-        /**
+        <span class="hljs-comment">/**
          * &#x5BF9;job&#x8868;&#x8FDB;&#x884C;&#x64CD;&#x4F5C;
-         */
-        // &#x548C;&#x4E0A;&#x8FF0;&#x7C7B;&#x4F3C;,&#x53EA;&#x662F;URI&#x9700;&#x8981;&#x66F4;&#x6539;,&#x4ECE;&#x800C;&#x5339;&#x914D;&#x4E0D;&#x540C;&#x7684;URI CODE,&#x4ECE;&#x800C;&#x627E;&#x5230;&#x4E0D;&#x540C;&#x7684;&#x6570;&#x636E;&#x8D44;&#x6E90;
-        Uri uri_job = Uri.parse(&quot;content://cn.scu.myprovider/job&quot;);
+         */</span>
+        <span class="hljs-comment">// &#x548C;&#x4E0A;&#x8FF0;&#x7C7B;&#x4F3C;,&#x53EA;&#x662F;URI&#x9700;&#x8981;&#x66F4;&#x6539;,&#x4ECE;&#x800C;&#x5339;&#x914D;&#x4E0D;&#x540C;&#x7684;URI CODE,&#x4ECE;&#x800C;&#x627E;&#x5230;&#x4E0D;&#x540C;&#x7684;&#x6570;&#x636E;&#x8D44;&#x6E90;</span>
+        Uri uri_job = Uri.parse(<span class="hljs-string">&quot;content://cn.scu.myprovider/job&quot;</span>);
 
-        // &#x63D2;&#x5165;&#x8868;&#x4E2D;&#x6570;&#x636E;
-        ContentValues values2 = new ContentValues();
-        values2.put(&quot;_id&quot;, 3);
-        values2.put(&quot;job&quot;, &quot;NBA Player&quot;);
+        <span class="hljs-comment">// &#x63D2;&#x5165;&#x8868;&#x4E2D;&#x6570;&#x636E;</span>
+        ContentValues values2 = <span class="hljs-keyword">new</span> ContentValues();
+        values2.put(<span class="hljs-string">&quot;_id&quot;</span>, <span class="hljs-number">3</span>);
+        values2.put(<span class="hljs-string">&quot;job&quot;</span>, <span class="hljs-string">&quot;NBA Player&quot;</span>);
 
-        // &#x83B7;&#x53D6;ContentResolver
+        <span class="hljs-comment">// &#x83B7;&#x53D6;ContentResolver</span>
         ContentResolver resolver2 =  getContentResolver();
-        // &#x901A;&#x8FC7;ContentResolver &#x6839;&#x636E;URI &#x5411;ContentProvider&#x4E2D;&#x63D2;&#x5165;&#x6570;&#x636E;
+        <span class="hljs-comment">// &#x901A;&#x8FC7;ContentResolver &#x6839;&#x636E;URI &#x5411;ContentProvider&#x4E2D;&#x63D2;&#x5165;&#x6570;&#x636E;</span>
         resolver2.insert(uri_job,values2);
 
-        // &#x901A;&#x8FC7;ContentResolver &#x5411;ContentProvider&#x4E2D;&#x67E5;&#x8BE2;&#x6570;&#x636E;
-        Cursor cursor2 = resolver2.query(uri_job, new String[]{&quot;_id&quot;,&quot;job&quot;}, null, null, null);
-        while (cursor2.moveToNext()){
-            System.out.println(&quot;query job:&quot; + cursor2.getInt(0) +&quot; &quot;+ cursor2.getString(1));
-            // &#x5C06;&#x8868;&#x4E2D;&#x6570;&#x636E;&#x5168;&#x90E8;&#x8F93;&#x51FA;
+        <span class="hljs-comment">// &#x901A;&#x8FC7;ContentResolver &#x5411;ContentProvider&#x4E2D;&#x67E5;&#x8BE2;&#x6570;&#x636E;</span>
+        Cursor cursor2 = resolver2.query(uri_job, <span class="hljs-keyword">new</span> String[]{<span class="hljs-string">&quot;_id&quot;</span>,<span class="hljs-string">&quot;job&quot;</span>}, <span class="hljs-keyword">null</span>, <span class="hljs-keyword">null</span>, <span class="hljs-keyword">null</span>);
+        <span class="hljs-keyword">while</span> (cursor2.moveToNext()){
+            System.out.println(<span class="hljs-string">&quot;query job:&quot;</span> + cursor2.getInt(<span class="hljs-number">0</span>) +<span class="hljs-string">&quot; &quot;</span>+ cursor2.getString(<span class="hljs-number">1</span>));
+            <span class="hljs-comment">// &#x5C06;&#x8868;&#x4E2D;&#x6570;&#x636E;&#x5168;&#x90E8;&#x8F93;&#x51FA;</span>
         }
         cursor2.close();
-        // &#x5173;&#x95ED;&#x6E38;&#x6807;
+        <span class="hljs-comment">// &#x5173;&#x95ED;&#x6E38;&#x6807;</span>
 }
 }
 </code></pre>
@@ -4269,101 +4273,101 @@ long personid = ContentUris.parseId(uri);
 <p>&#x524D;2&#x4E2A;&#x6B65;&#x9AA4;&#x540C;&#x4E0A;&#x4F8B;&#x76F8;&#x540C;&#xFF0C;&#x6B64;&#x5904;&#x4E0D;&#x4F5C;&#x8FC7;&#x591A;&#x63CF;&#x8FF0;&#xFF0C;&#x6B64;&#x5904;&#x4E3B;&#x8981;&#x8BB2;&#x89E3;&#x6B65;&#x9AA4;3.</p>
 <p><strong>&#x6B65;&#x9AA4;3&#xFF1A;&#x6CE8;&#x518C; &#x521B;&#x5EFA;&#x7684; ContentProvider&#x7C7B;</strong>
 <em>AndroidManifest.xml</em></p>
-<pre><code class="lang-xml">&lt;provider 
-               android:name=&quot;MyProvider&quot;
-               android:authorities=&quot;scut.carson_ho.myprovider&quot;
+<pre><code class="lang-xml"><span class="hljs-tag">&lt;<span class="hljs-name">provider</span> 
+               <span class="hljs-attr">android:name</span>=<span class="hljs-string">&quot;MyProvider&quot;</span>
+               <span class="hljs-attr">android:authorities</span>=<span class="hljs-string">&quot;scut.carson_ho.myprovider&quot;</span>
 
-               // &#x58F0;&#x660E;&#x5916;&#x754C;&#x8FDB;&#x7A0B;&#x53EF;&#x8BBF;&#x95EE;&#x8BE5;Provider&#x7684;&#x6743;&#x9650;&#xFF08;&#x8BFB; &amp; &#x5199;&#xFF09;
-               android:permission=&quot;scut.carson_ho.PROVIDER&quot;             
+               // &#x58F0;&#x660E;&#x5916;&#x754C;&#x8FDB;&#x7A0B;&#x53EF;&#x8BBF;&#x95EE;&#x8BE5;<span class="hljs-attr">Provider</span>&#x7684;&#x6743;&#x9650;&#xFF08;&#x8BFB; &amp; &#x5199;&#xFF09;
+               <span class="hljs-attr">android:permission</span>=<span class="hljs-string">&quot;scut.carson_ho.PROVIDER&quot;</span>             
 
                // &#x6743;&#x9650;&#x53EF;&#x7EC6;&#x5206;&#x4E3A;&#x8BFB; &amp; &#x5199;&#x7684;&#x6743;&#x9650;
                // &#x5916;&#x754C;&#x9700;&#x8981;&#x58F0;&#x660E;&#x540C;&#x6837;&#x7684;&#x8BFB; &amp; &#x5199;&#x7684;&#x6743;&#x9650;&#x624D;&#x53EF;&#x8FDB;&#x884C;&#x76F8;&#x5E94;&#x64CD;&#x4F5C;&#xFF0C;&#x5426;&#x5219;&#x4F1A;&#x62A5;&#x9519;
-               // android:readPermisson = &quot;scut.carson_ho.Read&quot;
-               // android:writePermisson = &quot;scut.carson_ho.Write&quot;
+               // <span class="hljs-attr">android:readPermisson</span> = &quot;<span class="hljs-attr">scut.carson_ho.Read</span>&quot;
+               // <span class="hljs-attr">android:writePermisson</span> = &quot;<span class="hljs-attr">scut.carson_ho.Write</span>&quot;
 
-               // &#x8BBE;&#x7F6E;&#x6B64;provider&#x662F;&#x5426;&#x53EF;&#x4EE5;&#x88AB;&#x5176;&#x4ED6;&#x8FDB;&#x7A0B;&#x4F7F;&#x7528;
-               android:exported=&quot;true&quot;
+               // &#x8BBE;&#x7F6E;&#x6B64;<span class="hljs-attr">provider</span>&#x662F;&#x5426;&#x53EF;&#x4EE5;&#x88AB;&#x5176;&#x4ED6;&#x8FDB;&#x7A0B;&#x4F7F;&#x7528;
+               <span class="hljs-attr">android:exported</span>=<span class="hljs-string">&quot;true&quot;</span>
 
-  /&gt;
+  /&gt;</span>
 
 // &#x58F0;&#x660E;&#x672C;&#x5E94;&#x7528; &#x53EF;&#x5141;&#x8BB8;&#x901A;&#x4FE1;&#x7684;&#x6743;&#x9650;
-    &lt;permission android:name=&quot;scut.carson_ho.Read&quot; android:protectionLevel=&quot;normal&quot;/&gt;
+    <span class="hljs-tag">&lt;<span class="hljs-name">permission</span> <span class="hljs-attr">android:name</span>=<span class="hljs-string">&quot;scut.carson_ho.Read&quot;</span> <span class="hljs-attr">android:protectionLevel</span>=<span class="hljs-string">&quot;normal&quot;</span>/&gt;</span>
     // &#x7EC6;&#x5206;&#x8BFB; &amp; &#x5199;&#x6743;&#x9650;&#x5982;&#x4E0B;&#xFF0C;&#x4F46;&#x672C;Demo&#x76F4;&#x63A5;&#x91C7;&#x7528;&#x5168;&#x6743;&#x9650;
-    // &lt;permission android:name=&quot;scut.carson_ho.Write&quot; android:protectionLevel=&quot;normal&quot;/&gt;
-    // &lt;permission android:name=&quot;scut.carson_ho.PROVIDER&quot; android:protectionLevel=&quot;normal&quot;/&gt;
+    // <span class="hljs-tag">&lt;<span class="hljs-name">permission</span> <span class="hljs-attr">android:name</span>=<span class="hljs-string">&quot;scut.carson_ho.Write&quot;</span> <span class="hljs-attr">android:protectionLevel</span>=<span class="hljs-string">&quot;normal&quot;</span>/&gt;</span>
+    // <span class="hljs-tag">&lt;<span class="hljs-name">permission</span> <span class="hljs-attr">android:name</span>=<span class="hljs-string">&quot;scut.carson_ho.PROVIDER&quot;</span> <span class="hljs-attr">android:protectionLevel</span>=<span class="hljs-string">&quot;normal&quot;</span>/&gt;</span>
 </code></pre>
 <p>&#x81F3;&#x6B64;&#xFF0C;&#x8FDB;&#x7A0B;1&#x521B;&#x5EFA;&#x5B8C;&#x6BD5;&#xFF0C;&#x5373;&#x521B;&#x5EFA;<code>ContentProvider</code> &amp; &#x6570;&#x636E; &#x51C6;&#x5907;&#x597D;&#x4E86;&#x3002;</p>
 <h4 id="&#x8FDB;&#x7A0B;2"><a name="&#x8FDB;&#x7A0B;2" class="anchor-navigation-ex-anchor" href="#&#x8FDB;&#x7A0B;2"><i class="fa fa-link" aria-hidden="true"></i></a>&#x8FDB;&#x7A0B;2</h4>
 <p><strong>&#x6B65;&#x9AA4;1&#xFF1A;&#x58F0;&#x660E;&#x53EF;&#x8BBF;&#x95EE;&#x7684;&#x6743;&#x9650;</strong></p>
 <p><strong>AndroidManifest.xml</strong></p>
 <pre><code class="lang-Xml">    // &#x58F0;&#x660E;&#x672C;&#x5E94;&#x7528;&#x53EF;&#x5141;&#x8BB8;&#x901A;&#x4FE1;&#x7684;&#x6743;&#x9650;&#xFF08;&#x5168;&#x6743;&#x9650;&#xFF09;
-    &lt;uses-permission android:name=&quot;scut.carson_ho.PROVIDER&quot;/&gt;
+    <span class="hljs-tag">&lt;<span class="hljs-name">uses-permission</span> <span class="hljs-attr">android:name</span>=<span class="hljs-string">&quot;scut.carson_ho.PROVIDER&quot;</span>/&gt;</span>
 
     // &#x7EC6;&#x5206;&#x8BFB; &amp; &#x5199;&#x6743;&#x9650;&#x5982;&#x4E0B;&#xFF0C;&#x4F46;&#x672C;Demo&#x76F4;&#x63A5;&#x91C7;&#x7528;&#x5168;&#x6743;&#x9650;
-    // &lt;uses-permission android:name=&quot;scut.carson_ho.Read&quot;/&gt;
-    //  &lt;uses-permission android:name=&quot;scut.carson_ho.Write&quot;/&gt;
+    // <span class="hljs-tag">&lt;<span class="hljs-name">uses-permission</span> <span class="hljs-attr">android:name</span>=<span class="hljs-string">&quot;scut.carson_ho.Read&quot;</span>/&gt;</span>
+    //  <span class="hljs-tag">&lt;<span class="hljs-name">uses-permission</span> <span class="hljs-attr">android:name</span>=<span class="hljs-string">&quot;scut.carson_ho.Write&quot;</span>/&gt;</span>
 
 // &#x6CE8;&#xFF1A;&#x58F0;&#x660E;&#x7684;&#x6743;&#x9650;&#x5FC5;&#x987B;&#x4E0E;&#x8FDB;&#x7A0B;1&#x4E2D;&#x8BBE;&#x7F6E;&#x7684;&#x6743;&#x9650;&#x5BF9;&#x5E94;
 </code></pre>
 <p><strong>&#x6B65;&#x9AA4;2&#xFF1A;&#x8BBF;&#x95EE; ContentProvider&#x7684;&#x7C7B;</strong></p>
-<pre><code class="lang-java">public class MainActivity extends AppCompatActivity {
+<pre><code class="lang-java"><span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">MainActivity</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">AppCompatActivity</span> </span>{
 
-    @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
+    <span class="hljs-meta">@Override</span>
+    <span class="hljs-function"><span class="hljs-keyword">protected</span> <span class="hljs-keyword">void</span> <span class="hljs-title">onCreate</span><span class="hljs-params">(Bundle savedInstanceState)</span> </span>{
+        <span class="hljs-keyword">super</span>.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        /**
+        <span class="hljs-comment">/**
          * &#x5BF9;user&#x8868;&#x8FDB;&#x884C;&#x64CD;&#x4F5C;
-         */
+         */</span>
 
-        // &#x8BBE;&#x7F6E;URI
-        Uri uri_user = Uri.parse(&quot;content://scut.carson_ho.myprovider/user&quot;);
+        <span class="hljs-comment">// &#x8BBE;&#x7F6E;URI</span>
+        Uri uri_user = Uri.parse(<span class="hljs-string">&quot;content://scut.carson_ho.myprovider/user&quot;</span>);
 
-        // &#x63D2;&#x5165;&#x8868;&#x4E2D;&#x6570;&#x636E;
-        ContentValues values = new ContentValues();
-        values.put(&quot;_id&quot;, 4);
-        values.put(&quot;name&quot;, &quot;Jordan&quot;);
+        <span class="hljs-comment">// &#x63D2;&#x5165;&#x8868;&#x4E2D;&#x6570;&#x636E;</span>
+        ContentValues values = <span class="hljs-keyword">new</span> ContentValues();
+        values.put(<span class="hljs-string">&quot;_id&quot;</span>, <span class="hljs-number">4</span>);
+        values.put(<span class="hljs-string">&quot;name&quot;</span>, <span class="hljs-string">&quot;Jordan&quot;</span>);
 
 
-        // &#x83B7;&#x53D6;ContentResolver
+        <span class="hljs-comment">// &#x83B7;&#x53D6;ContentResolver</span>
         ContentResolver resolver =  getContentResolver();
-        // &#x901A;&#x8FC7;ContentResolver &#x6839;&#x636E;URI &#x5411;ContentProvider&#x4E2D;&#x63D2;&#x5165;&#x6570;&#x636E;
+        <span class="hljs-comment">// &#x901A;&#x8FC7;ContentResolver &#x6839;&#x636E;URI &#x5411;ContentProvider&#x4E2D;&#x63D2;&#x5165;&#x6570;&#x636E;</span>
         resolver.insert(uri_user,values);
 
-        // &#x901A;&#x8FC7;ContentResolver &#x5411;ContentProvider&#x4E2D;&#x67E5;&#x8BE2;&#x6570;&#x636E;
-        Cursor cursor = resolver.query(uri_user, new String[]{&quot;_id&quot;,&quot;name&quot;}, null, null, null);
-        while (cursor.moveToNext()){
-            System.out.println(&quot;query book:&quot; + cursor.getInt(0) +&quot; &quot;+ cursor.getString(1));
-            // &#x5C06;&#x8868;&#x4E2D;&#x6570;&#x636E;&#x5168;&#x90E8;&#x8F93;&#x51FA;
+        <span class="hljs-comment">// &#x901A;&#x8FC7;ContentResolver &#x5411;ContentProvider&#x4E2D;&#x67E5;&#x8BE2;&#x6570;&#x636E;</span>
+        Cursor cursor = resolver.query(uri_user, <span class="hljs-keyword">new</span> String[]{<span class="hljs-string">&quot;_id&quot;</span>,<span class="hljs-string">&quot;name&quot;</span>}, <span class="hljs-keyword">null</span>, <span class="hljs-keyword">null</span>, <span class="hljs-keyword">null</span>);
+        <span class="hljs-keyword">while</span> (cursor.moveToNext()){
+            System.out.println(<span class="hljs-string">&quot;query book:&quot;</span> + cursor.getInt(<span class="hljs-number">0</span>) +<span class="hljs-string">&quot; &quot;</span>+ cursor.getString(<span class="hljs-number">1</span>));
+            <span class="hljs-comment">// &#x5C06;&#x8868;&#x4E2D;&#x6570;&#x636E;&#x5168;&#x90E8;&#x8F93;&#x51FA;</span>
         }
         cursor.close();
-        // &#x5173;&#x95ED;&#x6E38;&#x6807;
+        <span class="hljs-comment">// &#x5173;&#x95ED;&#x6E38;&#x6807;</span>
 
-        /**
+        <span class="hljs-comment">/**
          * &#x5BF9;job&#x8868;&#x8FDB;&#x884C;&#x64CD;&#x4F5C;
-         */
-        // &#x548C;&#x4E0A;&#x8FF0;&#x7C7B;&#x4F3C;,&#x53EA;&#x662F;URI&#x9700;&#x8981;&#x66F4;&#x6539;,&#x4ECE;&#x800C;&#x5339;&#x914D;&#x4E0D;&#x540C;&#x7684;URI CODE,&#x4ECE;&#x800C;&#x627E;&#x5230;&#x4E0D;&#x540C;&#x7684;&#x6570;&#x636E;&#x8D44;&#x6E90;
-        Uri uri_job = Uri.parse(&quot;content://scut.carson_ho.myprovider/job&quot;);
+         */</span>
+        <span class="hljs-comment">// &#x548C;&#x4E0A;&#x8FF0;&#x7C7B;&#x4F3C;,&#x53EA;&#x662F;URI&#x9700;&#x8981;&#x66F4;&#x6539;,&#x4ECE;&#x800C;&#x5339;&#x914D;&#x4E0D;&#x540C;&#x7684;URI CODE,&#x4ECE;&#x800C;&#x627E;&#x5230;&#x4E0D;&#x540C;&#x7684;&#x6570;&#x636E;&#x8D44;&#x6E90;</span>
+        Uri uri_job = Uri.parse(<span class="hljs-string">&quot;content://scut.carson_ho.myprovider/job&quot;</span>);
 
-        // &#x63D2;&#x5165;&#x8868;&#x4E2D;&#x6570;&#x636E;
-        ContentValues values2 = new ContentValues();
-        values2.put(&quot;_id&quot;, 4);
-        values2.put(&quot;job&quot;, &quot;NBA Player&quot;);
+        <span class="hljs-comment">// &#x63D2;&#x5165;&#x8868;&#x4E2D;&#x6570;&#x636E;</span>
+        ContentValues values2 = <span class="hljs-keyword">new</span> ContentValues();
+        values2.put(<span class="hljs-string">&quot;_id&quot;</span>, <span class="hljs-number">4</span>);
+        values2.put(<span class="hljs-string">&quot;job&quot;</span>, <span class="hljs-string">&quot;NBA Player&quot;</span>);
 
-        // &#x83B7;&#x53D6;ContentResolver
+        <span class="hljs-comment">// &#x83B7;&#x53D6;ContentResolver</span>
         ContentResolver resolver2 =  getContentResolver();
-        // &#x901A;&#x8FC7;ContentResolver &#x6839;&#x636E;URI &#x5411;ContentProvider&#x4E2D;&#x63D2;&#x5165;&#x6570;&#x636E;
+        <span class="hljs-comment">// &#x901A;&#x8FC7;ContentResolver &#x6839;&#x636E;URI &#x5411;ContentProvider&#x4E2D;&#x63D2;&#x5165;&#x6570;&#x636E;</span>
         resolver2.insert(uri_job,values2);
 
-        // &#x901A;&#x8FC7;ContentResolver &#x5411;ContentProvider&#x4E2D;&#x67E5;&#x8BE2;&#x6570;&#x636E;
-        Cursor cursor2 = resolver2.query(uri_job, new String[]{&quot;_id&quot;,&quot;job&quot;}, null, null, null);
-        while (cursor2.moveToNext()){
-            System.out.println(&quot;query job:&quot; + cursor2.getInt(0) +&quot; &quot;+ cursor2.getString(1));
-            // &#x5C06;&#x8868;&#x4E2D;&#x6570;&#x636E;&#x5168;&#x90E8;&#x8F93;&#x51FA;
+        <span class="hljs-comment">// &#x901A;&#x8FC7;ContentResolver &#x5411;ContentProvider&#x4E2D;&#x67E5;&#x8BE2;&#x6570;&#x636E;</span>
+        Cursor cursor2 = resolver2.query(uri_job, <span class="hljs-keyword">new</span> String[]{<span class="hljs-string">&quot;_id&quot;</span>,<span class="hljs-string">&quot;job&quot;</span>}, <span class="hljs-keyword">null</span>, <span class="hljs-keyword">null</span>, <span class="hljs-keyword">null</span>);
+        <span class="hljs-keyword">while</span> (cursor2.moveToNext()){
+            System.out.println(<span class="hljs-string">&quot;query job:&quot;</span> + cursor2.getInt(<span class="hljs-number">0</span>) +<span class="hljs-string">&quot; &quot;</span>+ cursor2.getString(<span class="hljs-number">1</span>));
+            <span class="hljs-comment">// &#x5C06;&#x8868;&#x4E2D;&#x6570;&#x636E;&#x5168;&#x90E8;&#x8F93;&#x51FA;</span>
         }
         cursor2.close();
-        // &#x5173;&#x95ED;&#x6E38;&#x6807;
+        <span class="hljs-comment">// &#x5173;&#x95ED;&#x6E38;&#x6807;</span>
     }
 }
 </code></pre>
@@ -4447,7 +4451,7 @@ long personid = ContentUris.parseId(uri);
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"ContentProvider全方位解析","level":"3.1.4","depth":2,"next":{"title":"Fragment详解","level":"3.1.5","depth":2,"path":"android/basis/Fragment.md","ref":"android/basis/Fragment.md","articles":[]},"previous":{"title":"BroadcastReceiver全方位解析","level":"3.1.3","depth":2,"path":"android/basis/broadcastreceiver.md","ref":"android/basis/broadcastreceiver.md","articles":[]},"dir":"ltr"},"config":{"plugins":["-lunr","-search","-highlight","-livereload","search-plus@^0.0.11","simple-page-toc@^0.1.1","github@^2.0.0","github-buttons@2.1.0","edit-link@^2.0.2","advanced-emoji@^0.2.1","anchors@^0.7.1","include-codeblock@^3.0.2","ace@^0.3.2","emphasize@^1.1.0","katex@^1.1.3","splitter@^0.0.8","tbfed-pagefooter@^0.0.1","expandable-chapters-small@^0.1.7","sectionx@^3.1.0","local-video@^1.0.1","anchor-navigation-ex@0.1.8","favicon@^0.0.2"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"tbfed-pagefooter":{"copyright":"Copyright © ruheng.com 2017","modify_label":"该文件修订时间：","modify_format":"YYYY-MM-DD HH:mm:ss"},"emphasize":{},"ace":{},"github":{"url":"https://github.com/LRH1993/android_interview"},"simple-page-toc":{"maxDepth":3,"skipFirstH1":true},"splitter":{},"katex":{},"fontsettings":{"theme":"white","family":"sans","size":2},"sectionx":{"tag":"b"},"anchor-navigation-ex":{"isRewritePageTitle":false,"tocLevel1Icon":"fa fa-hand-o-right","tocLevel2Icon":"fa fa-hand-o-right","tocLevel3Icon":"fa fa-hand-o-right"},"favicon":{"shortcut":"favicon.ico","bookmark":"favicon.ico"},"github-buttons":{"repo":"LRH1993/android_interview","types":["star"],"size":"small"},"expandable-chapters-small":{},"local-video":{},"advanced-emoji":{"embedEmojis":false},"include-codeblock":{"check":false,"edit":true,"fixlang":false,"lang":"","template":"ace","theme":"chrome","unindent":true},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":true,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"edit-link":{"label":"Edit This Page","base":"https://github.com/LRH1993/android_interview/edit/master"},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":true},"anchors":{},"search-plus":{}},"theme":"default","author":"ruheng","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"Android校招面试指南","language":"zh-hans","output.name":"site","links":{"sidebar":{"Home":"http://lruheng.com/"}},"gitbook":"3.2.3","description":"Android面试必备，记录自己的秋招之路"},"file":{"path":"android/basis/ContentProvider.md","mtime":"2017-08-23T09:57:48.000Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2017-10-16T12:05:21.906Z"},"basePath":"../..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"ContentProvider全方位解析","level":"3.1.4","depth":2,"next":{"title":"Fragment详解","level":"3.1.5","depth":2,"path":"android/basis/Fragment.md","ref":"android/basis/Fragment.md","articles":[]},"previous":{"title":"BroadcastReceiver全方位解析","level":"3.1.3","depth":2,"path":"android/basis/broadcastreceiver.md","ref":"android/basis/broadcastreceiver.md","articles":[]},"dir":"ltr"},"config":{"plugins":["-lunr","-search","-livereload","search-plus@^0.0.11","simple-page-toc@^0.1.1","github@^2.0.0","github-buttons@2.1.0","edit-link@^2.0.2","advanced-emoji@^0.2.1","anchors@^0.7.1","include-codeblock@^3.0.2","ace@^0.3.2","emphasize@^1.1.0","katex@^1.1.3","splitter@^0.0.8","tbfed-pagefooter@^0.0.1","expandable-chapters-small@^0.1.7","sectionx@^3.1.0","local-video@^1.0.1","anchor-navigation-ex@0.1.8","favicon@^0.0.2"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"tbfed-pagefooter":{"copyright":"Copyright © ruheng.com 2017","modify_label":"该文件修订时间：","modify_format":"YYYY-MM-DD HH:mm:ss"},"emphasize":{},"ace":{},"github":{"url":"https://github.com/LRH1993/android_interview"},"simple-page-toc":{"maxDepth":3,"skipFirstH1":true},"splitter":{},"katex":{},"fontsettings":{"theme":"white","family":"sans","size":2},"sectionx":{"tag":"b"},"highlight":{},"anchor-navigation-ex":{"isRewritePageTitle":false,"tocLevel1Icon":"fa fa-hand-o-right","tocLevel2Icon":"fa fa-hand-o-right","tocLevel3Icon":"fa fa-hand-o-right"},"favicon":{"shortcut":"favicon.ico","bookmark":"favicon.ico"},"github-buttons":{"repo":"LRH1993/android_interview","types":["star"],"size":"small"},"expandable-chapters-small":{},"local-video":{},"advanced-emoji":{"embedEmojis":false},"include-codeblock":{"check":false,"edit":false,"fixlang":false,"lang":"","template":"default","theme":"chrome","unindent":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":true,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"edit-link":{"label":"Edit This Page","base":"https://github.com/LRH1993/android_interview/edit/master"},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":true},"anchors":{},"search-plus":{}},"theme":"default","author":"ruheng","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"Android校招面试指南","language":"zh-hans","output.name":"site","links":{"sidebar":{"Home":"http://lruheng.com/"}},"gitbook":"3.2.3","description":"Android面试必备，记录自己的秋招之路"},"file":{"path":"android/basis/ContentProvider.md","mtime":"2017-08-23T09:57:48.000Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2017-10-16T13:00:43.989Z"},"basePath":"../..","book":{"language":""}});
         });
     </script>
 </div>

@@ -69,6 +69,10 @@
                 
             
                 
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
                 <link rel="stylesheet" href="../../gitbook/gitbook-plugin-fontsettings/website.css">
                 
             
@@ -3717,20 +3721,20 @@
 <p>&#x5E76;&#x67E5;&#x96C6;(&#x5927;S)&#x7531;&#x82E5;&#x5E72;&#x5B50;&#x96C6;&#x5408;si&#x6784;&#x6210;&#xFF0C;&#x5E76;&#x67E5;&#x96C6;&#x7684;&#x903B;&#x8F91;&#x7ED3;&#x6784;&#x5C31;&#x662F;&#x4E00;&#x4E2A;&#x68EE;&#x6797;&#x3002;si&#x8868;&#x793A;&#x68EE;&#x6797;&#x4E2D;&#x7684;&#x4E00;&#x68F5;&#x5B50;&#x6811;&#x3002;&#x4E00;&#x822C;&#x4EE5;&#x5B50;&#x6811;&#x7684;&#x6839;&#x4F5C;&#x4E3A;&#x8BE5;&#x5B50;&#x6811;&#x7684;&#x4EE3;&#x8868;&#x3002;</p>
 <p>&#x800C;&#x5BF9;&#x4E8E;&#x5E76;&#x67E5;&#x96C6;&#x7684;&#x5B58;&#x50A8;&#x7ED3;&#x6784;&#xFF0C;&#x53EF;&#x7528;&#x4E00;&#x7EF4;&#x6570;&#x7EC4;&#x548C;&#x94FE;&#x8868;&#x6765;&#x5B9E;&#x73B0;&#x3002;&#x8FD9;&#x91CC;&#x4E3B;&#x8981;&#x4ECB;&#x7ECD;&#x4E00;&#x7EF4;&#x6570;&#x7EC4;&#x7684;&#x5B9E;&#x73B0;&#x3002;</p>
 <p>&#x6839;&#x636E;&#x524D;&#x9762;&#x4ECB;&#x7ECD;&#x7684;&#x57FA;&#x672C;&#x64CD;&#x4F5C;&#x518D;&#x52A0;&#x4E0A;&#x5B58;&#x50A8;&#x7ED3;&#x6784;&#xFF0C;&#x5E76;&#x67E5;&#x96C6;&#x7C7B;&#x7684;&#x5B9E;&#x73B0;&#x67B6;&#x6784;&#x5982;&#x4E0B;&#xFF1A;</p>
-<pre><code class="lang-java">public class DisjSets {
-    private int[] s;
-    private int count;//&#x8BB0;&#x5F55;&#x5E76;&#x67E5;&#x96C6;&#x4E2D;&#x5B50;&#x96C6;&#x5408;&#x7684;&#x4E2A;&#x6570;(&#x5B50;&#x6811;&#x7684;&#x4E2A;&#x6570;)
+<pre><code class="lang-java"><span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">DisjSets</span> </span>{
+    <span class="hljs-keyword">private</span> <span class="hljs-keyword">int</span>[] s;
+    <span class="hljs-keyword">private</span> <span class="hljs-keyword">int</span> count;<span class="hljs-comment">//&#x8BB0;&#x5F55;&#x5E76;&#x67E5;&#x96C6;&#x4E2D;&#x5B50;&#x96C6;&#x5408;&#x7684;&#x4E2A;&#x6570;(&#x5B50;&#x6811;&#x7684;&#x4E2A;&#x6570;)</span>
 
-       public DisjSets(int numElements) {
-       //&#x6784;&#x9020;&#x51FD;&#x6570;&#xFF0C;&#x8D1F;&#x8D23;&#x521D;&#x59CB;&#x5316;&#x5E76;&#x67E5;&#x96C6;
+       <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-title">DisjSets</span><span class="hljs-params">(<span class="hljs-keyword">int</span> numElements)</span> </span>{
+       <span class="hljs-comment">//&#x6784;&#x9020;&#x51FD;&#x6570;&#xFF0C;&#x8D1F;&#x8D23;&#x521D;&#x59CB;&#x5316;&#x5E76;&#x67E5;&#x96C6;</span>
        }
 
-        public void unionByHeight(int root1, int root2){    
-        //union&#x64CD;&#x4F5C;
+        <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">unionByHeight</span><span class="hljs-params">(<span class="hljs-keyword">int</span> root1, <span class="hljs-keyword">int</span> root2)</span></span>{    
+        <span class="hljs-comment">//union&#x64CD;&#x4F5C;</span>
        }
 
-       public int find(int x){
-       //find &#x64CD;&#x4F5C;
+       <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">int</span> <span class="hljs-title">find</span><span class="hljs-params">(<span class="hljs-keyword">int</span> x)</span></span>{
+       <span class="hljs-comment">//find &#x64CD;&#x4F5C;</span>
       }
 }
 </code></pre>
@@ -3741,12 +3745,12 @@
 <p>&#x5BF9;&#x5E94;&#x7684;&#x4E00;&#x7EF4;&#x6570;&#x7EC4;&#x521D;&#x59CB;&#x5316;&#x5982;&#x4E0B;&#xFF1A;</p>
 <p><img src="http://images2015.cnblogs.com/blog/715283/201605/715283-20160512093206499-946248423.jpg" alt="img"></p>
 <p>&#x56E0;&#x4E3A;&#xFF0C;&#x521D;&#x59CB;&#x65F6;&#x6BCF;&#x4E2A;&#x5143;&#x7D20;&#x4EE3;&#x8868;&#x4E00;&#x4E2A;&#x96C6;&#x5408;&#xFF0C;&#x8BE5;&#x5143;&#x7D20;&#x672C;&#x8EAB;&#x5C31;&#x662F;&#x6811;&#x6839;&#x3002;&#x6811;&#x6839;&#x7684;&#x7236;&#x7ED3;&#x70B9;&#x7528; -1 &#x6765;&#x8868;&#x793A;&#x3002;&#x4EE3;&#x7801;&#x5B9E;&#x73B0;&#x5982;&#x4E0B;&#xFF1A;</p>
-<pre><code class="lang-java">public DisjSets(int numElements) {
-        s = new int[numElements];
+<pre><code class="lang-java"><span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-title">DisjSets</span><span class="hljs-params">(<span class="hljs-keyword">int</span> numElements)</span> </span>{
+        s = <span class="hljs-keyword">new</span> <span class="hljs-keyword">int</span>[numElements];
         count = numElements;
-        //&#x521D;&#x59CB;&#x5316;&#x5E76;&#x67E5;&#x96C6;,&#x76F8;&#x5F53;&#x4E8E;&#x65B0;&#x5EFA;&#x4E86;s.length &#x4E2A;&#x4E92;&#x4E0D;&#x76F8;&#x4EA4;&#x7684;&#x96C6;&#x5408;
-        for(int i = 0; i &lt; s.length; i++)
-            s[i] = -1;//s[i]&#x5B58;&#x50A8;&#x7684;&#x662F;&#x9AD8;&#x5EA6;(&#x79E9;)&#x4FE1;&#x606F;
+        <span class="hljs-comment">//&#x521D;&#x59CB;&#x5316;&#x5E76;&#x67E5;&#x96C6;,&#x76F8;&#x5F53;&#x4E8E;&#x65B0;&#x5EFA;&#x4E86;s.length &#x4E2A;&#x4E92;&#x4E0D;&#x76F8;&#x4EA4;&#x7684;&#x96C6;&#x5408;</span>
+        <span class="hljs-keyword">for</span>(<span class="hljs-keyword">int</span> i = <span class="hljs-number">0</span>; i &lt; s.length; i++)
+            s[i] = -<span class="hljs-number">1</span>;<span class="hljs-comment">//s[i]&#x5B58;&#x50A8;&#x7684;&#x662F;&#x9AD8;&#x5EA6;(&#x79E9;)&#x4FE1;&#x606F;</span>
     }
 </code></pre>
 <p><strong>&#x2461;&#x57FA;&#x672C;&#x64CD;&#x4F5C;&#x5B9E;&#x73B0;</strong></p>
@@ -3754,8 +3758,8 @@
 <p>&#x6BD4;&#x5982;&#x5408;&#x5E76; &#x8282;&#x70B9;3 &#x548C;&#x8282;&#x70B9;4&#xFF1A;</p>
 <p><img src="http://images2015.cnblogs.com/blog/715283/201609/715283-20160917221552352-697575435.png" alt="img"></p>
 <p>&#x8FD9;&#x91CC;&#x7684;&#x5408;&#x5E76;&#x5F88;&#x968F;&#x610F;&#xFF0C;&#x628A;&#x4EFB;&#x610F;&#x4E00;&#x68F5;&#x5B50;&#x6811;&#x7684;&#x7ED3;&#x70B9;&#x6307;&#x5411;&#x53E6;&#x4E00;&#x68F5;&#x5B50;&#x6811;&#x7ED3;&#x70B9;&#x5C31;&#x5B8C;&#x6210;&#x4E86;&#x5408;&#x5E76;&#x3002;</p>
-<pre><code class="lang-java">public void union(int root1, int root2){
-  s[root2] = root1;//&#x5C06;root1&#x4F5C;&#x4E3A;root2&#x7684;&#x65B0;&#x6811;&#x6839;
+<pre><code class="lang-java"><span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">union</span><span class="hljs-params">(<span class="hljs-keyword">int</span> root1, <span class="hljs-keyword">int</span> root2)</span></span>{
+  s[root2] = root1;<span class="hljs-comment">//&#x5C06;root1&#x4F5C;&#x4E3A;root2&#x7684;&#x65B0;&#x6811;&#x6839;</span>
 }
 </code></pre>
 <p>&#x4F46;&#x662F;&#xFF0C;&#x8FD9;&#x53EA;&#x662F;&#x4E00;&#x4E2A;&#x7B80;&#x5355;&#x7684;&#x60C5;&#x51B5;&#xFF0C;&#x5982;&#x679C;&#x5F85;&#x5408;&#x5E76;&#x7684;&#x4E24;&#x68F5;&#x5B50;&#x6811;&#x5F88;&#x5927;&#xFF0C;&#x800C;&#x4E14;&#x9AD8;&#x5EA6;&#x4E0D;&#x4E00;&#x6837;&#x65F6;&#xFF0C;&#x5982;&#x4F55;&#x4F7F;&#x5F97;&#x5408;&#x5E76;&#x64CD;&#x4F5C;&#x751F;&#x6210;&#x7684;&#x65B0;&#x7684;&#x5B50;&#x6811;&#x7684;&#x9AD8;&#x5EA6;&#x6700;&#x5C0F;&#xFF1F;&#x56E0;&#x4E3A;&#x9AD8;&#x5EA6;&#x8D8A;&#x5C0F;&#x7684;&#x5B50;&#x6811;Find&#x64CD;&#x4F5C;&#x8D8A;&#x5FEB;&#x3002;</p>
@@ -3766,11 +3770,11 @@
 <p><img src="http://images2015.cnblogs.com/blog/715283/201609/715283-20160917221645695-1653305001.png" alt="img"></p>
 <p>&#x6B64;&#x65F6;&#x4E00;&#x5171;&#x6709;4&#x4E2A;&#x5B50;&#x96C6;&#x5408;&#x3002;&#x7B2C;&#x4E00;&#x4E2A;&#x96C6;&#x5408;&#x7684;&#x4EE3;&#x8868;&#x5143;&#x7D20;&#x4E3A;0&#xFF0C;&#x7B2C;&#x4E8C;&#x4E2A;&#x96C6;&#x5408;&#x7684;&#x4EE3;&#x8868;&#x5143;&#x7D20;&#x4E3A;1&#xFF0C;&#x7B2C;&#x4E09;&#x4E2A;&#x96C6;&#x5408;&#x7684;&#x4EE3;&#x8868;&#x5143;&#x7D20;&#x4E3A;3&#xFF0C;&#x7B2C;&#x56DB;&#x4E2A;&#x96C6;&#x5408;&#x7684;&#x4EE3;&#x8868;&#x5143;&#x7D20;&#x4E3A;5&#xFF0C;&#x6545;&#xFF1A;</p>
 <p>find(2)&#x8FD4;&#x56DE;1&#xFF0C;find(0)&#x8FD4;&#x56DE;0&#x3002;&#x56E0;&#x4E3A; &#x7ED3;&#x70B9;3 &#x548C; &#x7ED3;&#x70B9;4 &#x5728;&#x540C;&#x4E00;&#x4E2A;&#x96C6;&#x5408;&#x5185;&#xFF0C;find(4)&#x8FD4;&#x56DE;3&#xFF0C;find(3)&#x8FD4;&#x56DE;3&#x3002;</p>
-<pre><code class="lang-java"> public int find(int x){
-  if(s[x] &lt; 0)
-    return x;
-  else
-    return find(s[x]);
+<pre><code class="lang-java"> <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">int</span> <span class="hljs-title">find</span><span class="hljs-params">(<span class="hljs-keyword">int</span> x)</span></span>{
+  <span class="hljs-keyword">if</span>(s[x] &lt; <span class="hljs-number">0</span>)
+    <span class="hljs-keyword">return</span> x;
+  <span class="hljs-keyword">else</span>
+    <span class="hljs-keyword">return</span> find(s[x]);
  }
 </code></pre>
 <p>&#x8FD9;&#x91CC;find(int x)&#x8FD4;&#x56DE;&#x7684;&#x662F;&#x6700;&#x91CC;&#x5C42;&#x9012;&#x5F52;&#x6267;&#x884C;&#x540E;&#xFF0C;&#x5F97;&#x5230;&#x7684;&#x503C;&#x3002;&#x7531;&#x4E8E;&#x53EA;&#x6709;&#x6811;&#x6839;&#x7684;&#x7236;&#x7ED3;&#x70B9;&#x4F4D;&#x7F6E;&#x5C0F;&#x4E8E;0&#xFF0C;&#x6545;&#x8FD4;&#x56DE;&#x7684;&#x662F;&#x6811;&#x6839;&#x7ED3;&#x70B9;&#x7684;&#x6807;&#x8BC6;&#x3002;</p>
@@ -3787,36 +3791,36 @@
 <p> &#x9664;&#x4E86;&#x6309;&#x9AD8;&#x5EA6;&#x6C42;&#x5E76;&#x4E4B;&#x5916;&#xFF0C;&#x8FD8;&#x53EF;&#x4EE5;&#x6309;&#x5927;&#x5C0F;&#x6C42;&#x5E76;&#xFF0C;&#x5373;&#x5148;&#x5224;&#x65AD;&#x4E0B;&#x54EA;&#x68F5;&#x5B50;&#x6811;&#x542B;&#x6709;&#x7684;&#x7ED3;&#x70B9;&#x6570;&#x76EE;&#x591A;&#xFF0C;&#x8BA9;&#x8F83;&#x5C0F;&#x7684;&#x5B50;&#x6811;&#x7684;&#x6839;&#x6307;&#x5411;&#x8F83;&#x5927;&#x7684;&#x5B50;&#x6811;&#x7684;&#x6839;&#x3002;</p>
 <p> &#x5BF9;&#x4E8E;&#x6309;&#x9AD8;&#x5EA6;&#x6C42;&#x5E76;&#xFF0C;&#x9700;&#x8981;&#x89E3;&#x91CA;&#x4E0B;&#x6570;&#x7EC4;&#x4E2D;&#x5B58;&#x50A8;&#x7684;&#x5143;&#x7D20;&#xFF1A;&#x662F;&#x9AD8;&#x5EA6;&#x7684;&#x8D1F;&#x503C;&#x518D;&#x51CF;&#x53BB;1&#x3002;&#x8FD9;&#x6837;&#xFF0C;&#x521D;&#x59CB;&#x65F6;&#xFF0C;&#x6240;&#x6709;&#x5143;&#x7D20;&#x90FD;&#x662F;-1&#xFF0C;&#x800C;&#x6811;&#x6839;&#x8282;&#x70B9;&#x7684;&#x9AD8;&#x5EA6;&#x4E3A;0&#xFF0C;s[i]=-1&#x3002;</p>
 <p>&#x6309;&#x9AD8;&#x5EA6;&#x6C42;&#x5E76;&#x7684;&#x4EE3;&#x7801;&#x5982;&#x4E0B;&#xFF1A;</p>
-<pre><code class="lang-java">/**
+<pre><code class="lang-java"><span class="hljs-comment">/**
      * 
-     * @param root1 &#x5E76;&#x67E5;&#x96C6;&#x4E2D;&#x4EE5;root1&#x4E3A;&#x4EE3;&#x8868;&#x7684;&#x67D0;&#x4E2A;&#x5B50;&#x96C6;
-     * @param roo2 &#x5E76;&#x67E5;&#x96C6;&#x4E2D;&#x4EE5;root2&#x4E3A;&#x4EE3;&#x8868;&#x7684;&#x67D0;&#x4E2A;&#x5B50;&#x96C6;
+     * <span class="hljs-doctag">@param</span> root1 &#x5E76;&#x67E5;&#x96C6;&#x4E2D;&#x4EE5;root1&#x4E3A;&#x4EE3;&#x8868;&#x7684;&#x67D0;&#x4E2A;&#x5B50;&#x96C6;
+     * <span class="hljs-doctag">@param</span> roo2 &#x5E76;&#x67E5;&#x96C6;&#x4E2D;&#x4EE5;root2&#x4E3A;&#x4EE3;&#x8868;&#x7684;&#x67D0;&#x4E2A;&#x5B50;&#x96C6;
      * &#x6309;&#x9AD8;&#x5EA6;(&#x79E9;)&#x5408;&#x5E76;&#x4EE5;root1 &#x548C; root2&#x4E3A;&#x4EE3;&#x8868;&#x7684;&#x4E24;&#x4E2A;&#x96C6;&#x5408;
-     */
-    public void unionByHeight(int root1, int root2){
-        if(find(root1) == find(root2))
-            return;//root1 &#x4E0E; root2&#x5DF2;&#x7ECF;&#x8FDE;&#x901A;&#x4E86;
+     */</span>
+    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">unionByHeight</span><span class="hljs-params">(<span class="hljs-keyword">int</span> root1, <span class="hljs-keyword">int</span> root2)</span></span>{
+        <span class="hljs-keyword">if</span>(find(root1) == find(root2))
+            <span class="hljs-keyword">return</span>;<span class="hljs-comment">//root1 &#x4E0E; root2&#x5DF2;&#x7ECF;&#x8FDE;&#x901A;&#x4E86;</span>
 
-        if(s[root2] &lt; s[root1])//root2 is deeper
+        <span class="hljs-keyword">if</span>(s[root2] &lt; s[root1])<span class="hljs-comment">//root2 is deeper</span>
             s[root1] = root2;
-        else{
-            if(s[root1] == s[root2])//root1 and root2 is the same deeper
-                s[root1]--;//&#x5C06;root1&#x7684;&#x9AD8;&#x5EA6;&#x52A0;1
-            s[root2] = root1;//&#x5C06;root2&#x7684;&#x6839;(&#x6307;&#x5411;)&#x66F4;&#x65B0;&#x4E3A;root1
+        <span class="hljs-keyword">else</span>{
+            <span class="hljs-keyword">if</span>(s[root1] == s[root2])<span class="hljs-comment">//root1 and root2 is the same deeper</span>
+                s[root1]--;<span class="hljs-comment">//&#x5C06;root1&#x7684;&#x9AD8;&#x5EA6;&#x52A0;1</span>
+            s[root2] = root1;<span class="hljs-comment">//&#x5C06;root2&#x7684;&#x6839;(&#x6307;&#x5411;)&#x66F4;&#x65B0;&#x4E3A;root1</span>
         }
 
-        count--;//&#x6BCF;union&#x4E00;&#x6B21;,&#x5B50;&#x6811;&#x6570;&#x76EE;&#x51CF;1
+        count--;<span class="hljs-comment">//&#x6BCF;union&#x4E00;&#x6B21;,&#x5B50;&#x6811;&#x6570;&#x76EE;&#x51CF;1</span>
     }
 </code></pre>
 <h4 id="&#x4F7F;&#x7528;&#x4E86;&#x8DEF;&#x5F84;&#x538B;&#x7F29;&#x7684;find&#x7684;&#x64CD;&#x4F5C;"><a name="&#x4F7F;&#x7528;&#x4E86;&#x8DEF;&#x5F84;&#x538B;&#x7F29;&#x7684;find&#x7684;&#x64CD;&#x4F5C;" class="anchor-navigation-ex-anchor" href="#&#x4F7F;&#x7528;&#x4E86;&#x8DEF;&#x5F84;&#x538B;&#x7F29;&#x7684;find&#x7684;&#x64CD;&#x4F5C;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x4F7F;&#x7528;&#x4E86;&#x8DEF;&#x5F84;&#x538B;&#x7F29;&#x7684;Find&#x7684;&#x64CD;&#x4F5C;</h4>
 <p>&#x4E0A;&#x9762;&#x7A0B;&#x5E8F;&#x4EE3;&#x7801;find&#x65B9;&#x6CD5;&#x53EA;&#x662F;&#x7B80;&#x5355;&#x5730;&#x628A;&#x5F85;&#x67E5;&#x627E;&#x7684;&#x5143;&#x7D20;&#x6240;&#x5728;&#x7684;&#x6839;&#x8FD4;&#x56DE;&#x3002;&#x8DEF;&#x5F84;&#x538B;&#x7F29;&#x662F;&#x6307;&#xFF0C;&#x5728;find&#x64CD;&#x4F5C;&#x8FDB;&#x884C;&#x65F6;&#xFF0C;<strong>&#x4F7F;find&#x67E5;&#x627E;&#x8DEF;&#x5F84;&#x4E2D;&#x7684;&#x9876;&#x70B9;(&#x7684;&#x7236;&#x4EB2;)&#x90FD;&#x76F4;&#x63A5;&#x6307;&#x5411;&#x4E3A;&#x6811;&#x6839;&#xFF08;&#x8FD9;&#x5F88;&#x660E;&#x663E;&#x5730;&#x6539;&#x53D8;&#x4E86;&#x5B50;&#x6811;&#x7684;&#x9AD8;&#x5EA6;&#xFF09;</strong></p>
 <p>&#x5982;&#x4F55;&#x4F7F;find&#x67E5;&#x627E;&#x8DEF;&#x5F84;&#x4E2D;&#x7ECF;&#x8FC7;&#x7684;&#x6BCF;&#x4E2A;&#x9876;&#x70B9;&#x90FD;&#x76F4;&#x63A5;&#x6307;&#x5411;&#x6811;&#x6839;&#x5462;&#xFF1F;&#x53EA;&#x9700;&#x8981;&#x5C0F;&#x5C0F;&#x6539;&#x52A8;&#x4E00;&#x4E0B;&#x5C31;&#x53EF;&#x4EE5;&#x4E86;&#xFF0C;&#x8FD9;&#x91CC;&#x7528;&#x5230;&#x4E86;&#x975E;&#x5E38;&#x795E;&#x5947;&#x7684;&#x9012;&#x5F52;&#x3002;&#x4FEE;&#x6539;&#x540E;&#x7684;find&#x4EE3;&#x7801;&#x5982;&#x4E0B;&#xFF1A;</p>
-<pre><code class="lang-java">public int find(int x){
-        if(s[x] &lt; 0)//s[x]&#x4E3A;&#x8D1F;&#x6570;&#x65F6;,&#x8BF4;&#x660E; x &#x4E3A;&#x8BE5;&#x5B50;&#x96C6;&#x5408;&#x7684;&#x4EE3;&#x8868;(&#x4E5F;&#x5373;&#x6811;&#x6839;), &#x4E14;s[x]&#x7684;&#x503C;&#x8868;&#x793A;&#x6811;&#x7684;&#x9AD8;&#x5EA6;
-            return x;
-        else 
-            return s[x] = find(s[x]);//&#x4F7F;&#x7528;&#x4E86;&#x8DEF;&#x5F84;&#x538B;&#x7F29;,&#x8BA9;&#x67E5;&#x627E;&#x8DEF;&#x5F84;&#x4E0A;&#x7684;&#x6240;&#x6709;&#x9876;&#x70B9;&#x90FD;&#x6307;&#x5411;&#x4E86;&#x6811;&#x6839;(&#x4EE3;&#x8868;&#x8282;&#x70B9;)
-            //return find(s[x]); &#x6CA1;&#x6709;&#x4F7F;&#x7528; &#x8DEF;&#x5F84;&#x538B;&#x7F29;
+<pre><code class="lang-java"><span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">int</span> <span class="hljs-title">find</span><span class="hljs-params">(<span class="hljs-keyword">int</span> x)</span></span>{
+        <span class="hljs-keyword">if</span>(s[x] &lt; <span class="hljs-number">0</span>)<span class="hljs-comment">//s[x]&#x4E3A;&#x8D1F;&#x6570;&#x65F6;,&#x8BF4;&#x660E; x &#x4E3A;&#x8BE5;&#x5B50;&#x96C6;&#x5408;&#x7684;&#x4EE3;&#x8868;(&#x4E5F;&#x5373;&#x6811;&#x6839;), &#x4E14;s[x]&#x7684;&#x503C;&#x8868;&#x793A;&#x6811;&#x7684;&#x9AD8;&#x5EA6;</span>
+            <span class="hljs-keyword">return</span> x;
+        <span class="hljs-keyword">else</span> 
+            <span class="hljs-keyword">return</span> s[x] = find(s[x]);<span class="hljs-comment">//&#x4F7F;&#x7528;&#x4E86;&#x8DEF;&#x5F84;&#x538B;&#x7F29;,&#x8BA9;&#x67E5;&#x627E;&#x8DEF;&#x5F84;&#x4E0A;&#x7684;&#x6240;&#x6709;&#x9876;&#x70B9;&#x90FD;&#x6307;&#x5411;&#x4E86;&#x6811;&#x6839;(&#x4EE3;&#x8868;&#x8282;&#x70B9;)</span>
+            <span class="hljs-comment">//return find(s[x]); &#x6CA1;&#x6709;&#x4F7F;&#x7528; &#x8DEF;&#x5F84;&#x538B;&#x7F29;</span>
     }
 </code></pre>
 <p>&#x56E0;&#x4E3A;&#x9012;&#x5F52;&#x6700;&#x7EC8;&#x5F97;&#x5230;&#x7684;&#x8FD4;&#x56DE;&#x503C;&#x662F;&#x6839;&#x5143;&#x7D20;&#x3002;&#x7B2C;5&#x884C;&#x5C06;&#x6839;&#x5143;&#x7D20;&#x76F4;&#x63A5;&#x8D4B;&#x503C;&#x7ED9;s[x]&#xFF0C;s[x]&#x5728;&#x6BCF;&#x6B21;&#x9012;&#x5F52;&#x8FC7;&#x7A0B;&#x4E2D;&#x76F8;&#x5F53;&#x4E8E;&#x7ED3;&#x70B9;x&#x7684;&#x7236;&#x7ED3;&#x70B9;&#x6307;&#x9488;&#x3002; </p>
@@ -3842,80 +3846,80 @@
 <p>&#x5982;&#xFF0C;&#x65E0;&#x5411;&#x56FE;&#x7684;&#x8FDE;&#x901A;&#x5206;&#x91CF;&#x4E2A;&#x6570;&#xFF0C;&#x521D;&#x59CB;&#x65F6;&#xFF0C;&#x5C06;&#x65E0;&#x5411;&#x56FE;&#x4E2D;&#x5404;&#x4E2A;&#x9876;&#x70B9;&#x89C6;&#x4E3A;&#x4E0D;&#x8FDE;&#x901A;&#x7684;&#x5B50;&#x96C6;&#x5408;&#xFF0C;&#x5BF9;&#x56FE;&#x4E2D;&#x6BCF;&#x4E00;&#x6761;&#x8FB9;&#xFF0C;&#x76F8;&#x5F53;&#x4E8E;union&#x8FD9;&#x6761;&#x8FB9;&#x5BF9;&#x5E94;&#x7684;&#x4E24;&#x4E2A;&#x9876;&#x70B9;&#x5206;&#x522B;&#x6240;&#x5728;&#x7684;&#x96C6;&#x5408;&#xFF0C;&#x76F4;&#x81F3;&#x6240;&#x6709;&#x7684;&#x8FB9;&#x90FD;&#x5904;&#x7406;&#x5B8C;&#x540E;&#xFF0C;&#x8FD8;&#x5269;&#x4E0B;&#x7684;&#x96C6;&#x5408;&#x7684;&#x4E2A;&#x6570;&#x5373;&#x4E3A;&#x8FDE;&#x901A;&#x5206;&#x91CF;&#x7684;&#x4E2A;&#x6570;&#x3002;</p>
 <h2 id="&#x4E94;&#x3001;&#x5B8C;&#x6574;&#x4EE3;&#x7801;"><a name="&#x4E94;&#x3001;&#x5B8C;&#x6574;&#x4EE3;&#x7801;" class="anchor-navigation-ex-anchor" href="#&#x4E94;&#x3001;&#x5B8C;&#x6574;&#x4EE3;&#x7801;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x4E94;&#x3001;&#x5B8C;&#x6574;&#x4EE3;&#x7801;</h2>
 <pre><code class="lang-java">
-public class DisjSets {
-    private int[] s;
-    private int count;//&#x8BB0;&#x5F55;&#x5E76;&#x67E5;&#x96C6;&#x4E2D;&#x5B50;&#x96C6;&#x5408;&#x7684;&#x4E2A;&#x6570;(&#x5B50;&#x6811;&#x7684;&#x4E2A;&#x6570;)
+<span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">DisjSets</span> </span>{
+    <span class="hljs-keyword">private</span> <span class="hljs-keyword">int</span>[] s;
+    <span class="hljs-keyword">private</span> <span class="hljs-keyword">int</span> count;<span class="hljs-comment">//&#x8BB0;&#x5F55;&#x5E76;&#x67E5;&#x96C6;&#x4E2D;&#x5B50;&#x96C6;&#x5408;&#x7684;&#x4E2A;&#x6570;(&#x5B50;&#x6811;&#x7684;&#x4E2A;&#x6570;)</span>
 
 
-    public DisjSets(int numElements) {
-        s = new int[numElements];
+    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-title">DisjSets</span><span class="hljs-params">(<span class="hljs-keyword">int</span> numElements)</span> </span>{
+        s = <span class="hljs-keyword">new</span> <span class="hljs-keyword">int</span>[numElements];
         count = numElements;
-        //&#x521D;&#x59CB;&#x5316;&#x5E76;&#x67E5;&#x96C6;,&#x76F8;&#x5F53;&#x4E8E;&#x65B0;&#x5EFA;&#x4E86;s.length &#x4E2A;&#x4E92;&#x4E0D;&#x76F8;&#x4EA4;&#x7684;&#x96C6;&#x5408;
-        for(int i = 0; i &lt; s.length; i++)
-            s[i] = -1;//s[i]&#x5B58;&#x50A8;&#x7684;&#x662F;&#x9AD8;&#x5EA6;(&#x79E9;)&#x4FE1;&#x606F;
+        <span class="hljs-comment">//&#x521D;&#x59CB;&#x5316;&#x5E76;&#x67E5;&#x96C6;,&#x76F8;&#x5F53;&#x4E8E;&#x65B0;&#x5EFA;&#x4E86;s.length &#x4E2A;&#x4E92;&#x4E0D;&#x76F8;&#x4EA4;&#x7684;&#x96C6;&#x5408;</span>
+        <span class="hljs-keyword">for</span>(<span class="hljs-keyword">int</span> i = <span class="hljs-number">0</span>; i &lt; s.length; i++)
+            s[i] = -<span class="hljs-number">1</span>;<span class="hljs-comment">//s[i]&#x5B58;&#x50A8;&#x7684;&#x662F;&#x9AD8;&#x5EA6;(&#x79E9;)&#x4FE1;&#x606F;</span>
     }
 
-    /**
+    <span class="hljs-comment">/**
      * 
-     * @param root1 &#x5E76;&#x67E5;&#x96C6;&#x4E2D;&#x4EE5;root1&#x4E3A;&#x4EE3;&#x8868;&#x7684;&#x67D0;&#x4E2A;&#x5B50;&#x96C6;
-     * @param roo2 &#x5E76;&#x67E5;&#x96C6;&#x4E2D;&#x4EE5;root2&#x4E3A;&#x4EE3;&#x8868;&#x7684;&#x67D0;&#x4E2A;&#x5B50;&#x96C6;
+     * <span class="hljs-doctag">@param</span> root1 &#x5E76;&#x67E5;&#x96C6;&#x4E2D;&#x4EE5;root1&#x4E3A;&#x4EE3;&#x8868;&#x7684;&#x67D0;&#x4E2A;&#x5B50;&#x96C6;
+     * <span class="hljs-doctag">@param</span> roo2 &#x5E76;&#x67E5;&#x96C6;&#x4E2D;&#x4EE5;root2&#x4E3A;&#x4EE3;&#x8868;&#x7684;&#x67D0;&#x4E2A;&#x5B50;&#x96C6;
      * &#x6309;&#x9AD8;&#x5EA6;(&#x79E9;)&#x5408;&#x5E76;&#x4EE5;root1 &#x548C; root2&#x4E3A;&#x4EE3;&#x8868;&#x7684;&#x4E24;&#x4E2A;&#x96C6;&#x5408;
-     */
-    public void unionByHeight(int root1, int root2){
-        if(find(root1) == find(root2))
-            return;//root1 &#x4E0E; root2&#x5DF2;&#x7ECF;&#x8FDE;&#x901A;&#x4E86;
+     */</span>
+    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">unionByHeight</span><span class="hljs-params">(<span class="hljs-keyword">int</span> root1, <span class="hljs-keyword">int</span> root2)</span></span>{
+        <span class="hljs-keyword">if</span>(find(root1) == find(root2))
+            <span class="hljs-keyword">return</span>;<span class="hljs-comment">//root1 &#x4E0E; root2&#x5DF2;&#x7ECF;&#x8FDE;&#x901A;&#x4E86;</span>
 
-        if(s[root2] &lt; s[root1])//root2 is deeper
+        <span class="hljs-keyword">if</span>(s[root2] &lt; s[root1])<span class="hljs-comment">//root2 is deeper</span>
             s[root1] = root2;
-        else{
-            if(s[root1] == s[root2])//root1 and root2 is the same deeper
-                s[root1]--;//&#x5C06;root1&#x7684;&#x9AD8;&#x5EA6;&#x52A0;1
-            s[root2] = root1;//&#x5C06;root2&#x7684;&#x6839;(&#x6307;&#x5411;)&#x66F4;&#x65B0;&#x4E3A;root1
+        <span class="hljs-keyword">else</span>{
+            <span class="hljs-keyword">if</span>(s[root1] == s[root2])<span class="hljs-comment">//root1 and root2 is the same deeper</span>
+                s[root1]--;<span class="hljs-comment">//&#x5C06;root1&#x7684;&#x9AD8;&#x5EA6;&#x52A0;1</span>
+            s[root2] = root1;<span class="hljs-comment">//&#x5C06;root2&#x7684;&#x6839;(&#x6307;&#x5411;)&#x66F4;&#x65B0;&#x4E3A;root1</span>
         }
 
-        count--;//&#x6BCF;union&#x4E00;&#x6B21;,&#x5B50;&#x6811;&#x6570;&#x76EE;&#x51CF;1
+        count--;<span class="hljs-comment">//&#x6BCF;union&#x4E00;&#x6B21;,&#x5B50;&#x6811;&#x6570;&#x76EE;&#x51CF;1</span>
     }
 
-    public void union(int root1, int root2){
-        s[root2] = root1;//&#x5C06;root1&#x4F5C;&#x4E3A;root2&#x7684;&#x65B0;&#x6811;&#x6839;
+    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">union</span><span class="hljs-params">(<span class="hljs-keyword">int</span> root1, <span class="hljs-keyword">int</span> root2)</span></span>{
+        s[root2] = root1;<span class="hljs-comment">//&#x5C06;root1&#x4F5C;&#x4E3A;root2&#x7684;&#x65B0;&#x6811;&#x6839;</span>
     }
 
 
-    public void unionBySize(int root1, int root2){
+    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">unionBySize</span><span class="hljs-params">(<span class="hljs-keyword">int</span> root1, <span class="hljs-keyword">int</span> root2)</span></span>{
 
-        if(find(root1) == find(root2))
-            return;//root1 &#x4E0E; root2&#x5DF2;&#x7ECF;&#x8FDE;&#x901A;&#x4E86;
+        <span class="hljs-keyword">if</span>(find(root1) == find(root2))
+            <span class="hljs-keyword">return</span>;<span class="hljs-comment">//root1 &#x4E0E; root2&#x5DF2;&#x7ECF;&#x8FDE;&#x901A;&#x4E86;</span>
 
-        if(s[root2] &lt; s[root1])//root2 is deeper
+        <span class="hljs-keyword">if</span>(s[root2] &lt; s[root1])<span class="hljs-comment">//root2 is deeper</span>
             s[root1] = root2;
-        else{
-            if(s[root1] == s[root2])//root1 and root2 is the same deeper
-                s[root1]--;//&#x5C06;root1&#x7684;&#x9AD8;&#x5EA6;&#x52A0;1
-            s[root2] = root1;//&#x5C06;root2&#x7684;&#x6839;(&#x6307;&#x5411;)&#x66F4;&#x65B0;&#x4E3A;root1
+        <span class="hljs-keyword">else</span>{
+            <span class="hljs-keyword">if</span>(s[root1] == s[root2])<span class="hljs-comment">//root1 and root2 is the same deeper</span>
+                s[root1]--;<span class="hljs-comment">//&#x5C06;root1&#x7684;&#x9AD8;&#x5EA6;&#x52A0;1</span>
+            s[root2] = root1;<span class="hljs-comment">//&#x5C06;root2&#x7684;&#x6839;(&#x6307;&#x5411;)&#x66F4;&#x65B0;&#x4E3A;root1</span>
         }
 
-        count--;//&#x6BCF;union&#x4E00;&#x6B21;,&#x5B50;&#x6811;&#x6570;&#x76EE;&#x51CF;1
+        count--;<span class="hljs-comment">//&#x6BCF;union&#x4E00;&#x6B21;,&#x5B50;&#x6811;&#x6570;&#x76EE;&#x51CF;1</span>
     }
 
 
-    public int find(int x){
-        if(s[x] &lt; 0)//s[x]&#x4E3A;&#x8D1F;&#x6570;&#x65F6;,&#x8BF4;&#x660E; x &#x4E3A;&#x8BE5;&#x5B50;&#x96C6;&#x5408;&#x7684;&#x4EE3;&#x8868;(&#x4E5F;&#x5373;&#x6811;&#x6839;), &#x4E14;s[x]&#x7684;&#x503C;&#x8868;&#x793A;&#x6811;&#x7684;&#x9AD8;&#x5EA6;
-            return x;
-        else 
-            return s[x] = find(s[x]);//&#x4F7F;&#x7528;&#x4E86;&#x8DEF;&#x5F84;&#x538B;&#x7F29;,&#x8BA9;&#x67E5;&#x627E;&#x8DEF;&#x5F84;&#x4E0A;&#x7684;&#x6240;&#x6709;&#x9876;&#x70B9;&#x90FD;&#x6307;&#x5411;&#x4E86;&#x6811;&#x6839;(&#x4EE3;&#x8868;&#x8282;&#x70B9;)
-            //return find(s[x]); &#x6CA1;&#x6709;&#x4F7F;&#x7528; &#x8DEF;&#x5F84;&#x538B;&#x7F29;
+    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">int</span> <span class="hljs-title">find</span><span class="hljs-params">(<span class="hljs-keyword">int</span> x)</span></span>{
+        <span class="hljs-keyword">if</span>(s[x] &lt; <span class="hljs-number">0</span>)<span class="hljs-comment">//s[x]&#x4E3A;&#x8D1F;&#x6570;&#x65F6;,&#x8BF4;&#x660E; x &#x4E3A;&#x8BE5;&#x5B50;&#x96C6;&#x5408;&#x7684;&#x4EE3;&#x8868;(&#x4E5F;&#x5373;&#x6811;&#x6839;), &#x4E14;s[x]&#x7684;&#x503C;&#x8868;&#x793A;&#x6811;&#x7684;&#x9AD8;&#x5EA6;</span>
+            <span class="hljs-keyword">return</span> x;
+        <span class="hljs-keyword">else</span> 
+            <span class="hljs-keyword">return</span> s[x] = find(s[x]);<span class="hljs-comment">//&#x4F7F;&#x7528;&#x4E86;&#x8DEF;&#x5F84;&#x538B;&#x7F29;,&#x8BA9;&#x67E5;&#x627E;&#x8DEF;&#x5F84;&#x4E0A;&#x7684;&#x6240;&#x6709;&#x9876;&#x70B9;&#x90FD;&#x6307;&#x5411;&#x4E86;&#x6811;&#x6839;(&#x4EE3;&#x8868;&#x8282;&#x70B9;)</span>
+            <span class="hljs-comment">//return find(s[x]); &#x6CA1;&#x6709;&#x4F7F;&#x7528; &#x8DEF;&#x5F84;&#x538B;&#x7F29;</span>
     }
 
-    public int find0(int x){
-        if(s[x] &lt; 0)
-            return x;
-        else 
-            return find0(s[x]);
+    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">int</span> <span class="hljs-title">find0</span><span class="hljs-params">(<span class="hljs-keyword">int</span> x)</span></span>{
+        <span class="hljs-keyword">if</span>(s[x] &lt; <span class="hljs-number">0</span>)
+            <span class="hljs-keyword">return</span> x;
+        <span class="hljs-keyword">else</span> 
+            <span class="hljs-keyword">return</span> find0(s[x]);
     }
 
 
-    public int size(){
-        return count;
+    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">int</span> <span class="hljs-title">size</span><span class="hljs-params">()</span></span>{
+        <span class="hljs-keyword">return</span> count;
     }
 }
 </code></pre>
@@ -3964,7 +3968,7 @@ public class DisjSets {
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"并查集","level":"4.3.3","depth":2,"next":{"title":"B-树，B+树，B*树","level":"4.3.4","depth":2,"path":"data-structure/tree/b-tree.md","ref":"data-structure/tree/b-tree.md","articles":[]},"previous":{"title":"其他常见的树","level":"4.3.2","depth":2,"path":"data-structure/tree/other-tree.md","ref":"data-structure/tree/other-tree.md","articles":[]},"dir":"ltr"},"config":{"plugins":["-lunr","-search","-highlight","-livereload","search-plus@^0.0.11","simple-page-toc@^0.1.1","github@^2.0.0","github-buttons@2.1.0","edit-link@^2.0.2","advanced-emoji@^0.2.1","anchors@^0.7.1","include-codeblock@^3.0.2","ace@^0.3.2","emphasize@^1.1.0","katex@^1.1.3","splitter@^0.0.8","tbfed-pagefooter@^0.0.1","expandable-chapters-small@^0.1.7","sectionx@^3.1.0","local-video@^1.0.1","anchor-navigation-ex@0.1.8","favicon@^0.0.2"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"tbfed-pagefooter":{"copyright":"Copyright © ruheng.com 2017","modify_label":"该文件修订时间：","modify_format":"YYYY-MM-DD HH:mm:ss"},"emphasize":{},"ace":{},"github":{"url":"https://github.com/LRH1993/android_interview"},"simple-page-toc":{"maxDepth":3,"skipFirstH1":true},"splitter":{},"katex":{},"fontsettings":{"theme":"white","family":"sans","size":2},"sectionx":{"tag":"b"},"anchor-navigation-ex":{"isRewritePageTitle":false,"tocLevel1Icon":"fa fa-hand-o-right","tocLevel2Icon":"fa fa-hand-o-right","tocLevel3Icon":"fa fa-hand-o-right"},"favicon":{"shortcut":"favicon.ico","bookmark":"favicon.ico"},"github-buttons":{"repo":"LRH1993/android_interview","types":["star"],"size":"small"},"expandable-chapters-small":{},"local-video":{},"advanced-emoji":{"embedEmojis":false},"include-codeblock":{"check":false,"edit":true,"fixlang":false,"lang":"","template":"ace","theme":"chrome","unindent":true},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":true,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"edit-link":{"label":"Edit This Page","base":"https://github.com/LRH1993/android_interview/edit/master"},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":true},"anchors":{},"search-plus":{}},"theme":"default","author":"ruheng","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"Android校招面试指南","language":"zh-hans","output.name":"site","links":{"sidebar":{"Home":"http://lruheng.com/"}},"gitbook":"3.2.3","description":"Android面试必备，记录自己的秋招之路"},"file":{"path":"data-structure/tree/Union-Find.md","mtime":"2017-09-04T01:33:19.000Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2017-10-16T12:05:21.906Z"},"basePath":"../..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"并查集","level":"4.3.3","depth":2,"next":{"title":"B-树，B+树，B*树","level":"4.3.4","depth":2,"path":"data-structure/tree/b-tree.md","ref":"data-structure/tree/b-tree.md","articles":[]},"previous":{"title":"其他常见的树","level":"4.3.2","depth":2,"path":"data-structure/tree/other-tree.md","ref":"data-structure/tree/other-tree.md","articles":[]},"dir":"ltr"},"config":{"plugins":["-lunr","-search","-livereload","search-plus@^0.0.11","simple-page-toc@^0.1.1","github@^2.0.0","github-buttons@2.1.0","edit-link@^2.0.2","advanced-emoji@^0.2.1","anchors@^0.7.1","include-codeblock@^3.0.2","ace@^0.3.2","emphasize@^1.1.0","katex@^1.1.3","splitter@^0.0.8","tbfed-pagefooter@^0.0.1","expandable-chapters-small@^0.1.7","sectionx@^3.1.0","local-video@^1.0.1","anchor-navigation-ex@0.1.8","favicon@^0.0.2"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"tbfed-pagefooter":{"copyright":"Copyright © ruheng.com 2017","modify_label":"该文件修订时间：","modify_format":"YYYY-MM-DD HH:mm:ss"},"emphasize":{},"ace":{},"github":{"url":"https://github.com/LRH1993/android_interview"},"simple-page-toc":{"maxDepth":3,"skipFirstH1":true},"splitter":{},"katex":{},"fontsettings":{"theme":"white","family":"sans","size":2},"sectionx":{"tag":"b"},"highlight":{},"anchor-navigation-ex":{"isRewritePageTitle":false,"tocLevel1Icon":"fa fa-hand-o-right","tocLevel2Icon":"fa fa-hand-o-right","tocLevel3Icon":"fa fa-hand-o-right"},"favicon":{"shortcut":"favicon.ico","bookmark":"favicon.ico"},"github-buttons":{"repo":"LRH1993/android_interview","types":["star"],"size":"small"},"expandable-chapters-small":{},"local-video":{},"advanced-emoji":{"embedEmojis":false},"include-codeblock":{"check":false,"edit":false,"fixlang":false,"lang":"","template":"default","theme":"chrome","unindent":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":true,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"edit-link":{"label":"Edit This Page","base":"https://github.com/LRH1993/android_interview/edit/master"},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":true},"anchors":{},"search-plus":{}},"theme":"default","author":"ruheng","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"Android校招面试指南","language":"zh-hans","output.name":"site","links":{"sidebar":{"Home":"http://lruheng.com/"}},"gitbook":"3.2.3","description":"Android面试必备，记录自己的秋招之路"},"file":{"path":"data-structure/tree/Union-Find.md","mtime":"2017-09-04T01:33:19.000Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2017-10-16T13:00:43.989Z"},"basePath":"../..","book":{"language":""}});
         });
     </script>
 </div>

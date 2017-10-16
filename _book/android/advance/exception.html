@@ -69,6 +69,10 @@
                 
             
                 
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
                 <link rel="stylesheet" href="../../gitbook/gitbook-plugin-fontsettings/website.css">
                 
             
@@ -3710,52 +3714,52 @@
 <p>&#x4ECA;&#x5929;&#x5C31;&#x6765;&#x81EA;&#x5B9A;&#x4E49;&#x4E00;&#x4E2A;&#x7A0B;&#x5E8F;&#x51FA;&#x9519;&#x65F6;&#x7684;&#x5904;&#x7406;&#xFF0C;&#x7C7B;&#x4F3C;iphone&#x7684;&#x95EA;&#x9000;&#x3002;(&#x867D;&#x7136;&#x95EA;&#x9000;&#x4E5F;&#x662F;&#x7528;&#x6237;&#x4E0D;&#x613F;&#x610F;&#x770B;&#x5230;&#x7684;&#xFF0C;&#x4F46;&#x662F;&#x5728;&#x7528;&#x6237;&#x4F53;&#x9A8C;&#x4E0A;&#x660E;&#x663E;&#x6BD4;&#x90A3;&#x4E2A;&#x539F;&#x751F;&#x7684;&#x5F39;&#x7A97;&#x597D;&#x591A;&#x4E86;)</p>
 <p>&#x5E9F;&#x8BDD;&#x4E0D;&#x591A;&#x8BF4;&#xFF0C;&#x76F4;&#x63A5;&#x4E0A;&#x4EE3;&#x7801;&#xFF1A;</p>
 <h2 id="crashhandler"><a name="crashhandler" class="anchor-navigation-ex-anchor" href="#crashhandler"><i class="fa fa-link" aria-hidden="true"></i></a>CrashHandler</h2>
-<pre><code class="lang-Java">/** 
+<pre><code class="lang-Java"><span class="hljs-comment">/** 
  * &#x81EA;&#x5B9A;&#x4E49;&#x7684; &#x5F02;&#x5E38;&#x5904;&#x7406;&#x7C7B; , &#x5B9E;&#x73B0;&#x4E86; UncaughtExceptionHandler&#x63A5;&#x53E3;  
  * 
- */  
-public class CrashHandler implements UncaughtExceptionHandler {  
-    // &#x9700;&#x6C42;&#x662F; &#x6574;&#x4E2A;&#x5E94;&#x7528;&#x7A0B;&#x5E8F; &#x53EA;&#x6709;&#x4E00;&#x4E2A; MyCrash-Handler   
-    private static CrashHandler INSTANCE ;  
-    private Context context;  
+ */</span>  
+<span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">CrashHandler</span> <span class="hljs-keyword">implements</span> <span class="hljs-title">UncaughtExceptionHandler</span> </span>{  
+    <span class="hljs-comment">// &#x9700;&#x6C42;&#x662F; &#x6574;&#x4E2A;&#x5E94;&#x7528;&#x7A0B;&#x5E8F; &#x53EA;&#x6709;&#x4E00;&#x4E2A; MyCrash-Handler   </span>
+    <span class="hljs-keyword">private</span> <span class="hljs-keyword">static</span> CrashHandler INSTANCE ;  
+    <span class="hljs-keyword">private</span> Context context;  
 
-    //1.&#x79C1;&#x6709;&#x5316;&#x6784;&#x9020;&#x65B9;&#x6CD5;  
-    private CrashHandler(){  
+    <span class="hljs-comment">//1.&#x79C1;&#x6709;&#x5316;&#x6784;&#x9020;&#x65B9;&#x6CD5;  </span>
+    <span class="hljs-function"><span class="hljs-keyword">private</span> <span class="hljs-title">CrashHandler</span><span class="hljs-params">()</span></span>{  
 
     }  
 
-    public static synchronized CrashHandler getInstance(){  
-        if (INSTANCE == null)  
-            INSTANCE = new CrashHandler();  
-        return INSTANCE;
+    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">synchronized</span> CrashHandler <span class="hljs-title">getInstance</span><span class="hljs-params">()</span></span>{  
+        <span class="hljs-keyword">if</span> (INSTANCE == <span class="hljs-keyword">null</span>)  
+            INSTANCE = <span class="hljs-keyword">new</span> CrashHandler();  
+        <span class="hljs-keyword">return</span> INSTANCE;
     }
 
-    public void init(Context context){  
-        this.context = context;
+    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">init</span><span class="hljs-params">(Context context)</span></span>{  
+        <span class="hljs-keyword">this</span>.context = context;
     }  
 
 
-    public void uncaughtException(Thread arg0, Throwable arg1) {  
-        System.out.println(&quot;&#x7A0B;&#x5E8F;&#x6302;&#x6389;&#x4E86; &quot;);  
-        // &#x5728;&#x6B64;&#x53EF;&#x4EE5;&#x628A;&#x7528;&#x6237;&#x624B;&#x673A;&#x7684;&#x4E00;&#x4E9B;&#x4FE1;&#x606F;&#x4EE5;&#x53CA;&#x5F02;&#x5E38;&#x4FE1;&#x606F;&#x6355;&#x83B7;&#x5E76;&#x4E0A;&#x4F20;,&#x7531;&#x4E8E;UMeng&#x5728;&#x8FD9;&#x65B9;&#x9762;&#x6709;&#x5F88;&#x7A0B;&#x5E8F;&#x7684;api&#x63A5;&#x53E3;&#x6765;&#x8C03;&#x7528;&#xFF0C;&#x6545;&#x6CA1;&#x6709;&#x8003;&#x8651;
+    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">uncaughtException</span><span class="hljs-params">(Thread arg0, Throwable arg1)</span> </span>{  
+        System.out.println(<span class="hljs-string">&quot;&#x7A0B;&#x5E8F;&#x6302;&#x6389;&#x4E86; &quot;</span>);  
+        <span class="hljs-comment">// &#x5728;&#x6B64;&#x53EF;&#x4EE5;&#x628A;&#x7528;&#x6237;&#x624B;&#x673A;&#x7684;&#x4E00;&#x4E9B;&#x4FE1;&#x606F;&#x4EE5;&#x53CA;&#x5F02;&#x5E38;&#x4FE1;&#x606F;&#x6355;&#x83B7;&#x5E76;&#x4E0A;&#x4F20;,&#x7531;&#x4E8E;UMeng&#x5728;&#x8FD9;&#x65B9;&#x9762;&#x6709;&#x5F88;&#x7A0B;&#x5E8F;&#x7684;api&#x63A5;&#x53E3;&#x6765;&#x8C03;&#x7528;&#xFF0C;&#x6545;&#x6CA1;&#x6709;&#x8003;&#x8651;</span>
 
-        //&#x5E72;&#x6389;&#x5F53;&#x524D;&#x7684;&#x7A0B;&#x5E8F;   
+        <span class="hljs-comment">//&#x5E72;&#x6389;&#x5F53;&#x524D;&#x7684;&#x7A0B;&#x5E8F;   </span>
         android.os.Process.killProcess(android.os.Process.myPid());  
     }  
 
 }
 </code></pre>
 <h2 id="crashapplication"><a name="crashapplication" class="anchor-navigation-ex-anchor" href="#crashapplication"><i class="fa fa-link" aria-hidden="true"></i></a>CrashApplication</h2>
-<pre><code class="lang-java">/** 
+<pre><code class="lang-java"><span class="hljs-comment">/** 
  * &#x5728;&#x5F00;&#x53D1;&#x5E94;&#x7528;&#x65F6;&#x90FD;&#x4F1A;&#x548C;Activity&#x6253;&#x4EA4;&#x9053;&#xFF0C;&#x800C;Application&#x4F7F;&#x7528;&#x7684;&#x5C31;&#x76F8;&#x5BF9;&#x8F83;&#x5C11;&#x4E86;&#x3002; 
  * Application&#x662F;&#x7528;&#x6765;&#x7BA1;&#x7406;&#x5E94;&#x7528;&#x7A0B;&#x5E8F;&#x7684;&#x5168;&#x5C40;&#x72B6;&#x6001;&#x7684;&#xFF0C;&#x6BD4;&#x5982;&#x8F7D;&#x5165;&#x8D44;&#x6E90;&#x6587;&#x4EF6;&#x3002; 
  * &#x5728;&#x5E94;&#x7528;&#x7A0B;&#x5E8F;&#x542F;&#x52A8;&#x7684;&#x65F6;&#x5019;Application&#x4F1A;&#x9996;&#x5148;&#x521B;&#x5EFA;&#xFF0C;&#x7136;&#x540E;&#x624D;&#x4F1A;&#x6839;&#x636E;&#x60C5;&#x51B5;(Intent)&#x542F;&#x52A8;&#x76F8;&#x5E94;&#x7684;Activity&#x6216;&#x8005;Service&#x3002; 
  * &#x5728;&#x672C;&#x6587;&#x5C06;&#x5728;Application&#x4E2D;&#x6CE8;&#x518C;&#x672A;&#x6355;&#x83B7;&#x5F02;&#x5E38;&#x5904;&#x7406;&#x5668;&#x3002; 
- */  
-public class CrashApplication extends Application {  
-    @Override  
-    public void onCreate() {  
-        super.onCreate();  
+ */</span>  
+<span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">CrashApplication</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">Application</span> </span>{  
+    <span class="hljs-meta">@Override</span>  
+    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">onCreate</span><span class="hljs-params">()</span> </span>{  
+        <span class="hljs-keyword">super</span>.onCreate();  
         CrashHandler handler = CrashHandler.getInstance();  
         handler.init(getApplicationContext());
         Thread.setDefaultUncaughtExceptionHandler(handler);  
@@ -3763,20 +3767,20 @@ public class CrashApplication extends Application {
 }
 </code></pre>
 <h2 id="&#x5728;androidmanifestxml&#x4E2D;&#x6CE8;&#x518C;"><a name="&#x5728;androidmanifestxml&#x4E2D;&#x6CE8;&#x518C;" class="anchor-navigation-ex-anchor" href="#&#x5728;androidmanifestxml&#x4E2D;&#x6CE8;&#x518C;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x5728;AndroidManifest.xml&#x4E2D;&#x6CE8;&#x518C;</h2>
-<pre><code class="lang-xml">&lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&gt;  
-&lt;manifest xmlns:android=&quot;http://schemas.android.com/apk/res/android&quot;  
-    package=&quot;org.wp.activity&quot; android:versionCode=&quot;1&quot; android:versionName=&quot;1.0&quot;&gt;  
-    &lt;application android:icon=&quot;@drawable/icon&quot; android:label=&quot;@string/app_name&quot;  
-        android:name=&quot;.CrashApplication&quot; android:debuggable=&quot;true&quot;&gt;  
-        &lt;activity android:name=&quot;.MainActivity&quot; android:label=&quot;@string/app_name&quot;&gt;  
-            &lt;intent-filter&gt;  
-                &lt;action android:name=&quot;android.intent.action.MAIN&quot; /&gt;  
-                &lt;category android:name=&quot;android.intent.category.LAUNCHER&quot; /&gt;  
-            &lt;/intent-filter&gt;  
-        &lt;/activity&gt;  
-    &lt;/application&gt;  
-    &lt;uses-sdk android:minSdkVersion=&quot;8&quot; /&gt;  
-&lt;/manifest&gt;
+<pre><code class="lang-xml"><span class="php"><span class="hljs-meta">&lt;?</span>xml version=<span class="hljs-string">&quot;1.0&quot;</span> encoding=<span class="hljs-string">&quot;utf-8&quot;</span><span class="hljs-meta">?&gt;</span></span>  
+<span class="hljs-tag">&lt;<span class="hljs-name">manifest</span> <span class="hljs-attr">xmlns:android</span>=<span class="hljs-string">&quot;http://schemas.android.com/apk/res/android&quot;</span>  
+    <span class="hljs-attr">package</span>=<span class="hljs-string">&quot;org.wp.activity&quot;</span> <span class="hljs-attr">android:versionCode</span>=<span class="hljs-string">&quot;1&quot;</span> <span class="hljs-attr">android:versionName</span>=<span class="hljs-string">&quot;1.0&quot;</span>&gt;</span>  
+    <span class="hljs-tag">&lt;<span class="hljs-name">application</span> <span class="hljs-attr">android:icon</span>=<span class="hljs-string">&quot;@drawable/icon&quot;</span> <span class="hljs-attr">android:label</span>=<span class="hljs-string">&quot;@string/app_name&quot;</span>  
+        <span class="hljs-attr">android:name</span>=<span class="hljs-string">&quot;.CrashApplication&quot;</span> <span class="hljs-attr">android:debuggable</span>=<span class="hljs-string">&quot;true&quot;</span>&gt;</span>  
+        <span class="hljs-tag">&lt;<span class="hljs-name">activity</span> <span class="hljs-attr">android:name</span>=<span class="hljs-string">&quot;.MainActivity&quot;</span> <span class="hljs-attr">android:label</span>=<span class="hljs-string">&quot;@string/app_name&quot;</span>&gt;</span>  
+            <span class="hljs-tag">&lt;<span class="hljs-name">intent-filter</span>&gt;</span>  
+                <span class="hljs-tag">&lt;<span class="hljs-name">action</span> <span class="hljs-attr">android:name</span>=<span class="hljs-string">&quot;android.intent.action.MAIN&quot;</span> /&gt;</span>  
+                <span class="hljs-tag">&lt;<span class="hljs-name">category</span> <span class="hljs-attr">android:name</span>=<span class="hljs-string">&quot;android.intent.category.LAUNCHER&quot;</span> /&gt;</span>  
+            <span class="hljs-tag">&lt;/<span class="hljs-name">intent-filter</span>&gt;</span>  
+        <span class="hljs-tag">&lt;/<span class="hljs-name">activity</span>&gt;</span>  
+    <span class="hljs-tag">&lt;/<span class="hljs-name">application</span>&gt;</span>  
+    <span class="hljs-tag">&lt;<span class="hljs-name">uses-sdk</span> <span class="hljs-attr">android:minSdkVersion</span>=<span class="hljs-string">&quot;8&quot;</span> /&gt;</span>  
+<span class="hljs-tag">&lt;/<span class="hljs-name">manifest</span>&gt;</span>
 </code></pre>
 <p>&#x81F3;&#x6B64;&#xFF0C;&#x53EF;&#x4EE5;&#x6D4B;&#x8BD5;&#x4E0B;&#x5728;&#x51FA;&#x9519;&#x7684;&#x65F6;&#x5019;&#x7A0B;&#x5E8F;&#x4F1A;&#x76F4;&#x63A5;&#x95EA;&#x9000;&#xFF0C;&#x5E76;&#x6740;&#x6B7B;&#x540E;&#x53F0;&#x8FDB;&#x7A0B;&#x3002;&#x5F53;&#x7136;&#x4E5F;&#x53EF;&#x4EE5;&#x81EA;&#x5B9A;&#x4E49;&#x4E00;&#x4E9B;&#x6BD4;&#x8F83;&#x53CB;&#x597D;&#x7684;&#x51FA;&#x9519;UI&#x63D0;&#x793A;&#xFF0C;&#x8FDB;&#x4E00;&#x6B65;&#x63D0;&#x5347;&#x7528;&#x6237;&#x4F53;&#x9A8C;&#x3002; </p>
 <footer class="page-footer"><span class="copyright">Copyright &#xA9; ruheng.com 2017 all right reserved&#xFF0C;powered by Gitbook</span><span class="footer-modification">&#x8BE5;&#x6587;&#x4EF6;&#x4FEE;&#x8BA2;&#x65F6;&#x95F4;&#xFF1A;
@@ -3824,7 +3828,7 @@ public class CrashApplication extends Application {
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"Android全局异常处理","level":"3.2.2","depth":2,"next":{"title":"Android MVP模式详解","level":"3.2.3","depth":2,"path":"android/advance/mvp.md","ref":"android/advance/mvp.md","articles":[]},"previous":{"title":"Android多线程断点续传","level":"3.2.1","depth":2,"path":"android/advance/breakpoint.md","ref":"android/advance/breakpoint.md","articles":[]},"dir":"ltr"},"config":{"plugins":["-lunr","-search","-highlight","-livereload","search-plus@^0.0.11","simple-page-toc@^0.1.1","github@^2.0.0","github-buttons@2.1.0","edit-link@^2.0.2","advanced-emoji@^0.2.1","anchors@^0.7.1","include-codeblock@^3.0.2","ace@^0.3.2","emphasize@^1.1.0","katex@^1.1.3","splitter@^0.0.8","tbfed-pagefooter@^0.0.1","expandable-chapters-small@^0.1.7","sectionx@^3.1.0","local-video@^1.0.1","anchor-navigation-ex@0.1.8","favicon@^0.0.2"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"tbfed-pagefooter":{"copyright":"Copyright © ruheng.com 2017","modify_label":"该文件修订时间：","modify_format":"YYYY-MM-DD HH:mm:ss"},"emphasize":{},"ace":{},"github":{"url":"https://github.com/LRH1993/android_interview"},"simple-page-toc":{"maxDepth":3,"skipFirstH1":true},"splitter":{},"katex":{},"fontsettings":{"theme":"white","family":"sans","size":2},"sectionx":{"tag":"b"},"anchor-navigation-ex":{"isRewritePageTitle":false,"tocLevel1Icon":"fa fa-hand-o-right","tocLevel2Icon":"fa fa-hand-o-right","tocLevel3Icon":"fa fa-hand-o-right"},"favicon":{"shortcut":"favicon.ico","bookmark":"favicon.ico"},"github-buttons":{"repo":"LRH1993/android_interview","types":["star"],"size":"small"},"expandable-chapters-small":{},"local-video":{},"advanced-emoji":{"embedEmojis":false},"include-codeblock":{"check":false,"edit":true,"fixlang":false,"lang":"","template":"ace","theme":"chrome","unindent":true},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":true,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"edit-link":{"label":"Edit This Page","base":"https://github.com/LRH1993/android_interview/edit/master"},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":true},"anchors":{},"search-plus":{}},"theme":"default","author":"ruheng","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"Android校招面试指南","language":"zh-hans","output.name":"site","links":{"sidebar":{"Home":"http://lruheng.com/"}},"gitbook":"3.2.3","description":"Android面试必备，记录自己的秋招之路"},"file":{"path":"android/advance/exception.md","mtime":"2017-09-13T08:39:50.000Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2017-10-16T12:05:21.906Z"},"basePath":"../..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"Android全局异常处理","level":"3.2.2","depth":2,"next":{"title":"Android MVP模式详解","level":"3.2.3","depth":2,"path":"android/advance/mvp.md","ref":"android/advance/mvp.md","articles":[]},"previous":{"title":"Android多线程断点续传","level":"3.2.1","depth":2,"path":"android/advance/breakpoint.md","ref":"android/advance/breakpoint.md","articles":[]},"dir":"ltr"},"config":{"plugins":["-lunr","-search","-livereload","search-plus@^0.0.11","simple-page-toc@^0.1.1","github@^2.0.0","github-buttons@2.1.0","edit-link@^2.0.2","advanced-emoji@^0.2.1","anchors@^0.7.1","include-codeblock@^3.0.2","ace@^0.3.2","emphasize@^1.1.0","katex@^1.1.3","splitter@^0.0.8","tbfed-pagefooter@^0.0.1","expandable-chapters-small@^0.1.7","sectionx@^3.1.0","local-video@^1.0.1","anchor-navigation-ex@0.1.8","favicon@^0.0.2"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"tbfed-pagefooter":{"copyright":"Copyright © ruheng.com 2017","modify_label":"该文件修订时间：","modify_format":"YYYY-MM-DD HH:mm:ss"},"emphasize":{},"ace":{},"github":{"url":"https://github.com/LRH1993/android_interview"},"simple-page-toc":{"maxDepth":3,"skipFirstH1":true},"splitter":{},"katex":{},"fontsettings":{"theme":"white","family":"sans","size":2},"sectionx":{"tag":"b"},"highlight":{},"anchor-navigation-ex":{"isRewritePageTitle":false,"tocLevel1Icon":"fa fa-hand-o-right","tocLevel2Icon":"fa fa-hand-o-right","tocLevel3Icon":"fa fa-hand-o-right"},"favicon":{"shortcut":"favicon.ico","bookmark":"favicon.ico"},"github-buttons":{"repo":"LRH1993/android_interview","types":["star"],"size":"small"},"expandable-chapters-small":{},"local-video":{},"advanced-emoji":{"embedEmojis":false},"include-codeblock":{"check":false,"edit":false,"fixlang":false,"lang":"","template":"default","theme":"chrome","unindent":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":true,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"edit-link":{"label":"Edit This Page","base":"https://github.com/LRH1993/android_interview/edit/master"},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":true},"anchors":{},"search-plus":{}},"theme":"default","author":"ruheng","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"Android校招面试指南","language":"zh-hans","output.name":"site","links":{"sidebar":{"Home":"http://lruheng.com/"}},"gitbook":"3.2.3","description":"Android面试必备，记录自己的秋招之路"},"file":{"path":"android/advance/exception.md","mtime":"2017-09-13T08:39:50.000Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2017-10-16T13:00:43.989Z"},"basePath":"../..","book":{"language":""}});
         });
     </script>
 </div>

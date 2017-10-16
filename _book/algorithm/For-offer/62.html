@@ -69,6 +69,10 @@
                 
             
                 
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
                 <link rel="stylesheet" href="../../gitbook/gitbook-plugin-fontsettings/website.css">
                 
             
@@ -3721,51 +3725,51 @@
 <p>&#x6570;&#x7EC4;&#x6700;&#x540E;&#x4E00;&#x4E2A;&#x6570;&#x5B57;&#x662F;1&#xFF0C;&#x628A;1&#x5B58;&#x5165;&#x961F;&#x5217;&#x7684;&#x5C3E;&#x90E8;&#x3002;&#x6CE8;&#x610F;&#x5230;&#x4F4D;&#x4E8E;&#x961F;&#x5217;&#x5934;&#x90E8;&#x7684;&#x6570;&#x5B57;6&#x662F;&#x6570;&#x7EC4;&#x7684;&#x7B2C;5&#x4E2A;&#x6570;&#x5B57;&#xFF0C;&#x6B64;&#x65F6;&#x7684;&#x6ED1;&#x52A8;&#x7A97;&#x53E3;&#x5DF2;&#x7ECF;&#x4E0D;&#x5305;&#x62EC;&#x8FD9;&#x4E2A;&#x6570;&#x5B57;&#x4E86;&#xFF0C;&#x56E0;&#x6B64;&#x5E94;&#x8BE5;&#x628A;&#x6570;&#x5B57;6&#x4ECE;&#x961F;&#x5217;&#x5220;&#x9664;&#x3002;</p>
 <p>&#x90A3;&#x4E48;&#x600E;&#x4E48;&#x77E5;&#x9053;&#x6ED1;&#x52A8;&#x7A97;&#x53E3;&#x662F;&#x5426;&#x5305;&#x62EC;&#x4E00;&#x4E2A;&#x6570;&#x5B57;&#xFF1F;&#x5E94;&#x8BE5;&#x5728;&#x961F;&#x5217;&#x91CC;&#x5B58;&#x5165;&#x6570;&#x5B57;&#x5728;&#x6570;&#x7EC4;&#x91CC;&#x7684;&#x4E0B;&#x6807;&#xFF0C;&#x800C;&#x4E0D;&#x662F;&#x6570;&#x503C;&#x3002;<strong>&#x5F53;&#x4E00;&#x4E2A;&#x6570;&#x5B57;&#x7684;&#x4E0B;&#x6807;&#x4E0E;&#x5F53;&#x524D;&#x5904;&#x7406;&#x7684;&#x6570;&#x5B57;&#x7684;&#x4E0B;&#x6807;&#x4E4B;&#x5DEE;&#x5927;&#x4E8E;&#x6216;&#x8005;&#x7B49;&#x4E8E;&#x6ED1;&#x52A8;&#x7A97;&#x53E3;&#x7684;&#x5927;&#x5C0F;&#x65F6;&#xFF0C;&#x8FD9;&#x4E2A;&#x6570;&#x5B57;&#x5DF2;&#x7ECF;&#x4ECE;&#x6ED1;&#x52A8;&#x7A97;&#x53E3;&#x4E2D;&#x6ED1;&#x51FA;&#xFF0C;&#x53EF;&#x4EE5;&#x4ECE;&#x961F;&#x5217;&#x4E2D;&#x5220;&#x9664;&#x4E86;&#x3002;</strong></p>
 <h2 id="&#x4E09;&#x3001;&#x89E3;&#x9898;&#x4EE3;&#x7801;"><a name="&#x4E09;&#x3001;&#x89E3;&#x9898;&#x4EE3;&#x7801;" class="anchor-navigation-ex-anchor" href="#&#x4E09;&#x3001;&#x89E3;&#x9898;&#x4EE3;&#x7801;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x4E09;&#x3001;&#x89E3;&#x9898;&#x4EE3;&#x7801;</h2>
-<pre><code class="lang-java">public class Test {
-    private static List&lt;Integer&gt; maxInWindows(List&lt;Integer&gt; data, int size) {
-        List&lt;Integer&gt; windowMax = new LinkedList&lt;&gt;();
+<pre><code class="lang-java"><span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Test</span> </span>{
+    <span class="hljs-function"><span class="hljs-keyword">private</span> <span class="hljs-keyword">static</span> List&lt;Integer&gt; <span class="hljs-title">maxInWindows</span><span class="hljs-params">(List&lt;Integer&gt; data, <span class="hljs-keyword">int</span> size)</span> </span>{
+        List&lt;Integer&gt; windowMax = <span class="hljs-keyword">new</span> LinkedList&lt;&gt;();
 
-        // &#x6761;&#x4EF6;&#x68C0;&#x67E5;
-        if (data == null || size &lt; 1 || data.size() &lt; 1) {
-            return windowMax;
+        <span class="hljs-comment">// &#x6761;&#x4EF6;&#x68C0;&#x67E5;</span>
+        <span class="hljs-keyword">if</span> (data == <span class="hljs-keyword">null</span> || size &lt; <span class="hljs-number">1</span> || data.size() &lt; <span class="hljs-number">1</span>) {
+            <span class="hljs-keyword">return</span> windowMax;
         }
 
-        Deque&lt;Integer&gt; idx = new LinkedList&lt;&gt;();
+        Deque&lt;Integer&gt; idx = <span class="hljs-keyword">new</span> LinkedList&lt;&gt;();
 
-        // &#x7A97;&#x53E3;&#x8FD8;&#x6CA1;&#x6709;&#x88AB;&#x586B;&#x6EE1;&#x65F6;&#xFF0C;&#x627E;&#x6700;&#x5927;&#x503C;&#x7684;&#x7D22;&#x5F15;
-        for (int i = 0; i &lt; size &amp;&amp; i &lt; data.size(); i++) {
-            // &#x5982;&#x679C;&#x7D22;&#x5F15;&#x5BF9;&#x5E94;&#x7684;&#x503C;&#x6BD4;&#x4E4B;&#x524D;&#x5B58;&#x50A8;&#x7684;&#x7D22;&#x5F15;&#x503C;&#x5BF9;&#x5E94;&#x7684;&#x503C;&#x5927;&#x6216;&#x8005;&#x76F8;&#x7B49;&#xFF0C;&#x5C31;&#x5220;&#x9664;&#x4E4B;&#x524D;&#x5B58;&#x50A8;&#x7684;&#x503C;
-            while (!idx.isEmpty() &amp;&amp; data.get(i) &gt;= data.get(idx.getLast())) {
+        <span class="hljs-comment">// &#x7A97;&#x53E3;&#x8FD8;&#x6CA1;&#x6709;&#x88AB;&#x586B;&#x6EE1;&#x65F6;&#xFF0C;&#x627E;&#x6700;&#x5927;&#x503C;&#x7684;&#x7D22;&#x5F15;</span>
+        <span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> i = <span class="hljs-number">0</span>; i &lt; size &amp;&amp; i &lt; data.size(); i++) {
+            <span class="hljs-comment">// &#x5982;&#x679C;&#x7D22;&#x5F15;&#x5BF9;&#x5E94;&#x7684;&#x503C;&#x6BD4;&#x4E4B;&#x524D;&#x5B58;&#x50A8;&#x7684;&#x7D22;&#x5F15;&#x503C;&#x5BF9;&#x5E94;&#x7684;&#x503C;&#x5927;&#x6216;&#x8005;&#x76F8;&#x7B49;&#xFF0C;&#x5C31;&#x5220;&#x9664;&#x4E4B;&#x524D;&#x5B58;&#x50A8;&#x7684;&#x503C;</span>
+            <span class="hljs-keyword">while</span> (!idx.isEmpty() &amp;&amp; data.get(i) &gt;= data.get(idx.getLast())) {
                 idx.removeLast();
             }
 
-            //  &#x6DFB;&#x52A0;&#x7D22;&#x5F15;
+            <span class="hljs-comment">//  &#x6DFB;&#x52A0;&#x7D22;&#x5F15;</span>
             idx.addLast(i);
         }
 
-        // &#x7A97;&#x53E3;&#x5DF2;&#x7ECF;&#x88AB;&#x586B;&#x6EE1;&#x4E86;
-        for (int i = size; i &lt; data.size(); i++) {
-            // &#x7B2C;&#x4E00;&#x4E2A;&#x7A97;&#x53E3;&#x7684;&#x6700;&#x5927;&#x503C;&#x4FDD;&#x5B58;
+        <span class="hljs-comment">// &#x7A97;&#x53E3;&#x5DF2;&#x7ECF;&#x88AB;&#x586B;&#x6EE1;&#x4E86;</span>
+        <span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> i = size; i &lt; data.size(); i++) {
+            <span class="hljs-comment">// &#x7B2C;&#x4E00;&#x4E2A;&#x7A97;&#x53E3;&#x7684;&#x6700;&#x5927;&#x503C;&#x4FDD;&#x5B58;</span>
             windowMax.add(data.get(idx.getFirst()));
 
-            // &#x5982;&#x679C;&#x7D22;&#x5F15;&#x5BF9;&#x5E94;&#x7684;&#x503C;&#x6BD4;&#x4E4B;&#x524D;&#x5B58;&#x50A8;&#x7684;&#x7D22;&#x5F15;&#x503C;&#x5BF9;&#x5E94;&#x7684;&#x503C;&#x5927;&#x6216;&#x8005;&#x76F8;&#x7B49;&#xFF0C;&#x5C31;&#x5220;&#x9664;&#x4E4B;&#x524D;&#x5B58;&#x50A8;&#x7684;&#x503C;
-            while (!idx.isEmpty() &amp;&amp; data.get(i) &gt;= data.get(idx.getLast())) {
+            <span class="hljs-comment">// &#x5982;&#x679C;&#x7D22;&#x5F15;&#x5BF9;&#x5E94;&#x7684;&#x503C;&#x6BD4;&#x4E4B;&#x524D;&#x5B58;&#x50A8;&#x7684;&#x7D22;&#x5F15;&#x503C;&#x5BF9;&#x5E94;&#x7684;&#x503C;&#x5927;&#x6216;&#x8005;&#x76F8;&#x7B49;&#xFF0C;&#x5C31;&#x5220;&#x9664;&#x4E4B;&#x524D;&#x5B58;&#x50A8;&#x7684;&#x503C;</span>
+            <span class="hljs-keyword">while</span> (!idx.isEmpty() &amp;&amp; data.get(i) &gt;= data.get(idx.getLast())) {
                 idx.removeLast();
             }
 
-            // &#x5220;&#x9664;&#x5DF2;&#x7ECF;&#x6ED1;&#x51FA;&#x7A97;&#x53E3;&#x7684;&#x6570;&#x636E;&#x5BF9;&#x5E94;&#x7684;&#x4E0B;&#x6807;
-            if (!idx.isEmpty() &amp;&amp; idx.getFirst() &lt;= (i - size)) {
+            <span class="hljs-comment">// &#x5220;&#x9664;&#x5DF2;&#x7ECF;&#x6ED1;&#x51FA;&#x7A97;&#x53E3;&#x7684;&#x6570;&#x636E;&#x5BF9;&#x5E94;&#x7684;&#x4E0B;&#x6807;</span>
+            <span class="hljs-keyword">if</span> (!idx.isEmpty() &amp;&amp; idx.getFirst() &lt;= (i - size)) {
                 idx.removeFirst();
             }
 
-            // &#x53EF;&#x80FD;&#x7684;&#x6700;&#x5927;&#x7684;&#x4E0B;&#x6807;&#x7D22;&#x5F15;&#x5165;&#x961F;
+            <span class="hljs-comment">// &#x53EF;&#x80FD;&#x7684;&#x6700;&#x5927;&#x7684;&#x4E0B;&#x6807;&#x7D22;&#x5F15;&#x5165;&#x961F;</span>
             idx.addLast(i);
         }
 
-        // &#x6700;&#x540E;&#x4E00;&#x4E2A;&#x7A97;&#x53E3;&#x6700;&#x5927;&#x503C;&#x5165;&#x961F;
+        <span class="hljs-comment">// &#x6700;&#x540E;&#x4E00;&#x4E2A;&#x7A97;&#x53E3;&#x6700;&#x5927;&#x503C;&#x5165;&#x961F;</span>
         windowMax.add(data.get(idx.getFirst()));
 
-        return windowMax;
+        <span class="hljs-keyword">return</span> windowMax;
 
     }
 }
@@ -3815,7 +3819,7 @@
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"62.滑动窗口的最大值","level":"5.1.62","depth":2,"next":{"title":"63.矩阵中的路径","level":"5.1.63","depth":2,"path":"algorithm/For-offer/63.md","ref":"algorithm/For-offer/63.md","articles":[]},"previous":{"title":"61.数据流中的中位数","level":"5.1.61","depth":2,"path":"algorithm/For-offer/61.md","ref":"algorithm/For-offer/61.md","articles":[]},"dir":"ltr"},"config":{"plugins":["-lunr","-search","-highlight","-livereload","search-plus@^0.0.11","simple-page-toc@^0.1.1","github@^2.0.0","github-buttons@2.1.0","edit-link@^2.0.2","advanced-emoji@^0.2.1","anchors@^0.7.1","include-codeblock@^3.0.2","ace@^0.3.2","emphasize@^1.1.0","katex@^1.1.3","splitter@^0.0.8","tbfed-pagefooter@^0.0.1","expandable-chapters-small@^0.1.7","sectionx@^3.1.0","local-video@^1.0.1","anchor-navigation-ex@0.1.8","favicon@^0.0.2"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"tbfed-pagefooter":{"copyright":"Copyright © ruheng.com 2017","modify_label":"该文件修订时间：","modify_format":"YYYY-MM-DD HH:mm:ss"},"emphasize":{},"ace":{},"github":{"url":"https://github.com/LRH1993/android_interview"},"simple-page-toc":{"maxDepth":3,"skipFirstH1":true},"splitter":{},"katex":{},"fontsettings":{"theme":"white","family":"sans","size":2},"sectionx":{"tag":"b"},"anchor-navigation-ex":{"isRewritePageTitle":false,"tocLevel1Icon":"fa fa-hand-o-right","tocLevel2Icon":"fa fa-hand-o-right","tocLevel3Icon":"fa fa-hand-o-right"},"favicon":{"shortcut":"favicon.ico","bookmark":"favicon.ico"},"github-buttons":{"repo":"LRH1993/android_interview","types":["star"],"size":"small"},"expandable-chapters-small":{},"local-video":{},"advanced-emoji":{"embedEmojis":false},"include-codeblock":{"check":false,"edit":true,"fixlang":false,"lang":"","template":"ace","theme":"chrome","unindent":true},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":true,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"edit-link":{"label":"Edit This Page","base":"https://github.com/LRH1993/android_interview/edit/master"},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":true},"anchors":{},"search-plus":{}},"theme":"default","author":"ruheng","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"Android校招面试指南","language":"zh-hans","output.name":"site","links":{"sidebar":{"Home":"http://lruheng.com/"}},"gitbook":"3.2.3","description":"Android面试必备，记录自己的秋招之路"},"file":{"path":"algorithm/For-offer/62.md","mtime":"2017-09-11T01:15:52.000Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2017-10-16T12:05:21.906Z"},"basePath":"../..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"62.滑动窗口的最大值","level":"5.1.62","depth":2,"next":{"title":"63.矩阵中的路径","level":"5.1.63","depth":2,"path":"algorithm/For-offer/63.md","ref":"algorithm/For-offer/63.md","articles":[]},"previous":{"title":"61.数据流中的中位数","level":"5.1.61","depth":2,"path":"algorithm/For-offer/61.md","ref":"algorithm/For-offer/61.md","articles":[]},"dir":"ltr"},"config":{"plugins":["-lunr","-search","-livereload","search-plus@^0.0.11","simple-page-toc@^0.1.1","github@^2.0.0","github-buttons@2.1.0","edit-link@^2.0.2","advanced-emoji@^0.2.1","anchors@^0.7.1","include-codeblock@^3.0.2","ace@^0.3.2","emphasize@^1.1.0","katex@^1.1.3","splitter@^0.0.8","tbfed-pagefooter@^0.0.1","expandable-chapters-small@^0.1.7","sectionx@^3.1.0","local-video@^1.0.1","anchor-navigation-ex@0.1.8","favicon@^0.0.2"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"tbfed-pagefooter":{"copyright":"Copyright © ruheng.com 2017","modify_label":"该文件修订时间：","modify_format":"YYYY-MM-DD HH:mm:ss"},"emphasize":{},"ace":{},"github":{"url":"https://github.com/LRH1993/android_interview"},"simple-page-toc":{"maxDepth":3,"skipFirstH1":true},"splitter":{},"katex":{},"fontsettings":{"theme":"white","family":"sans","size":2},"sectionx":{"tag":"b"},"highlight":{},"anchor-navigation-ex":{"isRewritePageTitle":false,"tocLevel1Icon":"fa fa-hand-o-right","tocLevel2Icon":"fa fa-hand-o-right","tocLevel3Icon":"fa fa-hand-o-right"},"favicon":{"shortcut":"favicon.ico","bookmark":"favicon.ico"},"github-buttons":{"repo":"LRH1993/android_interview","types":["star"],"size":"small"},"expandable-chapters-small":{},"local-video":{},"advanced-emoji":{"embedEmojis":false},"include-codeblock":{"check":false,"edit":false,"fixlang":false,"lang":"","template":"default","theme":"chrome","unindent":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":true,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"edit-link":{"label":"Edit This Page","base":"https://github.com/LRH1993/android_interview/edit/master"},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":true},"anchors":{},"search-plus":{}},"theme":"default","author":"ruheng","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"Android校招面试指南","language":"zh-hans","output.name":"site","links":{"sidebar":{"Home":"http://lruheng.com/"}},"gitbook":"3.2.3","description":"Android面试必备，记录自己的秋招之路"},"file":{"path":"algorithm/For-offer/62.md","mtime":"2017-09-11T01:15:52.000Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2017-10-16T13:00:43.989Z"},"basePath":"../..","book":{"language":""}});
         });
     </script>
 </div>

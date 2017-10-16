@@ -69,6 +69,10 @@
                 
             
                 
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
                 <link rel="stylesheet" href="../../gitbook/gitbook-plugin-fontsettings/website.css">
                 
             
@@ -3712,11 +3716,11 @@
 <h2 id="&#x4E8C;&#x3001;measure&#x6D41;&#x7A0B;"><a name="&#x4E8C;&#x3001;measure&#x6D41;&#x7A0B;" class="anchor-navigation-ex-anchor" href="#&#x4E8C;&#x3001;measure&#x6D41;&#x7A0B;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x4E8C;&#x3001;Measure&#x6D41;&#x7A0B;</h2>
 <p>&#x987E;&#x540D;&#x601D;&#x4E49;&#xFF0C;&#x5C31;&#x662F;&#x6D4B;&#x91CF;&#x6BCF;&#x4E2A;&#x63A7;&#x4EF6;&#x7684;&#x5927;&#x5C0F;&#x3002;</p>
 <p>&#x8C03;&#x7528;measure()&#x65B9;&#x6CD5;&#xFF0C;&#x8FDB;&#x884C;&#x4E00;&#x4E9B;&#x903B;&#x8F91;&#x5904;&#x7406;&#xFF0C;&#x7136;&#x540E;&#x8C03;&#x7528;onMeasure()&#x65B9;&#x6CD5;&#xFF0C;&#x5728;&#x5176;&#x4E2D;&#x8C03;&#x7528;setMeasuredDimension()&#x8BBE;&#x5B9A;View&#x7684;&#x5BBD;&#x9AD8;&#x4FE1;&#x606F;&#xFF0C;&#x5B8C;&#x6210;View&#x7684;&#x6D4B;&#x91CF;&#x64CD;&#x4F5C;&#x3002;</p>
-<pre><code class="lang-java">public final void measure(int widthMeasureSpec, int heightMeasureSpec) {
+<pre><code class="lang-java"><span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">final</span> <span class="hljs-keyword">void</span> <span class="hljs-title">measure</span><span class="hljs-params">(<span class="hljs-keyword">int</span> widthMeasureSpec, <span class="hljs-keyword">int</span> heightMeasureSpec)</span> </span>{
 }
 </code></pre>
 <p>measure()&#x65B9;&#x6CD5;&#x4E2D;&#xFF0C;&#x4F20;&#x5165;&#x4E86;&#x4E24;&#x4E2A;&#x53C2;&#x6570; widthMeasureSpec, heightMeasureSpec &#x8868;&#x793A;View&#x7684;&#x5BBD;&#x9AD8;&#x7684;&#x4E00;&#x4E9B;&#x4FE1;&#x606F;&#x3002;</p>
-<pre><code class="lang-java">protected void onMeasure(int widthMeasureSpec, int heightMeasureSpec) {
+<pre><code class="lang-java"><span class="hljs-function"><span class="hljs-keyword">protected</span> <span class="hljs-keyword">void</span> <span class="hljs-title">onMeasure</span><span class="hljs-params">(<span class="hljs-keyword">int</span> widthMeasureSpec, <span class="hljs-keyword">int</span> heightMeasureSpec)</span> </span>{
         setMeasuredDimension(getDefaultSize(getSuggestedMinimumWidth(), widthMeasureSpec),
                 getDefaultSize(getSuggestedMinimumHeight(), heightMeasureSpec));
     }
@@ -3745,23 +3749,23 @@
 <h2 id="&#x4E09;&#x3001;layout&#x6D41;&#x7A0B;"><a name="&#x4E09;&#x3001;layout&#x6D41;&#x7A0B;" class="anchor-navigation-ex-anchor" href="#&#x4E09;&#x3001;layout&#x6D41;&#x7A0B;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x4E09;&#x3001;Layout&#x6D41;&#x7A0B;</h2>
 <p>&#x6D4B;&#x91CF;&#x5B8C;View&#x5927;&#x5C0F;&#x540E;&#xFF0C;&#x5C31;&#x9700;&#x8981;&#x5C06;View&#x5E03;&#x5C40;&#x5728;Window&#x4E2D;&#xFF0C;View&#x7684;&#x5E03;&#x5C40;&#x4E3B;&#x8981;&#x901A;&#x8FC7;&#x786E;&#x5B9A;&#x4E0A;&#x4E0B;&#x5DE6;&#x53F3;&#x56DB;&#x4E2A;&#x70B9;&#x6765;&#x786E;&#x5B9A;&#x7684;&#x3002;</p>
 <p><strong>&#x5176;&#x4E2D;&#x5E03;&#x5C40;&#x4E5F;&#x662F;&#x81EA;&#x4E0A;&#x800C;&#x4E0B;&#xFF0C;&#x4E0D;&#x540C;&#x7684;&#x662F;ViewGroup&#x5148;&#x5728;layout()&#x4E2D;&#x786E;&#x5B9A;&#x81EA;&#x5DF1;&#x7684;&#x5E03;&#x5C40;&#xFF0C;&#x7136;&#x540E;&#x5728;onLayout()&#x65B9;&#x6CD5;&#x4E2D;&#x518D;&#x8C03;&#x7528;&#x5B50;View&#x7684;layout()&#x65B9;&#x6CD5;&#xFF0C;&#x8BA9;&#x5B50;View&#x5E03;&#x5C40;&#x3002;&#x5728;Measure&#x8FC7;&#x7A0B;&#x4E2D;&#xFF0C;ViewGroup&#x4E00;&#x822C;&#x662F;&#x5148;&#x6D4B;&#x91CF;&#x5B50;View&#x7684;&#x5927;&#x5C0F;&#xFF0C;&#x7136;&#x540E;&#x518D;&#x786E;&#x5B9A;&#x81EA;&#x8EAB;&#x7684;&#x5927;&#x5C0F;&#x3002;</strong></p>
-<pre><code class="lang-Java">public void layout(int l, int t, int r, int b) {  
+<pre><code class="lang-Java"><span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">layout</span><span class="hljs-params">(<span class="hljs-keyword">int</span> l, <span class="hljs-keyword">int</span> t, <span class="hljs-keyword">int</span> r, <span class="hljs-keyword">int</span> b)</span> </span>{  
 
-    // &#x5F53;&#x524D;&#x89C6;&#x56FE;&#x7684;&#x56DB;&#x4E2A;&#x9876;&#x70B9;
-    int oldL = mLeft;  
-    int oldT = mTop;  
-    int oldB = mBottom;  
-    int oldR = mRight;  
+    <span class="hljs-comment">// &#x5F53;&#x524D;&#x89C6;&#x56FE;&#x7684;&#x56DB;&#x4E2A;&#x9876;&#x70B9;</span>
+    <span class="hljs-keyword">int</span> oldL = mLeft;  
+    <span class="hljs-keyword">int</span> oldT = mTop;  
+    <span class="hljs-keyword">int</span> oldB = mBottom;  
+    <span class="hljs-keyword">int</span> oldR = mRight;  
 
-    // setFrame&#xFF08;&#xFF09; / setOpticalFrame&#xFF08;&#xFF09;&#xFF1A;&#x786E;&#x5B9A;View&#x81EA;&#x8EAB;&#x7684;&#x4F4D;&#x7F6E;
-    // &#x5373;&#x521D;&#x59CB;&#x5316;&#x56DB;&#x4E2A;&#x9876;&#x70B9;&#x7684;&#x503C;&#xFF0C;&#x7136;&#x540E;&#x5224;&#x65AD;&#x5F53;&#x524D;View&#x5927;&#x5C0F;&#x548C;&#x4F4D;&#x7F6E;&#x662F;&#x5426;&#x53D1;&#x751F;&#x4E86;&#x53D8;&#x5316;&#x5E76;&#x8FD4;&#x56DE;  
- boolean changed = isLayoutModeOptical(mParent) ?
+    <span class="hljs-comment">// setFrame&#xFF08;&#xFF09; / setOpticalFrame&#xFF08;&#xFF09;&#xFF1A;&#x786E;&#x5B9A;View&#x81EA;&#x8EAB;&#x7684;&#x4F4D;&#x7F6E;</span>
+    <span class="hljs-comment">// &#x5373;&#x521D;&#x59CB;&#x5316;&#x56DB;&#x4E2A;&#x9876;&#x70B9;&#x7684;&#x503C;&#xFF0C;&#x7136;&#x540E;&#x5224;&#x65AD;&#x5F53;&#x524D;View&#x5927;&#x5C0F;&#x548C;&#x4F4D;&#x7F6E;&#x662F;&#x5426;&#x53D1;&#x751F;&#x4E86;&#x53D8;&#x5316;&#x5E76;&#x8FD4;&#x56DE;  </span>
+ <span class="hljs-keyword">boolean</span> changed = isLayoutModeOptical(mParent) ?
             setOpticalFrame(l, t, r, b) : setFrame(l, t, r, b);
 
-    //&#x5982;&#x679C;&#x89C6;&#x56FE;&#x7684;&#x5927;&#x5C0F;&#x548C;&#x4F4D;&#x7F6E;&#x53D1;&#x751F;&#x53D8;&#x5316;&#xFF0C;&#x4F1A;&#x8C03;&#x7528;onLayout&#xFF08;&#xFF09;
-    if (changed || (mPrivateFlags &amp; PFLAG_LAYOUT_REQUIRED) == PFLAG_LAYOUT_REQUIRED) {  
+    <span class="hljs-comment">//&#x5982;&#x679C;&#x89C6;&#x56FE;&#x7684;&#x5927;&#x5C0F;&#x548C;&#x4F4D;&#x7F6E;&#x53D1;&#x751F;&#x53D8;&#x5316;&#xFF0C;&#x4F1A;&#x8C03;&#x7528;onLayout&#xFF08;&#xFF09;</span>
+    <span class="hljs-keyword">if</span> (changed || (mPrivateFlags &amp; PFLAG_LAYOUT_REQUIRED) == PFLAG_LAYOUT_REQUIRED) {  
 
-        // onLayout&#xFF08;&#xFF09;&#xFF1A;&#x786E;&#x5B9A;&#x8BE5;View&#x6240;&#x6709;&#x7684;&#x5B50;View&#x5728;&#x7236;&#x5BB9;&#x5668;&#x7684;&#x4F4D;&#x7F6E;     
+        <span class="hljs-comment">// onLayout&#xFF08;&#xFF09;&#xFF1A;&#x786E;&#x5B9A;&#x8BE5;View&#x6240;&#x6709;&#x7684;&#x5B50;View&#x5728;&#x7236;&#x5BB9;&#x5668;&#x7684;&#x4F4D;&#x7F6E;     </span>
         onLayout(changed, l, t, r, b);      
   ...
 
@@ -3769,10 +3773,10 @@
 </code></pre>
 <p>&#x4E0A;&#x9762;&#x770B;&#x51FA;&#x901A;&#x8FC7; setFrame&#xFF08;&#xFF09; / setOpticalFrame&#xFF08;&#xFF09;&#xFF1A;&#x786E;&#x5B9A;View&#x81EA;&#x8EAB;&#x7684;&#x4F4D;&#x7F6E;&#xFF0C;&#x901A;&#x8FC7;onLayout()&#x786E;&#x5B9A;&#x5B50;View&#x7684;&#x5E03;&#x5C40;&#x3002;
 setOpticalFrame&#xFF08;&#xFF09;&#x5185;&#x90E8;&#x4E5F;&#x662F;&#x8C03;&#x7528;&#x4E86;setFrame&#xFF08;&#xFF09;&#xFF0C;&#x6240;&#x4EE5;&#x5177;&#x4F53;&#x770B;setFrame&#xFF08;&#xFF09;&#x600E;&#x4E48;&#x786E;&#x5B9A;&#x81EA;&#x8EAB;&#x7684;&#x4F4D;&#x7F6E;&#x5E03;&#x5C40;&#x3002;</p>
-<pre><code class="lang-java">protected boolean setFrame(int left, int top, int right, int bottom) {
+<pre><code class="lang-java"><span class="hljs-function"><span class="hljs-keyword">protected</span> <span class="hljs-keyword">boolean</span> <span class="hljs-title">setFrame</span><span class="hljs-params">(<span class="hljs-keyword">int</span> left, <span class="hljs-keyword">int</span> top, <span class="hljs-keyword">int</span> right, <span class="hljs-keyword">int</span> bottom)</span> </span>{
     ...
-// &#x901A;&#x8FC7;&#x4EE5;&#x4E0B;&#x8D4B;&#x503C;&#x8BED;&#x53E5;&#x8BB0;&#x5F55;&#x4E0B;&#x4E86;&#x89C6;&#x56FE;&#x7684;&#x4F4D;&#x7F6E;&#x4FE1;&#x606F;&#xFF0C;&#x5373;&#x786E;&#x5B9A;View&#x7684;&#x56DB;&#x4E2A;&#x9876;&#x70B9;
-// &#x5373;&#x786E;&#x5B9A;&#x4E86;&#x89C6;&#x56FE;&#x7684;&#x4F4D;&#x7F6E;
+<span class="hljs-comment">// &#x901A;&#x8FC7;&#x4EE5;&#x4E0B;&#x8D4B;&#x503C;&#x8BED;&#x53E5;&#x8BB0;&#x5F55;&#x4E0B;&#x4E86;&#x89C6;&#x56FE;&#x7684;&#x4F4D;&#x7F6E;&#x4FE1;&#x606F;&#xFF0C;&#x5373;&#x786E;&#x5B9A;View&#x7684;&#x56DB;&#x4E2A;&#x9876;&#x70B9;</span>
+<span class="hljs-comment">// &#x5373;&#x786E;&#x5B9A;&#x4E86;&#x89C6;&#x56FE;&#x7684;&#x4F4D;&#x7F6E;</span>
     mLeft = left;
     mTop = top;
     mRight = right;
@@ -3782,7 +3786,7 @@ setOpticalFrame&#xFF08;&#xFF09;&#x5185;&#x90E8;&#x4E5F;&#x662F;&#x8C03;&#x7528;&
 }
 </code></pre>
 <p>&#x786E;&#x5B9A;&#x4E86;&#x81EA;&#x8EAB;&#x7684;&#x4F4D;&#x7F6E;&#x540E;&#xFF0C;&#x5C31;&#x8981;&#x901A;&#x8FC7;onLayout()&#x786E;&#x5B9A;&#x5B50;View&#x7684;&#x5E03;&#x5C40;&#x3002;onLayout()&#x662F;&#x4E00;&#x4E2A;&#x53EF;&#x7EE7;&#x627F;&#x7684;&#x7A7A;&#x65B9;&#x6CD5;&#x3002;</p>
-<pre><code class="lang-java">protected void onLayout(boolean changed, int left, int top, int right, int bottom) {
+<pre><code class="lang-java"><span class="hljs-function"><span class="hljs-keyword">protected</span> <span class="hljs-keyword">void</span> <span class="hljs-title">onLayout</span><span class="hljs-params">(<span class="hljs-keyword">boolean</span> changed, <span class="hljs-keyword">int</span> left, <span class="hljs-keyword">int</span> top, <span class="hljs-keyword">int</span> right, <span class="hljs-keyword">int</span> bottom)</span> </span>{
     }
 </code></pre>
 <p><strong>&#x5982;&#x679C;&#x5F53;&#x524D;View&#x5C31;&#x662F;&#x4E00;&#x4E2A;&#x5355;&#x4E00;&#x7684;View&#xFF0C;&#x90A3;&#x4E48;&#x6CA1;&#x6709;&#x5B50;View&#xFF0C;&#x5C31;&#x4E0D;&#x9700;&#x8981;&#x5B9E;&#x73B0;&#x8BE5;&#x65B9;&#x6CD5;&#x3002;</strong></p>
@@ -3797,39 +3801,39 @@ setOpticalFrame&#xFF08;&#xFF09;&#x5185;&#x90E8;&#x4E5F;&#x662F;&#x8C03;&#x7528;&
 <p>&#x2462;&#x7ED8;&#x5236;Children(dispatchDraw)</p>
 <p>&#x2463;&#x7ED8;&#x5236;&#x88C5;&#x9970;&#xFF08;onDrawScrollBars&#xFF09;</p>
 <p>&#x4ECE;&#x6E90;&#x7801;&#x4E2D;&#x53EF;&#x4EE5;&#x6E05;&#x695A;&#x5730;&#x770B;&#x51FA;&#x7ED8;&#x5236;&#x7684;&#x987A;&#x5E8F;&#x3002;</p>
-<pre><code class="lang-java">public void draw(Canvas canvas) {
-// &#x6240;&#x6709;&#x7684;&#x89C6;&#x56FE;&#x6700;&#x7EC8;&#x90FD;&#x662F;&#x8C03;&#x7528; View &#x7684; draw &#xFF08;&#xFF09;&#x7ED8;&#x5236;&#x89C6;&#x56FE;&#xFF08; ViewGroup &#x6CA1;&#x6709;&#x590D;&#x5199;&#x6B64;&#x65B9;&#x6CD5;&#xFF09;
-// &#x5728;&#x81EA;&#x5B9A;&#x4E49;View&#x65F6;&#xFF0C;&#x4E0D;&#x5E94;&#x8BE5;&#x590D;&#x5199;&#x8BE5;&#x65B9;&#x6CD5;&#xFF0C;&#x800C;&#x662F;&#x590D;&#x5199; onDraw(Canvas) &#x65B9;&#x6CD5;&#x8FDB;&#x884C;&#x7ED8;&#x5236;&#x3002;
-// &#x5982;&#x679C;&#x81EA;&#x5B9A;&#x4E49;&#x7684;&#x89C6;&#x56FE;&#x786E;&#x5B9E;&#x8981;&#x590D;&#x5199;&#x8BE5;&#x65B9;&#x6CD5;&#xFF0C;&#x90A3;&#x4E48;&#x9700;&#x8981;&#x5148;&#x8C03;&#x7528; super.draw(canvas)&#x5B8C;&#x6210;&#x7CFB;&#x7EDF;&#x7684;&#x7ED8;&#x5236;&#xFF0C;&#x7136;&#x540E;&#x518D;&#x8FDB;&#x884C;&#x81EA;&#x5B9A;&#x4E49;&#x7684;&#x7ED8;&#x5236;&#x3002;
+<pre><code class="lang-java"><span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">draw</span><span class="hljs-params">(Canvas canvas)</span> </span>{
+<span class="hljs-comment">// &#x6240;&#x6709;&#x7684;&#x89C6;&#x56FE;&#x6700;&#x7EC8;&#x90FD;&#x662F;&#x8C03;&#x7528; View &#x7684; draw &#xFF08;&#xFF09;&#x7ED8;&#x5236;&#x89C6;&#x56FE;&#xFF08; ViewGroup &#x6CA1;&#x6709;&#x590D;&#x5199;&#x6B64;&#x65B9;&#x6CD5;&#xFF09;</span>
+<span class="hljs-comment">// &#x5728;&#x81EA;&#x5B9A;&#x4E49;View&#x65F6;&#xFF0C;&#x4E0D;&#x5E94;&#x8BE5;&#x590D;&#x5199;&#x8BE5;&#x65B9;&#x6CD5;&#xFF0C;&#x800C;&#x662F;&#x590D;&#x5199; onDraw(Canvas) &#x65B9;&#x6CD5;&#x8FDB;&#x884C;&#x7ED8;&#x5236;&#x3002;</span>
+<span class="hljs-comment">// &#x5982;&#x679C;&#x81EA;&#x5B9A;&#x4E49;&#x7684;&#x89C6;&#x56FE;&#x786E;&#x5B9E;&#x8981;&#x590D;&#x5199;&#x8BE5;&#x65B9;&#x6CD5;&#xFF0C;&#x90A3;&#x4E48;&#x9700;&#x8981;&#x5148;&#x8C03;&#x7528; super.draw(canvas)&#x5B8C;&#x6210;&#x7CFB;&#x7EDF;&#x7684;&#x7ED8;&#x5236;&#xFF0C;&#x7136;&#x540E;&#x518D;&#x8FDB;&#x884C;&#x81EA;&#x5B9A;&#x4E49;&#x7684;&#x7ED8;&#x5236;&#x3002;</span>
     ...
-    int saveCount;
-    if (!dirtyOpaque) {
-          // &#x6B65;&#x9AA4;1&#xFF1A; &#x7ED8;&#x5236;&#x672C;&#x8EAB;View&#x80CC;&#x666F;
+    <span class="hljs-keyword">int</span> saveCount;
+    <span class="hljs-keyword">if</span> (!dirtyOpaque) {
+          <span class="hljs-comment">// &#x6B65;&#x9AA4;1&#xFF1A; &#x7ED8;&#x5236;&#x672C;&#x8EAB;View&#x80CC;&#x666F;</span>
         drawBackground(canvas);
     }
 
-        // &#x5982;&#x679C;&#x6709;&#x5FC5;&#x8981;&#xFF0C;&#x5C31;&#x4FDD;&#x5B58;&#x56FE;&#x5C42;&#xFF08;&#x8FD8;&#x6709;&#x4E00;&#x4E2A;&#x590D;&#x539F;&#x56FE;&#x5C42;&#xFF09;
-        // &#x4F18;&#x5316;&#x6280;&#x5DE7;&#xFF1A;
-        // &#x5F53;&#x4E0D;&#x9700;&#x8981;&#x7ED8;&#x5236; Layer &#x65F6;&#xFF0C;&#x201C;&#x4FDD;&#x5B58;&#x56FE;&#x5C42;&#x201C;&#x548C;&#x201C;&#x590D;&#x539F;&#x56FE;&#x5C42;&#x201C;&#x8FD9;&#x4E24;&#x6B65;&#x4F1A;&#x8DF3;&#x8FC7;
-        // &#x56E0;&#x6B64;&#x5728;&#x7ED8;&#x5236;&#x7684;&#x65F6;&#x5019;&#xFF0C;&#x8282;&#x7701; layer &#x53EF;&#x4EE5;&#x63D0;&#x9AD8;&#x7ED8;&#x5236;&#x6548;&#x7387;
-        final int viewFlags = mViewFlags;
-        if (!verticalEdges &amp;&amp; !horizontalEdges) {
+        <span class="hljs-comment">// &#x5982;&#x679C;&#x6709;&#x5FC5;&#x8981;&#xFF0C;&#x5C31;&#x4FDD;&#x5B58;&#x56FE;&#x5C42;&#xFF08;&#x8FD8;&#x6709;&#x4E00;&#x4E2A;&#x590D;&#x539F;&#x56FE;&#x5C42;&#xFF09;</span>
+        <span class="hljs-comment">// &#x4F18;&#x5316;&#x6280;&#x5DE7;&#xFF1A;</span>
+        <span class="hljs-comment">// &#x5F53;&#x4E0D;&#x9700;&#x8981;&#x7ED8;&#x5236; Layer &#x65F6;&#xFF0C;&#x201C;&#x4FDD;&#x5B58;&#x56FE;&#x5C42;&#x201C;&#x548C;&#x201C;&#x590D;&#x539F;&#x56FE;&#x5C42;&#x201C;&#x8FD9;&#x4E24;&#x6B65;&#x4F1A;&#x8DF3;&#x8FC7;</span>
+        <span class="hljs-comment">// &#x56E0;&#x6B64;&#x5728;&#x7ED8;&#x5236;&#x7684;&#x65F6;&#x5019;&#xFF0C;&#x8282;&#x7701; layer &#x53EF;&#x4EE5;&#x63D0;&#x9AD8;&#x7ED8;&#x5236;&#x6548;&#x7387;</span>
+        <span class="hljs-keyword">final</span> <span class="hljs-keyword">int</span> viewFlags = mViewFlags;
+        <span class="hljs-keyword">if</span> (!verticalEdges &amp;&amp; !horizontalEdges) {
 
-        if (!dirtyOpaque) 
-             // &#x6B65;&#x9AA4;2&#xFF1A;&#x7ED8;&#x5236;&#x672C;&#x8EAB;View&#x5185;&#x5BB9;  &#x9ED8;&#x8BA4;&#x4E3A;&#x7A7A;&#x5B9E;&#x73B0;&#xFF0C;  &#x81EA;&#x5B9A;&#x4E49;View&#x65F6;&#x9700;&#x8981;&#x8FDB;&#x884C;&#x590D;&#x5199;
+        <span class="hljs-keyword">if</span> (!dirtyOpaque) 
+             <span class="hljs-comment">// &#x6B65;&#x9AA4;2&#xFF1A;&#x7ED8;&#x5236;&#x672C;&#x8EAB;View&#x5185;&#x5BB9;  &#x9ED8;&#x8BA4;&#x4E3A;&#x7A7A;&#x5B9E;&#x73B0;&#xFF0C;  &#x81EA;&#x5B9A;&#x4E49;View&#x65F6;&#x9700;&#x8981;&#x8FDB;&#x884C;&#x590D;&#x5199;</span>
             onDraw(canvas);
 
         ......
-        // &#x6B65;&#x9AA4;3&#xFF1A;&#x7ED8;&#x5236;&#x5B50;View   &#x9ED8;&#x8BA4;&#x4E3A;&#x7A7A;&#x5B9E;&#x73B0; &#x5355;&#x4E00;View&#x4E2D;&#x4E0D;&#x9700;&#x8981;&#x5B9E;&#x73B0;&#xFF0C;ViewGroup&#x4E2D;&#x5DF2;&#x7ECF;&#x5B9E;&#x73B0;&#x8BE5;&#x65B9;&#x6CD5;
+        <span class="hljs-comment">// &#x6B65;&#x9AA4;3&#xFF1A;&#x7ED8;&#x5236;&#x5B50;View   &#x9ED8;&#x8BA4;&#x4E3A;&#x7A7A;&#x5B9E;&#x73B0; &#x5355;&#x4E00;View&#x4E2D;&#x4E0D;&#x9700;&#x8981;&#x5B9E;&#x73B0;&#xFF0C;ViewGroup&#x4E2D;&#x5DF2;&#x7ECF;&#x5B9E;&#x73B0;&#x8BE5;&#x65B9;&#x6CD5;</span>
         dispatchDraw(canvas);
 
         ........
 
-        // &#x6B65;&#x9AA4;4&#xFF1A;&#x7ED8;&#x5236;&#x6ED1;&#x52A8;&#x6761;&#x548C;&#x524D;&#x666F;&#x8272;&#x7B49;&#x7B49;
+        <span class="hljs-comment">// &#x6B65;&#x9AA4;4&#xFF1A;&#x7ED8;&#x5236;&#x6ED1;&#x52A8;&#x6761;&#x548C;&#x524D;&#x666F;&#x8272;&#x7B49;&#x7B49;</span>
         onDrawScrollBars(canvas);
 
        ..........
-        return;
+        <span class="hljs-keyword">return</span>;
     }
     ...    
 }
@@ -3887,7 +3891,7 @@ setOpticalFrame&#xFF08;&#xFF09;&#x5185;&#x90E8;&#x4E5F;&#x662F;&#x8C03;&#x7528;&
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"View测量、布局及绘制原理","level":"3.1.13","depth":2,"next":{"title":"Android虚拟机及编译过程","level":"3.1.14","depth":2,"path":"android/basis/dalvik-art.md","ref":"android/basis/dalvik-art.md","articles":[]},"previous":{"title":"Window、Activity、DecorView以及ViewRoot之间的关系","level":"3.1.12","depth":2,"path":"android/basis/decorview.md","ref":"android/basis/decorview.md","articles":[]},"dir":"ltr"},"config":{"plugins":["-lunr","-search","-highlight","-livereload","search-plus@^0.0.11","simple-page-toc@^0.1.1","github@^2.0.0","github-buttons@2.1.0","edit-link@^2.0.2","advanced-emoji@^0.2.1","anchors@^0.7.1","include-codeblock@^3.0.2","ace@^0.3.2","emphasize@^1.1.0","katex@^1.1.3","splitter@^0.0.8","tbfed-pagefooter@^0.0.1","expandable-chapters-small@^0.1.7","sectionx@^3.1.0","local-video@^1.0.1","anchor-navigation-ex@0.1.8","favicon@^0.0.2"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"tbfed-pagefooter":{"copyright":"Copyright © ruheng.com 2017","modify_label":"该文件修订时间：","modify_format":"YYYY-MM-DD HH:mm:ss"},"emphasize":{},"ace":{},"github":{"url":"https://github.com/LRH1993/android_interview"},"simple-page-toc":{"maxDepth":3,"skipFirstH1":true},"splitter":{},"katex":{},"fontsettings":{"theme":"white","family":"sans","size":2},"sectionx":{"tag":"b"},"anchor-navigation-ex":{"isRewritePageTitle":false,"tocLevel1Icon":"fa fa-hand-o-right","tocLevel2Icon":"fa fa-hand-o-right","tocLevel3Icon":"fa fa-hand-o-right"},"favicon":{"shortcut":"favicon.ico","bookmark":"favicon.ico"},"github-buttons":{"repo":"LRH1993/android_interview","types":["star"],"size":"small"},"expandable-chapters-small":{},"local-video":{},"advanced-emoji":{"embedEmojis":false},"include-codeblock":{"check":false,"edit":true,"fixlang":false,"lang":"","template":"ace","theme":"chrome","unindent":true},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":true,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"edit-link":{"label":"Edit This Page","base":"https://github.com/LRH1993/android_interview/edit/master"},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":true},"anchors":{},"search-plus":{}},"theme":"default","author":"ruheng","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"Android校招面试指南","language":"zh-hans","output.name":"site","links":{"sidebar":{"Home":"http://lruheng.com/"}},"gitbook":"3.2.3","description":"Android面试必备，记录自己的秋招之路"},"file":{"path":"android/basis/custom_view.md","mtime":"2017-08-27T08:59:09.000Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2017-10-16T12:05:21.906Z"},"basePath":"../..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"View测量、布局及绘制原理","level":"3.1.13","depth":2,"next":{"title":"Android虚拟机及编译过程","level":"3.1.14","depth":2,"path":"android/basis/dalvik-art.md","ref":"android/basis/dalvik-art.md","articles":[]},"previous":{"title":"Window、Activity、DecorView以及ViewRoot之间的关系","level":"3.1.12","depth":2,"path":"android/basis/decorview.md","ref":"android/basis/decorview.md","articles":[]},"dir":"ltr"},"config":{"plugins":["-lunr","-search","-livereload","search-plus@^0.0.11","simple-page-toc@^0.1.1","github@^2.0.0","github-buttons@2.1.0","edit-link@^2.0.2","advanced-emoji@^0.2.1","anchors@^0.7.1","include-codeblock@^3.0.2","ace@^0.3.2","emphasize@^1.1.0","katex@^1.1.3","splitter@^0.0.8","tbfed-pagefooter@^0.0.1","expandable-chapters-small@^0.1.7","sectionx@^3.1.0","local-video@^1.0.1","anchor-navigation-ex@0.1.8","favicon@^0.0.2"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"tbfed-pagefooter":{"copyright":"Copyright © ruheng.com 2017","modify_label":"该文件修订时间：","modify_format":"YYYY-MM-DD HH:mm:ss"},"emphasize":{},"ace":{},"github":{"url":"https://github.com/LRH1993/android_interview"},"simple-page-toc":{"maxDepth":3,"skipFirstH1":true},"splitter":{},"katex":{},"fontsettings":{"theme":"white","family":"sans","size":2},"sectionx":{"tag":"b"},"highlight":{},"anchor-navigation-ex":{"isRewritePageTitle":false,"tocLevel1Icon":"fa fa-hand-o-right","tocLevel2Icon":"fa fa-hand-o-right","tocLevel3Icon":"fa fa-hand-o-right"},"favicon":{"shortcut":"favicon.ico","bookmark":"favicon.ico"},"github-buttons":{"repo":"LRH1993/android_interview","types":["star"],"size":"small"},"expandable-chapters-small":{},"local-video":{},"advanced-emoji":{"embedEmojis":false},"include-codeblock":{"check":false,"edit":false,"fixlang":false,"lang":"","template":"default","theme":"chrome","unindent":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":true,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"edit-link":{"label":"Edit This Page","base":"https://github.com/LRH1993/android_interview/edit/master"},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":true},"anchors":{},"search-plus":{}},"theme":"default","author":"ruheng","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"Android校招面试指南","language":"zh-hans","output.name":"site","links":{"sidebar":{"Home":"http://lruheng.com/"}},"gitbook":"3.2.3","description":"Android面试必备，记录自己的秋招之路"},"file":{"path":"android/basis/custom_view.md","mtime":"2017-08-27T08:59:09.000Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2017-10-16T13:00:43.989Z"},"basePath":"../..","book":{"language":""}});
         });
     </script>
 </div>

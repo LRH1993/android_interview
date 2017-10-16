@@ -69,6 +69,10 @@
                 
             
                 
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
                 <link rel="stylesheet" href="../gitbook/gitbook-plugin-fontsettings/website.css">
                 
             
@@ -3745,138 +3749,138 @@
 <p><strong>&#x6DFB;&#x52A0;&#x4E4B;&#x524D;</strong>&#xFF1A;&quot;&#x8282;&#x70B9;10&quot;&#x7684;&#x540E;&#x7EE7;&#x8282;&#x70B9;&#x4E3A;&quot;&#x8282;&#x70B9;20&quot;&#xFF0C;&quot;&#x8282;&#x70B9;20&quot; &#x7684;&#x524D;&#x7EE7;&#x8282;&#x70B9;&#x4E3A;&quot;&#x8282;&#x70B9;10&quot;&#x3002;
 <strong>&#x6DFB;&#x52A0;&#x4E4B;&#x540E;</strong>&#xFF1A;&quot;&#x8282;&#x70B9;10&quot;&#x7684;&#x540E;&#x7EE7;&#x8282;&#x70B9;&#x4E3A;&quot;&#x8282;&#x70B9;15&quot;&#xFF0C;&quot;&#x8282;&#x70B9;15&quot; &#x7684;&#x524D;&#x7EE7;&#x8282;&#x70B9;&#x4E3A;&quot;&#x8282;&#x70B9;10&quot;&#x3002;&quot;&#x8282;&#x70B9;15&quot;&#x7684;&#x540E;&#x7EE7;&#x8282;&#x70B9;&#x4E3A;&quot;&#x8282;&#x70B9;20&quot;&#xFF0C;&quot;&#x8282;&#x70B9;20&quot; &#x7684;&#x524D;&#x7EE7;&#x8282;&#x70B9;&#x4E3A;&quot;&#x8282;&#x70B9;15&quot;&#x3002;</p>
 <h2 id="&#x53CC;&#x94FE;&#x8868;&#x7684;java&#x5B9E;&#x73B0;"><a name="&#x53CC;&#x94FE;&#x8868;&#x7684;java&#x5B9E;&#x73B0;" class="anchor-navigation-ex-anchor" href="#&#x53CC;&#x94FE;&#x8868;&#x7684;java&#x5B9E;&#x73B0;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x53CC;&#x94FE;&#x8868;&#x7684;Java&#x5B9E;&#x73B0;</h2>
-<pre><code class="lang-java">/**
+<pre><code class="lang-java"><span class="hljs-comment">/**
  * Java &#x5B9E;&#x73B0;&#x7684;&#x53CC;&#x5411;&#x94FE;&#x8868;&#x3002; 
  * &#x6CE8;&#xFF1A;java&#x81EA;&#x5E26;&#x7684;&#x96C6;&#x5408;&#x5305;&#x4E2D;&#x6709;&#x5B9E;&#x73B0;&#x53CC;&#x5411;&#x94FE;&#x8868;&#xFF0C;&#x8DEF;&#x5F84;&#x662F;:java.util.LinkedList
  *
- * @author skywang
- * @date 2013/11/07
- */
-public class DoubleLink&lt;T&gt; {
+ * <span class="hljs-doctag">@author</span> skywang
+ * <span class="hljs-doctag">@date</span> 2013/11/07
+ */</span>
+<span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">DoubleLink</span>&lt;<span class="hljs-title">T</span>&gt; </span>{
 
-    // &#x8868;&#x5934;
-    private DNode&lt;T&gt; mHead;
-    // &#x8282;&#x70B9;&#x4E2A;&#x6570;
-    private int mCount;
+    <span class="hljs-comment">// &#x8868;&#x5934;</span>
+    <span class="hljs-keyword">private</span> DNode&lt;T&gt; mHead;
+    <span class="hljs-comment">// &#x8282;&#x70B9;&#x4E2A;&#x6570;</span>
+    <span class="hljs-keyword">private</span> <span class="hljs-keyword">int</span> mCount;
 
-    // &#x53CC;&#x5411;&#x94FE;&#x8868;&#x201C;&#x8282;&#x70B9;&#x201D;&#x5BF9;&#x5E94;&#x7684;&#x7ED3;&#x6784;&#x4F53;
-    private class DNode&lt;T&gt; {
-        public DNode prev;
-        public DNode next;
-        public T value;
+    <span class="hljs-comment">// &#x53CC;&#x5411;&#x94FE;&#x8868;&#x201C;&#x8282;&#x70B9;&#x201D;&#x5BF9;&#x5E94;&#x7684;&#x7ED3;&#x6784;&#x4F53;</span>
+    <span class="hljs-keyword">private</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">DNode</span>&lt;<span class="hljs-title">T</span>&gt; </span>{
+        <span class="hljs-keyword">public</span> DNode prev;
+        <span class="hljs-keyword">public</span> DNode next;
+        <span class="hljs-keyword">public</span> T value;
 
-        public DNode(T value, DNode prev, DNode next) {
-            this.value = value;
-            this.prev = prev;
-            this.next = next;
+        <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-title">DNode</span><span class="hljs-params">(T value, DNode prev, DNode next)</span> </span>{
+            <span class="hljs-keyword">this</span>.value = value;
+            <span class="hljs-keyword">this</span>.prev = prev;
+            <span class="hljs-keyword">this</span>.next = next;
         }
     }
 
-    // &#x6784;&#x9020;&#x51FD;&#x6570;
-    public DoubleLink() {
-        // &#x521B;&#x5EFA;&#x201C;&#x8868;&#x5934;&#x201D;&#x3002;&#x6CE8;&#x610F;&#xFF1A;&#x8868;&#x5934;&#x6CA1;&#x6709;&#x5B58;&#x50A8;&#x6570;&#x636E;&#xFF01;
-        mHead = new DNode&lt;T&gt;(null, null, null);
+    <span class="hljs-comment">// &#x6784;&#x9020;&#x51FD;&#x6570;</span>
+    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-title">DoubleLink</span><span class="hljs-params">()</span> </span>{
+        <span class="hljs-comment">// &#x521B;&#x5EFA;&#x201C;&#x8868;&#x5934;&#x201D;&#x3002;&#x6CE8;&#x610F;&#xFF1A;&#x8868;&#x5934;&#x6CA1;&#x6709;&#x5B58;&#x50A8;&#x6570;&#x636E;&#xFF01;</span>
+        mHead = <span class="hljs-keyword">new</span> DNode&lt;T&gt;(<span class="hljs-keyword">null</span>, <span class="hljs-keyword">null</span>, <span class="hljs-keyword">null</span>);
         mHead.prev = mHead.next = mHead;
-        // &#x521D;&#x59CB;&#x5316;&#x201C;&#x8282;&#x70B9;&#x4E2A;&#x6570;&#x201D;&#x4E3A;0
-        mCount = 0;
+        <span class="hljs-comment">// &#x521D;&#x59CB;&#x5316;&#x201C;&#x8282;&#x70B9;&#x4E2A;&#x6570;&#x201D;&#x4E3A;0</span>
+        mCount = <span class="hljs-number">0</span>;
     }
 
-    // &#x8FD4;&#x56DE;&#x8282;&#x70B9;&#x6570;&#x76EE;
-    public int size() {
-        return mCount;
+    <span class="hljs-comment">// &#x8FD4;&#x56DE;&#x8282;&#x70B9;&#x6570;&#x76EE;</span>
+    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">int</span> <span class="hljs-title">size</span><span class="hljs-params">()</span> </span>{
+        <span class="hljs-keyword">return</span> mCount;
     }
 
-    // &#x8FD4;&#x56DE;&#x94FE;&#x8868;&#x662F;&#x5426;&#x4E3A;&#x7A7A;
-    public boolean isEmpty() {
-        return mCount==0;
+    <span class="hljs-comment">// &#x8FD4;&#x56DE;&#x94FE;&#x8868;&#x662F;&#x5426;&#x4E3A;&#x7A7A;</span>
+    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">boolean</span> <span class="hljs-title">isEmpty</span><span class="hljs-params">()</span> </span>{
+        <span class="hljs-keyword">return</span> mCount==<span class="hljs-number">0</span>;
     }
 
-    // &#x83B7;&#x53D6;&#x7B2C;index&#x4F4D;&#x7F6E;&#x7684;&#x8282;&#x70B9;
-    private DNode&lt;T&gt; getNode(int index) {
-        if (index&lt;0 || index&gt;=mCount)
-            throw new IndexOutOfBoundsException();
+    <span class="hljs-comment">// &#x83B7;&#x53D6;&#x7B2C;index&#x4F4D;&#x7F6E;&#x7684;&#x8282;&#x70B9;</span>
+    <span class="hljs-function"><span class="hljs-keyword">private</span> DNode&lt;T&gt; <span class="hljs-title">getNode</span><span class="hljs-params">(<span class="hljs-keyword">int</span> index)</span> </span>{
+        <span class="hljs-keyword">if</span> (index&lt;<span class="hljs-number">0</span> || index&gt;=mCount)
+            <span class="hljs-keyword">throw</span> <span class="hljs-keyword">new</span> IndexOutOfBoundsException();
 
-        // &#x6B63;&#x5411;&#x67E5;&#x627E;
-        if (index &lt;= mCount/2) {
+        <span class="hljs-comment">// &#x6B63;&#x5411;&#x67E5;&#x627E;</span>
+        <span class="hljs-keyword">if</span> (index &lt;= mCount/<span class="hljs-number">2</span>) {
             DNode&lt;T&gt; node = mHead.next;
-            for (int i=0; i&lt;index; i++)
+            <span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> i=<span class="hljs-number">0</span>; i&lt;index; i++)
                 node = node.next;
 
-            return node;
+            <span class="hljs-keyword">return</span> node;
         }
 
-        // &#x53CD;&#x5411;&#x67E5;&#x627E;
+        <span class="hljs-comment">// &#x53CD;&#x5411;&#x67E5;&#x627E;</span>
         DNode&lt;T&gt; rnode = mHead.prev;
-        int rindex = mCount - index -1;
-        for (int j=0; j&lt;rindex; j++)
+        <span class="hljs-keyword">int</span> rindex = mCount - index -<span class="hljs-number">1</span>;
+        <span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> j=<span class="hljs-number">0</span>; j&lt;rindex; j++)
             rnode = rnode.prev;
 
-        return rnode;
+        <span class="hljs-keyword">return</span> rnode;
     }
 
-    // &#x83B7;&#x53D6;&#x7B2C;index&#x4F4D;&#x7F6E;&#x7684;&#x8282;&#x70B9;&#x7684;&#x503C;
-    public T get(int index) {
-        return getNode(index).value;
+    <span class="hljs-comment">// &#x83B7;&#x53D6;&#x7B2C;index&#x4F4D;&#x7F6E;&#x7684;&#x8282;&#x70B9;&#x7684;&#x503C;</span>
+    <span class="hljs-function"><span class="hljs-keyword">public</span> T <span class="hljs-title">get</span><span class="hljs-params">(<span class="hljs-keyword">int</span> index)</span> </span>{
+        <span class="hljs-keyword">return</span> getNode(index).value;
     }
 
-    // &#x83B7;&#x53D6;&#x7B2C;1&#x4E2A;&#x8282;&#x70B9;&#x7684;&#x503C;
-    public T getFirst() {
-        return getNode(0).value;
+    <span class="hljs-comment">// &#x83B7;&#x53D6;&#x7B2C;1&#x4E2A;&#x8282;&#x70B9;&#x7684;&#x503C;</span>
+    <span class="hljs-function"><span class="hljs-keyword">public</span> T <span class="hljs-title">getFirst</span><span class="hljs-params">()</span> </span>{
+        <span class="hljs-keyword">return</span> getNode(<span class="hljs-number">0</span>).value;
     }
 
-    // &#x83B7;&#x53D6;&#x6700;&#x540E;&#x4E00;&#x4E2A;&#x8282;&#x70B9;&#x7684;&#x503C;
-    public T getLast() {
-        return getNode(mCount-1).value;
+    <span class="hljs-comment">// &#x83B7;&#x53D6;&#x6700;&#x540E;&#x4E00;&#x4E2A;&#x8282;&#x70B9;&#x7684;&#x503C;</span>
+    <span class="hljs-function"><span class="hljs-keyword">public</span> T <span class="hljs-title">getLast</span><span class="hljs-params">()</span> </span>{
+        <span class="hljs-keyword">return</span> getNode(mCount-<span class="hljs-number">1</span>).value;
     }
 
-    // &#x5C06;&#x8282;&#x70B9;&#x63D2;&#x5165;&#x5230;&#x7B2C;index&#x4F4D;&#x7F6E;&#x4E4B;&#x524D;
-    public void insert(int index, T t) {
-        if (index==0) {
-            DNode&lt;T&gt; node = new DNode&lt;T&gt;(t, mHead, mHead.next);
+    <span class="hljs-comment">// &#x5C06;&#x8282;&#x70B9;&#x63D2;&#x5165;&#x5230;&#x7B2C;index&#x4F4D;&#x7F6E;&#x4E4B;&#x524D;</span>
+    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">insert</span><span class="hljs-params">(<span class="hljs-keyword">int</span> index, T t)</span> </span>{
+        <span class="hljs-keyword">if</span> (index==<span class="hljs-number">0</span>) {
+            DNode&lt;T&gt; node = <span class="hljs-keyword">new</span> DNode&lt;T&gt;(t, mHead, mHead.next);
             mHead.next.prev = node;
             mHead.next = node;
             mCount++;
-            return ;
+            <span class="hljs-keyword">return</span> ;
         }
 
         DNode&lt;T&gt; inode = getNode(index);
-        DNode&lt;T&gt; tnode = new DNode&lt;T&gt;(t, inode.prev, inode);
+        DNode&lt;T&gt; tnode = <span class="hljs-keyword">new</span> DNode&lt;T&gt;(t, inode.prev, inode);
         inode.prev.next = tnode;
         inode.next = tnode;
         mCount++;
-        return ;
+        <span class="hljs-keyword">return</span> ;
     }
 
-    // &#x5C06;&#x8282;&#x70B9;&#x63D2;&#x5165;&#x7B2C;&#x4E00;&#x4E2A;&#x8282;&#x70B9;&#x5904;&#x3002;
-    public void insertFirst(T t) {
-        insert(0, t);
+    <span class="hljs-comment">// &#x5C06;&#x8282;&#x70B9;&#x63D2;&#x5165;&#x7B2C;&#x4E00;&#x4E2A;&#x8282;&#x70B9;&#x5904;&#x3002;</span>
+    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">insertFirst</span><span class="hljs-params">(T t)</span> </span>{
+        insert(<span class="hljs-number">0</span>, t);
     }
 
-    // &#x5C06;&#x8282;&#x70B9;&#x8FFD;&#x52A0;&#x5230;&#x94FE;&#x8868;&#x7684;&#x672B;&#x5C3E;
-    public void appendLast(T t) {
-        DNode&lt;T&gt; node = new DNode&lt;T&gt;(t, mHead.prev, mHead);
+    <span class="hljs-comment">// &#x5C06;&#x8282;&#x70B9;&#x8FFD;&#x52A0;&#x5230;&#x94FE;&#x8868;&#x7684;&#x672B;&#x5C3E;</span>
+    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">appendLast</span><span class="hljs-params">(T t)</span> </span>{
+        DNode&lt;T&gt; node = <span class="hljs-keyword">new</span> DNode&lt;T&gt;(t, mHead.prev, mHead);
         mHead.prev.next = node;
         mHead.prev = node;
         mCount++;
     }
 
-    // &#x5220;&#x9664;index&#x4F4D;&#x7F6E;&#x7684;&#x8282;&#x70B9;
-    public void del(int index) {
+    <span class="hljs-comment">// &#x5220;&#x9664;index&#x4F4D;&#x7F6E;&#x7684;&#x8282;&#x70B9;</span>
+    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">del</span><span class="hljs-params">(<span class="hljs-keyword">int</span> index)</span> </span>{
         DNode&lt;T&gt; inode = getNode(index);
         inode.prev.next = inode.next;
         inode.next.prev = inode.prev;
-        inode = null;
+        inode = <span class="hljs-keyword">null</span>;
         mCount--;
     }
 
-    // &#x5220;&#x9664;&#x7B2C;&#x4E00;&#x4E2A;&#x8282;&#x70B9;
-    public void deleteFirst() {
-        del(0);
+    <span class="hljs-comment">// &#x5220;&#x9664;&#x7B2C;&#x4E00;&#x4E2A;&#x8282;&#x70B9;</span>
+    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">deleteFirst</span><span class="hljs-params">()</span> </span>{
+        del(<span class="hljs-number">0</span>);
     }
 
-    // &#x5220;&#x9664;&#x6700;&#x540E;&#x4E00;&#x4E2A;&#x8282;&#x70B9;
-    public void deleteLast() {
-        del(mCount-1);
+    <span class="hljs-comment">// &#x5220;&#x9664;&#x6700;&#x540E;&#x4E00;&#x4E2A;&#x8282;&#x70B9;</span>
+    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">deleteLast</span><span class="hljs-params">()</span> </span>{
+        del(mCount-<span class="hljs-number">1</span>);
     }
 }
 </code></pre>
@@ -3925,7 +3929,7 @@ public class DoubleLink&lt;T&gt; {
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"线性表","level":"4.1","depth":1,"next":{"title":"栈和队","level":"4.2","depth":1,"path":"data-structure/stack-queue.md","ref":"data-structure/stack-queue.md","articles":[]},"previous":{"title":"EventBus解析","level":"3.3.3","depth":2,"path":"android/open-source-framework/EventBus.md","ref":"android/open-source-framework/EventBus.md","articles":[]},"dir":"ltr"},"config":{"plugins":["-lunr","-search","-highlight","-livereload","search-plus@^0.0.11","simple-page-toc@^0.1.1","github@^2.0.0","github-buttons@2.1.0","edit-link@^2.0.2","advanced-emoji@^0.2.1","anchors@^0.7.1","include-codeblock@^3.0.2","ace@^0.3.2","emphasize@^1.1.0","katex@^1.1.3","splitter@^0.0.8","tbfed-pagefooter@^0.0.1","expandable-chapters-small@^0.1.7","sectionx@^3.1.0","local-video@^1.0.1","anchor-navigation-ex@0.1.8","favicon@^0.0.2"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"tbfed-pagefooter":{"copyright":"Copyright © ruheng.com 2017","modify_label":"该文件修订时间：","modify_format":"YYYY-MM-DD HH:mm:ss"},"emphasize":{},"ace":{},"github":{"url":"https://github.com/LRH1993/android_interview"},"simple-page-toc":{"maxDepth":3,"skipFirstH1":true},"splitter":{},"katex":{},"fontsettings":{"theme":"white","family":"sans","size":2},"sectionx":{"tag":"b"},"anchor-navigation-ex":{"isRewritePageTitle":false,"tocLevel1Icon":"fa fa-hand-o-right","tocLevel2Icon":"fa fa-hand-o-right","tocLevel3Icon":"fa fa-hand-o-right"},"favicon":{"shortcut":"favicon.ico","bookmark":"favicon.ico"},"github-buttons":{"repo":"LRH1993/android_interview","types":["star"],"size":"small"},"expandable-chapters-small":{},"local-video":{},"advanced-emoji":{"embedEmojis":false},"include-codeblock":{"check":false,"edit":true,"fixlang":false,"lang":"","template":"ace","theme":"chrome","unindent":true},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":true,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"edit-link":{"label":"Edit This Page","base":"https://github.com/LRH1993/android_interview/edit/master"},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":true},"anchors":{},"search-plus":{}},"theme":"default","author":"ruheng","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"Android校招面试指南","language":"zh-hans","output.name":"site","links":{"sidebar":{"Home":"http://lruheng.com/"}},"gitbook":"3.2.3","description":"Android面试必备，记录自己的秋招之路"},"file":{"path":"data-structure/linear-list.md","mtime":"2017-09-03T06:26:04.000Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2017-10-16T12:05:21.906Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"线性表","level":"4.1","depth":1,"next":{"title":"栈和队","level":"4.2","depth":1,"path":"data-structure/stack-queue.md","ref":"data-structure/stack-queue.md","articles":[]},"previous":{"title":"EventBus解析","level":"3.3.3","depth":2,"path":"android/open-source-framework/EventBus.md","ref":"android/open-source-framework/EventBus.md","articles":[]},"dir":"ltr"},"config":{"plugins":["-lunr","-search","-livereload","search-plus@^0.0.11","simple-page-toc@^0.1.1","github@^2.0.0","github-buttons@2.1.0","edit-link@^2.0.2","advanced-emoji@^0.2.1","anchors@^0.7.1","include-codeblock@^3.0.2","ace@^0.3.2","emphasize@^1.1.0","katex@^1.1.3","splitter@^0.0.8","tbfed-pagefooter@^0.0.1","expandable-chapters-small@^0.1.7","sectionx@^3.1.0","local-video@^1.0.1","anchor-navigation-ex@0.1.8","favicon@^0.0.2"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"tbfed-pagefooter":{"copyright":"Copyright © ruheng.com 2017","modify_label":"该文件修订时间：","modify_format":"YYYY-MM-DD HH:mm:ss"},"emphasize":{},"ace":{},"github":{"url":"https://github.com/LRH1993/android_interview"},"simple-page-toc":{"maxDepth":3,"skipFirstH1":true},"splitter":{},"katex":{},"fontsettings":{"theme":"white","family":"sans","size":2},"sectionx":{"tag":"b"},"highlight":{},"anchor-navigation-ex":{"isRewritePageTitle":false,"tocLevel1Icon":"fa fa-hand-o-right","tocLevel2Icon":"fa fa-hand-o-right","tocLevel3Icon":"fa fa-hand-o-right"},"favicon":{"shortcut":"favicon.ico","bookmark":"favicon.ico"},"github-buttons":{"repo":"LRH1993/android_interview","types":["star"],"size":"small"},"expandable-chapters-small":{},"local-video":{},"advanced-emoji":{"embedEmojis":false},"include-codeblock":{"check":false,"edit":false,"fixlang":false,"lang":"","template":"default","theme":"chrome","unindent":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":true,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"edit-link":{"label":"Edit This Page","base":"https://github.com/LRH1993/android_interview/edit/master"},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":true},"anchors":{},"search-plus":{}},"theme":"default","author":"ruheng","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"Android校招面试指南","language":"zh-hans","output.name":"site","links":{"sidebar":{"Home":"http://lruheng.com/"}},"gitbook":"3.2.3","description":"Android面试必备，记录自己的秋招之路"},"file":{"path":"data-structure/linear-list.md","mtime":"2017-09-03T06:26:04.000Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2017-10-16T13:00:43.989Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>

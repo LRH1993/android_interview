@@ -69,6 +69,10 @@
                 
             
                 
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
                 <link rel="stylesheet" href="../../gitbook/gitbook-plugin-fontsettings/website.css">
                 
             
@@ -3719,101 +3723,101 @@
 <p>&#x63A5;&#x4E0B;&#x6765;&#x5206;&#x6790;1&#x51FA;&#x73B0;&#x5728;&#x9664;&#x6700;&#x9AD8;&#x4F4D;&#x4E4B;&#x5916;&#x7684;&#x5176;&#x4ED6;&#x56DB;&#x4F4D;&#x6570;&#x4E2D;&#x7684;&#x60C5;&#x51B5;&#x3002;&#x4F8B;&#x5B50;&#x4E2D;01346&#xFF5E;21345 &#x8FD9;20000 &#x4E2A;&#x6570;&#x5B57;&#x4E2D;&#x540E;4 &#x4F4D;&#x4E2D;1 &#x51FA;&#x73B0;&#x7684;&#x6B21;&#x6570;&#x662F;2000 &#x6B21;&#x3002;&#x7531;&#x4E8E;&#x6700;&#x9AD8;&#x4F4D;&#x662F;2&#xFF0C;&#x6211;&#x4EEC;&#x53EF;&#x4EE5;&#x518D;&#x628A;1346&#xFF5E;21345 &#x5206;&#x6210;&#x4E24;&#x6BB5;&#xFF0C; 01346&#xFF5E;11345 &#x548C;11346&#xFF5E;21345 &#x3002;&#x6BCF;&#x4E00;&#x6BB5;&#x5269;&#x4E0B;&#x7684;4 &#x4F4D;&#x6570;&#x5B57;&#x4E2D;&#xFF0C; &#x9009;&#x62E9;&#x5176;&#x4E2D;&#x4E00;&#x4F4D;&#x662F;1 &#xFF0C;&#x5176;&#x4F59;&#x4E09;&#x4F4D;&#x53EF;&#x4EE5;&#x5728;0&#xFF5E;9 &#x8FD9;10 &#x4E2A;&#x6570;&#x5B57;&#x4E2D;&#x4EFB;&#x610F;&#x9009;&#x62E9;&#xFF0C;&#x56E0;&#x6B64;&#x6839;&#x636E;&#x6392;&#x5217;&#x7EC4;&#x5408;&#x539F;&#x5219;&#xFF0C;&#x603B;&#x5171;&#x51FA;&#x73B0;&#x7684;&#x6B21;&#x6570;&#x662F;2*10^3=2000&#xFF0C;&#x4E00;&#x5171;&#x6709;4&#x4F4D;&#x53EF;&#x4EE5;&#x9009;&#x62E9;&#xFF0C;&#x6240;&#x4EE5;&#x4E00;&#x5171;&#x662F;8000&#x3002;</p>
 <p>&#x81F3;&#x4E8E;&#x4ECE;1 &#x5230;1345 &#x4E2D;1 &#x51FA;&#x73B0;&#x7684;&#x6B21;&#x6570;&#xFF0C;&#x6211;&#x4EEC;&#x5C31;&#x53EF;&#x4EE5;&#x7528;&#x9012;&#x5F52;&#x6C42;&#x5F97;&#x4E86;&#x3002;&#x8FD9;&#x4E5F;&#x662F;&#x6211;&#x4EEC;&#x4E3A;&#x4EC0;&#x4E48;&#x8981;&#x628A;1&#xFF5E;21345 &#x5206;&#x6210;1&#xFF5E; 1345 &#x548C;1346&#xFF5E;21345 &#x4E24;&#x6BB5;&#x7684;&#x539F;&#x56E0;&#x3002;&#x56E0;&#x4E3A;&#x628A;21345 &#x7684;&#x6700;&#x9AD8;&#x4F4D;&#x53BB;&#x6389;&#x5C31;&#x53D8;&#x6210;1345 &#xFF0C;&#x4FBF;&#x4E8E;&#x6211;&#x4EEC;&#x91C7;&#x7528;&#x9012;&#x5F52;&#x7684;&#x601D;&#x8DEF;&#x3002;</p>
 <h2 id="&#x4E09;&#x3001;&#x89E3;&#x9898;&#x4EE3;&#x7801;"><a name="&#x4E09;&#x3001;&#x89E3;&#x9898;&#x4EE3;&#x7801;" class="anchor-navigation-ex-anchor" href="#&#x4E09;&#x3001;&#x89E3;&#x9898;&#x4EE3;&#x7801;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x4E09;&#x3001;&#x89E3;&#x9898;&#x4EE3;&#x7801;</h2>
-<pre><code class="lang-java">public class Test {
+<pre><code class="lang-java"><span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Test</span> </span>{
 
-    /**
+    <span class="hljs-comment">/**
      * &#x9898;&#x76EE;&#xFF1A;&#x8F93;&#x5165;&#x4E00;&#x4E2A;&#x6574;&#x6570;n&#x6C42;&#x4ECE;1 &#x5230;n&#x8FD9;n&#x4E2A;&#x6574;&#x6570;&#x7684;&#x5341;&#x8FDB;&#x5236;&#x8868;&#x793A;&#x4E2D;1 &#x51FA;&#x73B0;&#x7684;&#x6B21;&#x6570;&#x3002;
-     * @param n &#x6700;&#x5927;&#x7684;&#x6570;&#x5B57;
-     * @return 1-n&#x4E2D;&#xFF0C;&#x5404;&#x4E2A;&#x6570;&#x4F4D;1&#x51FA;&#x73B0;&#x7684;&#x6B21;&#x6570;
-     */
-    public static int numberOf1Between1AndN(int n) {
-        if (n &lt;= 0) {
-            return 0;
+     * <span class="hljs-doctag">@param</span> n &#x6700;&#x5927;&#x7684;&#x6570;&#x5B57;
+     * <span class="hljs-doctag">@return</span> 1-n&#x4E2D;&#xFF0C;&#x5404;&#x4E2A;&#x6570;&#x4F4D;1&#x51FA;&#x73B0;&#x7684;&#x6B21;&#x6570;
+     */</span>
+    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">int</span> <span class="hljs-title">numberOf1Between1AndN</span><span class="hljs-params">(<span class="hljs-keyword">int</span> n)</span> </span>{
+        <span class="hljs-keyword">if</span> (n &lt;= <span class="hljs-number">0</span>) {
+            <span class="hljs-keyword">return</span> <span class="hljs-number">0</span>;
         }
 
-        String value = n + &quot;&quot;;
-        int[] numbers = new int[value.length()];
+        String value = n + <span class="hljs-string">&quot;&quot;</span>;
+        <span class="hljs-keyword">int</span>[] numbers = <span class="hljs-keyword">new</span> <span class="hljs-keyword">int</span>[value.length()];
 
-        for (int i = 0; i &lt; numbers.length; i++) {
-            numbers[i] = value.charAt(i) - &apos;0&apos;;
+        <span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> i = <span class="hljs-number">0</span>; i &lt; numbers.length; i++) {
+            numbers[i] = value.charAt(i) - <span class="hljs-string">&apos;0&apos;</span>;
         }
 
-        return numberOf1(numbers, 0);
+        <span class="hljs-keyword">return</span> numberOf1(numbers, <span class="hljs-number">0</span>);
     }
 
-    /**
+    <span class="hljs-comment">/**
      * &#x6C42;0-numbers&#x8868;&#x7684;&#x6570;&#x5B57;&#x4E2D;&#x7684;1&#x7684;&#x4E2A;&#x6570;
      *
-     * @param numbers &#x6570;&#x5B57;&#xFF0C;&#x5982;{1, 2, 3, 4, 5}&#x8868;&#x793A;&#x6570;&#x5B57;12345
-     * @param curIdx  &#x5F53;&#x524D;&#x5904;&#x7406;&#x7684;&#x4F4D;&#x7F6E;
-     * @return 1&#x7684;&#x4E2A;&#x6570;
-     */
-    private static int numberOf1(int[] numbers, int curIdx) {
+     * <span class="hljs-doctag">@param</span> numbers &#x6570;&#x5B57;&#xFF0C;&#x5982;{1, 2, 3, 4, 5}&#x8868;&#x793A;&#x6570;&#x5B57;12345
+     * <span class="hljs-doctag">@param</span> curIdx  &#x5F53;&#x524D;&#x5904;&#x7406;&#x7684;&#x4F4D;&#x7F6E;
+     * <span class="hljs-doctag">@return</span> 1&#x7684;&#x4E2A;&#x6570;
+     */</span>
+    <span class="hljs-function"><span class="hljs-keyword">private</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">int</span> <span class="hljs-title">numberOf1</span><span class="hljs-params">(<span class="hljs-keyword">int</span>[] numbers, <span class="hljs-keyword">int</span> curIdx)</span> </span>{
 
-        if (numbers == null || curIdx &gt;= numbers.length || curIdx &lt; 0) {
-            return 0;
+        <span class="hljs-keyword">if</span> (numbers == <span class="hljs-keyword">null</span> || curIdx &gt;= numbers.length || curIdx &lt; <span class="hljs-number">0</span>) {
+            <span class="hljs-keyword">return</span> <span class="hljs-number">0</span>;
         }
-        // &#x5F85;&#x5904;&#x7406;&#x7684;&#x7B2C;&#x4E00;&#x4E2A;&#x6570;&#x5B57;
-        int first = numbers[curIdx];
+        <span class="hljs-comment">// &#x5F85;&#x5904;&#x7406;&#x7684;&#x7B2C;&#x4E00;&#x4E2A;&#x6570;&#x5B57;</span>
+        <span class="hljs-keyword">int</span> first = numbers[curIdx];
 
-        // &#x8981;&#x5904;&#x7406;&#x7684;&#x6570;&#x5B57;&#x7684;&#x4F4D;&#x6570;
-        int length = numbers.length - curIdx;
+        <span class="hljs-comment">// &#x8981;&#x5904;&#x7406;&#x7684;&#x6570;&#x5B57;&#x7684;&#x4F4D;&#x6570;</span>
+        <span class="hljs-keyword">int</span> length = numbers.length - curIdx;
 
-        // &#x5982;&#x679C;&#x53EA;&#x6709;&#x4E00;&#x4F4D;&#x4E14;&#x8FD9;&#x4E00;&#x4F4D;&#x662F;0&#x8FD4;&#x56DE;0
-        if (length == 1 &amp;&amp; first == 0) {
-            return 0;
-        }
-
-        // &#x5982;&#x679C;&#x53EA;&#x6709;&#x4E00;&#x4F4D;&#x4E14;&#x8FD9;&#x4E00;&#x4F4D;&#x4E0D;&#x662F;0&#x8FD4;&#x56DE;1
-        if (length == 1 &amp;&amp; first &gt; 0) {
-            return 1;
+        <span class="hljs-comment">// &#x5982;&#x679C;&#x53EA;&#x6709;&#x4E00;&#x4F4D;&#x4E14;&#x8FD9;&#x4E00;&#x4F4D;&#x662F;0&#x8FD4;&#x56DE;0</span>
+        <span class="hljs-keyword">if</span> (length == <span class="hljs-number">1</span> &amp;&amp; first == <span class="hljs-number">0</span>) {
+            <span class="hljs-keyword">return</span> <span class="hljs-number">0</span>;
         }
 
-        // &#x5047;&#x8BBE;numbers&#x662F;21345
-        // numFirstDigit&#x662F;&#x6570;&#x5B57;10000-19999&#x7684;&#x7B2C;&#x4E00;&#x4E2A;&#x4F4D;&#x4E2D;&#x7684;&#x6570;&#x76EE;
-        int numFirstDigit = 0;
-        // &#x5982;&#x679C;&#x6700;&#x9AD8;&#x4F4D;&#x4E0D;&#x662F;1&#xFF0C;&#x5982;21345&#xFF0C;&#x5728;[1236, 21345]&#x4E2D;&#xFF0C;&#x6700;&#x9AD8;&#x4F4D;1&#x51FA;&#x73B0;&#x7684;&#x53EA;&#x5728;[10000, 19999]&#x4E2D;&#xFF0C;&#x51FA;&#x73B0;1&#x7684;&#x6B21;&#x6570;&#x662F;10^4&#x65B9;&#x4E2A;
-        if (first &gt; 1) {
-            numFirstDigit = powerBase10(length - 1);
-        }
-        // &#x5982;&#x679C;&#x6700;&#x9AD8;&#x4F4D;&#x662F;1&#xFF0C;&#x5982;12345&#xFF0C;&#x5728;[2346, 12345]&#x4E2D;&#xFF0C;&#x6700;&#x9AD8;&#x4F4D;1&#x51FA;&#x73B0;&#x7684;&#x53EA;&#x5728;[10000, 12345]&#x4E2D;&#xFF0C;&#x603B;&#x8BA1;2345+1&#x4E2A;
-        else if (first == 1) {
-            numFirstDigit = atoi(numbers, curIdx + 1) + 1;
+        <span class="hljs-comment">// &#x5982;&#x679C;&#x53EA;&#x6709;&#x4E00;&#x4F4D;&#x4E14;&#x8FD9;&#x4E00;&#x4F4D;&#x4E0D;&#x662F;0&#x8FD4;&#x56DE;1</span>
+        <span class="hljs-keyword">if</span> (length == <span class="hljs-number">1</span> &amp;&amp; first &gt; <span class="hljs-number">0</span>) {
+            <span class="hljs-keyword">return</span> <span class="hljs-number">1</span>;
         }
 
-        // numOtherDigits&#xFF0C;&#x662F;[1346, 21345]&#x4E2D;&#xFF0C;&#x9664;&#x4E86;&#x7B2C;&#x4E00;&#x4F4D;&#x4E4B;&#x5916;&#xFF08;&#x4E0D;&#x770B;21345&#x4E2D;&#x7684;&#x7B2C;&#x4E00;&#x4F4D;2&#xFF09;&#x7684;&#x6570;&#x4F4D;&#x4E2D;&#x7684;1&#x7684;&#x6570;&#x76EE;
-        int numOtherDigits = first * (length - 1) * powerBase10(length - 2);
-        // numRecursive&#x662F;1-1234&#x4E2D;1&#x7684;&#x7684;&#x6570;&#x76EE;
-        int numRecursive = numberOf1(numbers, curIdx + 1);
+        <span class="hljs-comment">// &#x5047;&#x8BBE;numbers&#x662F;21345</span>
+        <span class="hljs-comment">// numFirstDigit&#x662F;&#x6570;&#x5B57;10000-19999&#x7684;&#x7B2C;&#x4E00;&#x4E2A;&#x4F4D;&#x4E2D;&#x7684;&#x6570;&#x76EE;</span>
+        <span class="hljs-keyword">int</span> numFirstDigit = <span class="hljs-number">0</span>;
+        <span class="hljs-comment">// &#x5982;&#x679C;&#x6700;&#x9AD8;&#x4F4D;&#x4E0D;&#x662F;1&#xFF0C;&#x5982;21345&#xFF0C;&#x5728;[1236, 21345]&#x4E2D;&#xFF0C;&#x6700;&#x9AD8;&#x4F4D;1&#x51FA;&#x73B0;&#x7684;&#x53EA;&#x5728;[10000, 19999]&#x4E2D;&#xFF0C;&#x51FA;&#x73B0;1&#x7684;&#x6B21;&#x6570;&#x662F;10^4&#x65B9;&#x4E2A;</span>
+        <span class="hljs-keyword">if</span> (first &gt; <span class="hljs-number">1</span>) {
+            numFirstDigit = powerBase10(length - <span class="hljs-number">1</span>);
+        }
+        <span class="hljs-comment">// &#x5982;&#x679C;&#x6700;&#x9AD8;&#x4F4D;&#x662F;1&#xFF0C;&#x5982;12345&#xFF0C;&#x5728;[2346, 12345]&#x4E2D;&#xFF0C;&#x6700;&#x9AD8;&#x4F4D;1&#x51FA;&#x73B0;&#x7684;&#x53EA;&#x5728;[10000, 12345]&#x4E2D;&#xFF0C;&#x603B;&#x8BA1;2345+1&#x4E2A;</span>
+        <span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span> (first == <span class="hljs-number">1</span>) {
+            numFirstDigit = atoi(numbers, curIdx + <span class="hljs-number">1</span>) + <span class="hljs-number">1</span>;
+        }
 
-        return numFirstDigit + numOtherDigits + numRecursive;
+        <span class="hljs-comment">// numOtherDigits&#xFF0C;&#x662F;[1346, 21345]&#x4E2D;&#xFF0C;&#x9664;&#x4E86;&#x7B2C;&#x4E00;&#x4F4D;&#x4E4B;&#x5916;&#xFF08;&#x4E0D;&#x770B;21345&#x4E2D;&#x7684;&#x7B2C;&#x4E00;&#x4F4D;2&#xFF09;&#x7684;&#x6570;&#x4F4D;&#x4E2D;&#x7684;1&#x7684;&#x6570;&#x76EE;</span>
+        <span class="hljs-keyword">int</span> numOtherDigits = first * (length - <span class="hljs-number">1</span>) * powerBase10(length - <span class="hljs-number">2</span>);
+        <span class="hljs-comment">// numRecursive&#x662F;1-1234&#x4E2D;1&#x7684;&#x7684;&#x6570;&#x76EE;</span>
+        <span class="hljs-keyword">int</span> numRecursive = numberOf1(numbers, curIdx + <span class="hljs-number">1</span>);
+
+        <span class="hljs-keyword">return</span> numFirstDigit + numOtherDigits + numRecursive;
     }
 
-    /**
+    <span class="hljs-comment">/**
      * &#x5C06;&#x6570;&#x5B57;&#x6570;&#x7EC4;&#x8F6C;&#x6362;&#x6210;&#x6570;&#x503C;&#xFF0C;&#x5982;{1, 2, 3, 4, 5}&#xFF0C;i = 2&#xFF0C;&#x7ED3;&#x679C;&#x662F;345
-     * @param numbers &#x6570;&#x7EC4;
-     * @param i &#x5F00;&#x59CB;&#x9ED1;&#x6C14;&#x7684;&#x4F4D;&#x7F6E;
-     * @return &#x8F6C;&#x6362;&#x7ED3;&#x679C;
-     */
-    private static int atoi(int[] numbers, int i) {
-        int result = 0;
-        for (int j = i; j &lt; numbers.length; j++) {
-            result = (result * 10 + numbers[j]);
+     * <span class="hljs-doctag">@param</span> numbers &#x6570;&#x7EC4;
+     * <span class="hljs-doctag">@param</span> i &#x5F00;&#x59CB;&#x9ED1;&#x6C14;&#x7684;&#x4F4D;&#x7F6E;
+     * <span class="hljs-doctag">@return</span> &#x8F6C;&#x6362;&#x7ED3;&#x679C;
+     */</span>
+    <span class="hljs-function"><span class="hljs-keyword">private</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">int</span> <span class="hljs-title">atoi</span><span class="hljs-params">(<span class="hljs-keyword">int</span>[] numbers, <span class="hljs-keyword">int</span> i)</span> </span>{
+        <span class="hljs-keyword">int</span> result = <span class="hljs-number">0</span>;
+        <span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> j = i; j &lt; numbers.length; j++) {
+            result = (result * <span class="hljs-number">10</span> + numbers[j]);
         }
-        return result;
+        <span class="hljs-keyword">return</span> result;
     }
 
-    /**
+    <span class="hljs-comment">/**
      * &#x6C42;10&#x7684;n&#x6B21;&#x65B9;&#xFF0C;&#x5047;&#x5B9A;n&#x4E0D;&#x4E3A;&#x8D1F;&#x6570;
-     * @param n &#x5E42;&#xFF0C;&#x975E;&#x8D1F;&#x6570;
-     * @return 10&#x7684;n&#x6B21;&#x65B9;
-     */
-    private static int powerBase10(int n) {
-        int result = 1;
-        for (int i = 0; i &lt; n; i++) {
-            result *= 10;
+     * <span class="hljs-doctag">@param</span> n &#x5E42;&#xFF0C;&#x975E;&#x8D1F;&#x6570;
+     * <span class="hljs-doctag">@return</span> 10&#x7684;n&#x6B21;&#x65B9;
+     */</span>
+    <span class="hljs-function"><span class="hljs-keyword">private</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">int</span> <span class="hljs-title">powerBase10</span><span class="hljs-params">(<span class="hljs-keyword">int</span> n)</span> </span>{
+        <span class="hljs-keyword">int</span> result = <span class="hljs-number">1</span>;
+        <span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> i = <span class="hljs-number">0</span>; i &lt; n; i++) {
+            result *= <span class="hljs-number">10</span>;
         }
-        return result;
+        <span class="hljs-keyword">return</span> result;
     }
 }
 </code></pre>
@@ -3862,7 +3866,7 @@
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"29.求从1到n的整数中1出现的次数","level":"5.1.29","depth":2,"next":{"title":"30.把数组排成最小的数","level":"5.1.30","depth":2,"path":"algorithm/For-offer/30.md","ref":"algorithm/For-offer/30.md","articles":[]},"previous":{"title":"28.连续子数组的最大和","level":"5.1.28","depth":2,"path":"algorithm/For-offer/28.md","ref":"algorithm/For-offer/28.md","articles":[]},"dir":"ltr"},"config":{"plugins":["-lunr","-search","-highlight","-livereload","search-plus@^0.0.11","simple-page-toc@^0.1.1","github@^2.0.0","github-buttons@2.1.0","edit-link@^2.0.2","advanced-emoji@^0.2.1","anchors@^0.7.1","include-codeblock@^3.0.2","ace@^0.3.2","emphasize@^1.1.0","katex@^1.1.3","splitter@^0.0.8","tbfed-pagefooter@^0.0.1","expandable-chapters-small@^0.1.7","sectionx@^3.1.0","local-video@^1.0.1","anchor-navigation-ex@0.1.8","favicon@^0.0.2"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"tbfed-pagefooter":{"copyright":"Copyright © ruheng.com 2017","modify_label":"该文件修订时间：","modify_format":"YYYY-MM-DD HH:mm:ss"},"emphasize":{},"ace":{},"github":{"url":"https://github.com/LRH1993/android_interview"},"simple-page-toc":{"maxDepth":3,"skipFirstH1":true},"splitter":{},"katex":{},"fontsettings":{"theme":"white","family":"sans","size":2},"sectionx":{"tag":"b"},"anchor-navigation-ex":{"isRewritePageTitle":false,"tocLevel1Icon":"fa fa-hand-o-right","tocLevel2Icon":"fa fa-hand-o-right","tocLevel3Icon":"fa fa-hand-o-right"},"favicon":{"shortcut":"favicon.ico","bookmark":"favicon.ico"},"github-buttons":{"repo":"LRH1993/android_interview","types":["star"],"size":"small"},"expandable-chapters-small":{},"local-video":{},"advanced-emoji":{"embedEmojis":false},"include-codeblock":{"check":false,"edit":true,"fixlang":false,"lang":"","template":"ace","theme":"chrome","unindent":true},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":true,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"edit-link":{"label":"Edit This Page","base":"https://github.com/LRH1993/android_interview/edit/master"},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":true},"anchors":{},"search-plus":{}},"theme":"default","author":"ruheng","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"Android校招面试指南","language":"zh-hans","output.name":"site","links":{"sidebar":{"Home":"http://lruheng.com/"}},"gitbook":"3.2.3","description":"Android面试必备，记录自己的秋招之路"},"file":{"path":"algorithm/For-offer/29.md","mtime":"2017-08-27T07:06:40.000Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2017-10-16T12:05:21.906Z"},"basePath":"../..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"29.求从1到n的整数中1出现的次数","level":"5.1.29","depth":2,"next":{"title":"30.把数组排成最小的数","level":"5.1.30","depth":2,"path":"algorithm/For-offer/30.md","ref":"algorithm/For-offer/30.md","articles":[]},"previous":{"title":"28.连续子数组的最大和","level":"5.1.28","depth":2,"path":"algorithm/For-offer/28.md","ref":"algorithm/For-offer/28.md","articles":[]},"dir":"ltr"},"config":{"plugins":["-lunr","-search","-livereload","search-plus@^0.0.11","simple-page-toc@^0.1.1","github@^2.0.0","github-buttons@2.1.0","edit-link@^2.0.2","advanced-emoji@^0.2.1","anchors@^0.7.1","include-codeblock@^3.0.2","ace@^0.3.2","emphasize@^1.1.0","katex@^1.1.3","splitter@^0.0.8","tbfed-pagefooter@^0.0.1","expandable-chapters-small@^0.1.7","sectionx@^3.1.0","local-video@^1.0.1","anchor-navigation-ex@0.1.8","favicon@^0.0.2"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"tbfed-pagefooter":{"copyright":"Copyright © ruheng.com 2017","modify_label":"该文件修订时间：","modify_format":"YYYY-MM-DD HH:mm:ss"},"emphasize":{},"ace":{},"github":{"url":"https://github.com/LRH1993/android_interview"},"simple-page-toc":{"maxDepth":3,"skipFirstH1":true},"splitter":{},"katex":{},"fontsettings":{"theme":"white","family":"sans","size":2},"sectionx":{"tag":"b"},"highlight":{},"anchor-navigation-ex":{"isRewritePageTitle":false,"tocLevel1Icon":"fa fa-hand-o-right","tocLevel2Icon":"fa fa-hand-o-right","tocLevel3Icon":"fa fa-hand-o-right"},"favicon":{"shortcut":"favicon.ico","bookmark":"favicon.ico"},"github-buttons":{"repo":"LRH1993/android_interview","types":["star"],"size":"small"},"expandable-chapters-small":{},"local-video":{},"advanced-emoji":{"embedEmojis":false},"include-codeblock":{"check":false,"edit":false,"fixlang":false,"lang":"","template":"default","theme":"chrome","unindent":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":true,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"edit-link":{"label":"Edit This Page","base":"https://github.com/LRH1993/android_interview/edit/master"},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":true},"anchors":{},"search-plus":{}},"theme":"default","author":"ruheng","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"Android校招面试指南","language":"zh-hans","output.name":"site","links":{"sidebar":{"Home":"http://lruheng.com/"}},"gitbook":"3.2.3","description":"Android面试必备，记录自己的秋招之路"},"file":{"path":"algorithm/For-offer/29.md","mtime":"2017-08-27T07:06:40.000Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2017-10-16T13:00:43.989Z"},"basePath":"../..","book":{"language":""}});
         });
     </script>
 </div>

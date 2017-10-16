@@ -69,6 +69,10 @@
                 
             
                 
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
                 <link rel="stylesheet" href="../../gitbook/gitbook-plugin-fontsettings/website.css">
                 
             
@@ -3726,15 +3730,15 @@
 <h2 id="&#x4E8C;&#x3001;activity&#x7684;&#x652F;&#x6301;"><a name="&#x4E8C;&#x3001;activity&#x7684;&#x652F;&#x6301;" class="anchor-navigation-ex-anchor" href="#&#x4E8C;&#x3001;activity&#x7684;&#x652F;&#x6301;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x4E8C;&#x3001;Activity&#x7684;&#x652F;&#x6301;</h2>
 <p>&#x8FD9;&#x91CC;&#x5C31;&#x4E0D;&#x6309;&#x7167;&#x67D0;&#x4E2A;&#x6D41;&#x7A0B;&#x4E00;&#x884C;&#x884C;&#x4EE3;&#x7801;&#x5F80;&#x4E0B;&#x8BFB;&#x4E86;&#xFF0C;&#x9488;&#x5BF9;&#x6027;&#x7684;&#x8BB2;&#x4E00;&#x4E9B;&#x5173;&#x952E;&#x6D41;&#x7A0B;&#xFF0C;&#x53EF;&#x80FD;&#x66F4;&#x597D;&#x9605;&#x8BFB;&#x4E00;&#x4E9B;&#x3002;</p>
 <p>&#x9996;&#x5148;&#x770B;&#x4E00;&#x6BB5;&#x542F;&#x52A8;&#x63D2;&#x4EF6;Activity&#x7684;&#x4EE3;&#x7801;&#xFF1A;</p>
-<pre><code class="lang-java">final String pkg = &quot;com.didi.virtualapk.demo&quot;;
-if (PluginManager.getInstance(this).getLoadedPlugin(pkg) == null) {
-    Toast.makeText(this, &quot;plugin [com.didi.virtualapk.demo] not loaded&quot;, Toast.LENGTH_SHORT).show();
-    return;
+<pre><code class="lang-java"><span class="hljs-keyword">final</span> String pkg = <span class="hljs-string">&quot;com.didi.virtualapk.demo&quot;</span>;
+<span class="hljs-keyword">if</span> (PluginManager.getInstance(<span class="hljs-keyword">this</span>).getLoadedPlugin(pkg) == <span class="hljs-keyword">null</span>) {
+    Toast.makeText(<span class="hljs-keyword">this</span>, <span class="hljs-string">&quot;plugin [com.didi.virtualapk.demo] not loaded&quot;</span>, Toast.LENGTH_SHORT).show();
+    <span class="hljs-keyword">return</span>;
 }
 
-// test Activity and Service
-Intent intent = new Intent();
-intent.setClassName(pkg, &quot;com.didi.virtualapk.demo.aidl.BookManagerActivity&quot;);
+<span class="hljs-comment">// test Activity and Service</span>
+Intent intent = <span class="hljs-keyword">new</span> Intent();
+intent.setClassName(pkg, <span class="hljs-string">&quot;com.didi.virtualapk.demo.aidl.BookManagerActivity&quot;</span>);
 startActivity(intent);
 </code></pre>
 <p>&#x53EF;&#x4EE5;&#x770B;&#x5230;&#x4F18;&#x5148;&#x6839;&#x636E;&#x5305;&#x540D;&#x5224;&#x65AD;&#x8BE5;&#x63D2;&#x4EF6;&#x662F;&#x5426;&#x5DF2;&#x7ECF;&#x52A0;&#x8F7D;&#xFF0C;&#x6240;&#x4EE5;&#x5728;&#x63D2;&#x4EF6;&#x4F7F;&#x7528;&#x524D;&#x5176;&#x5B9E;&#x8FD8;&#x9700;&#x8981;&#x8C03;&#x7528;</p>
@@ -3753,20 +3757,20 @@ startActivity(intent);
 <p>&#x800C;Activity&#x662F;&#x5426;&#x5B58;&#x5728;&#x7684;&#x6821;&#x9A8C;&#x662F;&#x53D1;&#x751F;&#x5728;AMS&#x7AEF;&#xFF0C;&#x6240;&#x4EE5;&#x6211;&#x4EEC;&#x5728;&#x4E8E;AMS&#x4EA4;&#x4E92;&#x524D;&#xFF0C;&#x63D0;&#x524D;&#x5C06;Activity&#x7684;ComponentName&#x8FDB;&#x884C;&#x66FF;&#x6362;&#x4E3A;&#x5360;&#x5751;&#x7684;&#x540D;&#x5B57;&#x4E0D;&#x5C31;&#x597D;&#x4E86;&#x4E48;&#xFF1F;</p>
 <p>&#x8FD9;&#x91CC;&#x53EF;&#x4EE5;&#x9009;&#x62E9;hook Instrumentation&#xFF0C;&#x6216;&#x8005;ActivityManagerProxy&#x90FD;&#x53EF;&#x4EE5;&#x8FBE;&#x5230;&#x76EE;&#x6807;&#xFF0C;VirtualAPK&#x9009;&#x62E9;&#x4E86;hook Instrumentation.</p>
 <p>&#x6253;&#x5F00;<code>PluginManager</code>&#x53EF;&#x4EE5;&#x770B;&#x5230;&#x5982;&#x4E0B;&#x65B9;&#x6CD5;&#xFF1A;</p>
-<pre><code class="lang-java">private void hookInstrumentationAndHandler() {
-    try {
-        Instrumentation baseInstrumentation = ReflectUtil.getInstrumentation(this.mContext);
-        if (baseInstrumentation.getClass().getName().contains(&quot;lbe&quot;)) {
-            // reject executing in paralell space, for example, lbe.
-            System.exit(0);
+<pre><code class="lang-java"><span class="hljs-function"><span class="hljs-keyword">private</span> <span class="hljs-keyword">void</span> <span class="hljs-title">hookInstrumentationAndHandler</span><span class="hljs-params">()</span> </span>{
+    <span class="hljs-keyword">try</span> {
+        Instrumentation baseInstrumentation = ReflectUtil.getInstrumentation(<span class="hljs-keyword">this</span>.mContext);
+        <span class="hljs-keyword">if</span> (baseInstrumentation.getClass().getName().contains(<span class="hljs-string">&quot;lbe&quot;</span>)) {
+            <span class="hljs-comment">// reject executing in paralell space, for example, lbe.</span>
+            System.exit(<span class="hljs-number">0</span>);
         }
 
-        final VAInstrumentation instrumentation = new VAInstrumentation(this, baseInstrumentation);
-        Object activityThread = ReflectUtil.getActivityThread(this.mContext);
+        <span class="hljs-keyword">final</span> VAInstrumentation instrumentation = <span class="hljs-keyword">new</span> VAInstrumentation(<span class="hljs-keyword">this</span>, baseInstrumentation);
+        Object activityThread = ReflectUtil.getActivityThread(<span class="hljs-keyword">this</span>.mContext);
         ReflectUtil.setInstrumentation(activityThread, instrumentation);
-        ReflectUtil.setHandlerCallback(this.mContext, instrumentation);
-        this.mInstrumentation = instrumentation;
-    } catch (Exception e) {
+        ReflectUtil.setHandlerCallback(<span class="hljs-keyword">this</span>.mContext, instrumentation);
+        <span class="hljs-keyword">this</span>.mInstrumentation = instrumentation;
+    } <span class="hljs-keyword">catch</span> (Exception e) {
         e.printStackTrace();
     }
 }
@@ -3776,38 +3780,38 @@ startActivity(intent);
 <p>&#x8FD9;&#x6837;&#x5C31;&#x5B8C;&#x6210;&#x4E86;hook Instrumentation,&#x4E4B;&#x540E;&#x8C03;&#x7528;Instrumentation&#x7684;&#x4EFB;&#x4F55;&#x65B9;&#x6CD5;&#xFF0C;&#x90FD;&#x53EF;&#x4EE5;&#x5728;VAInstrumentation&#x8FDB;&#x884C;&#x62E6;&#x622A;&#x5E76;&#x505A;&#x4E00;&#x4E9B;&#x4FEE;&#x6539;&#x3002;</p>
 <p>&#x8FD9;&#x91CC;&#x8FD8;hook&#x4E86;ActivityThread&#x7684;mH&#x7C7B;&#x7684;Callback&#xFF0C;&#x6682;&#x4E0D;&#x8D58;&#x8FF0;&#x3002;</p>
 <p>&#x521A;&#x624D;&#x8BF4;&#x4E86;&#xFF0C;&#x53EF;&#x4EE5;&#x901A;&#x8FC7;Instrumentation&#x7684;execStartActivity&#x65B9;&#x6CD5;&#x8FDB;&#x884C;&#x5077;&#x6881;&#x6362;&#x67F1;&#xFF0C;&#x6240;&#x4EE5;&#x6211;&#x4EEC;&#x76F4;&#x63A5;&#x770B;&#x5BF9;&#x5E94;&#x7684;&#x65B9;&#x6CD5;&#xFF1A;</p>
-<pre><code class="lang-java">public ActivityResult execStartActivity(
+<pre><code class="lang-java"><span class="hljs-function"><span class="hljs-keyword">public</span> ActivityResult <span class="hljs-title">execStartActivity</span><span class="hljs-params">(
         Context who, IBinder contextThread, IBinder token, Activity target,
-        Intent intent, int requestCode, Bundle options) {
+        Intent intent, <span class="hljs-keyword">int</span> requestCode, Bundle options)</span> </span>{
     mPluginManager.getComponentsHandler().transformIntentToExplicitAsNeeded(intent);
-    // null component is an implicitly intent
-    if (intent.getComponent() != null) {
-        Log.i(TAG, String.format(&quot;execStartActivity[%s : %s]&quot;, intent.getComponent().getPackageName(),
+    <span class="hljs-comment">// null component is an implicitly intent</span>
+    <span class="hljs-keyword">if</span> (intent.getComponent() != <span class="hljs-keyword">null</span>) {
+        Log.i(TAG, String.format(<span class="hljs-string">&quot;execStartActivity[%s : %s]&quot;</span>, intent.getComponent().getPackageName(),
                 intent.getComponent().getClassName()));
-        // resolve intent with Stub Activity if needed
-        this.mPluginManager.getComponentsHandler().markIntentIfNeeded(intent);
+        <span class="hljs-comment">// resolve intent with Stub Activity if needed</span>
+        <span class="hljs-keyword">this</span>.mPluginManager.getComponentsHandler().markIntentIfNeeded(intent);
     }
 
     ActivityResult result = realExecStartActivity(who, contextThread, token, target,
                 intent, requestCode, options);
 
-    return result;
+    <span class="hljs-keyword">return</span> result;
 
 }
 </code></pre>
 <p>&#x9996;&#x5148;&#x8C03;&#x7528;transformIntentToExplicitAsNeeded&#xFF0C;&#x8FD9;&#x4E2A;&#x4E3B;&#x8981;&#x662F;&#x5F53;component&#x4E3A;null&#x65F6;&#xFF0C;&#x6839;&#x636E;&#x542F;&#x52A8;Activity&#x65F6;&#xFF0C;&#x914D;&#x7F6E;&#x7684;action&#xFF0C;data,category&#x7B49;&#x53BB;&#x5DF2;&#x52A0;&#x8F7D;&#x7684;plugin&#x4E2D;&#x5339;&#x914D;&#x5230;&#x786E;&#x5B9A;&#x7684;Activity&#x7684;&#x3002;</p>
 <p>&#x672C;&#x4F8B;&#x6211;&#x4EEC;&#x7684;&#x5199;&#x6CD5;ComponentName&#x80AF;&#x5B9A;&#x4E0D;&#x4E3A;null&#xFF0C;&#x6240;&#x4EE5;&#x76F4;&#x63A5;&#x770B;<code>markIntentIfNeeded()</code>&#x65B9;&#x6CD5;&#xFF1A;</p>
-<pre><code class="lang-java">public void markIntentIfNeeded(Intent intent) {
-    if (intent.getComponent() == null) {
-        return;
+<pre><code class="lang-java"><span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">markIntentIfNeeded</span><span class="hljs-params">(Intent intent)</span> </span>{
+    <span class="hljs-keyword">if</span> (intent.getComponent() == <span class="hljs-keyword">null</span>) {
+        <span class="hljs-keyword">return</span>;
     }
 
     String targetPackageName = intent.getComponent().getPackageName();
     String targetClassName = intent.getComponent().getClassName();
-    // search map and return specific launchmode stub activity
-    if (!targetPackageName.equals(mContext.getPackageName())
-            &amp;&amp; mPluginManager.getLoadedPlugin(targetPackageName) != null) {
-        intent.putExtra(Constants.KEY_IS_PLUGIN, true);
+    <span class="hljs-comment">// search map and return specific launchmode stub activity</span>
+    <span class="hljs-keyword">if</span> (!targetPackageName.equals(mContext.getPackageName())
+            &amp;&amp; mPluginManager.getLoadedPlugin(targetPackageName) != <span class="hljs-keyword">null</span>) {
+        intent.putExtra(Constants.KEY_IS_PLUGIN, <span class="hljs-keyword">true</span>);
         intent.putExtra(Constants.KEY_TARGET_PACKAGE, targetPackageName);
         intent.putExtra(Constants.KEY_TARGET_ACTIVITY, targetClassName);
         dispatchStubActivity(intent);
@@ -3816,59 +3820,59 @@ startActivity(intent);
 </code></pre>
 <p>&#x5728;&#x8BE5;&#x65B9;&#x6CD5;&#x4E2D;&#x5224;&#x65AD;&#x5982;&#x679C;&#x542F;&#x52A8;&#x7684;&#x662F;&#x63D2;&#x4EF6;&#x4E2D;&#x7C7B;&#xFF0C;&#x5219;&#x5C06;&#x542F;&#x52A8;&#x7684;&#x5305;&#x540D;&#x548C;Activity&#x7C7B;&#x540D;&#x5B58;&#x5230;&#x4E86;intent&#x4E2D;&#xFF0C;&#x53EF;&#x4EE5;&#x770B;&#x5230;&#x8FD9;&#x91CC;&#x5B58;&#x50A8;&#x660E;&#x663E;&#x662F;&#x4E3A;&#x4E86;&#x540E;&#x9762;&#x6062;&#x590D;&#x7528;&#x7684;&#x3002;</p>
 <p>&#x7136;&#x540E;&#x8C03;&#x7528;&#x4E86;<code>dispatchStubActivity(intent)</code></p>
-<pre><code class="lang-java">private void dispatchStubActivity(Intent intent) {
+<pre><code class="lang-java"><span class="hljs-function"><span class="hljs-keyword">private</span> <span class="hljs-keyword">void</span> <span class="hljs-title">dispatchStubActivity</span><span class="hljs-params">(Intent intent)</span> </span>{
     ComponentName component = intent.getComponent();
     String targetClassName = intent.getComponent().getClassName();
     LoadedPlugin loadedPlugin = mPluginManager.getLoadedPlugin(intent);
     ActivityInfo info = loadedPlugin.getActivityInfo(component);
-    if (info == null) {
-        throw new RuntimeException(&quot;can not find &quot; + component);
+    <span class="hljs-keyword">if</span> (info == <span class="hljs-keyword">null</span>) {
+        <span class="hljs-keyword">throw</span> <span class="hljs-keyword">new</span> RuntimeException(<span class="hljs-string">&quot;can not find &quot;</span> + component);
     }
-    int launchMode = info.launchMode;
+    <span class="hljs-keyword">int</span> launchMode = info.launchMode;
     Resources.Theme themeObj = loadedPlugin.getResources().newTheme();
-    themeObj.applyStyle(info.theme, true);
+    themeObj.applyStyle(info.theme, <span class="hljs-keyword">true</span>);
     String stubActivity = mStubActivityInfo.getStubActivity(targetClassName, launchMode, themeObj);
-    Log.i(TAG, String.format(&quot;dispatchStubActivity,[%s -&gt; %s]&quot;, targetClassName, stubActivity));
+    Log.i(TAG, String.format(<span class="hljs-string">&quot;dispatchStubActivity,[%s -&gt; %s]&quot;</span>, targetClassName, stubActivity));
     intent.setClassName(mContext, stubActivity);
 }
 </code></pre>
 <p>&#x53EF;&#x4EE5;&#x76F4;&#x63A5;&#x770B;&#x6700;&#x540E;&#x4E00;&#x884C;&#xFF0C;intent&#x901A;&#x8FC7;setClassName&#x66FF;&#x6362;&#x542F;&#x52A8;&#x7684;&#x76EE;&#x6807;Activity&#x4E86;&#xFF01;&#x8FD9;&#x4E2A;stubActivity&#x662F;&#x7531;<code>mStubActivityInfo.getStubActivity(targetClassName, launchMode, themeObj)</code>&#x8FD4;&#x56DE;&#x3002;</p>
 <p>&#x5F88;&#x660E;&#x663E;&#xFF0C;&#x4F20;&#x5165;&#x7684;&#x53C2;&#x6570;launchMode&#x3001;themeObj&#x90FD;&#x662F;&#x51B3;&#x5B9A;&#x9009;&#x62E9;&#x54EA;&#x4E00;&#x4E2A;&#x5360;&#x5751;&#x7C7B;&#x7528;&#x7684;&#x3002;</p>
-<pre><code class="lang-java">public String getStubActivity(String className, int launchMode, Theme theme) {
+<pre><code class="lang-java"><span class="hljs-function"><span class="hljs-keyword">public</span> String <span class="hljs-title">getStubActivity</span><span class="hljs-params">(String className, <span class="hljs-keyword">int</span> launchMode, Theme theme)</span> </span>{
     String stubActivity= mCachedStubActivity.get(className);
-    if (stubActivity != null) {
-        return stubActivity;
+    <span class="hljs-keyword">if</span> (stubActivity != <span class="hljs-keyword">null</span>) {
+        <span class="hljs-keyword">return</span> stubActivity;
     }
 
-    TypedArray array = theme.obtainStyledAttributes(new int[]{
+    TypedArray array = theme.obtainStyledAttributes(<span class="hljs-keyword">new</span> <span class="hljs-keyword">int</span>[]{
             android.R.attr.windowIsTranslucent,
             android.R.attr.windowBackground
     });
-    boolean windowIsTranslucent = array.getBoolean(0, false);
+    <span class="hljs-keyword">boolean</span> windowIsTranslucent = array.getBoolean(<span class="hljs-number">0</span>, <span class="hljs-keyword">false</span>);
     array.recycle();
-    if (Constants.DEBUG) {
-        Log.d(&quot;StubActivityInfo&quot;, &quot;getStubActivity, is transparent theme ? &quot; + windowIsTranslucent);
+    <span class="hljs-keyword">if</span> (Constants.DEBUG) {
+        Log.d(<span class="hljs-string">&quot;StubActivityInfo&quot;</span>, <span class="hljs-string">&quot;getStubActivity, is transparent theme ? &quot;</span> + windowIsTranslucent);
     }
     stubActivity = String.format(STUB_ACTIVITY_STANDARD, corePackage, usedStandardStubActivity);
-    switch (launchMode) {
-        case ActivityInfo.LAUNCH_MULTIPLE: {
+    <span class="hljs-keyword">switch</span> (launchMode) {
+        <span class="hljs-keyword">case</span> ActivityInfo.LAUNCH_MULTIPLE: {
             stubActivity = String.format(STUB_ACTIVITY_STANDARD, corePackage, usedStandardStubActivity);
-            if (windowIsTranslucent) {
-                stubActivity = String.format(STUB_ACTIVITY_STANDARD, corePackage, 2);
+            <span class="hljs-keyword">if</span> (windowIsTranslucent) {
+                stubActivity = String.format(STUB_ACTIVITY_STANDARD, corePackage, <span class="hljs-number">2</span>);
             }
-            break;
+            <span class="hljs-keyword">break</span>;
         }
-        case ActivityInfo.LAUNCH_SINGLE_TOP: {
-            usedSingleTopStubActivity = usedSingleTopStubActivity % MAX_COUNT_SINGLETOP + 1;
+        <span class="hljs-keyword">case</span> ActivityInfo.LAUNCH_SINGLE_TOP: {
+            usedSingleTopStubActivity = usedSingleTopStubActivity % MAX_COUNT_SINGLETOP + <span class="hljs-number">1</span>;
             stubActivity = String.format(STUB_ACTIVITY_SINGLETOP, corePackage, usedSingleTopStubActivity);
-            break;
+            <span class="hljs-keyword">break</span>;
         }
 
-       // &#x7701;&#x7565;LAUNCH_SINGLE_TASK&#xFF0C;LAUNCH_SINGLE_INSTANCE
+       <span class="hljs-comment">// &#x7701;&#x7565;LAUNCH_SINGLE_TASK&#xFF0C;LAUNCH_SINGLE_INSTANCE</span>
     }
 
     mCachedStubActivity.put(className, stubActivity);
-    return stubActivity;
+    <span class="hljs-keyword">return</span> stubActivity;
 }
 </code></pre>
 <p>&#x53EF;&#x4EE5;&#x770B;&#x5230;&#x4E3B;&#x8981;&#x5C31;&#x662F;&#x6839;&#x636E;launchMode&#x53BB;&#x9009;&#x62E9;&#x4E0D;&#x540C;&#x7684;&#x5360;&#x5751;&#x7C7B;&#x3002; 
@@ -3878,15 +3882,15 @@ startActivity(intent);
 <p><code>STUB_ACTIVITY_STANDARD&#x503C;&#x4E3A;&#xFF1A;&quot;%s.A$%d&quot;</code>, corePackage&#x503C;&#x4E3A;<code>com.didi.virtualapk.core</code>&#xFF0C;usedStandardStubActivity&#x4E3A;&#x6570;&#x5B57;&#x503C;&#x3002;</p>
 <p>&#x6240;&#x4EE5;&#x6700;&#x7EC8;&#x7C7B;&#x540D;&#x683C;&#x5F0F;&#x4E3A;&#xFF1A;<code>com.didi.virtualapk.core.A$1</code></p>
 <p>&#x518D;&#x770B;&#x4E00;&#x773C;&#xFF0C;CoreLibrary&#x4E0B;&#x7684;AndroidManifest&#x4E2D;&#xFF1A;</p>
-<pre><code class="lang-java">&lt;activity android:name=&quot;.A$1&quot; android:launchMode=&quot;standard&quot;/&gt;
-&lt;activity android:name=&quot;.A$2&quot; android:launchMode=&quot;standard&quot;
-    android:theme=&quot;@android:style/Theme.Translucent&quot; /&gt;
+<pre><code class="lang-java">&lt;activity android:name=<span class="hljs-string">&quot;.A$1&quot;</span> android:launchMode=<span class="hljs-string">&quot;standard&quot;</span>/&gt;
+&lt;activity android:name=<span class="hljs-string">&quot;.A$2&quot;</span> android:launchMode=<span class="hljs-string">&quot;standard&quot;</span>
+    android:theme=<span class="hljs-string">&quot;@android:style/Theme.Translucent&quot;</span> /&gt;
 
 &lt;!-- Stub Activities --&gt;
-&lt;activity android:name=&quot;.B$1&quot; android:launchMode=&quot;singleTop&quot;/&gt;
-&lt;activity android:name=&quot;.B$2&quot; android:launchMode=&quot;singleTop&quot;/&gt;
-&lt;activity android:name=&quot;.B$3&quot; android:launchMode=&quot;singleTop&quot;/&gt;
-// &#x7701;&#x7565;&#x5F88;&#x591A;...    123456789123456789
+&lt;activity android:name=<span class="hljs-string">&quot;.B$1&quot;</span> android:launchMode=<span class="hljs-string">&quot;singleTop&quot;</span>/&gt;
+&lt;activity android:name=<span class="hljs-string">&quot;.B$2&quot;</span> android:launchMode=<span class="hljs-string">&quot;singleTop&quot;</span>/&gt;
+&lt;activity android:name=<span class="hljs-string">&quot;.B$3&quot;</span> android:launchMode=<span class="hljs-string">&quot;singleTop&quot;</span>/&gt;
+<span class="hljs-comment">// &#x7701;&#x7565;&#x5F88;&#x591A;...    123456789123456789</span>
 </code></pre>
 <p>&#x5C31;&#x5B8C;&#x5168;&#x660E;&#x767D;&#x4E86;&#x3002;</p>
 <p>&#x5230;&#x8FD9;&#x91CC;&#x5C31;&#x53EF;&#x4EE5;&#x770B;&#x5230;&#xFF0C;&#x66FF;&#x6362;&#x6211;&#x4EEC;&#x542F;&#x52A8;&#x7684;Activity&#x4E3A;&#x5360;&#x5751;Activity&#xFF0C;&#x5C06;&#x6211;&#x4EEC;&#x539F;&#x672C;&#x542F;&#x52A8;&#x7684;&#x5305;&#x540D;&#xFF0C;&#x7C7B;&#x540D;&#x5B58;&#x50A8;&#x5230;&#x4E86;Intent&#x4E2D;&#x3002;</p>
@@ -3900,47 +3904,47 @@ startActivity(intent);
 </blockquote>
 <p>&#x5173;&#x952E;&#x7684;&#x6765;&#x4E86;&#xFF0C;&#x6700;&#x7EC8;&#x53C8;&#x5230;&#x4E86;Instrumentation&#x7684;newActivity&#x65B9;&#x6CD5;&#xFF0C;&#x8FD8;&#x8BB0;&#x5F97;&#x8FD9;&#x4E2A;&#x7C7B;&#x6211;&#x4EEC;&#x5DF2;&#x7ECF;&#x6539;&#x4E3A;VAInstrumentation&#x5566;&#xFF1A;</p>
 <p>&#x76F4;&#x63A5;&#x770B;&#x5176;newActivity&#x65B9;&#x6CD5;&#xFF1A;</p>
-<pre><code class="lang-java">@Override
-public Activity newActivity(ClassLoader cl, String className, Intent intent) throws InstantiationException, IllegalAccessException, ClassNotFoundException {
-    try {
+<pre><code class="lang-java"><span class="hljs-meta">@Override</span>
+<span class="hljs-function"><span class="hljs-keyword">public</span> Activity <span class="hljs-title">newActivity</span><span class="hljs-params">(ClassLoader cl, String className, Intent intent)</span> <span class="hljs-keyword">throws</span> InstantiationException, IllegalAccessException, ClassNotFoundException </span>{
+    <span class="hljs-keyword">try</span> {
         cl.loadClass(className);
-    } catch (ClassNotFoundException e) {
-        LoadedPlugin plugin = this.mPluginManager.getLoadedPlugin(intent);
+    } <span class="hljs-keyword">catch</span> (ClassNotFoundException e) {
+        LoadedPlugin plugin = <span class="hljs-keyword">this</span>.mPluginManager.getLoadedPlugin(intent);
         String targetClassName = PluginUtil.getTargetActivity(intent);
 
-        if (targetClassName != null) {
+        <span class="hljs-keyword">if</span> (targetClassName != <span class="hljs-keyword">null</span>) {
             Activity activity = mBase.newActivity(plugin.getClassLoader(), targetClassName, intent);
             activity.setIntent(intent);
 
-          // &#x7701;&#x7565;&#x517C;&#x5BB9;&#x6027;&#x5904;&#x7406;&#x4EE3;&#x7801;
-            return activity;
+          <span class="hljs-comment">// &#x7701;&#x7565;&#x517C;&#x5BB9;&#x6027;&#x5904;&#x7406;&#x4EE3;&#x7801;</span>
+            <span class="hljs-keyword">return</span> activity;
         }
     }
 
-    return mBase.newActivity(cl, className, intent);
+    <span class="hljs-keyword">return</span> mBase.newActivity(cl, className, intent);
 }
 </code></pre>
 <p>&#x6838;&#x5FC3;&#x5C31;&#x662F;&#x9996;&#x5148;&#x4ECE;intent&#x4E2D;&#x53D6;&#x51FA;&#x6211;&#x4EEC;&#x7684;&#x76EE;&#x6807;Activity&#xFF0C;&#x7136;&#x540E;&#x901A;&#x8FC7;plugin&#x7684;ClassLoader&#x53BB;&#x52A0;&#x8F7D;&#xFF08;&#x8FD8;&#x8BB0;&#x5F97;&#x5728;&#x52A0;&#x8F7D;&#x63D2;&#x4EF6;&#x65F6;&#xFF0C;&#x4F1A;&#x751F;&#x6210;&#x4E00;&#x4E2A;LoadedPlugin&#x5BF9;&#x8C61;&#xFF0C;&#x5176;&#x4E2D;&#x4F1A;&#x5BF9;&#x5E94;&#x5176;&#x521D;&#x59CB;&#x5316;&#x4E00;&#x4E2A;DexClassLoader&#xFF09;&#x3002;</p>
 <p>&#x8FD9;&#x6837;&#x5C31;&#x5B8C;&#x6210;&#x4E86;Activity&#x7684;&#x201C;&#x5077;&#x6881;&#x6362;&#x67F1;&#x201D;&#x3002;</p>
 <p>&#x8FD8;&#x6CA1;&#x5B8C;&#xFF0C;&#x63A5;&#x4E0B;&#x6765;&#x5728;<code>callActivityOnCreate</code>&#x65B9;&#x6CD5;&#x4E2D;&#xFF1A;</p>
-<pre><code class="lang-java"> @Override
-public void callActivityOnCreate(Activity activity, Bundle icicle) {
-    final Intent intent = activity.getIntent();
-    if (PluginUtil.isIntentFromPlugin(intent)) {
+<pre><code class="lang-java"> <span class="hljs-meta">@Override</span>
+<span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">callActivityOnCreate</span><span class="hljs-params">(Activity activity, Bundle icicle)</span> </span>{
+    <span class="hljs-keyword">final</span> Intent intent = activity.getIntent();
+    <span class="hljs-keyword">if</span> (PluginUtil.isIntentFromPlugin(intent)) {
         Context base = activity.getBaseContext();
-        try {
-            LoadedPlugin plugin = this.mPluginManager.getLoadedPlugin(intent);
-            ReflectUtil.setField(base.getClass(), base, &quot;mResources&quot;, plugin.getResources());
-            ReflectUtil.setField(ContextWrapper.class, activity, &quot;mBase&quot;, plugin.getPluginContext());
-            ReflectUtil.setField(Activity.class, activity, &quot;mApplication&quot;, plugin.getApplication());
-            ReflectUtil.setFieldNoException(ContextThemeWrapper.class, activity, &quot;mBase&quot;, plugin.getPluginContext());
+        <span class="hljs-keyword">try</span> {
+            LoadedPlugin plugin = <span class="hljs-keyword">this</span>.mPluginManager.getLoadedPlugin(intent);
+            ReflectUtil.setField(base.getClass(), base, <span class="hljs-string">&quot;mResources&quot;</span>, plugin.getResources());
+            ReflectUtil.setField(ContextWrapper.class, activity, <span class="hljs-string">&quot;mBase&quot;</span>, plugin.getPluginContext());
+            ReflectUtil.setField(Activity.class, activity, <span class="hljs-string">&quot;mApplication&quot;</span>, plugin.getApplication());
+            ReflectUtil.setFieldNoException(ContextThemeWrapper.class, activity, <span class="hljs-string">&quot;mBase&quot;</span>, plugin.getPluginContext());
 
-            // set screenOrientation
+            <span class="hljs-comment">// set screenOrientation</span>
             ActivityInfo activityInfo = plugin.getActivityInfo(PluginUtil.getComponent(intent));
-            if (activityInfo.screenOrientation != ActivityInfo.SCREEN_ORIENTATION_UNSPECIFIED) {
+            <span class="hljs-keyword">if</span> (activityInfo.screenOrientation != ActivityInfo.SCREEN_ORIENTATION_UNSPECIFIED) {
                 activity.setRequestedOrientation(activityInfo.screenOrientation);
             }
-        } catch (Exception e) {
+        } <span class="hljs-keyword">catch</span> (Exception e) {
             e.printStackTrace();
         }
 
@@ -4004,18 +4008,18 @@ public ContentResolver getContentResolver() {
 <p>&#x4E0B;&#x9762;&#x770B;&#x8BE6;&#x7EC6;&#x4EE3;&#x7801;&#xFF1A;</p>
 <h3 id="1-hook-iactivitymanager"><a name="1-hook-iactivitymanager" class="anchor-navigation-ex-anchor" href="#1-hook-iactivitymanager"><i class="fa fa-link" aria-hidden="true"></i></a>(1) hook IActivityManager</h3>
 <p>&#x518D;&#x6B21;&#x6765;&#x5230;PluginManager&#xFF0C;&#x53D1;&#x4E0B;&#x5982;&#x4E0B;&#x65B9;&#x6CD5;&#xFF1A;</p>
-<pre><code class="lang-java">private void hookSystemServices() {
-    try {
-        Singleton&lt;IActivityManager&gt; defaultSingleton = (Singleton&lt;IActivityManager&gt;) ReflectUtil.getField(ActivityManagerNative.class, null, &quot;gDefault&quot;);
-        IActivityManager activityManagerProxy = ActivityManagerProxy.newInstance(this, defaultSingleton.get());
+<pre><code class="lang-java"><span class="hljs-function"><span class="hljs-keyword">private</span> <span class="hljs-keyword">void</span> <span class="hljs-title">hookSystemServices</span><span class="hljs-params">()</span> </span>{
+    <span class="hljs-keyword">try</span> {
+        Singleton&lt;IActivityManager&gt; defaultSingleton = (Singleton&lt;IActivityManager&gt;) ReflectUtil.getField(ActivityManagerNative.class, <span class="hljs-keyword">null</span>, <span class="hljs-string">&quot;gDefault&quot;</span>);
+        IActivityManager activityManagerProxy = ActivityManagerProxy.newInstance(<span class="hljs-keyword">this</span>, defaultSingleton.get());
 
-        // Hook IActivityManager from ActivityManagerNative
-        ReflectUtil.setField(defaultSingleton.getClass().getSuperclass(), defaultSingleton, &quot;mInstance&quot;, activityManagerProxy);
+        <span class="hljs-comment">// Hook IActivityManager from ActivityManagerNative</span>
+        ReflectUtil.setField(defaultSingleton.getClass().getSuperclass(), defaultSingleton, <span class="hljs-string">&quot;mInstance&quot;</span>, activityManagerProxy);
 
-        if (defaultSingleton.get() == activityManagerProxy) {
-            this.mActivityManager = activityManagerProxy;
+        <span class="hljs-keyword">if</span> (defaultSingleton.get() == activityManagerProxy) {
+            <span class="hljs-keyword">this</span>.mActivityManager = activityManagerProxy;
         }
-    } catch (Exception e) {
+    } <span class="hljs-keyword">catch</span> (Exception e) {
         e.printStackTrace();
     }
 }
@@ -4023,124 +4027,124 @@ public ContentResolver getContentResolver() {
 <p>&#x9996;&#x5148;&#x62FF;&#x5230;ActivityManagerNative&#x4E2D;&#x7684;gDefault&#x5BF9;&#x8C61;&#xFF0C;&#x8BE5;&#x5BF9;&#x8C61;&#x8FD4;&#x56DE;&#x7684;&#x662F;&#x4E00;&#x4E2A;<code>Singleton&lt;IActivityManager&gt;</code>,&#x7136;&#x540E;&#x62FF;&#x5230;&#x5176;mInstance&#x5BF9;&#x8C61;&#xFF0C;&#x5373;IActivityManager&#x5BF9;&#x8C61;&#xFF08;&#x53EF;&#x4EE5;&#x7406;&#x89E3;&#x4E3A;&#x548C;AMS&#x4EA4;&#x4E92;&#x7684;binder&#x7684;client&#x5BF9;&#x8C61;&#xFF09;&#x5BF9;&#x8C61;&#x3002;</p>
 <p>&#x7136;&#x540E;&#x901A;&#x8FC7;&#x52A8;&#x6001;&#x4EE3;&#x7406;&#x7684;&#x65B9;&#x5F0F;&#xFF0C;&#x66FF;&#x6362;&#x4E3A;&#x4E86;&#x4E00;&#x4E2A;&#x4EE3;&#x7406;&#x5BF9;&#x8C61;&#x3002;</p>
 <p>&#x90A3;&#x4E48;&#x91CD;&#x70B9;&#x770B;&#x5BF9;&#x5E94;&#x7684;InvocationHandler&#x5BF9;&#x8C61;&#x5373;&#x53EF;&#xFF0C;&#x8BE5;&#x4EE3;&#x7406;&#x5BF9;&#x8C61;&#x8C03;&#x7528;&#x7684;&#x65B9;&#x6CD5;&#x90FD;&#x4F1A;&#x8F97;&#x8F6C;&#x5230;&#x5176;invoke&#x65B9;&#x6CD5;&#xFF1A;</p>
-<pre><code class="lang-java">@Override
-public Object invoke(Object proxy, Method method, Object[] args) throws Throwable {
-    if (&quot;startService&quot;.equals(method.getName())) {
-        try {
-            return startService(proxy, method, args);
-        } catch (Throwable e) {
-            Log.e(TAG, &quot;Start service error&quot;, e);
+<pre><code class="lang-java"><span class="hljs-meta">@Override</span>
+<span class="hljs-function"><span class="hljs-keyword">public</span> Object <span class="hljs-title">invoke</span><span class="hljs-params">(Object proxy, Method method, Object[] args)</span> <span class="hljs-keyword">throws</span> Throwable </span>{
+    <span class="hljs-keyword">if</span> (<span class="hljs-string">&quot;startService&quot;</span>.equals(method.getName())) {
+        <span class="hljs-keyword">try</span> {
+            <span class="hljs-keyword">return</span> startService(proxy, method, args);
+        } <span class="hljs-keyword">catch</span> (Throwable e) {
+            Log.e(TAG, <span class="hljs-string">&quot;Start service error&quot;</span>, e);
         }
-    } else if (&quot;stopService&quot;.equals(method.getName())) {
-        try {
-            return stopService(proxy, method, args);
-        } catch (Throwable e) {
-            Log.e(TAG, &quot;Stop Service error&quot;, e);
+    } <span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span> (<span class="hljs-string">&quot;stopService&quot;</span>.equals(method.getName())) {
+        <span class="hljs-keyword">try</span> {
+            <span class="hljs-keyword">return</span> stopService(proxy, method, args);
+        } <span class="hljs-keyword">catch</span> (Throwable e) {
+            Log.e(TAG, <span class="hljs-string">&quot;Stop Service error&quot;</span>, e);
         }
-    } else if (&quot;stopServiceToken&quot;.equals(method.getName())) {
-        try {
-            return stopServiceToken(proxy, method, args);
-        } catch (Throwable e) {
-            Log.e(TAG, &quot;Stop service token error&quot;, e);
+    } <span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span> (<span class="hljs-string">&quot;stopServiceToken&quot;</span>.equals(method.getName())) {
+        <span class="hljs-keyword">try</span> {
+            <span class="hljs-keyword">return</span> stopServiceToken(proxy, method, args);
+        } <span class="hljs-keyword">catch</span> (Throwable e) {
+            Log.e(TAG, <span class="hljs-string">&quot;Stop service token error&quot;</span>, e);
         }
     }
-    // &#x7701;&#x7565;bindService&#xFF0C;unbindService&#x7B49;&#x65B9;&#x6CD5;
+    <span class="hljs-comment">// &#x7701;&#x7565;bindService&#xFF0C;unbindService&#x7B49;&#x65B9;&#x6CD5;</span>
 }
 </code></pre>
 <p>&#x5F53;&#x6211;&#x4EEC;&#x8C03;&#x7528;startService&#x65F6;&#xFF0C;&#x8DDF;&#x8FDB;&#x4EE3;&#x7801;&#xFF0C;&#x53EF;&#x4EE5;&#x53D1;&#x73B0;&#x8C03;&#x7528;&#x6D41;&#x7A0B;&#x4E3A;&#xFF1A;</p>
 <pre><code class="lang-java">startService-&gt;startServiceCommon-&gt;ActivityManagerNative.getDefault().startService
 </code></pre>
 <p>&#x8FD9;&#x4E2A;getDefault&#x521A;&#x88AB;&#x6211;&#x4EEC;hook&#xFF0C;&#x6240;&#x4EE5;&#x4F1A;&#x88AB;&#x4E0A;&#x8FF0;&#x65B9;&#x6CD5;&#x62E6;&#x622A;&#xFF0C;&#x7136;&#x540E;&#x8C03;&#x7528;&#xFF1A;<code>startService(proxy, method, args)</code></p>
-<pre><code class="lang-Java">private Object startService(Object proxy, Method method, Object[] args) throws Throwable {
-    IApplicationThread appThread = (IApplicationThread) args[0];
-    Intent target = (Intent) args[1];
-    ResolveInfo resolveInfo = this.mPluginManager.resolveService(target, 0);
-    if (null == resolveInfo || null == resolveInfo.serviceInfo) {
-        // is host service
-        return method.invoke(this.mActivityManager, args);
+<pre><code class="lang-Java"><span class="hljs-function"><span class="hljs-keyword">private</span> Object <span class="hljs-title">startService</span><span class="hljs-params">(Object proxy, Method method, Object[] args)</span> <span class="hljs-keyword">throws</span> Throwable </span>{
+    IApplicationThread appThread = (IApplicationThread) args[<span class="hljs-number">0</span>];
+    Intent target = (Intent) args[<span class="hljs-number">1</span>];
+    ResolveInfo resolveInfo = <span class="hljs-keyword">this</span>.mPluginManager.resolveService(target, <span class="hljs-number">0</span>);
+    <span class="hljs-keyword">if</span> (<span class="hljs-keyword">null</span> == resolveInfo || <span class="hljs-keyword">null</span> == resolveInfo.serviceInfo) {
+        <span class="hljs-comment">// is host service</span>
+        <span class="hljs-keyword">return</span> method.invoke(<span class="hljs-keyword">this</span>.mActivityManager, args);
     }
 
-    return startDelegateServiceForTarget(target, resolveInfo.serviceInfo, null, RemoteService.EXTRA_COMMAND_START_SERVICE);
+    <span class="hljs-keyword">return</span> startDelegateServiceForTarget(target, resolveInfo.serviceInfo, <span class="hljs-keyword">null</span>, RemoteService.EXTRA_COMMAND_START_SERVICE);
 }
 </code></pre>
 <p>&#x5148;&#x4E0D;&#x770B;&#x4EE3;&#x7801;&#xFF0C;&#x8003;&#x8651;&#x4E0B;&#x6211;&#x4EEC;&#x8FD9;&#x91CC;&#x552F;&#x4E00;&#x8981;&#x505A;&#x7684;&#x5C31;&#x662F;&#x901A;&#x8FC7;Intent&#x4FDD;&#x5B58;&#x5173;&#x952E;&#x6570;&#x636E;&#xFF0C;&#x66FF;&#x6362;&#x542F;&#x52A8;&#x7684;Service&#x7C7B;&#x4E3A;&#x5360;&#x5751;&#x7C7B;&#x3002;</p>
 <p>&#x6240;&#x4EE5;&#x76F4;&#x63A5;&#x770B;&#x6700;&#x540E;&#x7684;&#x65B9;&#x6CD5;&#xFF1A;</p>
-<pre><code class="lang-java">private ComponentName startDelegateServiceForTarget(Intent target,
+<pre><code class="lang-java"><span class="hljs-function"><span class="hljs-keyword">private</span> ComponentName <span class="hljs-title">startDelegateServiceForTarget</span><span class="hljs-params">(Intent target,
                                                     ServiceInfo serviceInfo,
-                                                    Bundle extras, int command) {
+                                                    Bundle extras, <span class="hljs-keyword">int</span> command)</span> </span>{
     Intent wrapperIntent = wrapperTargetIntent(target, serviceInfo, extras, command);
-    return mPluginManager.getHostContext().startService(wrapperIntent);
+    <span class="hljs-keyword">return</span> mPluginManager.getHostContext().startService(wrapperIntent);
 }
 </code></pre>
 <p>&#x6700;&#x540E;&#x4E00;&#x884C;&#x5C31;&#x662F;&#x542F;&#x52A8;&#x4E86;&#xFF0C;&#x90A3;&#x4E48;&#x66FF;&#x6362;&#x7684;&#x64CD;&#x4F5C;&#x5E94;&#x8BE5;&#x5728;wrapperTargetIntent&#x4E2D;&#x5B8C;&#x6210;&#xFF1A;</p>
-<pre><code class="lang-java">private Intent wrapperTargetIntent(Intent target, ServiceInfo serviceInfo, Bundle extras, int command) {
-    // fill in service with ComponentName
-    target.setComponent(new ComponentName(serviceInfo.packageName, serviceInfo.name));
+<pre><code class="lang-java"><span class="hljs-function"><span class="hljs-keyword">private</span> Intent <span class="hljs-title">wrapperTargetIntent</span><span class="hljs-params">(Intent target, ServiceInfo serviceInfo, Bundle extras, <span class="hljs-keyword">int</span> command)</span> </span>{
+    <span class="hljs-comment">// fill in service with ComponentName</span>
+    target.setComponent(<span class="hljs-keyword">new</span> ComponentName(serviceInfo.packageName, serviceInfo.name));
     String pluginLocation = mPluginManager.getLoadedPlugin(target.getComponent()).getLocation();
 
-    // start delegate service to run plugin service inside
-    boolean local = PluginUtil.isLocalService(serviceInfo);
+    <span class="hljs-comment">// start delegate service to run plugin service inside</span>
+    <span class="hljs-keyword">boolean</span> local = PluginUtil.isLocalService(serviceInfo);
     Class&lt;? extends Service&gt; delegate = local ? LocalService.class : RemoteService.class;
-    Intent intent = new Intent();
+    Intent intent = <span class="hljs-keyword">new</span> Intent();
     intent.setClass(mPluginManager.getHostContext(), delegate);
     intent.putExtra(RemoteService.EXTRA_TARGET, target);
     intent.putExtra(RemoteService.EXTRA_COMMAND, command);
     intent.putExtra(RemoteService.EXTRA_PLUGIN_LOCATION, pluginLocation);
-    if (extras != null) {
+    <span class="hljs-keyword">if</span> (extras != <span class="hljs-keyword">null</span>) {
         intent.putExtras(extras);
     }
 
-    return intent;
+    <span class="hljs-keyword">return</span> intent;
 }
 </code></pre>
 <p>&#x679C;&#x4E0D;&#x5176;&#x7136;&#xFF0C;&#x91CD;&#x65B0;&#x521D;&#x59CB;&#x5316;&#x4E86;Intent&#xFF0C;&#x8BBE;&#x7F6E;&#x4E86;&#x76EE;&#x6807;&#x7C7B;&#x4E3A;LocalService&#xFF08;&#x591A;&#x8FDB;&#x7A0B;&#x65F6;&#x8BBE;&#x7F6E;&#x4E3A;RemoteService&#xFF09;&#xFF0C;&#x7136;&#x540E;&#x5C06;&#x539F;&#x672C;&#x7684;Intent&#x5B58;&#x50A8;&#x5230;<code>EXTRA_TARGET</code>&#xFF0C;&#x643A;&#x5E26;command&#x4E3A;<code>EXTRA_COMMAND_START_SERVICE</code>&#xFF0C;&#x4EE5;&#x53CA;&#x63D2;&#x4EF6;apk&#x8DEF;&#x5F84;&#x3002;</p>
 <h3 id="&#xFF08;2&#xFF09;&#x4EE3;&#x7406;&#x5206;&#x53D1;"><a name="&#xFF08;2&#xFF09;&#x4EE3;&#x7406;&#x5206;&#x53D1;" class="anchor-navigation-ex-anchor" href="#&#xFF08;2&#xFF09;&#x4EE3;&#x7406;&#x5206;&#x53D1;"><i class="fa fa-link" aria-hidden="true"></i></a>&#xFF08;2&#xFF09;&#x4EE3;&#x7406;&#x5206;&#x53D1;</h3>
 <p>&#x90A3;&#x4E48;&#x63A5;&#x4E0B;&#x6765;&#x4EE3;&#x7801;&#x5C31;&#x5230;&#x4E86;LocalService&#x7684;onStartCommond&#x4E2D;&#x5566;&#xFF1A;</p>
-<pre><code class="lang-java">@Override
-public int onStartCommand(Intent intent, int flags, int startId) {
-    // &#x7701;&#x7565;&#x4E00;&#x4E9B;&#x4EE3;&#x7801;...
+<pre><code class="lang-java"><span class="hljs-meta">@Override</span>
+<span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">int</span> <span class="hljs-title">onStartCommand</span><span class="hljs-params">(Intent intent, <span class="hljs-keyword">int</span> flags, <span class="hljs-keyword">int</span> startId)</span> </span>{
+    <span class="hljs-comment">// &#x7701;&#x7565;&#x4E00;&#x4E9B;&#x4EE3;&#x7801;...</span>
 
     Intent target = intent.getParcelableExtra(EXTRA_TARGET);
-    int command = intent.getIntExtra(EXTRA_COMMAND, 0);
-    if (null == target || command &lt;= 0) {
-        return START_STICKY;
+    <span class="hljs-keyword">int</span> command = intent.getIntExtra(EXTRA_COMMAND, <span class="hljs-number">0</span>);
+    <span class="hljs-keyword">if</span> (<span class="hljs-keyword">null</span> == target || command &lt;= <span class="hljs-number">0</span>) {
+        <span class="hljs-keyword">return</span> START_STICKY;
     }
 
     ComponentName component = target.getComponent();
     LoadedPlugin plugin = mPluginManager.getLoadedPlugin(component);
 
-    switch (command) {
-        case EXTRA_COMMAND_START_SERVICE: {
+    <span class="hljs-keyword">switch</span> (command) {
+        <span class="hljs-keyword">case</span> EXTRA_COMMAND_START_SERVICE: {
             ActivityThread mainThread = (ActivityThread)ReflectUtil.getActivityThread(getBaseContext());
             IApplicationThread appThread = mainThread.getApplicationThread();
             Service service;
 
-            if (this.mPluginManager.getComponentsHandler().isServiceAvailable(component)) {
-                service = this.mPluginManager.getComponentsHandler().getService(component);
-            } else {
-                try {
+            <span class="hljs-keyword">if</span> (<span class="hljs-keyword">this</span>.mPluginManager.getComponentsHandler().isServiceAvailable(component)) {
+                service = <span class="hljs-keyword">this</span>.mPluginManager.getComponentsHandler().getService(component);
+            } <span class="hljs-keyword">else</span> {
+                <span class="hljs-keyword">try</span> {
                     service = (Service) plugin.getClassLoader().loadClass(component.getClassName()).newInstance();
 
                     Application app = plugin.getApplication();
                     IBinder token = appThread.asBinder();
-                    Method attach = service.getClass().getMethod(&quot;attach&quot;, Context.class, ActivityThread.class, String.class, IBinder.class, Application.class, Object.class);
+                    Method attach = service.getClass().getMethod(<span class="hljs-string">&quot;attach&quot;</span>, Context.class, ActivityThread.class, String.class, IBinder.class, Application.class, Object.class);
                     IActivityManager am = mPluginManager.getActivityManager();
 
                     attach.invoke(service, plugin.getPluginContext(), mainThread, component.getClassName(), token, app, am);
                     service.onCreate();
-                    this.mPluginManager.getComponentsHandler().rememberService(component, service);
-                } catch (Throwable t) {
-                    return START_STICKY;
+                    <span class="hljs-keyword">this</span>.mPluginManager.getComponentsHandler().rememberService(component, service);
+                } <span class="hljs-keyword">catch</span> (Throwable t) {
+                    <span class="hljs-keyword">return</span> START_STICKY;
                 }
             }
 
-            service.onStartCommand(target, 0, this.mPluginManager.getComponentsHandler().getServiceCounter(service).getAndIncrement());
-            break;
+            service.onStartCommand(target, <span class="hljs-number">0</span>, <span class="hljs-keyword">this</span>.mPluginManager.getComponentsHandler().getServiceCounter(service).getAndIncrement());
+            <span class="hljs-keyword">break</span>;
         }
-        // &#x7701;&#x7565;&#x4E0B;&#x9762;&#x7684;&#x4EE3;&#x7801;
-         case EXTRA_COMMAND_BIND_SERVICE:break;
-         case EXTRA_COMMAND_STOP_SERVICE:break;
-         case EXTRA_COMMAND_UNBIND_SERVICE:break;
+        <span class="hljs-comment">// &#x7701;&#x7565;&#x4E0B;&#x9762;&#x7684;&#x4EE3;&#x7801;</span>
+         <span class="hljs-keyword">case</span> EXTRA_COMMAND_BIND_SERVICE:<span class="hljs-keyword">break</span>;
+         <span class="hljs-keyword">case</span> EXTRA_COMMAND_STOP_SERVICE:<span class="hljs-keyword">break</span>;
+         <span class="hljs-keyword">case</span> EXTRA_COMMAND_UNBIND_SERVICE:<span class="hljs-keyword">break</span>;
 }
 </code></pre>
 <p>&#x8FD9;&#x91CC;&#x4EE3;&#x7801;&#x5F88;&#x7B80;&#x5355;&#x4E86;&#xFF0C;&#x6839;&#x636E;command&#x7C7B;&#x578B;&#xFF0C;&#x6BD4;&#x5982;<code>EXTRA_COMMAND_START_SERVICE</code>&#xFF0C;&#x76F4;&#x63A5;&#x901A;&#x8FC7;plugin&#x7684;ClassLoader&#x53BB;load&#x76EE;&#x6807;Service&#x7684;class&#xFF0C;&#x7136;&#x540E;&#x53CD;&#x5C04;&#x521B;&#x5EFA;&#x5B9E;&#x4F8B;&#x3002;&#x6BD4;&#x8F83;&#x91CD;&#x8981;&#x7684;&#x662F;&#xFF0C;Service&#x521B;&#x5EFA;&#x597D;&#x540E;&#xFF0C;&#x9700;&#x8981;&#x8C03;&#x7528;&#x5B83;&#x7684;attach&#x65B9;&#x6CD5;&#xFF0C;&#x8FD9;&#x91CC;&#x51D1;&#x591F;&#x53C2;&#x6570;&#xFF0C;&#x7136;&#x540E;&#x53CD;&#x5C04;&#x8C03;&#x7528;&#x5373;&#x53EF;&#xFF0C;&#x6700;&#x540E;&#x8C03;&#x7528;onCreate&#x3001;onStartCommand&#x6536;&#x5DE5;&#x3002;&#x7136;&#x540E;&#x5C06;&#x5176;&#x4FDD;&#x5B58;&#x8D77;&#x6765;&#xFF0C;stop&#x7684;&#x65F6;&#x5019;&#x53D6;&#x51FA;&#x6765;&#x8C03;&#x7528;&#x5176;onDestroy&#x5373;&#x53EF;&#x3002;</p>
@@ -4150,15 +4154,15 @@ public int onStartCommand(Intent intent, int flags, int startId) {
 <h2 id="&#x56DB;&#x3001;broadcastreceiver&#x7684;&#x652F;&#x6301;"><a name="&#x56DB;&#x3001;broadcastreceiver&#x7684;&#x652F;&#x6301;" class="anchor-navigation-ex-anchor" href="#&#x56DB;&#x3001;broadcastreceiver&#x7684;&#x652F;&#x6301;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x56DB;&#x3001;BroadcastReceiver&#x7684;&#x652F;&#x6301;</h2>
 <p>&#x8FD9;&#x4E2A;&#x6BD4;&#x8F83;&#x7B80;&#x5355;&#xFF0C;&#x76F4;&#x63A5;&#x89E3;&#x6790;Manifest&#x540E;&#xFF0C;&#x9759;&#x6001;&#x8F6C;&#x52A8;&#x6001;&#x5373;&#x53EF;&#x3002;</p>
 <p>&#x76F8;&#x5173;&#x4EE3;&#x7801;&#x5728;LoadedPlugin&#x7684;&#x6784;&#x9020;&#x65B9;&#x6CD5;&#x4E2D;&#xFF1A;</p>
-<pre><code class="lang-java">for (PackageParser.Activity receiver : this.mPackage.receivers) {
+<pre><code class="lang-java"><span class="hljs-keyword">for</span> (PackageParser.Activity receiver : <span class="hljs-keyword">this</span>.mPackage.receivers) {
     receivers.put(receiver.getComponentName(), receiver.info);
 
-    try {
+    <span class="hljs-keyword">try</span> {
         BroadcastReceiver br = BroadcastReceiver.class.cast(getClassLoader().loadClass(receiver.getComponentName().getClassName()).newInstance());
-        for (PackageParser.ActivityIntentInfo aii : receiver.intents) {
-            this.mHostContext.registerReceiver(br, aii);
+        <span class="hljs-keyword">for</span> (PackageParser.ActivityIntentInfo aii : receiver.intents) {
+            <span class="hljs-keyword">this</span>.mHostContext.registerReceiver(br, aii);
         }
-    } catch (Exception e) {
+    } <span class="hljs-keyword">catch</span> (Exception e) {
         e.printStackTrace();
     }
 }
@@ -4169,77 +4173,77 @@ public int onStartCommand(Intent intent, int flags, int startId) {
 <h3 id="&#xFF08;1&#xFF09;hook-icontentprovider"><a name="&#xFF08;1&#xFF09;hook-icontentprovider" class="anchor-navigation-ex-anchor" href="#&#xFF08;1&#xFF09;hook-icontentprovider"><i class="fa fa-link" aria-hidden="true"></i></a>&#xFF08;1&#xFF09;hook IContentProvider</h3>
 <p>ContentProvider&#x7684;&#x652F;&#x6301;&#x4F9D;&#x7136;&#x662F;&#x901A;&#x8FC7;&#x4EE3;&#x7406;&#x5206;&#x53D1;&#x3002;</p>
 <p>&#x770B;&#x4E00;&#x6BB5;CP&#x4F7F;&#x7528;&#x7684;&#x4EE3;&#x7801;&#xFF1A;</p>
-<pre><code class="lang-java">Cursor bookCursor = getContentResolver().query(bookUri, new String[]{&quot;_id&quot;, &quot;name&quot;}, null, null, null);
+<pre><code class="lang-java">Cursor bookCursor = getContentResolver().query(bookUri, <span class="hljs-keyword">new</span> String[]{<span class="hljs-string">&quot;_id&quot;</span>, <span class="hljs-string">&quot;name&quot;</span>}, <span class="hljs-keyword">null</span>, <span class="hljs-keyword">null</span>, <span class="hljs-keyword">null</span>);
 </code></pre>
 <p>&#x8FD9;&#x91CC;&#x7528;&#x5230;&#x4E86;PluginContext&#xFF0C;&#x5728;&#x751F;&#x6210;Activity&#x3001;Service&#x7684;&#x65F6;&#x5019;&#xFF0C;&#x4E3A;&#x5176;&#x8BBE;&#x7F6E;&#x7684;Context&#x90FD;&#x4E3A;PluginContext&#x5BF9;&#x8C61;&#x3002;</p>
 <p>&#x6240;&#x4EE5;&#x5F53;&#x4F60;&#x8C03;&#x7528;getContentResolver&#x65F6;&#xFF0C;&#x8C03;&#x7528;&#x7684;&#x4E3A;PluginContext&#x7684;getContentResolver&#x3002;</p>
-<pre><code class="lang-java">@Override
-public ContentResolver getContentResolver() {
-    return new PluginContentResolver(getHostContext());
+<pre><code class="lang-java"><span class="hljs-meta">@Override</span>
+<span class="hljs-function"><span class="hljs-keyword">public</span> ContentResolver <span class="hljs-title">getContentResolver</span><span class="hljs-params">()</span> </span>{
+    <span class="hljs-keyword">return</span> <span class="hljs-keyword">new</span> PluginContentResolver(getHostContext());
 }
 </code></pre>
 <p>&#x8FD4;&#x56DE;&#x7684;&#x662F;&#x4E00;&#x4E2A;PluginContentResolver&#x5BF9;&#x8C61;&#xFF0C;&#x5F53;&#x6211;&#x4EEC;&#x8C03;&#x7528;query&#x65B9;&#x6CD5;&#x65F6;&#xFF0C;&#x4F1A;&#x8F97;&#x8F6C;&#x8C03;&#x7528;&#x5230; 
 <code>ContentResolver.acquireUnstableProvider</code>&#x65B9;&#x6CD5;&#x3002;&#x8BE5;&#x65B9;&#x6CD5;&#x88AB;PluginContentResolver&#x4E2D;&#x590D;&#x5199;:</p>
-<pre><code class="lang-java">protected IContentProvider acquireUnstableProvider(Context context, String auth) {
-    try {
-        if (mPluginManager.resolveContentProvider(auth, 0) != null) {
-            return mPluginManager.getIContentProvider();
+<pre><code class="lang-java"><span class="hljs-function"><span class="hljs-keyword">protected</span> IContentProvider <span class="hljs-title">acquireUnstableProvider</span><span class="hljs-params">(Context context, String auth)</span> </span>{
+    <span class="hljs-keyword">try</span> {
+        <span class="hljs-keyword">if</span> (mPluginManager.resolveContentProvider(auth, <span class="hljs-number">0</span>) != <span class="hljs-keyword">null</span>) {
+            <span class="hljs-keyword">return</span> mPluginManager.getIContentProvider();
         }
 
-        return (IContentProvider) sAcquireUnstableProvider.invoke(mBase, context, auth);
-    } catch (Exception e) {
+        <span class="hljs-keyword">return</span> (IContentProvider) sAcquireUnstableProvider.invoke(mBase, context, auth);
+    } <span class="hljs-keyword">catch</span> (Exception e) {
         e.printStackTrace();
     }
 
-    return null;
+    <span class="hljs-keyword">return</span> <span class="hljs-keyword">null</span>;
 }
 </code></pre>
 <p>&#x5982;&#x679C;&#x8C03;&#x7528;&#x7684;auth&#x4E3A;&#x63D2;&#x4EF6;apk&#x4E2D;&#x7684;provider&#xFF0C;&#x5219;&#x76F4;&#x63A5;&#x8FD4;&#x56DE;<code>mPluginManager.getIContentProvider()</code>&#x3002;</p>
-<pre><code class="lang-java">public synchronized IContentProvider getIContentProvider() {
-    if (mIContentProvider == null) {
+<pre><code class="lang-java"><span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">synchronized</span> IContentProvider <span class="hljs-title">getIContentProvider</span><span class="hljs-params">()</span> </span>{
+    <span class="hljs-keyword">if</span> (mIContentProvider == <span class="hljs-keyword">null</span>) {
         hookIContentProviderAsNeeded();
     }
 
-    return mIContentProvider;
+    <span class="hljs-keyword">return</span> mIContentProvider;
 }
 </code></pre>
 <p>&#x54A6;&#xFF0C;&#x53C8;&#x770B;&#x5230;&#x4E00;&#x4E2A;hook&#x65B9;&#x6CD5;&#xFF1A;</p>
-<pre><code class="lang-java">private void hookIContentProviderAsNeeded() {
+<pre><code class="lang-java"><span class="hljs-function"><span class="hljs-keyword">private</span> <span class="hljs-keyword">void</span> <span class="hljs-title">hookIContentProviderAsNeeded</span><span class="hljs-params">()</span> </span>{
     Uri uri = Uri.parse(PluginContentResolver.getUri(mContext));
-    mContext.getContentResolver().call(uri, &quot;wakeup&quot;, null, null);
-    try {
-        Field authority = null;
-        Field mProvider = null;
+    mContext.getContentResolver().call(uri, <span class="hljs-string">&quot;wakeup&quot;</span>, <span class="hljs-keyword">null</span>, <span class="hljs-keyword">null</span>);
+    <span class="hljs-keyword">try</span> {
+        Field authority = <span class="hljs-keyword">null</span>;
+        Field mProvider = <span class="hljs-keyword">null</span>;
         ActivityThread activityThread = (ActivityThread) ReflectUtil.getActivityThread(mContext);
-        Map mProviderMap = (Map) ReflectUtil.getField(activityThread.getClass(), activityThread, &quot;mProviderMap&quot;);
+        Map mProviderMap = (Map) ReflectUtil.getField(activityThread.getClass(), activityThread, <span class="hljs-string">&quot;mProviderMap&quot;</span>);
         Iterator iter = mProviderMap.entrySet().iterator();
-        while (iter.hasNext()) {
+        <span class="hljs-keyword">while</span> (iter.hasNext()) {
             Map.Entry entry = (Map.Entry) iter.next();
             Object key = entry.getKey();
             Object val = entry.getValue();
             String auth;
-            if (key instanceof String) {
+            <span class="hljs-keyword">if</span> (key <span class="hljs-keyword">instanceof</span> String) {
                 auth = (String) key;
-            } else {
-                if (authority == null) {
-                    authority = key.getClass().getDeclaredField(&quot;authority&quot;);
-                    authority.setAccessible(true);
+            } <span class="hljs-keyword">else</span> {
+                <span class="hljs-keyword">if</span> (authority == <span class="hljs-keyword">null</span>) {
+                    authority = key.getClass().getDeclaredField(<span class="hljs-string">&quot;authority&quot;</span>);
+                    authority.setAccessible(<span class="hljs-keyword">true</span>);
                 }
                 auth = (String) authority.get(key);
             }
-            if (auth.equals(PluginContentResolver.getAuthority(mContext))) {
-                if (mProvider == null) {
-                    mProvider = val.getClass().getDeclaredField(&quot;mProvider&quot;);
-                    mProvider.setAccessible(true);
+            <span class="hljs-keyword">if</span> (auth.equals(PluginContentResolver.getAuthority(mContext))) {
+                <span class="hljs-keyword">if</span> (mProvider == <span class="hljs-keyword">null</span>) {
+                    mProvider = val.getClass().getDeclaredField(<span class="hljs-string">&quot;mProvider&quot;</span>);
+                    mProvider.setAccessible(<span class="hljs-keyword">true</span>);
                 }
                 IContentProvider rawProvider = (IContentProvider) mProvider.get(val);
                 IContentProvider proxy = IContentProviderProxy.newInstance(mContext, rawProvider);
                 mIContentProvider = proxy;
-                Log.d(TAG, &quot;hookIContentProvider succeed : &quot; + mIContentProvider);
-                break;
+                Log.d(TAG, <span class="hljs-string">&quot;hookIContentProvider succeed : &quot;</span> + mIContentProvider);
+                <span class="hljs-keyword">break</span>;
             }
         }
-    } catch (Exception e) {
+    } <span class="hljs-keyword">catch</span> (Exception e) {
         e.printStackTrace();
     }
 }
@@ -4253,48 +4257,48 @@ public ContentResolver getContentResolver() {
 <p>&#x62E6;&#x622A;&#x8FD9;&#x4E9B;&#x65B9;&#x6CD5;&#x5E72;&#x561B;&#xFF1F;</p>
 <p>&#x5F53;&#x7136;&#x662F;&#x4FEE;&#x6539;uri&#x5566;&#xFF0C;&#x628A;&#x7528;&#x6237;&#x8C03;&#x7528;&#x7684;uri&#xFF0C;&#x66FF;&#x6362;&#x4E3A;&#x5360;&#x5751;provider&#x7684;uri&#xFF0C;&#x518D;&#x628A;&#x539F;&#x672C;&#x7684;uri&#x4F5C;&#x4E3A;&#x53C2;&#x6570;&#x62FC;&#x63A5;&#x5728;&#x5360;&#x5751;provider&#x7684;uri&#x540E;&#x9762;&#x5373;&#x53EF;&#x3002;</p>
 <p>&#x597D;&#x4E86;&#xFF0C;&#x76F4;&#x63A5;&#x770B;invoke&#x65B9;&#x6CD5;&#xFF1A;</p>
-<pre><code class="lang-java">@Override
-public Object invoke(Object proxy, Method method, Object[] args) throws Throwable {
-    Log.v(TAG, method.toGenericString() + &quot; : &quot; + Arrays.toString(args));
+<pre><code class="lang-java"><span class="hljs-meta">@Override</span>
+<span class="hljs-function"><span class="hljs-keyword">public</span> Object <span class="hljs-title">invoke</span><span class="hljs-params">(Object proxy, Method method, Object[] args)</span> <span class="hljs-keyword">throws</span> Throwable </span>{
+    Log.v(TAG, method.toGenericString() + <span class="hljs-string">&quot; : &quot;</span> + Arrays.toString(args));
     wrapperUri(method, args);
 
-    try {
-        return method.invoke(mBase, args);
-    } catch (InvocationTargetException e) {
-        throw e.getTargetException();
+    <span class="hljs-keyword">try</span> {
+        <span class="hljs-keyword">return</span> method.invoke(mBase, args);
+    } <span class="hljs-keyword">catch</span> (InvocationTargetException e) {
+        <span class="hljs-keyword">throw</span> e.getTargetException();
     }
 }
 </code></pre>
 <p>&#x76F4;&#x63A5;&#x770B;wrapperUri</p>
-<pre><code class="lang-java">private void wrapperUri(Method method, Object[] args) {
-    Uri uri = null;
-    int index = 0;
-    if (args != null) {
-        for (int i = 0; i &lt; args.length; i++) {
-            if (args[i] instanceof Uri) {
+<pre><code class="lang-java"><span class="hljs-function"><span class="hljs-keyword">private</span> <span class="hljs-keyword">void</span> <span class="hljs-title">wrapperUri</span><span class="hljs-params">(Method method, Object[] args)</span> </span>{
+    Uri uri = <span class="hljs-keyword">null</span>;
+    <span class="hljs-keyword">int</span> index = <span class="hljs-number">0</span>;
+    <span class="hljs-keyword">if</span> (args != <span class="hljs-keyword">null</span>) {
+        <span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> i = <span class="hljs-number">0</span>; i &lt; args.length; i++) {
+            <span class="hljs-keyword">if</span> (args[i] <span class="hljs-keyword">instanceof</span> Uri) {
                 uri = (Uri) args[i];
                 index = i;
-                break;
+                <span class="hljs-keyword">break</span>;
             }
         }
     }
 
-    // &#x7701;&#x7565;&#x90E8;&#x5206;&#x4EE3;&#x7801;
+    <span class="hljs-comment">// &#x7701;&#x7565;&#x90E8;&#x5206;&#x4EE3;&#x7801;</span>
 
     PluginManager pluginManager = PluginManager.getInstance(mContext);
-    ProviderInfo info = pluginManager.resolveContentProvider(uri.getAuthority(), 0);
-    if (info != null) {
+    ProviderInfo info = pluginManager.resolveContentProvider(uri.getAuthority(), <span class="hljs-number">0</span>);
+    <span class="hljs-keyword">if</span> (info != <span class="hljs-keyword">null</span>) {
         String pkg = info.packageName;
         LoadedPlugin plugin = pluginManager.getLoadedPlugin(pkg);
         String pluginUri = Uri.encode(uri.toString());
-        StringBuilder builder = new StringBuilder(PluginContentResolver.getUri(mContext));
-        builder.append(&quot;/?plugin=&quot; + plugin.getLocation());
-        builder.append(&quot;&amp;pkg=&quot; + pkg);
-        builder.append(&quot;&amp;uri=&quot; + pluginUri);
+        StringBuilder builder = <span class="hljs-keyword">new</span> StringBuilder(PluginContentResolver.getUri(mContext));
+        builder.append(<span class="hljs-string">&quot;/?plugin=&quot;</span> + plugin.getLocation());
+        builder.append(<span class="hljs-string">&quot;&amp;pkg=&quot;</span> + pkg);
+        builder.append(<span class="hljs-string">&quot;&amp;uri=&quot;</span> + pluginUri);
         Uri wrapperUri = Uri.parse(builder.toString());
-        if (method.getName().equals(&quot;call&quot;)) {
+        <span class="hljs-keyword">if</span> (method.getName().equals(<span class="hljs-string">&quot;call&quot;</span>)) {
             bundleInCallMethod.putString(KEY_WRAPPER_URI, wrapperUri.toString());
-        } else {
+        } <span class="hljs-keyword">else</span> {
             args[index] = wrapperUri;
         }
     }
@@ -4304,59 +4308,59 @@ public Object invoke(Object proxy, Method method, Object[] args) throws Throwabl
 <p>&#x5047;&#x8BBE;&#x662F;query&#x65B9;&#x6CD5;&#xFF0C;&#x5E94;&#x8BE5;&#x5C31;&#x5230;&#x8FBE;&#x6211;&#x4EEC;&#x5360;&#x5751;provider&#x7684;query&#x65B9;&#x6CD5;&#x5566;&#x3002;</p>
 <h3 id="&#xFF08;2&#xFF09;&#x4EE3;&#x7406;&#x5206;&#x53D1;"><a name="&#xFF08;2&#xFF09;&#x4EE3;&#x7406;&#x5206;&#x53D1;" class="anchor-navigation-ex-anchor" href="#&#xFF08;2&#xFF09;&#x4EE3;&#x7406;&#x5206;&#x53D1;"><i class="fa fa-link" aria-hidden="true"></i></a>&#xFF08;2&#xFF09;&#x4EE3;&#x7406;&#x5206;&#x53D1;</h3>
 <p>&#x5360;&#x5751;&#x5982;&#x4E0B;&#xFF1A;</p>
-<pre><code class="lang-xml">&lt;provider
-    android:name=&quot;com.didi.virtualapk.delegate.RemoteContentProvider&quot;
-    android:authorities=&quot;${applicationId}.VirtualAPK.Provider&quot;
-    android:process=&quot;:daemon&quot; /&gt;
+<pre><code class="lang-xml"><span class="hljs-tag">&lt;<span class="hljs-name">provider</span>
+    <span class="hljs-attr">android:name</span>=<span class="hljs-string">&quot;com.didi.virtualapk.delegate.RemoteContentProvider&quot;</span>
+    <span class="hljs-attr">android:authorities</span>=<span class="hljs-string">&quot;${applicationId}.VirtualAPK.Provider&quot;</span>
+    <span class="hljs-attr">android:process</span>=<span class="hljs-string">&quot;:daemon&quot;</span> /&gt;</span>
 </code></pre>
 <p>&#x6253;&#x5F00;RemoteContentProvider&#xFF0C;&#x76F4;&#x63A5;&#x770B;query&#x65B9;&#x6CD5;&#xFF1A;</p>
-<pre><code class="lang-java">@Override
-public Cursor query(Uri uri, String[] projection, String selection,
-                    String[] selectionArgs, String sortOrder) {
+<pre><code class="lang-java"><span class="hljs-meta">@Override</span>
+<span class="hljs-function"><span class="hljs-keyword">public</span> Cursor <span class="hljs-title">query</span><span class="hljs-params">(Uri uri, String[] projection, String selection,
+                    String[] selectionArgs, String sortOrder)</span> </span>{
 
     ContentProvider provider = getContentProvider(uri);
     Uri pluginUri = Uri.parse(uri.getQueryParameter(KEY_URI));
-    if (provider != null) {
-        return provider.query(pluginUri, projection, selection, selectionArgs, sortOrder);
+    <span class="hljs-keyword">if</span> (provider != <span class="hljs-keyword">null</span>) {
+        <span class="hljs-keyword">return</span> provider.query(pluginUri, projection, selection, selectionArgs, sortOrder);
     }
 
-    return null;
+    <span class="hljs-keyword">return</span> <span class="hljs-keyword">null</span>;
 }
 </code></pre>
 <p>&#x53EF;&#x4EE5;&#x770B;&#x5230;&#x901A;&#x8FC7;&#x4F20;&#x5165;&#x7684;&#x751F;&#x6210;&#x4E86;&#x4E00;&#x4E2A;&#x65B0;&#x7684;provider,&#x7136;&#x540E;&#x62FF;&#x5230;&#x76EE;&#x6807;uri&#xFF0C;&#x5728;&#x76F4;&#x63A5;&#x8C03;&#x7528;provider.query&#x4F20;&#x5165;&#x76EE;&#x6807;uri&#x5373;&#x53EF;&#x3002;</p>
 <p>&#x90A3;&#x4E48;&#x8FD9;&#x4E2A;provider&#x5B9E;&#x9645;&#x4E0A;&#x662F;&#x8FD9;&#x4E2A;&#x4EE3;&#x7406;&#x7C7B;&#x5E2E;&#x6211;&#x4EEC;&#x751F;&#x6210;&#x7684;&#xFF1A;</p>
-<pre><code class="lang-java">private ContentProvider getContentProvider(final Uri uri) {
-    final PluginManager pluginManager = PluginManager.getInstance(getContext());
+<pre><code class="lang-java"><span class="hljs-function"><span class="hljs-keyword">private</span> ContentProvider <span class="hljs-title">getContentProvider</span><span class="hljs-params">(<span class="hljs-keyword">final</span> Uri uri)</span> </span>{
+    <span class="hljs-keyword">final</span> PluginManager pluginManager = PluginManager.getInstance(getContext());
     Uri pluginUri = Uri.parse(uri.getQueryParameter(KEY_URI));
-    final String auth = pluginUri.getAuthority();
-    // &#x7701;&#x7565;&#x4E86;&#x7F13;&#x5B58;&#x7BA1;&#x7406;
+    <span class="hljs-keyword">final</span> String auth = pluginUri.getAuthority();
+    <span class="hljs-comment">// &#x7701;&#x7565;&#x4E86;&#x7F13;&#x5B58;&#x7BA1;&#x7406;</span>
     LoadedPlugin plugin = pluginManager.getLoadedPlugin(uri.getQueryParameter(KEY_PKG));
-    if (plugin == null) {
-        try {
-            pluginManager.loadPlugin(new File(uri.getQueryParameter(KEY_PLUGIN)));
-        } catch (Exception e) {
+    <span class="hljs-keyword">if</span> (plugin == <span class="hljs-keyword">null</span>) {
+        <span class="hljs-keyword">try</span> {
+            pluginManager.loadPlugin(<span class="hljs-keyword">new</span> File(uri.getQueryParameter(KEY_PLUGIN)));
+        } <span class="hljs-keyword">catch</span> (Exception e) {
             e.printStackTrace();
         }
     }
 
-    final ProviderInfo providerInfo = pluginManager.resolveContentProvider(auth, 0);
-    if (providerInfo != null) {
-        RunUtil.runOnUiThread(new Runnable() {
-            @Override
-            public void run() {
-                try {
+    <span class="hljs-keyword">final</span> ProviderInfo providerInfo = pluginManager.resolveContentProvider(auth, <span class="hljs-number">0</span>);
+    <span class="hljs-keyword">if</span> (providerInfo != <span class="hljs-keyword">null</span>) {
+        RunUtil.runOnUiThread(<span class="hljs-keyword">new</span> Runnable() {
+            <span class="hljs-meta">@Override</span>
+            <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">run</span><span class="hljs-params">()</span> </span>{
+                <span class="hljs-keyword">try</span> {
                     LoadedPlugin loadedPlugin = pluginManager.getLoadedPlugin(uri.getQueryParameter(KEY_PKG));
                     ContentProvider contentProvider = (ContentProvider) Class.forName(providerInfo.name).newInstance();
                     contentProvider.attachInfo(loadedPlugin.getPluginContext(), providerInfo);
                     sCachedProviders.put(auth, contentProvider);
-                } catch (Exception e) {
+                } <span class="hljs-keyword">catch</span> (Exception e) {
                     e.printStackTrace();
                 }
             }
-        }, true);
-        return sCachedProviders.get(auth);
+        }, <span class="hljs-keyword">true</span>);
+        <span class="hljs-keyword">return</span> sCachedProviders.get(auth);
     }
-    return null;
+    <span class="hljs-keyword">return</span> <span class="hljs-keyword">null</span>;
 }
 </code></pre>
 <p>&#x5F88;&#x7B80;&#x5355;&#xFF0C;&#x53D6;&#x51FA;&#x539F;&#x672C;&#x7684;uri&#xFF0C;&#x62FF;&#x5230;auth&#xFF0C;&#x5728;&#x901A;&#x8FC7;&#x52A0;&#x8F7D;plugin&#x5F97;&#x5230;providerInfo&#xFF0C;&#x53CD;&#x5C04;&#x751F;&#x6210;provider&#x5BF9;&#x8C61;&#xFF0C;&#x5728;&#x8C03;&#x7528;&#x5176;attachInfo&#x65B9;&#x6CD5;&#x5373;&#x53EF;&#x3002;</p>
@@ -4415,7 +4419,7 @@ public Cursor query(Uri uri, String[] projection, String selection,
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"VirtualApk解析","level":"3.2.13","depth":2,"next":{"title":"Android推送技术解析","level":"3.2.14","depth":2,"path":"android/advance/push.md","ref":"android/advance/push.md","articles":[]},"previous":{"title":"Android插件化入门指南","level":"3.2.12","depth":2,"path":"android/advance/plugin.md","ref":"android/advance/plugin.md","articles":[]},"dir":"ltr"},"config":{"plugins":["-lunr","-search","-highlight","-livereload","search-plus@^0.0.11","simple-page-toc@^0.1.1","github@^2.0.0","github-buttons@2.1.0","edit-link@^2.0.2","advanced-emoji@^0.2.1","anchors@^0.7.1","include-codeblock@^3.0.2","ace@^0.3.2","emphasize@^1.1.0","katex@^1.1.3","splitter@^0.0.8","tbfed-pagefooter@^0.0.1","expandable-chapters-small@^0.1.7","sectionx@^3.1.0","local-video@^1.0.1","anchor-navigation-ex@0.1.8","favicon@^0.0.2"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"tbfed-pagefooter":{"copyright":"Copyright © ruheng.com 2017","modify_label":"该文件修订时间：","modify_format":"YYYY-MM-DD HH:mm:ss"},"emphasize":{},"ace":{},"github":{"url":"https://github.com/LRH1993/android_interview"},"simple-page-toc":{"maxDepth":3,"skipFirstH1":true},"splitter":{},"katex":{},"fontsettings":{"theme":"white","family":"sans","size":2},"sectionx":{"tag":"b"},"anchor-navigation-ex":{"isRewritePageTitle":false,"tocLevel1Icon":"fa fa-hand-o-right","tocLevel2Icon":"fa fa-hand-o-right","tocLevel3Icon":"fa fa-hand-o-right"},"favicon":{"shortcut":"favicon.ico","bookmark":"favicon.ico"},"github-buttons":{"repo":"LRH1993/android_interview","types":["star"],"size":"small"},"expandable-chapters-small":{},"local-video":{},"advanced-emoji":{"embedEmojis":false},"include-codeblock":{"check":false,"edit":true,"fixlang":false,"lang":"","template":"ace","theme":"chrome","unindent":true},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":true,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"edit-link":{"label":"Edit This Page","base":"https://github.com/LRH1993/android_interview/edit/master"},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":true},"anchors":{},"search-plus":{}},"theme":"default","author":"ruheng","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"Android校招面试指南","language":"zh-hans","output.name":"site","links":{"sidebar":{"Home":"http://lruheng.com/"}},"gitbook":"3.2.3","description":"Android面试必备，记录自己的秋招之路"},"file":{"path":"android/advance/virtualapk.md","mtime":"2017-09-04T08:14:43.000Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2017-10-16T12:05:21.906Z"},"basePath":"../..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"VirtualApk解析","level":"3.2.13","depth":2,"next":{"title":"Android推送技术解析","level":"3.2.14","depth":2,"path":"android/advance/push.md","ref":"android/advance/push.md","articles":[]},"previous":{"title":"Android插件化入门指南","level":"3.2.12","depth":2,"path":"android/advance/plugin.md","ref":"android/advance/plugin.md","articles":[]},"dir":"ltr"},"config":{"plugins":["-lunr","-search","-livereload","search-plus@^0.0.11","simple-page-toc@^0.1.1","github@^2.0.0","github-buttons@2.1.0","edit-link@^2.0.2","advanced-emoji@^0.2.1","anchors@^0.7.1","include-codeblock@^3.0.2","ace@^0.3.2","emphasize@^1.1.0","katex@^1.1.3","splitter@^0.0.8","tbfed-pagefooter@^0.0.1","expandable-chapters-small@^0.1.7","sectionx@^3.1.0","local-video@^1.0.1","anchor-navigation-ex@0.1.8","favicon@^0.0.2"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"tbfed-pagefooter":{"copyright":"Copyright © ruheng.com 2017","modify_label":"该文件修订时间：","modify_format":"YYYY-MM-DD HH:mm:ss"},"emphasize":{},"ace":{},"github":{"url":"https://github.com/LRH1993/android_interview"},"simple-page-toc":{"maxDepth":3,"skipFirstH1":true},"splitter":{},"katex":{},"fontsettings":{"theme":"white","family":"sans","size":2},"sectionx":{"tag":"b"},"highlight":{},"anchor-navigation-ex":{"isRewritePageTitle":false,"tocLevel1Icon":"fa fa-hand-o-right","tocLevel2Icon":"fa fa-hand-o-right","tocLevel3Icon":"fa fa-hand-o-right"},"favicon":{"shortcut":"favicon.ico","bookmark":"favicon.ico"},"github-buttons":{"repo":"LRH1993/android_interview","types":["star"],"size":"small"},"expandable-chapters-small":{},"local-video":{},"advanced-emoji":{"embedEmojis":false},"include-codeblock":{"check":false,"edit":false,"fixlang":false,"lang":"","template":"default","theme":"chrome","unindent":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":true,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"edit-link":{"label":"Edit This Page","base":"https://github.com/LRH1993/android_interview/edit/master"},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":true},"anchors":{},"search-plus":{}},"theme":"default","author":"ruheng","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"Android校招面试指南","language":"zh-hans","output.name":"site","links":{"sidebar":{"Home":"http://lruheng.com/"}},"gitbook":"3.2.3","description":"Android面试必备，记录自己的秋招之路"},"file":{"path":"android/advance/virtualapk.md","mtime":"2017-09-04T08:14:43.000Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2017-10-16T13:00:43.989Z"},"basePath":"../..","book":{"language":""}});
         });
     </script>
 </div>

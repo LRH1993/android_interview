@@ -69,6 +69,10 @@
                 
             
                 
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
                 <link rel="stylesheet" href="../../gitbook/gitbook-plugin-fontsettings/website.css">
                 
             
@@ -3720,43 +3724,43 @@
 <p>&#x25A0;&#x3000;&#x3000;&#x5B9E;&#x73B0;&#x7236;&#x7C7B;&#x6240;&#x5B9A;&#x4E49;&#x7684;&#x4E00;&#x4E2A;&#x6216;&#x591A;&#x4E2A;&#x62BD;&#x8C61;&#x65B9;&#x6CD5;&#xFF0C;&#x5B83;&#x4EEC;&#x662F;&#x4E00;&#x4E2A;&#x9876;&#x7EA7;&#x903B;&#x8F91;&#x7684;&#x7EC4;&#x6210;&#x6B65;&#x9AA4;&#x3002;</p>
 <p>&#x25A0;&#x3000;&#x3000;&#x6BCF;&#x4E00;&#x4E2A;&#x62BD;&#x8C61;&#x6A21;&#x677F;&#x89D2;&#x8272;&#x90FD;&#x53EF;&#x4EE5;&#x6709;&#x4EFB;&#x610F;&#x591A;&#x4E2A;&#x5177;&#x4F53;&#x6A21;&#x677F;&#x89D2;&#x8272;&#x4E0E;&#x4E4B;&#x5BF9;&#x5E94;&#xFF0C;&#x800C;&#x6BCF;&#x4E00;&#x4E2A;&#x5177;&#x4F53;&#x6A21;&#x677F;&#x89D2;&#x8272;&#x90FD;&#x53EF;&#x4EE5;&#x7ED9;&#x51FA;&#x8FD9;&#x4E9B;&#x62BD;&#x8C61;&#x65B9;&#x6CD5;&#xFF08;&#x4E5F;&#x5C31;&#x662F;&#x9876;&#x7EA7;&#x903B;&#x8F91;&#x7684;&#x7EC4;&#x6210;&#x6B65;&#x9AA4;&#xFF09;&#x7684;&#x4E0D;&#x540C;&#x5B9E;&#x73B0;&#xFF0C;&#x4ECE;&#x800C;&#x4F7F;&#x5F97;&#x9876;&#x7EA7;&#x903B;&#x8F91;&#x7684;&#x5B9E;&#x73B0;&#x5404;&#x4E0D;&#x76F8;&#x540C;&#x3002;</p>
 <p><strong>&#x62BD;&#x8C61;&#x6A21;&#x677F;&#x89D2;&#x8272;&#x7C7B;&#xFF0C;abstractMethod()&#x3001;hookMethod()&#x7B49;&#x57FA;&#x672C;&#x65B9;&#x6CD5;&#x662F;&#x9876;&#x7EA7;&#x903B;&#x8F91;&#x7684;&#x7EC4;&#x6210;&#x6B65;&#x9AA4;&#xFF0C;&#x8FD9;&#x4E2A;&#x9876;&#x7EA7;&#x903B;&#x8F91;&#x7531;templateMethod()&#x65B9;&#x6CD5;&#x4EE3;&#x8868;&#x3002;</strong></p>
-<pre><code class="lang-java">public abstract class AbstractTemplate {
-    /**
+<pre><code class="lang-java"><span class="hljs-keyword">public</span> <span class="hljs-keyword">abstract</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">AbstractTemplate</span> </span>{
+    <span class="hljs-comment">/**
      * &#x6A21;&#x677F;&#x65B9;&#x6CD5;
-     */
-    public void templateMethod(){
-        //&#x8C03;&#x7528;&#x57FA;&#x672C;&#x65B9;&#x6CD5;
+     */</span>
+    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">templateMethod</span><span class="hljs-params">()</span></span>{
+        <span class="hljs-comment">//&#x8C03;&#x7528;&#x57FA;&#x672C;&#x65B9;&#x6CD5;</span>
         abstractMethod();
         hookMethod();
         concreteMethod();
     }
-    /**
+    <span class="hljs-comment">/**
      * &#x57FA;&#x672C;&#x65B9;&#x6CD5;&#x7684;&#x58F0;&#x660E;&#xFF08;&#x7531;&#x5B50;&#x7C7B;&#x5B9E;&#x73B0;&#xFF09;
-     */
-    protected abstract void abstractMethod();
-    /**
+     */</span>
+    <span class="hljs-function"><span class="hljs-keyword">protected</span> <span class="hljs-keyword">abstract</span> <span class="hljs-keyword">void</span> <span class="hljs-title">abstractMethod</span><span class="hljs-params">()</span></span>;
+    <span class="hljs-comment">/**
      * &#x57FA;&#x672C;&#x65B9;&#x6CD5;(&#x7A7A;&#x65B9;&#x6CD5;)
-     */
-    protected void hookMethod(){}
-    /**
+     */</span>
+    <span class="hljs-function"><span class="hljs-keyword">protected</span> <span class="hljs-keyword">void</span> <span class="hljs-title">hookMethod</span><span class="hljs-params">()</span></span>{}
+    <span class="hljs-comment">/**
      * &#x57FA;&#x672C;&#x65B9;&#x6CD5;&#xFF08;&#x5DF2;&#x7ECF;&#x5B9E;&#x73B0;&#xFF09;
-     */
-    private final void concreteMethod(){
-        //&#x4E1A;&#x52A1;&#x76F8;&#x5173;&#x7684;&#x4EE3;&#x7801;
+     */</span>
+    <span class="hljs-function"><span class="hljs-keyword">private</span> <span class="hljs-keyword">final</span> <span class="hljs-keyword">void</span> <span class="hljs-title">concreteMethod</span><span class="hljs-params">()</span></span>{
+        <span class="hljs-comment">//&#x4E1A;&#x52A1;&#x76F8;&#x5173;&#x7684;&#x4EE3;&#x7801;</span>
     }
 }
 </code></pre>
 <p><strong>&#x5177;&#x4F53;&#x6A21;&#x677F;&#x89D2;&#x8272;&#x7C7B;&#xFF0C;&#x5B9E;&#x73B0;&#x4E86;&#x7236;&#x7C7B;&#x6240;&#x58F0;&#x660E;&#x7684;&#x57FA;&#x672C;&#x65B9;&#x6CD5;&#xFF0C;abstractMethod()&#x65B9;&#x6CD5;&#x6240;&#x4EE3;&#x8868;&#x7684;&#x5C31;&#x662F;&#x5F3A;&#x5236;&#x5B50;&#x7C7B;&#x5B9E;&#x73B0;&#x7684;&#x5269;&#x4F59;&#x903B;&#x8F91;&#xFF0C;&#x800C;hookMethod()&#x65B9;&#x6CD5;&#x662F;&#x53EF;&#x9009;&#x62E9;&#x5B9E;&#x73B0;&#x7684;&#x903B;&#x8F91;&#xFF0C;&#x4E0D;&#x662F;&#x5FC5;&#x987B;&#x5B9E;&#x73B0;&#x7684;&#x3002;</strong></p>
-<pre><code class="lang-java">public class ConcreteTemplate extends AbstractTemplate{
-    //&#x57FA;&#x672C;&#x65B9;&#x6CD5;&#x7684;&#x5B9E;&#x73B0;
-    @Override
-    public void abstractMethod() {
-        //&#x4E1A;&#x52A1;&#x76F8;&#x5173;&#x7684;&#x4EE3;&#x7801;
+<pre><code class="lang-java"><span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">ConcreteTemplate</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">AbstractTemplate</span></span>{
+    <span class="hljs-comment">//&#x57FA;&#x672C;&#x65B9;&#x6CD5;&#x7684;&#x5B9E;&#x73B0;</span>
+    <span class="hljs-meta">@Override</span>
+    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">abstractMethod</span><span class="hljs-params">()</span> </span>{
+        <span class="hljs-comment">//&#x4E1A;&#x52A1;&#x76F8;&#x5173;&#x7684;&#x4EE3;&#x7801;</span>
     }
-    //&#x91CD;&#x5199;&#x7236;&#x7C7B;&#x7684;&#x65B9;&#x6CD5;
-    @Override
-    public void hookMethod() {
-        //&#x4E1A;&#x52A1;&#x76F8;&#x5173;&#x7684;&#x4EE3;&#x7801;
+    <span class="hljs-comment">//&#x91CD;&#x5199;&#x7236;&#x7C7B;&#x7684;&#x65B9;&#x6CD5;</span>
+    <span class="hljs-meta">@Override</span>
+    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">hookMethod</span><span class="hljs-params">()</span> </span>{
+        <span class="hljs-comment">//&#x4E1A;&#x52A1;&#x76F8;&#x5173;&#x7684;&#x4EE3;&#x7801;</span>
     }
 }
 </code></pre>
@@ -3781,75 +3785,75 @@
 <p>&#x663E;&#x7136;&#xFF0C;&#x7CFB;&#x7EDF;&#x9700;&#x8981;&#x4E00;&#x4E2A;&#x62BD;&#x8C61;&#x89D2;&#x8272;&#x7ED9;&#x51FA;&#x9876;&#x7EA7;&#x884C;&#x4E3A;&#x7684;&#x5B9E;&#x73B0;&#xFF0C;&#x800C;&#x5C06;&#x4E24;&#x4E2A;&#x4F5C;&#x4E3A;&#x7EC6;&#x8282;&#x6B65;&#x9AA4;&#x7684;&#x57FA;&#x672C;&#x65B9;&#x6CD5;&#x7559;&#x7ED9;&#x5177;&#x4F53;&#x5B50;&#x7C7B;&#x5B9E;&#x73B0;&#x3002;&#x7531;&#x4E8E;&#x9700;&#x8981;&#x8003;&#x8651;&#x7684;&#x8D26;&#x53F7;&#x6709;&#x4E24;&#x79CD;&#xFF1A;&#x4E00;&#x662F;&#x8D27;&#x5E01;&#x5E02;&#x573A;&#x8D26;&#x53F7;&#xFF0C;&#x4E8C;&#x662F;&#x5B9A;&#x671F;&#x5B58;&#x6B3E;&#x8D26;&#x53F7;&#x3002;&#x7CFB;&#x7EDF;&#x7684;&#x7C7B;&#x7ED3;&#x6784;&#x5982;&#x4E0B;&#x56FE;&#x6240;&#x793A;&#x3002;</p>
 <p><img src="http://upload-images.jianshu.io/upload_images/3985563-fd074443f7382c2f.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></p>
 <p><strong>&#x62BD;&#x8C61;&#x6A21;&#x677F;&#x89D2;&#x8272;&#x7C7B;</strong></p>
-<pre><code class="lang-java">public abstract class Account {
-    /**
+<pre><code class="lang-java"><span class="hljs-keyword">public</span> <span class="hljs-keyword">abstract</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Account</span> </span>{
+    <span class="hljs-comment">/**
      * &#x6A21;&#x677F;&#x65B9;&#x6CD5;&#xFF0C;&#x8BA1;&#x7B97;&#x5229;&#x606F;&#x6570;&#x989D;
-     * @return    &#x8FD4;&#x56DE;&#x5229;&#x606F;&#x6570;&#x989D;
-     */
-    public final double calculateInterest(){
-        double interestRate = doCalculateInterestRate();
+     * <span class="hljs-doctag">@return</span>    &#x8FD4;&#x56DE;&#x5229;&#x606F;&#x6570;&#x989D;
+     */</span>
+    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">final</span> <span class="hljs-keyword">double</span> <span class="hljs-title">calculateInterest</span><span class="hljs-params">()</span></span>{
+        <span class="hljs-keyword">double</span> interestRate = doCalculateInterestRate();
         String accountType = doCalculateAccountType();
-        double amount = calculateAmount(accountType);
-        return amount * interestRate;
+        <span class="hljs-keyword">double</span> amount = calculateAmount(accountType);
+        <span class="hljs-keyword">return</span> amount * interestRate;
     }
-    /**
+    <span class="hljs-comment">/**
      * &#x57FA;&#x672C;&#x65B9;&#x6CD5;&#x7559;&#x7ED9;&#x5B50;&#x7C7B;&#x5B9E;&#x73B0;
-     */
-    protected abstract String doCalculateAccountType();
-    /**
+     */</span>
+    <span class="hljs-function"><span class="hljs-keyword">protected</span> <span class="hljs-keyword">abstract</span> String <span class="hljs-title">doCalculateAccountType</span><span class="hljs-params">()</span></span>;
+    <span class="hljs-comment">/**
      * &#x57FA;&#x672C;&#x65B9;&#x6CD5;&#x7559;&#x7ED9;&#x5B50;&#x7C7B;&#x5B9E;&#x73B0;
-     */
-    protected abstract double doCalculateInterestRate();
-    /**
+     */</span>
+    <span class="hljs-function"><span class="hljs-keyword">protected</span> <span class="hljs-keyword">abstract</span> <span class="hljs-keyword">double</span> <span class="hljs-title">doCalculateInterestRate</span><span class="hljs-params">()</span></span>;
+    <span class="hljs-comment">/**
      * &#x57FA;&#x672C;&#x65B9;&#x6CD5;&#xFF0C;&#x5DF2;&#x7ECF;&#x5B9E;&#x73B0;
-     */
-    private double calculateAmount(String accountType){
-        /**
+     */</span>
+    <span class="hljs-function"><span class="hljs-keyword">private</span> <span class="hljs-keyword">double</span> <span class="hljs-title">calculateAmount</span><span class="hljs-params">(String accountType)</span></span>{
+        <span class="hljs-comment">/**
          * &#x7701;&#x7565;&#x76F8;&#x5173;&#x7684;&#x4E1A;&#x52A1;&#x903B;&#x8F91;
-         */
-        return 7243.00;
+         */</span>
+        <span class="hljs-keyword">return</span> <span class="hljs-number">7243.00</span>;
     }
 }
 </code></pre>
 <p><strong>&#x5177;&#x4F53;&#x6A21;&#x677F;&#x89D2;&#x8272;&#x7C7B;</strong></p>
-<pre><code class="lang-java">public class MoneyMarketAccount extends Account {
+<pre><code class="lang-java"><span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">MoneyMarketAccount</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">Account</span> </span>{
 
-    @Override
-    protected String doCalculateAccountType() {
+    <span class="hljs-meta">@Override</span>
+    <span class="hljs-function"><span class="hljs-keyword">protected</span> String <span class="hljs-title">doCalculateAccountType</span><span class="hljs-params">()</span> </span>{
 
-        return &quot;Money Market&quot;;
+        <span class="hljs-keyword">return</span> <span class="hljs-string">&quot;Money Market&quot;</span>;
     }
 
-    @Override
-    protected double doCalculateInterestRate() {
+    <span class="hljs-meta">@Override</span>
+    <span class="hljs-function"><span class="hljs-keyword">protected</span> <span class="hljs-keyword">double</span> <span class="hljs-title">doCalculateInterestRate</span><span class="hljs-params">()</span> </span>{
 
-        return 0.045;
+        <span class="hljs-keyword">return</span> <span class="hljs-number">0.045</span>;
     }
 
 }
 </code></pre>
-<pre><code class="lang-java">public class CDAccount extends Account {
+<pre><code class="lang-java"><span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">CDAccount</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">Account</span> </span>{
 
-    @Override
-    protected String doCalculateAccountType() {
-        return &quot;Certificate of Deposite&quot;;
+    <span class="hljs-meta">@Override</span>
+    <span class="hljs-function"><span class="hljs-keyword">protected</span> String <span class="hljs-title">doCalculateAccountType</span><span class="hljs-params">()</span> </span>{
+        <span class="hljs-keyword">return</span> <span class="hljs-string">&quot;Certificate of Deposite&quot;</span>;
     }
 
-    @Override
-    protected double doCalculateInterestRate() {
-        return 0.06;
+    <span class="hljs-meta">@Override</span>
+    <span class="hljs-function"><span class="hljs-keyword">protected</span> <span class="hljs-keyword">double</span> <span class="hljs-title">doCalculateInterestRate</span><span class="hljs-params">()</span> </span>{
+        <span class="hljs-keyword">return</span> <span class="hljs-number">0.06</span>;
     }
 
 }
 </code></pre>
 <p><strong>&#x5BA2;&#x6237;&#x7AEF;&#x7C7B;</strong></p>
-<pre><code class="lang-java">public class Client {
+<pre><code class="lang-java"><span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Client</span> </span>{
 
-    public static void main(String[] args) {
-        Account account = new MoneyMarketAccount();
-        System.out.println(&quot;&#x8D27;&#x5E01;&#x5E02;&#x573A;&#x8D26;&#x53F7;&#x7684;&#x5229;&#x606F;&#x6570;&#x989D;&#x4E3A;&#xFF1A;&quot; + account.calculateInterest());
-        account = new CDAccount();
-        System.out.println(&quot;&#x5B9A;&#x671F;&#x8D26;&#x53F7;&#x7684;&#x5229;&#x606F;&#x6570;&#x989D;&#x4E3A;&#xFF1A;&quot; + account.calculateInterest());
+    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title">main</span><span class="hljs-params">(String[] args)</span> </span>{
+        Account account = <span class="hljs-keyword">new</span> MoneyMarketAccount();
+        System.out.println(<span class="hljs-string">&quot;&#x8D27;&#x5E01;&#x5E02;&#x573A;&#x8D26;&#x53F7;&#x7684;&#x5229;&#x606F;&#x6570;&#x989D;&#x4E3A;&#xFF1A;&quot;</span> + account.calculateInterest());
+        account = <span class="hljs-keyword">new</span> CDAccount();
+        System.out.println(<span class="hljs-string">&quot;&#x5B9A;&#x671F;&#x8D26;&#x53F7;&#x7684;&#x5229;&#x606F;&#x6570;&#x989D;&#x4E3A;&#xFF1A;&quot;</span> + account.calculateInterest());
     }
 
 }
@@ -3913,7 +3917,7 @@
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"模板方法模式","level":"6.3.5","depth":2,"next":{"title":"TCP/IP","level":"7.1","depth":1,"path":"computer-networks/tcpip.md","ref":"computer-networks/tcpip.md","articles":[]},"previous":{"title":"策略模式","level":"6.3.4","depth":2,"path":"design-mode/Behavioral-Pattern/Strategy-Pattern.md","ref":"design-mode/Behavioral-Pattern/Strategy-Pattern.md","articles":[]},"dir":"ltr"},"config":{"plugins":["-lunr","-search","-highlight","-livereload","search-plus@^0.0.11","simple-page-toc@^0.1.1","github@^2.0.0","github-buttons@2.1.0","edit-link@^2.0.2","advanced-emoji@^0.2.1","anchors@^0.7.1","include-codeblock@^3.0.2","ace@^0.3.2","emphasize@^1.1.0","katex@^1.1.3","splitter@^0.0.8","tbfed-pagefooter@^0.0.1","expandable-chapters-small@^0.1.7","sectionx@^3.1.0","local-video@^1.0.1","anchor-navigation-ex@0.1.8","favicon@^0.0.2"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"tbfed-pagefooter":{"copyright":"Copyright © ruheng.com 2017","modify_label":"该文件修订时间：","modify_format":"YYYY-MM-DD HH:mm:ss"},"emphasize":{},"ace":{},"github":{"url":"https://github.com/LRH1993/android_interview"},"simple-page-toc":{"maxDepth":3,"skipFirstH1":true},"splitter":{},"katex":{},"fontsettings":{"theme":"white","family":"sans","size":2},"sectionx":{"tag":"b"},"anchor-navigation-ex":{"isRewritePageTitle":false,"tocLevel1Icon":"fa fa-hand-o-right","tocLevel2Icon":"fa fa-hand-o-right","tocLevel3Icon":"fa fa-hand-o-right"},"favicon":{"shortcut":"favicon.ico","bookmark":"favicon.ico"},"github-buttons":{"repo":"LRH1993/android_interview","types":["star"],"size":"small"},"expandable-chapters-small":{},"local-video":{},"advanced-emoji":{"embedEmojis":false},"include-codeblock":{"check":false,"edit":true,"fixlang":false,"lang":"","template":"ace","theme":"chrome","unindent":true},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":true,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"edit-link":{"label":"Edit This Page","base":"https://github.com/LRH1993/android_interview/edit/master"},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":true},"anchors":{},"search-plus":{}},"theme":"default","author":"ruheng","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"Android校招面试指南","language":"zh-hans","output.name":"site","links":{"sidebar":{"Home":"http://lruheng.com/"}},"gitbook":"3.2.3","description":"Android面试必备，记录自己的秋招之路"},"file":{"path":"design-mode/Behavioral-Pattern/Template-Method.md","mtime":"2017-08-22T07:53:58.000Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2017-10-16T12:05:21.906Z"},"basePath":"../..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"模板方法模式","level":"6.3.5","depth":2,"next":{"title":"TCP/IP","level":"7.1","depth":1,"path":"computer-networks/tcpip.md","ref":"computer-networks/tcpip.md","articles":[]},"previous":{"title":"策略模式","level":"6.3.4","depth":2,"path":"design-mode/Behavioral-Pattern/Strategy-Pattern.md","ref":"design-mode/Behavioral-Pattern/Strategy-Pattern.md","articles":[]},"dir":"ltr"},"config":{"plugins":["-lunr","-search","-livereload","search-plus@^0.0.11","simple-page-toc@^0.1.1","github@^2.0.0","github-buttons@2.1.0","edit-link@^2.0.2","advanced-emoji@^0.2.1","anchors@^0.7.1","include-codeblock@^3.0.2","ace@^0.3.2","emphasize@^1.1.0","katex@^1.1.3","splitter@^0.0.8","tbfed-pagefooter@^0.0.1","expandable-chapters-small@^0.1.7","sectionx@^3.1.0","local-video@^1.0.1","anchor-navigation-ex@0.1.8","favicon@^0.0.2"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"tbfed-pagefooter":{"copyright":"Copyright © ruheng.com 2017","modify_label":"该文件修订时间：","modify_format":"YYYY-MM-DD HH:mm:ss"},"emphasize":{},"ace":{},"github":{"url":"https://github.com/LRH1993/android_interview"},"simple-page-toc":{"maxDepth":3,"skipFirstH1":true},"splitter":{},"katex":{},"fontsettings":{"theme":"white","family":"sans","size":2},"sectionx":{"tag":"b"},"highlight":{},"anchor-navigation-ex":{"isRewritePageTitle":false,"tocLevel1Icon":"fa fa-hand-o-right","tocLevel2Icon":"fa fa-hand-o-right","tocLevel3Icon":"fa fa-hand-o-right"},"favicon":{"shortcut":"favicon.ico","bookmark":"favicon.ico"},"github-buttons":{"repo":"LRH1993/android_interview","types":["star"],"size":"small"},"expandable-chapters-small":{},"local-video":{},"advanced-emoji":{"embedEmojis":false},"include-codeblock":{"check":false,"edit":false,"fixlang":false,"lang":"","template":"default","theme":"chrome","unindent":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":true,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"edit-link":{"label":"Edit This Page","base":"https://github.com/LRH1993/android_interview/edit/master"},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":true},"anchors":{},"search-plus":{}},"theme":"default","author":"ruheng","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"Android校招面试指南","language":"zh-hans","output.name":"site","links":{"sidebar":{"Home":"http://lruheng.com/"}},"gitbook":"3.2.3","description":"Android面试必备，记录自己的秋招之路"},"file":{"path":"design-mode/Behavioral-Pattern/Template-Method.md","mtime":"2017-08-22T07:53:58.000Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2017-10-16T13:00:43.989Z"},"basePath":"../..","book":{"language":""}});
         });
     </script>
 </div>

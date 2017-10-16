@@ -69,6 +69,10 @@
                 
             
                 
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
                 <link rel="stylesheet" href="../../gitbook/gitbook-plugin-fontsettings/website.css">
                 
             
@@ -3725,57 +3729,57 @@
 </blockquote>
 <h2 id="&#x4E09;&#x3001;randomaccessfile&#x7684;&#x4F7F;&#x7528;"><a name="&#x4E09;&#x3001;randomaccessfile&#x7684;&#x4F7F;&#x7528;" class="anchor-navigation-ex-anchor" href="#&#x4E09;&#x3001;randomaccessfile&#x7684;&#x4F7F;&#x7528;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x4E09;&#x3001;RandomAccessFile&#x7684;&#x4F7F;&#x7528;</h2>
 <p>&#x5229;&#x7528;RandomAccessFile&#x5B9E;&#x73B0;&#x6587;&#x4EF6;&#x7684;&#x591A;&#x7EBF;&#x7A0B;&#x4E0B;&#x8F7D;&#xFF0C;&#x5373;&#x591A;&#x7EBF;&#x7A0B;&#x4E0B;&#x8F7D;&#x4E00;&#x4E2A;&#x6587;&#x4EF6;&#x65F6;&#xFF0C;&#x5C06;&#x6587;&#x4EF6;&#x5206;&#x6210;&#x51E0;&#x5757;&#xFF0C;&#x6BCF;&#x5757;&#x7528;&#x4E0D;&#x540C;&#x7684;&#x7EBF;&#x7A0B;&#x8FDB;&#x884C;&#x4E0B;&#x8F7D;&#x3002;&#x4E0B;&#x9762;&#x662F;&#x4E00;&#x4E2A;&#x5229;&#x7528;&#x591A;&#x7EBF;&#x7A0B;&#x5728;&#x5199;&#x6587;&#x4EF6;&#x65F6;&#x7684;&#x4F8B;&#x5B50;&#xFF0C;&#x5176;&#x4E2D;&#x9884;&#x5148;&#x5206;&#x914D;&#x6587;&#x4EF6;&#x6240;&#x9700;&#x8981;&#x7684;&#x7A7A;&#x95F4;&#xFF0C;&#x7136;&#x540E;&#x5728;&#x6240;&#x5206;&#x914D;&#x7684;&#x7A7A;&#x95F4;&#x4E2D;&#x8FDB;&#x884C;&#x5206;&#x5757;&#xFF0C;&#x7136;&#x540E;&#x5199;&#x5165;&#xFF1A;</p>
-<pre><code class="lang-java">/** 
+<pre><code class="lang-java"><span class="hljs-comment">/** 
  * &#x6D4B;&#x8BD5;&#x5229;&#x7528;&#x591A;&#x7EBF;&#x7A0B;&#x8FDB;&#x884C;&#x6587;&#x4EF6;&#x7684;&#x5199;&#x64CD;&#x4F5C; 
- */  
-public class Test {  
+ */</span>  
+<span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Test</span> </span>{  
 
-    public static void main(String[] args) throws Exception {  
-        // &#x9884;&#x5206;&#x914D;&#x6587;&#x4EF6;&#x6240;&#x5360;&#x7684;&#x78C1;&#x76D8;&#x7A7A;&#x95F4;&#xFF0C;&#x78C1;&#x76D8;&#x4E2D;&#x4F1A;&#x521B;&#x5EFA;&#x4E00;&#x4E2A;&#x6307;&#x5B9A;&#x5927;&#x5C0F;&#x7684;&#x6587;&#x4EF6;  
-        RandomAccessFile raf = new RandomAccessFile(&quot;D://abc.txt&quot;, &quot;rw&quot;);  
-        raf.setLength(1024*1024); // &#x9884;&#x5206;&#x914D; 1M &#x7684;&#x6587;&#x4EF6;&#x7A7A;&#x95F4;  
+    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title">main</span><span class="hljs-params">(String[] args)</span> <span class="hljs-keyword">throws</span> Exception </span>{  
+        <span class="hljs-comment">// &#x9884;&#x5206;&#x914D;&#x6587;&#x4EF6;&#x6240;&#x5360;&#x7684;&#x78C1;&#x76D8;&#x7A7A;&#x95F4;&#xFF0C;&#x78C1;&#x76D8;&#x4E2D;&#x4F1A;&#x521B;&#x5EFA;&#x4E00;&#x4E2A;&#x6307;&#x5B9A;&#x5927;&#x5C0F;&#x7684;&#x6587;&#x4EF6;  </span>
+        RandomAccessFile raf = <span class="hljs-keyword">new</span> RandomAccessFile(<span class="hljs-string">&quot;D://abc.txt&quot;</span>, <span class="hljs-string">&quot;rw&quot;</span>);  
+        raf.setLength(<span class="hljs-number">1024</span>*<span class="hljs-number">1024</span>); <span class="hljs-comment">// &#x9884;&#x5206;&#x914D; 1M &#x7684;&#x6587;&#x4EF6;&#x7A7A;&#x95F4;  </span>
         raf.close();  
 
-        // &#x6240;&#x8981;&#x5199;&#x5165;&#x7684;&#x6587;&#x4EF6;&#x5185;&#x5BB9;  
-        String s1 = &quot;&#x7B2C;&#x4E00;&#x4E2A;&#x5B57;&#x7B26;&#x4E32;&quot;;  
-        String s2 = &quot;&#x7B2C;&#x4E8C;&#x4E2A;&#x5B57;&#x7B26;&#x4E32;&quot;;  
-        String s3 = &quot;&#x7B2C;&#x4E09;&#x4E2A;&#x5B57;&#x7B26;&#x4E32;&quot;;  
-        String s4 = &quot;&#x7B2C;&#x56DB;&#x4E2A;&#x5B57;&#x7B26;&#x4E32;&quot;;  
-        String s5 = &quot;&#x7B2C;&#x4E94;&#x4E2A;&#x5B57;&#x7B26;&#x4E32;&quot;;  
+        <span class="hljs-comment">// &#x6240;&#x8981;&#x5199;&#x5165;&#x7684;&#x6587;&#x4EF6;&#x5185;&#x5BB9;  </span>
+        String s1 = <span class="hljs-string">&quot;&#x7B2C;&#x4E00;&#x4E2A;&#x5B57;&#x7B26;&#x4E32;&quot;</span>;  
+        String s2 = <span class="hljs-string">&quot;&#x7B2C;&#x4E8C;&#x4E2A;&#x5B57;&#x7B26;&#x4E32;&quot;</span>;  
+        String s3 = <span class="hljs-string">&quot;&#x7B2C;&#x4E09;&#x4E2A;&#x5B57;&#x7B26;&#x4E32;&quot;</span>;  
+        String s4 = <span class="hljs-string">&quot;&#x7B2C;&#x56DB;&#x4E2A;&#x5B57;&#x7B26;&#x4E32;&quot;</span>;  
+        String s5 = <span class="hljs-string">&quot;&#x7B2C;&#x4E94;&#x4E2A;&#x5B57;&#x7B26;&#x4E32;&quot;</span>;  
 
-        // &#x5229;&#x7528;&#x591A;&#x7EBF;&#x7A0B;&#x540C;&#x65F6;&#x5199;&#x5165;&#x4E00;&#x4E2A;&#x6587;&#x4EF6;  
-        new FileWriteThread(1024*1,s1.getBytes()).start(); // &#x4ECE;&#x6587;&#x4EF6;&#x7684;1024&#x5B57;&#x8282;&#x4E4B;&#x540E;&#x5F00;&#x59CB;&#x5199;&#x5165;&#x6570;&#x636E;  
-        new FileWriteThread(1024*2,s2.getBytes()).start(); // &#x4ECE;&#x6587;&#x4EF6;&#x7684;2048&#x5B57;&#x8282;&#x4E4B;&#x540E;&#x5F00;&#x59CB;&#x5199;&#x5165;&#x6570;&#x636E;  
-        new FileWriteThread(1024*3,s3.getBytes()).start(); // &#x4ECE;&#x6587;&#x4EF6;&#x7684;3072&#x5B57;&#x8282;&#x4E4B;&#x540E;&#x5F00;&#x59CB;&#x5199;&#x5165;&#x6570;&#x636E;  
-        new FileWriteThread(1024*4,s4.getBytes()).start(); // &#x4ECE;&#x6587;&#x4EF6;&#x7684;4096&#x5B57;&#x8282;&#x4E4B;&#x540E;&#x5F00;&#x59CB;&#x5199;&#x5165;&#x6570;&#x636E;  
-        new FileWriteThread(1024*5,s5.getBytes()).start(); // &#x4ECE;&#x6587;&#x4EF6;&#x7684;5120&#x5B57;&#x8282;&#x4E4B;&#x540E;&#x5F00;&#x59CB;&#x5199;&#x5165;&#x6570;&#x636E;  
+        <span class="hljs-comment">// &#x5229;&#x7528;&#x591A;&#x7EBF;&#x7A0B;&#x540C;&#x65F6;&#x5199;&#x5165;&#x4E00;&#x4E2A;&#x6587;&#x4EF6;  </span>
+        <span class="hljs-keyword">new</span> FileWriteThread(<span class="hljs-number">1024</span>*<span class="hljs-number">1</span>,s1.getBytes()).start(); <span class="hljs-comment">// &#x4ECE;&#x6587;&#x4EF6;&#x7684;1024&#x5B57;&#x8282;&#x4E4B;&#x540E;&#x5F00;&#x59CB;&#x5199;&#x5165;&#x6570;&#x636E;  </span>
+        <span class="hljs-keyword">new</span> FileWriteThread(<span class="hljs-number">1024</span>*<span class="hljs-number">2</span>,s2.getBytes()).start(); <span class="hljs-comment">// &#x4ECE;&#x6587;&#x4EF6;&#x7684;2048&#x5B57;&#x8282;&#x4E4B;&#x540E;&#x5F00;&#x59CB;&#x5199;&#x5165;&#x6570;&#x636E;  </span>
+        <span class="hljs-keyword">new</span> FileWriteThread(<span class="hljs-number">1024</span>*<span class="hljs-number">3</span>,s3.getBytes()).start(); <span class="hljs-comment">// &#x4ECE;&#x6587;&#x4EF6;&#x7684;3072&#x5B57;&#x8282;&#x4E4B;&#x540E;&#x5F00;&#x59CB;&#x5199;&#x5165;&#x6570;&#x636E;  </span>
+        <span class="hljs-keyword">new</span> FileWriteThread(<span class="hljs-number">1024</span>*<span class="hljs-number">4</span>,s4.getBytes()).start(); <span class="hljs-comment">// &#x4ECE;&#x6587;&#x4EF6;&#x7684;4096&#x5B57;&#x8282;&#x4E4B;&#x540E;&#x5F00;&#x59CB;&#x5199;&#x5165;&#x6570;&#x636E;  </span>
+        <span class="hljs-keyword">new</span> FileWriteThread(<span class="hljs-number">1024</span>*<span class="hljs-number">5</span>,s5.getBytes()).start(); <span class="hljs-comment">// &#x4ECE;&#x6587;&#x4EF6;&#x7684;5120&#x5B57;&#x8282;&#x4E4B;&#x540E;&#x5F00;&#x59CB;&#x5199;&#x5165;&#x6570;&#x636E;  </span>
     }  
 
-    // &#x5229;&#x7528;&#x7EBF;&#x7A0B;&#x5728;&#x6587;&#x4EF6;&#x7684;&#x6307;&#x5B9A;&#x4F4D;&#x7F6E;&#x5199;&#x5165;&#x6307;&#x5B9A;&#x6570;&#x636E;  
-    static class FileWriteThread extends Thread{  
-        private int skip;  
-        private byte[] content;  
+    <span class="hljs-comment">// &#x5229;&#x7528;&#x7EBF;&#x7A0B;&#x5728;&#x6587;&#x4EF6;&#x7684;&#x6307;&#x5B9A;&#x4F4D;&#x7F6E;&#x5199;&#x5165;&#x6307;&#x5B9A;&#x6570;&#x636E;  </span>
+    <span class="hljs-keyword">static</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">FileWriteThread</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">Thread</span></span>{  
+        <span class="hljs-keyword">private</span> <span class="hljs-keyword">int</span> skip;  
+        <span class="hljs-keyword">private</span> <span class="hljs-keyword">byte</span>[] content;  
 
-        public FileWriteThread(int skip,byte[] content){  
-            this.skip = skip;  
-            this.content = content;  
+        <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-title">FileWriteThread</span><span class="hljs-params">(<span class="hljs-keyword">int</span> skip,<span class="hljs-keyword">byte</span>[] content)</span></span>{  
+            <span class="hljs-keyword">this</span>.skip = skip;  
+            <span class="hljs-keyword">this</span>.content = content;  
         }  
 
-        public void run(){  
-            RandomAccessFile raf = null;  
-            try {  
-                raf = new RandomAccessFile(&quot;D://abc.txt&quot;, &quot;rw&quot;);  
+        <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">run</span><span class="hljs-params">()</span></span>{  
+            RandomAccessFile raf = <span class="hljs-keyword">null</span>;  
+            <span class="hljs-keyword">try</span> {  
+                raf = <span class="hljs-keyword">new</span> RandomAccessFile(<span class="hljs-string">&quot;D://abc.txt&quot;</span>, <span class="hljs-string">&quot;rw&quot;</span>);  
                 raf.seek(skip);  
                 raf.write(content);  
-            } catch (FileNotFoundException e) {  
+            } <span class="hljs-keyword">catch</span> (FileNotFoundException e) {  
                 e.printStackTrace();  
-            } catch (IOException e) {  
-                // TODO Auto-generated catch block  
+            } <span class="hljs-keyword">catch</span> (IOException e) {  
+                <span class="hljs-comment">// TODO Auto-generated catch block  </span>
                 e.printStackTrace();  
-            } finally {  
-                try {  
+            } <span class="hljs-keyword">finally</span> {  
+                <span class="hljs-keyword">try</span> {  
                     raf.close();  
-                } catch (Exception e) {  
+                } <span class="hljs-keyword">catch</span> (Exception e) {  
                 }  
             }  
         }  
@@ -3829,7 +3833,7 @@ public class Test {
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"RandomAccessFile","level":"2.1.14","depth":2,"next":{"title":"Java NIO","level":"2.1.15","depth":2,"path":"java/basis/java-nio.md","ref":"java/basis/java-nio.md","articles":[]},"previous":{"title":"Java IO(二)","level":"2.1.13","depth":2,"path":"java/basis/java-io2.md","ref":"java/basis/java-io2.md","articles":[]},"dir":"ltr"},"config":{"plugins":["-lunr","-search","-highlight","-livereload","search-plus@^0.0.11","simple-page-toc@^0.1.1","github@^2.0.0","github-buttons@2.1.0","edit-link@^2.0.2","advanced-emoji@^0.2.1","anchors@^0.7.1","include-codeblock@^3.0.2","ace@^0.3.2","emphasize@^1.1.0","katex@^1.1.3","splitter@^0.0.8","tbfed-pagefooter@^0.0.1","expandable-chapters-small@^0.1.7","sectionx@^3.1.0","local-video@^1.0.1","anchor-navigation-ex@0.1.8","favicon@^0.0.2"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"tbfed-pagefooter":{"copyright":"Copyright © ruheng.com 2017","modify_label":"该文件修订时间：","modify_format":"YYYY-MM-DD HH:mm:ss"},"emphasize":{},"ace":{},"github":{"url":"https://github.com/LRH1993/android_interview"},"simple-page-toc":{"maxDepth":3,"skipFirstH1":true},"splitter":{},"katex":{},"fontsettings":{"theme":"white","family":"sans","size":2},"sectionx":{"tag":"b"},"anchor-navigation-ex":{"isRewritePageTitle":false,"tocLevel1Icon":"fa fa-hand-o-right","tocLevel2Icon":"fa fa-hand-o-right","tocLevel3Icon":"fa fa-hand-o-right"},"favicon":{"shortcut":"favicon.ico","bookmark":"favicon.ico"},"github-buttons":{"repo":"LRH1993/android_interview","types":["star"],"size":"small"},"expandable-chapters-small":{},"local-video":{},"advanced-emoji":{"embedEmojis":false},"include-codeblock":{"check":false,"edit":true,"fixlang":false,"lang":"","template":"ace","theme":"chrome","unindent":true},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":true,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"edit-link":{"label":"Edit This Page","base":"https://github.com/LRH1993/android_interview/edit/master"},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":true},"anchors":{},"search-plus":{}},"theme":"default","author":"ruheng","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"Android校招面试指南","language":"zh-hans","output.name":"site","links":{"sidebar":{"Home":"http://lruheng.com/"}},"gitbook":"3.2.3","description":"Android面试必备，记录自己的秋招之路"},"file":{"path":"java/basis/randomaccessfile.md","mtime":"2017-08-22T07:53:58.000Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2017-10-16T12:05:21.906Z"},"basePath":"../..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"RandomAccessFile","level":"2.1.14","depth":2,"next":{"title":"Java NIO","level":"2.1.15","depth":2,"path":"java/basis/java-nio.md","ref":"java/basis/java-nio.md","articles":[]},"previous":{"title":"Java IO(二)","level":"2.1.13","depth":2,"path":"java/basis/java-io2.md","ref":"java/basis/java-io2.md","articles":[]},"dir":"ltr"},"config":{"plugins":["-lunr","-search","-livereload","search-plus@^0.0.11","simple-page-toc@^0.1.1","github@^2.0.0","github-buttons@2.1.0","edit-link@^2.0.2","advanced-emoji@^0.2.1","anchors@^0.7.1","include-codeblock@^3.0.2","ace@^0.3.2","emphasize@^1.1.0","katex@^1.1.3","splitter@^0.0.8","tbfed-pagefooter@^0.0.1","expandable-chapters-small@^0.1.7","sectionx@^3.1.0","local-video@^1.0.1","anchor-navigation-ex@0.1.8","favicon@^0.0.2"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"tbfed-pagefooter":{"copyright":"Copyright © ruheng.com 2017","modify_label":"该文件修订时间：","modify_format":"YYYY-MM-DD HH:mm:ss"},"emphasize":{},"ace":{},"github":{"url":"https://github.com/LRH1993/android_interview"},"simple-page-toc":{"maxDepth":3,"skipFirstH1":true},"splitter":{},"katex":{},"fontsettings":{"theme":"white","family":"sans","size":2},"sectionx":{"tag":"b"},"highlight":{},"anchor-navigation-ex":{"isRewritePageTitle":false,"tocLevel1Icon":"fa fa-hand-o-right","tocLevel2Icon":"fa fa-hand-o-right","tocLevel3Icon":"fa fa-hand-o-right"},"favicon":{"shortcut":"favicon.ico","bookmark":"favicon.ico"},"github-buttons":{"repo":"LRH1993/android_interview","types":["star"],"size":"small"},"expandable-chapters-small":{},"local-video":{},"advanced-emoji":{"embedEmojis":false},"include-codeblock":{"check":false,"edit":false,"fixlang":false,"lang":"","template":"default","theme":"chrome","unindent":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":true,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"edit-link":{"label":"Edit This Page","base":"https://github.com/LRH1993/android_interview/edit/master"},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":true},"anchors":{},"search-plus":{}},"theme":"default","author":"ruheng","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"Android校招面试指南","language":"zh-hans","output.name":"site","links":{"sidebar":{"Home":"http://lruheng.com/"}},"gitbook":"3.2.3","description":"Android面试必备，记录自己的秋招之路"},"file":{"path":"java/basis/randomaccessfile.md","mtime":"2017-08-22T07:53:58.000Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2017-10-16T13:00:43.989Z"},"basePath":"../..","book":{"language":""}});
         });
     </script>
 </div>

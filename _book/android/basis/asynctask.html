@@ -69,6 +69,10 @@
                 
             
                 
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
                 <link rel="stylesheet" href="../../gitbook/gitbook-plugin-fontsettings/website.css">
                 
             
@@ -3714,8 +3718,8 @@
 <p>&#x5176;&#x4E2D;<strong>SerialExecutor&#x7EBF;&#x7A0B;&#x6C60;&#x7528;&#x4E8E;&#x4EFB;&#x52A1;&#x7684;&#x6392;&#x961F;&#xFF0C;&#x8BA9;&#x9700;&#x8981;&#x6267;&#x884C;&#x7684;&#x591A;&#x4E2A;&#x8017;&#x65F6;&#x4EFB;&#x52A1;&#xFF0C;&#x6309;&#x987A;&#x5E8F;&#x6392;&#x5217;</strong>&#xFF0C;<strong>THREAD_POOL_EXECUTOR&#x7EBF;&#x7A0B;&#x6C60;&#x624D;&#x771F;&#x6B63;&#x5730;&#x6267;&#x884C;&#x4EFB;&#x52A1;</strong>&#xFF0C;<strong>InternalHandler&#x7528;&#x4E8E;&#x4ECE;&#x5DE5;&#x4F5C;&#x7EBF;&#x7A0B;&#x5207;&#x6362;&#x5230;&#x4E3B;&#x7EBF;&#x7A0B;</strong>&#x3002;</p>
 <h4 id="1asynctask&#x7684;&#x6CDB;&#x578B;&#x53C2;&#x6570;"><a name="1asynctask&#x7684;&#x6CDB;&#x578B;&#x53C2;&#x6570;" class="anchor-navigation-ex-anchor" href="#1asynctask&#x7684;&#x6CDB;&#x578B;&#x53C2;&#x6570;"><i class="fa fa-link" aria-hidden="true"></i></a>1.AsyncTask&#x7684;&#x6CDB;&#x578B;&#x53C2;&#x6570;</h4>
 <p>AsyncTask&#x7684;&#x7C7B;&#x58F0;&#x660E;&#x5982;&#x4E0B;&#xFF1A;</p>
-<pre><code class="lang-java">public abstract class AsyncTask&lt;Params, Progress, Result&gt;
-</code></pre>
+<pre><code class="lang-java"><span class="hljs-keyword">public</span> <span class="hljs-keyword">abstract</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">AsyncTask</span>&lt;<span class="hljs-title">Params</span>, <span class="hljs-title">Progress</span>, <span class="hljs-title">Result</span>&gt;
+</span></code></pre>
 <p>AsyncTask&#x662F;&#x4E00;&#x4E2A;&#x62BD;&#x8C61;&#x6CDB;&#x578B;&#x7C7B;&#x3002;</p>
 <p>&#x5176;&#x4E2D;&#xFF0C;&#x4E09;&#x4E2A;&#x6CDB;&#x578B;&#x7C7B;&#x578B;&#x53C2;&#x6570;&#x7684;&#x542B;&#x4E49;&#x5982;&#x4E0B;&#xFF1A;</p>
 <p><strong>Params&#xFF1A;</strong>&#x5F00;&#x59CB;&#x5F02;&#x6B65;&#x4EFB;&#x52A1;&#x6267;&#x884C;&#x65F6;&#x4F20;&#x5165;&#x7684;&#x53C2;&#x6570;&#x7C7B;&#x578B;&#xFF1B;</p>
@@ -3738,47 +3742,47 @@ onPreExecute() --&gt; doInBackground() --&gt; publishProgress() --&gt; onProgres
 <p>&#x5982;&#x679C;&#x4E0D;&#x9700;&#x8981;&#x6267;&#x884C;&#x66F4;&#x65B0;&#x8FDB;&#x5EA6;&#x5219;&#x4E3A;onPreExecute() --&gt; doInBackground() --&gt; onPostExecute(),</p>
 <p>&#x9664;&#x4E86;&#x4E0A;&#x9762;&#x56DB;&#x4E2A;&#x65B9;&#x6CD5;&#xFF0C;AsyncTask&#x8FD8;&#x63D0;&#x4F9B;&#x4E86;onCancelled()&#x65B9;&#x6CD5;&#xFF0C;<strong>&#x5B83;&#x540C;&#x6837;&#x5728;&#x4E3B;&#x7EBF;&#x7A0B;&#x4E2D;&#x6267;&#x884C;&#xFF0C;&#x5F53;&#x5F02;&#x6B65;&#x4EFB;&#x52A1;&#x53D6;&#x6D88;&#x65F6;&#xFF0C;onCancelled()&#x4F1A;&#x88AB;&#x8C03;&#x7528;&#xFF0C;&#x8FD9;&#x4E2A;&#x65F6;&#x5019;onPostExecute()&#x5219;&#x4E0D;&#x4F1A;&#x88AB;&#x8C03;&#x7528;</strong>&#xFF0C;&#x4F46;&#x662F;&#x8981;&#x6CE8;&#x610F;&#x7684;&#x662F;&#xFF0C;<strong>AsyncTask&#x4E2D;&#x7684;cancel()&#x65B9;&#x6CD5;&#x5E76;&#x4E0D;&#x662F;&#x771F;&#x6B63;&#x53BB;&#x53D6;&#x6D88;&#x4EFB;&#x52A1;&#xFF0C;&#x53EA;&#x662F;&#x8BBE;&#x7F6E;&#x8FD9;&#x4E2A;&#x4EFB;&#x52A1;&#x4E3A;&#x53D6;&#x6D88;&#x72B6;&#x6001;&#xFF0C;&#x6211;&#x4EEC;&#x9700;&#x8981;&#x5728;doInBackground()&#x5224;&#x65AD;&#x7EC8;&#x6B62;&#x4EFB;&#x52A1;&#x3002;&#x5C31;&#x597D;&#x6BD4;&#x60F3;&#x8981;&#x7EC8;&#x6B62;&#x4E00;&#x4E2A;&#x7EBF;&#x7A0B;&#xFF0C;&#x8C03;&#x7528;interrupt()&#x65B9;&#x6CD5;&#xFF0C;&#x53EA;&#x662F;&#x8FDB;&#x884C;&#x6807;&#x8BB0;&#x4E3A;&#x4E2D;&#x65AD;&#xFF0C;&#x9700;&#x8981;&#x5728;&#x7EBF;&#x7A0B;&#x5185;&#x90E8;&#x8FDB;&#x884C;&#x6807;&#x8BB0;&#x5224;&#x65AD;&#x7136;&#x540E;&#x4E2D;&#x65AD;&#x7EBF;&#x7A0B;&#x3002;</strong></p>
 <h4 id="3asynctask&#x7684;&#x7B80;&#x5355;&#x4F7F;&#x7528;"><a name="3asynctask&#x7684;&#x7B80;&#x5355;&#x4F7F;&#x7528;" class="anchor-navigation-ex-anchor" href="#3asynctask&#x7684;&#x7B80;&#x5355;&#x4F7F;&#x7528;"><i class="fa fa-link" aria-hidden="true"></i></a>3.AsyncTask&#x7684;&#x7B80;&#x5355;&#x4F7F;&#x7528;</h4>
-<pre><code class="lang-java">class DownloadTask extends AsyncTask&lt;Void, Integer, Boolean&gt; {  
+<pre><code class="lang-java"><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">DownloadTask</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">AsyncTask</span>&lt;<span class="hljs-title">Void</span>, <span class="hljs-title">Integer</span>, <span class="hljs-title">Boolean</span>&gt; </span>{  
 
-    @Override  
-    protected void onPreExecute() {  
+    <span class="hljs-meta">@Override</span>  
+    <span class="hljs-function"><span class="hljs-keyword">protected</span> <span class="hljs-keyword">void</span> <span class="hljs-title">onPreExecute</span><span class="hljs-params">()</span> </span>{  
         progressDialog.show();  
     }  
 
-    @Override  
-    protected Boolean doInBackground(Void... params) {  
-        try {  
-            while (true) {  
-                int downloadPercent = doDownload();  
+    <span class="hljs-meta">@Override</span>  
+    <span class="hljs-function"><span class="hljs-keyword">protected</span> Boolean <span class="hljs-title">doInBackground</span><span class="hljs-params">(Void... params)</span> </span>{  
+        <span class="hljs-keyword">try</span> {  
+            <span class="hljs-keyword">while</span> (<span class="hljs-keyword">true</span>) {  
+                <span class="hljs-keyword">int</span> downloadPercent = doDownload();  
                 publishProgress(downloadPercent);  
-                if (downloadPercent &gt;= 100) {  
-                    break;  
+                <span class="hljs-keyword">if</span> (downloadPercent &gt;= <span class="hljs-number">100</span>) {  
+                    <span class="hljs-keyword">break</span>;  
                 }  
             }  
-        } catch (Exception e) {  
-            return false;  
+        } <span class="hljs-keyword">catch</span> (Exception e) {  
+            <span class="hljs-keyword">return</span> <span class="hljs-keyword">false</span>;  
         }  
-        return true;  
+        <span class="hljs-keyword">return</span> <span class="hljs-keyword">true</span>;  
     }  
 
-    @Override  
-    protected void onProgressUpdate(Integer... values) {  
-        progressDialog.setMessage(&quot;&#x5F53;&#x524D;&#x4E0B;&#x8F7D;&#x8FDB;&#x5EA6;&#xFF1A;&quot; + values[0] + &quot;%&quot;);  
+    <span class="hljs-meta">@Override</span>  
+    <span class="hljs-function"><span class="hljs-keyword">protected</span> <span class="hljs-keyword">void</span> <span class="hljs-title">onProgressUpdate</span><span class="hljs-params">(Integer... values)</span> </span>{  
+        progressDialog.setMessage(<span class="hljs-string">&quot;&#x5F53;&#x524D;&#x4E0B;&#x8F7D;&#x8FDB;&#x5EA6;&#xFF1A;&quot;</span> + values[<span class="hljs-number">0</span>] + <span class="hljs-string">&quot;%&quot;</span>);  
     }  
 
-    @Override  
-    protected void onPostExecute(Boolean result) {  
+    <span class="hljs-meta">@Override</span>  
+    <span class="hljs-function"><span class="hljs-keyword">protected</span> <span class="hljs-keyword">void</span> <span class="hljs-title">onPostExecute</span><span class="hljs-params">(Boolean result)</span> </span>{  
         progressDialog.dismiss();  
-        if (result) {  
-            Toast.makeText(context, &quot;&#x4E0B;&#x8F7D;&#x6210;&#x529F;&quot;, Toast.LENGTH_SHORT).show();  
-        } else {  
-            Toast.makeText(context, &quot;&#x4E0B;&#x8F7D;&#x5931;&#x8D25;&quot;, Toast.LENGTH_SHORT).show();  
+        <span class="hljs-keyword">if</span> (result) {  
+            Toast.makeText(context, <span class="hljs-string">&quot;&#x4E0B;&#x8F7D;&#x6210;&#x529F;&quot;</span>, Toast.LENGTH_SHORT).show();  
+        } <span class="hljs-keyword">else</span> {  
+            Toast.makeText(context, <span class="hljs-string">&quot;&#x4E0B;&#x8F7D;&#x5931;&#x8D25;&quot;</span>, Toast.LENGTH_SHORT).show();  
         }  
     }  
 }
 </code></pre>
 <p>&#x8FD9;&#x91CC;&#x6211;&#x4EEC;&#x6A21;&#x62DF;&#x4E86;&#x4E00;&#x4E2A;&#x4E0B;&#x8F7D;&#x4EFB;&#x52A1;&#xFF0C;&#x5728;doInBackground()&#x65B9;&#x6CD5;&#x4E2D;&#x53BB;&#x6267;&#x884C;&#x5177;&#x4F53;&#x7684;&#x4E0B;&#x8F7D;&#x903B;&#x8F91;&#xFF0C;&#x5728;onProgressUpdate()&#x65B9;&#x6CD5;&#x4E2D;&#x663E;&#x793A;&#x5F53;&#x524D;&#x7684;&#x4E0B;&#x8F7D;&#x8FDB;&#x5EA6;&#xFF0C;&#x5728;onPostExecute()&#x65B9;&#x6CD5;&#x4E2D;&#x6765;&#x63D0;&#x793A;&#x4EFB;&#x52A1;&#x7684;&#x6267;&#x884C;&#x7ED3;&#x679C;&#x3002;&#x5982;&#x679C;&#x60F3;&#x8981;&#x542F;&#x52A8;&#x8FD9;&#x4E2A;&#x4EFB;&#x52A1;&#xFF0C;&#x53EA;&#x9700;&#x8981;&#x7B80;&#x5355;&#x5730;&#x8C03;&#x7528;&#x4EE5;&#x4E0B;&#x4EE3;&#x7801;&#x5373;&#x53EF;&#xFF1A;</p>
-<pre><code class="lang-java">new DownloadTask().execute();
+<pre><code class="lang-java"><span class="hljs-keyword">new</span> DownloadTask().execute();
 </code></pre>
 <h4 id="4&#x4F7F;&#x7528;asynctask&#x7684;&#x6CE8;&#x610F;&#x4E8B;&#x9879;"><a name="4&#x4F7F;&#x7528;asynctask&#x7684;&#x6CE8;&#x610F;&#x4E8B;&#x9879;" class="anchor-navigation-ex-anchor" href="#4&#x4F7F;&#x7528;asynctask&#x7684;&#x6CE8;&#x610F;&#x4E8B;&#x9879;"><i class="fa fa-link" aria-hidden="true"></i></a>4.&#x4F7F;&#x7528;AsyncTask&#x7684;&#x6CE8;&#x610F;&#x4E8B;&#x9879;</h4>
 <p>&#x2460;&#x5F02;&#x6B65;&#x4EFB;&#x52A1;&#x7684;&#x5B9E;&#x4F8B;&#x5FC5;&#x987B;&#x5728;UI&#x7EBF;&#x7A0B;&#x4E2D;&#x521B;&#x5EFA;&#xFF0C;&#x5373;AsyncTask&#x5BF9;&#x8C61;&#x5FC5;&#x987B;&#x5728;UI&#x7EBF;&#x7A0B;&#x4E2D;&#x521B;&#x5EFA;&#x3002;</p>
@@ -3788,38 +3792,38 @@ onPreExecute() --&gt; doInBackground() --&gt; publishProgress() --&gt; onProgres
 <p>&#x2464;&#x4E00;&#x4E2A;&#x4EFB;&#x52A1;&#x5B9E;&#x4F8B;&#x53EA;&#x80FD;&#x6267;&#x884C;&#x4E00;&#x6B21;&#xFF0C;&#x5982;&#x679C;&#x6267;&#x884C;&#x7B2C;&#x4E8C;&#x6B21;&#x5C06;&#x4F1A;&#x629B;&#x51FA;&#x5F02;&#x5E38;&#x3002;</p>
 <h2 id="&#x4E09;&#x3001;asynctask&#x7684;&#x6E90;&#x7801;&#x5206;&#x6790;"><a name="&#x4E09;&#x3001;asynctask&#x7684;&#x6E90;&#x7801;&#x5206;&#x6790;" class="anchor-navigation-ex-anchor" href="#&#x4E09;&#x3001;asynctask&#x7684;&#x6E90;&#x7801;&#x5206;&#x6790;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x4E09;&#x3001;AsyncTask&#x7684;&#x6E90;&#x7801;&#x5206;&#x6790;</h2>
 <p>&#x5148;&#x4ECE;&#x521D;&#x59CB;&#x5316;&#x4E00;&#x4E2A;AsyncTask&#x65F6;&#xFF0C;&#x8C03;&#x7528;&#x7684;&#x6784;&#x9020;&#x51FD;&#x6570;&#x5F00;&#x59CB;&#x5206;&#x6790;&#x3002;</p>
-<pre><code class="lang-java">public AsyncTask() {
-        mWorker = new WorkerRunnable&lt;Params, Result&gt;() {
-            public Result call() throws Exception {
-                mTaskInvoked.set(true);
-                Result result = null;
-                try {
+<pre><code class="lang-java"><span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-title">AsyncTask</span><span class="hljs-params">()</span> </span>{
+        mWorker = <span class="hljs-keyword">new</span> WorkerRunnable&lt;Params, Result&gt;() {
+            <span class="hljs-function"><span class="hljs-keyword">public</span> Result <span class="hljs-title">call</span><span class="hljs-params">()</span> <span class="hljs-keyword">throws</span> Exception </span>{
+                mTaskInvoked.set(<span class="hljs-keyword">true</span>);
+                Result result = <span class="hljs-keyword">null</span>;
+                <span class="hljs-keyword">try</span> {
                     Process.setThreadPriority(Process.THREAD_PRIORITY_BACKGROUND);
-                    //noinspection unchecked
+                    <span class="hljs-comment">//noinspection unchecked</span>
                     result = doInBackground(mParams);
                     Binder.flushPendingCommands();
-                } catch (Throwable tr) {
-                    mCancelled.set(true);
-                    throw tr;
-                } finally {
+                } <span class="hljs-keyword">catch</span> (Throwable tr) {
+                    mCancelled.set(<span class="hljs-keyword">true</span>);
+                    <span class="hljs-keyword">throw</span> tr;
+                } <span class="hljs-keyword">finally</span> {
                     postResult(result);
                 }
-                return result;
+                <span class="hljs-keyword">return</span> result;
             }
         };
 
-        mFuture = new FutureTask&lt;Result&gt;(mWorker) {
-            @Override
-            protected void done() {
-                try {
+        mFuture = <span class="hljs-keyword">new</span> FutureTask&lt;Result&gt;(mWorker) {
+            <span class="hljs-meta">@Override</span>
+            <span class="hljs-function"><span class="hljs-keyword">protected</span> <span class="hljs-keyword">void</span> <span class="hljs-title">done</span><span class="hljs-params">()</span> </span>{
+                <span class="hljs-keyword">try</span> {
                     postResultIfNotInvoked(get());
-                } catch (InterruptedException e) {
+                } <span class="hljs-keyword">catch</span> (InterruptedException e) {
                     android.util.Log.w(LOG_TAG, e);
-                } catch (ExecutionException e) {
-                    throw new RuntimeException(&quot;An error occurred while executing doInBackground()&quot;,
+                } <span class="hljs-keyword">catch</span> (ExecutionException e) {
+                    <span class="hljs-keyword">throw</span> <span class="hljs-keyword">new</span> RuntimeException(<span class="hljs-string">&quot;An error occurred while executing doInBackground()&quot;</span>,
                             e.getCause());
-                } catch (CancellationException e) {
-                    postResultIfNotInvoked(null);
+                } <span class="hljs-keyword">catch</span> (CancellationException e) {
+                    postResultIfNotInvoked(<span class="hljs-keyword">null</span>);
                 }
             }
         };
@@ -3829,22 +3833,22 @@ onPreExecute() --&gt; doInBackground() --&gt; publishProgress() --&gt; onProgres
 <p>mWorker&#x4E2D;&#x7684;call()&#x65B9;&#x6CD5;&#x6267;&#x884C;&#x4E86;&#x8017;&#x65F6;&#x64CD;&#x4F5C;&#xFF0C;&#x5373;<code>result = doInBackground(mParams);</code>,&#x7136;&#x540E;&#x628A;&#x6267;&#x884C;&#x5F97;&#x5230;&#x7684;&#x7ED3;&#x679C;&#x901A;&#x8FC7;<code>postResult(result);</code>,&#x4F20;&#x9012;&#x7ED9;&#x5185;&#x90E8;&#x7684;Handler&#x8DF3;&#x8F6C;&#x5230;&#x4E3B;&#x7EBF;&#x7A0B;&#x4E2D;&#x3002;&#x5728;&#x8FD9;&#x91CC;&#x8FD9;&#x662F;&#x5B9E;&#x4F8B;&#x5316;&#x4E86;&#x4E24;&#x4E2A;&#x53D8;&#x91CF;&#xFF0C;&#x5E76;&#x6CA1;&#x6709;&#x5F00;&#x542F;&#x6267;&#x884C;&#x4EFB;&#x52A1;&#x3002;</p>
 <p><strong>&#x90A3;&#x4E48;mFuture&#x5BF9;&#x8C61;&#x662F;&#x600E;&#x4E48;&#x52A0;&#x8F7D;&#x5230;&#x7EBF;&#x7A0B;&#x6C60;&#x4E2D;&#xFF0C;&#x8FDB;&#x884C;&#x6267;&#x884C;&#x7684;&#x5462;&#xFF1F;</strong></p>
 <p>&#x63A5;&#x7740;&#x5982;&#x679C;&#x60F3;&#x8981;&#x542F;&#x52A8;&#x67D0;&#x4E00;&#x4E2A;&#x4EFB;&#x52A1;&#xFF0C;&#x5C31;&#x9700;&#x8981;&#x8C03;&#x7528;&#x8BE5;&#x4EFB;&#x52A1;&#x7684;execute()&#x65B9;&#x6CD5;&#xFF0C;&#x56E0;&#x6B64;&#x73B0;&#x5728;&#x6211;&#x4EEC;&#x6765;&#x770B;&#x4E00;&#x770B;execute()&#x65B9;&#x6CD5;&#x7684;&#x6E90;&#x7801;&#xFF0C;&#x5982;&#x4E0B;&#x6240;&#x793A;&#xFF1A;</p>
-<pre><code class="lang-java"> public final AsyncTask&lt;Params, Progress, Result&gt; execute(Params... params) {
-        return executeOnExecutor(sDefaultExecutor, params);
+<pre><code class="lang-java"> <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">final</span> AsyncTask&lt;Params, Progress, Result&gt; <span class="hljs-title">execute</span><span class="hljs-params">(Params... params)</span> </span>{
+        <span class="hljs-keyword">return</span> executeOnExecutor(sDefaultExecutor, params);
     }
 </code></pre>
 <p>&#x8C03;&#x7528;&#x4E86;executeOnExecutor()&#x65B9;&#x6CD5;,&#x5177;&#x4F53;&#x6267;&#x884C;&#x903B;&#x8F91;&#x5728;&#x8FD9;&#x4E2A;&#x65B9;&#x6CD5;&#x91CC;&#x9762;&#xFF1A;</p>
-<pre><code class="lang-java">  public final AsyncTask&lt;Params, Progress, Result&gt; executeOnExecutor(Executor exec,
-            Params... params) {
-        if (mStatus != Status.PENDING) {
-            switch (mStatus) {
-                case RUNNING:
-                    throw new IllegalStateException(&quot;Cannot execute task:&quot;
-                            + &quot; the task is already running.&quot;);
-                case FINISHED:
-                    throw new IllegalStateException(&quot;Cannot execute task:&quot;
-                            + &quot; the task has already been executed &quot;
-                            + &quot;(a task can be executed only once)&quot;);
+<pre><code class="lang-java">  <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">final</span> AsyncTask&lt;Params, Progress, Result&gt; <span class="hljs-title">executeOnExecutor</span><span class="hljs-params">(Executor exec,
+            Params... params)</span> </span>{
+        <span class="hljs-keyword">if</span> (mStatus != Status.PENDING) {
+            <span class="hljs-keyword">switch</span> (mStatus) {
+                <span class="hljs-keyword">case</span> RUNNING:
+                    <span class="hljs-keyword">throw</span> <span class="hljs-keyword">new</span> IllegalStateException(<span class="hljs-string">&quot;Cannot execute task:&quot;</span>
+                            + <span class="hljs-string">&quot; the task is already running.&quot;</span>);
+                <span class="hljs-keyword">case</span> FINISHED:
+                    <span class="hljs-keyword">throw</span> <span class="hljs-keyword">new</span> IllegalStateException(<span class="hljs-string">&quot;Cannot execute task:&quot;</span>
+                            + <span class="hljs-string">&quot; the task has already been executed &quot;</span>
+                            + <span class="hljs-string">&quot;(a task can be executed only once)&quot;</span>);
             }
         }
 
@@ -3855,33 +3859,33 @@ onPreExecute() --&gt; doInBackground() --&gt; publishProgress() --&gt; onProgres
         mWorker.mParams = params;
         exec.execute(mFuture);
 
-        return this;
+        <span class="hljs-keyword">return</span> <span class="hljs-keyword">this</span>;
     }
 </code></pre>
 <p>&#x53EF;&#x4EE5; &#x770B;&#x51FA;&#xFF0C;&#x5148;&#x6267;&#x884C;&#x4E86;onPreExecute()&#x65B9;&#x6CD5;&#xFF0C;&#x7136;&#x540E;&#x5177;&#x4F53;&#x6267;&#x884C;&#x8017;&#x65F6;&#x4EFB;&#x52A1;&#x662F;&#x5728;<code>exec.execute(mFuture)</code>&#xFF0C;&#x628A;&#x6784;&#x9020;&#x51FD;&#x6570;&#x4E2D;&#x5B9E;&#x4F8B;&#x5316;&#x7684;mFuture&#x4F20;&#x9012;&#x8FDB;&#x53BB;&#x4E86;&#x3002;</p>
 <p><strong>exec&#x5177;&#x4F53;&#x662F;&#x4EC0;&#x4E48;&#xFF1F;</strong></p>
 <p>&#x4ECE;&#x4E0A;&#x9762;&#x53EF;&#x4EE5;&#x770B;&#x51FA;&#x5177;&#x4F53;&#x662F;sDefaultExecutor&#xFF0C;&#x518D;&#x8FFD;&#x6EAF;&#x770B;&#x5230;&#x662F;SerialExecutor&#x7C7B;&#xFF0C;&#x5177;&#x4F53;&#x6E90;&#x7801;&#x5982;&#x4E0B;&#xFF1A;</p>
-<pre><code class="lang-java">private static class SerialExecutor implements Executor {
-        final ArrayDeque&lt;Runnable&gt; mTasks = new ArrayDeque&lt;Runnable&gt;();
+<pre><code class="lang-java"><span class="hljs-keyword">private</span> <span class="hljs-keyword">static</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">SerialExecutor</span> <span class="hljs-keyword">implements</span> <span class="hljs-title">Executor</span> </span>{
+        <span class="hljs-keyword">final</span> ArrayDeque&lt;Runnable&gt; mTasks = <span class="hljs-keyword">new</span> ArrayDeque&lt;Runnable&gt;();
         Runnable mActive;
 
-        public synchronized void execute(final Runnable r) {
-            mTasks.offer(new Runnable() {
-                public void run() {
-                    try {
+        <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">synchronized</span> <span class="hljs-keyword">void</span> <span class="hljs-title">execute</span><span class="hljs-params">(<span class="hljs-keyword">final</span> Runnable r)</span> </span>{
+            mTasks.offer(<span class="hljs-keyword">new</span> Runnable() {
+                <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">run</span><span class="hljs-params">()</span> </span>{
+                    <span class="hljs-keyword">try</span> {
                         r.run();
-                    } finally {
+                    } <span class="hljs-keyword">finally</span> {
                         scheduleNext();
                     }
                 }
             });
-            if (mActive == null) {
+            <span class="hljs-keyword">if</span> (mActive == <span class="hljs-keyword">null</span>) {
                 scheduleNext();
             }
         }
 
-        protected synchronized void scheduleNext() {
-            if ((mActive = mTasks.poll()) != null) {
+        <span class="hljs-function"><span class="hljs-keyword">protected</span> <span class="hljs-keyword">synchronized</span> <span class="hljs-keyword">void</span> <span class="hljs-title">scheduleNext</span><span class="hljs-params">()</span> </span>{
+            <span class="hljs-keyword">if</span> ((mActive = mTasks.poll()) != <span class="hljs-keyword">null</span>) {
                 THREAD_POOL_EXECUTOR.execute(mActive);
             }
         }
@@ -3893,48 +3897,48 @@ onPreExecute() --&gt; doInBackground() --&gt; publishProgress() --&gt; onProgres
 <p>&#x2461;&#x8C03;&#x7528; <code>scheduleNext()</code>&#x65B9;&#x6CD5;&#xFF0C;&#x8C03;&#x7528;THREAD_POOL_EXECUTOR&#x6267;&#x884C;&#x961F;&#x5217;&#x5934;&#x90E8;&#x7684;&#x4EFB;&#x52A1;&#x3002;</p>
 <p><strong>&#x7531;&#x6B64;&#x53EF;&#x89C1;SerialExecutor &#x7C7B;&#x4EC5;&#x4EC5;&#x4E3A;&#x4E86;&#x4FDD;&#x6301;&#x4EFB;&#x52A1;&#x6267;&#x884C;&#x662F;&#x4E32;&#x884C;&#x7684;&#xFF0C;&#x5B9E;&#x9645;&#x6267;&#x884C;&#x4EA4;&#x7ED9;&#x4E86;THREAD_POOL_EXECUTOR&#x3002;</strong></p>
 <p><strong>THREAD_POOL_EXECUTOR&#x53C8;&#x662F;&#x4EC0;&#x4E48;&#xFF1F;</strong></p>
-<pre><code class="lang-java"> ThreadPoolExecutor threadPoolExecutor = new ThreadPoolExecutor(
+<pre><code class="lang-java"> ThreadPoolExecutor threadPoolExecutor = <span class="hljs-keyword">new</span> ThreadPoolExecutor(
                 CORE_POOL_SIZE, MAXIMUM_POOL_SIZE, KEEP_ALIVE_SECONDS, TimeUnit.SECONDS,
                 sPoolWorkQueue, sThreadFactory);
-        threadPoolExecutor.allowCoreThreadTimeOut(true);
+        threadPoolExecutor.allowCoreThreadTimeOut(<span class="hljs-keyword">true</span>);
         THREAD_POOL_EXECUTOR = threadPoolExecutor;
 </code></pre>
 <p>&#x5B9E;&#x9645;&#x662F;&#x4E2A;&#x7EBF;&#x7A0B;&#x6C60;&#xFF0C;&#x5F00;&#x542F;&#x4E86;&#x4E00;&#x5B9A;&#x6570;&#x91CF;&#x7684;&#x6838;&#x5FC3;&#x7EBF;&#x7A0B;&#x548C;&#x5DE5;&#x4F5C;&#x7EBF;&#x7A0B;&#x3002;&#x7136;&#x540E;&#x8C03;&#x7528;&#x7EBF;&#x7A0B;&#x6C60;&#x7684;execute()&#x65B9;&#x6CD5;&#x3002;&#x6267;&#x884C;&#x5177;&#x4F53;&#x7684;&#x8017;&#x65F6;&#x4EFB;&#x52A1;&#xFF0C;&#x5373;&#x5F00;&#x5934;&#x6784;&#x9020;&#x51FD;&#x6570;&#x4E2D;mWorker&#x4E2D;call()&#x65B9;&#x6CD5;&#x7684;&#x5185;&#x5BB9;&#x3002;&#x5148;&#x6267;&#x884C;&#x5B8C;doInBackground()&#x65B9;&#x6CD5;&#xFF0C;&#x53C8;&#x6267;&#x884C;postResult()&#x65B9;&#x6CD5;&#xFF0C;&#x4E0B;&#x9762;&#x770B;&#x8BE5;&#x65B9;&#x6CD5;&#x7684;&#x5177;&#x4F53;&#x5185;&#x5BB9;&#xFF1A;</p>
-<pre><code class="lang-java"> private Result postResult(Result result) {
-        @SuppressWarnings(&quot;unchecked&quot;)
+<pre><code class="lang-java"> <span class="hljs-function"><span class="hljs-keyword">private</span> Result <span class="hljs-title">postResult</span><span class="hljs-params">(Result result)</span> </span>{
+        <span class="hljs-meta">@SuppressWarnings</span>(<span class="hljs-string">&quot;unchecked&quot;</span>)
         Message message = getHandler().obtainMessage(MESSAGE_POST_RESULT,
-                new AsyncTaskResult&lt;Result&gt;(this, result));
+                <span class="hljs-keyword">new</span> AsyncTaskResult&lt;Result&gt;(<span class="hljs-keyword">this</span>, result));
         message.sendToTarget();
-        return result;
+        <span class="hljs-keyword">return</span> result;
     }
 </code></pre>
 <p>&#x8BE5;&#x65B9;&#x6CD5;&#x5411;Handler&#x5BF9;&#x8C61;&#x53D1;&#x9001;&#x4E86;&#x4E00;&#x4E2A;&#x6D88;&#x606F;&#xFF0C;&#x4E0B;&#x9762;&#x5177;&#x4F53;&#x770B;AsyncTask&#x4E2D;&#x5B9E;&#x4F8B;&#x5316;&#x7684;Hanlder&#x5BF9;&#x8C61;&#x7684;&#x6E90;&#x7801;&#xFF1A;</p>
-<pre><code class="lang-java">private static class InternalHandler extends Handler {
-        public InternalHandler() {
-            super(Looper.getMainLooper());
+<pre><code class="lang-java"><span class="hljs-keyword">private</span> <span class="hljs-keyword">static</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">InternalHandler</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">Handler</span> </span>{
+        <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-title">InternalHandler</span><span class="hljs-params">()</span> </span>{
+            <span class="hljs-keyword">super</span>(Looper.getMainLooper());
         }
 
-        @SuppressWarnings({&quot;unchecked&quot;, &quot;RawUseOfParameterizedType&quot;})
-        @Override
-        public void handleMessage(Message msg) {
+        <span class="hljs-meta">@SuppressWarnings</span>({<span class="hljs-string">&quot;unchecked&quot;</span>, <span class="hljs-string">&quot;RawUseOfParameterizedType&quot;</span>})
+        <span class="hljs-meta">@Override</span>
+        <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">handleMessage</span><span class="hljs-params">(Message msg)</span> </span>{
             AsyncTaskResult&lt;?&gt; result = (AsyncTaskResult&lt;?&gt;) msg.obj;
-            switch (msg.what) {
-                case MESSAGE_POST_RESULT:
-                    // There is only one result
-                    result.mTask.finish(result.mData[0]);
-                    break;
-                case MESSAGE_POST_PROGRESS:
+            <span class="hljs-keyword">switch</span> (msg.what) {
+                <span class="hljs-keyword">case</span> MESSAGE_POST_RESULT:
+                    <span class="hljs-comment">// There is only one result</span>
+                    result.mTask.finish(result.mData[<span class="hljs-number">0</span>]);
+                    <span class="hljs-keyword">break</span>;
+                <span class="hljs-keyword">case</span> MESSAGE_POST_PROGRESS:
                     result.mTask.onProgressUpdate(result.mData);
-                    break;
+                    <span class="hljs-keyword">break</span>;
             }
         }
     }
 </code></pre>
 <p>&#x5728;InternalHandler &#x4E2D;&#xFF0C;&#x5982;&#x679C;&#x6536;&#x5230;&#x7684;&#x6D88;&#x606F;&#x662F;MESSAGE_POST_RESULT&#xFF0C;&#x5373;&#x6267;&#x884C;&#x5B8C;&#x4E86;doInBackground()&#x65B9;&#x6CD5;&#x5E76;&#x4F20;&#x9012;&#x7ED3;&#x679C;&#xFF0C;&#x90A3;&#x4E48;&#x5C31;&#x8C03;&#x7528;finish()&#x65B9;&#x6CD5;&#x3002;</p>
-<pre><code class="lang-java">private void finish(Result result) {
-        if (isCancelled()) {
+<pre><code class="lang-java"><span class="hljs-function"><span class="hljs-keyword">private</span> <span class="hljs-keyword">void</span> <span class="hljs-title">finish</span><span class="hljs-params">(Result result)</span> </span>{
+        <span class="hljs-keyword">if</span> (isCancelled()) {
             onCancelled(result);
-        } else {
+        } <span class="hljs-keyword">else</span> {
             onPostExecute(result);
         }
         mStatus = Status.FINISHED;
@@ -3998,7 +4002,7 @@ onPreExecute() --&gt; doInBackground() --&gt; publishProgress() --&gt; onProgres
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"AsyncTask详解","level":"3.1.8","depth":2,"next":{"title":"HandlerThread详解","level":"3.1.9","depth":2,"path":"android/basis/HandlerThread.md","ref":"android/basis/HandlerThread.md","articles":[]},"previous":{"title":"Android事件分发机制","level":"3.1.7","depth":2,"path":"android/basis/Event-Dispatch.md","ref":"android/basis/Event-Dispatch.md","articles":[]},"dir":"ltr"},"config":{"plugins":["-lunr","-search","-highlight","-livereload","search-plus@^0.0.11","simple-page-toc@^0.1.1","github@^2.0.0","github-buttons@2.1.0","edit-link@^2.0.2","advanced-emoji@^0.2.1","anchors@^0.7.1","include-codeblock@^3.0.2","ace@^0.3.2","emphasize@^1.1.0","katex@^1.1.3","splitter@^0.0.8","tbfed-pagefooter@^0.0.1","expandable-chapters-small@^0.1.7","sectionx@^3.1.0","local-video@^1.0.1","anchor-navigation-ex@0.1.8","favicon@^0.0.2"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"tbfed-pagefooter":{"copyright":"Copyright © ruheng.com 2017","modify_label":"该文件修订时间：","modify_format":"YYYY-MM-DD HH:mm:ss"},"emphasize":{},"ace":{},"github":{"url":"https://github.com/LRH1993/android_interview"},"simple-page-toc":{"maxDepth":3,"skipFirstH1":true},"splitter":{},"katex":{},"fontsettings":{"theme":"white","family":"sans","size":2},"sectionx":{"tag":"b"},"anchor-navigation-ex":{"isRewritePageTitle":false,"tocLevel1Icon":"fa fa-hand-o-right","tocLevel2Icon":"fa fa-hand-o-right","tocLevel3Icon":"fa fa-hand-o-right"},"favicon":{"shortcut":"favicon.ico","bookmark":"favicon.ico"},"github-buttons":{"repo":"LRH1993/android_interview","types":["star"],"size":"small"},"expandable-chapters-small":{},"local-video":{},"advanced-emoji":{"embedEmojis":false},"include-codeblock":{"check":false,"edit":true,"fixlang":false,"lang":"","template":"ace","theme":"chrome","unindent":true},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":true,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"edit-link":{"label":"Edit This Page","base":"https://github.com/LRH1993/android_interview/edit/master"},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":true},"anchors":{},"search-plus":{}},"theme":"default","author":"ruheng","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"Android校招面试指南","language":"zh-hans","output.name":"site","links":{"sidebar":{"Home":"http://lruheng.com/"}},"gitbook":"3.2.3","description":"Android面试必备，记录自己的秋招之路"},"file":{"path":"android/basis/asynctask.md","mtime":"2017-08-28T02:36:30.000Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2017-10-16T12:05:21.906Z"},"basePath":"../..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"AsyncTask详解","level":"3.1.8","depth":2,"next":{"title":"HandlerThread详解","level":"3.1.9","depth":2,"path":"android/basis/HandlerThread.md","ref":"android/basis/HandlerThread.md","articles":[]},"previous":{"title":"Android事件分发机制","level":"3.1.7","depth":2,"path":"android/basis/Event-Dispatch.md","ref":"android/basis/Event-Dispatch.md","articles":[]},"dir":"ltr"},"config":{"plugins":["-lunr","-search","-livereload","search-plus@^0.0.11","simple-page-toc@^0.1.1","github@^2.0.0","github-buttons@2.1.0","edit-link@^2.0.2","advanced-emoji@^0.2.1","anchors@^0.7.1","include-codeblock@^3.0.2","ace@^0.3.2","emphasize@^1.1.0","katex@^1.1.3","splitter@^0.0.8","tbfed-pagefooter@^0.0.1","expandable-chapters-small@^0.1.7","sectionx@^3.1.0","local-video@^1.0.1","anchor-navigation-ex@0.1.8","favicon@^0.0.2"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"tbfed-pagefooter":{"copyright":"Copyright © ruheng.com 2017","modify_label":"该文件修订时间：","modify_format":"YYYY-MM-DD HH:mm:ss"},"emphasize":{},"ace":{},"github":{"url":"https://github.com/LRH1993/android_interview"},"simple-page-toc":{"maxDepth":3,"skipFirstH1":true},"splitter":{},"katex":{},"fontsettings":{"theme":"white","family":"sans","size":2},"sectionx":{"tag":"b"},"highlight":{},"anchor-navigation-ex":{"isRewritePageTitle":false,"tocLevel1Icon":"fa fa-hand-o-right","tocLevel2Icon":"fa fa-hand-o-right","tocLevel3Icon":"fa fa-hand-o-right"},"favicon":{"shortcut":"favicon.ico","bookmark":"favicon.ico"},"github-buttons":{"repo":"LRH1993/android_interview","types":["star"],"size":"small"},"expandable-chapters-small":{},"local-video":{},"advanced-emoji":{"embedEmojis":false},"include-codeblock":{"check":false,"edit":false,"fixlang":false,"lang":"","template":"default","theme":"chrome","unindent":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":true,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"edit-link":{"label":"Edit This Page","base":"https://github.com/LRH1993/android_interview/edit/master"},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":true},"anchors":{},"search-plus":{}},"theme":"default","author":"ruheng","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"Android校招面试指南","language":"zh-hans","output.name":"site","links":{"sidebar":{"Home":"http://lruheng.com/"}},"gitbook":"3.2.3","description":"Android面试必备，记录自己的秋招之路"},"file":{"path":"android/basis/asynctask.md","mtime":"2017-08-28T02:36:30.000Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2017-10-16T13:00:43.989Z"},"basePath":"../..","book":{"language":""}});
         });
     </script>
 </div>

@@ -69,6 +69,10 @@
                 
             
                 
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
                 <link rel="stylesheet" href="../../gitbook/gitbook-plugin-fontsettings/website.css">
                 
             
@@ -3716,115 +3720,115 @@
 <p>&#x3000;&#x3000;&#x25CF;&#x3000;&#x3000;&#x5177;&#x4F53;&#x805A;&#x96C6;(ConcreteAggregate)&#x89D2;&#x8272;&#xFF1A;&#x5B9E;&#x73B0;&#x4E86;&#x521B;&#x5EFA;&#x8FED;&#x4EE3;&#x5668;(Iterator)&#x5BF9;&#x8C61;&#x7684;&#x63A5;&#x53E3;&#xFF0C;&#x8FD4;&#x56DE;&#x4E00;&#x4E2A;&#x5408;&#x9002;&#x7684;&#x5177;&#x4F53;&#x8FED;&#x4EE3;&#x5668;&#x5B9E;&#x4F8B;&#x3002;</p>
 <p>&#x3000;&#x3000;&#x25CF;&#x3000;&#x3000;&#x5BA2;&#x6237;&#x7AEF;(Client)&#x89D2;&#x8272;&#xFF1A;&#x6301;&#x6709;&#x5BF9;&#x805A;&#x96C6;&#x53CA;&#x5176;&#x8FED;&#x4EE3;&#x5668;&#x5BF9;&#x8C61;&#x7684;&#x5F15;&#x7528;&#xFF0C;&#x8C03;&#x7528;&#x8FED;&#x4EE3;&#x5B50;&#x5BF9;&#x8C61;&#x7684;&#x8FED;&#x4EE3;&#x63A5;&#x53E3;&#xFF0C;&#x4E5F;&#x6709;&#x53EF;&#x80FD;&#x901A;&#x8FC7;&#x8FED;&#x4EE3;&#x5B50;&#x64CD;&#x4F5C;&#x805A;&#x96C6;&#x5143;&#x7D20;&#x7684;&#x589E;&#x52A0;&#x548C;&#x5220;&#x9664;&#x3002;</p>
 <p><strong>&#x62BD;&#x8C61;&#x805A;&#x96C6;&#x89D2;&#x8272;&#x7C7B;&#xFF0C;&#x8FD9;&#x4E2A;&#x89D2;&#x8272;&#x89C4;&#x5B9A;&#x51FA;&#x6240;&#x6709;&#x7684;&#x5177;&#x4F53;&#x805A;&#x96C6;&#x5FC5;&#x987B;&#x5B9E;&#x73B0;&#x7684;&#x63A5;&#x53E3;&#x3002;&#x8FED;&#x4EE3;&#x5668;&#x6A21;&#x5F0F;&#x8981;&#x6C42;&#x805A;&#x96C6;&#x5BF9;&#x8C61;&#x5FC5;&#x987B;&#x6709;&#x4E00;&#x4E2A;&#x5DE5;&#x5382;&#x65B9;&#x6CD5;&#xFF0C;&#x4E5F;&#x5C31;&#x662F;createIterator()&#x65B9;&#x6CD5;&#xFF0C;&#x4EE5;&#x5411;&#x5916;&#x754C;&#x63D0;&#x4F9B;&#x8FED;&#x4EE3;&#x5668;&#x5BF9;&#x8C61;&#x7684;&#x5B9E;&#x4F8B;&#x3002;</strong></p>
-<pre><code class="lang-java">public abstract class Aggregate {
-    /**
+<pre><code class="lang-java"><span class="hljs-keyword">public</span> <span class="hljs-keyword">abstract</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Aggregate</span> </span>{
+    <span class="hljs-comment">/**
      * &#x5DE5;&#x5382;&#x65B9;&#x6CD5;&#xFF0C;&#x521B;&#x5EFA;&#x76F8;&#x5E94;&#x8FED;&#x4EE3;&#x5B50;&#x5BF9;&#x8C61;&#x7684;&#x63A5;&#x53E3;
-     */
-    public abstract Iterator createIterator();
+     */</span>
+    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">abstract</span> Iterator <span class="hljs-title">createIterator</span><span class="hljs-params">()</span></span>;
 }
 </code></pre>
 <p><strong>&#x5177;&#x4F53;&#x805A;&#x96C6;&#x89D2;&#x8272;&#x7C7B;&#xFF0C;&#x5B9E;&#x73B0;&#x4E86;&#x62BD;&#x8C61;&#x805A;&#x96C6;&#x89D2;&#x8272;&#x7C7B;&#x6240;&#x8981;&#x6C42;&#x7684;&#x63A5;&#x53E3;&#xFF0C;&#x4E5F;&#x5C31;&#x662F;createIterator()&#x65B9;&#x6CD5;&#x3002;&#x6B64;&#x5916;&#xFF0C;&#x8FD8;&#x6709;&#x65B9;&#x6CD5;getElement()&#x5411;&#x5916;&#x754C;&#x63D0;&#x4F9B;&#x805A;&#x96C6;&#x5143;&#x7D20;&#xFF0C;&#x800C;&#x65B9;&#x6CD5;size()&#x5411;&#x5916;&#x754C;&#x63D0;&#x4F9B;&#x805A;&#x96C6;&#x7684;&#x5927;&#x5C0F;&#x7B49;&#x3002;</strong></p>
-<pre><code class="lang-java">public class ConcreteAggregate extends Aggregate {
+<pre><code class="lang-java"><span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">ConcreteAggregate</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">Aggregate</span> </span>{
 
-    private Object[] objArray = null;
-    /**
+    <span class="hljs-keyword">private</span> Object[] objArray = <span class="hljs-keyword">null</span>;
+    <span class="hljs-comment">/**
      * &#x6784;&#x9020;&#x65B9;&#x6CD5;&#xFF0C;&#x4F20;&#x5165;&#x805A;&#x5408;&#x5BF9;&#x8C61;&#x7684;&#x5177;&#x4F53;&#x5185;&#x5BB9;
-     */
-    public ConcreteAggregate(Object[] objArray){
-        this.objArray = objArray;
+     */</span>
+    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-title">ConcreteAggregate</span><span class="hljs-params">(Object[] objArray)</span></span>{
+        <span class="hljs-keyword">this</span>.objArray = objArray;
     }
 
-    @Override
-    public Iterator createIterator() {
+    <span class="hljs-meta">@Override</span>
+    <span class="hljs-function"><span class="hljs-keyword">public</span> Iterator <span class="hljs-title">createIterator</span><span class="hljs-params">()</span> </span>{
 
-        return new ConcreteIterator(this);
+        <span class="hljs-keyword">return</span> <span class="hljs-keyword">new</span> ConcreteIterator(<span class="hljs-keyword">this</span>);
     }
-    /**
+    <span class="hljs-comment">/**
      * &#x53D6;&#x503C;&#x65B9;&#x6CD5;&#xFF1A;&#x5411;&#x5916;&#x754C;&#x63D0;&#x4F9B;&#x805A;&#x96C6;&#x5143;&#x7D20;
-     */
-    public Object getElement(int index){
+     */</span>
+    <span class="hljs-function"><span class="hljs-keyword">public</span> Object <span class="hljs-title">getElement</span><span class="hljs-params">(<span class="hljs-keyword">int</span> index)</span></span>{
 
-        if(index 
+        <span class="hljs-keyword">if</span>(index 
 &lt;
  objArray.length){
-            return objArray[index];
-        }else{
-            return null;
+            <span class="hljs-keyword">return</span> objArray[index];
+        }<span class="hljs-keyword">else</span>{
+            <span class="hljs-keyword">return</span> <span class="hljs-keyword">null</span>;
         }
     }
-    /**
+    <span class="hljs-comment">/**
      * &#x53D6;&#x503C;&#x65B9;&#x6CD5;&#xFF1A;&#x5411;&#x5916;&#x754C;&#x63D0;&#x4F9B;&#x805A;&#x96C6;&#x7684;&#x5927;&#x5C0F;
-     */
-    public int size(){
-        return objArray.length;
+     */</span>
+    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">int</span> <span class="hljs-title">size</span><span class="hljs-params">()</span></span>{
+        <span class="hljs-keyword">return</span> objArray.length;
     }
 }
 </code></pre>
 <p><strong>&#x62BD;&#x8C61;&#x8FED;&#x4EE3;&#x5668;&#x89D2;&#x8272;&#x7C7B;</strong></p>
-<pre><code class="lang-java">public interface Iterator {
-    /**
+<pre><code class="lang-java"><span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">interface</span> <span class="hljs-title">Iterator</span> </span>{
+    <span class="hljs-comment">/**
      * &#x8FED;&#x4EE3;&#x65B9;&#x6CD5;&#xFF1A;&#x79FB;&#x52A8;&#x5230;&#x7B2C;&#x4E00;&#x4E2A;&#x5143;&#x7D20;
-     */
-    public void first();
-    /**
+     */</span>
+    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">first</span><span class="hljs-params">()</span></span>;
+    <span class="hljs-comment">/**
      * &#x8FED;&#x4EE3;&#x65B9;&#x6CD5;&#xFF1A;&#x79FB;&#x52A8;&#x5230;&#x4E0B;&#x4E00;&#x4E2A;&#x5143;&#x7D20;
-     */
-    public void next();
-    /**
+     */</span>
+    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">next</span><span class="hljs-params">()</span></span>;
+    <span class="hljs-comment">/**
      * &#x8FED;&#x4EE3;&#x65B9;&#x6CD5;&#xFF1A;&#x662F;&#x5426;&#x4E3A;&#x6700;&#x540E;&#x4E00;&#x4E2A;&#x5143;&#x7D20;
-     */
-    public boolean isDone();
-    /**
+     */</span>
+    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">boolean</span> <span class="hljs-title">isDone</span><span class="hljs-params">()</span></span>;
+    <span class="hljs-comment">/**
      * &#x8FED;&#x4EE3;&#x65B9;&#x6CD5;&#xFF1A;&#x8FD4;&#x8FD8;&#x5F53;&#x524D;&#x5143;&#x7D20;
-     */
-    public Object currentItem();
+     */</span>
+    <span class="hljs-function"><span class="hljs-keyword">public</span> Object <span class="hljs-title">currentItem</span><span class="hljs-params">()</span></span>;
 }
 </code></pre>
 <p><strong>&#x5177;&#x4F53;&#x8FED;&#x4EE3;&#x5668;&#x89D2;&#x8272;&#x7C7B;</strong></p>
-<pre><code class="lang-java">public class ConcreteIterator implements Iterator {
-    //&#x6301;&#x6709;&#x88AB;&#x8FED;&#x4EE3;&#x7684;&#x5177;&#x4F53;&#x7684;&#x805A;&#x5408;&#x5BF9;&#x8C61;
-    private ConcreteAggregate agg;
-    //&#x5185;&#x90E8;&#x7D22;&#x5F15;&#xFF0C;&#x8BB0;&#x5F55;&#x5F53;&#x524D;&#x8FED;&#x4EE3;&#x5230;&#x7684;&#x7D22;&#x5F15;&#x4F4D;&#x7F6E;
-    private int index = 0;
-    //&#x8BB0;&#x5F55;&#x5F53;&#x524D;&#x805A;&#x96C6;&#x5BF9;&#x8C61;&#x7684;&#x5927;&#x5C0F;
-    private int size = 0;
+<pre><code class="lang-java"><span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">ConcreteIterator</span> <span class="hljs-keyword">implements</span> <span class="hljs-title">Iterator</span> </span>{
+    <span class="hljs-comment">//&#x6301;&#x6709;&#x88AB;&#x8FED;&#x4EE3;&#x7684;&#x5177;&#x4F53;&#x7684;&#x805A;&#x5408;&#x5BF9;&#x8C61;</span>
+    <span class="hljs-keyword">private</span> ConcreteAggregate agg;
+    <span class="hljs-comment">//&#x5185;&#x90E8;&#x7D22;&#x5F15;&#xFF0C;&#x8BB0;&#x5F55;&#x5F53;&#x524D;&#x8FED;&#x4EE3;&#x5230;&#x7684;&#x7D22;&#x5F15;&#x4F4D;&#x7F6E;</span>
+    <span class="hljs-keyword">private</span> <span class="hljs-keyword">int</span> index = <span class="hljs-number">0</span>;
+    <span class="hljs-comment">//&#x8BB0;&#x5F55;&#x5F53;&#x524D;&#x805A;&#x96C6;&#x5BF9;&#x8C61;&#x7684;&#x5927;&#x5C0F;</span>
+    <span class="hljs-keyword">private</span> <span class="hljs-keyword">int</span> size = <span class="hljs-number">0</span>;
 
-    public ConcreteIterator(ConcreteAggregate agg){
-        this.agg = agg;
-        this.size = agg.size();
-        index = 0;
+    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-title">ConcreteIterator</span><span class="hljs-params">(ConcreteAggregate agg)</span></span>{
+        <span class="hljs-keyword">this</span>.agg = agg;
+        <span class="hljs-keyword">this</span>.size = agg.size();
+        index = <span class="hljs-number">0</span>;
     }
-    /**
+    <span class="hljs-comment">/**
      * &#x8FED;&#x4EE3;&#x65B9;&#x6CD5;&#xFF1A;&#x8FD4;&#x8FD8;&#x5F53;&#x524D;&#x5143;&#x7D20;
-     */
-    @Override
-    public Object currentItem() {
-        return agg.getElement(index);
+     */</span>
+    <span class="hljs-meta">@Override</span>
+    <span class="hljs-function"><span class="hljs-keyword">public</span> Object <span class="hljs-title">currentItem</span><span class="hljs-params">()</span> </span>{
+        <span class="hljs-keyword">return</span> agg.getElement(index);
     }
-    /**
+    <span class="hljs-comment">/**
      * &#x8FED;&#x4EE3;&#x65B9;&#x6CD5;&#xFF1A;&#x79FB;&#x52A8;&#x5230;&#x7B2C;&#x4E00;&#x4E2A;&#x5143;&#x7D20;
-     */
-    @Override
-    public void first() {
+     */</span>
+    <span class="hljs-meta">@Override</span>
+    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">first</span><span class="hljs-params">()</span> </span>{
 
-        index = 0;
+        index = <span class="hljs-number">0</span>;
     }
-    /**
+    <span class="hljs-comment">/**
      * &#x8FED;&#x4EE3;&#x65B9;&#x6CD5;&#xFF1A;&#x662F;&#x5426;&#x4E3A;&#x6700;&#x540E;&#x4E00;&#x4E2A;&#x5143;&#x7D20;
-     */
-    @Override
-    public boolean isDone() {
-        return (index 
+     */</span>
+    <span class="hljs-meta">@Override</span>
+    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">boolean</span> <span class="hljs-title">isDone</span><span class="hljs-params">()</span> </span>{
+        <span class="hljs-keyword">return</span> (index 
 &gt;
 = size);
     }
-    /**
+    <span class="hljs-comment">/**
      * &#x8FED;&#x4EE3;&#x65B9;&#x6CD5;&#xFF1A;&#x79FB;&#x52A8;&#x5230;&#x4E0B;&#x4E00;&#x4E2A;&#x5143;&#x7D20;
-     */
-    @Override
-    public void next() {
+     */</span>
+    <span class="hljs-meta">@Override</span>
+    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">next</span><span class="hljs-params">()</span> </span>{
 
-        if(index 
+        <span class="hljs-keyword">if</span>(index 
 &lt;
  size)
         {
@@ -3835,22 +3839,22 @@
 }
 </code></pre>
 <p><strong>&#x5BA2;&#x6237;&#x7AEF;&#x7C7B;</strong></p>
-<pre><code class="lang-java">public class Client {
+<pre><code class="lang-java"><span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Client</span> </span>{
 
-    public void operation(){
-        Object[] objArray = {&quot;One&quot;,&quot;Two&quot;,&quot;Three&quot;,&quot;Four&quot;,&quot;Five&quot;,&quot;Six&quot;};
-        //&#x521B;&#x5EFA;&#x805A;&#x5408;&#x5BF9;&#x8C61;
-        Aggregate agg = new ConcreteAggregate(objArray);
-        //&#x5FAA;&#x73AF;&#x8F93;&#x51FA;&#x805A;&#x5408;&#x5BF9;&#x8C61;&#x4E2D;&#x7684;&#x503C;
+    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">operation</span><span class="hljs-params">()</span></span>{
+        Object[] objArray = {<span class="hljs-string">&quot;One&quot;</span>,<span class="hljs-string">&quot;Two&quot;</span>,<span class="hljs-string">&quot;Three&quot;</span>,<span class="hljs-string">&quot;Four&quot;</span>,<span class="hljs-string">&quot;Five&quot;</span>,<span class="hljs-string">&quot;Six&quot;</span>};
+        <span class="hljs-comment">//&#x521B;&#x5EFA;&#x805A;&#x5408;&#x5BF9;&#x8C61;</span>
+        Aggregate agg = <span class="hljs-keyword">new</span> ConcreteAggregate(objArray);
+        <span class="hljs-comment">//&#x5FAA;&#x73AF;&#x8F93;&#x51FA;&#x805A;&#x5408;&#x5BF9;&#x8C61;&#x4E2D;&#x7684;&#x503C;</span>
         Iterator it = agg.createIterator();
-        while(!it.isDone()){
+        <span class="hljs-keyword">while</span>(!it.isDone()){
             System.out.println(it.currentItem());
             it.next();
         }
     }
-    public static void main(String[] args) {
+    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title">main</span><span class="hljs-params">(String[] args)</span> </span>{
 
-        Client client = new Client();
+        Client client = <span class="hljs-keyword">new</span> Client();
         client.operation();
     }
 
@@ -3858,9 +3862,9 @@
 </code></pre>
 <h3 id="&#x4E09;&#x3001;&#x8FED;&#x4EE3;&#x5668;&#x6A21;&#x5F0F;&#x7684;&#x5E94;&#x7528;"><a name="&#x4E09;&#x3001;&#x8FED;&#x4EE3;&#x5668;&#x6A21;&#x5F0F;&#x7684;&#x5E94;&#x7528;" class="anchor-navigation-ex-anchor" href="#&#x4E09;&#x3001;&#x8FED;&#x4EE3;&#x5668;&#x6A21;&#x5F0F;&#x7684;&#x5E94;&#x7528;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x4E09;&#x3001;&#x8FED;&#x4EE3;&#x5668;&#x6A21;&#x5F0F;&#x7684;&#x5E94;&#x7528;</h3>
 <p>&#x5982;&#x679C;&#x8981;&#x95EE;Java&#x4E2D;&#x4F7F;&#x7528;&#x6700;&#x591A;&#x7684;&#x4E00;&#x79CD;&#x6A21;&#x5F0F;&#xFF0C;&#x7B54;&#x6848;&#x4E0D;&#x662F;&#x5355;&#x4F8B;&#x6A21;&#x5F0F;&#xFF0C;&#x4E5F;&#x4E0D;&#x662F;&#x5DE5;&#x5382;&#x6A21;&#x5F0F;&#xFF0C;&#x66F4;&#x4E0D;&#x662F;&#x7B56;&#x7565;&#x6A21;&#x5F0F;&#xFF0C;&#x800C;&#x662F;&#x8FED;&#x4EE3;&#x5668;&#x6A21;&#x5F0F;&#xFF0C;&#x5148;&#x6765;&#x770B;&#x4E00;&#x6BB5;&#x4EE3;&#x7801;&#x5427;&#xFF1A;</p>
-<pre><code class="lang-java">public static void print(Collection coll){  
+<pre><code class="lang-java"><span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title">print</span><span class="hljs-params">(Collection coll)</span></span>{  
     Iterator it = coll.iterator();  
-    while(it.hasNext()){  
+    <span class="hljs-keyword">while</span>(it.hasNext()){  
         String str = (String)it.next();  
         System.out.println(str);  
     }  
@@ -3922,7 +3926,7 @@
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"迭代器模式","level":"6.3.2","depth":2,"next":{"title":"观察者模式","level":"6.3.3","depth":2,"path":"design-mode/Behavioral-Pattern/Observer-Pattern.md","ref":"design-mode/Behavioral-Pattern/Observer-Pattern.md","articles":[]},"previous":{"title":"命令模式","level":"6.3.1","depth":2,"path":"design-mode/Behavioral-Pattern/Command-Pattern.md","ref":"design-mode/Behavioral-Pattern/Command-Pattern.md","articles":[]},"dir":"ltr"},"config":{"plugins":["-lunr","-search","-highlight","-livereload","search-plus@^0.0.11","simple-page-toc@^0.1.1","github@^2.0.0","github-buttons@2.1.0","edit-link@^2.0.2","advanced-emoji@^0.2.1","anchors@^0.7.1","include-codeblock@^3.0.2","ace@^0.3.2","emphasize@^1.1.0","katex@^1.1.3","splitter@^0.0.8","tbfed-pagefooter@^0.0.1","expandable-chapters-small@^0.1.7","sectionx@^3.1.0","local-video@^1.0.1","anchor-navigation-ex@0.1.8","favicon@^0.0.2"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"tbfed-pagefooter":{"copyright":"Copyright © ruheng.com 2017","modify_label":"该文件修订时间：","modify_format":"YYYY-MM-DD HH:mm:ss"},"emphasize":{},"ace":{},"github":{"url":"https://github.com/LRH1993/android_interview"},"simple-page-toc":{"maxDepth":3,"skipFirstH1":true},"splitter":{},"katex":{},"fontsettings":{"theme":"white","family":"sans","size":2},"sectionx":{"tag":"b"},"anchor-navigation-ex":{"isRewritePageTitle":false,"tocLevel1Icon":"fa fa-hand-o-right","tocLevel2Icon":"fa fa-hand-o-right","tocLevel3Icon":"fa fa-hand-o-right"},"favicon":{"shortcut":"favicon.ico","bookmark":"favicon.ico"},"github-buttons":{"repo":"LRH1993/android_interview","types":["star"],"size":"small"},"expandable-chapters-small":{},"local-video":{},"advanced-emoji":{"embedEmojis":false},"include-codeblock":{"check":false,"edit":true,"fixlang":false,"lang":"","template":"ace","theme":"chrome","unindent":true},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":true,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"edit-link":{"label":"Edit This Page","base":"https://github.com/LRH1993/android_interview/edit/master"},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":true},"anchors":{},"search-plus":{}},"theme":"default","author":"ruheng","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"Android校招面试指南","language":"zh-hans","output.name":"site","links":{"sidebar":{"Home":"http://lruheng.com/"}},"gitbook":"3.2.3","description":"Android面试必备，记录自己的秋招之路"},"file":{"path":"design-mode/Behavioral-Pattern/Iterator-Pattern.md","mtime":"2017-08-22T07:53:58.000Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2017-10-16T12:05:21.906Z"},"basePath":"../..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"迭代器模式","level":"6.3.2","depth":2,"next":{"title":"观察者模式","level":"6.3.3","depth":2,"path":"design-mode/Behavioral-Pattern/Observer-Pattern.md","ref":"design-mode/Behavioral-Pattern/Observer-Pattern.md","articles":[]},"previous":{"title":"命令模式","level":"6.3.1","depth":2,"path":"design-mode/Behavioral-Pattern/Command-Pattern.md","ref":"design-mode/Behavioral-Pattern/Command-Pattern.md","articles":[]},"dir":"ltr"},"config":{"plugins":["-lunr","-search","-livereload","search-plus@^0.0.11","simple-page-toc@^0.1.1","github@^2.0.0","github-buttons@2.1.0","edit-link@^2.0.2","advanced-emoji@^0.2.1","anchors@^0.7.1","include-codeblock@^3.0.2","ace@^0.3.2","emphasize@^1.1.0","katex@^1.1.3","splitter@^0.0.8","tbfed-pagefooter@^0.0.1","expandable-chapters-small@^0.1.7","sectionx@^3.1.0","local-video@^1.0.1","anchor-navigation-ex@0.1.8","favicon@^0.0.2"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"tbfed-pagefooter":{"copyright":"Copyright © ruheng.com 2017","modify_label":"该文件修订时间：","modify_format":"YYYY-MM-DD HH:mm:ss"},"emphasize":{},"ace":{},"github":{"url":"https://github.com/LRH1993/android_interview"},"simple-page-toc":{"maxDepth":3,"skipFirstH1":true},"splitter":{},"katex":{},"fontsettings":{"theme":"white","family":"sans","size":2},"sectionx":{"tag":"b"},"highlight":{},"anchor-navigation-ex":{"isRewritePageTitle":false,"tocLevel1Icon":"fa fa-hand-o-right","tocLevel2Icon":"fa fa-hand-o-right","tocLevel3Icon":"fa fa-hand-o-right"},"favicon":{"shortcut":"favicon.ico","bookmark":"favicon.ico"},"github-buttons":{"repo":"LRH1993/android_interview","types":["star"],"size":"small"},"expandable-chapters-small":{},"local-video":{},"advanced-emoji":{"embedEmojis":false},"include-codeblock":{"check":false,"edit":false,"fixlang":false,"lang":"","template":"default","theme":"chrome","unindent":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":true,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"edit-link":{"label":"Edit This Page","base":"https://github.com/LRH1993/android_interview/edit/master"},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":true},"anchors":{},"search-plus":{}},"theme":"default","author":"ruheng","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"Android校招面试指南","language":"zh-hans","output.name":"site","links":{"sidebar":{"Home":"http://lruheng.com/"}},"gitbook":"3.2.3","description":"Android面试必备，记录自己的秋招之路"},"file":{"path":"design-mode/Behavioral-Pattern/Iterator-Pattern.md","mtime":"2017-08-22T07:53:58.000Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2017-10-16T13:00:43.989Z"},"basePath":"../..","book":{"language":""}});
         });
     </script>
 </div>

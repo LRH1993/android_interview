@@ -69,6 +69,10 @@
                 
             
                 
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
                 <link rel="stylesheet" href="../../gitbook/gitbook-plugin-fontsettings/website.css">
                 
             
@@ -3717,48 +3721,48 @@
 <p>&#x3000;&#x3000;&#x25CF;&#x3000;&#x3000;&#x5177;&#x4F53;&#x6784;&#x4EF6;(ConcreteComponent)&#x89D2;&#x8272;&#xFF1A;&#x5B9A;&#x4E49;&#x4E00;&#x4E2A;&#x5C06;&#x8981;&#x63A5;&#x6536;&#x9644;&#x52A0;&#x8D23;&#x4EFB;&#x7684;&#x7C7B;&#x3002;</p>
 <p>&#x3000;&#x3000;&#x25CF;&#x3000;&#x3000;&#x88C5;&#x9970;(Decorator)&#x89D2;&#x8272;&#xFF1A;&#x6301;&#x6709;&#x4E00;&#x4E2A;&#x6784;&#x4EF6;(Component)&#x5BF9;&#x8C61;&#x7684;&#x5B9E;&#x4F8B;&#xFF0C;&#x5E76;&#x5B9A;&#x4E49;&#x4E00;&#x4E2A;&#x4E0E;&#x62BD;&#x8C61;&#x6784;&#x4EF6;&#x63A5;&#x53E3;&#x4E00;&#x81F4;&#x7684;&#x63A5;&#x53E3;&#x3002;</p>
 <p>&#x3000;&#x3000;&#x25CF;&#x3000;&#x3000;&#x5177;&#x4F53;&#x88C5;&#x9970;(ConcreteDecorator)&#x89D2;&#x8272;&#xFF1A;&#x8D1F;&#x8D23;&#x7ED9;&#x6784;&#x4EF6;&#x5BF9;&#x8C61;&#x201C;&#x8D34;&#x4E0A;&#x201D;&#x9644;&#x52A0;&#x7684;&#x8D23;&#x4EFB;&#x3002;<br><strong>&#x62BD;&#x8C61;&#x6784;&#x4EF6;&#x89D2;&#x8272;</strong></p>
-<pre><code class="lang-java">public interface Component {
+<pre><code class="lang-java"><span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">interface</span> <span class="hljs-title">Component</span> </span>{
 
-    public void sampleOperation();
+    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">sampleOperation</span><span class="hljs-params">()</span></span>;
 
 }
 </code></pre>
 <p><strong>&#x5177;&#x4F53;&#x6784;&#x4EF6;&#x89D2;&#x8272;</strong></p>
-<pre><code class="lang-java">public class ConcreteComponent implements Component {
+<pre><code class="lang-java"><span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">ConcreteComponent</span> <span class="hljs-keyword">implements</span> <span class="hljs-title">Component</span> </span>{
 
-    @Override
-    public void sampleOperation() {
-        // &#x5199;&#x76F8;&#x5173;&#x7684;&#x4E1A;&#x52A1;&#x4EE3;&#x7801;
+    <span class="hljs-meta">@Override</span>
+    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">sampleOperation</span><span class="hljs-params">()</span> </span>{
+        <span class="hljs-comment">// &#x5199;&#x76F8;&#x5173;&#x7684;&#x4E1A;&#x52A1;&#x4EE3;&#x7801;</span>
     }
 }
 </code></pre>
 <p><strong>&#x88C5;&#x9970;&#x89D2;&#x8272;</strong></p>
-<pre><code class="lang-java">public class Decorator implements Component{
-    private Component component;
+<pre><code class="lang-java"><span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Decorator</span> <span class="hljs-keyword">implements</span> <span class="hljs-title">Component</span></span>{
+    <span class="hljs-keyword">private</span> Component component;
 
-    public Decorator(Component component){
-        this.component = component;
+    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-title">Decorator</span><span class="hljs-params">(Component component)</span></span>{
+        <span class="hljs-keyword">this</span>.component = component;
     }
 
-    @Override
-    public void sampleOperation() {
-        // &#x59D4;&#x6D3E;&#x7ED9;&#x6784;&#x4EF6;
+    <span class="hljs-meta">@Override</span>
+    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">sampleOperation</span><span class="hljs-params">()</span> </span>{
+        <span class="hljs-comment">// &#x59D4;&#x6D3E;&#x7ED9;&#x6784;&#x4EF6;</span>
         component.sampleOperation();
     }   
 }
 </code></pre>
 <p><strong>&#x5177;&#x4F53;&#x88C5;&#x9970;&#x89D2;&#x8272;</strong></p>
-<pre><code class="lang-java">public class ConcreteDecoratorA extends Decorator {
+<pre><code class="lang-java"><span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">ConcreteDecoratorA</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">Decorator</span> </span>{
 
-    public ConcreteDecoratorA(Component component) {
-        super(component);
+    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-title">ConcreteDecoratorA</span><span class="hljs-params">(Component component)</span> </span>{
+        <span class="hljs-keyword">super</span>(component);
     }
 
-    @Override
-    public void sampleOperation() {
-      // &#x5199;&#x76F8;&#x5173;&#x7684;&#x4E1A;&#x52A1;&#x4EE3;&#x7801;
-&#x3000;&#x3000;&#x3000;super.sampleOperation();
-     // &#x5199;&#x76F8;&#x5173;&#x7684;&#x4E1A;&#x52A1;&#x4EE3;&#x7801;
+    <span class="hljs-meta">@Override</span>
+    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">sampleOperation</span><span class="hljs-params">()</span> </span>{
+      <span class="hljs-comment">// &#x5199;&#x76F8;&#x5173;&#x7684;&#x4E1A;&#x52A1;&#x4EE3;&#x7801;</span>
+&#x3000;&#x3000;&#x3000;<span class="hljs-keyword">super</span>.sampleOperation();
+     <span class="hljs-comment">// &#x5199;&#x76F8;&#x5173;&#x7684;&#x4E1A;&#x52A1;&#x4EE3;&#x7801;</span>
     }
 }
 </code></pre>
@@ -3767,74 +3771,74 @@
 <p>&#x672C;&#x4F8B;&#x4E2D;&#xFF0C;Component&#x7684;&#x89D2;&#x8272;&#x4FBF;&#x7531;&#x9F0E;&#x9F0E;&#x5927;&#x540D;&#x7684;&#x9F50;&#x5929;&#x5927;&#x5723;&#x626E;&#x6F14;&#xFF1B;ConcreteComponent&#x7684;&#x89D2;&#x8272;&#x5C5E;&#x4E8E;&#x5927;&#x5723;&#x7684;&#x672C;&#x5C0A;&#xFF0C;&#x5C31;&#x662F;&#x7322;&#x72F2;&#x672C;&#x4EBA;&#xFF1B;Decorator&#x7684;&#x89D2;&#x8272;&#x7531;&#x5927;&#x5723;&#x7684;&#x4E03;&#x5341;&#x4E8C;&#x53D8;&#x626E;&#x6F14;&#x3002;&#x800C;ConcreteDecorator&#x7684;&#x89D2;&#x8272;&#x4FBF;&#x662F;&#x9C7C;&#x513F;&#x3001;&#x9E1F;&#x513F;&#x7B49;&#x4E03;&#x5341;&#x4E8C;&#x822C;&#x53D8;&#x5316;&#x3002;  </p>
 <p><img src="http://upload-images.jianshu.io/upload_images/3985563-278b469e27980e9d.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></p>
 <p><strong>&#x62BD;&#x8C61;&#x6784;&#x4EF6;&#x89D2;&#x8272;&#x201C;&#x9F50;&#x5929;&#x5927;&#x5723;&#x201D;&#x63A5;&#x53E3;&#x5B9A;&#x4E49;&#x4E86;&#x4E00;&#x4E2A;move()&#x65B9;&#x6CD5;&#xFF0C;&#x8FD9;&#x662F;&#x6240;&#x6709;&#x7684;&#x5177;&#x4F53;&#x6784;&#x4EF6;&#x7C7B;&#x548C;&#x88C5;&#x9970;&#x7C7B;&#x5FC5;&#x987B;&#x5B9E;&#x73B0;&#x7684;&#x3002;</strong></p>
-<pre><code class="lang-java">//&#x5927;&#x5723;&#x7684;&#x5C0A;&#x53F7;
-public interface TheGreatestSage {
+<pre><code class="lang-java"><span class="hljs-comment">//&#x5927;&#x5723;&#x7684;&#x5C0A;&#x53F7;</span>
+<span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">interface</span> <span class="hljs-title">TheGreatestSage</span> </span>{
 
-    public void move();
+    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">move</span><span class="hljs-params">()</span></span>;
 }
 </code></pre>
 <p><strong>&#x5177;&#x4F53;&#x6784;&#x4EF6;&#x89D2;&#x8272;&#x201C;&#x5927;&#x5723;&#x672C;&#x5C0A;&#x201D;&#x7322;&#x72F2;&#x7C7B;</strong></p>
-<pre><code class="lang-java">public class Monkey implements TheGreatestSage {
+<pre><code class="lang-java"><span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Monkey</span> <span class="hljs-keyword">implements</span> <span class="hljs-title">TheGreatestSage</span> </span>{
 
-    @Override
-    public void move() {
-        //&#x4EE3;&#x7801;
-        System.out.println(&quot;Monkey Move&quot;);
+    <span class="hljs-meta">@Override</span>
+    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">move</span><span class="hljs-params">()</span> </span>{
+        <span class="hljs-comment">//&#x4EE3;&#x7801;</span>
+        System.out.println(<span class="hljs-string">&quot;Monkey Move&quot;</span>);
     }
 }
 </code></pre>
 <p><strong>&#x62BD;&#x8C61;&#x88C5;&#x9970;&#x89D2;&#x8272;&#x201C;&#x4E03;&#x5341;&#x4E8C;&#x53D8;&#x201D;</strong></p>
-<pre><code class="lang-java">public class Change implements TheGreatestSage {
-    private TheGreatestSage sage;
+<pre><code class="lang-java"><span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Change</span> <span class="hljs-keyword">implements</span> <span class="hljs-title">TheGreatestSage</span> </span>{
+    <span class="hljs-keyword">private</span> TheGreatestSage sage;
 
-    public Change(TheGreatestSage sage){
-        this.sage = sage;
+    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-title">Change</span><span class="hljs-params">(TheGreatestSage sage)</span></span>{
+        <span class="hljs-keyword">this</span>.sage = sage;
     }
-    @Override
-    public void move() {
-        // &#x4EE3;&#x7801;
+    <span class="hljs-meta">@Override</span>
+    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">move</span><span class="hljs-params">()</span> </span>{
+        <span class="hljs-comment">// &#x4EE3;&#x7801;</span>
         sage.move();
     }
 }
 </code></pre>
 <p><strong>&#x5177;&#x4F53;&#x88C5;&#x9970;&#x89D2;&#x8272;&#x201C;&#x9C7C;&#x513F;&#x201D;</strong></p>
-<pre><code class="lang-java">public class Fish extends Change {
+<pre><code class="lang-java"><span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Fish</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">Change</span> </span>{
 
-    public Fish(TheGreatestSage sage) {
-        super(sage);
+    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-title">Fish</span><span class="hljs-params">(TheGreatestSage sage)</span> </span>{
+        <span class="hljs-keyword">super</span>(sage);
     }
 
-    @Override
-    public void move() {
-        // &#x4EE3;&#x7801;
-        System.out.println(&quot;Fish Move&quot;);
+    <span class="hljs-meta">@Override</span>
+    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">move</span><span class="hljs-params">()</span> </span>{
+        <span class="hljs-comment">// &#x4EE3;&#x7801;</span>
+        System.out.println(<span class="hljs-string">&quot;Fish Move&quot;</span>);
     }
 }
 </code></pre>
 <p><strong>&#x5177;&#x4F53;&#x88C5;&#x9970;&#x89D2;&#x8272;&#x201C;&#x9E1F;&#x513F;&#x201D;</strong></p>
-<pre><code class="lang-java">public class Bird extends Change {
+<pre><code class="lang-java"><span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Bird</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">Change</span> </span>{
 
-    public Bird(TheGreatestSage sage) {
-        super(sage);
+    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-title">Bird</span><span class="hljs-params">(TheGreatestSage sage)</span> </span>{
+        <span class="hljs-keyword">super</span>(sage);
     }
 
-    @Override
-    public void move() {
-        // &#x4EE3;&#x7801;
-        System.out.println(&quot;Bird Move&quot;);
+    <span class="hljs-meta">@Override</span>
+    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">move</span><span class="hljs-params">()</span> </span>{
+        <span class="hljs-comment">// &#x4EE3;&#x7801;</span>
+        System.out.println(<span class="hljs-string">&quot;Bird Move&quot;</span>);
     }
 }
 </code></pre>
 <p><strong>&#x5BA2;&#x6237;&#x7AEF;&#x8C03;&#x7528;</strong></p>
-<pre><code class="lang-java">public class Client {
+<pre><code class="lang-java"><span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Client</span> </span>{
 
-    public static void main(String[] args) {
-        TheGreatestSage sage = new Monkey();
-        // &#x7B2C;&#x4E00;&#x79CD;&#x5199;&#x6CD5;  &#x5355;&#x5C42;&#x88C5;&#x9970;
-        TheGreatestSage bird = new Bird(sage);
-        TheGreatestSage fish = new Fish(bird);
-        // &#x7B2C;&#x4E8C;&#x79CD;&#x5199;&#x6CD5; &#x53CC;&#x5C42;&#x88C5;&#x9970;
-        //TheGreatestSage fish = new Fish(new Bird(sage));
+    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title">main</span><span class="hljs-params">(String[] args)</span> </span>{
+        TheGreatestSage sage = <span class="hljs-keyword">new</span> Monkey();
+        <span class="hljs-comment">// &#x7B2C;&#x4E00;&#x79CD;&#x5199;&#x6CD5;  &#x5355;&#x5C42;&#x88C5;&#x9970;</span>
+        TheGreatestSage bird = <span class="hljs-keyword">new</span> Bird(sage);
+        TheGreatestSage fish = <span class="hljs-keyword">new</span> Fish(bird);
+        <span class="hljs-comment">// &#x7B2C;&#x4E8C;&#x79CD;&#x5199;&#x6CD5; &#x53CC;&#x5C42;&#x88C5;&#x9970;</span>
+        <span class="hljs-comment">//TheGreatestSage fish = new Fish(new Bird(sage));</span>
         fish.move(); 
     }
 }
@@ -3853,18 +3857,18 @@ public interface TheGreatestSage {
 <h5 id="2&#x900F;&#x660E;&#x6027;&#x7684;&#x8981;&#x6C42;"><a name="2&#x900F;&#x660E;&#x6027;&#x7684;&#x8981;&#x6C42;" class="anchor-navigation-ex-anchor" href="#2&#x900F;&#x660E;&#x6027;&#x7684;&#x8981;&#x6C42;"><i class="fa fa-link" aria-hidden="true"></i></a>2.&#x900F;&#x660E;&#x6027;&#x7684;&#x8981;&#x6C42;</h5>
 <p>&#x88C5;&#x9970;&#x8005;&#x6A21;&#x5F0F;&#x5BF9;&#x5BA2;&#x6237;&#x7AEF;&#x7684;&#x900F;&#x660E;&#x6027;&#x8981;&#x6C42;&#x7A0B;&#x5E8F;&#x4E0D;&#x8981;&#x58F0;&#x660E;&#x4E00;&#x4E2A;ConcreteComponent&#x7C7B;&#x578B;&#x7684;&#x53D8;&#x91CF;&#xFF0C;&#x800C;&#x5E94;&#x5F53;&#x58F0;&#x660E;&#x4E00;&#x4E2A;Component&#x7C7B;&#x578B;&#x7684;&#x53D8;&#x91CF;&#x3002;</p>
 <p>&#x7528;&#x5B59;&#x609F;&#x7A7A;&#x7684;&#x4F8B;&#x5B50;&#x6765;&#x8BF4;&#xFF0C;&#x5FC5;&#x987B;&#x6C38;&#x8FDC;&#x628A;&#x5B59;&#x609F;&#x7A7A;&#x7684;&#x6240;&#x6709;&#x53D8;&#x5316;&#x90FD;&#x5F53;&#x6210;&#x5B59;&#x609F;&#x7A7A;&#x6765;&#x5BF9;&#x5F85;&#xFF0C;&#x800C;&#x5982;&#x679C;&#x628A;&#x8001;&#x5B59;&#x53D8;&#x6210;&#x7684;&#x9C7C;&#x513F;&#x5F53;&#x6210;&#x9C7C;&#x513F;&#xFF0C;&#x800C;&#x4E0D;&#x662F;&#x8001;&#x5B59;&#xFF0C;&#x90A3;&#x5C31;&#x88AB;&#x8001;&#x5B59;&#x9A97;&#x4E86;&#xFF0C;&#x800C;&#x8FD9;&#x65F6;&#x4E0D;&#x5E94;&#x5F53;&#x53D1;&#x751F;&#x7684;&#x3002;&#x4E0B;&#x9762;&#x7684;&#x505A;&#x6CD5;&#x662F;&#x5BF9;&#x7684;&#xFF1A;</p>
-<pre><code class="lang-java">TheGreatestSage sage = new Monkey();
-TheGreatestSage bird = new Bird(sage);
+<pre><code class="lang-java">TheGreatestSage sage = <span class="hljs-keyword">new</span> Monkey();
+TheGreatestSage bird = <span class="hljs-keyword">new</span> Bird(sage);
 </code></pre>
 <p>&#x800C;&#x4E0B;&#x9762;&#x7684;&#x505A;&#x6CD5;&#x662F;&#x4E0D;&#x5BF9;&#x7684;&#xFF1A;</p>
-<pre><code class="lang-java">Monkey sage = new Monkey();
-Bird bird = new Bird(sage);
+<pre><code class="lang-java">Monkey sage = <span class="hljs-keyword">new</span> Monkey();
+Bird bird = <span class="hljs-keyword">new</span> Bird(sage);
 </code></pre>
 <h5 id="3&#x534A;&#x900F;&#x660E;&#x7684;&#x88C5;&#x9970;&#x8005;&#x6A21;&#x5F0F;"><a name="3&#x534A;&#x900F;&#x660E;&#x7684;&#x88C5;&#x9970;&#x8005;&#x6A21;&#x5F0F;" class="anchor-navigation-ex-anchor" href="#3&#x534A;&#x900F;&#x660E;&#x7684;&#x88C5;&#x9970;&#x8005;&#x6A21;&#x5F0F;"><i class="fa fa-link" aria-hidden="true"></i></a>3.&#x534A;&#x900F;&#x660E;&#x7684;&#x88C5;&#x9970;&#x8005;&#x6A21;&#x5F0F;</h5>
 <p>&#x7136;&#x800C;&#xFF0C;&#x7EAF;&#x7CB9;&#x7684;&#x88C5;&#x9970;&#x8005;&#x6A21;&#x5F0F;&#x5F88;&#x96BE;&#x627E;&#x5230;&#x3002;&#x88C5;&#x9970;&#x8005;&#x6A21;&#x5F0F;&#x7684;&#x7528;&#x610F;&#x662F;&#x5728;&#x4E0D;&#x6539;&#x53D8;&#x63A5;&#x53E3;&#x7684;&#x524D;&#x63D0;&#x4E0B;&#xFF0C;&#x589E;&#x5F3A;&#x6240;&#x8003;&#x8651;&#x7684;&#x7C7B;&#x7684;&#x6027;&#x80FD;&#x3002;&#x5728;&#x589E;&#x5F3A;&#x6027;&#x80FD;&#x7684;&#x65F6;&#x5019;&#xFF0C;&#x5F80;&#x5F80;&#x9700;&#x8981;&#x5EFA;&#x7ACB;&#x65B0;&#x7684;&#x516C;&#x5F00;&#x7684;&#x65B9;&#x6CD5;&#x3002;&#x5373;&#x4FBF;&#x662F;&#x5728;&#x5B59;&#x5927;&#x5723;&#x7684;&#x7CFB;&#x7EDF;&#x91CC;&#xFF0C;&#x4E5F;&#x9700;&#x8981;&#x65B0;&#x7684;&#x65B9;&#x6CD5;&#x3002;&#x6BD4;&#x5982;&#x9F50;&#x5929;&#x5927;&#x5723;&#x7C7B;&#x5E76;&#x6CA1;&#x6709;&#x98DE;&#x884C;&#x7684;&#x80FD;&#x529B;&#xFF0C;&#x800C;&#x9E1F;&#x513F;&#x6709;&#x3002;&#x8FD9;&#x5C31;&#x610F;&#x5473;&#x7740;&#x9E1F;&#x513F;&#x5E94;&#x5F53;&#x6709;&#x4E00;&#x4E2A;&#x65B0;&#x7684;fly()&#x65B9;&#x6CD5;&#x3002;&#x518D;&#x6BD4;&#x5982;&#xFF0C;&#x9F50;&#x5929;&#x5927;&#x5723;&#x7C7B;&#x5E76;&#x6CA1;&#x6709;&#x6E38;&#x6CF3;&#x7684;&#x80FD;&#x529B;&#xFF0C;&#x800C;&#x9C7C;&#x513F;&#x6709;&#xFF0C;&#x8FD9;&#x5C31;&#x610F;&#x5473;&#x7740;&#x5728;&#x9C7C;&#x513F;&#x7C7B;&#x91CC;&#x5E94;&#x5F53;&#x6709;&#x4E00;&#x4E2A;&#x65B0;&#x7684;swim()&#x65B9;&#x6CD5;&#x3002;</p>
 <p>&#x8FD9;&#x5C31;&#x5BFC;&#x81F4;&#x4E86;&#x5927;&#x591A;&#x6570;&#x7684;&#x88C5;&#x9970;&#x8005;&#x6A21;&#x5F0F;&#x7684;&#x5B9E;&#x73B0;&#x90FD;&#x662F;&#x201C;&#x534A;&#x900F;&#x660E;&#x201D;&#x7684;&#xFF0C;&#x800C;&#x4E0D;&#x662F;&#x5B8C;&#x5168;&#x900F;&#x660E;&#x7684;&#x3002;&#x6362;&#x8A00;&#x4E4B;&#xFF0C;&#x5141;&#x8BB8;&#x88C5;&#x9970;&#x8005;&#x6A21;&#x5F0F;&#x6539;&#x53D8;&#x63A5;&#x53E3;&#xFF0C;&#x589E;&#x52A0;&#x65B0;&#x7684;&#x65B9;&#x6CD5;&#x3002;&#x8FD9;&#x610F;&#x5473;&#x7740;&#x5BA2;&#x6237;&#x7AEF;&#x53EF;&#x4EE5;&#x58F0;&#x660E;ConcreteDecorator&#x7C7B;&#x578B;&#x7684;&#x53D8;&#x91CF;&#xFF0C;&#x4ECE;&#x800C;&#x53EF;&#x4EE5;&#x8C03;&#x7528;ConcreteDecorator&#x7C7B;&#x4E2D;&#x624D;&#x6709;&#x7684;&#x65B9;&#x6CD5;&#xFF1A;</p>
-<pre><code class="lang-java">TheGreatestSage sage = new Monkey();
-Bird bird = new Bird(sage);
+<pre><code class="lang-java">TheGreatestSage sage = <span class="hljs-keyword">new</span> Monkey();
+Bird bird = <span class="hljs-keyword">new</span> Bird(sage);
 bird.fly();
 </code></pre>
 <p>&#x534A;&#x900F;&#x660E;&#x7684;&#x88C5;&#x9970;&#x8005;&#x6A21;&#x5F0F;&#x662F;&#x4ECB;&#x4E8E;&#x88C5;&#x9970;&#x8005;&#x6A21;&#x5F0F;&#x548C;&#x9002;&#x914D;&#x5668;&#x6A21;&#x5F0F;&#x4E4B;&#x95F4;&#x7684;&#x3002;&#x9002;&#x914D;&#x5668;&#x6A21;&#x5F0F;&#x7684;&#x7528;&#x610F;&#x662F;&#x6539;&#x53D8;&#x6240;&#x8003;&#x8651;&#x7684;&#x7C7B;&#x7684;&#x63A5;&#x53E3;&#xFF0C;&#x4E5F;&#x53EF;&#x4EE5;&#x901A;&#x8FC7;&#x6539;&#x5199;&#x4E00;&#x4E2A;&#x6216;&#x51E0;&#x4E2A;&#x65B9;&#x6CD5;&#xFF0C;&#x6216;&#x589E;&#x52A0;&#x65B0;&#x7684;&#x65B9;&#x6CD5;&#x6765;&#x589E;&#x5F3A;&#x6216;&#x6539;&#x53D8;&#x6240;&#x8003;&#x8651;&#x7684;&#x7C7B;&#x7684;&#x529F;&#x80FD;&#x3002;&#x5927;&#x591A;&#x6570;&#x7684;&#x88C5;&#x9970;&#x8005;&#x6A21;&#x5F0F;&#x5B9E;&#x9645;&#x4E0A;&#x662F;&#x534A;&#x900F;&#x660E;&#x7684;&#x88C5;&#x9970;&#x8005;&#x6A21;&#x5F0F;&#xFF0C;&#x8FD9;&#x6837;&#x7684;&#x88C5;&#x9970;&#x8005;&#x6A21;&#x5F0F;&#x4E5F;&#x79F0;&#x505A;&#x534A;&#x88C5;&#x9970;&#x3001;&#x534A;&#x9002;&#x914D;&#x5668;&#x6A21;&#x5F0F;&#x3002;</p>
@@ -3893,102 +3897,102 @@ bird.fly();
 <p>&#x663E;&#x7136;&#xFF0C;&#x534A;&#x900F;&#x660E;&#x7684;&#x88C5;&#x9970;&#x8005;&#x6A21;&#x5F0F;&#x5B9E;&#x9645;&#x4E0A;&#x5C31;&#x662F;&#x5904;&#x4E8E;&#x9002;&#x914D;&#x5668;&#x6A21;&#x5F0F;&#x4E0E;&#x88C5;&#x9970;&#x8005;&#x6A21;&#x5F0F;&#x4E4B;&#x95F4;&#x7684;&#x7070;&#x8272;&#x5730;&#x5E26;&#x3002;&#x5982;&#x679C;&#x5C06;&#x88C5;&#x9970;&#x8005;&#x6A21;&#x5F0F;&#x4E0E;&#x9002;&#x914D;&#x5668;&#x6A21;&#x5F0F;&#x5408;&#x5E76;&#x6210;&#x4E3A;&#x4E00;&#x4E2A;&#x201C;&#x5305;&#x88C5;&#x6A21;&#x5F0F;&#x201D;&#x7684;&#x8BDD;&#xFF0C;&#x90A3;&#x4E48;&#x534A;&#x900F;&#x660E;&#x7684;&#x88C5;&#x9970;&#x8005;&#x6A21;&#x5F0F;&#x5012;&#x53EF;&#x4EE5;&#x6210;&#x4E3A;&#x8FD9;&#x79CD;&#x5408;&#x5E76;&#x540E;&#x7684;&#x201C;&#x5305;&#x88C5;&#x6A21;&#x5F0F;&#x201D;&#x7684;&#x4EE3;&#x8868;&#x3002;</p>
 <h5 id="inputstream&#x7C7B;&#x578B;&#x4E2D;&#x7684;&#x88C5;&#x9970;&#x8005;&#x6A21;&#x5F0F;"><a name="inputstream&#x7C7B;&#x578B;&#x4E2D;&#x7684;&#x88C5;&#x9970;&#x8005;&#x6A21;&#x5F0F;" class="anchor-navigation-ex-anchor" href="#inputstream&#x7C7B;&#x578B;&#x4E2D;&#x7684;&#x88C5;&#x9970;&#x8005;&#x6A21;&#x5F0F;"><i class="fa fa-link" aria-hidden="true"></i></a>InputStream&#x7C7B;&#x578B;&#x4E2D;&#x7684;&#x88C5;&#x9970;&#x8005;&#x6A21;&#x5F0F;</h5>
 <p>InputStream&#x7C7B;&#x578B;&#x4E2D;&#x7684;&#x88C5;&#x9970;&#x8005;&#x6A21;&#x5F0F;&#x662F;&#x534A;&#x900F;&#x660E;&#x7684;&#x3002;&#x4E3A;&#x4E86;&#x8BF4;&#x660E;&#x8FD9;&#x4E00;&#x70B9;&#xFF0C;&#x4E0D;&#x59A8;&#x770B;&#x4E00;&#x770B;&#x4F5C;&#x88C5;&#x9970;&#x8005;&#x6A21;&#x5F0F;&#x7684;&#x62BD;&#x8C61;&#x6784;&#x4EF6;&#x89D2;&#x8272;&#x7684;InputStream&#x7684;&#x6E90;&#x4EE3;&#x7801;&#x3002;&#x8FD9;&#x4E2A;&#x62BD;&#x8C61;&#x7C7B;&#x58F0;&#x660E;&#x4E86;&#x4E5D;&#x4E2A;&#x65B9;&#x6CD5;&#xFF0C;&#x5E76;&#x7ED9;&#x51FA;&#x4E86;&#x5176;&#x4E2D;&#x516B;&#x4E2A;&#x7684;&#x5B9E;&#x73B0;&#xFF0C;&#x53E6;&#x5916;&#x4E00;&#x4E2A;&#x662F;&#x62BD;&#x8C61;&#x65B9;&#x6CD5;&#xFF0C;&#x9700;&#x8981;&#x7531;&#x5B50;&#x7C7B;&#x5B9E;&#x73B0;&#x3002;</p>
-<pre><code class="lang-java">public abstract class InputStream implements Closeable {
+<pre><code class="lang-java"><span class="hljs-keyword">public</span> <span class="hljs-keyword">abstract</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">InputStream</span> <span class="hljs-keyword">implements</span> <span class="hljs-title">Closeable</span> </span>{
 
-    public abstract int read() throws IOException;
+    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">abstract</span> <span class="hljs-keyword">int</span> <span class="hljs-title">read</span><span class="hljs-params">()</span> <span class="hljs-keyword">throws</span> IOException</span>;
 
 
-    public int read(byte b[]) throws IOException {}
+    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">int</span> <span class="hljs-title">read</span><span class="hljs-params">(<span class="hljs-keyword">byte</span> b[])</span> <span class="hljs-keyword">throws</span> IOException </span>{}
 
-    public int read(byte b[], int off, int len) throws IOException {}
+    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">int</span> <span class="hljs-title">read</span><span class="hljs-params">(<span class="hljs-keyword">byte</span> b[], <span class="hljs-keyword">int</span> off, <span class="hljs-keyword">int</span> len)</span> <span class="hljs-keyword">throws</span> IOException </span>{}
 
-    public long skip(long n) throws IOException {}
+    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">long</span> <span class="hljs-title">skip</span><span class="hljs-params">(<span class="hljs-keyword">long</span> n)</span> <span class="hljs-keyword">throws</span> IOException </span>{}
 
-    public int available() throws IOException {}
+    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">int</span> <span class="hljs-title">available</span><span class="hljs-params">()</span> <span class="hljs-keyword">throws</span> IOException </span>{}
 
-    public void close() throws IOException {}
+    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">close</span><span class="hljs-params">()</span> <span class="hljs-keyword">throws</span> IOException </span>{}
 
-    public synchronized void mark(int readlimit) {}
+    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">synchronized</span> <span class="hljs-keyword">void</span> <span class="hljs-title">mark</span><span class="hljs-params">(<span class="hljs-keyword">int</span> readlimit)</span> </span>{}
 
-    public synchronized void reset() throws IOException {}
+    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">synchronized</span> <span class="hljs-keyword">void</span> <span class="hljs-title">reset</span><span class="hljs-params">()</span> <span class="hljs-keyword">throws</span> IOException </span>{}
 
-    public boolean markSupported() {}
+    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">boolean</span> <span class="hljs-title">markSupported</span><span class="hljs-params">()</span> </span>{}
 }
 </code></pre>
 <p>&#x4E0B;&#x9762;&#x662F;&#x4F5C;&#x4E3A;&#x88C5;&#x9970;&#x6A21;&#x5F0F;&#x7684;&#x62BD;&#x8C61;&#x88C5;&#x9970;&#x89D2;&#x8272;FilterInputStream&#x7C7B;&#x7684;&#x6E90;&#x4EE3;&#x7801;&#x3002;&#x53EF;&#x4EE5;&#x770B;&#x51FA;&#xFF0C;FilterInputStream&#x7684;&#x63A5;&#x53E3;&#x4E0E;InputStream&#x7684;&#x63A5;&#x53E3;&#x662F;&#x5B8C;&#x5168;&#x4E00;&#x81F4;&#x7684;&#x3002;&#x4E5F;&#x5C31;&#x662F;&#x8BF4;&#xFF0C;&#x76F4;&#x5230;&#x8FD9;&#x4E00;&#x6B65;&#xFF0C;&#x8FD8;&#x662F;&#x4E0E;&#x88C5;&#x9970;&#x6A21;&#x5F0F;&#x76F8;&#x7B26;&#x5408;&#x7684;&#x3002;</p>
-<pre><code class="lang-java">public class FilterInputStream extends InputStream {
-    protected FilterInputStream(InputStream in) {}
+<pre><code class="lang-java"><span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">FilterInputStream</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">InputStream</span> </span>{
+    <span class="hljs-function"><span class="hljs-keyword">protected</span> <span class="hljs-title">FilterInputStream</span><span class="hljs-params">(InputStream in)</span> </span>{}
 
-    public int read() throws IOException {}
+    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">int</span> <span class="hljs-title">read</span><span class="hljs-params">()</span> <span class="hljs-keyword">throws</span> IOException </span>{}
 
-    public int read(byte b[]) throws IOException {}
+    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">int</span> <span class="hljs-title">read</span><span class="hljs-params">(<span class="hljs-keyword">byte</span> b[])</span> <span class="hljs-keyword">throws</span> IOException </span>{}
 
-    public int read(byte b[], int off, int len) throws IOException {}
+    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">int</span> <span class="hljs-title">read</span><span class="hljs-params">(<span class="hljs-keyword">byte</span> b[], <span class="hljs-keyword">int</span> off, <span class="hljs-keyword">int</span> len)</span> <span class="hljs-keyword">throws</span> IOException </span>{}
 
-    public long skip(long n) throws IOException {}
+    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">long</span> <span class="hljs-title">skip</span><span class="hljs-params">(<span class="hljs-keyword">long</span> n)</span> <span class="hljs-keyword">throws</span> IOException </span>{}
 
-    public int available() throws IOException {}
+    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">int</span> <span class="hljs-title">available</span><span class="hljs-params">()</span> <span class="hljs-keyword">throws</span> IOException </span>{}
 
-    public void close() throws IOException {}
+    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">close</span><span class="hljs-params">()</span> <span class="hljs-keyword">throws</span> IOException </span>{}
 
-    public synchronized void mark(int readlimit) {}
+    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">synchronized</span> <span class="hljs-keyword">void</span> <span class="hljs-title">mark</span><span class="hljs-params">(<span class="hljs-keyword">int</span> readlimit)</span> </span>{}
 
-    public synchronized void reset() throws IOException {}
+    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">synchronized</span> <span class="hljs-keyword">void</span> <span class="hljs-title">reset</span><span class="hljs-params">()</span> <span class="hljs-keyword">throws</span> IOException </span>{}
 
-    public boolean markSupported() {}
+    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">boolean</span> <span class="hljs-title">markSupported</span><span class="hljs-params">()</span> </span>{}
 }
 </code></pre>
 <p>&#x4E0B;&#x9762;&#x662F;&#x5177;&#x4F53;&#x88C5;&#x9970;&#x89D2;&#x8272;PushbackInputStream&#x7684;&#x6E90;&#x4EE3;&#x7801;&#x3002;</p>
-<pre><code class="lang-java">public class PushbackInputStream extends FilterInputStream {
-    private void ensureOpen() throws IOException {}
+<pre><code class="lang-java"><span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">PushbackInputStream</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">FilterInputStream</span> </span>{
+    <span class="hljs-function"><span class="hljs-keyword">private</span> <span class="hljs-keyword">void</span> <span class="hljs-title">ensureOpen</span><span class="hljs-params">()</span> <span class="hljs-keyword">throws</span> IOException </span>{}
 
-    public PushbackInputStream(InputStream in, int size) {}
+    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-title">PushbackInputStream</span><span class="hljs-params">(InputStream in, <span class="hljs-keyword">int</span> size)</span> </span>{}
 
-    public PushbackInputStream(InputStream in) {}
+    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-title">PushbackInputStream</span><span class="hljs-params">(InputStream in)</span> </span>{}
 
-    public int read() throws IOException {}
+    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">int</span> <span class="hljs-title">read</span><span class="hljs-params">()</span> <span class="hljs-keyword">throws</span> IOException </span>{}
 
-    public int read(byte[] b, int off, int len) throws IOException {}
+    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">int</span> <span class="hljs-title">read</span><span class="hljs-params">(<span class="hljs-keyword">byte</span>[] b, <span class="hljs-keyword">int</span> off, <span class="hljs-keyword">int</span> len)</span> <span class="hljs-keyword">throws</span> IOException </span>{}
 
-    public void unread(int b) throws IOException {}
+    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">unread</span><span class="hljs-params">(<span class="hljs-keyword">int</span> b)</span> <span class="hljs-keyword">throws</span> IOException </span>{}
 
-    public void unread(byte[] b, int off, int len) throws IOException {}
+    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">unread</span><span class="hljs-params">(<span class="hljs-keyword">byte</span>[] b, <span class="hljs-keyword">int</span> off, <span class="hljs-keyword">int</span> len)</span> <span class="hljs-keyword">throws</span> IOException </span>{}
 
-    public void unread(byte[] b) throws IOException {}
+    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">unread</span><span class="hljs-params">(<span class="hljs-keyword">byte</span>[] b)</span> <span class="hljs-keyword">throws</span> IOException </span>{}
 
-    public int available() throws IOException {}
+    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">int</span> <span class="hljs-title">available</span><span class="hljs-params">()</span> <span class="hljs-keyword">throws</span> IOException </span>{}
 
-    public long skip(long n) throws IOException {}
+    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">long</span> <span class="hljs-title">skip</span><span class="hljs-params">(<span class="hljs-keyword">long</span> n)</span> <span class="hljs-keyword">throws</span> IOException </span>{}
 
-    public boolean markSupported() {}
+    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">boolean</span> <span class="hljs-title">markSupported</span><span class="hljs-params">()</span> </span>{}
 
-    public synchronized void mark(int readlimit) {}
+    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">synchronized</span> <span class="hljs-keyword">void</span> <span class="hljs-title">mark</span><span class="hljs-params">(<span class="hljs-keyword">int</span> readlimit)</span> </span>{}
 
-    public synchronized void reset() throws IOException {}
+    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">synchronized</span> <span class="hljs-keyword">void</span> <span class="hljs-title">reset</span><span class="hljs-params">()</span> <span class="hljs-keyword">throws</span> IOException </span>{}
 
-    public synchronized void close() throws IOException {}
+    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">synchronized</span> <span class="hljs-keyword">void</span> <span class="hljs-title">close</span><span class="hljs-params">()</span> <span class="hljs-keyword">throws</span> IOException </span>{}
 }
 </code></pre>
 <p>&#x67E5;&#x770B;&#x6E90;&#x7801;&#xFF0C;&#x4F60;&#x4F1A;&#x53D1;&#x73B0;&#xFF0C;&#x8FD9;&#x4E2A;&#x88C5;&#x9970;&#x7C7B;&#x63D0;&#x4F9B;&#x4E86;&#x989D;&#x5916;&#x7684;&#x65B9;&#x6CD5;unread()&#xFF0C;&#x8FD9;&#x5C31;&#x610F;&#x5473;&#x7740;PushbackInputStream&#x662F;&#x4E00;&#x4E2A;&#x534A;&#x900F;&#x660E;&#x7684;&#x88C5;&#x9970;&#x7C7B;&#x3002;&#x6362;&#x8A00; &#x4E4B;&#xFF0C;&#x5B83;&#x7834;&#x574F;&#x4E86;&#x7406;&#x60F3;&#x7684;&#x88C5;&#x9970;&#x8005;&#x6A21;&#x5F0F;&#x7684;&#x8981;&#x6C42;&#x3002;&#x5982;&#x679C;&#x5BA2;&#x6237;&#x7AEF;&#x6301;&#x6709;&#x4E00;&#x4E2A;&#x7C7B;&#x578B;&#x4E3A;InputStream&#x5BF9;&#x8C61;&#x7684;&#x5F15;&#x7528;in&#x7684;&#x8BDD;&#xFF0C;&#x90A3;&#x4E48;&#x5982;&#x679C;in&#x7684;&#x771F;&#x5B9E;&#x7C7B;&#x578B;&#x662F; PushbackInputStream&#x7684;&#x8BDD;&#xFF0C;&#x53EA;&#x8981;&#x5BA2;&#x6237;&#x7AEF;&#x4E0D;&#x9700;&#x8981;&#x4F7F;&#x7528;unread()&#x65B9;&#x6CD5;&#xFF0C;&#x90A3;&#x4E48;&#x5BA2;&#x6237;&#x7AEF;&#x4E00;&#x822C;&#x6CA1;&#x6709;&#x95EE;&#x9898;&#x3002;&#x4F46;&#x662F;&#x5982;&#x679C;&#x5BA2;&#x6237;&#x7AEF;&#x5FC5;&#x987B;&#x4F7F;&#x7528;&#x8FD9;&#x4E2A;&#x65B9;&#x6CD5;&#xFF0C;&#x5C31; &#x5FC5;&#x987B;&#x8FDB;&#x884C;&#x5411;&#x4E0B;&#x7C7B;&#x578B;&#x8F6C;&#x6362;&#x3002;&#x5C06;in&#x7684;&#x7C7B;&#x578B;&#x8F6C;&#x6362;&#x6210;&#x4E3A;PushbackInputStream&#x4E4B;&#x540E;&#x624D;&#x53EF;&#x80FD;&#x8C03;&#x7528;&#x8FD9;&#x4E2A;&#x65B9;&#x6CD5;&#x3002;&#x4F46;&#x662F;&#xFF0C;&#x8FD9;&#x4E2A;&#x7C7B;&#x578B;&#x8F6C;&#x6362;&#x610F;&#x5473;&#x7740;&#x5BA2;&#x6237;&#x7AEF;&#x5FC5;&#x987B;&#x77E5;&#x9053;&#x5B83; &#x62FF;&#x5230;&#x7684;&#x5F15;&#x7528;&#x662F;&#x6307;&#x5411;&#x4E00;&#x4E2A;&#x7C7B;&#x578B;&#x4E3A;PushbackInputStream&#x7684;&#x5BF9;&#x8C61;&#x3002;&#x8FD9;&#x5C31;&#x7834;&#x574F;&#x4E86;&#x4F7F;&#x7528;&#x88C5;&#x9970;&#x8005;&#x6A21;&#x5F0F;&#x7684;&#x539F;&#x59CB;&#x7528;&#x610F;&#x3002;</p>
 <p>&#x73B0;&#x5B9E;&#x4E16;&#x754C;&#x4E0E;&#x7406;&#x8BBA;&#x603B;&#x5F52;&#x662F;&#x6709;&#x4E00;&#x6BB5;&#x5DEE;&#x8DDD;&#x7684;&#x3002;&#x7EAF;&#x7CB9;&#x7684;&#x88C5;&#x9970;&#x8005;&#x6A21;&#x5F0F;&#x5728;&#x771F;&#x5B9E;&#x7684;&#x7CFB;&#x7EDF;&#x4E2D;&#x5F88;&#x96BE;&#x627E;&#x5230;&#x3002;&#x4E00;&#x822C;&#x6240;&#x9047;&#x5230;&#x7684;&#xFF0C;&#x90FD;&#x662F;&#x8FD9;&#x79CD;&#x534A;&#x900F;&#x660E;&#x7684;&#x88C5;&#x9970;&#x8005;&#x6A21;&#x5F0F;&#x3002;</p>
 <p>&#x4E0B;&#x9762;&#x662F;&#x4F7F;&#x7528;I/O&#x6D41;&#x8BFB;&#x53D6;&#x6587;&#x4EF6;&#x5185;&#x5BB9;&#x7684;&#x7B80;&#x5355;&#x64CD;&#x4F5C;&#x793A;&#x4F8B;&#x3002;</p>
-<pre><code class="lang-java">public class IOTest {
+<pre><code class="lang-java"><span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">IOTest</span> </span>{
 
-    public static void main(String[] args) throws IOException {
-        // &#x6D41;&#x5F0F;&#x8BFB;&#x53D6;&#x6587;&#x4EF6;
-        DataInputStream dis = null;
-        try{
-            dis = new DataInputStream(
-                    new BufferedInputStream(
-                            new FileInputStream(&quot;test.txt&quot;)
+    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title">main</span><span class="hljs-params">(String[] args)</span> <span class="hljs-keyword">throws</span> IOException </span>{
+        <span class="hljs-comment">// &#x6D41;&#x5F0F;&#x8BFB;&#x53D6;&#x6587;&#x4EF6;</span>
+        DataInputStream dis = <span class="hljs-keyword">null</span>;
+        <span class="hljs-keyword">try</span>{
+            dis = <span class="hljs-keyword">new</span> DataInputStream(
+                    <span class="hljs-keyword">new</span> BufferedInputStream(
+                            <span class="hljs-keyword">new</span> FileInputStream(<span class="hljs-string">&quot;test.txt&quot;</span>)
                     )
             );
-            //&#x8BFB;&#x53D6;&#x6587;&#x4EF6;&#x5185;&#x5BB9;
-            byte[] bs = new byte[dis.available()];
+            <span class="hljs-comment">//&#x8BFB;&#x53D6;&#x6587;&#x4EF6;&#x5185;&#x5BB9;</span>
+            <span class="hljs-keyword">byte</span>[] bs = <span class="hljs-keyword">new</span> <span class="hljs-keyword">byte</span>[dis.available()];
             dis.read(bs);
-            String content = new String(bs);
+            String content = <span class="hljs-keyword">new</span> String(bs);
             System.out.println(content);
-        }finally{
+        }<span class="hljs-keyword">finally</span>{
             dis.close();
         }
     }
@@ -4040,7 +4044,7 @@ bird.fly();
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"装饰者模式","level":"6.2.3","depth":2,"next":{"title":"代理模式","level":"6.2.4","depth":2,"path":"design-mode/Structural-Patterns/Proxy-Pattern.md","ref":"design-mode/Structural-Patterns/Proxy-Pattern.md","articles":[]},"previous":{"title":"外观模式","level":"6.2.2","depth":2,"path":"design-mode/Structural-Patterns/Facade-Pattern.md","ref":"design-mode/Structural-Patterns/Facade-Pattern.md","articles":[]},"dir":"ltr"},"config":{"plugins":["-lunr","-search","-highlight","-livereload","search-plus@^0.0.11","simple-page-toc@^0.1.1","github@^2.0.0","github-buttons@2.1.0","edit-link@^2.0.2","advanced-emoji@^0.2.1","anchors@^0.7.1","include-codeblock@^3.0.2","ace@^0.3.2","emphasize@^1.1.0","katex@^1.1.3","splitter@^0.0.8","tbfed-pagefooter@^0.0.1","expandable-chapters-small@^0.1.7","sectionx@^3.1.0","local-video@^1.0.1","anchor-navigation-ex@0.1.8","favicon@^0.0.2"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"tbfed-pagefooter":{"copyright":"Copyright © ruheng.com 2017","modify_label":"该文件修订时间：","modify_format":"YYYY-MM-DD HH:mm:ss"},"emphasize":{},"ace":{},"github":{"url":"https://github.com/LRH1993/android_interview"},"simple-page-toc":{"maxDepth":3,"skipFirstH1":true},"splitter":{},"katex":{},"fontsettings":{"theme":"white","family":"sans","size":2},"sectionx":{"tag":"b"},"anchor-navigation-ex":{"isRewritePageTitle":false,"tocLevel1Icon":"fa fa-hand-o-right","tocLevel2Icon":"fa fa-hand-o-right","tocLevel3Icon":"fa fa-hand-o-right"},"favicon":{"shortcut":"favicon.ico","bookmark":"favicon.ico"},"github-buttons":{"repo":"LRH1993/android_interview","types":["star"],"size":"small"},"expandable-chapters-small":{},"local-video":{},"advanced-emoji":{"embedEmojis":false},"include-codeblock":{"check":false,"edit":true,"fixlang":false,"lang":"","template":"ace","theme":"chrome","unindent":true},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":true,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"edit-link":{"label":"Edit This Page","base":"https://github.com/LRH1993/android_interview/edit/master"},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":true},"anchors":{},"search-plus":{}},"theme":"default","author":"ruheng","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"Android校招面试指南","language":"zh-hans","output.name":"site","links":{"sidebar":{"Home":"http://lruheng.com/"}},"gitbook":"3.2.3","description":"Android面试必备，记录自己的秋招之路"},"file":{"path":"design-mode/Structural-Patterns/Decorator-Pattern.md","mtime":"2017-08-22T07:53:58.000Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2017-10-16T12:05:21.906Z"},"basePath":"../..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"装饰者模式","level":"6.2.3","depth":2,"next":{"title":"代理模式","level":"6.2.4","depth":2,"path":"design-mode/Structural-Patterns/Proxy-Pattern.md","ref":"design-mode/Structural-Patterns/Proxy-Pattern.md","articles":[]},"previous":{"title":"外观模式","level":"6.2.2","depth":2,"path":"design-mode/Structural-Patterns/Facade-Pattern.md","ref":"design-mode/Structural-Patterns/Facade-Pattern.md","articles":[]},"dir":"ltr"},"config":{"plugins":["-lunr","-search","-livereload","search-plus@^0.0.11","simple-page-toc@^0.1.1","github@^2.0.0","github-buttons@2.1.0","edit-link@^2.0.2","advanced-emoji@^0.2.1","anchors@^0.7.1","include-codeblock@^3.0.2","ace@^0.3.2","emphasize@^1.1.0","katex@^1.1.3","splitter@^0.0.8","tbfed-pagefooter@^0.0.1","expandable-chapters-small@^0.1.7","sectionx@^3.1.0","local-video@^1.0.1","anchor-navigation-ex@0.1.8","favicon@^0.0.2"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"tbfed-pagefooter":{"copyright":"Copyright © ruheng.com 2017","modify_label":"该文件修订时间：","modify_format":"YYYY-MM-DD HH:mm:ss"},"emphasize":{},"ace":{},"github":{"url":"https://github.com/LRH1993/android_interview"},"simple-page-toc":{"maxDepth":3,"skipFirstH1":true},"splitter":{},"katex":{},"fontsettings":{"theme":"white","family":"sans","size":2},"sectionx":{"tag":"b"},"highlight":{},"anchor-navigation-ex":{"isRewritePageTitle":false,"tocLevel1Icon":"fa fa-hand-o-right","tocLevel2Icon":"fa fa-hand-o-right","tocLevel3Icon":"fa fa-hand-o-right"},"favicon":{"shortcut":"favicon.ico","bookmark":"favicon.ico"},"github-buttons":{"repo":"LRH1993/android_interview","types":["star"],"size":"small"},"expandable-chapters-small":{},"local-video":{},"advanced-emoji":{"embedEmojis":false},"include-codeblock":{"check":false,"edit":false,"fixlang":false,"lang":"","template":"default","theme":"chrome","unindent":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":true,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"edit-link":{"label":"Edit This Page","base":"https://github.com/LRH1993/android_interview/edit/master"},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":true},"anchors":{},"search-plus":{}},"theme":"default","author":"ruheng","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"Android校招面试指南","language":"zh-hans","output.name":"site","links":{"sidebar":{"Home":"http://lruheng.com/"}},"gitbook":"3.2.3","description":"Android面试必备，记录自己的秋招之路"},"file":{"path":"design-mode/Structural-Patterns/Decorator-Pattern.md","mtime":"2017-08-22T07:53:58.000Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2017-10-16T13:00:43.989Z"},"basePath":"../..","book":{"language":""}});
         });
     </script>
 </div>

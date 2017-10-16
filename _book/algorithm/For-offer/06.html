@@ -69,6 +69,10 @@
                 
             
                 
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
                 <link rel="stylesheet" href="../../gitbook/gitbook-plugin-fontsettings/website.css">
                 
             
@@ -3713,71 +3717,71 @@
 <p>&#x5982;&#x679C;&#x8BE5;&#x4E2D;&#x95F4;&#x5143;&#x7D20;&#x4F4D;&#x4E8E;&#x524D;&#x9762;&#x7684;&#x9012;&#x589E;&#x5B50;&#x6570;&#x7EC4;&#xFF0C;&#x90A3;&#x4E48;&#x5B83;&#x5E94;&#x8BE5;&#x5927;&#x4E8E;&#x6216;&#x8005;&#x7B49;&#x4E8E;&#x7B2C;&#x4E00;&#x4E2A;&#x6307;&#x9488;&#x6307;&#x5411;&#x7684;&#x5143;&#x7D20;&#x3002;&#x6B64;&#x65F6;&#x6570;&#x7EC4;&#x4E2D;&#x6700;&#x5C0F;&#x7684;&#x5143;&#x7D20;&#x5E94;&#x8BE5;&#x4F4D;&#x4E8E;&#x8BE5;&#x4E2D;&#x95F4;&#x5143;&#x7D20;&#x7684;&#x540E;&#x9762;&#x3002;&#x6211;&#x4EEC;&#x53EF;&#x4EE5;&#x628A;&#x7B2C;&#x4E00;&#x4E2A;&#x6307;&#x9488;&#x6307;&#x5411;&#x8BE5;&#x4E2D;&#x95F4;&#x5143;&#x7D20;&#xFF0C;&#x8FD9;&#x6837;&#x53EF;&#x4EE5;&#x7F29;&#x5C0F;&#x5BFB;&#x627E;&#x7684;&#x8303;&#x56F4;&#x3002;&#x5982;&#x679C;&#x4E2D;&#x95F4;&#x5143;&#x7D20;&#x4F4D;&#x4E8E;&#x540E;&#x9762;&#x7684;&#x9012;&#x589E;&#x5B50;&#x6570;&#x7EC4;&#xFF0C;&#x90A3;&#x4E48;&#x5B83;&#x5E94;&#x8BE5;&#x5C0F;&#x4E8E;&#x6216;&#x8005;&#x7B49;&#x4E8E;&#x7B2C;&#x4E8C;&#x4E2A;&#x6307;&#x9488;&#x6307;&#x5411;&#x7684;&#x5143;&#x7D20;&#x3002;&#x6B64;&#x65F6;&#x8BE5;&#x6570;&#x7EC4;&#x4E2D;&#x6700;&#x5C0F;&#x7684;&#x5143;&#x7D20;&#x5E94;&#x8BE5;&#x4F4D;&#x4E8E;&#x8BE5;&#x4E2D;&#x95F4;&#x5143;&#x7D20;&#x7684;&#x524D;&#x9762;&#x3002;</p>
 <p><strong>Step3.</strong>&#x63A5;&#x4E0B;&#x6765;&#x6211;&#x4EEC;&#x518D;&#x7528;&#x66F4;&#x65B0;&#x4E4B;&#x540E;&#x7684;&#x4E24;&#x4E2A;&#x6307;&#x9488;&#xFF0C;&#x91CD;&#x590D;&#x505A;&#x65B0;&#x4E00;&#x8F6E;&#x7684;&#x67E5;&#x627E;&#x3002;</p>
 <h2 id="&#x4E09;&#x3001;&#x89E3;&#x9898;&#x4EE3;&#x7801;"><a name="&#x4E09;&#x3001;&#x89E3;&#x9898;&#x4EE3;&#x7801;" class="anchor-navigation-ex-anchor" href="#&#x4E09;&#x3001;&#x89E3;&#x9898;&#x4EE3;&#x7801;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x4E09;&#x3001;&#x89E3;&#x9898;&#x4EE3;&#x7801;</h2>
-<pre><code class="lang-java">public class Test {  
+<pre><code class="lang-java"><span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Test</span> </span>{  
 
-    /** 
-     * @param numbers &#x65CB;&#x8F6C;&#x6570;&#x7EC4; 
-     * @return &#x6570;&#x7EC4;&#x7684;&#x6700;&#x5C0F;&#x503C; 
-     */  
-    public static int min(int[] numbers) {  
-        // &#x5224;&#x65AD;&#x8F93;&#x5165;&#x662F;&#x5426;&#x5408;&#x6CD5;  
-        if (numbers == null || numbers.length == 0) {  
-            throw new RuntimeException(&quot;Invalid input.&quot;);  
+    <span class="hljs-comment">/** 
+     * <span class="hljs-doctag">@param</span> numbers &#x65CB;&#x8F6C;&#x6570;&#x7EC4; 
+     * <span class="hljs-doctag">@return</span> &#x6570;&#x7EC4;&#x7684;&#x6700;&#x5C0F;&#x503C; 
+     */</span>  
+    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">int</span> <span class="hljs-title">min</span><span class="hljs-params">(<span class="hljs-keyword">int</span>[] numbers)</span> </span>{  
+        <span class="hljs-comment">// &#x5224;&#x65AD;&#x8F93;&#x5165;&#x662F;&#x5426;&#x5408;&#x6CD5;  </span>
+        <span class="hljs-keyword">if</span> (numbers == <span class="hljs-keyword">null</span> || numbers.length == <span class="hljs-number">0</span>) {  
+            <span class="hljs-keyword">throw</span> <span class="hljs-keyword">new</span> RuntimeException(<span class="hljs-string">&quot;Invalid input.&quot;</span>);  
         }  
 
-        // &#x5F00;&#x59CB;&#x5904;&#x7406;&#x7684;&#x7B2C;&#x4E00;&#x4E2A;&#x4F4D;&#x7F6E;  
-        int lo = 0;  
-        // &#x5F00;&#x59CB;&#x5904;&#x7406;&#x7684;&#x6700;&#x540E;&#x4E00;&#x4E2A;&#x4F4D;&#x7F6E;  
-        int hi = numbers.length - 1;  
-        // &#x8BBE;&#x7F6E;&#x521D;&#x59CB;&#x503C;  
-        int mi = lo;  
+        <span class="hljs-comment">// &#x5F00;&#x59CB;&#x5904;&#x7406;&#x7684;&#x7B2C;&#x4E00;&#x4E2A;&#x4F4D;&#x7F6E;  </span>
+        <span class="hljs-keyword">int</span> lo = <span class="hljs-number">0</span>;  
+        <span class="hljs-comment">// &#x5F00;&#x59CB;&#x5904;&#x7406;&#x7684;&#x6700;&#x540E;&#x4E00;&#x4E2A;&#x4F4D;&#x7F6E;  </span>
+        <span class="hljs-keyword">int</span> hi = numbers.length - <span class="hljs-number">1</span>;  
+        <span class="hljs-comment">// &#x8BBE;&#x7F6E;&#x521D;&#x59CB;&#x503C;  </span>
+        <span class="hljs-keyword">int</span> mi = lo;  
 
-        // &#x786E;&#x4FDD;lo&#x5728;&#x524D;&#x4E00;&#x4E2A;&#x6392;&#x597D;&#x5E8F;&#x7684;&#x90E8;&#x5206;&#xFF0C;hi&#x5728;&#x6392;&#x597D;&#x5E8F;&#x7684;&#x540E;&#x4E00;&#x4E2A;&#x90E8;&#x5206;  
-        while (numbers[lo] &gt;= numbers[hi]) {  
-            // &#x5F53;&#x5904;&#x7406;&#x8303;&#x56F4;&#x53EA;&#x6709;&#x4E24;&#x4E2A;&#x6570;&#x636E;&#x65F6;&#xFF0C;&#x8FD4;&#x56DE;&#x540E;&#x4E00;&#x4E2A;&#x7ED3;&#x679C;  
-            // &#x56E0;&#x4E3A;numbers[lo] &gt;= numbers[hi]&#x603B;&#x662F;&#x6210;&#x7ACB;&#xFF0C;&#x540E;&#x4E00;&#x4E2A;&#x7ED3;&#x679C;&#x5BF9;&#x5E94;&#x7684;&#x662F;&#x6700;&#x5C0F;&#x7684;&#x503C;  
-            if (hi - lo == 1) {  
-                return numbers[hi];  
+        <span class="hljs-comment">// &#x786E;&#x4FDD;lo&#x5728;&#x524D;&#x4E00;&#x4E2A;&#x6392;&#x597D;&#x5E8F;&#x7684;&#x90E8;&#x5206;&#xFF0C;hi&#x5728;&#x6392;&#x597D;&#x5E8F;&#x7684;&#x540E;&#x4E00;&#x4E2A;&#x90E8;&#x5206;  </span>
+        <span class="hljs-keyword">while</span> (numbers[lo] &gt;= numbers[hi]) {  
+            <span class="hljs-comment">// &#x5F53;&#x5904;&#x7406;&#x8303;&#x56F4;&#x53EA;&#x6709;&#x4E24;&#x4E2A;&#x6570;&#x636E;&#x65F6;&#xFF0C;&#x8FD4;&#x56DE;&#x540E;&#x4E00;&#x4E2A;&#x7ED3;&#x679C;  </span>
+            <span class="hljs-comment">// &#x56E0;&#x4E3A;numbers[lo] &gt;= numbers[hi]&#x603B;&#x662F;&#x6210;&#x7ACB;&#xFF0C;&#x540E;&#x4E00;&#x4E2A;&#x7ED3;&#x679C;&#x5BF9;&#x5E94;&#x7684;&#x662F;&#x6700;&#x5C0F;&#x7684;&#x503C;  </span>
+            <span class="hljs-keyword">if</span> (hi - lo == <span class="hljs-number">1</span>) {  
+                <span class="hljs-keyword">return</span> numbers[hi];  
             }  
 
-            // &#x53D6;&#x4E2D;&#x95F4;&#x7684;&#x4F4D;&#x7F6E;  
-            mi = lo + (hi - lo) / 2;  
+            <span class="hljs-comment">// &#x53D6;&#x4E2D;&#x95F4;&#x7684;&#x4F4D;&#x7F6E;  </span>
+            mi = lo + (hi - lo) / <span class="hljs-number">2</span>;  
 
-            // &#x5982;&#x679C;&#x4E09;&#x4E2A;&#x6570;&#x90FD;&#x76F8;&#x7B49;&#xFF0C;&#x5219;&#x9700;&#x8981;&#x8FDB;&#x884C;&#x987A;&#x5E8F;&#x5904;&#x7406;&#xFF0C;&#x4ECE;&#x5934;&#x5230;&#x5C3E;&#x627E;&#x6700;&#x5C0F;&#x7684;&#x503C;  
-            if (numbers[mi] == numbers[lo] &amp;&amp; numbers[hi] == numbers[mi]) {  
-                return minInorder(numbers, lo, hi);  
+            <span class="hljs-comment">// &#x5982;&#x679C;&#x4E09;&#x4E2A;&#x6570;&#x90FD;&#x76F8;&#x7B49;&#xFF0C;&#x5219;&#x9700;&#x8981;&#x8FDB;&#x884C;&#x987A;&#x5E8F;&#x5904;&#x7406;&#xFF0C;&#x4ECE;&#x5934;&#x5230;&#x5C3E;&#x627E;&#x6700;&#x5C0F;&#x7684;&#x503C;  </span>
+            <span class="hljs-keyword">if</span> (numbers[mi] == numbers[lo] &amp;&amp; numbers[hi] == numbers[mi]) {  
+                <span class="hljs-keyword">return</span> minInorder(numbers, lo, hi);  
             }  
 
-            // &#x5982;&#x679C;&#x4E2D;&#x95F4;&#x4F4D;&#x7F6E;&#x5BF9;&#x5E94;&#x7684;&#x503C;&#x5728;&#x524D;&#x4E00;&#x4E2A;&#x6392;&#x597D;&#x5E8F;&#x7684;&#x90E8;&#x5206;&#xFF0C;&#x5C06;lo&#x8BBE;&#x7F6E;&#x4E3A;&#x65B0;&#x7684;&#x5904;&#x7406;&#x4F4D;&#x7F6E;  
-            if (numbers[mi] &gt;= numbers[lo]) {  
+            <span class="hljs-comment">// &#x5982;&#x679C;&#x4E2D;&#x95F4;&#x4F4D;&#x7F6E;&#x5BF9;&#x5E94;&#x7684;&#x503C;&#x5728;&#x524D;&#x4E00;&#x4E2A;&#x6392;&#x597D;&#x5E8F;&#x7684;&#x90E8;&#x5206;&#xFF0C;&#x5C06;lo&#x8BBE;&#x7F6E;&#x4E3A;&#x65B0;&#x7684;&#x5904;&#x7406;&#x4F4D;&#x7F6E;  </span>
+            <span class="hljs-keyword">if</span> (numbers[mi] &gt;= numbers[lo]) {  
                 lo = mi;  
             }  
-            // &#x5982;&#x679C;&#x4E2D;&#x95F4;&#x4F4D;&#x7F6E;&#x5BF9;&#x5E94;&#x7684;&#x503C;&#x5728;&#x540E;&#x4E00;&#x4E2A;&#x6392;&#x597D;&#x5E8F;&#x7684;&#x90E8;&#x5206;&#xFF0C;&#x5C06;hi&#x8BBE;&#x7F6E;&#x4E3A;&#x65B0;&#x7684;&#x5904;&#x7406;&#x4F4D;&#x7F6E;  
-            else if (numbers[mi] &lt;= numbers[hi]) {  
+            <span class="hljs-comment">// &#x5982;&#x679C;&#x4E2D;&#x95F4;&#x4F4D;&#x7F6E;&#x5BF9;&#x5E94;&#x7684;&#x503C;&#x5728;&#x540E;&#x4E00;&#x4E2A;&#x6392;&#x597D;&#x5E8F;&#x7684;&#x90E8;&#x5206;&#xFF0C;&#x5C06;hi&#x8BBE;&#x7F6E;&#x4E3A;&#x65B0;&#x7684;&#x5904;&#x7406;&#x4F4D;&#x7F6E;  </span>
+            <span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span> (numbers[mi] &lt;= numbers[hi]) {  
                 hi = mi;  
             }  
         }  
 
-        // &#x8FD4;&#x56DE;&#x6700;&#x7EC8;&#x7684;&#x5904;&#x7406;&#x7ED3;&#x679C;  
-        return numbers[mi];  
+        <span class="hljs-comment">// &#x8FD4;&#x56DE;&#x6700;&#x7EC8;&#x7684;&#x5904;&#x7406;&#x7ED3;&#x679C;  </span>
+        <span class="hljs-keyword">return</span> numbers[mi];  
     }  
 
-    /** 
+    <span class="hljs-comment">/** 
      * &#x627E;&#x6570;&#x7EC4;&#x4E2D;&#x7684;&#x6700;&#x5C0F;&#x503C; 
      * 
-     * @param numbers &#x6570;&#x7EC4; 
-     * @param start   &#x6570;&#x7EC4;&#x7684;&#x8D77;&#x59CB;&#x4F4D;&#x7F6E; 
-     * @param end     &#x6570;&#x7EC4;&#x7684;&#x7ED3;&#x675F;&#x4F4D;&#x7F6E; 
-     * @return &#x627E;&#x5230;&#x7684;&#x6700;&#x5C0F;&#x7684;&#x6570; 
-     */  
-    public static int minInorder(int[] numbers, int start, int end) {  
-        int result = numbers[start];  
-        for (int i = start + 1; i &lt;= end; i++) {  
-            if (result &gt; numbers[i]) {  
+     * <span class="hljs-doctag">@param</span> numbers &#x6570;&#x7EC4; 
+     * <span class="hljs-doctag">@param</span> start   &#x6570;&#x7EC4;&#x7684;&#x8D77;&#x59CB;&#x4F4D;&#x7F6E; 
+     * <span class="hljs-doctag">@param</span> end     &#x6570;&#x7EC4;&#x7684;&#x7ED3;&#x675F;&#x4F4D;&#x7F6E; 
+     * <span class="hljs-doctag">@return</span> &#x627E;&#x5230;&#x7684;&#x6700;&#x5C0F;&#x7684;&#x6570; 
+     */</span>  
+    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">int</span> <span class="hljs-title">minInorder</span><span class="hljs-params">(<span class="hljs-keyword">int</span>[] numbers, <span class="hljs-keyword">int</span> start, <span class="hljs-keyword">int</span> end)</span> </span>{  
+        <span class="hljs-keyword">int</span> result = numbers[start];  
+        <span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> i = start + <span class="hljs-number">1</span>; i &lt;= end; i++) {  
+            <span class="hljs-keyword">if</span> (result &gt; numbers[i]) {  
                 result = numbers[i];  
             }  
         }  
-        return result;  
+        <span class="hljs-keyword">return</span> result;  
     }    
 }
 </code></pre>
@@ -3826,7 +3830,7 @@
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"06.旋转数组的最小数字","level":"5.1.6","depth":2,"next":{"title":"07.斐波那契数列","level":"5.1.7","depth":2,"path":"algorithm/For-offer/07.md","ref":"algorithm/For-offer/07.md","articles":[]},"previous":{"title":"05.用两个栈实现队列","level":"5.1.5","depth":2,"path":"algorithm/For-offer/05.md","ref":"algorithm/For-offer/05.md","articles":[]},"dir":"ltr"},"config":{"plugins":["-lunr","-search","-highlight","-livereload","search-plus@^0.0.11","simple-page-toc@^0.1.1","github@^2.0.0","github-buttons@2.1.0","edit-link@^2.0.2","advanced-emoji@^0.2.1","anchors@^0.7.1","include-codeblock@^3.0.2","ace@^0.3.2","emphasize@^1.1.0","katex@^1.1.3","splitter@^0.0.8","tbfed-pagefooter@^0.0.1","expandable-chapters-small@^0.1.7","sectionx@^3.1.0","local-video@^1.0.1","anchor-navigation-ex@0.1.8","favicon@^0.0.2"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"tbfed-pagefooter":{"copyright":"Copyright © ruheng.com 2017","modify_label":"该文件修订时间：","modify_format":"YYYY-MM-DD HH:mm:ss"},"emphasize":{},"ace":{},"github":{"url":"https://github.com/LRH1993/android_interview"},"simple-page-toc":{"maxDepth":3,"skipFirstH1":true},"splitter":{},"katex":{},"fontsettings":{"theme":"white","family":"sans","size":2},"sectionx":{"tag":"b"},"anchor-navigation-ex":{"isRewritePageTitle":false,"tocLevel1Icon":"fa fa-hand-o-right","tocLevel2Icon":"fa fa-hand-o-right","tocLevel3Icon":"fa fa-hand-o-right"},"favicon":{"shortcut":"favicon.ico","bookmark":"favicon.ico"},"github-buttons":{"repo":"LRH1993/android_interview","types":["star"],"size":"small"},"expandable-chapters-small":{},"local-video":{},"advanced-emoji":{"embedEmojis":false},"include-codeblock":{"check":false,"edit":true,"fixlang":false,"lang":"","template":"ace","theme":"chrome","unindent":true},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":true,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"edit-link":{"label":"Edit This Page","base":"https://github.com/LRH1993/android_interview/edit/master"},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":true},"anchors":{},"search-plus":{}},"theme":"default","author":"ruheng","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"Android校招面试指南","language":"zh-hans","output.name":"site","links":{"sidebar":{"Home":"http://lruheng.com/"}},"gitbook":"3.2.3","description":"Android面试必备，记录自己的秋招之路"},"file":{"path":"algorithm/For-offer/06.md","mtime":"2017-08-22T07:53:58.000Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2017-10-16T12:05:21.906Z"},"basePath":"../..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"06.旋转数组的最小数字","level":"5.1.6","depth":2,"next":{"title":"07.斐波那契数列","level":"5.1.7","depth":2,"path":"algorithm/For-offer/07.md","ref":"algorithm/For-offer/07.md","articles":[]},"previous":{"title":"05.用两个栈实现队列","level":"5.1.5","depth":2,"path":"algorithm/For-offer/05.md","ref":"algorithm/For-offer/05.md","articles":[]},"dir":"ltr"},"config":{"plugins":["-lunr","-search","-livereload","search-plus@^0.0.11","simple-page-toc@^0.1.1","github@^2.0.0","github-buttons@2.1.0","edit-link@^2.0.2","advanced-emoji@^0.2.1","anchors@^0.7.1","include-codeblock@^3.0.2","ace@^0.3.2","emphasize@^1.1.0","katex@^1.1.3","splitter@^0.0.8","tbfed-pagefooter@^0.0.1","expandable-chapters-small@^0.1.7","sectionx@^3.1.0","local-video@^1.0.1","anchor-navigation-ex@0.1.8","favicon@^0.0.2"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"tbfed-pagefooter":{"copyright":"Copyright © ruheng.com 2017","modify_label":"该文件修订时间：","modify_format":"YYYY-MM-DD HH:mm:ss"},"emphasize":{},"ace":{},"github":{"url":"https://github.com/LRH1993/android_interview"},"simple-page-toc":{"maxDepth":3,"skipFirstH1":true},"splitter":{},"katex":{},"fontsettings":{"theme":"white","family":"sans","size":2},"sectionx":{"tag":"b"},"highlight":{},"anchor-navigation-ex":{"isRewritePageTitle":false,"tocLevel1Icon":"fa fa-hand-o-right","tocLevel2Icon":"fa fa-hand-o-right","tocLevel3Icon":"fa fa-hand-o-right"},"favicon":{"shortcut":"favicon.ico","bookmark":"favicon.ico"},"github-buttons":{"repo":"LRH1993/android_interview","types":["star"],"size":"small"},"expandable-chapters-small":{},"local-video":{},"advanced-emoji":{"embedEmojis":false},"include-codeblock":{"check":false,"edit":false,"fixlang":false,"lang":"","template":"default","theme":"chrome","unindent":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":true,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"edit-link":{"label":"Edit This Page","base":"https://github.com/LRH1993/android_interview/edit/master"},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":true},"anchors":{},"search-plus":{}},"theme":"default","author":"ruheng","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"Android校招面试指南","language":"zh-hans","output.name":"site","links":{"sidebar":{"Home":"http://lruheng.com/"}},"gitbook":"3.2.3","description":"Android面试必备，记录自己的秋招之路"},"file":{"path":"algorithm/For-offer/06.md","mtime":"2017-08-22T07:53:58.000Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2017-10-16T13:00:43.989Z"},"basePath":"../..","book":{"language":""}});
         });
     </script>
 </div>

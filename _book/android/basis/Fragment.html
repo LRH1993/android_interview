@@ -69,6 +69,10 @@
                 
             
                 
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
                 <link rel="stylesheet" href="../../gitbook/gitbook-plugin-fontsettings/website.css">
                 
             
@@ -3737,54 +3741,54 @@
 <p>&#x2461; &#x5728;Activity&#x4E2D;&#x58F0;&#x660E;&#x8BE5;&#x7C7B;&#xFF0C;&#x4E0E;&#x666E;&#x901A;&#x7684;View&#x5BF9;&#x8C61;&#x4E00;&#x6837;</p>
 <p><strong>&#x4EE3;&#x7801;&#x6F14;&#x793A;</strong></p>
 <p>MyFragment&#x5BF9;&#x5E94;&#x7684;&#x5E03;&#x5C40;&#x6587;&#x4EF6;item_fragment.xml</p>
-<pre><code class="lang-xml">&lt;RelativeLayout xmlns:android=&quot;http://schemas.android.com/apk/res/android&quot;
-    android:background=&quot;@color/colorAccent&quot;
-    android:layout_width=&quot;match_parent&quot;
-    android:layout_height=&quot;match_parent&quot;&gt;
+<pre><code class="lang-xml"><span class="hljs-tag">&lt;<span class="hljs-name">RelativeLayout</span> <span class="hljs-attr">xmlns:android</span>=<span class="hljs-string">&quot;http://schemas.android.com/apk/res/android&quot;</span>
+    <span class="hljs-attr">android:background</span>=<span class="hljs-string">&quot;@color/colorAccent&quot;</span>
+    <span class="hljs-attr">android:layout_width</span>=<span class="hljs-string">&quot;match_parent&quot;</span>
+    <span class="hljs-attr">android:layout_height</span>=<span class="hljs-string">&quot;match_parent&quot;</span>&gt;</span>
 
-    &lt;ImageView
-        android:layout_width=&quot;wrap_content&quot;
-        android:layout_height=&quot;wrap_content&quot;
-        android:layout_centerInParent=&quot;true&quot;
-        android:src=&quot;@mipmap/ic_launcher&quot; /&gt;
+    <span class="hljs-tag">&lt;<span class="hljs-name">ImageView</span>
+        <span class="hljs-attr">android:layout_width</span>=<span class="hljs-string">&quot;wrap_content&quot;</span>
+        <span class="hljs-attr">android:layout_height</span>=<span class="hljs-string">&quot;wrap_content&quot;</span>
+        <span class="hljs-attr">android:layout_centerInParent</span>=<span class="hljs-string">&quot;true&quot;</span>
+        <span class="hljs-attr">android:src</span>=<span class="hljs-string">&quot;@mipmap/ic_launcher&quot;</span> /&gt;</span>
 
-&lt;/RelativeLayout&gt;
+<span class="hljs-tag">&lt;/<span class="hljs-name">RelativeLayout</span>&gt;</span>
 </code></pre>
 <p>&#x7EE7;&#x627F;Frgmanet&#x7684;&#x7C7B;MyFragment&#x3010;&#x8BF7;&#x6CE8;&#x610F;&#x5BFC;&#x5305;&#x7684;&#x65F6;&#x5019;&#x5BFC;v4&#x7684;Fragment&#x7684;&#x5305;&#x3011;</p>
-<pre><code class="lang-java">public class MyFragment extends Fragment {
-    public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-        /*
+<pre><code class="lang-java"><span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">MyFragment</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">Fragment</span> </span>{
+    <span class="hljs-function"><span class="hljs-keyword">public</span> View <span class="hljs-title">onCreateView</span><span class="hljs-params">(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState)</span> </span>{
+        <span class="hljs-comment">/*
         * &#x53C2;&#x6570;1&#xFF1A;&#x5E03;&#x5C40;&#x6587;&#x4EF6;&#x7684;id
         * &#x53C2;&#x6570;2&#xFF1A;&#x5BB9;&#x5668;
         * &#x53C2;&#x6570;3&#xFF1A;&#x662F;&#x5426;&#x5C06;&#x8FD9;&#x4E2A;&#x751F;&#x6210;&#x7684;View&#x6DFB;&#x52A0;&#x5230;&#x8FD9;&#x4E2A;&#x5BB9;&#x5668;&#x4E2D;&#x53BB;
         * &#x4F5C;&#x7528;&#x662F;&#x5C06;&#x5E03;&#x5C40;&#x6587;&#x4EF6;&#x5C01;&#x88C5;&#x5728;&#x4E00;&#x4E2A;View&#x5BF9;&#x8C61;&#x4E2D;&#xFF0C;&#x5E76;&#x586B;&#x5145;&#x5230;&#x6B64;Fragment&#x4E2D;
-        * */
-        View v = inflater.inflate(R.layout.item_fragment, container, false);
-        return v;
+        * */</span>
+        View v = inflater.inflate(R.layout.item_fragment, container, <span class="hljs-keyword">false</span>);
+        <span class="hljs-keyword">return</span> v;
     }
 }
 </code></pre>
 <p>Activity&#x5BF9;&#x5E94;&#x7684;&#x5E03;&#x5C40;&#x6587;&#x4EF6;</p>
-<pre><code class="lang-xml">&lt;LinearLayout xmlns:android=&quot;http://schemas.android.com/apk/res/android&quot;
-    xmlns:tools=&quot;http://schemas.android.com/tools&quot;
-    android:layout_width=&quot;match_parent&quot;
-    android:layout_height=&quot;match_parent&quot;
-    android:orientation=&quot;vertical&quot;
-    tools:context=&quot;com.usher.fragment.MainActivity&quot;&gt;
+<pre><code class="lang-xml"><span class="hljs-tag">&lt;<span class="hljs-name">LinearLayout</span> <span class="hljs-attr">xmlns:android</span>=<span class="hljs-string">&quot;http://schemas.android.com/apk/res/android&quot;</span>
+    <span class="hljs-attr">xmlns:tools</span>=<span class="hljs-string">&quot;http://schemas.android.com/tools&quot;</span>
+    <span class="hljs-attr">android:layout_width</span>=<span class="hljs-string">&quot;match_parent&quot;</span>
+    <span class="hljs-attr">android:layout_height</span>=<span class="hljs-string">&quot;match_parent&quot;</span>
+    <span class="hljs-attr">android:orientation</span>=<span class="hljs-string">&quot;vertical&quot;</span>
+    <span class="hljs-attr">tools:context</span>=<span class="hljs-string">&quot;com.usher.fragment.MainActivity&quot;</span>&gt;</span>
 
-    &lt;TextView
-        android:layout_width=&quot;match_parent&quot;
-        android:layout_height=&quot;100dp&quot;
-        android:gravity=&quot;center&quot;
-        android:text=&quot;Good Boy&quot; /&gt;
+    <span class="hljs-tag">&lt;<span class="hljs-name">TextView</span>
+        <span class="hljs-attr">android:layout_width</span>=<span class="hljs-string">&quot;match_parent&quot;</span>
+        <span class="hljs-attr">android:layout_height</span>=<span class="hljs-string">&quot;100dp&quot;</span>
+        <span class="hljs-attr">android:gravity</span>=<span class="hljs-string">&quot;center&quot;</span>
+        <span class="hljs-attr">android:text</span>=<span class="hljs-string">&quot;Good Boy&quot;</span> /&gt;</span>
 
-    &lt;fragment
-        android:id=&quot;@+id/myfragment&quot;
-        android:name=&quot;com.usher.fragment.MyFragment&quot;
-        android:layout_width=&quot;match_parent&quot;
-        android:layout_height=&quot;match_parent&quot; /&gt;
+    <span class="hljs-tag">&lt;<span class="hljs-name">fragment</span>
+        <span class="hljs-attr">android:id</span>=<span class="hljs-string">&quot;@+id/myfragment&quot;</span>
+        <span class="hljs-attr">android:name</span>=<span class="hljs-string">&quot;com.usher.fragment.MyFragment&quot;</span>
+        <span class="hljs-attr">android:layout_width</span>=<span class="hljs-string">&quot;match_parent&quot;</span>
+        <span class="hljs-attr">android:layout_height</span>=<span class="hljs-string">&quot;match_parent&quot;</span> /&gt;</span>
 
-&lt;/LinearLayout&gt;
+<span class="hljs-tag">&lt;/<span class="hljs-name">LinearLayout</span>&gt;</span>
 </code></pre>
 <p>&#x8FD0;&#x884C;&#x6548;&#x679C;&#x56FE;</p>
 <p><img src="http://upload-images.jianshu.io/upload_images/1780352-bd36369dc712c754.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></p>
@@ -3792,127 +3796,127 @@
 <p>&#x5B9E;&#x73B0;&#x70B9;&#x51FB;&#x4E0D;&#x540C;&#x7684;&#x6309;&#x94AE;&#xFF0C;&#x5728;Activity&#x4E2D;&#x663E;&#x793A;&#x4E0D;&#x540C;&#x7684;Fragment</p>
 <p><strong>&#x4EE3;&#x7801;&#x6F14;&#x793A;</strong></p>
 <p>Fragment&#x5BF9;&#x5E94;&#x7684;&#x5E03;&#x5C40;&#x6587;&#x4EF6;item_fragment.xml</p>
-<pre><code class="lang-xml">&lt;RelativeLayout xmlns:android=&quot;http://schemas.android.com/apk/res/android&quot;
-    android:background=&quot;@color/colorAccent&quot; //&#x80CC;&#x666F;&#x7EA2;&#x8272;
-    android:layout_width=&quot;match_parent&quot;
-    android:layout_height=&quot;match_parent&quot;&gt;
+<pre><code class="lang-xml"><span class="hljs-tag">&lt;<span class="hljs-name">RelativeLayout</span> <span class="hljs-attr">xmlns:android</span>=<span class="hljs-string">&quot;http://schemas.android.com/apk/res/android&quot;</span>
+    <span class="hljs-attr">android:background</span>=<span class="hljs-string">&quot;@color/colorAccent&quot;</span> //&#x80CC;&#x666F;&#x7EA2;&#x8272;
+    <span class="hljs-attr">android:layout_width</span>=<span class="hljs-string">&quot;match_parent&quot;</span>
+    <span class="hljs-attr">android:layout_height</span>=<span class="hljs-string">&quot;match_parent&quot;</span>&gt;</span>
 
-    &lt;ImageView
-        android:layout_width=&quot;wrap_content&quot;
-        android:layout_height=&quot;wrap_content&quot;
-        android:layout_centerInParent=&quot;true&quot;
-        android:src=&quot;@mipmap/ic_launcher&quot; /&gt;
+    <span class="hljs-tag">&lt;<span class="hljs-name">ImageView</span>
+        <span class="hljs-attr">android:layout_width</span>=<span class="hljs-string">&quot;wrap_content&quot;</span>
+        <span class="hljs-attr">android:layout_height</span>=<span class="hljs-string">&quot;wrap_content&quot;</span>
+        <span class="hljs-attr">android:layout_centerInParent</span>=<span class="hljs-string">&quot;true&quot;</span>
+        <span class="hljs-attr">android:src</span>=<span class="hljs-string">&quot;@mipmap/ic_launcher&quot;</span> /&gt;</span>
 
-&lt;/RelativeLayout&gt;
+<span class="hljs-tag">&lt;/<span class="hljs-name">RelativeLayout</span>&gt;</span>
 </code></pre>
 <p>&#x7EE7;&#x627F;Frgmanet&#x7684;&#x7C7B;MyFragment</p>
-<pre><code class="lang-java">public class MyFragment extends Fragment {
-    public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-        View v = inflater.inflate(R.layout.item_fragment, container, false);
-        return v;
+<pre><code class="lang-java"><span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">MyFragment</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">Fragment</span> </span>{
+    <span class="hljs-function"><span class="hljs-keyword">public</span> View <span class="hljs-title">onCreateView</span><span class="hljs-params">(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState)</span> </span>{
+        View v = inflater.inflate(R.layout.item_fragment, container, <span class="hljs-keyword">false</span>);
+        <span class="hljs-keyword">return</span> v;
     }
 }
 </code></pre>
 <p>Fragment2&#x5BF9;&#x5E94;&#x7684;&#x5E03;&#x5C40;&#x6587;&#x4EF6;item_fragment2.xml</p>
-<pre><code class="lang-Xml">&lt;RelativeLayout xmlns:android=&quot;http://schemas.android.com/apk/res/android&quot;
-    android:background=&quot;@color/colorPrimary&quot; //&#x80CC;&#x666F;&#x84DD;&#x8272;
-    android:layout_width=&quot;match_parent&quot;
-    android:layout_height=&quot;match_parent&quot;&gt;
+<pre><code class="lang-Xml"><span class="hljs-tag">&lt;<span class="hljs-name">RelativeLayout</span> <span class="hljs-attr">xmlns:android</span>=<span class="hljs-string">&quot;http://schemas.android.com/apk/res/android&quot;</span>
+    <span class="hljs-attr">android:background</span>=<span class="hljs-string">&quot;@color/colorPrimary&quot;</span> //&#x80CC;&#x666F;&#x84DD;&#x8272;
+    <span class="hljs-attr">android:layout_width</span>=<span class="hljs-string">&quot;match_parent&quot;</span>
+    <span class="hljs-attr">android:layout_height</span>=<span class="hljs-string">&quot;match_parent&quot;</span>&gt;</span>
 
-    &lt;ImageView
-        android:layout_width=&quot;wrap_content&quot;
-        android:layout_height=&quot;wrap_content&quot;
-        android:layout_centerInParent=&quot;true&quot;
-        android:src=&quot;@mipmap/ic_launcher&quot; /&gt;
+    <span class="hljs-tag">&lt;<span class="hljs-name">ImageView</span>
+        <span class="hljs-attr">android:layout_width</span>=<span class="hljs-string">&quot;wrap_content&quot;</span>
+        <span class="hljs-attr">android:layout_height</span>=<span class="hljs-string">&quot;wrap_content&quot;</span>
+        <span class="hljs-attr">android:layout_centerInParent</span>=<span class="hljs-string">&quot;true&quot;</span>
+        <span class="hljs-attr">android:src</span>=<span class="hljs-string">&quot;@mipmap/ic_launcher&quot;</span> /&gt;</span>
 
-&lt;/RelativeLayout&gt;
+<span class="hljs-tag">&lt;/<span class="hljs-name">RelativeLayout</span>&gt;</span>
 </code></pre>
 <p>&#x7EE7;&#x627F;Fragment2&#x7684;&#x7C7B;</p>
 <pre><code class="lang-java">
-public class MyFragment extends Fragment {
-    public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-        View v = inflater.inflate(R.layout.item_fragment2, container, false);
-        return v;
+<span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">MyFragment</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">Fragment</span> </span>{
+    <span class="hljs-function"><span class="hljs-keyword">public</span> View <span class="hljs-title">onCreateView</span><span class="hljs-params">(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState)</span> </span>{
+        View v = inflater.inflate(R.layout.item_fragment2, container, <span class="hljs-keyword">false</span>);
+        <span class="hljs-keyword">return</span> v;
     }
 }
 </code></pre>
 <p>MainActivity&#x5BF9;&#x5E94;&#x7684;&#x5E03;&#x5C40;&#x6587;&#x4EF6;</p>
 <pre><code class="lang-xml">
-&lt;LinearLayout xmlns:android=&quot;http://schemas.android.com/apk/res/android&quot;
-    xmlns:tools=&quot;http://schemas.android.com/tools&quot;
-    android:layout_width=&quot;match_parent&quot;
-    android:layout_height=&quot;match_parent&quot;
-    android:orientation=&quot;vertical&quot;
-    tools:context=&quot;com.usher.fragment.MainActivity&quot;&gt;
+<span class="hljs-tag">&lt;<span class="hljs-name">LinearLayout</span> <span class="hljs-attr">xmlns:android</span>=<span class="hljs-string">&quot;http://schemas.android.com/apk/res/android&quot;</span>
+    <span class="hljs-attr">xmlns:tools</span>=<span class="hljs-string">&quot;http://schemas.android.com/tools&quot;</span>
+    <span class="hljs-attr">android:layout_width</span>=<span class="hljs-string">&quot;match_parent&quot;</span>
+    <span class="hljs-attr">android:layout_height</span>=<span class="hljs-string">&quot;match_parent&quot;</span>
+    <span class="hljs-attr">android:orientation</span>=<span class="hljs-string">&quot;vertical&quot;</span>
+    <span class="hljs-attr">tools:context</span>=<span class="hljs-string">&quot;com.usher.fragment.MainActivity&quot;</span>&gt;</span>
 
-    &lt;Button
-        android:id=&quot;@+id/bt_red&quot;
-        android:layout_width=&quot;match_parent&quot;
-        android:layout_height=&quot;wrap_content&quot;
-        android:text=&quot;Red&quot; /&gt;
+    <span class="hljs-tag">&lt;<span class="hljs-name">Button</span>
+        <span class="hljs-attr">android:id</span>=<span class="hljs-string">&quot;@+id/bt_red&quot;</span>
+        <span class="hljs-attr">android:layout_width</span>=<span class="hljs-string">&quot;match_parent&quot;</span>
+        <span class="hljs-attr">android:layout_height</span>=<span class="hljs-string">&quot;wrap_content&quot;</span>
+        <span class="hljs-attr">android:text</span>=<span class="hljs-string">&quot;Red&quot;</span> /&gt;</span>
 
-    &lt;Button
-        android:id=&quot;@+id/bt_blue&quot;
-        android:layout_width=&quot;match_parent&quot;
-        android:layout_height=&quot;wrap_content&quot;
-        android:text=&quot;Blue&quot; /&gt;
+    <span class="hljs-tag">&lt;<span class="hljs-name">Button</span>
+        <span class="hljs-attr">android:id</span>=<span class="hljs-string">&quot;@+id/bt_blue&quot;</span>
+        <span class="hljs-attr">android:layout_width</span>=<span class="hljs-string">&quot;match_parent&quot;</span>
+        <span class="hljs-attr">android:layout_height</span>=<span class="hljs-string">&quot;wrap_content&quot;</span>
+        <span class="hljs-attr">android:text</span>=<span class="hljs-string">&quot;Blue&quot;</span> /&gt;</span>
 
-    &lt;FrameLayout
-        android:id=&quot;@+id/myframelayout&quot;
-        android:layout_width=&quot;match_parent&quot;
-        android:layout_height=&quot;match_parent&quot; /&gt;
+    <span class="hljs-tag">&lt;<span class="hljs-name">FrameLayout</span>
+        <span class="hljs-attr">android:id</span>=<span class="hljs-string">&quot;@+id/myframelayout&quot;</span>
+        <span class="hljs-attr">android:layout_width</span>=<span class="hljs-string">&quot;match_parent&quot;</span>
+        <span class="hljs-attr">android:layout_height</span>=<span class="hljs-string">&quot;match_parent&quot;</span> /&gt;</span>
 
-&lt;/LinearLayout&gt;
+<span class="hljs-tag">&lt;/<span class="hljs-name">LinearLayout</span>&gt;</span>
 </code></pre>
 <p>MainActivity&#x7C7B;</p>
 <pre><code class="lang-java">
-public class MainActivity extends AppCompatActivity {
+<span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">MainActivity</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">AppCompatActivity</span> </span>{
 
-    private Button bt_red;
-    private Button bt_blue;
-    private FragmentManager manager;
-    private MyFragment fragment1;
-    private MyFragment2 fragment2;
+    <span class="hljs-keyword">private</span> Button bt_red;
+    <span class="hljs-keyword">private</span> Button bt_blue;
+    <span class="hljs-keyword">private</span> FragmentManager manager;
+    <span class="hljs-keyword">private</span> MyFragment fragment1;
+    <span class="hljs-keyword">private</span> MyFragment2 fragment2;
 
-    @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
+    <span class="hljs-meta">@Override</span>
+    <span class="hljs-function"><span class="hljs-keyword">protected</span> <span class="hljs-keyword">void</span> <span class="hljs-title">onCreate</span><span class="hljs-params">(Bundle savedInstanceState)</span> </span>{
+        <span class="hljs-keyword">super</span>.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
         initView();
 
-        fragment1 = new MyFragment();
-        fragment2 = new MyFragment2();
+        fragment1 = <span class="hljs-keyword">new</span> MyFragment();
+        fragment2 = <span class="hljs-keyword">new</span> MyFragment2();
 
-        //&#x521D;&#x59CB;&#x5316;FragmentManager&#x5BF9;&#x8C61;
+        <span class="hljs-comment">//&#x521D;&#x59CB;&#x5316;FragmentManager&#x5BF9;&#x8C61;</span>
         manager = getSupportFragmentManager();
 
-        //&#x4F7F;&#x7528;FragmentManager&#x5BF9;&#x8C61;&#x7528;&#x6765;&#x5F00;&#x542F;&#x4E00;&#x4E2A;Fragment&#x4E8B;&#x52A1;
+        <span class="hljs-comment">//&#x4F7F;&#x7528;FragmentManager&#x5BF9;&#x8C61;&#x7528;&#x6765;&#x5F00;&#x542F;&#x4E00;&#x4E2A;Fragment&#x4E8B;&#x52A1;</span>
         FragmentTransaction transaction = manager.beginTransaction();
 
-        //&#x9ED8;&#x8BA4;&#x663E;&#x793A;fragment1
+        <span class="hljs-comment">//&#x9ED8;&#x8BA4;&#x663E;&#x793A;fragment1</span>
         transaction.add(R.id.myframelayout, fragment1).commit();
 
-        //&#x5BF9;bt_red&#x8BBE;&#x7F6E;&#x76D1;&#x542C;
-        bt_red.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
+        <span class="hljs-comment">//&#x5BF9;bt_red&#x8BBE;&#x7F6E;&#x76D1;&#x542C;</span>
+        bt_red.setOnClickListener(<span class="hljs-keyword">new</span> View.OnClickListener() {
+            <span class="hljs-meta">@Override</span>
+            <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">onClick</span><span class="hljs-params">(View v)</span> </span>{
                 FragmentTransaction transaction = manager.beginTransaction();
                 transaction.replace(R.id.myframelayout, fragment1).commit();
             }
         });
 
-        //&#x5BF9;bt_blue&#x8BBE;&#x7F6E;&#x76D1;&#x542C;
-        bt_blue.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
+        <span class="hljs-comment">//&#x5BF9;bt_blue&#x8BBE;&#x7F6E;&#x76D1;&#x542C;</span>
+        bt_blue.setOnClickListener(<span class="hljs-keyword">new</span> View.OnClickListener() {
+            <span class="hljs-meta">@Override</span>
+            <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">onClick</span><span class="hljs-params">(View v)</span> </span>{
                 FragmentTransaction transaction = manager.beginTransaction();
                 transaction.replace(R.id.myframelayout, fragment2).commit();
             }
         });
     }
 
-    private void initView() {
+    <span class="hljs-function"><span class="hljs-keyword">private</span> <span class="hljs-keyword">void</span> <span class="hljs-title">initView</span><span class="hljs-params">()</span> </span>{
         bt_red = (Button) findViewById(R.id.bt_red);
         bt_blue = (Button) findViewById(R.id.bt_blue);
     }
@@ -3962,31 +3966,31 @@ public class MainActivity extends AppCompatActivity {
 <p><strong>&#x8FD9;&#x91CC;&#x5148;&#x8981;&#x5B66;&#x4E60;&#x4E00;&#x4E2A;&#x65B9;&#x6CD5;&#xFF1A;FragmentTransaction.addToBackStack(String)</strong>&#x3010;&#x628A;&#x5F53;&#x524D;&#x4E8B;&#x52A1;&#x7684;&#x53D8;&#x5316;&#x60C5;&#x51B5;&#x6DFB;&#x52A0;&#x5230;&#x56DE;&#x9000;&#x6808;&#x3011;</p>
 <p>&#x4EE3;&#x7801;&#x5982;&#x4E0B;&#xFF1A;</p>
 <p>MainActivity&#x7684;&#x5E03;&#x5C40;&#x6587;&#x4EF6;</p>
-<pre><code class="lang-Xml">&lt;RelativeLayout xmlns:android=&quot;http://schemas.android.com/apk/res/android&quot;  
-    xmlns:tools=&quot;http://schemas.android.com/tools&quot;  
-    android:layout_width=&quot;match_parent&quot;  
-    android:layout_height=&quot;match_parent&quot; &gt;  
+<pre><code class="lang-Xml"><span class="hljs-tag">&lt;<span class="hljs-name">RelativeLayout</span> <span class="hljs-attr">xmlns:android</span>=<span class="hljs-string">&quot;http://schemas.android.com/apk/res/android&quot;</span>  
+    <span class="hljs-attr">xmlns:tools</span>=<span class="hljs-string">&quot;http://schemas.android.com/tools&quot;</span>  
+    <span class="hljs-attr">android:layout_width</span>=<span class="hljs-string">&quot;match_parent&quot;</span>  
+    <span class="hljs-attr">android:layout_height</span>=<span class="hljs-string">&quot;match_parent&quot;</span> &gt;</span>  
 
-    &lt;FrameLayout  
-        android:id=&quot;@+id/id_content&quot;  
-        android:layout_width=&quot;match_parent&quot;  
-        android:layout_height=&quot;match_parent&quot; &gt;  
-    &lt;/FrameLayout&gt;  
+    <span class="hljs-tag">&lt;<span class="hljs-name">FrameLayout</span>  
+        <span class="hljs-attr">android:id</span>=<span class="hljs-string">&quot;@+id/id_content&quot;</span>  
+        <span class="hljs-attr">android:layout_width</span>=<span class="hljs-string">&quot;match_parent&quot;</span>  
+        <span class="hljs-attr">android:layout_height</span>=<span class="hljs-string">&quot;match_parent&quot;</span> &gt;</span>  
+    <span class="hljs-tag">&lt;/<span class="hljs-name">FrameLayout</span>&gt;</span>  
 
-&lt;/RelativeLayout&gt;
+<span class="hljs-tag">&lt;/<span class="hljs-name">RelativeLayout</span>&gt;</span>
 </code></pre>
 <p>MainActivity.java&#x6587;&#x4EF6;&#x3010;&#x8FD9;&#x91CC;&#x6DFB;&#x52A0;&#x7684;&#x662F;app&#x5305;&#x4E0B;&#x7684;Fragment&#xFF0C;&#x63A8;&#x8350;v4&#x5305;&#x4E0B;&#x7684;&#x3011;</p>
 <pre><code class="lang-java">
-public class MainActivity extends Activity {  
+<span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">MainActivity</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">Activity</span> </span>{  
 
-    protected void onCreate(Bundle savedInstanceState){  
-        super.onCreate(savedInstanceState);  
+    <span class="hljs-function"><span class="hljs-keyword">protected</span> <span class="hljs-keyword">void</span> <span class="hljs-title">onCreate</span><span class="hljs-params">(Bundle savedInstanceState)</span></span>{  
+        <span class="hljs-keyword">super</span>.onCreate(savedInstanceState);  
         requestWindowFeature(Window.FEATURE_NO_TITLE);  
         setContentView(R.layout.activity_main);  
 
         FragmentManager fm = getFragmentManager();  
         FragmentTransaction tx = fm.beginTransaction();  
-        tx.add(R.id.id_content, new FragmentOne(),&quot;ONE&quot;);  
+        tx.add(R.id.id_content, <span class="hljs-keyword">new</span> FragmentOne(),<span class="hljs-string">&quot;ONE&quot;</span>);  
         tx.commit();  
     }  
 
@@ -3994,26 +3998,26 @@ public class MainActivity extends Activity {
 </code></pre>
 <p>FragmentOne.class&#x6587;&#x4EF6;</p>
 <pre><code class="lang-java">
-public class FragmentOne extends Fragment implements OnClickListener {  
+<span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">FragmentOne</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">Fragment</span> <span class="hljs-keyword">implements</span> <span class="hljs-title">OnClickListener</span> </span>{  
 
-    private Button mBtn;  
+    <span class="hljs-keyword">private</span> Button mBtn;  
 
-    @Override  
-    public View onCreateView(LayoutInflater inflater, ViewGroup container,  
-            Bundle savedInstanceState) {  
-        View view = inflater.inflate(R.layout.fragment_one, container, false);  
+    <span class="hljs-meta">@Override</span>  
+    <span class="hljs-function"><span class="hljs-keyword">public</span> View <span class="hljs-title">onCreateView</span><span class="hljs-params">(LayoutInflater inflater, ViewGroup container,  
+            Bundle savedInstanceState)</span> </span>{  
+        View view = inflater.inflate(R.layout.fragment_one, container, <span class="hljs-keyword">false</span>);  
         mBtn = (Button) view.findViewById(R.id.id_fragment_one_btn);  
-        mBtn.setOnClickListener(this);  
-        return view;  
+        mBtn.setOnClickListener(<span class="hljs-keyword">this</span>);  
+        <span class="hljs-keyword">return</span> view;  
     }  
 
-    @Override  
-    public void onClick(View v) {  
-        FragmentTwo fTwo = new FragmentTwo();  
+    <span class="hljs-meta">@Override</span>  
+    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">onClick</span><span class="hljs-params">(View v)</span> </span>{  
+        FragmentTwo fTwo = <span class="hljs-keyword">new</span> FragmentTwo();  
         FragmentManager fm = getFragmentManager();  
         FragmentTransaction tx = fm.beginTransaction();  
-        tx.replace(R.id.id_content, fTwo, &quot;TWO&quot;);  
-        tx.addToBackStack(null);  
+        tx.replace(R.id.id_content, fTwo, <span class="hljs-string">&quot;TWO&quot;</span>);  
+        tx.addToBackStack(<span class="hljs-keyword">null</span>);  
         tx.commit();  
     }  
 
@@ -4022,28 +4026,28 @@ public class FragmentOne extends Fragment implements OnClickListener {
 <p>Fragment&#x7684;&#x70B9;&#x51FB;&#x4E8B;&#x4EF6;&#x91CC;&#x5199;&#x7684;&#x662F;replace&#x65B9;&#x6CD5;&#xFF0C;&#x76F8;&#x5F53;&#x4E8E;remove&#x548C;add&#x7684;&#x5408;&#x4F53;&#xFF0C;&#x5E76;&#x4E14;&#x5982;&#x679C;&#x4E0D;&#x6DFB;&#x52A0;&#x4E8B;&#x52A1;&#x5230;&#x56DE;&#x9000;&#x6808;&#xFF0C;&#x524D;&#x4E00;&#x4E2A;Fragment&#x5B9E;&#x4F8B;&#x4F1A;&#x88AB;&#x9500;&#x6BC1;&#x3002;&#x8FD9;&#x91CC;&#x5F88;&#x660E;&#x663E;&#xFF0C;&#x6211;&#x4EEC;&#x8C03;&#x7528;tx.addToBackStack(null)&#x5C06;&#x5F53;&#x524D;&#x7684;&#x4E8B;&#x52A1;&#x6DFB;&#x52A0;&#x5230;&#x4E86;&#x56DE;&#x9000;&#x6808;&#xFF0C;&#x6240;&#x4EE5;FragmentOne&#x5B9E;&#x4F8B;&#x4E0D;&#x4F1A;&#x88AB;&#x9500;&#x6BC1;&#xFF0C;&#x4F46;&#x662F;&#x89C6;&#x56FE;&#x5C42;&#x6B21;&#x4F9D;&#x7136;&#x4F1A;&#x88AB;&#x9500;&#x6BC1;&#xFF0C;&#x5373;&#x4F1A;&#x8C03;&#x7528;onDestoryView&#x548C;onCreateView&#x3002;&#x6240;&#x4EE5;&#x3010;&#x8BF7;&#x6CE8;&#x610F;&#x3011;&#xFF0C;&#x5F53;&#x4E4B;&#x540E;&#x6211;&#x4EEC;&#x4ECE;FragmentTwo&#x8FD4;&#x56DE;&#x5230;&#x524D;&#x4E00;&#x4E2A;&#x9875;&#x9762;&#x7684;&#x65F6;&#x5019;&#xFF0C;&#x89C6;&#x56FE;&#x5C42;&#x4ECD;&#x65E7;&#x662F;&#x91CD;&#x65B0;&#x6309;&#x7167;&#x4EE3;&#x7801;&#x7ED8;&#x5236;&#xFF0C;&#x8FD9;&#x91CC;&#x4EC5;&#x4EC5;&#x662F;&#x662F;&#x5B9E;&#x4F8B;&#x6CA1;&#x6709;&#x9500;&#x6BC1;&#xFF0C;&#x56E0;&#x6B64;&#x663E;&#x793A;&#x7684;&#x9875;&#x9762;&#x4E2D;&#x6CA1;&#x6709;change&#x51E0;&#x4E2A;&#x5B57;&#x3002;</p>
 <p>FragmentTwo.class&#x6587;&#x4EF6;</p>
 <pre><code class="lang-java">
-public class FragmentTwo extends Fragment implements OnClickListener {  
+<span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">FragmentTwo</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">Fragment</span> <span class="hljs-keyword">implements</span> <span class="hljs-title">OnClickListener</span> </span>{  
 
-    private Button mBtn ;  
+    <span class="hljs-keyword">private</span> Button mBtn ;  
 
-    @Override  
-    public View onCreateView(LayoutInflater inflater, ViewGroup container,  
-            Bundle savedInstanceState) {  
-        View view = inflater.inflate(R.layout.fragment_two, container, false);  
+    <span class="hljs-meta">@Override</span>  
+    <span class="hljs-function"><span class="hljs-keyword">public</span> View <span class="hljs-title">onCreateView</span><span class="hljs-params">(LayoutInflater inflater, ViewGroup container,  
+            Bundle savedInstanceState)</span> </span>{  
+        View view = inflater.inflate(R.layout.fragment_two, container, <span class="hljs-keyword">false</span>);  
         mBtn = (Button) view.findViewById(R.id.id_fragment_two_btn);  
-        mBtn.setOnClickListener(this);  
-        return view ;   
+        mBtn.setOnClickListener(<span class="hljs-keyword">this</span>);  
+        <span class="hljs-keyword">return</span> view ;   
     }  
 
-    @Override  
-    public void onClick(View v)  {  
-        FragmentThree fThree = new FragmentThree();  
+    <span class="hljs-meta">@Override</span>  
+    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">onClick</span><span class="hljs-params">(View v)</span>  </span>{  
+        FragmentThree fThree = <span class="hljs-keyword">new</span> FragmentThree();  
         FragmentManager fm = getFragmentManager();  
         FragmentTransaction tx = fm.beginTransaction();  
-        tx.hide(this);  
-        tx.add(R.id.id_content , fThree, &quot;THREE&quot;);  
-        //tx.replace(R.id.id_content, fThree, &quot;THREE&quot;);  
-        tx.addToBackStack(null);  
+        tx.hide(<span class="hljs-keyword">this</span>);  
+        tx.add(R.id.id_content , fThree, <span class="hljs-string">&quot;THREE&quot;</span>);  
+        <span class="hljs-comment">//tx.replace(R.id.id_content, fThree, &quot;THREE&quot;);  </span>
+        tx.addToBackStack(<span class="hljs-keyword">null</span>);  
         tx.commit();  
     }  
 
@@ -4052,22 +4056,22 @@ public class FragmentTwo extends Fragment implements OnClickListener {
 <p>&#x8FD9;&#x91CC;&#x70B9;&#x51FB;&#x65F6;&#xFF0C;&#x6211;&#x4EEC;&#x6CA1;&#x6709;&#x4F7F;&#x7528;replace&#xFF0C;&#x800C;&#x662F;&#x5148;&#x9690;&#x85CF;&#x4E86;&#x5F53;&#x524D;&#x7684;Fragment&#xFF0C;&#x7136;&#x540E;&#x6DFB;&#x52A0;&#x4E86;FragmentThree&#x7684;&#x5B9E;&#x4F8B;&#xFF0C;&#x6700;&#x540E;&#x5C06;&#x4E8B;&#x52A1;&#x6DFB;&#x52A0;&#x5230;&#x56DE;&#x9000;&#x6808;&#x3002;&#x8FD9;&#x6837;&#x505A;&#x7684;&#x76EE;&#x7684;&#x662F;&#x4E3A;&#x4E86;&#x7ED9;&#x5927;&#x5BB6;&#x63D0;&#x4F9B;&#x4E00;&#x79CD;&#x65B9;&#x6848;&#xFF1A;&#x5982;&#x679C;&#x4E0D;&#x5E0C;&#x671B;&#x89C6;&#x56FE;&#x91CD;&#x7ED8;&#x8BE5;&#x600E;&#x4E48;&#x505A;&#xFF0C;&#x8BF7;&#x518D;&#x6B21;&#x4ED4;&#x7EC6;&#x770B;&#x6548;&#x679C;&#x56FE;&#xFF0C;&#x6211;&#x4EEC;&#x5728;FragmentTwo&#x7684;EditText&#x586B;&#x5199;&#x7684;&#x5185;&#x5BB9;&#xFF0C;&#x7528;&#x6237;&#x70B9;&#x51FB;&#x8FD4;&#x56DE;&#x952E;&#x56DE;&#x6765;&#x65F6;&#xFF0C;&#x5185;&#x5BB9;&#x8FD8;&#x5728;&#x3002;</p>
 <p>FragmentThree.class&#x6587;&#x4EF6;</p>
 <pre><code class="lang-java">
-public class FragmentThree extends Fragment implements OnClickListener {  
+<span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">FragmentThree</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">Fragment</span> <span class="hljs-keyword">implements</span> <span class="hljs-title">OnClickListener</span> </span>{  
 
-    private Button mBtn;  
+    <span class="hljs-keyword">private</span> Button mBtn;  
 
-    @Override  
-    public View onCreateView(LayoutInflater inflater, ViewGroup container,  
-            Bundle savedInstanceState) {  
-        View view = inflater.inflate(R.layout.fragment_three, container, false);  
+    <span class="hljs-meta">@Override</span>  
+    <span class="hljs-function"><span class="hljs-keyword">public</span> View <span class="hljs-title">onCreateView</span><span class="hljs-params">(LayoutInflater inflater, ViewGroup container,  
+            Bundle savedInstanceState)</span> </span>{  
+        View view = inflater.inflate(R.layout.fragment_three, container, <span class="hljs-keyword">false</span>);  
         mBtn = (Button) view.findViewById(R.id.id_fragment_three_btn);  
-        mBtn.setOnClickListener(this);  
-        return view;  
+        mBtn.setOnClickListener(<span class="hljs-keyword">this</span>);  
+        <span class="hljs-keyword">return</span> view;  
     }  
 
-    @Override  
-    public void onClick(View v) {  
-        Toast.makeText(getActivity(), &quot; i am a btn in Fragment three&quot;,  
+    <span class="hljs-meta">@Override</span>  
+    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">onClick</span><span class="hljs-params">(View v)</span> </span>{  
+        Toast.makeText(getActivity(), <span class="hljs-string">&quot; i am a btn in Fragment three&quot;</span>,  
                 Toast.LENGTH_SHORT).show();  
     }  
 
@@ -4085,28 +4089,28 @@ public class FragmentThree extends Fragment implements OnClickListener {
 <p>&#x56E0;&#x4E3A;&#x8981;&#x8003;&#x8651;Fragment&#x7684;&#x91CD;&#x590D;&#x4F7F;&#x7528;&#xFF0C;&#x6240;&#x4EE5;&#x5FC5;&#x987B;&#x964D;&#x4F4E;Fragment&#x4E0E;Activity&#x7684;&#x8026;&#x5408;&#xFF0C;&#x800C;&#x4E14;Fragment&#x66F4;&#x4E0D;&#x5E94;&#x8BE5;&#x76F4;&#x63A5;&#x64CD;&#x4F5C;&#x522B;&#x7684;Fragment&#xFF0C;&#x6BD5;&#x7ADF;Fragment&#x64CD;&#x4F5C;&#x5E94;&#x8BE5;&#x7531;&#x5B83;&#x7684;&#x7BA1;&#x7406;&#x8005;Activity&#x6765;&#x51B3;&#x5B9A;&#x3002;</p>
 <p>&#x5B9E;&#x73B0;&#x4E0E;&#x4E0A;&#x4E00;&#x4E2A;&#x4EE3;&#x7801;&#x6848;&#x4F8B;&#x4E00;&#x6A21;&#x4E00;&#x6837;&#x7684;&#x529F;&#x80FD;&#x4E0E;&#x6548;&#x679C;</p>
 <p>FragmentOne.class&#x6587;&#x4EF6;</p>
-<pre><code class="lang-java">public class FragmentOne extends Fragment implements OnClickListener {  
+<pre><code class="lang-java"><span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">FragmentOne</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">Fragment</span> <span class="hljs-keyword">implements</span> <span class="hljs-title">OnClickListener</span> </span>{  
 
-private Button mBtn;  
+<span class="hljs-keyword">private</span> Button mBtn;  
 
-    //&#x8BBE;&#x7F6E;&#x6309;&#x94AE;&#x70B9;&#x51FB;&#x7684;&#x56DE;&#x8C03;
-    public interface FOneBtnClickListener {  
-        void onFOneBtnClick();  
+    <span class="hljs-comment">//&#x8BBE;&#x7F6E;&#x6309;&#x94AE;&#x70B9;&#x51FB;&#x7684;&#x56DE;&#x8C03;</span>
+    <span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">interface</span> <span class="hljs-title">FOneBtnClickListener</span> </span>{  
+        <span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">onFOneBtnClick</span><span class="hljs-params">()</span></span>;  
     }  
 
-    @Override  
-    public View onCreateView(LayoutInflater inflater, ViewGroup container,  
-            Bundle savedInstanceState) {  
-        View view = inflater.inflate(R.layout.fragment_one, container, false);  
+    <span class="hljs-meta">@Override</span>  
+    <span class="hljs-function"><span class="hljs-keyword">public</span> View <span class="hljs-title">onCreateView</span><span class="hljs-params">(LayoutInflater inflater, ViewGroup container,  
+            Bundle savedInstanceState)</span> </span>{  
+        View view = inflater.inflate(R.layout.fragment_one, container, <span class="hljs-keyword">false</span>);  
         mBtn = (Button) view.findViewById(R.id.id_fragment_one_btn);  
-        mBtn.setOnClickListener(this);  
-        return view;  
+        mBtn.setOnClickListener(<span class="hljs-keyword">this</span>);  
+        <span class="hljs-keyword">return</span> view;  
     }  
 
-   //&#x4EA4;&#x7ED9;&#x5BBF;&#x4E3B;Activity&#x5904;&#x7406;&#xFF0C;&#x5982;&#x679C;&#x5B83;&#x5E0C;&#x671B;&#x5904;&#x7406;   
-    @Override  
-    public void onClick(View v) {  
-        if (getActivity() instanceof FOneBtnClickListener) {  
+   <span class="hljs-comment">//&#x4EA4;&#x7ED9;&#x5BBF;&#x4E3B;Activity&#x5904;&#x7406;&#xFF0C;&#x5982;&#x679C;&#x5B83;&#x5E0C;&#x671B;&#x5904;&#x7406;   </span>
+    <span class="hljs-meta">@Override</span>  
+    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">onClick</span><span class="hljs-params">(View v)</span> </span>{  
+        <span class="hljs-keyword">if</span> (getActivity() <span class="hljs-keyword">instanceof</span> FOneBtnClickListener) {  
             ((FOneBtnClickListener) getActivity()).onFOneBtnClick();  
         }  
     }  
@@ -4115,32 +4119,32 @@ private Button mBtn;
 </code></pre>
 <p>&#x53EF;&#x4EE5;&#x770B;&#x5230;&#xFF0C;&#x73B0;&#x5728;&#x7684;FragmentOne&#x4E0D;&#x548C;&#x4EFB;&#x4F55;Activity&#x8026;&#x5408;&#xFF0C;&#x4EFB;&#x4F55;Activity&#x90FD;&#x53EF;&#x4EE5;&#x4F7F;&#x7528;&#xFF0C;&#x5E76;&#x4E14;&#x6211;&#x4EEC;&#x58F0;&#x660E;&#x4E86;&#x4E00;&#x4E2A;&#x63A5;&#x53E3;&#xFF0C;&#x6765;&#x56DE;&#x8C03;&#x5176;&#x70B9;&#x51FB;&#x4E8B;&#x4EF6;&#xFF0C;&#x60F3;&#x8981;&#x91CD;&#x5199;&#x5176;&#x70B9;&#x51FB;&#x4E8B;&#x4EF6;&#x7684;Activity&#x5B9E;&#x73B0;&#x6B64;&#x63A5;&#x53E3;&#x5373;&#x53EF;&#xFF0C;&#x53EF;&#x4EE5;&#x770B;&#x5230;&#x6211;&#x4EEC;&#x5728;onClick&#x4E2D;&#x9996;&#x5148;&#x5224;&#x65AD;&#x4E86;&#x5F53;&#x524D;&#x7ED1;&#x5B9A;&#x7684;Activity&#x662F;&#x5426;&#x5B9E;&#x73B0;&#x4E86;&#x8BE5;&#x63A5;&#x53E3;&#xFF0C;&#x5982;&#x679C;&#x5B9E;&#x73B0;&#x4E86;&#x5219;&#x8C03;&#x7528;&#x3002;</p>
 <p>FragmentTwo.class&#x6587;&#x4EF6;</p>
-<pre><code class="lang-java">public class FragmentTwo extends Fragment implements OnClickListener {
+<pre><code class="lang-java"><span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">FragmentTwo</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">Fragment</span> <span class="hljs-keyword">implements</span> <span class="hljs-title">OnClickListener</span> </span>{
 
-    private Button mBtn ;  
-    private FTwoBtnClickListener fTwoBtnClickListener ;  
+    <span class="hljs-keyword">private</span> Button mBtn ;  
+    <span class="hljs-keyword">private</span> FTwoBtnClickListener fTwoBtnClickListener ;  
 
-    public interface FTwoBtnClickListener {  
-        void onFTwoBtnClick();  
+    <span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">interface</span> <span class="hljs-title">FTwoBtnClickListener</span> </span>{  
+        <span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">onFTwoBtnClick</span><span class="hljs-params">()</span></span>;  
     }  
 
-    //&#x8BBE;&#x7F6E;&#x56DE;&#x8C03;&#x63A5;&#x53E3;  
-    public void setfTwoBtnClickListener(FTwoBtnClickListener fTwoBtnClickListener) {  
-        this.fTwoBtnClickListener = fTwoBtnClickListener;  
+    <span class="hljs-comment">//&#x8BBE;&#x7F6E;&#x56DE;&#x8C03;&#x63A5;&#x53E3;  </span>
+    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">setfTwoBtnClickListener</span><span class="hljs-params">(FTwoBtnClickListener fTwoBtnClickListener)</span> </span>{  
+        <span class="hljs-keyword">this</span>.fTwoBtnClickListener = fTwoBtnClickListener;  
     }  
 
-    @Override  
-    public View onCreateView(LayoutInflater inflater, ViewGroup container,  
-            Bundle savedInstanceState) {  
-        View view = inflater.inflate(R.layout.fragment_two, container, false);  
+    <span class="hljs-meta">@Override</span>  
+    <span class="hljs-function"><span class="hljs-keyword">public</span> View <span class="hljs-title">onCreateView</span><span class="hljs-params">(LayoutInflater inflater, ViewGroup container,  
+            Bundle savedInstanceState)</span> </span>{  
+        View view = inflater.inflate(R.layout.fragment_two, container, <span class="hljs-keyword">false</span>);  
         mBtn = (Button) view.findViewById(R.id.id_fragment_two_btn);  
-        mBtn.setOnClickListener(this);  
-        return view ;   
+        mBtn.setOnClickListener(<span class="hljs-keyword">this</span>);  
+        <span class="hljs-keyword">return</span> view ;   
     }  
 
-    @Override  
-    public void onClick(View v) {  
-        if(fTwoBtnClickListener != null)  {  
+    <span class="hljs-meta">@Override</span>  
+    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">onClick</span><span class="hljs-params">(View v)</span> </span>{  
+        <span class="hljs-keyword">if</span>(fTwoBtnClickListener != <span class="hljs-keyword">null</span>)  {  
             fTwoBtnClickListener.onFTwoBtnClick();  
         }  
     }  
@@ -4149,52 +4153,52 @@ private Button mBtn;
 </code></pre>
 <p>&#x4E0E;FragmentOne&#x6781;&#x5176;&#x7C7B;&#x4F3C;&#xFF0C;&#x4F46;&#x662F;&#x6211;&#x4EEC;&#x63D0;&#x4F9B;&#x4E86;setListener&#x8FD9;&#x6837;&#x7684;&#x65B9;&#x6CD5;&#xFF0C;&#x610F;&#x5473;&#x7740;Activity&#x4E0D;&#x4EC5;&#x9700;&#x8981;&#x5B9E;&#x73B0;&#x8BE5;&#x63A5;&#x53E3;&#xFF0C;&#x8FD8;&#x5FC5;&#x987B;&#x663E;&#x793A;&#x8C03;&#x7528;mFTwo.setfTwoBtnClickListener(this)&#x3002;</p>
 <p>MainActivity.class&#x6587;&#x4EF6;</p>
-<pre><code class="lang-java">public class MainActivity extends Activity implements FOneBtnClickListener,  
-        FTwoBtnClickListener {  
+<pre><code class="lang-java"><span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">MainActivity</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">Activity</span> <span class="hljs-keyword">implements</span> <span class="hljs-title">FOneBtnClickListener</span>,  
+        <span class="hljs-title">FTwoBtnClickListener</span> </span>{  
 
-    private FragmentOne mFOne;  
-    private FragmentTwo mFTwo;  
-    private FragmentThree mFThree;  //FragmentThree&#x4EE3;&#x7801;&#x53C2;&#x8003;&#x4E0A;&#x4E00;&#x4E2A;&#x4F8B;&#x5B50;&#x4E2D;&#x7684;&#x4EE3;&#x7801;
+    <span class="hljs-keyword">private</span> FragmentOne mFOne;  
+    <span class="hljs-keyword">private</span> FragmentTwo mFTwo;  
+    <span class="hljs-keyword">private</span> FragmentThree mFThree;  <span class="hljs-comment">//FragmentThree&#x4EE3;&#x7801;&#x53C2;&#x8003;&#x4E0A;&#x4E00;&#x4E2A;&#x4F8B;&#x5B50;&#x4E2D;&#x7684;&#x4EE3;&#x7801;</span>
 
-    @Override  
-    protected void onCreate(Bundle savedInstanceState) {  
-        super.onCreate(savedInstanceState);  
+    <span class="hljs-meta">@Override</span>  
+    <span class="hljs-function"><span class="hljs-keyword">protected</span> <span class="hljs-keyword">void</span> <span class="hljs-title">onCreate</span><span class="hljs-params">(Bundle savedInstanceState)</span> </span>{  
+        <span class="hljs-keyword">super</span>.onCreate(savedInstanceState);  
         requestWindowFeature(Window.FEATURE_NO_TITLE);  
         setContentView(R.layout.activity_main);  
 
-        mFOne = new FragmentOne();  
+        mFOne = <span class="hljs-keyword">new</span> FragmentOne();  
         FragmentManager fm = getFragmentManager();  
         FragmentTransaction tx = fm.beginTransaction();  
-        tx.add(R.id.id_content, mFOne, &quot;ONE&quot;);  
+        tx.add(R.id.id_content, mFOne, <span class="hljs-string">&quot;ONE&quot;</span>);  
         tx.commit();  
     }  
 
-    //FragmentOne &#x6309;&#x94AE;&#x70B9;&#x51FB;&#x65F6;&#x7684;&#x56DE;&#x8C03;  
-    @Override  
-    public void onFOneBtnClick() { 
-        if (mFTwo == null) {  
-            mFTwo = new FragmentTwo();  
-            mFTwo.setfTwoBtnClickListener(this);  
+    <span class="hljs-comment">//FragmentOne &#x6309;&#x94AE;&#x70B9;&#x51FB;&#x65F6;&#x7684;&#x56DE;&#x8C03;  </span>
+    <span class="hljs-meta">@Override</span>  
+    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">onFOneBtnClick</span><span class="hljs-params">()</span> </span>{ 
+        <span class="hljs-keyword">if</span> (mFTwo == <span class="hljs-keyword">null</span>) {  
+            mFTwo = <span class="hljs-keyword">new</span> FragmentTwo();  
+            mFTwo.setfTwoBtnClickListener(<span class="hljs-keyword">this</span>);  
         }  
         FragmentManager fm = getFragmentManager();  
         FragmentTransaction tx = fm.beginTransaction();  
-        tx.replace(R.id.id_content, mFTwo, &quot;TWO&quot;);  
-        tx.addToBackStack(null);  
+        tx.replace(R.id.id_content, mFTwo, <span class="hljs-string">&quot;TWO&quot;</span>);  
+        tx.addToBackStack(<span class="hljs-keyword">null</span>);  
         tx.commit();  
     }  
 
-    //FragmentTwo&#x6309;&#x94AE;&#x70B9;&#x51FB;&#x65F6;&#x7684;&#x56DE;&#x8C03;  
-    @Override  
-    public void onFTwoBtnClick() {  
-        if (mFThree == null) {  
-            mFThree = new FragmentThree();  
+    <span class="hljs-comment">//FragmentTwo&#x6309;&#x94AE;&#x70B9;&#x51FB;&#x65F6;&#x7684;&#x56DE;&#x8C03;  </span>
+    <span class="hljs-meta">@Override</span>  
+    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">onFTwoBtnClick</span><span class="hljs-params">()</span> </span>{  
+        <span class="hljs-keyword">if</span> (mFThree == <span class="hljs-keyword">null</span>) {  
+            mFThree = <span class="hljs-keyword">new</span> FragmentThree();  
         }  
         FragmentManager fm = getFragmentManager();  
         FragmentTransaction tx = fm.beginTransaction();  
         tx.hide(mFTwo);  
-        tx.add(R.id.id_content, mFThree, &quot;THREE&quot;);  
-        //tx.replace(R.id.id_content, fThree, &quot;THREE&quot;);  
-        tx.addToBackStack(null);  
+        tx.add(R.id.id_content, mFThree, <span class="hljs-string">&quot;THREE&quot;</span>);  
+        <span class="hljs-comment">//tx.replace(R.id.id_content, fThree, &quot;THREE&quot;);  </span>
+        tx.addToBackStack(<span class="hljs-keyword">null</span>);  
         tx.commit();  
     }  
 
@@ -4208,37 +4212,37 @@ private Button mBtn;
 <p>Fragment&#x7684;class&#x6587;&#x4EF6;</p>
 </li>
 </ul>
-<pre><code class="lang-java">public class FragmentOne extends Fragment {
+<pre><code class="lang-java"><span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">FragmentOne</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">Fragment</span> </span>{
 
-    private static final String TAG = &quot;FragmentOne&quot;;  
+    <span class="hljs-keyword">private</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">final</span> String TAG = <span class="hljs-string">&quot;FragmentOne&quot;</span>;  
 
-    @Override  
-    public View onCreateView(LayoutInflater inflater, ViewGroup container,  
-            Bundle savedInstanceState) {  
-        Log.e(TAG, &quot;onCreateView&quot;);  
-        View view = inflater.inflate(R.layout.fragment_one, container, false);  
-        return view;  
+    <span class="hljs-meta">@Override</span>  
+    <span class="hljs-function"><span class="hljs-keyword">public</span> View <span class="hljs-title">onCreateView</span><span class="hljs-params">(LayoutInflater inflater, ViewGroup container,  
+            Bundle savedInstanceState)</span> </span>{  
+        Log.e(TAG, <span class="hljs-string">&quot;onCreateView&quot;</span>);  
+        View view = inflater.inflate(R.layout.fragment_one, container, <span class="hljs-keyword">false</span>);  
+        <span class="hljs-keyword">return</span> view;  
     }  
 
-    @Override  
-    public void onCreate(Bundle savedInstanceState) {  
-        // TODO Auto-generated method stub  
-        super.onCreate(savedInstanceState);  
-        Log.e(TAG, &quot;onCreate&quot;);  
+    <span class="hljs-meta">@Override</span>  
+    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">onCreate</span><span class="hljs-params">(Bundle savedInstanceState)</span> </span>{  
+        <span class="hljs-comment">// TODO Auto-generated method stub  </span>
+        <span class="hljs-keyword">super</span>.onCreate(savedInstanceState);  
+        Log.e(TAG, <span class="hljs-string">&quot;onCreate&quot;</span>);  
     }  
 
-    @Override  
-    public void onDestroyView() {  
-        // TODO Auto-generated method stub  
-        super.onDestroyView();  
-        Log.e(TAG, &quot;onDestroyView&quot;);  
+    <span class="hljs-meta">@Override</span>  
+    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">onDestroyView</span><span class="hljs-params">()</span> </span>{  
+        <span class="hljs-comment">// TODO Auto-generated method stub  </span>
+        <span class="hljs-keyword">super</span>.onDestroyView();  
+        Log.e(TAG, <span class="hljs-string">&quot;onDestroyView&quot;</span>);  
     }  
 
-    @Override  
-    public void onDestroy() {  
-        // TODO Auto-generated method stub  
-        super.onDestroy();  
-        Log.e(TAG, &quot;onDestroy&quot;);  
+    <span class="hljs-meta">@Override</span>  
+    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">onDestroy</span><span class="hljs-params">()</span> </span>{  
+        <span class="hljs-comment">// TODO Auto-generated method stub  </span>
+        <span class="hljs-keyword">super</span>.onDestroy();  
+        Log.e(TAG, <span class="hljs-string">&quot;onDestroy&quot;</span>);  
     }  
 
 }
@@ -4256,24 +4260,24 @@ private Button mBtn;
 <p>&#x9ED8;&#x8BA4;&#x7684;savedInstanceState&#x4F1A;&#x5B58;&#x50A8;&#x4E00;&#x4E9B;&#x6570;&#x636E;&#xFF0C;&#x5305;&#x62EC;Fragment&#x7684;&#x5B9E;&#x4F8B;</p>
 <p>&#x6240;&#x4EE5;&#xFF0C;&#x6211;&#x4EEC;&#x7B80;&#x5355;&#x6539;&#x4E00;&#x4E0B;&#x4EE3;&#x7801;&#xFF0C;&#x5224;&#x65AD;&#x53EA;&#x6709;&#x5728;savedInstanceState==null&#x65F6;&#xFF0C;&#x624D;&#x8FDB;&#x884C;&#x521B;&#x5EFA;Fragment&#x5B9E;&#x4F8B;</p>
 <p>MainActivity.class&#x6587;&#x4EF6;</p>
-<pre><code class="lang-Java">public class MainActivity extends Activity {
+<pre><code class="lang-Java"><span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">MainActivity</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">Activity</span> </span>{
 
-    private static final String TAG = &quot;FragmentOne&quot;;  
-    private FragmentOne mFOne;  
+    <span class="hljs-keyword">private</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">final</span> String TAG = <span class="hljs-string">&quot;FragmentOne&quot;</span>;  
+    <span class="hljs-keyword">private</span> FragmentOne mFOne;  
 
-    @Override  
-    protected void onCreate(Bundle savedInstanceState) {  
-        super.onCreate(savedInstanceState);  
+    <span class="hljs-meta">@Override</span>  
+    <span class="hljs-function"><span class="hljs-keyword">protected</span> <span class="hljs-keyword">void</span> <span class="hljs-title">onCreate</span><span class="hljs-params">(Bundle savedInstanceState)</span> </span>{  
+        <span class="hljs-keyword">super</span>.onCreate(savedInstanceState);  
         requestWindowFeature(Window.FEATURE_NO_TITLE);  
         setContentView(R.layout.activity_main);  
 
-        Log.e(TAG, savedInstanceState+&quot;&quot;);  
+        Log.e(TAG, savedInstanceState+<span class="hljs-string">&quot;&quot;</span>);  
 
-        if(savedInstanceState == null) {  
-            mFOne = new FragmentOne();  
+        <span class="hljs-keyword">if</span>(savedInstanceState == <span class="hljs-keyword">null</span>) {  
+            mFOne = <span class="hljs-keyword">new</span> FragmentOne();  
             FragmentManager fm = getFragmentManager();  
             FragmentTransaction tx = fm.beginTransaction();  
-            tx.add(R.id.id_content, mFOne, &quot;ONE&quot;);  
+            tx.add(R.id.id_content, mFOne, <span class="hljs-string">&quot;ONE&quot;</span>);  
             tx.commit();  
         }  
     }  
@@ -4327,7 +4331,7 @@ private Button mBtn;
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"Fragment详解","level":"3.1.5","depth":2,"next":{"title":"Android消息机制","level":"3.1.6","depth":2,"path":"android/basis/message-mechanism.md","ref":"android/basis/message-mechanism.md","articles":[]},"previous":{"title":"ContentProvider全方位解析","level":"3.1.4","depth":2,"path":"android/basis/ContentProvider.md","ref":"android/basis/ContentProvider.md","articles":[]},"dir":"ltr"},"config":{"plugins":["-lunr","-search","-highlight","-livereload","search-plus@^0.0.11","simple-page-toc@^0.1.1","github@^2.0.0","github-buttons@2.1.0","edit-link@^2.0.2","advanced-emoji@^0.2.1","anchors@^0.7.1","include-codeblock@^3.0.2","ace@^0.3.2","emphasize@^1.1.0","katex@^1.1.3","splitter@^0.0.8","tbfed-pagefooter@^0.0.1","expandable-chapters-small@^0.1.7","sectionx@^3.1.0","local-video@^1.0.1","anchor-navigation-ex@0.1.8","favicon@^0.0.2"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"tbfed-pagefooter":{"copyright":"Copyright © ruheng.com 2017","modify_label":"该文件修订时间：","modify_format":"YYYY-MM-DD HH:mm:ss"},"emphasize":{},"ace":{},"github":{"url":"https://github.com/LRH1993/android_interview"},"simple-page-toc":{"maxDepth":3,"skipFirstH1":true},"splitter":{},"katex":{},"fontsettings":{"theme":"white","family":"sans","size":2},"sectionx":{"tag":"b"},"anchor-navigation-ex":{"isRewritePageTitle":false,"tocLevel1Icon":"fa fa-hand-o-right","tocLevel2Icon":"fa fa-hand-o-right","tocLevel3Icon":"fa fa-hand-o-right"},"favicon":{"shortcut":"favicon.ico","bookmark":"favicon.ico"},"github-buttons":{"repo":"LRH1993/android_interview","types":["star"],"size":"small"},"expandable-chapters-small":{},"local-video":{},"advanced-emoji":{"embedEmojis":false},"include-codeblock":{"check":false,"edit":true,"fixlang":false,"lang":"","template":"ace","theme":"chrome","unindent":true},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":true,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"edit-link":{"label":"Edit This Page","base":"https://github.com/LRH1993/android_interview/edit/master"},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":true},"anchors":{},"search-plus":{}},"theme":"default","author":"ruheng","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"Android校招面试指南","language":"zh-hans","output.name":"site","links":{"sidebar":{"Home":"http://lruheng.com/"}},"gitbook":"3.2.3","description":"Android面试必备，记录自己的秋招之路"},"file":{"path":"android/basis/Fragment.md","mtime":"2017-09-12T07:43:35.000Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2017-10-16T12:05:21.906Z"},"basePath":"../..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"Fragment详解","level":"3.1.5","depth":2,"next":{"title":"Android消息机制","level":"3.1.6","depth":2,"path":"android/basis/message-mechanism.md","ref":"android/basis/message-mechanism.md","articles":[]},"previous":{"title":"ContentProvider全方位解析","level":"3.1.4","depth":2,"path":"android/basis/ContentProvider.md","ref":"android/basis/ContentProvider.md","articles":[]},"dir":"ltr"},"config":{"plugins":["-lunr","-search","-livereload","search-plus@^0.0.11","simple-page-toc@^0.1.1","github@^2.0.0","github-buttons@2.1.0","edit-link@^2.0.2","advanced-emoji@^0.2.1","anchors@^0.7.1","include-codeblock@^3.0.2","ace@^0.3.2","emphasize@^1.1.0","katex@^1.1.3","splitter@^0.0.8","tbfed-pagefooter@^0.0.1","expandable-chapters-small@^0.1.7","sectionx@^3.1.0","local-video@^1.0.1","anchor-navigation-ex@0.1.8","favicon@^0.0.2"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"tbfed-pagefooter":{"copyright":"Copyright © ruheng.com 2017","modify_label":"该文件修订时间：","modify_format":"YYYY-MM-DD HH:mm:ss"},"emphasize":{},"ace":{},"github":{"url":"https://github.com/LRH1993/android_interview"},"simple-page-toc":{"maxDepth":3,"skipFirstH1":true},"splitter":{},"katex":{},"fontsettings":{"theme":"white","family":"sans","size":2},"sectionx":{"tag":"b"},"highlight":{},"anchor-navigation-ex":{"isRewritePageTitle":false,"tocLevel1Icon":"fa fa-hand-o-right","tocLevel2Icon":"fa fa-hand-o-right","tocLevel3Icon":"fa fa-hand-o-right"},"favicon":{"shortcut":"favicon.ico","bookmark":"favicon.ico"},"github-buttons":{"repo":"LRH1993/android_interview","types":["star"],"size":"small"},"expandable-chapters-small":{},"local-video":{},"advanced-emoji":{"embedEmojis":false},"include-codeblock":{"check":false,"edit":false,"fixlang":false,"lang":"","template":"default","theme":"chrome","unindent":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":true,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"edit-link":{"label":"Edit This Page","base":"https://github.com/LRH1993/android_interview/edit/master"},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":true},"anchors":{},"search-plus":{}},"theme":"default","author":"ruheng","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"Android校招面试指南","language":"zh-hans","output.name":"site","links":{"sidebar":{"Home":"http://lruheng.com/"}},"gitbook":"3.2.3","description":"Android面试必备，记录自己的秋招之路"},"file":{"path":"android/basis/Fragment.md","mtime":"2017-09-12T07:43:35.000Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2017-10-16T13:00:43.989Z"},"basePath":"../..","book":{"language":""}});
         });
     </script>
 </div>
