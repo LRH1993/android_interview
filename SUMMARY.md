@@ -212,6 +212,7 @@
   - [Greedy](/algorithm/LeetCode/Greedy.md)
     - [Jump Game](/algorithm/LeetCode/Greedy/Jump-Game.md)
     - [Gas Station](/algorithm/LeetCode/Greedy/Gas-Station.md)
+    - [Candy](/algorithm/LeetCode/Greedy/Candy.md)
 
 ## 设计模式
 
