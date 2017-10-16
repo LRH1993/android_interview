@@ -8,7 +8,7 @@ LeetCode这部分内容的算法比较难，自己能力有限，刷的题目也
 - [字符串](/algorithm/LeetCode/String.md)
 - [链表](/algorithm/LeetCode/Linked-List.md)
 - [动态规划](/algorithm/LeetCode/Dynamic-Programming.md)
-- [贪心算法]()
+- [贪心算法](/algorithm/LeetCode/Greedy.md)
 
 ## 二、目录
 
@@ -35,3 +35,12 @@ LeetCode这部分内容的算法比较难，自己能力有限，刷的题目也
   - [Valid Palindrome](/algorithm/LeetCode/String/Valid-Palindrome.md)
   - [Length of Last Word](/algorithm/LeetCode/String/Length-of-Last-Word.md)
 - [Linked List](/algorithm/LeetCode/Linked-List.md)
+  - [Remove Duplicates from Sorted List](/algorithm/LeetCode/Linked-List/Remove-Duplicates-from-Sorted-List.md)
+  - [Partition List](/algorithm/LeetCode/Linked-List/Partition-List.md)
+  - [Merge Two Sorted Lists](/algorithm/LeetCode/Linked-List/Merge-Two-Sorted-Lists.md)
+  - [LRU Cache](/algorithm/LeetCode/Linked-List/LRU-Cache.md)
+  - [Remove Linked List Elements](/algorithm/LeetCode/Linked-List/Remove-Linked-List-Elements.md)
+- [Greedy](/algorithm/LeetCode/Greedy.md)
+  - [Jump Game](/algorithm/LeetCode/Greedy/Jump-Game.md)
+  - [Gas Station](/algorithm/LeetCode/Greedy/Gas-Station.md)
+  - [Candy](/algorithm/LeetCode/Greedy/Candy.md)
