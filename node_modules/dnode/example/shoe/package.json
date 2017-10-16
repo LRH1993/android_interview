@@ -1,0 +1,11 @@
+{
+    "name" : "dnode-shoe-example",
+    "version" : "0.0.0",
+    "dependencies" : {
+        "shoe" : "~0.0.0",
+        "ecstatic" : "~0.1.6",
+        "domready" : "~0.2.11",
+        "browserify" : "~1.12.3"
+    },
+    "private" : true
+}

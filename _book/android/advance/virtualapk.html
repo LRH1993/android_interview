@@ -1,0 +1,4486 @@
+
+<!DOCTYPE HTML>
+<html lang="zh-hans" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>VirtualApk解析 · Android校招面试指南</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.3">
+        <meta name="author" content="ruheng">
+        
+        
+    
+    <link rel="stylesheet" href="../../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-search-plus/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-advanced-emoji/emoji-website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-anchors/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-ace/ace.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-emphasize/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-katex/katex.min.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-splitter/splitter.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-tbfed-pagefooter/footer.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-expandable-chapters-small/expandable-chapters-small.css">
+                
+            
+                
+                <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-sectionx/sectionx.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-local-video/video-js.min.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-anchor-navigation-ex/style/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="push.html" />
+    
+    
+    <link rel="prev" href="plugin.html" />
+    
+
+    
+        <link rel="shortcut icon" href='../../favicon.ico' type="image/x-icon">
+    
+    
+        <link rel="bookmark" href='../../favicon.ico' type="image/x-icon">
+    
+    
+    
+
+    <style>
+    @media only screen and (max-width: 640px) {
+        .book-header .hidden-mobile {
+            display: none;
+        }
+    }
+    </style>
+    <script>
+        window["gitbook-plugin-github-buttons"] = {"repo":"LRH1993/android_interview","types":["star"],"size":"small"};
+    </script>
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="输入并搜索" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+    
+        
+        <li>
+            <a href="http://lruheng.com/" target="_blank" class="custom-link">Home</a>
+        </li>
+    
+    
+
+    
+    <li class="divider"></li>
+    
+
+    
+        
+        <li class="header">前言</li>
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../../">
+            
+                <a href="../../">
+            
+                    
+                        <b>1.1.</b>
+                    
+                    介绍
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">Java</li>
+        
+        
+    
+        <li class="chapter " data-level="2.1" data-path="../../java/basis.html">
+            
+                <a href="../../java/basis.html">
+            
+                    
+                        <b>2.1.</b>
+                    
+                    Java基础
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="2.1.1" data-path="../../java/basis/Collections-Framework.html">
+            
+                <a href="../../java/basis/Collections-Framework.html">
+            
+                    
+                        <b>2.1.1.</b>
+                    
+                    Java集合框架
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.1.2" data-path="../../java/basis/arraylist.html">
+            
+                <a href="../../java/basis/arraylist.html">
+            
+                    
+                        <b>2.1.2.</b>
+                    
+                    Java集合——ArrayList
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.1.3" data-path="../../java/basis/linkedlist.html">
+            
+                <a href="../../java/basis/linkedlist.html">
+            
+                    
+                        <b>2.1.3.</b>
+                    
+                    Java集合——LinkedList
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.1.4" data-path="../../java/basis/hashmap.html">
+            
+                <a href="../../java/basis/hashmap.html">
+            
+                    
+                        <b>2.1.4.</b>
+                    
+                    Java集合——HashMap
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.1.5" data-path="../../java/basis/treemap.html">
+            
+                <a href="../../java/basis/treemap.html">
+            
+                    
+                        <b>2.1.5.</b>
+                    
+                    Java集合——TreeMap
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.1.6" data-path="../../java/basis/LinkedHashMap.html">
+            
+                <a href="../../java/basis/LinkedHashMap.html">
+            
+                    
+                        <b>2.1.6.</b>
+                    
+                    Java集合——LinkedHashMap
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.1.7" data-path="../../java/basis/genericity.html">
+            
+                <a href="../../java/basis/genericity.html">
+            
+                    
+                        <b>2.1.7.</b>
+                    
+                    Java泛型
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.1.8" data-path="../../java/basis/reflection1.html">
+            
+                <a href="../../java/basis/reflection1.html">
+            
+                    
+                        <b>2.1.8.</b>
+                    
+                    Java反射(一)
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.1.9" data-path="../../java/basis/reflection2.html">
+            
+                <a href="../../java/basis/reflection2.html">
+            
+                    
+                        <b>2.1.9.</b>
+                    
+                    Java反射(二)
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.1.10" data-path="../../java/basis/reflection3.html">
+            
+                <a href="../../java/basis/reflection3.html">
+            
+                    
+                        <b>2.1.10.</b>
+                    
+                    Java反射(三)
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.1.11" data-path="../../java/basis/annotation.html">
+            
+                <a href="../../java/basis/annotation.html">
+            
+                    
+                        <b>2.1.11.</b>
+                    
+                    Java注解
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.1.12" data-path="../../java/basis/java-io1.html">
+            
+                <a href="../../java/basis/java-io1.html">
+            
+                    
+                        <b>2.1.12.</b>
+                    
+                    Java IO(一)
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.1.13" data-path="../../java/basis/java-io2.html">
+            
+                <a href="../../java/basis/java-io2.html">
+            
+                    
+                        <b>2.1.13.</b>
+                    
+                    Java IO(二)
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.1.14" data-path="../../java/basis/randomaccessfile.html">
+            
+                <a href="../../java/basis/randomaccessfile.html">
+            
+                    
+                        <b>2.1.14.</b>
+                    
+                    RandomAccessFile
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.1.15" data-path="../../java/basis/java-nio.html">
+            
+                <a href="../../java/basis/java-nio.html">
+            
+                    
+                        <b>2.1.15.</b>
+                    
+                    Java NIO
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.1.16" data-path="../../java/basis/throwable.html">
+            
+                <a href="../../java/basis/throwable.html">
+            
+                    
+                        <b>2.1.16.</b>
+                    
+                    Java异常详解
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.1.17" data-path="../../java/basis/abstract_interface.html">
+            
+                <a href="../../java/basis/abstract_interface.html">
+            
+                    
+                        <b>2.1.17.</b>
+                    
+                    Java抽象类和接口的区别
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.1.18" data-path="../../java/basis/copy.html">
+            
+                <a href="../../java/basis/copy.html">
+            
+                    
+                        <b>2.1.18.</b>
+                    
+                    Java深拷贝和浅拷贝
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.1.19" data-path="../../java/basis/transient.html">
+            
+                <a href="../../java/basis/transient.html">
+            
+                    
+                        <b>2.1.19.</b>
+                    
+                    Java transient关键字
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.1.20" data-path="../../java/basis/finally-return.html">
+            
+                <a href="../../java/basis/finally-return.html">
+            
+                    
+                        <b>2.1.20.</b>
+                    
+                    Java finally与return执行顺序
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.1.21" data-path="../../java/basis/java-8.html">
+            
+                <a href="../../java/basis/java-8.html">
+            
+                    
+                        <b>2.1.21.</b>
+                    
+                    Java 8 新特性
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="2.2" data-path="../../java/concurrence.html">
+            
+                <a href="../../java/concurrence.html">
+            
+                    
+                        <b>2.2.</b>
+                    
+                    Java并发
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="2.2.1" data-path="../../java/concurrence/CreateThread.html">
+            
+                <a href="../../java/concurrence/CreateThread.html">
+            
+                    
+                        <b>2.2.1.</b>
+                    
+                    Java创建线程的三种方式
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.2.2" data-path="../../java/concurrence/thread-pool.html">
+            
+                <a href="../../java/concurrence/thread-pool.html">
+            
+                    
+                        <b>2.2.2.</b>
+                    
+                    Java线程池
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.2.3" data-path="../../java/concurrence/deadlock.html">
+            
+                <a href="../../java/concurrence/deadlock.html">
+            
+                    
+                        <b>2.2.3.</b>
+                    
+                    死锁
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.2.4" data-path="../../java/concurrence/synchronized-reentrantlock.html">
+            
+                <a href="../../java/concurrence/synchronized-reentrantlock.html">
+            
+                    
+                        <b>2.2.4.</b>
+                    
+                    Synchronized/ReentrantLock
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.2.5" data-path="../../java/concurrence/producer-consumer.html">
+            
+                <a href="../../java/concurrence/producer-consumer.html">
+            
+                    
+                        <b>2.2.5.</b>
+                    
+                    生产者/消费者模式
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.2.6" data-path="../../java/concurrence/volatile.html">
+            
+                <a href="../../java/concurrence/volatile.html">
+            
+                    
+                        <b>2.2.6.</b>
+                    
+                    volatile关键字
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.2.7" data-path="../../java/concurrence/CAS.html">
+            
+                <a href="../../java/concurrence/CAS.html">
+            
+                    
+                        <b>2.2.7.</b>
+                    
+                    CAS原子操作
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.2.8" data-path="../../java/concurrence/AbstractQueuedSynchronizer.html">
+            
+                <a href="../../java/concurrence/AbstractQueuedSynchronizer.html">
+            
+                    
+                        <b>2.2.8.</b>
+                    
+                    AbstractQueuedSynchronizer详解
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.2.9" data-path="../../java/concurrence/ReentrantLock.html">
+            
+                <a href="../../java/concurrence/ReentrantLock.html">
+            
+                    
+                        <b>2.2.9.</b>
+                    
+                    深入理解ReentrantLock
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.2.10" data-path="../../java/concurrence/ArrayBlockingQueue.html">
+            
+                <a href="../../java/concurrence/ArrayBlockingQueue.html">
+            
+                    
+                        <b>2.2.10.</b>
+                    
+                    Java并发集合——ArrayBlockingQueue
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.2.11" data-path="../../java/concurrence/LinkedBlockingQueue.html">
+            
+                <a href="../../java/concurrence/LinkedBlockingQueue.html">
+            
+                    
+                        <b>2.2.11.</b>
+                    
+                    Java并发集合——LinkedBlockingQueue
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.2.12" data-path="../../java/concurrence/ConcurrentHashMap.html">
+            
+                <a href="../../java/concurrence/ConcurrentHashMap.html">
+            
+                    
+                        <b>2.2.12.</b>
+                    
+                    Java并发集合——ConcurrentHashMap
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="2.3" data-path="../../java/virtual-machine.html">
+            
+                <a href="../../java/virtual-machine.html">
+            
+                    
+                        <b>2.3.</b>
+                    
+                    Java虚拟机
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="2.3.1" data-path="../../java/virtual-machine/object.html">
+            
+                <a href="../../java/virtual-machine/object.html">
+            
+                    
+                        <b>2.3.1.</b>
+                    
+                    对象的创建、内存布局和访问定位
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.3.2" data-path="../../java/virtual-machine/memory.html">
+            
+                <a href="../../java/virtual-machine/memory.html">
+            
+                    
+                        <b>2.3.2.</b>
+                    
+                    Java内存区域与内存模型
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.3.3" data-path="../../java/virtual-machine/classloader.html">
+            
+                <a href="../../java/virtual-machine/classloader.html">
+            
+                    
+                        <b>2.3.3.</b>
+                    
+                    Java类加载机制及类加载器详解
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.3.4" data-path="../../java/virtual-machine/Garbage-Collector.html">
+            
+                <a href="../../java/virtual-machine/Garbage-Collector.html">
+            
+                    
+                        <b>2.3.4.</b>
+                    
+                    JVM中垃圾收集算法及垃圾收集器详解
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.3.5" data-path="../../java/virtual-machine/life-cycle.html">
+            
+                <a href="../../java/virtual-machine/life-cycle.html">
+            
+                    
+                        <b>2.3.5.</b>
+                    
+                    JVM怎么判断对象是否已死？
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+    
+        
+        <li class="header">Android</li>
+        
+        
+    
+        <li class="chapter " data-level="3.1" data-path="../basis.html">
+            
+                <a href="../basis.html">
+            
+                    
+                        <b>3.1.</b>
+                    
+                    Android基础
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="3.1.1" data-path="../basis/activity.html">
+            
+                <a href="../basis/activity.html">
+            
+                    
+                        <b>3.1.1.</b>
+                    
+                    Activity全方位解析
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.1.2" data-path="../basis/service.html">
+            
+                <a href="../basis/service.html">
+            
+                    
+                        <b>3.1.2.</b>
+                    
+                    Service全方位解析
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.1.3" data-path="../basis/broadcastreceiver.html">
+            
+                <a href="../basis/broadcastreceiver.html">
+            
+                    
+                        <b>3.1.3.</b>
+                    
+                    BroadcastReceiver全方位解析
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.1.4" data-path="../basis/ContentProvider.html">
+            
+                <a href="../basis/ContentProvider.html">
+            
+                    
+                        <b>3.1.4.</b>
+                    
+                    ContentProvider全方位解析
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.1.5" data-path="../basis/Fragment.html">
+            
+                <a href="../basis/Fragment.html">
+            
+                    
+                        <b>3.1.5.</b>
+                    
+                    Fragment详解
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.1.6" data-path="../basis/message-mechanism.html">
+            
+                <a href="../basis/message-mechanism.html">
+            
+                    
+                        <b>3.1.6.</b>
+                    
+                    Android消息机制
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.1.7" data-path="../basis/Event-Dispatch.html">
+            
+                <a href="../basis/Event-Dispatch.html">
+            
+                    
+                        <b>3.1.7.</b>
+                    
+                    Android事件分发机制
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.1.8" data-path="../basis/asynctask.html">
+            
+                <a href="../basis/asynctask.html">
+            
+                    
+                        <b>3.1.8.</b>
+                    
+                    AsyncTask详解
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.1.9" data-path="../basis/HandlerThread.html">
+            
+                <a href="../basis/HandlerThread.html">
+            
+                    
+                        <b>3.1.9.</b>
+                    
+                    HandlerThread详解
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.1.10" data-path="../basis/IntentService.html">
+            
+                <a href="../basis/IntentService.html">
+            
+                    
+                        <b>3.1.10.</b>
+                    
+                    IntentService详解
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.1.11" data-path="../basis/lrucache.html">
+            
+                <a href="../basis/lrucache.html">
+            
+                    
+                        <b>3.1.11.</b>
+                    
+                    LruCache原理解析
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.1.12" data-path="../basis/decorview.html">
+            
+                <a href="../basis/decorview.html">
+            
+                    
+                        <b>3.1.12.</b>
+                    
+                    Window、Activity、DecorView以及ViewRoot之间的关系
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.1.13" data-path="../basis/custom_view.html">
+            
+                <a href="../basis/custom_view.html">
+            
+                    
+                        <b>3.1.13.</b>
+                    
+                    View测量、布局及绘制原理
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.1.14" data-path="../basis/dalvik-art.html">
+            
+                <a href="../basis/dalvik-art.html">
+            
+                    
+                        <b>3.1.14.</b>
+                    
+                    Android虚拟机及编译过程
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.1.15" data-path="../basis/ipc.html">
+            
+                <a href="../basis/ipc.html">
+            
+                    
+                        <b>3.1.15.</b>
+                    
+                    Android进程间通信方式
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.1.16" data-path="../basis/bitmap.html">
+            
+                <a href="../basis/bitmap.html">
+            
+                    
+                        <b>3.1.16.</b>
+                    
+                    Android Bitmap压缩策略
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.1.17" data-path="../basis/animator.html">
+            
+                <a href="../basis/animator.html">
+            
+                    
+                        <b>3.1.17.</b>
+                    
+                    Android动画总结
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.1.18" data-path="../basis/process-priority.html">
+            
+                <a href="../basis/process-priority.html">
+            
+                    
+                        <b>3.1.18.</b>
+                    
+                    Android进程优先级
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.1.19" data-path="../basis/context.html">
+            
+                <a href="../basis/context.html">
+            
+                    
+                        <b>3.1.19.</b>
+                    
+                    Android Context详解
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="3.2" data-path="../advance.html">
+            
+                <a href="../advance.html">
+            
+                    
+                        <b>3.2.</b>
+                    
+                    Android进阶
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="3.2.1" data-path="breakpoint.html">
+            
+                <a href="breakpoint.html">
+            
+                    
+                        <b>3.2.1.</b>
+                    
+                    Android多线程断点续传
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.2.2" data-path="exception.html">
+            
+                <a href="exception.html">
+            
+                    
+                        <b>3.2.2.</b>
+                    
+                    Android全局异常处理
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.2.3" data-path="mvp.html">
+            
+                <a href="mvp.html">
+            
+                    
+                        <b>3.2.3.</b>
+                    
+                    Android MVP模式详解
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.2.4" data-path="binder.html">
+            
+                <a href="binder.html">
+            
+                    
+                        <b>3.2.4.</b>
+                    
+                    Android Binder机制及AIDL使用
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.2.5" data-path="serializable.html">
+            
+                <a href="serializable.html">
+            
+                    
+                        <b>3.2.5.</b>
+                    
+                    Android Parcelable和Serializable的区别
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.2.6" data-path="app-launch.html">
+            
+                <a href="app-launch.html">
+            
+                    
+                        <b>3.2.6.</b>
+                    
+                    一个APP从启动到主页面显示经历了哪些过程？
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.2.7" data-path="performance-optimization.html">
+            
+                <a href="performance-optimization.html">
+            
+                    
+                        <b>3.2.7.</b>
+                    
+                    Android性能优化总结
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.2.8" data-path="memory-leak.html">
+            
+                <a href="memory-leak.html">
+            
+                    
+                        <b>3.2.8.</b>
+                    
+                    Android 内存泄漏总结
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.2.9" data-path="layout-optimization.html">
+            
+                <a href="layout-optimization.html">
+            
+                    
+                        <b>3.2.9.</b>
+                    
+                    Android布局优化之include、merge、ViewStub的使用
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.2.10" data-path="permission.html">
+            
+                <a href="permission.html">
+            
+                    
+                        <b>3.2.10.</b>
+                    
+                    Android权限处理
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.2.11" data-path="hotfix.html">
+            
+                <a href="hotfix.html">
+            
+                    
+                        <b>3.2.11.</b>
+                    
+                    Android热修复原理
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.2.12" data-path="plugin.html">
+            
+                <a href="plugin.html">
+            
+                    
+                        <b>3.2.12.</b>
+                    
+                    Android插件化入门指南
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="3.2.13" data-path="virtualapk.html">
+            
+                <a href="virtualapk.html">
+            
+                    
+                        <b>3.2.13.</b>
+                    
+                    VirtualApk解析
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.2.14" data-path="push.html">
+            
+                <a href="push.html">
+            
+                    
+                        <b>3.2.14.</b>
+                    
+                    Android推送技术解析
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.2.15" data-path="apk-install.html">
+            
+                <a href="apk-install.html">
+            
+                    
+                        <b>3.2.15.</b>
+                    
+                    Android Apk安装过程
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.2.16" data-path="dialog-popupwindow">
+            
+                <span>
+            
+                    
+                        <b>3.2.16.</b>
+                    
+                    PopupWindow和Dialog区别
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="3.3" data-path="../open-source-framework.html">
+            
+                <a href="../open-source-framework.html">
+            
+                    
+                        <b>3.3.</b>
+                    
+                    开源框架
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="3.3.1" data-path="../open-source-framework/okhttp.html">
+            
+                <a href="../open-source-framework/okhttp.html">
+            
+                    
+                        <b>3.3.1.</b>
+                    
+                    OkHttp解析
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.3.2" data-path="../open-source-framework/Retrofit.html">
+            
+                <a href="../open-source-framework/Retrofit.html">
+            
+                    
+                        <b>3.3.2.</b>
+                    
+                    Retrofit解析
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.3.3" data-path="../open-source-framework/EventBus.html">
+            
+                <a href="../open-source-framework/EventBus.html">
+            
+                    
+                        <b>3.3.3.</b>
+                    
+                    EventBus解析
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+    
+        
+        <li class="header">数据结构</li>
+        
+        
+    
+        <li class="chapter " data-level="4.1" data-path="../../data-structure/linear-list.html">
+            
+                <a href="../../data-structure/linear-list.html">
+            
+                    
+                        <b>4.1.</b>
+                    
+                    线性表
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.2" data-path="../../data-structure/stack-queue.html">
+            
+                <a href="../../data-structure/stack-queue.html">
+            
+                    
+                        <b>4.2.</b>
+                    
+                    栈和队
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.3" data-path="../../data-structure/tree.html">
+            
+                <a href="../../data-structure/tree.html">
+            
+                    
+                        <b>4.3.</b>
+                    
+                    树
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="4.3.1" data-path="../../data-structure/tree/tree-introduction.html">
+            
+                <a href="../../data-structure/tree/tree-introduction.html">
+            
+                    
+                        <b>4.3.1.</b>
+                    
+                    树的基础
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.3.2" data-path="../../data-structure/tree/other-tree.html">
+            
+                <a href="../../data-structure/tree/other-tree.html">
+            
+                    
+                        <b>4.3.2.</b>
+                    
+                    其他常见的树
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.3.3" data-path="../../data-structure/tree/Union-Find.html">
+            
+                <a href="../../data-structure/tree/Union-Find.html">
+            
+                    
+                        <b>4.3.3.</b>
+                    
+                    并查集
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.3.4" data-path="../../data-structure/tree/b-tree.html">
+            
+                <a href="../../data-structure/tree/b-tree.html">
+            
+                    
+                        <b>4.3.4.</b>
+                    
+                    B-树，B+树，B*树
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="4.4" data-path="../../data-structure/graph.html">
+            
+                <a href="../../data-structure/graph.html">
+            
+                    
+                        <b>4.4.</b>
+                    
+                    图
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="4.4.1" data-path="../../data-structure/graph/graph-introduction.html">
+            
+                <a href="../../data-structure/graph/graph-introduction.html">
+            
+                    
+                        <b>4.4.1.</b>
+                    
+                    图的基础
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.4.2" data-path="../../data-structure/graph/topology.html">
+            
+                <a href="../../data-structure/graph/topology.html">
+            
+                    
+                        <b>4.4.2.</b>
+                    
+                    拓扑排序
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.4.3" data-path="../../data-structure/graph/Kruskal.html">
+            
+                <a href="../../data-structure/graph/Kruskal.html">
+            
+                    
+                        <b>4.4.3.</b>
+                    
+                    Kruskal算法
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.4.4" data-path="../../data-structure/graph/Prim.html">
+            
+                <a href="../../data-structure/graph/Prim.html">
+            
+                    
+                        <b>4.4.4.</b>
+                    
+                    Prim算法
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.4.5" data-path="../../data-structure/graph/Dijkstra.html">
+            
+                <a href="../../data-structure/graph/Dijkstra.html">
+            
+                    
+                        <b>4.4.5.</b>
+                    
+                    Dijkstra算法
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.4.6" data-path="../../data-structure/graph/Floyd.html">
+            
+                <a href="../../data-structure/graph/Floyd.html">
+            
+                    
+                        <b>4.4.6.</b>
+                    
+                    Floyd算法
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="4.5" data-path="../../data-structure/hash.html">
+            
+                <a href="../../data-structure/hash.html">
+            
+                    
+                        <b>4.5.</b>
+                    
+                    散列查找
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.6" data-path="../../data-structure/sort.html">
+            
+                <a href="../../data-structure/sort.html">
+            
+                    
+                        <b>4.6.</b>
+                    
+                    排序
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.7" data-path="../../data-structure/mass_data_processing.html">
+            
+                <a href="../../data-structure/mass_data_processing.html">
+            
+                    
+                        <b>4.7.</b>
+                    
+                    海量数据处理
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">算法</li>
+        
+        
+    
+        <li class="chapter " data-level="5.1" data-path="../../algorithm/For-offer.html">
+            
+                <a href="../../algorithm/For-offer.html">
+            
+                    
+                        <b>5.1.</b>
+                    
+                    剑指offer
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="5.1.1" data-path="../../algorithm/For-offer/01.html">
+            
+                <a href="../../algorithm/For-offer/01.html">
+            
+                    
+                        <b>5.1.1.</b>
+                    
+                    01.二维数组中的查找
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="5.1.2" data-path="../../algorithm/For-offer/02.html">
+            
+                <a href="../../algorithm/For-offer/02.html">
+            
+                    
+                        <b>5.1.2.</b>
+                    
+                    02.替换空格
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="5.1.3" data-path="../../algorithm/For-offer/03.html">
+            
+                <a href="../../algorithm/For-offer/03.html">
+            
+                    
+                        <b>5.1.3.</b>
+                    
+                    03.从尾到头打印链表
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="5.1.4" data-path="../../algorithm/For-offer/04.html">
+            
+                <a href="../../algorithm/For-offer/04.html">
+            
+                    
+                        <b>5.1.4.</b>
+                    
+                    04.重建二叉树
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="5.1.5" data-path="../../algorithm/For-offer/05.html">
+            
+                <a href="../../algorithm/For-offer/05.html">
+            
+                    
+                        <b>5.1.5.</b>
+                    
+                    05.用两个栈实现队列
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="5.1.6" data-path="../../algorithm/For-offer/06.html">
+            
+                <a href="../../algorithm/For-offer/06.html">
+            
+                    
+                        <b>5.1.6.</b>
+                    
+                    06.旋转数组的最小数字
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="5.1.7" data-path="../../algorithm/For-offer/07.html">
+            
+                <a href="../../algorithm/For-offer/07.html">
+            
+                    
+                        <b>5.1.7.</b>
+                    
+                    07.斐波那契数列
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="5.1.8" data-path="../../algorithm/For-offer/08.html">
+            
+                <a href="../../algorithm/For-offer/08.html">
+            
+                    
+                        <b>5.1.8.</b>
+                    
+                    08.二进制中1的个数
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="5.1.9" data-path="../../algorithm/For-offer/09.html">
+            
+                <a href="../../algorithm/For-offer/09.html">
+            
+                    
+                        <b>5.1.9.</b>
+                    
+                    09.打印1到最大的n位数
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="5.1.10" data-path="../../algorithm/For-offer/10.html">
+            
+                <a href="../../algorithm/For-offer/10.html">
+            
+                    
+                        <b>5.1.10.</b>
+                    
+                    10.在O(1)时间删除链表节点
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="5.1.11" data-path="../../algorithm/For-offer/11.html">
+            
+                <a href="../../algorithm/For-offer/11.html">
+            
+                    
+                        <b>5.1.11.</b>
+                    
+                    11.调整数组顺序使奇数位于偶数前面
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="5.1.12" data-path="../../algorithm/For-offer/12.html">
+            
+                <a href="../../algorithm/For-offer/12.html">
+            
+                    
+                        <b>5.1.12.</b>
+                    
+                    12.链表中倒数第K个节点
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="5.1.13" data-path="../../algorithm/For-offer/13.html">
+            
+                <a href="../../algorithm/For-offer/13.html">
+            
+                    
+                        <b>5.1.13.</b>
+                    
+                    13.反转链表
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="5.1.14" data-path="../../algorithm/For-offer/14.html">
+            
+                <a href="../../algorithm/For-offer/14.html">
+            
+                    
+                        <b>5.1.14.</b>
+                    
+                    14.合并两个排序的链表
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="5.1.15" data-path="../../algorithm/For-offer/15.html">
+            
+                <a href="../../algorithm/For-offer/15.html">
+            
+                    
+                        <b>5.1.15.</b>
+                    
+                    15.树的子结构
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="5.1.16" data-path="../../algorithm/For-offer/16.html">
+            
+                <a href="../../algorithm/For-offer/16.html">
+            
+                    
+                        <b>5.1.16.</b>
+                    
+                    16.二叉树的镜像
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="5.1.17" data-path="../../algorithm/For-offer/17.html">
+            
+                <a href="../../algorithm/For-offer/17.html">
+            
+                    
+                        <b>5.1.17.</b>
+                    
+                    17.顺时针打印矩阵
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="5.1.18" data-path="../../algorithm/For-offer/18.html">
+            
+                <a href="../../algorithm/For-offer/18.html">
+            
+                    
+                        <b>5.1.18.</b>
+                    
+                    18.包含min函数的栈
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="5.1.19" data-path="../../algorithm/For-offer/19.html">
+            
+                <a href="../../algorithm/For-offer/19.html">
+            
+                    
+                        <b>5.1.19.</b>
+                    
+                    19.栈的压入、弹出序列
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="5.1.20" data-path="../../algorithm/For-offer/20.html">
+            
+                <a href="../../algorithm/For-offer/20.html">
+            
+                    
+                        <b>5.1.20.</b>
+                    
+                    20.从上往下打印二叉树
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="5.1.21" data-path="../../algorithm/For-offer/21.html">
+            
+                <a href="../../algorithm/For-offer/21.html">
+            
+                    
+                        <b>5.1.21.</b>
+                    
+                    21.二叉搜索树的后序遍历序列
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="5.1.22" data-path="../../algorithm/For-offer/22.html">
+            
+                <a href="../../algorithm/For-offer/22.html">
+            
+                    
+                        <b>5.1.22.</b>
+                    
+                    22.二叉树中和为某一值得路径
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="5.1.23" data-path="../../algorithm/For-offer/23.html">
+            
+                <a href="../../algorithm/For-offer/23.html">
+            
+                    
+                        <b>5.1.23.</b>
+                    
+                    23.复杂链表的复制
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="5.1.24" data-path="../../algorithm/For-offer/24.html">
+            
+                <a href="../../algorithm/For-offer/24.html">
+            
+                    
+                        <b>5.1.24.</b>
+                    
+                    24.二叉搜索树与双向链表
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="5.1.25" data-path="../../algorithm/For-offer/25.html">
+            
+                <a href="../../algorithm/For-offer/25.html">
+            
+                    
+                        <b>5.1.25.</b>
+                    
+                    25.字符串的排列
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="5.1.26" data-path="../../algorithm/For-offer/26.html">
+            
+                <a href="../../algorithm/For-offer/26.html">
+            
+                    
+                        <b>5.1.26.</b>
+                    
+                    26.数组中出现次数超过一半的数字
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="5.1.27" data-path="../../algorithm/For-offer/27.html">
+            
+                <a href="../../algorithm/For-offer/27.html">
+            
+                    
+                        <b>5.1.27.</b>
+                    
+                    27.最小的k个数
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="5.1.28" data-path="../../algorithm/For-offer/28.html">
+            
+                <a href="../../algorithm/For-offer/28.html">
+            
+                    
+                        <b>5.1.28.</b>
+                    
+                    28.连续子数组的最大和
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="5.1.29" data-path="../../algorithm/For-offer/29.html">
+            
+                <a href="../../algorithm/For-offer/29.html">
+            
+                    
+                        <b>5.1.29.</b>
+                    
+                    29.求从1到n的整数中1出现的次数
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="5.1.30" data-path="../../algorithm/For-offer/30.html">
+            
+                <a href="../../algorithm/For-offer/30.html">
+            
+                    
+                        <b>5.1.30.</b>
+                    
+                    30.把数组排成最小的数
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="5.1.31" data-path="../../algorithm/For-offer/31.html">
+            
+                <a href="../../algorithm/For-offer/31.html">
+            
+                    
+                        <b>5.1.31.</b>
+                    
+                    31.丑数
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="5.1.32" data-path="../../algorithm/For-offer/32.html">
+            
+                <a href="../../algorithm/For-offer/32.html">
+            
+                    
+                        <b>5.1.32.</b>
+                    
+                    32.第一个只出现一次的字符
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="5.1.33" data-path="../../algorithm/For-offer/33.html">
+            
+                <a href="../../algorithm/For-offer/33.html">
+            
+                    
+                        <b>5.1.33.</b>
+                    
+                    33.数组中的逆序对
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="5.1.34" data-path="../../algorithm/For-offer/34.html">
+            
+                <a href="../../algorithm/For-offer/34.html">
+            
+                    
+                        <b>5.1.34.</b>
+                    
+                    34.两个链表的第一个公共结点
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="5.1.35" data-path="../../algorithm/For-offer/35.html">
+            
+                <a href="../../algorithm/For-offer/35.html">
+            
+                    
+                        <b>5.1.35.</b>
+                    
+                    35.在排序数组中出现的次数
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="5.1.36" data-path="../../algorithm/For-offer/36.html">
+            
+                <a href="../../algorithm/For-offer/36.html">
+            
+                    
+                        <b>5.1.36.</b>
+                    
+                    36.二叉树的深度
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="5.1.37" data-path="../../algorithm/For-offer/37.html">
+            
+                <a href="../../algorithm/For-offer/37.html">
+            
+                    
+                        <b>5.1.37.</b>
+                    
+                    37.判断平衡二叉树
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="5.1.38" data-path="../../algorithm/For-offer/38.html">
+            
+                <a href="../../algorithm/For-offer/38.html">
+            
+                    
+                        <b>5.1.38.</b>
+                    
+                    38.数组中只出现一次的数字
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="5.1.39" data-path="../../algorithm/For-offer/39.html">
+            
+                <a href="../../algorithm/For-offer/39.html">
+            
+                    
+                        <b>5.1.39.</b>
+                    
+                    39.和为s的两个数字
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="5.1.40" data-path="../../algorithm/For-offer/40.html">
+            
+                <a href="../../algorithm/For-offer/40.html">
+            
+                    
+                        <b>5.1.40.</b>
+                    
+                    40.和为s的连续正数序列
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="5.1.41" data-path="../../algorithm/For-offer/41.html">
+            
+                <a href="../../algorithm/For-offer/41.html">
+            
+                    
+                        <b>5.1.41.</b>
+                    
+                    41.翻转单词顺序
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="5.1.42" data-path="../../algorithm/For-offer/42.html">
+            
+                <a href="../../algorithm/For-offer/42.html">
+            
+                    
+                        <b>5.1.42.</b>
+                    
+                    42.左旋转字符串
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="5.1.43" data-path="../../algorithm/For-offer/43.html">
+            
+                <a href="../../algorithm/For-offer/43.html">
+            
+                    
+                        <b>5.1.43.</b>
+                    
+                    43.n个骰子的点数
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="5.1.44" data-path="../../algorithm/For-offer/44.html">
+            
+                <a href="../../algorithm/For-offer/44.html">
+            
+                    
+                        <b>5.1.44.</b>
+                    
+                    44.扑克牌的顺子
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="5.1.45" data-path="../../algorithm/For-offer/45.html">
+            
+                <a href="../../algorithm/For-offer/45.html">
+            
+                    
+                        <b>5.1.45.</b>
+                    
+                    45.约瑟夫环问题
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="5.1.46" data-path="../../algorithm/For-offer/46.html">
+            
+                <a href="../../algorithm/For-offer/46.html">
+            
+                    
+                        <b>5.1.46.</b>
+                    
+                    46.不用加减乘除做加法
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="5.1.47" data-path="../../algorithm/For-offer/47.html">
+            
+                <a href="../../algorithm/For-offer/47.html">
+            
+                    
+                        <b>5.1.47.</b>
+                    
+                    47.把字符串转换成整数
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="5.1.48" data-path="../../algorithm/For-offer/48.html">
+            
+                <a href="../../algorithm/For-offer/48.html">
+            
+                    
+                        <b>5.1.48.</b>
+                    
+                    48.树中两个结点的最低公共结点
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="5.1.49" data-path="../../algorithm/For-offer/49.html">
+            
+                <a href="../../algorithm/For-offer/49.html">
+            
+                    
+                        <b>5.1.49.</b>
+                    
+                    49.数组中重复的数字
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="5.1.50" data-path="../../algorithm/For-offer/50.html">
+            
+                <a href="../../algorithm/For-offer/50.html">
+            
+                    
+                        <b>5.1.50.</b>
+                    
+                    50.构建乘积数组
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="5.1.51" data-path="../../algorithm/For-offer/51.html">
+            
+                <a href="../../algorithm/For-offer/51.html">
+            
+                    
+                        <b>5.1.51.</b>
+                    
+                    51.正则表达式匹配
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="5.1.52" data-path="../../algorithm/For-offer/52.html">
+            
+                <a href="../../algorithm/For-offer/52.html">
+            
+                    
+                        <b>5.1.52.</b>
+                    
+                    52.表示数值的字符串
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="5.1.53" data-path="../../algorithm/For-offer/53.html">
+            
+                <a href="../../algorithm/For-offer/53.html">
+            
+                    
+                        <b>5.1.53.</b>
+                    
+                    53.字符流中第一个不重复的字符
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="5.1.54" data-path="../../algorithm/For-offer/54.html">
+            
+                <a href="../../algorithm/For-offer/54.html">
+            
+                    
+                        <b>5.1.54.</b>
+                    
+                    54.链表中环的入口结点
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="5.1.55" data-path="../../algorithm/For-offer/55.html">
+            
+                <a href="../../algorithm/For-offer/55.html">
+            
+                    
+                        <b>5.1.55.</b>
+                    
+                    55.删除链表中重复的结点
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="5.1.56" data-path="../../algorithm/For-offer/56.html">
+            
+                <a href="../../algorithm/For-offer/56.html">
+            
+                    
+                        <b>5.1.56.</b>
+                    
+                    56.二叉树的下一个结点
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="5.1.57" data-path="../../algorithm/For-offer/57.html">
+            
+                <a href="../../algorithm/For-offer/57.html">
+            
+                    
+                        <b>5.1.57.</b>
+                    
+                    57.对称的二叉树
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="5.1.58" data-path="../../algorithm/For-offer/58.html">
+            
+                <a href="../../algorithm/For-offer/58.html">
+            
+                    
+                        <b>5.1.58.</b>
+                    
+                    58.把二叉树打印出多行
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="5.1.59" data-path="../../algorithm/For-offer/59.html">
+            
+                <a href="../../algorithm/For-offer/59.html">
+            
+                    
+                        <b>5.1.59.</b>
+                    
+                    59.按之字形顺序打印二叉树
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="5.1.60" data-path="../../algorithm/For-offer/60.html">
+            
+                <a href="../../algorithm/For-offer/60.html">
+            
+                    
+                        <b>5.1.60.</b>
+                    
+                    60.二叉搜索树的第k个结点
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="5.1.61" data-path="../../algorithm/For-offer/61.html">
+            
+                <a href="../../algorithm/For-offer/61.html">
+            
+                    
+                        <b>5.1.61.</b>
+                    
+                    61.数据流中的中位数
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="5.1.62" data-path="../../algorithm/For-offer/62.html">
+            
+                <a href="../../algorithm/For-offer/62.html">
+            
+                    
+                        <b>5.1.62.</b>
+                    
+                    62.滑动窗口的最大值
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="5.1.63" data-path="../../algorithm/For-offer/63.html">
+            
+                <a href="../../algorithm/For-offer/63.html">
+            
+                    
+                        <b>5.1.63.</b>
+                    
+                    63.矩阵中的路径
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="5.1.64" data-path="../../algorithm/For-offer/64.html">
+            
+                <a href="../../algorithm/For-offer/64.html">
+            
+                    
+                        <b>5.1.64.</b>
+                    
+                    64.机器人的运动范围
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="5.2" data-path="../../algorithm/leetcode.html">
+            
+                <a href="../../algorithm/leetcode.html">
+            
+                    
+                        <b>5.2.</b>
+                    
+                    LeetCode
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="5.2.1" data-path="../../algorithm/LeetCode/Dynamic-Programming.html">
+            
+                <a href="../../algorithm/LeetCode/Dynamic-Programming.html">
+            
+                    
+                        <b>5.2.1.</b>
+                    
+                    Dynamic Programming
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="5.2.1.1" data-path="../../algorithm/LeetCode/Dynamic-Programming/Distinct-Subsequences.html">
+            
+                <a href="../../algorithm/LeetCode/Dynamic-Programming/Distinct-Subsequences.html">
+            
+                    
+                        <b>5.2.1.1.</b>
+                    
+                    Distinct Subsequences
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="5.2.1.2" data-path="../../algorithm/LeetCode/Dynamic-Programming/Longest-Common-Subsequence.html">
+            
+                <a href="../../algorithm/LeetCode/Dynamic-Programming/Longest-Common-Subsequence.html">
+            
+                    
+                        <b>5.2.1.2.</b>
+                    
+                    Longest Common Subsequence
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="5.2.1.3" data-path="../../algorithm/LeetCode/Dynamic-Programming/Longest-Increasing-Subsequence.html">
+            
+                <a href="../../algorithm/LeetCode/Dynamic-Programming/Longest-Increasing-Subsequence.html">
+            
+                    
+                        <b>5.2.1.3.</b>
+                    
+                    Longest Increasing Subsequence
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="5.2.1.4" data-path="../../algorithm/LeetCode/Dynamic-Programming/stock.html">
+            
+                <a href="../../algorithm/LeetCode/Dynamic-Programming/stock.html">
+            
+                    
+                        <b>5.2.1.4.</b>
+                    
+                    Best Time to Buy and Sell Stock
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="5.2.1.5" data-path="../../algorithm/LeetCode/Dynamic-Programming/Maximum-Subarray.html">
+            
+                <a href="../../algorithm/LeetCode/Dynamic-Programming/Maximum-Subarray.html">
+            
+                    
+                        <b>5.2.1.5.</b>
+                    
+                    Maximum Subarray
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="5.2.1.6" data-path="../../algorithm/LeetCode/Dynamic-Programming/Maxmimum-Product-Subarray.html">
+            
+                <a href="../../algorithm/LeetCode/Dynamic-Programming/Maxmimum-Product-Subarray.html">
+            
+                    
+                        <b>5.2.1.6.</b>
+                    
+                    Maximum Product Subarray
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="5.2.1.7" data-path="../../algorithm/LeetCode/Dynamic-Programming/Longest-Palindromic-Substring.html">
+            
+                <a href="../../algorithm/LeetCode/Dynamic-Programming/Longest-Palindromic-Substring.html">
+            
+                    
+                        <b>5.2.1.7.</b>
+                    
+                    Longest Palindromic Substring
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="5.2.1.8" data-path="../../algorithm/LeetCode/Dynamic-Programming/backpack.html">
+            
+                <a href="../../algorithm/LeetCode/Dynamic-Programming/backpack.html">
+            
+                    
+                        <b>5.2.1.8.</b>
+                    
+                    BackPack
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="5.2.1.9" data-path="../../algorithm/LeetCode/Dynamic-Programming/Maximal-Square.html">
+            
+                <a href="../../algorithm/LeetCode/Dynamic-Programming/Maximal-Square.html">
+            
+                    
+                        <b>5.2.1.9.</b>
+                    
+                    Maximal Square
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="5.2.1.10" data-path="../../algorithm/LeetCode/Dynamic-Programming/Stone-Game.html">
+            
+                <a href="../../algorithm/LeetCode/Dynamic-Programming/Stone-Game.html">
+            
+                    
+                        <b>5.2.1.10.</b>
+                    
+                    Stone Game
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="5.2.2" data-path="../../algorithm/LeetCode/Array.html">
+            
+                <a href="../../algorithm/LeetCode/Array.html">
+            
+                    
+                        <b>5.2.2.</b>
+                    
+                    Array
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="5.2.2.1" data-path="../../algorithm/LeetCode/Array/Partition-Array.html">
+            
+                <a href="../../algorithm/LeetCode/Array/Partition-Array.html">
+            
+                    
+                        <b>5.2.2.1.</b>
+                    
+                    Partition Array
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="5.2.2.2" data-path="../../algorithm/LeetCode/Array/Subarray-Sum.html">
+            
+                <a href="../../algorithm/LeetCode/Array/Subarray-Sum.html">
+            
+                    
+                        <b>5.2.2.2.</b>
+                    
+                    Subarray Sum
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="5.2.2.3" data-path="../../algorithm/LeetCode/Array/plus-one.html">
+            
+                <a href="../../algorithm/LeetCode/Array/plus-one.html">
+            
+                    
+                        <b>5.2.2.3.</b>
+                    
+                    Plus One
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="5.2.2.4" data-path="../../algorithm/LeetCode/Array/Palindrome-Number.html">
+            
+                <a href="../../algorithm/LeetCode/Array/Palindrome-Number.html">
+            
+                    
+                        <b>5.2.2.4.</b>
+                    
+                    Palindrome Number
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="5.2.2.5" data-path="../../algorithm/LeetCode/Array/Two-Sum.html">
+            
+                <a href="../../algorithm/LeetCode/Array/Two-Sum.html">
+            
+                    
+                        <b>5.2.2.5.</b>
+                    
+                    Two Sum
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="5.2.3" data-path="../../algorithm/LeetCode/String.html">
+            
+                <a href="../../algorithm/LeetCode/String.html">
+            
+                    
+                        <b>5.2.3.</b>
+                    
+                    String
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="5.2.3.1" data-path="../../algorithm/LeetCode/String/ip.html">
+            
+                <a href="../../algorithm/LeetCode/String/ip.html">
+            
+                    
+                        <b>5.2.3.1.</b>
+                    
+                    Restore IP Addresses
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="5.2.3.2" data-path="../../algorithm/LeetCode/String/Rotate-String.html">
+            
+                <a href="../../algorithm/LeetCode/String/Rotate-String.html">
+            
+                    
+                        <b>5.2.3.2.</b>
+                    
+                    Rotate String
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="5.2.3.3" data-path="../../algorithm/LeetCode/String/Valid-Palindrome.html">
+            
+                <a href="../../algorithm/LeetCode/String/Valid-Palindrome.html">
+            
+                    
+                        <b>5.2.3.3.</b>
+                    
+                    Valid Palindrome
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="5.2.3.4" data-path="../../algorithm/LeetCode/String/Length-of-Last-Word.html">
+            
+                <a href="../../algorithm/LeetCode/String/Length-of-Last-Word.html">
+            
+                    
+                        <b>5.2.3.4.</b>
+                    
+                    Length of Last Word
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="5.2.4" data-path="../../algorithm/LeetCode/Linked-List.html">
+            
+                <a href="../../algorithm/LeetCode/Linked-List.html">
+            
+                    
+                        <b>5.2.4.</b>
+                    
+                    Linked List
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="5.2.4.1" data-path="../../algorithm/LeetCode/Linked-List/Remove-Duplicates-from-Sorted-List.html">
+            
+                <a href="../../algorithm/LeetCode/Linked-List/Remove-Duplicates-from-Sorted-List.html">
+            
+                    
+                        <b>5.2.4.1.</b>
+                    
+                    Remove Duplicates from Sorted List
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="5.2.4.2" data-path="../../algorithm/LeetCode/Linked-List/Partition-List.html">
+            
+                <a href="../../algorithm/LeetCode/Linked-List/Partition-List.html">
+            
+                    
+                        <b>5.2.4.2.</b>
+                    
+                    Partition List
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="5.2.4.3" data-path="../../algorithm/LeetCode/Linked-List/Merge-Two-Sorted-Lists.html">
+            
+                <a href="../../algorithm/LeetCode/Linked-List/Merge-Two-Sorted-Lists.html">
+            
+                    
+                        <b>5.2.4.3.</b>
+                    
+                    Merge Two Sorted Lists
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="5.2.4.4" data-path="../../algorithm/LeetCode/Linked-List/LRU-Cache.html">
+            
+                <a href="../../algorithm/LeetCode/Linked-List/LRU-Cache.html">
+            
+                    
+                        <b>5.2.4.4.</b>
+                    
+                    LRU Cache
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="5.2.4.5" data-path="../../algorithm/LeetCode/Linked-List/Remove-Linked-List-Elements.html">
+            
+                <a href="../../algorithm/LeetCode/Linked-List/Remove-Linked-List-Elements.html">
+            
+                    
+                        <b>5.2.4.5.</b>
+                    
+                    Remove Linked List Elements
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="5.2.5" data-path="../../algorithm/LeetCode/Greedy.html">
+            
+                <a href="../../algorithm/LeetCode/Greedy.html">
+            
+                    
+                        <b>5.2.5.</b>
+                    
+                    Greedy
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="5.2.5.1" data-path="../../algorithm/LeetCode/Greedy/Jump-Game.html">
+            
+                <a href="../../algorithm/LeetCode/Greedy/Jump-Game.html">
+            
+                    
+                        <b>5.2.5.1.</b>
+                    
+                    Jump Game
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="5.2.5.2" data-path="../../algorithm/LeetCode/Greedy/Gas-Station.html">
+            
+                <a href="../../algorithm/LeetCode/Greedy/Gas-Station.html">
+            
+                    
+                        <b>5.2.5.2.</b>
+                    
+                    Gas Station
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="5.2.5.3" data-path="../../algorithm/LeetCode/Greedy/Candy.html">
+            
+                <a href="../../algorithm/LeetCode/Greedy/Candy.html">
+            
+                    
+                        <b>5.2.5.3.</b>
+                    
+                    Candy
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+    
+        
+        <li class="header">设计模式</li>
+        
+        
+    
+        <li class="chapter " data-level="6.1" data-path="../../design-mode/Builder-Pattern.html">
+            
+                <a href="../../design-mode/Builder-Pattern.html">
+            
+                    
+                        <b>6.1.</b>
+                    
+                    创建型模式
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="6.1.1" data-path="../../design-mode/Builder-Pattern/Simple-Factory.html">
+            
+                <a href="../../design-mode/Builder-Pattern/Simple-Factory.html">
+            
+                    
+                        <b>6.1.1.</b>
+                    
+                    简单工厂模式
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.1.2" data-path="../../design-mode/Builder-Pattern/Factory-Method.html">
+            
+                <a href="../../design-mode/Builder-Pattern/Factory-Method.html">
+            
+                    
+                        <b>6.1.2.</b>
+                    
+                    工厂方法模式
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.1.3" data-path="../../design-mode/Builder-Pattern/Abstract-Factory.html">
+            
+                <a href="../../design-mode/Builder-Pattern/Abstract-Factory.html">
+            
+                    
+                        <b>6.1.3.</b>
+                    
+                    抽象工厂模式
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.1.4" data-path="../../design-mode/Builder-Pattern/Singleton-Pattern.html">
+            
+                <a href="../../design-mode/Builder-Pattern/Singleton-Pattern.html">
+            
+                    
+                        <b>6.1.4.</b>
+                    
+                    单例模式
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.1.5" data-path="../../design-mode/Builder-Pattern/Builder-Pattern.html">
+            
+                <a href="../../design-mode/Builder-Pattern/Builder-Pattern.html">
+            
+                    
+                        <b>6.1.5.</b>
+                    
+                    建造者模式
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="6.2" data-path="../../design-mode/Structural-Patterns.html">
+            
+                <a href="../../design-mode/Structural-Patterns.html">
+            
+                    
+                        <b>6.2.</b>
+                    
+                    结构型模式
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="6.2.1" data-path="../../design-mode/Structural-Patterns/Adapter-Pattern.html">
+            
+                <a href="../../design-mode/Structural-Patterns/Adapter-Pattern.html">
+            
+                    
+                        <b>6.2.1.</b>
+                    
+                    适配器模式
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.2.2" data-path="../../design-mode/Structural-Patterns/Facade-Pattern.html">
+            
+                <a href="../../design-mode/Structural-Patterns/Facade-Pattern.html">
+            
+                    
+                        <b>6.2.2.</b>
+                    
+                    外观模式
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.2.3" data-path="../../design-mode/Structural-Patterns/Decorator-Pattern.html">
+            
+                <a href="../../design-mode/Structural-Patterns/Decorator-Pattern.html">
+            
+                    
+                        <b>6.2.3.</b>
+                    
+                    装饰者模式
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.2.4" data-path="../../design-mode/Structural-Patterns/Proxy-Pattern.html">
+            
+                <a href="../../design-mode/Structural-Patterns/Proxy-Pattern.html">
+            
+                    
+                        <b>6.2.4.</b>
+                    
+                    代理模式
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="6.3" data-path="../../design-mode/Behavioral-Pattern.html">
+            
+                <a href="../../design-mode/Behavioral-Pattern.html">
+            
+                    
+                        <b>6.3.</b>
+                    
+                    行为型模式
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="6.3.1" data-path="../../design-mode/Behavioral-Pattern/Command-Pattern.html">
+            
+                <a href="../../design-mode/Behavioral-Pattern/Command-Pattern.html">
+            
+                    
+                        <b>6.3.1.</b>
+                    
+                    命令模式
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.3.2" data-path="../../design-mode/Behavioral-Pattern/Iterator-Pattern.html">
+            
+                <a href="../../design-mode/Behavioral-Pattern/Iterator-Pattern.html">
+            
+                    
+                        <b>6.3.2.</b>
+                    
+                    迭代器模式
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.3.3" data-path="../../design-mode/Behavioral-Pattern/Observer-Pattern.html">
+            
+                <a href="../../design-mode/Behavioral-Pattern/Observer-Pattern.html">
+            
+                    
+                        <b>6.3.3.</b>
+                    
+                    观察者模式
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.3.4" data-path="../../design-mode/Behavioral-Pattern/Strategy-Pattern.html">
+            
+                <a href="../../design-mode/Behavioral-Pattern/Strategy-Pattern.html">
+            
+                    
+                        <b>6.3.4.</b>
+                    
+                    策略模式
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.3.5" data-path="../../design-mode/Behavioral-Pattern/Template-Method.html">
+            
+                <a href="../../design-mode/Behavioral-Pattern/Template-Method.html">
+            
+                    
+                        <b>6.3.5.</b>
+                    
+                    模板方法模式
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+    
+        
+        <li class="header">计算机网络</li>
+        
+        
+    
+        <li class="chapter " data-level="7.1" data-path="../../computer-networks/tcpip.html">
+            
+                <a href="../../computer-networks/tcpip.html">
+            
+                    
+                        <b>7.1.</b>
+                    
+                    TCP/IP
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="7.2" data-path="../../computer-networks/http.html">
+            
+                <a href="../../computer-networks/http.html">
+            
+                    
+                        <b>7.2.</b>
+                    
+                    HTTP
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="7.3" data-path="../../computer-networks/https.html">
+            
+                <a href="../../computer-networks/https.html">
+            
+                    
+                        <b>7.3.</b>
+                    
+                    HTTPS
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">操作系统</li>
+        
+        
+    
+        <li class="chapter " data-level="8.1" data-path="../../operating-system/summarize.html">
+            
+                <a href="../../operating-system/summarize.html">
+            
+                    
+                        <b>8.1.</b>
+                    
+                    概述
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="8.2" data-path="../../operating-system/process-thread.html">
+            
+                <a href="../../operating-system/process-thread.html">
+            
+                    
+                        <b>8.2.</b>
+                    
+                    进程与线程
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="8.3" data-path="../../operating-system/memory-management.html">
+            
+                <a href="../../operating-system/memory-management.html">
+            
+                    
+                        <b>8.3.</b>
+                    
+                    内存管理
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">数据库</li>
+        
+        
+    
+        <li class="chapter " data-level="9.1" data-path="../../sql/SQL.html">
+            
+                <a href="../../sql/SQL.html">
+            
+                    
+                        <b>9.1.</b>
+                    
+                    SQL语句
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            本书使用 GitBook 发布
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href="../.." >VirtualApk解析</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <h2 id="&#x4E00;&#x3001;&#x6982;&#x8FF0;"><a name="&#x4E00;&#x3001;&#x6982;&#x8FF0;" class="anchor-navigation-ex-anchor" href="#&#x4E00;&#x3001;&#x6982;&#x8FF0;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x4E00;&#x3001;&#x6982;&#x8FF0;</h2>
+<p>&#x4E4B;&#x524D;&#x4E00;&#x76F4;&#x6CA1;&#x6709;&#x5199;&#x8FC7;&#x63D2;&#x4EF6;&#x5316;&#x76F8;&#x5173;&#x7684;&#x535A;&#x5BA2;&#xFF0C;&#x521A;&#x597D;&#x6700;&#x8FD1;&#x6EF4;&#x6EF4;&#x548C;360&#x5206;&#x522B;&#x5F00;&#x6E90;&#x4E86;&#x81EA;&#x5BB6;&#x7684;&#x63D2;&#x4EF6;&#x5316;&#x65B9;&#x6848;&#xFF0C;&#x8D76;&#x7D27;&#x5B66;&#x4E60;&#x4E0B;&#xFF0C;&#x5199;&#x4E24;&#x7BC7;&#x535A;&#x5BA2;&#xFF0C;&#x7B2C;&#x4E00;&#x7BC7;&#x662F;&#x6EF4;&#x6EF4;&#x7684;&#x65B9;&#x6848;&#xFF1A;</p>
+<ul>
+<li><a href="https://github.com/didi/VirtualAPK" target="_blank">https://github.com/didi/VirtualAPK</a></li>
+</ul>
+<p>&#x90A3;&#x4E48;&#x5176;&#x4E2D;&#x7684;&#x96BE;&#x70B9;&#x5F88;&#x660E;&#x663E;&#x662F;&#x5BF9;&#x56DB;&#x5927;&#x7EC4;&#x4EF6;&#x652F;&#x6301;&#xFF0C;&#x56E0;&#x4E3A;&#x5927;&#x5BB6;&#x90FD;&#x6E05;&#x695A;&#xFF0C;&#x56DB;&#x5927;&#x7EC4;&#x4EF6;&#x90FD;&#x662F;&#x9700;&#x8981;&#x5728;AndroidManifest&#x4E2D;&#x6CE8;&#x518C;&#x7684;&#xFF0C;&#x800C;&#x63D2;&#x4EF6;apk&#x4E2D;&#x7684;&#x7EC4;&#x4EF6;&#x662F;&#x4E0D;&#x53EF;&#x80FD;&#x9884;&#x5148;&#x77E5;&#x6653;&#x540D;&#x5B57;&#xFF0C;&#x63D0;&#x524D;&#x6CE8;&#x518C;&#x4E2D;&#x5BBF;&#x4E3B;apk&#x4E2D;&#x7684;&#xFF0C;&#x6240;&#x4EE5;&#x73B0;&#x5728;&#x57FA;&#x672C;&#x90FD;&#x91C7;&#x7528;&#x4E00;&#x4E9B;hack&#x65B9;&#x6848;&#x7C7B;&#x89E3;&#x51B3;&#xFF0C;VirtualAPK&#x5927;&#x4F53;&#x65B9;&#x6848;&#x5982;&#x4E0B;&#xFF1A;</p>
+<ul>
+<li>Activity&#xFF1A;&#x5728;&#x5BBF;&#x4E3B;apk&#x4E2D;&#x63D0;&#x524D;&#x5360;&#x51E0;&#x4E2A;&#x5751;&#xFF0C;&#x7136;&#x540E;&#x901A;&#x8FC7;&#x201C;&#x6B3A;&#x4E0A;&#x7792;&#x4E0B;&#x201D;&#xFF08;&#x8FD9;&#x4E2A;&#x8BCD;&#x597D;&#x50CF;&#x662F;360&#x4E4B;&#x524D;&#x7684;ppt&#x4E2D;&#x63D0;&#x5230;&#xFF09;&#x7684;&#x65B9;&#x5F0F;&#xFF0C;&#x542F;&#x52A8;&#x63D2;&#x4EF6;apk&#x7684;Activity&#xFF1B;&#x56E0;&#x4E3A;&#x8981;&#x652F;&#x6301;&#x4E0D;&#x540C;&#x7684;launchMode&#x4EE5;&#x53CA;&#x4E00;&#x4E9B;&#x7279;&#x6B8A;&#x7684;&#x5C5E;&#x6027;&#xFF0C;&#x9700;&#x8981;&#x5360;&#x591A;&#x4E2A;&#x5751;&#x3002;</li>
+<li>Service&#xFF1A;&#x901A;&#x8FC7;&#x4EE3;&#x7406;Service&#x7684;&#x65B9;&#x5F0F;&#x53BB;&#x5206;&#x53D1;&#xFF1B;&#x4E3B;&#x8FDB;&#x7A0B;&#x548C;&#x5176;&#x4ED6;&#x8FDB;&#x7A0B;&#xFF0C;VirtualAPK&#x4F7F;&#x7528;&#x4E86;&#x4E24;&#x4E2A;&#x4EE3;&#x7406;Service&#x3002;</li>
+<li>BroadcastReceiver&#xFF1A;&#x9759;&#x6001;&#x8F6C;&#x52A8;&#x6001;</li>
+<li>ContentProvider&#xFF1A;&#x901A;&#x8FC7;&#x4E00;&#x4E2A;&#x4EE3;&#x7406;Provider&#x8FDB;&#x884C;&#x5206;&#x53D1;&#x3002;</li>
+</ul>
+<p>&#x8FD9;&#x4E9B;&#x5360;&#x5751;&#x7684;&#x6570;&#x91CF;&#x5E76;&#x4E0D;&#x662F;&#x56FA;&#x5B9A;&#x7684;&#xFF0C;&#x6BD4;&#x5982;Activity&#x60F3;&#x652F;&#x6301;&#x67D0;&#x4E2A;&#x5C5E;&#x6027;&#xFF0C;&#x8BE5;&#x5C5E;&#x6027;&#x4E0D;&#x80FD;&#x52A8;&#x6001;&#x8BBE;&#x7F6E;&#xFF0C;&#x53EA;&#x80FD;&#x5728;Manifest&#x4E2D;&#x8BBE;&#x7F6E;&#xFF0C;&#x90A3;&#x5C31;&#x9700;&#x8981;&#x53BB;&#x5360;&#x5751;&#x652F;&#x6301;&#x3002;&#x6240;&#x4EE5;&#x5360;&#x5751;&#x6570;&#x91CF;&#x8FD9;&#x4E9B;&#xFF0C;&#x53EF;&#x4EE5;&#x6839;&#x636E;&#x81EA;&#x5DF1;&#x7684;&#x9700;&#x6C42;&#x8FDB;&#x884C;&#x8C03;&#x6574;&#x3002;</p>
+<p>&#x4E0B;&#x9762;&#x5C31;&#x9010;&#x4E00;&#x53BB;&#x5206;&#x6790;&#x4EE3;&#x7801;&#x5566;~</p>
+<blockquote>
+<p>&#x6CE8;&#xFF1A;&#x672C;&#x7BC7;&#x535A;&#x5BA2;&#x6D89;&#x53CA;&#x5230;&#x7684;framework&#x903B;&#x8F91;&#xFF0C;&#x4E3A;API 22. 
+&#x5206;&#x671F;&#x7248;&#x672C;&#x4E3A; com.didi.virtualapk:core:0.9.0</p>
+</blockquote>
+<h2 id="&#x4E8C;&#x3001;activity&#x7684;&#x652F;&#x6301;"><a name="&#x4E8C;&#x3001;activity&#x7684;&#x652F;&#x6301;" class="anchor-navigation-ex-anchor" href="#&#x4E8C;&#x3001;activity&#x7684;&#x652F;&#x6301;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x4E8C;&#x3001;Activity&#x7684;&#x652F;&#x6301;</h2>
+<p>&#x8FD9;&#x91CC;&#x5C31;&#x4E0D;&#x6309;&#x7167;&#x67D0;&#x4E2A;&#x6D41;&#x7A0B;&#x4E00;&#x884C;&#x884C;&#x4EE3;&#x7801;&#x5F80;&#x4E0B;&#x8BFB;&#x4E86;&#xFF0C;&#x9488;&#x5BF9;&#x6027;&#x7684;&#x8BB2;&#x4E00;&#x4E9B;&#x5173;&#x952E;&#x6D41;&#x7A0B;&#xFF0C;&#x53EF;&#x80FD;&#x66F4;&#x597D;&#x9605;&#x8BFB;&#x4E00;&#x4E9B;&#x3002;</p>
+<p>&#x9996;&#x5148;&#x770B;&#x4E00;&#x6BB5;&#x542F;&#x52A8;&#x63D2;&#x4EF6;Activity&#x7684;&#x4EE3;&#x7801;&#xFF1A;</p>
+<pre><code class="lang-java">final String pkg = &quot;com.didi.virtualapk.demo&quot;;
+if (PluginManager.getInstance(this).getLoadedPlugin(pkg) == null) {
+    Toast.makeText(this, &quot;plugin [com.didi.virtualapk.demo] not loaded&quot;, Toast.LENGTH_SHORT).show();
+    return;
+}
+
+// test Activity and Service
+Intent intent = new Intent();
+intent.setClassName(pkg, &quot;com.didi.virtualapk.demo.aidl.BookManagerActivity&quot;);
+startActivity(intent);
+</code></pre>
+<p>&#x53EF;&#x4EE5;&#x770B;&#x5230;&#x4F18;&#x5148;&#x6839;&#x636E;&#x5305;&#x540D;&#x5224;&#x65AD;&#x8BE5;&#x63D2;&#x4EF6;&#x662F;&#x5426;&#x5DF2;&#x7ECF;&#x52A0;&#x8F7D;&#xFF0C;&#x6240;&#x4EE5;&#x5728;&#x63D2;&#x4EF6;&#x4F7F;&#x7528;&#x524D;&#x5176;&#x5B9E;&#x8FD8;&#x9700;&#x8981;&#x8C03;&#x7528;</p>
+<pre><code class="lang-java">pluginManager.loadPlugin(apk);
+</code></pre>
+<p>&#x52A0;&#x8F7D;&#x63D2;&#x4EF6;&#x3002;</p>
+<p>&#x8FD9;&#x91CC;&#x5C31;&#x4E0D;&#x8D58;&#x8FF0;&#x6E90;&#x7801;&#x4E86;&#xFF0C;&#x5927;&#x81F4;&#x4E3A;&#x8C03;&#x7528;<code>PackageParser.parsePackage</code>&#x89E3;&#x6790;apk&#xFF0C;&#x83B7;&#x5F97;&#x8BE5;apk&#x5BF9;&#x5E94;&#x7684;PackageInfo&#xFF0C;&#x8D44;&#x6E90;&#x76F8;&#x5173;&#xFF08;AssetManager&#xFF0C;Resources&#xFF09;&#xFF0C;DexClassLoader&#xFF08;&#x52A0;&#x8F7D;&#x7C7B;&#xFF09;&#xFF0C;&#x56DB;&#x5927;&#x7EC4;&#x4EF6;&#x76F8;&#x5173;&#x96C6;&#x5408;&#xFF08;mActivityInfos&#xFF0C;mServiceInfos&#xFF0C;mReceiverInfos&#xFF0C;mProviderInfos&#xFF09;&#xFF0C;&#x9488;&#x5BF9;Plugin&#x7684;PluginContext&#x7B49;&#x4E00;&#x5806;&#x4FE1;&#x606F;&#xFF0C;&#x5C01;&#x88C5;&#x4E3A;LoadedPlugin&#x5BF9;&#x8C61;&#x3002;</p>
+<blockquote>
+<p>&#x8BE6;&#x7EC6;&#x53EF;&#x4EE5;&#x53C2;&#x8003;<code>com.didi.virtualapk.internal.LoadedPlugin</code>&#x7C7B;&#x3002;</p>
+</blockquote>
+<p>ok&#xFF0C;&#x5982;&#x679C;&#x8BE5;&#x63D2;&#x4EF6;&#x4EE5;&#x53CA;&#x52A0;&#x8F7D;&#x8FC7;&#xFF0C;&#x5219;&#x76F4;&#x63A5;&#x901A;&#x8FC7;startActivity&#x53BB;&#x542F;&#x52A8;&#x63D2;&#x4EF6;&#x4E2D;&#x76EE;&#x6807;Activity&#x3002;</p>
+<h3 id="&#xFF08;1&#xFF09;&#x66FF;&#x6362;activity"><a name="&#xFF08;1&#xFF09;&#x66FF;&#x6362;activity" class="anchor-navigation-ex-anchor" href="#&#xFF08;1&#xFF09;&#x66FF;&#x6362;activity"><i class="fa fa-link" aria-hidden="true"></i></a>&#xFF08;1&#xFF09;&#x66FF;&#x6362;Activity</h3>
+<p>&#x8FD9;&#x91CC;&#x5927;&#x5BB6;&#x80AF;&#x5B9A;&#x4F1A;&#x6709;&#x7591;&#x60D1;&#xFF0C;&#x8BE5;Activity&#x5FC5;&#x7136;&#x6CA1;&#x6709;&#x5728;Manifest&#x4E2D;&#x6CE8;&#x518C;&#xFF0C;&#x8FD9;&#x4E48;&#x542F;&#x52A8;&#x4E0D;&#x4F1A;&#x62A5;&#x9519;&#x5417;&#xFF1F;</p>
+<p>&#x6B63;&#x5E38;&#x80AF;&#x5B9A;&#x4F1A;&#x62A5;&#x9519;&#x5440;&#xFF0C;&#x6240;&#x4EE5;&#x6211;&#x4EEC;&#x770B;&#x770B;&#x5B83;&#x662F;&#x600E;&#x4E48;&#x505A;&#x7684;&#x5427;&#x3002;</p>
+<p>&#x8DDF;&#x8FDB;startActivity&#x7684;&#x8C03;&#x7528;&#x6D41;&#x7A0B;&#xFF0C;&#x4F1A;&#x53D1;&#x73B0;&#x5176;&#x6700;&#x7EC8;&#x4F1A;&#x8FDB;&#x5165;Instrumentation&#x7684;execStartActivity&#x65B9;&#x6CD5;&#xFF0C;&#x7136;&#x540E;&#x518D;&#x901A;&#x8FC7;ActivityManagerProxy&#x4E0E;AMS&#x8FDB;&#x884C;&#x4EA4;&#x4E92;&#x3002;</p>
+<p>&#x800C;Activity&#x662F;&#x5426;&#x5B58;&#x5728;&#x7684;&#x6821;&#x9A8C;&#x662F;&#x53D1;&#x751F;&#x5728;AMS&#x7AEF;&#xFF0C;&#x6240;&#x4EE5;&#x6211;&#x4EEC;&#x5728;&#x4E8E;AMS&#x4EA4;&#x4E92;&#x524D;&#xFF0C;&#x63D0;&#x524D;&#x5C06;Activity&#x7684;ComponentName&#x8FDB;&#x884C;&#x66FF;&#x6362;&#x4E3A;&#x5360;&#x5751;&#x7684;&#x540D;&#x5B57;&#x4E0D;&#x5C31;&#x597D;&#x4E86;&#x4E48;&#xFF1F;</p>
+<p>&#x8FD9;&#x91CC;&#x53EF;&#x4EE5;&#x9009;&#x62E9;hook Instrumentation&#xFF0C;&#x6216;&#x8005;ActivityManagerProxy&#x90FD;&#x53EF;&#x4EE5;&#x8FBE;&#x5230;&#x76EE;&#x6807;&#xFF0C;VirtualAPK&#x9009;&#x62E9;&#x4E86;hook Instrumentation.</p>
+<p>&#x6253;&#x5F00;<code>PluginManager</code>&#x53EF;&#x4EE5;&#x770B;&#x5230;&#x5982;&#x4E0B;&#x65B9;&#x6CD5;&#xFF1A;</p>
+<pre><code class="lang-java">private void hookInstrumentationAndHandler() {
+    try {
+        Instrumentation baseInstrumentation = ReflectUtil.getInstrumentation(this.mContext);
+        if (baseInstrumentation.getClass().getName().contains(&quot;lbe&quot;)) {
+            // reject executing in paralell space, for example, lbe.
+            System.exit(0);
+        }
+
+        final VAInstrumentation instrumentation = new VAInstrumentation(this, baseInstrumentation);
+        Object activityThread = ReflectUtil.getActivityThread(this.mContext);
+        ReflectUtil.setInstrumentation(activityThread, instrumentation);
+        ReflectUtil.setHandlerCallback(this.mContext, instrumentation);
+        this.mInstrumentation = instrumentation;
+    } catch (Exception e) {
+        e.printStackTrace();
+    }
+}
+</code></pre>
+<p>&#x53EF;&#x4EE5;&#x770B;&#x5230;&#x9996;&#x5148;&#x901A;&#x8FC7;&#x53CD;&#x5C04;&#x62FF;&#x5230;&#x4E86;&#x539F;&#x672C;&#x7684;<code>Instrumentation</code>&#x5BF9;&#x8C61;&#xFF0C;&#x62FF;&#x7684;&#x8FC7;&#x7A0B;&#x662F;&#x9996;&#x5148;&#x62FF;&#x5230;ActivityThread&#xFF0C;&#x7531;&#x4E8E;ActivityThread&#x53EF;&#x4EE5;&#x901A;&#x8FC7;&#x9759;&#x6001;&#x53D8;&#x91CF;<code>sCurrentActivityThread</code>&#x6216;&#x8005;&#x9759;&#x6001;&#x65B9;&#x6CD5;<code>currentActivityThread()</code>&#x83B7;&#x53D6;&#xFF0C;&#x6240;&#x4EE5;&#x62FF;&#x5230;&#x5176;&#x5BF9;&#x8C61;&#x76F8;&#x5F53;&#x8F7B;&#x677E;&#x3002;&#x62FF;&#x5230;ActivityThread&#x5BF9;&#x8C61;&#x540E;&#xFF0C;&#x8C03;&#x7528;&#x5176;<code>getInstrumentation()</code>&#x65B9;&#x6CD5;&#xFF0C;&#x5373;&#x53EF;&#x83B7;&#x53D6;&#x5F53;&#x524D;&#x7684;Instrumentation&#x5BF9;&#x8C61;&#x3002;</p>
+<p>&#x7136;&#x540E;&#x81EA;&#x5DF1;&#x521B;&#x5EFA;&#x4E86;&#x4E00;&#x4E2A;VAInstrumentation&#x5BF9;&#x8C61;&#xFF0C;&#x63A5;&#x4E0B;&#x6765;&#x5C31;&#x76F4;&#x63A5;&#x53CD;&#x5C04;&#x5C06;VAInstrumentation&#x5BF9;&#x8C61;&#x8BBE;&#x7F6E;&#x7ED9;ActivityThread&#x5BF9;&#x8C61;&#x5373;&#x53EF;&#x3002;</p>
+<p>&#x8FD9;&#x6837;&#x5C31;&#x5B8C;&#x6210;&#x4E86;hook Instrumentation,&#x4E4B;&#x540E;&#x8C03;&#x7528;Instrumentation&#x7684;&#x4EFB;&#x4F55;&#x65B9;&#x6CD5;&#xFF0C;&#x90FD;&#x53EF;&#x4EE5;&#x5728;VAInstrumentation&#x8FDB;&#x884C;&#x62E6;&#x622A;&#x5E76;&#x505A;&#x4E00;&#x4E9B;&#x4FEE;&#x6539;&#x3002;</p>
+<p>&#x8FD9;&#x91CC;&#x8FD8;hook&#x4E86;ActivityThread&#x7684;mH&#x7C7B;&#x7684;Callback&#xFF0C;&#x6682;&#x4E0D;&#x8D58;&#x8FF0;&#x3002;</p>
+<p>&#x521A;&#x624D;&#x8BF4;&#x4E86;&#xFF0C;&#x53EF;&#x4EE5;&#x901A;&#x8FC7;Instrumentation&#x7684;execStartActivity&#x65B9;&#x6CD5;&#x8FDB;&#x884C;&#x5077;&#x6881;&#x6362;&#x67F1;&#xFF0C;&#x6240;&#x4EE5;&#x6211;&#x4EEC;&#x76F4;&#x63A5;&#x770B;&#x5BF9;&#x5E94;&#x7684;&#x65B9;&#x6CD5;&#xFF1A;</p>
+<pre><code class="lang-java">public ActivityResult execStartActivity(
+        Context who, IBinder contextThread, IBinder token, Activity target,
+        Intent intent, int requestCode, Bundle options) {
+    mPluginManager.getComponentsHandler().transformIntentToExplicitAsNeeded(intent);
+    // null component is an implicitly intent
+    if (intent.getComponent() != null) {
+        Log.i(TAG, String.format(&quot;execStartActivity[%s : %s]&quot;, intent.getComponent().getPackageName(),
+                intent.getComponent().getClassName()));
+        // resolve intent with Stub Activity if needed
+        this.mPluginManager.getComponentsHandler().markIntentIfNeeded(intent);
+    }
+
+    ActivityResult result = realExecStartActivity(who, contextThread, token, target,
+                intent, requestCode, options);
+
+    return result;
+
+}
+</code></pre>
+<p>&#x9996;&#x5148;&#x8C03;&#x7528;transformIntentToExplicitAsNeeded&#xFF0C;&#x8FD9;&#x4E2A;&#x4E3B;&#x8981;&#x662F;&#x5F53;component&#x4E3A;null&#x65F6;&#xFF0C;&#x6839;&#x636E;&#x542F;&#x52A8;Activity&#x65F6;&#xFF0C;&#x914D;&#x7F6E;&#x7684;action&#xFF0C;data,category&#x7B49;&#x53BB;&#x5DF2;&#x52A0;&#x8F7D;&#x7684;plugin&#x4E2D;&#x5339;&#x914D;&#x5230;&#x786E;&#x5B9A;&#x7684;Activity&#x7684;&#x3002;</p>
+<p>&#x672C;&#x4F8B;&#x6211;&#x4EEC;&#x7684;&#x5199;&#x6CD5;ComponentName&#x80AF;&#x5B9A;&#x4E0D;&#x4E3A;null&#xFF0C;&#x6240;&#x4EE5;&#x76F4;&#x63A5;&#x770B;<code>markIntentIfNeeded()</code>&#x65B9;&#x6CD5;&#xFF1A;</p>
+<pre><code class="lang-java">public void markIntentIfNeeded(Intent intent) {
+    if (intent.getComponent() == null) {
+        return;
+    }
+
+    String targetPackageName = intent.getComponent().getPackageName();
+    String targetClassName = intent.getComponent().getClassName();
+    // search map and return specific launchmode stub activity
+    if (!targetPackageName.equals(mContext.getPackageName())
+            &amp;&amp; mPluginManager.getLoadedPlugin(targetPackageName) != null) {
+        intent.putExtra(Constants.KEY_IS_PLUGIN, true);
+        intent.putExtra(Constants.KEY_TARGET_PACKAGE, targetPackageName);
+        intent.putExtra(Constants.KEY_TARGET_ACTIVITY, targetClassName);
+        dispatchStubActivity(intent);
+    }
+}
+</code></pre>
+<p>&#x5728;&#x8BE5;&#x65B9;&#x6CD5;&#x4E2D;&#x5224;&#x65AD;&#x5982;&#x679C;&#x542F;&#x52A8;&#x7684;&#x662F;&#x63D2;&#x4EF6;&#x4E2D;&#x7C7B;&#xFF0C;&#x5219;&#x5C06;&#x542F;&#x52A8;&#x7684;&#x5305;&#x540D;&#x548C;Activity&#x7C7B;&#x540D;&#x5B58;&#x5230;&#x4E86;intent&#x4E2D;&#xFF0C;&#x53EF;&#x4EE5;&#x770B;&#x5230;&#x8FD9;&#x91CC;&#x5B58;&#x50A8;&#x660E;&#x663E;&#x662F;&#x4E3A;&#x4E86;&#x540E;&#x9762;&#x6062;&#x590D;&#x7528;&#x7684;&#x3002;</p>
+<p>&#x7136;&#x540E;&#x8C03;&#x7528;&#x4E86;<code>dispatchStubActivity(intent)</code></p>
+<pre><code class="lang-java">private void dispatchStubActivity(Intent intent) {
+    ComponentName component = intent.getComponent();
+    String targetClassName = intent.getComponent().getClassName();
+    LoadedPlugin loadedPlugin = mPluginManager.getLoadedPlugin(intent);
+    ActivityInfo info = loadedPlugin.getActivityInfo(component);
+    if (info == null) {
+        throw new RuntimeException(&quot;can not find &quot; + component);
+    }
+    int launchMode = info.launchMode;
+    Resources.Theme themeObj = loadedPlugin.getResources().newTheme();
+    themeObj.applyStyle(info.theme, true);
+    String stubActivity = mStubActivityInfo.getStubActivity(targetClassName, launchMode, themeObj);
+    Log.i(TAG, String.format(&quot;dispatchStubActivity,[%s -&gt; %s]&quot;, targetClassName, stubActivity));
+    intent.setClassName(mContext, stubActivity);
+}
+</code></pre>
+<p>&#x53EF;&#x4EE5;&#x76F4;&#x63A5;&#x770B;&#x6700;&#x540E;&#x4E00;&#x884C;&#xFF0C;intent&#x901A;&#x8FC7;setClassName&#x66FF;&#x6362;&#x542F;&#x52A8;&#x7684;&#x76EE;&#x6807;Activity&#x4E86;&#xFF01;&#x8FD9;&#x4E2A;stubActivity&#x662F;&#x7531;<code>mStubActivityInfo.getStubActivity(targetClassName, launchMode, themeObj)</code>&#x8FD4;&#x56DE;&#x3002;</p>
+<p>&#x5F88;&#x660E;&#x663E;&#xFF0C;&#x4F20;&#x5165;&#x7684;&#x53C2;&#x6570;launchMode&#x3001;themeObj&#x90FD;&#x662F;&#x51B3;&#x5B9A;&#x9009;&#x62E9;&#x54EA;&#x4E00;&#x4E2A;&#x5360;&#x5751;&#x7C7B;&#x7528;&#x7684;&#x3002;</p>
+<pre><code class="lang-java">public String getStubActivity(String className, int launchMode, Theme theme) {
+    String stubActivity= mCachedStubActivity.get(className);
+    if (stubActivity != null) {
+        return stubActivity;
+    }
+
+    TypedArray array = theme.obtainStyledAttributes(new int[]{
+            android.R.attr.windowIsTranslucent,
+            android.R.attr.windowBackground
+    });
+    boolean windowIsTranslucent = array.getBoolean(0, false);
+    array.recycle();
+    if (Constants.DEBUG) {
+        Log.d(&quot;StubActivityInfo&quot;, &quot;getStubActivity, is transparent theme ? &quot; + windowIsTranslucent);
+    }
+    stubActivity = String.format(STUB_ACTIVITY_STANDARD, corePackage, usedStandardStubActivity);
+    switch (launchMode) {
+        case ActivityInfo.LAUNCH_MULTIPLE: {
+            stubActivity = String.format(STUB_ACTIVITY_STANDARD, corePackage, usedStandardStubActivity);
+            if (windowIsTranslucent) {
+                stubActivity = String.format(STUB_ACTIVITY_STANDARD, corePackage, 2);
+            }
+            break;
+        }
+        case ActivityInfo.LAUNCH_SINGLE_TOP: {
+            usedSingleTopStubActivity = usedSingleTopStubActivity % MAX_COUNT_SINGLETOP + 1;
+            stubActivity = String.format(STUB_ACTIVITY_SINGLETOP, corePackage, usedSingleTopStubActivity);
+            break;
+        }
+
+       // &#x7701;&#x7565;LAUNCH_SINGLE_TASK&#xFF0C;LAUNCH_SINGLE_INSTANCE
+    }
+
+    mCachedStubActivity.put(className, stubActivity);
+    return stubActivity;
+}
+</code></pre>
+<p>&#x53EF;&#x4EE5;&#x770B;&#x5230;&#x4E3B;&#x8981;&#x5C31;&#x662F;&#x6839;&#x636E;launchMode&#x53BB;&#x9009;&#x62E9;&#x4E0D;&#x540C;&#x7684;&#x5360;&#x5751;&#x7C7B;&#x3002; 
+&#x4F8B;&#x5982;&#xFF1A;</p>
+<pre><code class="lang-java">stubActivity = String.format(STUB_ACTIVITY_STANDARD, corePackage, usedStandardStubActivity);
+</code></pre>
+<p><code>STUB_ACTIVITY_STANDARD&#x503C;&#x4E3A;&#xFF1A;&quot;%s.A$%d&quot;</code>, corePackage&#x503C;&#x4E3A;<code>com.didi.virtualapk.core</code>&#xFF0C;usedStandardStubActivity&#x4E3A;&#x6570;&#x5B57;&#x503C;&#x3002;</p>
+<p>&#x6240;&#x4EE5;&#x6700;&#x7EC8;&#x7C7B;&#x540D;&#x683C;&#x5F0F;&#x4E3A;&#xFF1A;<code>com.didi.virtualapk.core.A$1</code></p>
+<p>&#x518D;&#x770B;&#x4E00;&#x773C;&#xFF0C;CoreLibrary&#x4E0B;&#x7684;AndroidManifest&#x4E2D;&#xFF1A;</p>
+<pre><code class="lang-java">&lt;activity android:name=&quot;.A$1&quot; android:launchMode=&quot;standard&quot;/&gt;
+&lt;activity android:name=&quot;.A$2&quot; android:launchMode=&quot;standard&quot;
+    android:theme=&quot;@android:style/Theme.Translucent&quot; /&gt;
+
+&lt;!-- Stub Activities --&gt;
+&lt;activity android:name=&quot;.B$1&quot; android:launchMode=&quot;singleTop&quot;/&gt;
+&lt;activity android:name=&quot;.B$2&quot; android:launchMode=&quot;singleTop&quot;/&gt;
+&lt;activity android:name=&quot;.B$3&quot; android:launchMode=&quot;singleTop&quot;/&gt;
+// &#x7701;&#x7565;&#x5F88;&#x591A;...    123456789123456789
+</code></pre>
+<p>&#x5C31;&#x5B8C;&#x5168;&#x660E;&#x767D;&#x4E86;&#x3002;</p>
+<p>&#x5230;&#x8FD9;&#x91CC;&#x5C31;&#x53EF;&#x4EE5;&#x770B;&#x5230;&#xFF0C;&#x66FF;&#x6362;&#x6211;&#x4EEC;&#x542F;&#x52A8;&#x7684;Activity&#x4E3A;&#x5360;&#x5751;Activity&#xFF0C;&#x5C06;&#x6211;&#x4EEC;&#x539F;&#x672C;&#x542F;&#x52A8;&#x7684;&#x5305;&#x540D;&#xFF0C;&#x7C7B;&#x540D;&#x5B58;&#x50A8;&#x5230;&#x4E86;Intent&#x4E2D;&#x3002;</p>
+<p>&#x8FD9;&#x6837;&#x505A;&#x53EA;&#x5B8C;&#x6210;&#x4E86;&#x4E00;&#x534A;&#xFF0C;&#x4E3A;&#x4EC0;&#x4E48;&#x8FD9;&#x4E48;&#x8BF4;&#x5462;&#xFF1F;</p>
+<h3 id="2-&#x8FD8;&#x539F;activity"><a name="2-&#x8FD8;&#x539F;activity" class="anchor-navigation-ex-anchor" href="#2-&#x8FD8;&#x539F;activity"><i class="fa fa-link" aria-hidden="true"></i></a>(2) &#x8FD8;&#x539F;Activity</h3>
+<p>&#x56E0;&#x4E3A;&#x6B3A;&#x9A97;&#x8FC7;&#x4E86;AMS&#xFF0C;AMS&#x6267;&#x884C;&#x5B8C;&#x6210;&#x540E;&#xFF0C;&#x6700;&#x7EC8;&#x8981;&#x542F;&#x52A8;&#x7684;&#x4E0D;&#x53EF;&#x80FD;&#x662F;&#x5360;&#x5751;Activity&#xFF0C;&#x8FD8;&#x5E94;&#x8BE5;&#x662F;&#x6211;&#x4EEC;&#x7684;&#x542F;&#x52A8;&#x7684;&#x76EE;&#x6807;Activity&#x5440;&#x3002;</p>
+<p>&#x8FD9;&#x91CC;&#x9700;&#x8981;&#x77E5;&#x9053;Activity&#x7684;&#x542F;&#x52A8;&#x6D41;&#x7A0B;&#xFF1A;</p>
+<p>AMS&#x5728;&#x5904;&#x7406;&#x5B8C;&#x542F;&#x52A8;Activity&#x540E;&#xFF0C;&#x4F1A;&#x8C03;&#x7528;&#xFF1A;<code>app.thread.scheduleLaunchActivity</code>&#xFF0C;&#x8FD9;&#x91CC;&#x7684;thread&#x5BF9;&#x5E94;&#x7684;server&#x7AEF;&#x672A;&#x6211;&#x4EEC;ActivityThread&#x4E2D;&#x7684;ApplicationThread&#x5BF9;&#x8C61;(binder&#x53EF;&#x4EE5;&#x7406;&#x89E3;&#x6709;&#x4E00;&#x4E2A;client&#x7AEF;&#x548C;&#x4E00;&#x4E2A;server&#x7AEF;)&#xFF0C;&#x6240;&#x4EE5;&#x4F1A;&#x8C03;&#x7528;<code>ApplicationThread.scheduleLaunchActivity</code>&#x65B9;&#x6CD5;&#xFF0C;&#x5728;&#x5176;&#x5185;&#x90E8;&#x4F1A;&#x8C03;&#x7528;mH&#x7C7B;&#x7684;sendMessage&#x65B9;&#x6CD5;&#xFF0C;&#x4F20;&#x9012;&#x7684;&#x6807;&#x8BC6;&#x4E3A;<code>H.LAUNCH_ACTIVITY</code>&#xFF0C;&#x8FDB;&#x5165;&#x8C03;&#x7528;&#x5230;ActivityThread&#x7684;handleLaunchActivity&#x65B9;&#x6CD5;-&gt;ActivityThread#handleLaunchActivity-&gt;mInstrumentation.newActivity()&#x3002;</p>
+<blockquote>
+<p>ps:&#x8FD9;&#x91CC;&#x6D41;&#x7A0B;&#x4E0D;&#x6E05;&#x695A;&#x6CA1;&#x5173;&#x7CFB;&#xFF0C;&#x6682;&#x65F6;&#x7406;&#x89E3;&#x4E3A;&#x6700;&#x7EC8;&#x4F1A;&#x56DE;&#x8C03;&#x5230;Instrumentation&#x7684;newActivity&#x65B9;&#x6CD5;&#x5373;&#x53EF;&#xFF0C;&#x7EC6;&#x8282;&#x53EF;&#x4EE5;&#x81EA;&#x5DF1;&#x53BB;&#x67E5;&#x770B;&#x7ED3;&#x5408;&#x8001;&#x7F57;&#x7684;blog&#x7406;&#x89E3;&#x3002;</p>
+</blockquote>
+<p>&#x5173;&#x952E;&#x7684;&#x6765;&#x4E86;&#xFF0C;&#x6700;&#x7EC8;&#x53C8;&#x5230;&#x4E86;Instrumentation&#x7684;newActivity&#x65B9;&#x6CD5;&#xFF0C;&#x8FD8;&#x8BB0;&#x5F97;&#x8FD9;&#x4E2A;&#x7C7B;&#x6211;&#x4EEC;&#x5DF2;&#x7ECF;&#x6539;&#x4E3A;VAInstrumentation&#x5566;&#xFF1A;</p>
+<p>&#x76F4;&#x63A5;&#x770B;&#x5176;newActivity&#x65B9;&#x6CD5;&#xFF1A;</p>
+<pre><code class="lang-java">@Override
+public Activity newActivity(ClassLoader cl, String className, Intent intent) throws InstantiationException, IllegalAccessException, ClassNotFoundException {
+    try {
+        cl.loadClass(className);
+    } catch (ClassNotFoundException e) {
+        LoadedPlugin plugin = this.mPluginManager.getLoadedPlugin(intent);
+        String targetClassName = PluginUtil.getTargetActivity(intent);
+
+        if (targetClassName != null) {
+            Activity activity = mBase.newActivity(plugin.getClassLoader(), targetClassName, intent);
+            activity.setIntent(intent);
+
+          // &#x7701;&#x7565;&#x517C;&#x5BB9;&#x6027;&#x5904;&#x7406;&#x4EE3;&#x7801;
+            return activity;
+        }
+    }
+
+    return mBase.newActivity(cl, className, intent);
+}
+</code></pre>
+<p>&#x6838;&#x5FC3;&#x5C31;&#x662F;&#x9996;&#x5148;&#x4ECE;intent&#x4E2D;&#x53D6;&#x51FA;&#x6211;&#x4EEC;&#x7684;&#x76EE;&#x6807;Activity&#xFF0C;&#x7136;&#x540E;&#x901A;&#x8FC7;plugin&#x7684;ClassLoader&#x53BB;&#x52A0;&#x8F7D;&#xFF08;&#x8FD8;&#x8BB0;&#x5F97;&#x5728;&#x52A0;&#x8F7D;&#x63D2;&#x4EF6;&#x65F6;&#xFF0C;&#x4F1A;&#x751F;&#x6210;&#x4E00;&#x4E2A;LoadedPlugin&#x5BF9;&#x8C61;&#xFF0C;&#x5176;&#x4E2D;&#x4F1A;&#x5BF9;&#x5E94;&#x5176;&#x521D;&#x59CB;&#x5316;&#x4E00;&#x4E2A;DexClassLoader&#xFF09;&#x3002;</p>
+<p>&#x8FD9;&#x6837;&#x5C31;&#x5B8C;&#x6210;&#x4E86;Activity&#x7684;&#x201C;&#x5077;&#x6881;&#x6362;&#x67F1;&#x201D;&#x3002;</p>
+<p>&#x8FD8;&#x6CA1;&#x5B8C;&#xFF0C;&#x63A5;&#x4E0B;&#x6765;&#x5728;<code>callActivityOnCreate</code>&#x65B9;&#x6CD5;&#x4E2D;&#xFF1A;</p>
+<pre><code class="lang-java"> @Override
+public void callActivityOnCreate(Activity activity, Bundle icicle) {
+    final Intent intent = activity.getIntent();
+    if (PluginUtil.isIntentFromPlugin(intent)) {
+        Context base = activity.getBaseContext();
+        try {
+            LoadedPlugin plugin = this.mPluginManager.getLoadedPlugin(intent);
+            ReflectUtil.setField(base.getClass(), base, &quot;mResources&quot;, plugin.getResources());
+            ReflectUtil.setField(ContextWrapper.class, activity, &quot;mBase&quot;, plugin.getPluginContext());
+            ReflectUtil.setField(Activity.class, activity, &quot;mApplication&quot;, plugin.getApplication());
+            ReflectUtil.setFieldNoException(ContextThemeWrapper.class, activity, &quot;mBase&quot;, plugin.getPluginContext());
+
+            // set screenOrientation
+            ActivityInfo activityInfo = plugin.getActivityInfo(PluginUtil.getComponent(intent));
+            if (activityInfo.screenOrientation != ActivityInfo.SCREEN_ORIENTATION_UNSPECIFIED) {
+                activity.setRequestedOrientation(activityInfo.screenOrientation);
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+
+    }
+
+    mBase.callActivityOnCreate(activity, icicle);
+}
+</code></pre>
+<p>&#x8BBE;&#x7F6E;&#x4E86;&#x4FEE;&#x6539;&#x4E86;mResources&#x3001;mBase&#xFF08;Context&#xFF09;&#x3001;mApplication&#x5BF9;&#x8C61;&#x3002;&#x4EE5;&#x53CA;&#x8BBE;&#x7F6E;&#x4E00;&#x4E9B;&#x53EF;&#x52A8;&#x6001;&#x8BBE;&#x7F6E;&#x7684;&#x5C5E;&#x6027;&#xFF0C;&#x8FD9;&#x91CC;&#x4EC5;&#x8BBE;&#x7F6E;&#x4E86;&#x5C4F;&#x5E55;&#x65B9;&#x5411;&#x3002;</p>
+<p>&#x8FD9;&#x91CC;&#x63D0;&#x4E00;&#x4E0B;&#xFF0C;&#x5C06;mBase&#x66FF;&#x6362;&#x4E3A;PluginContext&#xFF0C;&#x53EF;&#x4EE5;&#x4FEE;&#x6539;Resources&#x3001;AssetManager&#x4EE5;&#x53CA;&#x62E6;&#x622A;&#x76F8;&#x5F53;&#x591A;&#x7684;&#x64CD;&#x4F5C;&#x3002;</p>
+<p>&#x770B;&#x4E00;&#x773C;&#x4EE3;&#x7801;&#x5C31;&#x6E05;&#x695A;&#x4E86;&#xFF1A;</p>
+<p>&#x539F;&#x672C;Activity&#x7684;&#x90E8;&#x5206;get&#x64CD;&#x4F5C;</p>
+<pre><code class="lang-java"># ContextWrapper
+@Override
+public AssetManager getAssets() {
+    return mBase.getAssets();
+}
+
+@Override
+public Resources getResources()
+{
+    return mBase.getResources();
+}
+
+@Override
+public PackageManager getPackageManager() {
+    return mBase.getPackageManager();
+}
+
+@Override
+public ContentResolver getContentResolver() {
+    return mBase.getContentResolver();
+}
+</code></pre>
+<p>&#x76F4;&#x63A5;&#x66FF;&#x6362;&#x4E3A;&#xFF1A;</p>
+<pre><code class="lang-java"># PluginContext
+
+@Override
+public Resources getResources() {
+    return this.mPlugin.getResources();
+}
+
+@Override
+public AssetManager getAssets() {
+    return this.mPlugin.getAssets();
+}
+
+@Override
+public ContentResolver getContentResolver() {
+    return new PluginContentResolver(getHostContext());
+}
+</code></pre>
+<p>&#x770B;&#x5F97;&#x51FA;&#x6765;&#x8FD8;&#x662F;&#x975E;&#x5E38;&#x5DE7;&#x5999;&#x7684;&#x3002;&#x53EF;&#x4EE5;&#x505A;&#x7684;&#x4E8B;&#x60C5;&#x4E5F;&#x975E;&#x5E38;&#x591A;&#xFF0C;&#x540E;&#x9762;&#x5BF9;ContentProvider&#x7684;&#x63CF;&#x8FF0;&#x4E5F;&#x4F1A;&#x63D0;&#x73B0;&#x51FA;&#x6765;&#x3002;</p>
+<p>&#x597D;&#x4E86;&#xFF0C;&#x5230;&#x6B64;Activity&#x5C31;&#x53EF;&#x4EE5;&#x6B63;&#x5E38;&#x542F;&#x52A8;&#x4E86;&#x3002;</p>
+<p>&#x4E0B;&#x9762;&#x770B;Service&#x3002;</p>
+<h2 id="&#x4E09;&#x3001;service&#x7684;&#x652F;&#x6301;"><a name="&#x4E09;&#x3001;service&#x7684;&#x652F;&#x6301;" class="anchor-navigation-ex-anchor" href="#&#x4E09;&#x3001;service&#x7684;&#x652F;&#x6301;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x4E09;&#x3001;Service&#x7684;&#x652F;&#x6301;</h2>
+<p>Service&#x548C;Activity&#x6709;&#x70B9;&#x4E0D;&#x540C;&#xFF0C;&#x663E;&#x800C;&#x6613;&#x89C1;&#x7684;&#x9996;&#x5148;&#x6211;&#x4EEC;&#x4E5F;&#x4F1A;&#x5C06;&#x8981;&#x542F;&#x52A8;&#x7684;Service&#x7C7B;&#x66FF;&#x6362;&#x4E3A;&#x5360;&#x5751;&#x7684;Service&#x7C7B;&#xFF0C;&#x4F46;&#x662F;&#x6709;&#x4E00;&#x70B9;&#x4E0D;&#x540C;&#xFF0C;&#x5728;Standard&#x6A21;&#x5F0F;&#x4E0B;&#x591A;&#x6B21;&#x542F;&#x52A8;&#x540C;&#x4E00;&#x4E2A;&#x5360;&#x5751;Activity&#x4F1A;&#x521B;&#x5EFA;&#x591A;&#x4E2A;&#x5BF9;&#x8C61;&#x6765;&#x5BF9;&#x8C61;&#x6211;&#x4EEC;&#x7684;&#x76EE;&#x6807;&#x7C7B;&#x3002;&#x800C;Service&#x591A;&#x6B21;&#x542F;&#x52A8;&#x53EA;&#x4F1A;&#x8C03;&#x7528;onStartCommond&#x65B9;&#x6CD5;&#xFF0C;&#x751A;&#x81F3;&#x5E38;&#x89C4;&#x591A;&#x6B21;&#x8C03;&#x7528;bindService&#xFF0C;seviceConn&#x5BF9;&#x8C61;&#x4E0D;&#x53D8;&#xFF0C;&#x751A;&#x81F3;&#x90FD;&#x4E0D;&#x4F1A;&#x591A;&#x6B21;&#x56DE;&#x8C03;bindService&#x65B9;&#x6CD5;&#xFF08;&#x591A;&#x6B21;&#x8C03;&#x7528;&#x53EF;&#x4EE5;&#x901A;&#x8FC7;&#x7ED9;Intent&#x8BBE;&#x7F6E;&#x4E0D;&#x540C;Action&#x89E3;&#x51B3;&#xFF09;&#x3002;</p>
+<p>&#x8FD8;&#x6709;&#x4E00;&#x70B9;&#xFF0C;&#x6700;&#x660E;&#x663E;&#x7684;&#x5DEE;&#x5F02;&#x662F;&#xFF0C;Activity&#x7684;&#x751F;&#x547D;&#x5468;&#x671F;&#x662F;&#x7531;&#x7528;&#x6237;&#x4EA4;&#x4E92;&#x51B3;&#x5B9A;&#x7684;&#xFF0C;&#x800C;Service&#x7684;&#x58F0;&#x660E;&#x5468;&#x671F;&#x662F;&#x6211;&#x4EEC;&#x4E3B;&#x52A8;&#x901A;&#x8FC7;&#x4EE3;&#x7801;&#x8C03;&#x7528;&#x7684;&#x3002;</p>
+<p>&#x4E5F;&#x5C31;&#x662F;&#x8BF4;&#xFF0C;start&#x3001;stop&#x3001;bind&#x3001;unbind&#x90FD;&#x662F;&#x6211;&#x4EEC;&#x663E;&#x793A;&#x8C03;&#x7528;&#x7684;&#xFF0C;&#x6240;&#x4EE5;&#x6211;&#x4EEC;&#x53EF;&#x4EE5;&#x62E6;&#x622A;&#x8FD9;&#x51E0;&#x4E2A;&#x65B9;&#x6CD5;&#xFF0C;&#x505A;&#x4E00;&#x4E9B;&#x4E8B;&#x60C5;&#x3002;</p>
+<p>Virtual Apk&#x7684;&#x505A;&#x6CD5;&#xFF0C;&#x5373;&#x5C06;&#x6240;&#x6709;&#x7684;&#x64CD;&#x4F5C;&#x8FDB;&#x884C;&#x62E6;&#x622A;&#xFF0C;&#x90FD;&#x6539;&#x4E3A;startService&#xFF0C;&#x7136;&#x540E;&#x7EDF;&#x4E00;&#x5728;onStartCommond&#x4E2D;&#x5206;&#x53D1;&#x3002;</p>
+<p>&#x4E0B;&#x9762;&#x770B;&#x8BE6;&#x7EC6;&#x4EE3;&#x7801;&#xFF1A;</p>
+<h3 id="1-hook-iactivitymanager"><a name="1-hook-iactivitymanager" class="anchor-navigation-ex-anchor" href="#1-hook-iactivitymanager"><i class="fa fa-link" aria-hidden="true"></i></a>(1) hook IActivityManager</h3>
+<p>&#x518D;&#x6B21;&#x6765;&#x5230;PluginManager&#xFF0C;&#x53D1;&#x4E0B;&#x5982;&#x4E0B;&#x65B9;&#x6CD5;&#xFF1A;</p>
+<pre><code class="lang-java">private void hookSystemServices() {
+    try {
+        Singleton&lt;IActivityManager&gt; defaultSingleton = (Singleton&lt;IActivityManager&gt;) ReflectUtil.getField(ActivityManagerNative.class, null, &quot;gDefault&quot;);
+        IActivityManager activityManagerProxy = ActivityManagerProxy.newInstance(this, defaultSingleton.get());
+
+        // Hook IActivityManager from ActivityManagerNative
+        ReflectUtil.setField(defaultSingleton.getClass().getSuperclass(), defaultSingleton, &quot;mInstance&quot;, activityManagerProxy);
+
+        if (defaultSingleton.get() == activityManagerProxy) {
+            this.mActivityManager = activityManagerProxy;
+        }
+    } catch (Exception e) {
+        e.printStackTrace();
+    }
+}
+</code></pre>
+<p>&#x9996;&#x5148;&#x62FF;&#x5230;ActivityManagerNative&#x4E2D;&#x7684;gDefault&#x5BF9;&#x8C61;&#xFF0C;&#x8BE5;&#x5BF9;&#x8C61;&#x8FD4;&#x56DE;&#x7684;&#x662F;&#x4E00;&#x4E2A;<code>Singleton&lt;IActivityManager&gt;</code>,&#x7136;&#x540E;&#x62FF;&#x5230;&#x5176;mInstance&#x5BF9;&#x8C61;&#xFF0C;&#x5373;IActivityManager&#x5BF9;&#x8C61;&#xFF08;&#x53EF;&#x4EE5;&#x7406;&#x89E3;&#x4E3A;&#x548C;AMS&#x4EA4;&#x4E92;&#x7684;binder&#x7684;client&#x5BF9;&#x8C61;&#xFF09;&#x5BF9;&#x8C61;&#x3002;</p>
+<p>&#x7136;&#x540E;&#x901A;&#x8FC7;&#x52A8;&#x6001;&#x4EE3;&#x7406;&#x7684;&#x65B9;&#x5F0F;&#xFF0C;&#x66FF;&#x6362;&#x4E3A;&#x4E86;&#x4E00;&#x4E2A;&#x4EE3;&#x7406;&#x5BF9;&#x8C61;&#x3002;</p>
+<p>&#x90A3;&#x4E48;&#x91CD;&#x70B9;&#x770B;&#x5BF9;&#x5E94;&#x7684;InvocationHandler&#x5BF9;&#x8C61;&#x5373;&#x53EF;&#xFF0C;&#x8BE5;&#x4EE3;&#x7406;&#x5BF9;&#x8C61;&#x8C03;&#x7528;&#x7684;&#x65B9;&#x6CD5;&#x90FD;&#x4F1A;&#x8F97;&#x8F6C;&#x5230;&#x5176;invoke&#x65B9;&#x6CD5;&#xFF1A;</p>
+<pre><code class="lang-java">@Override
+public Object invoke(Object proxy, Method method, Object[] args) throws Throwable {
+    if (&quot;startService&quot;.equals(method.getName())) {
+        try {
+            return startService(proxy, method, args);
+        } catch (Throwable e) {
+            Log.e(TAG, &quot;Start service error&quot;, e);
+        }
+    } else if (&quot;stopService&quot;.equals(method.getName())) {
+        try {
+            return stopService(proxy, method, args);
+        } catch (Throwable e) {
+            Log.e(TAG, &quot;Stop Service error&quot;, e);
+        }
+    } else if (&quot;stopServiceToken&quot;.equals(method.getName())) {
+        try {
+            return stopServiceToken(proxy, method, args);
+        } catch (Throwable e) {
+            Log.e(TAG, &quot;Stop service token error&quot;, e);
+        }
+    }
+    // &#x7701;&#x7565;bindService&#xFF0C;unbindService&#x7B49;&#x65B9;&#x6CD5;
+}
+</code></pre>
+<p>&#x5F53;&#x6211;&#x4EEC;&#x8C03;&#x7528;startService&#x65F6;&#xFF0C;&#x8DDF;&#x8FDB;&#x4EE3;&#x7801;&#xFF0C;&#x53EF;&#x4EE5;&#x53D1;&#x73B0;&#x8C03;&#x7528;&#x6D41;&#x7A0B;&#x4E3A;&#xFF1A;</p>
+<pre><code class="lang-java">startService-&gt;startServiceCommon-&gt;ActivityManagerNative.getDefault().startService
+</code></pre>
+<p>&#x8FD9;&#x4E2A;getDefault&#x521A;&#x88AB;&#x6211;&#x4EEC;hook&#xFF0C;&#x6240;&#x4EE5;&#x4F1A;&#x88AB;&#x4E0A;&#x8FF0;&#x65B9;&#x6CD5;&#x62E6;&#x622A;&#xFF0C;&#x7136;&#x540E;&#x8C03;&#x7528;&#xFF1A;<code>startService(proxy, method, args)</code></p>
+<pre><code class="lang-Java">private Object startService(Object proxy, Method method, Object[] args) throws Throwable {
+    IApplicationThread appThread = (IApplicationThread) args[0];
+    Intent target = (Intent) args[1];
+    ResolveInfo resolveInfo = this.mPluginManager.resolveService(target, 0);
+    if (null == resolveInfo || null == resolveInfo.serviceInfo) {
+        // is host service
+        return method.invoke(this.mActivityManager, args);
+    }
+
+    return startDelegateServiceForTarget(target, resolveInfo.serviceInfo, null, RemoteService.EXTRA_COMMAND_START_SERVICE);
+}
+</code></pre>
+<p>&#x5148;&#x4E0D;&#x770B;&#x4EE3;&#x7801;&#xFF0C;&#x8003;&#x8651;&#x4E0B;&#x6211;&#x4EEC;&#x8FD9;&#x91CC;&#x552F;&#x4E00;&#x8981;&#x505A;&#x7684;&#x5C31;&#x662F;&#x901A;&#x8FC7;Intent&#x4FDD;&#x5B58;&#x5173;&#x952E;&#x6570;&#x636E;&#xFF0C;&#x66FF;&#x6362;&#x542F;&#x52A8;&#x7684;Service&#x7C7B;&#x4E3A;&#x5360;&#x5751;&#x7C7B;&#x3002;</p>
+<p>&#x6240;&#x4EE5;&#x76F4;&#x63A5;&#x770B;&#x6700;&#x540E;&#x7684;&#x65B9;&#x6CD5;&#xFF1A;</p>
+<pre><code class="lang-java">private ComponentName startDelegateServiceForTarget(Intent target,
+                                                    ServiceInfo serviceInfo,
+                                                    Bundle extras, int command) {
+    Intent wrapperIntent = wrapperTargetIntent(target, serviceInfo, extras, command);
+    return mPluginManager.getHostContext().startService(wrapperIntent);
+}
+</code></pre>
+<p>&#x6700;&#x540E;&#x4E00;&#x884C;&#x5C31;&#x662F;&#x542F;&#x52A8;&#x4E86;&#xFF0C;&#x90A3;&#x4E48;&#x66FF;&#x6362;&#x7684;&#x64CD;&#x4F5C;&#x5E94;&#x8BE5;&#x5728;wrapperTargetIntent&#x4E2D;&#x5B8C;&#x6210;&#xFF1A;</p>
+<pre><code class="lang-java">private Intent wrapperTargetIntent(Intent target, ServiceInfo serviceInfo, Bundle extras, int command) {
+    // fill in service with ComponentName
+    target.setComponent(new ComponentName(serviceInfo.packageName, serviceInfo.name));
+    String pluginLocation = mPluginManager.getLoadedPlugin(target.getComponent()).getLocation();
+
+    // start delegate service to run plugin service inside
+    boolean local = PluginUtil.isLocalService(serviceInfo);
+    Class&lt;? extends Service&gt; delegate = local ? LocalService.class : RemoteService.class;
+    Intent intent = new Intent();
+    intent.setClass(mPluginManager.getHostContext(), delegate);
+    intent.putExtra(RemoteService.EXTRA_TARGET, target);
+    intent.putExtra(RemoteService.EXTRA_COMMAND, command);
+    intent.putExtra(RemoteService.EXTRA_PLUGIN_LOCATION, pluginLocation);
+    if (extras != null) {
+        intent.putExtras(extras);
+    }
+
+    return intent;
+}
+</code></pre>
+<p>&#x679C;&#x4E0D;&#x5176;&#x7136;&#xFF0C;&#x91CD;&#x65B0;&#x521D;&#x59CB;&#x5316;&#x4E86;Intent&#xFF0C;&#x8BBE;&#x7F6E;&#x4E86;&#x76EE;&#x6807;&#x7C7B;&#x4E3A;LocalService&#xFF08;&#x591A;&#x8FDB;&#x7A0B;&#x65F6;&#x8BBE;&#x7F6E;&#x4E3A;RemoteService&#xFF09;&#xFF0C;&#x7136;&#x540E;&#x5C06;&#x539F;&#x672C;&#x7684;Intent&#x5B58;&#x50A8;&#x5230;<code>EXTRA_TARGET</code>&#xFF0C;&#x643A;&#x5E26;command&#x4E3A;<code>EXTRA_COMMAND_START_SERVICE</code>&#xFF0C;&#x4EE5;&#x53CA;&#x63D2;&#x4EF6;apk&#x8DEF;&#x5F84;&#x3002;</p>
+<h3 id="&#xFF08;2&#xFF09;&#x4EE3;&#x7406;&#x5206;&#x53D1;"><a name="&#xFF08;2&#xFF09;&#x4EE3;&#x7406;&#x5206;&#x53D1;" class="anchor-navigation-ex-anchor" href="#&#xFF08;2&#xFF09;&#x4EE3;&#x7406;&#x5206;&#x53D1;"><i class="fa fa-link" aria-hidden="true"></i></a>&#xFF08;2&#xFF09;&#x4EE3;&#x7406;&#x5206;&#x53D1;</h3>
+<p>&#x90A3;&#x4E48;&#x63A5;&#x4E0B;&#x6765;&#x4EE3;&#x7801;&#x5C31;&#x5230;&#x4E86;LocalService&#x7684;onStartCommond&#x4E2D;&#x5566;&#xFF1A;</p>
+<pre><code class="lang-java">@Override
+public int onStartCommand(Intent intent, int flags, int startId) {
+    // &#x7701;&#x7565;&#x4E00;&#x4E9B;&#x4EE3;&#x7801;...
+
+    Intent target = intent.getParcelableExtra(EXTRA_TARGET);
+    int command = intent.getIntExtra(EXTRA_COMMAND, 0);
+    if (null == target || command &lt;= 0) {
+        return START_STICKY;
+    }
+
+    ComponentName component = target.getComponent();
+    LoadedPlugin plugin = mPluginManager.getLoadedPlugin(component);
+
+    switch (command) {
+        case EXTRA_COMMAND_START_SERVICE: {
+            ActivityThread mainThread = (ActivityThread)ReflectUtil.getActivityThread(getBaseContext());
+            IApplicationThread appThread = mainThread.getApplicationThread();
+            Service service;
+
+            if (this.mPluginManager.getComponentsHandler().isServiceAvailable(component)) {
+                service = this.mPluginManager.getComponentsHandler().getService(component);
+            } else {
+                try {
+                    service = (Service) plugin.getClassLoader().loadClass(component.getClassName()).newInstance();
+
+                    Application app = plugin.getApplication();
+                    IBinder token = appThread.asBinder();
+                    Method attach = service.getClass().getMethod(&quot;attach&quot;, Context.class, ActivityThread.class, String.class, IBinder.class, Application.class, Object.class);
+                    IActivityManager am = mPluginManager.getActivityManager();
+
+                    attach.invoke(service, plugin.getPluginContext(), mainThread, component.getClassName(), token, app, am);
+                    service.onCreate();
+                    this.mPluginManager.getComponentsHandler().rememberService(component, service);
+                } catch (Throwable t) {
+                    return START_STICKY;
+                }
+            }
+
+            service.onStartCommand(target, 0, this.mPluginManager.getComponentsHandler().getServiceCounter(service).getAndIncrement());
+            break;
+        }
+        // &#x7701;&#x7565;&#x4E0B;&#x9762;&#x7684;&#x4EE3;&#x7801;
+         case EXTRA_COMMAND_BIND_SERVICE:break;
+         case EXTRA_COMMAND_STOP_SERVICE:break;
+         case EXTRA_COMMAND_UNBIND_SERVICE:break;
+}
+</code></pre>
+<p>&#x8FD9;&#x91CC;&#x4EE3;&#x7801;&#x5F88;&#x7B80;&#x5355;&#x4E86;&#xFF0C;&#x6839;&#x636E;command&#x7C7B;&#x578B;&#xFF0C;&#x6BD4;&#x5982;<code>EXTRA_COMMAND_START_SERVICE</code>&#xFF0C;&#x76F4;&#x63A5;&#x901A;&#x8FC7;plugin&#x7684;ClassLoader&#x53BB;load&#x76EE;&#x6807;Service&#x7684;class&#xFF0C;&#x7136;&#x540E;&#x53CD;&#x5C04;&#x521B;&#x5EFA;&#x5B9E;&#x4F8B;&#x3002;&#x6BD4;&#x8F83;&#x91CD;&#x8981;&#x7684;&#x662F;&#xFF0C;Service&#x521B;&#x5EFA;&#x597D;&#x540E;&#xFF0C;&#x9700;&#x8981;&#x8C03;&#x7528;&#x5B83;&#x7684;attach&#x65B9;&#x6CD5;&#xFF0C;&#x8FD9;&#x91CC;&#x51D1;&#x591F;&#x53C2;&#x6570;&#xFF0C;&#x7136;&#x540E;&#x53CD;&#x5C04;&#x8C03;&#x7528;&#x5373;&#x53EF;&#xFF0C;&#x6700;&#x540E;&#x8C03;&#x7528;onCreate&#x3001;onStartCommand&#x6536;&#x5DE5;&#x3002;&#x7136;&#x540E;&#x5C06;&#x5176;&#x4FDD;&#x5B58;&#x8D77;&#x6765;&#xFF0C;stop&#x7684;&#x65F6;&#x5019;&#x53D6;&#x51FA;&#x6765;&#x8C03;&#x7528;&#x5176;onDestroy&#x5373;&#x53EF;&#x3002;</p>
+<p>bind&#x3001;unbind&#x4EE5;&#x53CA;stop&#x7684;&#x4EE3;&#x7801;&#x4E0E;&#x4E0A;&#x8FF0;&#x57FA;&#x672C;&#x4E00;&#x81F4;&#xFF0C;&#x4E0D;&#x5728;&#x8D58;&#x8FF0;&#x3002;</p>
+<p>&#x552F;&#x4E00;&#x63D0;&#x9192;&#x7684;&#x5C31;&#x662F;&#xFF0C;&#x521A;&#x624D;&#x770B;&#x5230;&#x8FD8;hook&#x4E86;&#x4E00;&#x4E2A;&#x65B9;&#x6CD5;&#x53EB;&#x505A;&#xFF1A;<code>stopServiceToken</code>&#xFF0C;&#x8BE5;&#x65B9;&#x6CD5;&#x662F;&#x4EC0;&#x4E48;&#x65F6;&#x5019;&#x7528;&#x7684;&#x5462;&#xFF1F;</p>
+<p>&#x4E3B;&#x8981;&#x6709;&#x4E00;&#x4E9B;&#x7279;&#x6B8A;&#x7684;Service&#xFF0C;&#x6BD4;&#x5982;IntentService&#xFF0C;&#x5176;stopSelf&#x662F;&#x7531;&#x81EA;&#x8EAB;&#x8C03;&#x7528;&#x7684;&#xFF0C;&#x6700;&#x7EC8;&#x4F1A;&#x8C03;&#x7528;<code>mActivityManager.stopServiceToken</code>&#x65B9;&#x6CD5;&#xFF0C;&#x540C;&#x6837;&#x7684;&#x4E2D;&#x8F6C;&#x4E3A;STOP&#x64CD;&#x4F5C;&#x5373;&#x53EF;&#x3002;</p>
+<h2 id="&#x56DB;&#x3001;broadcastreceiver&#x7684;&#x652F;&#x6301;"><a name="&#x56DB;&#x3001;broadcastreceiver&#x7684;&#x652F;&#x6301;" class="anchor-navigation-ex-anchor" href="#&#x56DB;&#x3001;broadcastreceiver&#x7684;&#x652F;&#x6301;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x56DB;&#x3001;BroadcastReceiver&#x7684;&#x652F;&#x6301;</h2>
+<p>&#x8FD9;&#x4E2A;&#x6BD4;&#x8F83;&#x7B80;&#x5355;&#xFF0C;&#x76F4;&#x63A5;&#x89E3;&#x6790;Manifest&#x540E;&#xFF0C;&#x9759;&#x6001;&#x8F6C;&#x52A8;&#x6001;&#x5373;&#x53EF;&#x3002;</p>
+<p>&#x76F8;&#x5173;&#x4EE3;&#x7801;&#x5728;LoadedPlugin&#x7684;&#x6784;&#x9020;&#x65B9;&#x6CD5;&#x4E2D;&#xFF1A;</p>
+<pre><code class="lang-java">for (PackageParser.Activity receiver : this.mPackage.receivers) {
+    receivers.put(receiver.getComponentName(), receiver.info);
+
+    try {
+        BroadcastReceiver br = BroadcastReceiver.class.cast(getClassLoader().loadClass(receiver.getComponentName().getClassName()).newInstance());
+        for (PackageParser.ActivityIntentInfo aii : receiver.intents) {
+            this.mHostContext.registerReceiver(br, aii);
+        }
+    } catch (Exception e) {
+        e.printStackTrace();
+    }
+}
+</code></pre>
+<p>&#x53EF;&#x4EE5;&#x770B;&#x5230;&#x89E3;&#x6790;&#x5230;receiver&#x4FE1;&#x606F;&#x540E;&#xFF0C;&#x76F4;&#x63A5;&#x901A;&#x8FC7;pluginClassloader&#x53BB;loadClass&#x62FF;&#x5230;receiver&#x5BF9;&#x8C61;&#xFF0C;&#x7136;&#x540E;&#x8C03;&#x7528;this.mHostContext.registerReceiver&#x5373;&#x53EF;&#x3002;</p>
+<p>&#x5F00;&#x5FC3;&#xFF0C;&#x6700;&#x540E;&#x4E00;&#x4E2A;&#x4E86;~</p>
+<h2 id="&#x4E94;&#x3001;contentprovider&#x7684;&#x652F;&#x6301;"><a name="&#x4E94;&#x3001;contentprovider&#x7684;&#x652F;&#x6301;" class="anchor-navigation-ex-anchor" href="#&#x4E94;&#x3001;contentprovider&#x7684;&#x652F;&#x6301;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x4E94;&#x3001;ContentProvider&#x7684;&#x652F;&#x6301;</h2>
+<h3 id="&#xFF08;1&#xFF09;hook-icontentprovider"><a name="&#xFF08;1&#xFF09;hook-icontentprovider" class="anchor-navigation-ex-anchor" href="#&#xFF08;1&#xFF09;hook-icontentprovider"><i class="fa fa-link" aria-hidden="true"></i></a>&#xFF08;1&#xFF09;hook IContentProvider</h3>
+<p>ContentProvider&#x7684;&#x652F;&#x6301;&#x4F9D;&#x7136;&#x662F;&#x901A;&#x8FC7;&#x4EE3;&#x7406;&#x5206;&#x53D1;&#x3002;</p>
+<p>&#x770B;&#x4E00;&#x6BB5;CP&#x4F7F;&#x7528;&#x7684;&#x4EE3;&#x7801;&#xFF1A;</p>
+<pre><code class="lang-java">Cursor bookCursor = getContentResolver().query(bookUri, new String[]{&quot;_id&quot;, &quot;name&quot;}, null, null, null);
+</code></pre>
+<p>&#x8FD9;&#x91CC;&#x7528;&#x5230;&#x4E86;PluginContext&#xFF0C;&#x5728;&#x751F;&#x6210;Activity&#x3001;Service&#x7684;&#x65F6;&#x5019;&#xFF0C;&#x4E3A;&#x5176;&#x8BBE;&#x7F6E;&#x7684;Context&#x90FD;&#x4E3A;PluginContext&#x5BF9;&#x8C61;&#x3002;</p>
+<p>&#x6240;&#x4EE5;&#x5F53;&#x4F60;&#x8C03;&#x7528;getContentResolver&#x65F6;&#xFF0C;&#x8C03;&#x7528;&#x7684;&#x4E3A;PluginContext&#x7684;getContentResolver&#x3002;</p>
+<pre><code class="lang-java">@Override
+public ContentResolver getContentResolver() {
+    return new PluginContentResolver(getHostContext());
+}
+</code></pre>
+<p>&#x8FD4;&#x56DE;&#x7684;&#x662F;&#x4E00;&#x4E2A;PluginContentResolver&#x5BF9;&#x8C61;&#xFF0C;&#x5F53;&#x6211;&#x4EEC;&#x8C03;&#x7528;query&#x65B9;&#x6CD5;&#x65F6;&#xFF0C;&#x4F1A;&#x8F97;&#x8F6C;&#x8C03;&#x7528;&#x5230; 
+<code>ContentResolver.acquireUnstableProvider</code>&#x65B9;&#x6CD5;&#x3002;&#x8BE5;&#x65B9;&#x6CD5;&#x88AB;PluginContentResolver&#x4E2D;&#x590D;&#x5199;:</p>
+<pre><code class="lang-java">protected IContentProvider acquireUnstableProvider(Context context, String auth) {
+    try {
+        if (mPluginManager.resolveContentProvider(auth, 0) != null) {
+            return mPluginManager.getIContentProvider();
+        }
+
+        return (IContentProvider) sAcquireUnstableProvider.invoke(mBase, context, auth);
+    } catch (Exception e) {
+        e.printStackTrace();
+    }
+
+    return null;
+}
+</code></pre>
+<p>&#x5982;&#x679C;&#x8C03;&#x7528;&#x7684;auth&#x4E3A;&#x63D2;&#x4EF6;apk&#x4E2D;&#x7684;provider&#xFF0C;&#x5219;&#x76F4;&#x63A5;&#x8FD4;&#x56DE;<code>mPluginManager.getIContentProvider()</code>&#x3002;</p>
+<pre><code class="lang-java">public synchronized IContentProvider getIContentProvider() {
+    if (mIContentProvider == null) {
+        hookIContentProviderAsNeeded();
+    }
+
+    return mIContentProvider;
+}
+</code></pre>
+<p>&#x54A6;&#xFF0C;&#x53C8;&#x770B;&#x5230;&#x4E00;&#x4E2A;hook&#x65B9;&#x6CD5;&#xFF1A;</p>
+<pre><code class="lang-java">private void hookIContentProviderAsNeeded() {
+    Uri uri = Uri.parse(PluginContentResolver.getUri(mContext));
+    mContext.getContentResolver().call(uri, &quot;wakeup&quot;, null, null);
+    try {
+        Field authority = null;
+        Field mProvider = null;
+        ActivityThread activityThread = (ActivityThread) ReflectUtil.getActivityThread(mContext);
+        Map mProviderMap = (Map) ReflectUtil.getField(activityThread.getClass(), activityThread, &quot;mProviderMap&quot;);
+        Iterator iter = mProviderMap.entrySet().iterator();
+        while (iter.hasNext()) {
+            Map.Entry entry = (Map.Entry) iter.next();
+            Object key = entry.getKey();
+            Object val = entry.getValue();
+            String auth;
+            if (key instanceof String) {
+                auth = (String) key;
+            } else {
+                if (authority == null) {
+                    authority = key.getClass().getDeclaredField(&quot;authority&quot;);
+                    authority.setAccessible(true);
+                }
+                auth = (String) authority.get(key);
+            }
+            if (auth.equals(PluginContentResolver.getAuthority(mContext))) {
+                if (mProvider == null) {
+                    mProvider = val.getClass().getDeclaredField(&quot;mProvider&quot;);
+                    mProvider.setAccessible(true);
+                }
+                IContentProvider rawProvider = (IContentProvider) mProvider.get(val);
+                IContentProvider proxy = IContentProviderProxy.newInstance(mContext, rawProvider);
+                mIContentProvider = proxy;
+                Log.d(TAG, &quot;hookIContentProvider succeed : &quot; + mIContentProvider);
+                break;
+            }
+        }
+    } catch (Exception e) {
+        e.printStackTrace();
+    }
+}
+</code></pre>
+<p>&#x524D;&#x4E24;&#x884C;&#x6BD4;&#x8F83;&#x91CD;&#x8981;&#xFF0C;&#x7B2C;&#x4E00;&#x884C;&#x662F;&#x62FF;&#x5230;&#x4E86;&#x5360;&#x5751;&#x7684;provider&#x7684;uri&#xFF0C;&#x7136;&#x540E;&#x4E3B;&#x52A8;&#x8C03;&#x7528;&#x4E86;&#x5176;call&#x65B9;&#x6CD5;&#x3002; 
+&#x5982;&#x679C;&#x4F60;&#x8DDF;&#x8FDB;&#x53BB;&#xFF0C;&#x4F1A;&#x53D1;&#x73B0;&#xFF0C;&#x5176;&#x4F1A;&#x8C03;&#x7528;acquireProvider-&gt;mMainThread.acquireProvider-&gt;ActivityManagerNative.getDefault().getContentProvider-&gt;installProvider&#x3002;&#x7B80;&#x5355;&#x6765;&#x8BF4;&#xFF0C;&#x5176;&#x9996;&#x5148;&#x8C03;&#x7528;&#x5DF2;&#x7ECF;&#x6CE8;&#x518C;provider&#xFF0C;&#x5F97;&#x5230;&#x8FD4;&#x56DE;&#x7684;IContentProvider&#x5BF9;&#x8C61;&#x3002;</p>
+<p>&#x8FD9;&#x4E2A;IContentProvider&#x5BF9;&#x8C61;&#x662F;&#x5728;ActivityThread.installProvider&#x65B9;&#x6CD5;&#x4E2D;&#x52A0;&#x5165;&#x5230;mProviderMap&#x4E2D;&#x3002;</p>
+<p>&#x800C;ActivityThread&#x5BF9;&#x8C61;&#x53C8;&#x5BB9;&#x6613;&#x83B7;&#x53D6;&#xFF0C;mProviderMap&#x53C8;&#x662F;&#x5B83;&#x6210;&#x5458;&#x53D8;&#x91CF;&#xFF0C;&#x90A3;&#x4E48;&#x4E5F;&#x5BB9;&#x6613;&#x83B7;&#x53D6;&#xFF0C;&#x6240;&#x4EE5;&#x4E0A;&#x9762;&#x7684;&#x4E00;&#x5927;&#x5768;&#xFF08;&#x9664;&#x4E86;&#x524D;&#x4E24;&#x884C;&#xFF09;&#x4EE3;&#x7801;&#xFF0C;&#x5C31;&#x4E3A;&#x4E86;&#x62FF;&#x5230;&#x5360;&#x5751;&#x7684;provider&#x5BF9;&#x5E94;&#x7684;IContentProvider&#x5BF9;&#x8C61;&#x3002;</p>
+<p>&#x7136;&#x540E;&#x901A;&#x8FC7;&#x52A8;&#x6001;&#x4EE3;&#x7406;&#x7684;&#x65B9;&#x5F0F;&#xFF0C;&#x8FDB;&#x884C;&#x4E86;hook&#xFF0C;&#x5173;&#x6CE8;InvocationHandler&#x7684;&#x5B9E;&#x4F8B;IContentProviderProxy&#x3002;</p>
+<p>IContentProvider&#x80FD;&#x5E72;&#x5417;&#x5462;&#xFF1F;&#x5176;&#x5B9E;&#x5C31;&#x80FD;&#x62E6;&#x622A;&#x6211;&#x4EEC;&#x6B63;&#x5E38;&#x7684;query&#x3001;insert&#x3001;update&#x3001;delete&#x7B49;&#x64CD;&#x4F5C;&#x3002;</p>
+<p>&#x62E6;&#x622A;&#x8FD9;&#x4E9B;&#x65B9;&#x6CD5;&#x5E72;&#x561B;&#xFF1F;</p>
+<p>&#x5F53;&#x7136;&#x662F;&#x4FEE;&#x6539;uri&#x5566;&#xFF0C;&#x628A;&#x7528;&#x6237;&#x8C03;&#x7528;&#x7684;uri&#xFF0C;&#x66FF;&#x6362;&#x4E3A;&#x5360;&#x5751;provider&#x7684;uri&#xFF0C;&#x518D;&#x628A;&#x539F;&#x672C;&#x7684;uri&#x4F5C;&#x4E3A;&#x53C2;&#x6570;&#x62FC;&#x63A5;&#x5728;&#x5360;&#x5751;provider&#x7684;uri&#x540E;&#x9762;&#x5373;&#x53EF;&#x3002;</p>
+<p>&#x597D;&#x4E86;&#xFF0C;&#x76F4;&#x63A5;&#x770B;invoke&#x65B9;&#x6CD5;&#xFF1A;</p>
+<pre><code class="lang-java">@Override
+public Object invoke(Object proxy, Method method, Object[] args) throws Throwable {
+    Log.v(TAG, method.toGenericString() + &quot; : &quot; + Arrays.toString(args));
+    wrapperUri(method, args);
+
+    try {
+        return method.invoke(mBase, args);
+    } catch (InvocationTargetException e) {
+        throw e.getTargetException();
+    }
+}
+</code></pre>
+<p>&#x76F4;&#x63A5;&#x770B;wrapperUri</p>
+<pre><code class="lang-java">private void wrapperUri(Method method, Object[] args) {
+    Uri uri = null;
+    int index = 0;
+    if (args != null) {
+        for (int i = 0; i &lt; args.length; i++) {
+            if (args[i] instanceof Uri) {
+                uri = (Uri) args[i];
+                index = i;
+                break;
+            }
+        }
+    }
+
+    // &#x7701;&#x7565;&#x90E8;&#x5206;&#x4EE3;&#x7801;
+
+    PluginManager pluginManager = PluginManager.getInstance(mContext);
+    ProviderInfo info = pluginManager.resolveContentProvider(uri.getAuthority(), 0);
+    if (info != null) {
+        String pkg = info.packageName;
+        LoadedPlugin plugin = pluginManager.getLoadedPlugin(pkg);
+        String pluginUri = Uri.encode(uri.toString());
+        StringBuilder builder = new StringBuilder(PluginContentResolver.getUri(mContext));
+        builder.append(&quot;/?plugin=&quot; + plugin.getLocation());
+        builder.append(&quot;&amp;pkg=&quot; + pkg);
+        builder.append(&quot;&amp;uri=&quot; + pluginUri);
+        Uri wrapperUri = Uri.parse(builder.toString());
+        if (method.getName().equals(&quot;call&quot;)) {
+            bundleInCallMethod.putString(KEY_WRAPPER_URI, wrapperUri.toString());
+        } else {
+            args[index] = wrapperUri;
+        }
+    }
+}
+</code></pre>
+<p>&#x4ECE;&#x53C2;&#x6570;&#x4E2D;&#x627E;&#x5230;uri&#xFF0C;&#x5F80;&#x4E0B;&#x770B;&#xFF0C;&#x641E;&#x4E86;&#x4E2A;StringBuilder&#x9996;&#x5148;&#x52A0;&#x5165;&#x5360;&#x5751;provider&#x7684;uri&#xFF0C;&#x7136;&#x540E;&#x5C06;&#x76EE;&#x6807;uri&#xFF0C;pkg,plugin&#x7B49;&#x53C2;&#x6570;&#x7B49;&#x62FC;&#x63A5;&#x4E0A;&#x53BB;&#xFF0C;&#x66FF;&#x6362;&#x5230;args&#x4E2D;&#x7684;uri&#xFF0C;&#x7136;&#x540E;&#x7EE7;&#x7EED;&#x8D70;&#x539F;&#x672C;&#x7684;&#x6D41;&#x7A0B;&#x3002;</p>
+<p>&#x5047;&#x8BBE;&#x662F;query&#x65B9;&#x6CD5;&#xFF0C;&#x5E94;&#x8BE5;&#x5C31;&#x5230;&#x8FBE;&#x6211;&#x4EEC;&#x5360;&#x5751;provider&#x7684;query&#x65B9;&#x6CD5;&#x5566;&#x3002;</p>
+<h3 id="&#xFF08;2&#xFF09;&#x4EE3;&#x7406;&#x5206;&#x53D1;"><a name="&#xFF08;2&#xFF09;&#x4EE3;&#x7406;&#x5206;&#x53D1;" class="anchor-navigation-ex-anchor" href="#&#xFF08;2&#xFF09;&#x4EE3;&#x7406;&#x5206;&#x53D1;"><i class="fa fa-link" aria-hidden="true"></i></a>&#xFF08;2&#xFF09;&#x4EE3;&#x7406;&#x5206;&#x53D1;</h3>
+<p>&#x5360;&#x5751;&#x5982;&#x4E0B;&#xFF1A;</p>
+<pre><code class="lang-xml">&lt;provider
+    android:name=&quot;com.didi.virtualapk.delegate.RemoteContentProvider&quot;
+    android:authorities=&quot;${applicationId}.VirtualAPK.Provider&quot;
+    android:process=&quot;:daemon&quot; /&gt;
+</code></pre>
+<p>&#x6253;&#x5F00;RemoteContentProvider&#xFF0C;&#x76F4;&#x63A5;&#x770B;query&#x65B9;&#x6CD5;&#xFF1A;</p>
+<pre><code class="lang-java">@Override
+public Cursor query(Uri uri, String[] projection, String selection,
+                    String[] selectionArgs, String sortOrder) {
+
+    ContentProvider provider = getContentProvider(uri);
+    Uri pluginUri = Uri.parse(uri.getQueryParameter(KEY_URI));
+    if (provider != null) {
+        return provider.query(pluginUri, projection, selection, selectionArgs, sortOrder);
+    }
+
+    return null;
+}
+</code></pre>
+<p>&#x53EF;&#x4EE5;&#x770B;&#x5230;&#x901A;&#x8FC7;&#x4F20;&#x5165;&#x7684;&#x751F;&#x6210;&#x4E86;&#x4E00;&#x4E2A;&#x65B0;&#x7684;provider,&#x7136;&#x540E;&#x62FF;&#x5230;&#x76EE;&#x6807;uri&#xFF0C;&#x5728;&#x76F4;&#x63A5;&#x8C03;&#x7528;provider.query&#x4F20;&#x5165;&#x76EE;&#x6807;uri&#x5373;&#x53EF;&#x3002;</p>
+<p>&#x90A3;&#x4E48;&#x8FD9;&#x4E2A;provider&#x5B9E;&#x9645;&#x4E0A;&#x662F;&#x8FD9;&#x4E2A;&#x4EE3;&#x7406;&#x7C7B;&#x5E2E;&#x6211;&#x4EEC;&#x751F;&#x6210;&#x7684;&#xFF1A;</p>
+<pre><code class="lang-java">private ContentProvider getContentProvider(final Uri uri) {
+    final PluginManager pluginManager = PluginManager.getInstance(getContext());
+    Uri pluginUri = Uri.parse(uri.getQueryParameter(KEY_URI));
+    final String auth = pluginUri.getAuthority();
+    // &#x7701;&#x7565;&#x4E86;&#x7F13;&#x5B58;&#x7BA1;&#x7406;
+    LoadedPlugin plugin = pluginManager.getLoadedPlugin(uri.getQueryParameter(KEY_PKG));
+    if (plugin == null) {
+        try {
+            pluginManager.loadPlugin(new File(uri.getQueryParameter(KEY_PLUGIN)));
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+
+    final ProviderInfo providerInfo = pluginManager.resolveContentProvider(auth, 0);
+    if (providerInfo != null) {
+        RunUtil.runOnUiThread(new Runnable() {
+            @Override
+            public void run() {
+                try {
+                    LoadedPlugin loadedPlugin = pluginManager.getLoadedPlugin(uri.getQueryParameter(KEY_PKG));
+                    ContentProvider contentProvider = (ContentProvider) Class.forName(providerInfo.name).newInstance();
+                    contentProvider.attachInfo(loadedPlugin.getPluginContext(), providerInfo);
+                    sCachedProviders.put(auth, contentProvider);
+                } catch (Exception e) {
+                    e.printStackTrace();
+                }
+            }
+        }, true);
+        return sCachedProviders.get(auth);
+    }
+    return null;
+}
+</code></pre>
+<p>&#x5F88;&#x7B80;&#x5355;&#xFF0C;&#x53D6;&#x51FA;&#x539F;&#x672C;&#x7684;uri&#xFF0C;&#x62FF;&#x5230;auth&#xFF0C;&#x5728;&#x901A;&#x8FC7;&#x52A0;&#x8F7D;plugin&#x5F97;&#x5230;providerInfo&#xFF0C;&#x53CD;&#x5C04;&#x751F;&#x6210;provider&#x5BF9;&#x8C61;&#xFF0C;&#x5728;&#x8C03;&#x7528;&#x5176;attachInfo&#x65B9;&#x6CD5;&#x5373;&#x53EF;&#x3002;</p>
+<p>&#x5176;&#x4ED6;&#x7684;&#x51E0;&#x4E2A;&#x65B9;&#x6CD5;&#xFF1A;insert&#x3001;update&#x3001;delete&#x3001;call&#x903B;&#x8F91;&#x57FA;&#x672C;&#x76F8;&#x540C;&#xFF0C;&#x5C31;&#x4E0D;&#x8D58;&#x8FF0;&#x4E86;&#x3002;</p>
+<p>&#x611F;&#x89C9;&#x8FD9;&#x91CC;&#x5176;&#x5B9E;&#x901A;&#x8FC7;hook AMS&#x7684;getContentProvider&#x65B9;&#x6CD5;&#x4E5F;&#x80FD;&#x5B8C;&#x6210;&#x4E0A;&#x8FF0;&#x6D41;&#x7A0B;&#xFF0C;&#x611F;&#x89C9;&#x597D;&#x50CF;&#x53EF;&#x4EE5;&#x66F4;&#x5F7B;&#x5E95;&#xFF0C;&#x4E0D;&#x9700;&#x8981;&#x4F9D;&#x8D56;PluginContext&#x4E86;&#x3002;</p>
+<h2 id="&#x516D;&#x3001;&#x603B;&#x7ED3;"><a name="&#x516D;&#x3001;&#x603B;&#x7ED3;" class="anchor-navigation-ex-anchor" href="#&#x516D;&#x3001;&#x603B;&#x7ED3;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x516D;&#x3001;&#x603B;&#x7ED3;</h2>
+<p>&#x603B;&#x7ED3;&#x4E0B;&#xFF0C;&#x5176;&#x5B9E;&#x5C31;&#x662F;&#x6587;&#x521D;&#x7684;&#x5185;&#x5BB9;&#xFF0C;&#x53EF;&#x4EE5;&#x770B;&#x5230;VritualApk&#x5927;&#x4F53;&#x65B9;&#x6848;&#x5982;&#x4E0B;&#xFF1A;</p>
+<ul>
+<li>Activity&#xFF1A;&#x5728;&#x5BBF;&#x4E3B;apk&#x4E2D;&#x63D0;&#x524D;&#x5360;&#x51E0;&#x4E2A;&#x5751;&#xFF0C;&#x7136;&#x540E;&#x901A;&#x8FC7;&#x201C;&#x6B3A;&#x4E0A;&#x7792;&#x4E0B;&#x201D;&#xFF08;&#x8FD9;&#x4E2A;&#x8BCD;&#x597D;&#x50CF;&#x662F;360&#x4E4B;&#x524D;&#x7684;ppt&#x4E2D;&#x63D0;&#x5230;&#xFF09;&#x7684;&#x65B9;&#x5F0F;&#xFF0C;&#x542F;&#x52A8;&#x63D2;&#x4EF6;apk&#x7684;Activity&#xFF1B;&#x56E0;&#x4E3A;&#x8981;&#x652F;&#x6301;&#x4E0D;&#x540C;&#x7684;launchMode&#x4EE5;&#x53CA;&#x4E00;&#x4E9B;&#x7279;&#x6B8A;&#x7684;&#x5C5E;&#x6027;&#xFF0C;&#x9700;&#x8981;&#x5360;&#x591A;&#x4E2A;&#x5751;&#x3002;</li>
+<li>Service&#xFF1A;&#x901A;&#x8FC7;&#x4EE3;&#x7406;Service&#x7684;&#x65B9;&#x5F0F;&#x53BB;&#x5206;&#x53D1;&#xFF1B;&#x4E3B;&#x8FDB;&#x7A0B;&#x548C;&#x5176;&#x4ED6;&#x8FDB;&#x7A0B;&#xFF0C;VirtualAPK&#x4F7F;&#x7528;&#x4E86;&#x4E24;&#x4E2A;&#x4EE3;&#x7406;Service&#x3002;</li>
+<li>BroadcastReceiver&#xFF1A;&#x9759;&#x6001;&#x8F6C;&#x52A8;&#x6001;&#x3002;</li>
+<li>ContentProvider&#xFF1A;&#x901A;&#x8FC7;&#x4E00;&#x4E2A;&#x4EE3;&#x7406;Provider&#x8FDB;&#x884C;&#x5206;&#x53D1;&#x3002; </li>
+</ul>
+<footer class="page-footer"><span class="copyright">Copyright &#xA9; ruheng.com 2017 all right reserved&#xFF0C;powered by Gitbook</span><span class="footer-modification">&#x8BE5;&#x6587;&#x4EF6;&#x4FEE;&#x8BA2;&#x65F6;&#x95F4;&#xFF1A;
+2017-09-04 16:14:43
+</span></footer>
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="plugin.html" class="navigation navigation-prev " aria-label="Previous page: Android插件化入门指南">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="push.html" class="navigation navigation-next " aria-label="Next page: Android推送技术解析">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"VirtualApk解析","level":"3.2.13","depth":2,"next":{"title":"Android推送技术解析","level":"3.2.14","depth":2,"path":"android/advance/push.md","ref":"android/advance/push.md","articles":[]},"previous":{"title":"Android插件化入门指南","level":"3.2.12","depth":2,"path":"android/advance/plugin.md","ref":"android/advance/plugin.md","articles":[]},"dir":"ltr"},"config":{"plugins":["-lunr","-search","-highlight","-livereload","search-plus@^0.0.11","simple-page-toc@^0.1.1","github@^2.0.0","github-buttons@2.1.0","edit-link@^2.0.2","advanced-emoji@^0.2.1","anchors@^0.7.1","include-codeblock@^3.0.2","ace@^0.3.2","emphasize@^1.1.0","katex@^1.1.3","splitter@^0.0.8","tbfed-pagefooter@^0.0.1","expandable-chapters-small@^0.1.7","sectionx@^3.1.0","local-video@^1.0.1","anchor-navigation-ex@0.1.8","favicon@^0.0.2","livereload"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"tbfed-pagefooter":{"copyright":"Copyright © ruheng.com 2017","modify_label":"该文件修订时间：","modify_format":"YYYY-MM-DD HH:mm:ss"},"emphasize":{},"ace":{},"github":{"url":"https://github.com/LRH1993/android_interview"},"simple-page-toc":{"maxDepth":3,"skipFirstH1":true},"splitter":{},"katex":{},"fontsettings":{"theme":"white","family":"sans","size":2},"sectionx":{"tag":"b"},"anchor-navigation-ex":{"isRewritePageTitle":false,"tocLevel1Icon":"fa fa-hand-o-right","tocLevel2Icon":"fa fa-hand-o-right","tocLevel3Icon":"fa fa-hand-o-right"},"favicon":{"shortcut":"favicon.ico","bookmark":"favicon.ico"},"github-buttons":{"repo":"LRH1993/android_interview","types":["star"],"size":"small"},"expandable-chapters-small":{},"local-video":{},"advanced-emoji":{"embedEmojis":false},"include-codeblock":{"check":false,"edit":true,"fixlang":false,"lang":"","template":"ace","theme":"chrome","unindent":true},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":true,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"edit-link":{"label":"Edit This Page","base":"https://github.com/LRH1993/android_interview/edit/master"},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":true},"anchors":{},"search-plus":{}},"theme":"default","author":"ruheng","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"Android校招面试指南","language":"zh-hans","output.name":"site","links":{"sidebar":{"Home":"http://lruheng.com/"}},"gitbook":"3.2.3","description":"Android面试必备，记录自己的秋招之路"},"file":{"path":"android/advance/virtualapk.md","mtime":"2017-09-04T08:14:43.000Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2017-10-16T11:24:06.047Z"},"basePath":"../..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="../../gitbook/gitbook.js"></script>
+    <script src="../../gitbook/theme.js"></script>
+    
+        
+        <script src="../../gitbook/gitbook-plugin-search-plus/jquery.mark.min.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-search-plus/search.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-github/plugin.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-github-buttons/plugin.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-edit-link/plugin.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-ace/ace/ace.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-ace/ace.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-splitter/splitter.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-expandable-chapters-small/expandable-chapters-small.js"></script>
+        
+    
+        
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-sectionx/sectionx.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-local-video/video.min.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-sharing/buttons.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+

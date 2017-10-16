@@ -1,0 +1,36 @@
+#!/usr/bin/env node
+
+var fs       = require('fs');
+var yaml     = require('js-yaml');
+var path     = require('path');
+var request  = require('request');
+var camelize = require('camel-case');
+var path     = path.join(__dirname, '..', 'languages.json');
+
+/**
+ * Sanitize the languages JSON object.
+ *
+ * @param  {Object} obj
+ * @return {Object}
+ */
+var sanitizeYaml = function (obj) {
+  Object.keys(obj).forEach(function (language) {
+    Object.keys(obj[language]).forEach(function (key) {
+      var value = obj[language][key];
+
+      delete obj[language][key];
+      obj[language][camelize(key)] = value;
+    });
+  });
+
+  return obj;
+};
+
+/**
+ * Make a request to the YAML file hosted by GitHub and convert to JSON.
+ */
+request('https://raw.githubusercontent.com/github/linguist/master/lib/linguist/languages.yml', function (err, res, body) {
+  var languages = sanitizeYaml(yaml.safeLoad(body));
+
+  fs.writeFileSync(path, JSON.stringify(languages, null, 2));
+});

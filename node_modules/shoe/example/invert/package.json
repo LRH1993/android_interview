@@ -1,0 +1,10 @@
+{
+    "name" : "shoe-invert-example",
+    "version" : "0.0.0",
+    "dependencies" : {
+        "browserify" : "~2.25.1",
+        "ecstatic" : "~0.4.5",
+        "through" : "~2.3.4"
+    },
+    "private" : true
+}

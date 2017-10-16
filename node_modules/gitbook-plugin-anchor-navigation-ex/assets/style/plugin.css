@@ -1,0 +1,73 @@
+#anchor-navigation-ex-navbar {
+    border: 1px solid #ccc;
+    box-shadow: 5px 5px 2px #ccc;
+    padding: 5px 10px;
+    position: fixed;
+    background-color: #fff;
+    right: 50px;
+    top: 68px;
+    font-size: 12px;
+    white-space: nowrap;
+    z-index: 999;
+    cursor: pointer;
+    text-align: right;
+    max-height: 70%;
+    overflow-y: auto;
+    overflow-x: hidden;
+}
+
+#anchor-navigation-ex-navbar ul {
+    display: none;
+    text-align: left;
+    padding-right: 10px;
+}
+
+#anchor-navigation-ex-navbar:hover ul {
+    display: block;
+}
+
+#anchorNavigationExGoTop {
+    position: fixed;
+    right: 50px;
+    bottom: 68px;
+    border: 1px solid #ccc;
+    z-index: 999;
+    cursor: pointer;
+    font-size: 12px;
+    padding: 5px 10px;
+    box-shadow: 5px 5px 2px #ccc;
+    background-color: #fff;
+    color: #333;
+}
+
+a.anchor-navigation-ex-anchor {
+    color: inherit !important;
+    display: none;
+    margin-left: -30px;
+    padding-left: 40px;
+    cursor: pointer;
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+}
+
+a.anchor-navigation-ex-anchor i {
+    margin-left: -30px;
+    /*color: #000;*/
+    vertical-align: middle;
+    font-size: 16px !important;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    position: relative;
+}
+
+h1:hover a.anchor-navigation-ex-anchor, h2:hover a.anchor-navigation-ex-anchor, h3:hover a.anchor-navigation-ex-anchor,
+h4:hover a.anchor-navigation-ex-anchor, h5:hover a.anchor-navigation-ex-anchor, h6:hover a.anchor-navigation-ex-anchor{
+    display: inline-block;
+}
+
+.book .book-body .page-wrapper .page-inner section.normal {
+    overflow: visible;
+}

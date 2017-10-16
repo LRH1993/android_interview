@@ -1,0 +1,7 @@
+env:
+  node:     false
+  browser:  true
+
+globals:
+  $: false
+  _: false

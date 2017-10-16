@@ -1,0 +1,23 @@
+.book.color-theme-2 .panel {
+	background: #1A1A1A;
+	border-style: solid;
+	border-color: rgba(0,0,0,0.1);
+	border-width: 1px;
+}
+
+.book.color-theme-2  .panel-heading {
+	background-color: #2D3143;
+	border-width: 0px;
+}
+
+.book.color-theme-2  .panel-body {
+	background: #1A1A1A;
+}
+
+.book.color-theme-2 a.section {
+	border-color: #373b4e !important;
+}
+
+.atTitle {
+	display: flex;
+}
