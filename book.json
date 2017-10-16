@@ -20,15 +20,11 @@
         "edit-link@^2.0.2",
         "advanced-emoji@^0.2.1",
         "anchors@^0.7.1",
-        "include-codeblock@^3.0.2",
-        "emphasize@^1.1.0",
-        "katex@^1.1.3",
         "splitter@^0.0.8",
         "tbfed-pagefooter@^0.0.1",
         "expandable-chapters-small@^0.1.7",
         "sectionx@^3.1.0",
         "local-video@^1.0.1",
-        "anchor-navigation-ex@0.1.8",
         "favicon@^0.0.2"
     ],
     "pluginsConfig":{
@@ -68,12 +64,6 @@
         "edit-link":{
             "base":"https://github.com/LRH1993/android_interview/edit/master",
             "label":"Edit This Page"
-        },
-        "anchor-navigation-ex":{
-            "isRewritePageTitle":false,
-            "tocLevel1Icon":"fa fa-hand-o-right",
-            "tocLevel2Icon":"fa fa-hand-o-right",
-            "tocLevel3Icon":"fa fa-hand-o-right"
         },
         "sectionx":{
             "tag":"b"

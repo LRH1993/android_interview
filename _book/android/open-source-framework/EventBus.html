@@ -29,14 +29,6 @@
                 
             
                 
-                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-emphasize/plugin.css">
-                
-            
-                
-                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-katex/katex.min.css">
-                
-            
-                
                 <link rel="stylesheet" href="../../gitbook/gitbook-plugin-splitter/splitter.css">
                 
             
@@ -58,10 +50,6 @@
             
                 
                 <link rel="stylesheet" href="../../gitbook/gitbook-plugin-local-video/video-js.min.css">
-                
-            
-                
-                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-anchor-navigation-ex/style/plugin.css">
                 
             
                 
@@ -3705,7 +3693,7 @@
     
                                 <section class="normal markdown-section">
                                 
-                                <h2 id="&#x4E00;&#x3001;eventbus&#x7B80;&#x4ECB;"><a name="&#x4E00;&#x3001;eventbus&#x7B80;&#x4ECB;" class="anchor-navigation-ex-anchor" href="#&#x4E00;&#x3001;eventbus&#x7B80;&#x4ECB;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x4E00;&#x3001;EventBus&#x7B80;&#x4ECB;</h2>
+                                <h2 id="&#x4E00;&#x3001;eventbus&#x7B80;&#x4ECB;"><a name="&#x4E00;&#x3001;eventbus&#x7B80;&#x4ECB;" class="plugin-anchor" href="#&#x4E00;&#x3001;eventbus&#x7B80;&#x4ECB;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x4E00;&#x3001;EventBus&#x7B80;&#x4ECB;</h2>
 <p>EventBus&#x662F;&#x4E00;&#x4E2A;Android&#x7AEF;&#x4F18;&#x5316;&#x7684;publish/subscribe&#x6D88;&#x606F;&#x603B;&#x7EBF;&#xFF0C;&#x7B80;&#x5316;&#x4E86;&#x5E94;&#x7528;&#x7A0B;&#x5E8F;&#x5185;&#x5404;&#x7EC4;&#x4EF6;&#x95F4;&#x3001;&#x7EC4;&#x4EF6;&#x4E0E;&#x540E;&#x53F0;&#x7EBF;&#x7A0B;&#x95F4;&#x7684;&#x901A;&#x4FE1;&#x3002;</p>
 <p>&#x4F5C;&#x4E3A;&#x4E00;&#x4E2A;&#x6D88;&#x606F;&#x603B;&#x7EBF;&#x4E3B;&#x8981;&#x6709;&#x4E09;&#x4E2A;&#x7EC4;&#x6210;&#x90E8;&#x5206;&#xFF1A;</p>
 <p>&#x4E8B;&#x4EF6;&#xFF08;Event&#xFF09;&#xFF1A;&#x53EF;&#x4EE5;&#x662F;&#x4EFB;&#x610F;&#x7C7B;&#x578B;&#x7684;&#x5BF9;&#x8C61;&#x3002;&#x901A;&#x8FC7;&#x4E8B;&#x4EF6;&#x7684;&#x53D1;&#x5E03;&#x8005;&#x5C06;&#x4E8B;&#x4EF6;&#x8FDB;&#x884C;&#x4F20;&#x9012;&#x3002;</p>
@@ -3713,7 +3701,7 @@
 <p>&#x4E8B;&#x4EF6;&#x53D1;&#x5E03;&#x8005;&#xFF08;Publisher&#xFF09;&#xFF1A;&#x7528;&#x4E8E;&#x901A;&#x77E5; Subscriber &#x6709;&#x4E8B;&#x4EF6;&#x53D1;&#x751F;&#x3002;&#x53EF;&#x4EE5;&#x5728;&#x4EFB;&#x610F;&#x7EBF;&#x7A0B;&#x4EFB;&#x610F;&#x4F4D;&#x7F6E;&#x53D1;&#x9001;&#x4E8B;&#x4EF6;&#x3002;</p>
 <p><img src="http://upload-images.jianshu.io/upload_images/3985563-42b1c487b9640141.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="img"></p>
 <p>&#x4E0A;&#x56FE;&#x89E3;&#x91CA;&#x4E86;&#x6574;&#x4E2A;EventBus&#x7684;&#x5927;&#x6982;&#x5DE5;&#x4F5C;&#x6D41;&#x7A0B;&#xFF1A;&#x4E8B;&#x4EF6;&#x7684;&#x53D1;&#x5E03;&#x8005;&#xFF08;Publisher&#xFF09;&#x5C06;&#x4E8B;&#x4EF6;&#xFF08;Event&#xFF09;&#x901A;&#x8FC7;post()&#x65B9;&#x6CD5;&#x53D1;&#x9001;&#x3002;EventBus&#x5185;&#x90E8;&#x8FDB;&#x884C;&#x5904;&#x7406;&#xFF0C;&#x627E;&#x5230;&#x8BA2;&#x9605;&#x4E86;&#x8BE5;&#x4E8B;&#x4EF6;&#xFF08;Event&#xFF09;&#x7684;&#x4E8B;&#x4EF6;&#x8BA2;&#x9605;&#x8005;&#xFF08;Subscriber&#xFF09;&#x3002;&#x7136;&#x540E;&#x8BE5;&#x4E8B;&#x4EF6;&#x7684;&#x8BA2;&#x9605;&#x8005;&#xFF08;Subscriber&#xFF09;&#x901A;&#x8FC7;onEvent()&#x65B9;&#x6CD5;&#x63A5;&#x6536;&#x4E8B;&#x4EF6;&#x8FDB;&#x884C;&#x76F8;&#x5173;&#x5904;&#x7406;&#xFF08;&#x5173;&#x4E8E;onEvent()&#x5728;EventBus 3.0&#x4E2D;&#x6709;&#x6539;&#x52A8;&#xFF0C;&#x4E0B;&#x9762;&#x8BE6;&#x7EC6;&#x8BF4;&#x660E;&#xFF09;&#x3002;</p>
-<h2 id="&#x4E8C;&#x3001;eventbus&#x7684;&#x7B80;&#x5355;&#x4F7F;&#x7528;"><a name="&#x4E8C;&#x3001;eventbus&#x7684;&#x7B80;&#x5355;&#x4F7F;&#x7528;" class="anchor-navigation-ex-anchor" href="#&#x4E8C;&#x3001;eventbus&#x7684;&#x7B80;&#x5355;&#x4F7F;&#x7528;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x4E8C;&#x3001;EventBus&#x7684;&#x7B80;&#x5355;&#x4F7F;&#x7528;</h2>
+<h2 id="&#x4E8C;&#x3001;eventbus&#x7684;&#x7B80;&#x5355;&#x4F7F;&#x7528;"><a name="&#x4E8C;&#x3001;eventbus&#x7684;&#x7B80;&#x5355;&#x4F7F;&#x7528;" class="plugin-anchor" href="#&#x4E8C;&#x3001;eventbus&#x7684;&#x7B80;&#x5355;&#x4F7F;&#x7528;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x4E8C;&#x3001;EventBus&#x7684;&#x7B80;&#x5355;&#x4F7F;&#x7528;</h2>
 <p>1&#x3001;&#x628A;EventBus&#x4F9D;&#x8D56;&#x5230;&#x9879;&#x76EE;</p>
 <p>build.gradle&#x6DFB;&#x52A0;&#x5F15;&#x7528;</p>
 <pre><code class="lang-java"> compile <span class="hljs-string">&apos;de.greenrobot:eventbus:3.0.0-beta1&apos;</span>
@@ -3775,8 +3763,8 @@
 <p>&#x90A3;&#x4E48;onToastEvent(ToastEvent event)&#x4F1A;&#x6536;&#x5230;&#x4E8B;&#x4EF6;&#xFF0C;&#x5E76;&#x5F39;&#x51FA;&#x63D0;&#x793A;&#x3002;</p>
 <p>EventBus&#x7684;&#x57FA;&#x7840;&#x4F7F;&#x7528;&#x6D41;&#x7A0B;&#x5C31;&#x662F;&#x8FD9;&#x6837;&#x7684;&#x3002;</p>
 <p>&#x5176;&#x5B9E;&#xFF0C;EventBus&#x8FD8;&#x6709;&#x597D;&#x591A;&#x5176;&#x4ED6;&#x7684;&#x529F;&#x80FD;&#x3002;&#x4E0B;&#x9762;&#x6211;&#x4EEC;&#x4E00;&#x4E2A;&#x4E2A;&#x4ECB;&#x7ECD;&#x3002;</p>
-<h2 id="&#x4E09;&#x3001;eventbus&#x7684;&#x8FDB;&#x9636;&#x4F7F;&#x7528;"><a name="&#x4E09;&#x3001;eventbus&#x7684;&#x8FDB;&#x9636;&#x4F7F;&#x7528;" class="anchor-navigation-ex-anchor" href="#&#x4E09;&#x3001;eventbus&#x7684;&#x8FDB;&#x9636;&#x4F7F;&#x7528;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x4E09;&#x3001;EventBus&#x7684;&#x8FDB;&#x9636;&#x4F7F;&#x7528;</h2>
-<h5 id="1&#x7EBF;&#x7A0B;&#x6A21;&#x5F0F;threadmode"><a name="1&#x7EBF;&#x7A0B;&#x6A21;&#x5F0F;threadmode" class="anchor-navigation-ex-anchor" href="#1&#x7EBF;&#x7A0B;&#x6A21;&#x5F0F;threadmode"><i class="fa fa-link" aria-hidden="true"></i></a>1.&#x7EBF;&#x7A0B;&#x6A21;&#x5F0F;ThreadMode</h5>
+<h2 id="&#x4E09;&#x3001;eventbus&#x7684;&#x8FDB;&#x9636;&#x4F7F;&#x7528;"><a name="&#x4E09;&#x3001;eventbus&#x7684;&#x8FDB;&#x9636;&#x4F7F;&#x7528;" class="plugin-anchor" href="#&#x4E09;&#x3001;eventbus&#x7684;&#x8FDB;&#x9636;&#x4F7F;&#x7528;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x4E09;&#x3001;EventBus&#x7684;&#x8FDB;&#x9636;&#x4F7F;&#x7528;</h2>
+<h5 id="1&#x7EBF;&#x7A0B;&#x6A21;&#x5F0F;threadmode"><a name="1&#x7EBF;&#x7A0B;&#x6A21;&#x5F0F;threadmode" class="plugin-anchor" href="#1&#x7EBF;&#x7A0B;&#x6A21;&#x5F0F;threadmode"><i class="fa fa-link" aria-hidden="true"></i></a>1.&#x7EBF;&#x7A0B;&#x6A21;&#x5F0F;ThreadMode</h5>
 <p>&#x5F53;&#x4F60;&#x63A5;&#x6536;&#x7684;&#x7684;&#x4E8B;&#x4EF6;&#x540E;&#xFF0C;&#x5982;&#x679C;&#x5904;&#x4E8E;&#x975E;UI&#x7EBF;&#x7A0B;&#xFF0C;&#x4F60;&#x8981;&#x66F4;&#x65B0;UI&#x600E;&#x4E48;&#x529E;&#xFF1F;&#x5982;&#x679C;&#x5904;&#x4E8E;UI&#x7EBF;&#x7A0B;&#xFF0C;&#x4F60;&#x8981;&#x8FDB;&#x884C;&#x8017;&#x65F6;&#x64CD;&#x4F5C;&#xFF0C;&#x600E;&#x4E48;&#x529E;?&#x7B49;&#x7B49;&#x5176;&#x4ED6;&#x60C5;&#x51B5;&#xFF0C;&#x901A;&#x8FC7;ThreadMode&#x7EDF;&#x7EDF;&#x5E2E;&#x4F60;&#x89E3;&#x51B3;&#x3002;</p>
 <p>&#x7528;&#x6CD5;&#x5C55;&#x793A;&#xFF1A;</p>
 <pre><code>@Subscribe(threadMode = ThreadMode.MainThread)
@@ -3791,7 +3779,7 @@
 <p><strong>MainThread: </strong>&#x4E8B;&#x4EF6;&#x7684;&#x5904;&#x7406;&#x4F1A;&#x5728;UI&#x7EBF;&#x7A0B;&#x4E2D;&#x6267;&#x884C;&#x3002;&#x4E8B;&#x4EF6;&#x5904;&#x7406;&#x65F6;&#x95F4;&#x4E0D;&#x80FD;&#x592A;&#x957F;&#xFF0C;&#x8FD9;&#x4E2A;&#x4E0D;&#x7528;&#x8BF4;&#x7684;&#xFF0C;&#x957F;&#x4E86;&#x4F1A;ANR&#x7684;&#x3002;</p>
 <p><strong>BackgroundThread&#xFF1A;</strong>&#x5982;&#x679C;&#x4E8B;&#x4EF6;&#x662F;&#x5728;UI&#x7EBF;&#x7A0B;&#x4E2D;&#x53D1;&#x5E03;&#x51FA;&#x6765;&#x7684;&#xFF0C;&#x90A3;&#x4E48;&#x4E8B;&#x4EF6;&#x5904;&#x7406;&#x5C31;&#x4F1A;&#x5728;&#x5B50;&#x7EBF;&#x7A0B;&#x4E2D;&#x8FD0;&#x884C;&#xFF0C;&#x5982;&#x679C;&#x4E8B;&#x4EF6;&#x672C;&#x6765;&#x5C31;&#x662F;&#x5B50;&#x7EBF;&#x7A0B;&#x4E2D;&#x53D1;&#x5E03;&#x51FA;&#x6765;&#x7684;&#xFF0C;&#x90A3;&#x4E48;&#x4E8B;&#x4EF6;&#x5904;&#x7406;&#x76F4;&#x63A5;&#x5728;&#x8BE5;&#x5B50;&#x7EBF;&#x7A0B;&#x4E2D;&#x6267;&#x884C;&#x3002;&#x6240;&#x6709;&#x5F85;&#x5904;&#x7406;&#x4E8B;&#x4EF6;&#x4F1A;&#x88AB;&#x52A0;&#x5230;&#x4E00;&#x4E2A;&#x961F;&#x5217;&#x4E2D;&#xFF0C;&#x7531;&#x5BF9;&#x5E94;&#x7EBF;&#x7A0B;&#x4F9D;&#x6B21;&#x5904;&#x7406;&#x8FD9;&#x4E9B;&#x4E8B;&#x4EF6;&#xFF0C;&#x5982;&#x679C;&#x67D0;&#x4E2A;&#x4E8B;&#x4EF6;&#x5904;&#x7406;&#x65F6;&#x95F4;&#x592A;&#x957F;&#xFF0C;&#x4F1A;&#x963B;&#x585E;&#x540E;&#x9762;&#x7684;&#x4E8B;&#x4EF6;&#x7684;&#x6D3E;&#x53D1;&#x6216;&#x5904;&#x7406;&#x3002;</p>
 <p><strong>Async&#xFF1A;</strong>&#x4E8B;&#x4EF6;&#x5904;&#x7406;&#x4F1A;&#x5728;&#x5355;&#x72EC;&#x7684;&#x7EBF;&#x7A0B;&#x4E2D;&#x6267;&#x884C;&#xFF0C;&#x4E3B;&#x8981;&#x7528;&#x4E8E;&#x5728;&#x540E;&#x53F0;&#x7EBF;&#x7A0B;&#x4E2D;&#x6267;&#x884C;&#x8017;&#x65F6;&#x64CD;&#x4F5C;&#xFF0C;&#x6BCF;&#x4E2A;&#x4E8B;&#x4EF6;&#x4F1A;&#x5F00;&#x542F;&#x4E00;&#x4E2A;&#x7EBF;&#x7A0B;&#x3002;</p>
-<h5 id="2priority&#x4E8B;&#x4EF6;&#x4F18;&#x5148;&#x7EA7;"><a name="2priority&#x4E8B;&#x4EF6;&#x4F18;&#x5148;&#x7EA7;" class="anchor-navigation-ex-anchor" href="#2priority&#x4E8B;&#x4EF6;&#x4F18;&#x5148;&#x7EA7;"><i class="fa fa-link" aria-hidden="true"></i></a>2.priority&#x4E8B;&#x4EF6;&#x4F18;&#x5148;&#x7EA7;</h5>
+<h5 id="2priority&#x4E8B;&#x4EF6;&#x4F18;&#x5148;&#x7EA7;"><a name="2priority&#x4E8B;&#x4EF6;&#x4F18;&#x5148;&#x7EA7;" class="plugin-anchor" href="#2priority&#x4E8B;&#x4EF6;&#x4F18;&#x5148;&#x7EA7;"><i class="fa fa-link" aria-hidden="true"></i></a>2.priority&#x4E8B;&#x4EF6;&#x4F18;&#x5148;&#x7EA7;</h5>
 <p>&#x4E8B;&#x4EF6;&#x7684;&#x4F18;&#x5148;&#x7EA7;&#x7C7B;&#x4F3C;&#x5E7F;&#x64AD;&#x7684;&#x4F18;&#x5148;&#x7EA7;&#xFF0C;&#x4F18;&#x5148;&#x7EA7;&#x8D8A;&#x9AD8;&#x4F18;&#x5148;&#x83B7;&#x5F97;&#x6D88;&#x606F;&#x3002;
 &#x7528;&#x6CD5;&#x5C55;&#x793A;&#xFF1A;</p>
 <pre><code class="lang-java"><span class="hljs-meta">@Subscribe</span>(priority = <span class="hljs-number">100</span>)
@@ -3809,7 +3797,7 @@
     }
 </code></pre>
 <p>&#x8FD9;&#x6837;&#x5176;&#x4ED6;&#x4F18;&#x5148;&#x7EA7;&#x6BD4;100&#x4F4E;&#xFF0C;&#x5E76;&#x4E14;&#x8BA2;&#x9605;&#x4E86;&#x8BE5;&#x4E8B;&#x4EF6;&#x7684;&#x8BA2;&#x9605;&#x8005;&#x5C31;&#x4F1A;&#x63A5;&#x6536;&#x4E0D;&#x5230;&#x8BE5;&#x4E8B;&#x4EF6;&#x3002;</p>
-<h5 id="3eventbus&#x9ECF;&#x6027;&#x4E8B;&#x4EF6;"><a name="3eventbus&#x9ECF;&#x6027;&#x4E8B;&#x4EF6;" class="anchor-navigation-ex-anchor" href="#3eventbus&#x9ECF;&#x6027;&#x4E8B;&#x4EF6;"><i class="fa fa-link" aria-hidden="true"></i></a>3.EventBus&#x9ECF;&#x6027;&#x4E8B;&#x4EF6;</h5>
+<h5 id="3eventbus&#x9ECF;&#x6027;&#x4E8B;&#x4EF6;"><a name="3eventbus&#x9ECF;&#x6027;&#x4E8B;&#x4EF6;" class="plugin-anchor" href="#3eventbus&#x9ECF;&#x6027;&#x4E8B;&#x4EF6;"><i class="fa fa-link" aria-hidden="true"></i></a>3.EventBus&#x9ECF;&#x6027;&#x4E8B;&#x4EF6;</h5>
 <p>EventBus&#x9664;&#x4E86;&#x666E;&#x901A;&#x4E8B;&#x4EF6;&#x4E5F;&#x652F;&#x6301;&#x7C98;&#x6027;&#x4E8B;&#x4EF6;&#x3002;&#x53EF;&#x4EE5;&#x7406;&#x89E3;&#x6210;&#xFF1A;&#x8BA2;&#x9605;&#x5728;&#x53D1;&#x5E03;&#x4E8B;&#x4EF6;&#x4E4B;&#x540E;&#xFF0C;&#x4F46;&#x540C;&#x6837;&#x53EF;&#x4EE5;&#x6536;&#x5230;&#x4E8B;&#x4EF6;&#x3002;&#x8BA2;&#x9605;/&#x89E3;&#x9664;&#x8BA2;&#x9605;&#x548C;&#x666E;&#x901A;&#x4E8B;&#x4EF6;&#x4E00;&#x6837;&#xFF0C;&#x4F46;&#x662F;&#x5904;&#x7406;&#x8BA2;&#x9605;&#x7684;&#x65B9;&#x6CD5;&#x6709;&#x6240;&#x4E0D;&#x540C;&#xFF0C;&#x9700;&#x8981;&#x6CE8;&#x89E3;&#x4E2D;&#x6DFB;&#x52A0;sticky = true&#x3002;
 &#x7528;&#x6CD5;&#x5C55;&#x793A;&#xFF1A;</p>
 <pre><code class="lang-java"><span class="hljs-meta">@Subscribe</span>(priority = <span class="hljs-number">100</span>,sticky = <span class="hljs-keyword">true</span>)
@@ -3828,7 +3816,7 @@
 <p>&#x6216;&#x8005;&#x8C03;&#x7528;&#x79FB;&#x9664;&#x6240;&#x6709;&#x7C98;&#x6027;&#x4E8B;&#x4EF6;</p>
 <pre><code class="lang-java">EventBus.getDefault().removeAllStickyEvents();
 </code></pre>
-<h5 id="4eventbus&#x914D;&#x7F6E;"><a name="4eventbus&#x914D;&#x7F6E;" class="anchor-navigation-ex-anchor" href="#4eventbus&#x914D;&#x7F6E;"><i class="fa fa-link" aria-hidden="true"></i></a>4.EventBus&#x914D;&#x7F6E;</h5>
+<h5 id="4eventbus&#x914D;&#x7F6E;"><a name="4eventbus&#x914D;&#x7F6E;" class="plugin-anchor" href="#4eventbus&#x914D;&#x7F6E;"><i class="fa fa-link" aria-hidden="true"></i></a>4.EventBus&#x914D;&#x7F6E;</h5>
 <p>EventBus&#x5728;2.3&#x7248;&#x672C;&#x4E2D;&#x6DFB;&#x52A0;&#x4E86;EventBuilder&#x53BB;&#x914D;&#x7F6E;EventBus&#x7684;&#x5404;&#x65B9;&#x5404;&#x9762;&#x3002;</p>
 <p>&#x6BD4;&#x5982;&#xFF1A;&#x5982;&#x4F55;&#x53BB;&#x6784;&#x5EFA;&#x4E00;&#x4E2A;&#x5728;&#x53D1;&#x5E03;&#x4E8B;&#x4EF6;&#x65F6;&#x6CA1;&#x6709;&#x8BA2;&#x9605;&#x8005;&#x65F6;&#x4FDD;&#x6301;&#x6C89;&#x9ED8;&#x7684;EventBus&#x3002;</p>
 <pre><code class="lang-java">EventBus eventBus = EventBus.builder()
@@ -3839,7 +3827,7 @@
 <p>&#x901A;&#x8FC7;&#x4E0A;&#x8FF0;&#x8BBE;&#x7F6E;&#xFF0C;&#x5F53;&#x4E00;&#x4E2A;&#x4E8B;&#x4EF6;&#x6CA1;&#x6709;&#x8BA2;&#x9605;&#x8005;&#x65F6;&#xFF0C;&#x4E0D;&#x4F1A;&#x8F93;&#x51FA;log&#x4FE1;&#x606F;&#xFF0C;&#x4E5F;&#x4E0D;&#x4F1A;&#x53D1;&#x5E03;&#x4E00;&#x6761;&#x9ED8;&#x8BA4;&#x4FE1;&#x606F;&#x3002;</p>
 <p>&#x914D;&#x7F6E;&#x9ED8;&#x8BA4;&#x7684;EventBus&#x5B9E;&#x4F8B;&#xFF0C;&#x4F7F;&#x7528;EventBus.getDefault()&#x662F;&#x4E00;&#x4E2A;&#x7B80;&#x5355;&#x7684;&#x65B9;&#x6CD5;&#x3002;&#x83B7;&#x53D6;&#x4E00;&#x4E2A;&#x5355;&#x4F8B;&#x7684;EventBus&#x5B9E;&#x4F8B;&#x3002;EventBusBuilder&#x4E5F;&#x5141;&#x8BB8;&#x4F7F;&#x7528;installDefaultEventBus&#x65B9;&#x6CD5;&#x53BB;&#x914D;&#x7F6E;&#x9ED8;&#x8BA4;&#x7684;EventBus&#x5B9E;&#x4F8B;&#x3002;</p>
 <p><strong>&#x6CE8;&#x610F;&#xFF1A;&#x4E0D;&#x540C;&#x7684;EventBus &#x7684;&#x5BF9;&#x8C61;&#x7684;&#x6570;&#x636E;&#x662F;&#x4E0D;&#x5171;&#x4EAB;&#x7684;&#x3002;&#x901A;&#x8FC7;&#x4E00;&#x4E2A;EventBus &#x5BF9;&#x8C61;&#x53BB;&#x53D1;&#x5E03;&#x4E8B;&#x4EF6;&#xFF0C;&#x53EA;&#x6709;&#x901A;&#x8FC7;&#x540C;&#x4E00;&#x4E2A;EventBus &#x5BF9;&#x8C61;&#x8BA2;&#x9605;&#x4E8B;&#x4EF6;&#xFF0C;&#x624D;&#x80FD;&#x63A5;&#x6536;&#x8BE5;&#x4E8B;&#x4EF6;&#x3002;&#x6240;&#x4EE5;&#x4EE5;&#x4E0A;&#x4F7F;&#x7528;EventBus.getDefault()&#x83B7;&#x5F97;&#x7684;&#x90FD;&#x662F;&#x540C;&#x4E00;&#x4E2A;&#x5B9E;&#x4F8B;&#x3002;</strong></p>
-<h2 id="&#x56DB;&#x3001;&#x6E90;&#x7801;&#x89E3;&#x6790;"><a name="&#x56DB;&#x3001;&#x6E90;&#x7801;&#x89E3;&#x6790;" class="anchor-navigation-ex-anchor" href="#&#x56DB;&#x3001;&#x6E90;&#x7801;&#x89E3;&#x6790;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x56DB;&#x3001;&#x6E90;&#x7801;&#x89E3;&#x6790;</h2>
+<h2 id="&#x56DB;&#x3001;&#x6E90;&#x7801;&#x89E3;&#x6790;"><a name="&#x56DB;&#x3001;&#x6E90;&#x7801;&#x89E3;&#x6790;" class="plugin-anchor" href="#&#x56DB;&#x3001;&#x6E90;&#x7801;&#x89E3;&#x6790;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x56DB;&#x3001;&#x6E90;&#x7801;&#x89E3;&#x6790;</h2>
 <p>&#x6CE8;&#x518C;&#x8BA2;&#x9605;</p>
 <pre><code class="lang-java">EventBus.getDefault().register(<span class="hljs-keyword">this</span>);
 </code></pre>
@@ -3854,7 +3842,7 @@
 <pre><code class="lang-java"> EventBus.getDefault().post(<span class="hljs-keyword">new</span> NewsEvent(<span class="hljs-string">&quot;&#x6211;&#x662F;&#x6765;&#x81EA;SecondActivity&#x7684;&#x6D88;&#x606F;&#xFF0C;&#x4F60;&#x597D;&#xFF01;&quot;</span>));
 </code></pre>
 <p>&#x4EE5;&#x4E0A;&#x662F;EventBus&#x7684;&#x57FA;&#x672C;&#x4F7F;&#x7528;&#x3002;&#x6211;&#x4EEC;&#x5148;&#x4ECE;getDefault&#x8BF4;&#x8D77;&#x3002;</p>
-<h3 id="getdefault"><a name="getdefault" class="anchor-navigation-ex-anchor" href="#getdefault"><i class="fa fa-link" aria-hidden="true"></i></a>getDefault()</h3>
+<h3 id="getdefault"><a name="getdefault" class="plugin-anchor" href="#getdefault"><i class="fa fa-link" aria-hidden="true"></i></a>getDefault()</h3>
 <pre><code class="lang-java"><span class="hljs-keyword">static</span> <span class="hljs-keyword">volatile</span> EventBus defaultInstance;
 <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> EventBus <span class="hljs-title">getDefault</span><span class="hljs-params">()</span> </span>{
         <span class="hljs-keyword">if</span> (defaultInstance == <span class="hljs-keyword">null</span>) {
@@ -3869,7 +3857,7 @@
 </code></pre>
 <p>&#x901A;&#x8FC7;&#x4E0A;&#x8FF0;&#x4EE3;&#x7801;&#x53EF;&#x4EE5;&#x5F97;&#x77E5;&#xFF0C;getDefault()&#x4E2D;&#x901A;&#x8FC7;&#x53CC;&#x68C0;&#x67E5;&#x9501;&#xFF08;DCL&#xFF09;&#x673A;&#x5236;&#x5B9E;&#x73B0;&#x4E86;EventBus&#x7684;&#x5355;&#x4F8B;&#x673A;&#x5236;&#xFF0C;&#x83B7;&#x5F97;&#x4E86;&#x4E00;&#x4E2A;&#x9ED8;&#x8BA4;&#x914D;&#x7F6E;&#x7684;EventBus&#x5BF9;&#x8C61;&#x3002;
 &#x4E0B;&#x9762;&#x6211;&#x4EEC;&#x7EE7;&#x7EED;&#x770B;register()&#x65B9;&#x6CD5;&#x3002;</p>
-<h3 id="register"><a name="register" class="anchor-navigation-ex-anchor" href="#register"><i class="fa fa-link" aria-hidden="true"></i></a>register()</h3>
+<h3 id="register"><a name="register" class="plugin-anchor" href="#register"><i class="fa fa-link" aria-hidden="true"></i></a>register()</h3>
 <p>&#x5728;&#x4E86;&#x89E3;register()&#x4E4B;&#x524D;&#xFF0C;&#x6211;&#x4EEC;&#x5148;&#x8981;&#x4E86;&#x89E3;&#x4E00;&#x4E0B;EventBus&#x4E2D;&#x7684;&#x51E0;&#x4E2A;&#x5173;&#x952E;&#x7684;&#x6210;&#x5458;&#x53D8;&#x91CF;&#x3002;&#x65B9;&#x4FBF;&#x5BF9;&#x4E0B;&#x9762;&#x5185;&#x5BB9;&#x7684;&#x7406;&#x89E3;&#x3002;</p>
 <pre><code class="lang-java"><span class="hljs-comment">/** Map&lt;&#x8BA2;&#x9605;&#x4E8B;&#x4EF6;, &#x8BA2;&#x9605;&#x8BE5;&#x4E8B;&#x4EF6;&#x7684;&#x8BA2;&#x9605;&#x8005;&#x96C6;&#x5408;&gt; */</span>
 <span class="hljs-keyword">private</span> <span class="hljs-keyword">final</span> Map&lt;Class&lt;?&gt;, CopyOnWriteArrayList&lt;Subscription&gt;&gt; subscriptionsByEventType;
@@ -3965,7 +3953,7 @@ subscribe &#x51FD;&#x6570;&#x5206;&#x4E09;&#x6B65;&#x3002;</p>
 &#x7B2C;&#x4E09;&#x6B65;&#xFF1A;&#x68C0;&#x67E5;&#x8FD9;&#x4E2A;&#x4E8B;&#x4EF6;&#x662F;&#x5426;&#x662F; Sticky &#x4E8B;&#x4EF6;&#xFF0C;&#x5982;&#x679C;&#x662F;&#x5219;&#x4ECE;stickyEvents&#x4E8B;&#x4EF6;&#x4FDD;&#x5B58;&#x961F;&#x5217;&#x4E2D;&#x53D6;&#x51FA;&#x8BE5;&#x4E8B;&#x4EF6;&#x7C7B;&#x578B;&#x6700;&#x540E;&#x4E00;&#x4E2A;&#x4E8B;&#x4EF6;&#x53D1;&#x9001;&#x7ED9;&#x5F53;&#x524D;&#x8BA2;&#x9605;&#x8005;&#x3002;</p>
 <p>&#x5230;&#x6B64;&#xFF0C;&#x4FBF;&#x5B8C;&#x6210;&#x4E86;&#x8BA2;&#x9605;&#x529F;&#x80FD;&#x3002;&#x4E0B;&#x9762;&#x662F;&#x8BA2;&#x9605;&#x7684;&#x5177;&#x4F53;&#x6D41;&#x7A0B;&#x56FE;&#xFF1A;</p>
 <p><img src="http://upload-images.jianshu.io/upload_images/3985563-210bce35b60a5481.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="img"></p>
-<h3 id="unregister"><a name="unregister" class="anchor-navigation-ex-anchor" href="#unregister"><i class="fa fa-link" aria-hidden="true"></i></a>unregister()</h3>
+<h3 id="unregister"><a name="unregister" class="plugin-anchor" href="#unregister"><i class="fa fa-link" aria-hidden="true"></i></a>unregister()</h3>
 <pre><code class="lang-java"><span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">synchronized</span> <span class="hljs-keyword">void</span> <span class="hljs-title">unregister</span><span class="hljs-params">(Object subscriber)</span> </span>{
     <span class="hljs-comment">// &#x83B7;&#x53D6;&#x8BE5;&#x8BA2;&#x9605;&#x8005;&#x6240;&#x6709;&#x7684;&#x8BA2;&#x9605;&#x4E8B;&#x4EF6;&#x7C7B;&#x7C7B;&#x578B;&#x96C6;&#x5408;.</span>
     List&lt;Class&lt;?&gt;&gt; subscribedTypes = typesBySubscriber.get(subscriber);
@@ -4000,7 +3988,7 @@ subscribe &#x51FD;&#x6570;&#x5206;&#x4E09;&#x6B65;&#x3002;</p>
 }
 </code></pre>
 <p>unregister()&#x65B9;&#x6CD5;&#x6BD4;&#x8F83;&#x7B80;&#x5355;&#xFF0C;&#x4E3B;&#x8981;&#x5B8C;&#x6210;&#x4E86;subscriptionsByEventType&#x4EE5;&#x53CA;typesBySubscriber&#x4E24;&#x4E2A;&#x96C6;&#x5408;&#x7684;&#x540C;&#x6B65;&#x3002;</p>
-<h3 id="post"><a name="post" class="anchor-navigation-ex-anchor" href="#post"><i class="fa fa-link" aria-hidden="true"></i></a>post()</h3>
+<h3 id="post"><a name="post" class="plugin-anchor" href="#post"><i class="fa fa-link" aria-hidden="true"></i></a>post()</h3>
 <pre><code class="lang-java"><span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">post</span><span class="hljs-params">(Object event)</span> </span>{
     <span class="hljs-comment">// &#x83B7;&#x53D6;&#x5F53;&#x524D;&#x7EBF;&#x7A0B;&#x7684;Posting&#x72B6;&#x6001;.</span>
     PostingThreadState postingState = currentPostingThreadState.get();
@@ -4130,7 +4118,7 @@ postToSubscription &#x51FD;&#x6570;&#x4E2D;&#x4F1A;&#x5224;&#x65AD;&#x8BA2;&#x96
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"EventBus解析","level":"3.3.3","depth":2,"next":{"title":"线性表","level":"4.1","depth":1,"path":"data-structure/linear-list.md","ref":"data-structure/linear-list.md","articles":[]},"previous":{"title":"Retrofit解析","level":"3.3.2","depth":2,"path":"android/open-source-framework/Retrofit.md","ref":"android/open-source-framework/Retrofit.md","articles":[]},"dir":"ltr"},"config":{"plugins":["-lunr","-search","-livereload","search-plus@^0.0.11","github@^2.0.0","github-buttons@2.1.0","edit-link@^2.0.2","advanced-emoji@^0.2.1","anchors@^0.7.1","include-codeblock@^3.0.2","emphasize@^1.1.0","katex@^1.1.3","splitter@^0.0.8","tbfed-pagefooter@^0.0.1","expandable-chapters-small@^0.1.7","sectionx@^3.1.0","local-video@^1.0.1","anchor-navigation-ex@0.1.8","favicon@^0.0.2"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"tbfed-pagefooter":{"copyright":"Copyright © ruheng.com 2017","modify_label":"该文件修订时间：","modify_format":"YYYY-MM-DD HH:mm:ss"},"emphasize":{},"github":{"url":"https://github.com/LRH1993/android_interview"},"splitter":{},"katex":{},"fontsettings":{"theme":"white","family":"sans","size":2},"sectionx":{"tag":"b"},"highlight":{},"anchor-navigation-ex":{"isRewritePageTitle":false,"tocLevel1Icon":"fa fa-hand-o-right","tocLevel2Icon":"fa fa-hand-o-right","tocLevel3Icon":"fa fa-hand-o-right"},"favicon":{"shortcut":"favicon.ico","bookmark":"favicon.ico"},"github-buttons":{"repo":"LRH1993/android_interview","types":["star"],"size":"small"},"expandable-chapters-small":{},"local-video":{},"advanced-emoji":{"embedEmojis":false},"include-codeblock":{"check":false,"edit":false,"fixlang":false,"lang":"","template":"default","theme":"chrome","unindent":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":true,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"edit-link":{"label":"Edit This Page","base":"https://github.com/LRH1993/android_interview/edit/master"},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":true},"anchors":{},"search-plus":{}},"theme":"default","author":"ruheng","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"Android校招面试指南","language":"zh-hans","output.name":"site","links":{"sidebar":{"Home":"http://lruheng.com/"}},"gitbook":"3.2.3","description":"Android面试必备，记录自己的秋招之路"},"file":{"path":"android/open-source-framework/EventBus.md","mtime":"2017-08-27T03:02:33.000Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2017-10-16T14:57:27.297Z"},"basePath":"../..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"EventBus解析","level":"3.3.3","depth":2,"next":{"title":"线性表","level":"4.1","depth":1,"path":"data-structure/linear-list.md","ref":"data-structure/linear-list.md","articles":[]},"previous":{"title":"Retrofit解析","level":"3.3.2","depth":2,"path":"android/open-source-framework/Retrofit.md","ref":"android/open-source-framework/Retrofit.md","articles":[]},"dir":"ltr"},"config":{"plugins":["-lunr","-search","-livereload","search-plus@^0.0.11","github@^2.0.0","github-buttons@2.1.0","edit-link@^2.0.2","advanced-emoji@^0.2.1","anchors@^0.7.1","splitter@^0.0.8","tbfed-pagefooter@^0.0.1","expandable-chapters-small@^0.1.7","sectionx@^3.1.0","local-video@^1.0.1","favicon@^0.0.2"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"tbfed-pagefooter":{"copyright":"Copyright © ruheng.com 2017","modify_label":"该文件修订时间：","modify_format":"YYYY-MM-DD HH:mm:ss"},"github":{"url":"https://github.com/LRH1993/android_interview"},"splitter":{},"fontsettings":{"theme":"white","family":"sans","size":2},"sectionx":{"tag":"b"},"highlight":{},"favicon":{"shortcut":"favicon.ico","bookmark":"favicon.ico"},"github-buttons":{"repo":"LRH1993/android_interview","types":["star"],"size":"small"},"expandable-chapters-small":{},"local-video":{},"advanced-emoji":{"embedEmojis":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":true,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"edit-link":{"label":"Edit This Page","base":"https://github.com/LRH1993/android_interview/edit/master"},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":true},"anchors":{},"search-plus":{}},"theme":"default","author":"ruheng","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"Android校招面试指南","language":"zh-hans","output.name":"site","links":{"sidebar":{"Home":"http://lruheng.com/"}},"gitbook":"3.2.3","description":"Android面试必备，记录自己的秋招之路"},"file":{"path":"android/open-source-framework/EventBus.md","mtime":"2017-08-27T03:02:33.000Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2017-10-16T23:10:00.749Z"},"basePath":"../..","book":{"language":""}});
         });
     </script>
 </div>

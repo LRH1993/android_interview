@@ -29,14 +29,6 @@
                 
             
                 
-                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-emphasize/plugin.css">
-                
-            
-                
-                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-katex/katex.min.css">
-                
-            
-                
                 <link rel="stylesheet" href="../../gitbook/gitbook-plugin-splitter/splitter.css">
                 
             
@@ -58,10 +50,6 @@
             
                 
                 <link rel="stylesheet" href="../../gitbook/gitbook-plugin-local-video/video-js.min.css">
-                
-            
-                
-                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-anchor-navigation-ex/style/plugin.css">
                 
             
                 
@@ -3705,9 +3693,9 @@
     
                                 <section class="normal markdown-section">
                                 
-                                <h2 id="&#x524D;&#x8A00;"><a name="&#x524D;&#x8A00;" class="anchor-navigation-ex-anchor" href="#&#x524D;&#x8A00;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x524D;&#x8A00;</h2>
+                                <h2 id="&#x524D;&#x8A00;"><a name="&#x524D;&#x8A00;" class="plugin-anchor" href="#&#x524D;&#x8A00;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x524D;&#x8A00;</h2>
 <p>java5&#x4E4B;&#x540E;&#xFF0C;&#x5E76;&#x53D1;&#x5305;&#x4E2D;&#x65B0;&#x589E;&#x4E86;Lock&#x63A5;&#x53E3;&#xFF08;&#x4EE5;&#x53CA;&#x76F8;&#x5173;&#x5B9E;&#x73B0;&#x7C7B;&#xFF09;&#x7528;&#x6765;&#x5B9E;&#x73B0;&#x9501;&#x7684;&#x529F;&#x80FD;&#xFF0C;&#x5B83;&#x63D0;&#x4F9B;&#x4E86;&#x4E0E;synchronized&#x5173;&#x952E;&#x5B57;&#x7C7B;&#x4F3C;&#x7684;&#x540C;&#x6B65;&#x529F;&#x80FD;&#x3002;&#x65E2;&#x7136;&#x6709;&#x4E86;synchronized&#x8FD9;&#x79CD;&#x5185;&#x7F6E;&#x7684;&#x9501;&#x529F;&#x80FD;&#xFF0C;&#x4E3A;&#x4F55;&#x8981;&#x65B0;&#x589E;Lock&#x63A5;&#x53E3;&#xFF1F;&#x5148;&#x6765;&#x60F3;&#x8C61;&#x4E00;&#x4E2A;&#x573A;&#x666F;&#xFF1A;&#x624B;&#x628A;&#x624B;&#x7684;&#x8FDB;&#x884C;&#x9501;&#x83B7;&#x53D6;&#x548C;&#x91CA;&#x653E;&#xFF0C;&#x5148;&#x83B7;&#x5F97;&#x9501;A&#xFF0C;&#x7136;&#x540E;&#x518D;&#x83B7;&#x53D6;&#x9501;B&#xFF0C;&#x5F53;&#x83B7;&#x53D6;&#x9501;B&#x540E;&#x91CA;&#x653E;&#x9501;A&#x540C;&#x65F6;&#x83B7;&#x53D6;&#x9501;C&#xFF0C;&#x5F53;&#x9501;C&#x83B7;&#x53D6;&#x540E;&#xFF0C;&#x518D;&#x91CA;&#x653E;&#x9501;B&#x540C;&#x65F6;&#x83B7;&#x53D6;&#x9501;D&#xFF0C;&#x4EE5;&#x6B64;&#x7C7B;&#x63A8;&#xFF0C;&#x8FD9;&#x79CD;&#x573A;&#x666F;&#x4E0B;&#xFF0C;synchronized&#x5173;&#x952E;&#x5B57;&#x5C31;&#x4E0D;&#x90A3;&#x4E48;&#x5BB9;&#x6613;&#x5B9E;&#x73B0;&#x4E86;&#xFF0C;&#x800C;&#x4F7F;&#x7528;Lock&#x5374;&#x663E;&#x5F97;&#x5BB9;&#x6613;&#x8BB8;&#x591A;&#x3002;</p>
-<h2 id="&#x5B9A;&#x4E49;"><a name="&#x5B9A;&#x4E49;" class="anchor-navigation-ex-anchor" href="#&#x5B9A;&#x4E49;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x5B9A;&#x4E49;</h2>
+<h2 id="&#x5B9A;&#x4E49;"><a name="&#x5B9A;&#x4E49;" class="plugin-anchor" href="#&#x5B9A;&#x4E49;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x5B9A;&#x4E49;</h2>
 <pre><code class="lang-java"><span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">ReentrantLock</span> <span class="hljs-keyword">implements</span> <span class="hljs-title">Lock</span>, <span class="hljs-title">java</span>.<span class="hljs-title">io</span>.<span class="hljs-title">Serializable</span> </span>{
     <span class="hljs-keyword">private</span> <span class="hljs-keyword">final</span> Sync sync;
     <span class="hljs-keyword">abstract</span> <span class="hljs-keyword">static</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Sync</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">AbstractQueuedSynchronizer</span> </span>{
@@ -3774,7 +3762,7 @@
 }
 </code></pre>
 <p>&#x4ECE;&#x6E90;&#x4EE3;&#x7801;&#x53EF;&#x4EE5;Doug lea&#x5DE7;&#x5999;&#x7684;&#x91C7;&#x7528;&#x7EC4;&#x5408;&#x6A21;&#x5F0F;&#x628A;lock&#x548C;unlock&#x65B9;&#x6CD5;&#x59D4;&#x6258;&#x7ED9;&#x540C;&#x6B65;&#x5668;&#x5B8C;&#x6210;&#x3002;</p>
-<h2 id="&#x4F7F;&#x7528;&#x65B9;&#x5F0F;"><a name="&#x4F7F;&#x7528;&#x65B9;&#x5F0F;" class="anchor-navigation-ex-anchor" href="#&#x4F7F;&#x7528;&#x65B9;&#x5F0F;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x4F7F;&#x7528;&#x65B9;&#x5F0F;</h2>
+<h2 id="&#x4F7F;&#x7528;&#x65B9;&#x5F0F;"><a name="&#x4F7F;&#x7528;&#x65B9;&#x5F0F;" class="plugin-anchor" href="#&#x4F7F;&#x7528;&#x65B9;&#x5F0F;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x4F7F;&#x7528;&#x65B9;&#x5F0F;</h2>
 <pre><code class="lang-java">Lock lock = <span class="hljs-keyword">new</span> ReentrantLock();
 Condition condition = lock.newCondition();
 lock.lock();
@@ -3788,7 +3776,7 @@ lock.lock();
 }
 </code></pre>
 <p>&#x9700;&#x8981;&#x663E;&#x793A;&#x7684;&#x83B7;&#x53D6;&#x9501;&#xFF0C;&#x5E76;&#x5728;finally&#x5757;&#x4E2D;&#x663E;&#x793A;&#x7684;&#x91CA;&#x653E;&#x9501;&#xFF0C;&#x76EE;&#x7684;&#x662F;&#x4FDD;&#x8BC1;&#x5728;&#x83B7;&#x53D6;&#x5230;&#x9501;&#x4E4B;&#x540E;&#xFF0C;&#x6700;&#x7EC8;&#x80FD;&#x591F;&#x88AB;&#x91CA;&#x653E;&#x3002;</p>
-<h2 id="&#x975E;&#x516C;&#x5E73;&#x9501;&#x5B9E;&#x73B0;"><a name="&#x975E;&#x516C;&#x5E73;&#x9501;&#x5B9E;&#x73B0;" class="anchor-navigation-ex-anchor" href="#&#x975E;&#x516C;&#x5E73;&#x9501;&#x5B9E;&#x73B0;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x975E;&#x516C;&#x5E73;&#x9501;&#x5B9E;&#x73B0;</h2>
+<h2 id="&#x975E;&#x516C;&#x5E73;&#x9501;&#x5B9E;&#x73B0;"><a name="&#x975E;&#x516C;&#x5E73;&#x9501;&#x5B9E;&#x73B0;" class="plugin-anchor" href="#&#x975E;&#x516C;&#x5E73;&#x9501;&#x5B9E;&#x73B0;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x975E;&#x516C;&#x5E73;&#x9501;&#x5B9E;&#x73B0;</h2>
 <p>&#x5728;&#x975E;&#x516C;&#x5E73;&#x9501;&#x4E2D;&#xFF0C;&#x6BCF;&#x5F53;&#x7EBF;&#x7A0B;&#x6267;&#x884C;lock&#x65B9;&#x6CD5;&#x65F6;&#xFF0C;&#x90FD;&#x5C1D;&#x8BD5;&#x5229;&#x7528;CAS&#x628A;state&#x4ECE;0&#x8BBE;&#x7F6E;&#x4E3A;1&#x3002;</p>
 <p>&#x90A3;&#x4E48;Doug lea&#x662F;&#x5982;&#x4F55;&#x5B9E;&#x73B0;&#x9501;&#x7684;&#x975E;&#x516C;&#x5E73;&#x6027;&#x5462;&#xFF1F;
 &#x6211;&#x4EEC;&#x5047;&#x8BBE;&#x8FD9;&#x6837;&#x4E00;&#x4E2A;&#x573A;&#x666F;&#xFF1A;</p>
@@ -3831,7 +3819,7 @@ lock.lock();
 <p><img src="http://upload-images.jianshu.io/upload_images/2184951-5bd703829cbdc56a.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></p>
 </li>
 </ol>
-<h2 id="&#x516C;&#x5E73;&#x9501;&#x5B9E;&#x73B0;"><a name="&#x516C;&#x5E73;&#x9501;&#x5B9E;&#x73B0;" class="anchor-navigation-ex-anchor" href="#&#x516C;&#x5E73;&#x9501;&#x5B9E;&#x73B0;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x516C;&#x5E73;&#x9501;&#x5B9E;&#x73B0;</h2>
+<h2 id="&#x516C;&#x5E73;&#x9501;&#x5B9E;&#x73B0;"><a name="&#x516C;&#x5E73;&#x9501;&#x5B9E;&#x73B0;" class="plugin-anchor" href="#&#x516C;&#x5E73;&#x9501;&#x5B9E;&#x73B0;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x516C;&#x5E73;&#x9501;&#x5B9E;&#x73B0;</h2>
 <p>&#x5728;&#x516C;&#x5E73;&#x9501;&#x4E2D;&#xFF0C;&#x6BCF;&#x5F53;&#x7EBF;&#x7A0B;&#x6267;&#x884C;lock&#x65B9;&#x6CD5;&#x65F6;&#xFF0C;&#x5982;&#x679C;&#x540C;&#x6B65;&#x5668;&#x7684;&#x961F;&#x5217;&#x4E2D;&#x6709;&#x7EBF;&#x7A0B;&#x5728;&#x7B49;&#x5F85;&#xFF0C;&#x5219;&#x76F4;&#x63A5;&#x52A0;&#x5165;&#x5230;&#x961F;&#x5217;&#x4E2D;&#x3002;
 &#x573A;&#x666F;&#x5206;&#x6790;&#xFF1A;</p>
 <ol>
@@ -3871,7 +3859,7 @@ lock.lock();
     }
 }
 </code></pre>
-<h2 id="&#x91CD;&#x5165;&#x9501;&#x5B9E;&#x73B0;"><a name="&#x91CD;&#x5165;&#x9501;&#x5B9E;&#x73B0;" class="anchor-navigation-ex-anchor" href="#&#x91CD;&#x5165;&#x9501;&#x5B9E;&#x73B0;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x91CD;&#x5165;&#x9501;&#x5B9E;&#x73B0;</h2>
+<h2 id="&#x91CD;&#x5165;&#x9501;&#x5B9E;&#x73B0;"><a name="&#x91CD;&#x5165;&#x9501;&#x5B9E;&#x73B0;" class="plugin-anchor" href="#&#x91CD;&#x5165;&#x9501;&#x5B9E;&#x73B0;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x91CD;&#x5165;&#x9501;&#x5B9E;&#x73B0;</h2>
 <p>&#x91CD;&#x5165;&#x9501;&#xFF0C;&#x5373;&#x7EBF;&#x7A0B;&#x53EF;&#x4EE5;&#x91CD;&#x590D;&#x83B7;&#x53D6;&#x5DF2;&#x7ECF;&#x6301;&#x6709;&#x7684;&#x9501;&#x3002;&#x5728;&#x975E;&#x516C;&#x5E73;&#x548C;&#x516C;&#x5E73;&#x9501;&#x4E2D;&#xFF0C;&#x90FD;&#x5BF9;&#x91CD;&#x5165;&#x9501;&#x8FDB;&#x884C;&#x4E86;&#x5B9E;&#x73B0;&#x3002;</p>
 <pre><code class="lang-java">    <span class="hljs-keyword">if</span> (current == getExclusiveOwnerThread()) {
         <span class="hljs-keyword">int</span> nextc = c + acquires;
@@ -3881,7 +3869,7 @@ lock.lock();
         <span class="hljs-keyword">return</span> <span class="hljs-keyword">true</span>;
     }
 </code></pre>
-<h2 id="&#x6761;&#x4EF6;&#x53D8;&#x91CF;condition"><a name="&#x6761;&#x4EF6;&#x53D8;&#x91CF;condition" class="anchor-navigation-ex-anchor" href="#&#x6761;&#x4EF6;&#x53D8;&#x91CF;condition"><i class="fa fa-link" aria-hidden="true"></i></a>&#x6761;&#x4EF6;&#x53D8;&#x91CF;Condition</h2>
+<h2 id="&#x6761;&#x4EF6;&#x53D8;&#x91CF;condition"><a name="&#x6761;&#x4EF6;&#x53D8;&#x91CF;condition" class="plugin-anchor" href="#&#x6761;&#x4EF6;&#x53D8;&#x91CF;condition"><i class="fa fa-link" aria-hidden="true"></i></a>&#x6761;&#x4EF6;&#x53D8;&#x91CF;Condition</h2>
 <p>&#x6761;&#x4EF6;&#x53D8;&#x91CF;&#x5F88;&#x5927;&#x4E00;&#x4E2A;&#x7A0B;&#x5EA6;&#x4E0A;&#x662F;&#x4E3A;&#x4E86;&#x89E3;&#x51B3;Object.wait/notify/notifyAll&#x96BE;&#x4EE5;&#x4F7F;&#x7528;&#x7684;&#x95EE;&#x9898;&#x3002;</p>
 <pre><code class="lang-Java"><span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">ConditionObject</span> <span class="hljs-keyword">implements</span> <span class="hljs-title">Condition</span>, <span class="hljs-title">java</span>.<span class="hljs-title">io</span>.<span class="hljs-title">Serializable</span> </span>{
     <span class="hljs-comment">/** First node of condition queue. */</span>
@@ -4036,7 +4024,7 @@ lock.lock();
 <li>&#x901A;&#x8FC7;CAS&#x4FEE;&#x6539;&#x7EBF;&#x7A0B;A&#x7684;waitStatus&#xFF0C;&#x8868;&#x793A;&#x8BE5;&#x8282;&#x70B9;&#x5DF2;&#x7ECF;&#x4E0D;&#x662F;&#x7B49;&#x5F85;&#x6761;&#x4EF6;&#x72B6;&#x6001;&#xFF0C;&#x5E76;&#x5C06;&#x7EBF;&#x7A0B;A&#x63D2;&#x5165;&#x5230;AQS&#x7684;&#x7B49;&#x5F85;&#x961F;&#x5217;&#x4E2D;&#x3002;</li>
 <li>&#x5524;&#x9192;&#x7EBF;&#x7A0B;A&#xFF0C;&#x7EBF;&#x7A0B;A&#x548C;&#x522B;&#x7684;&#x7EBF;&#x7A0B;&#x8FDB;&#x884C;&#x9501;&#x7684;&#x7ADE;&#x4E89;&#x3002;</li>
 </ol>
-<h2 id="&#x603B;&#x7ED3;"><a name="&#x603B;&#x7ED3;" class="anchor-navigation-ex-anchor" href="#&#x603B;&#x7ED3;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x603B;&#x7ED3;</h2>
+<h2 id="&#x603B;&#x7ED3;"><a name="&#x603B;&#x7ED3;" class="plugin-anchor" href="#&#x603B;&#x7ED3;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x603B;&#x7ED3;</h2>
 <ol>
 <li>ReentrantLock&#x63D0;&#x4F9B;&#x4E86;&#x5185;&#x7F6E;&#x9501;&#x7C7B;&#x4F3C;&#x7684;&#x529F;&#x80FD;&#x548C;&#x5185;&#x5B58;&#x8BED;&#x4E49;&#x3002;</li>
 <li>&#x6B64;&#x5916;&#xFF0C;ReetrantLock&#x8FD8;&#x63D0;&#x4F9B;&#x4E86;&#x5176;&#x5B83;&#x529F;&#x80FD;&#xFF0C;&#x5305;&#x62EC;&#x5B9A;&#x65F6;&#x7684;&#x9501;&#x7B49;&#x5F85;&#x3001;&#x53EF;&#x4E2D;&#x65AD;&#x7684;&#x9501;&#x7B49;&#x5F85;&#x3001;&#x516C;&#x5E73;&#x6027;&#x3001;&#x4EE5;&#x53CA;&#x5B9E;&#x73B0;&#x975E;&#x5757;&#x7ED3;&#x6784;&#x7684;&#x52A0;&#x9501;&#x3001;Condition&#xFF0C;&#x5BF9;&#x7EBF;&#x7A0B;&#x7684;&#x7B49;&#x5F85;&#x548C;&#x5524;&#x9192;&#x7B49;&#x64CD;&#x4F5C;&#x66F4;&#x52A0;&#x7075;&#x6D3B;&#xFF0C;&#x4E00;&#x4E2A;ReentrantLock&#x53EF;&#x4EE5;&#x6709;&#x591A;&#x4E2A;Condition&#x5B9E;&#x4F8B;&#xFF0C;&#x6240;&#x4EE5;&#x66F4;&#x6709;&#x6269;&#x5C55;&#x6027;&#xFF0C;&#x4E0D;&#x8FC7;ReetrantLock&#x9700;&#x8981;&#x663E;&#x793A;&#x7684;&#x83B7;&#x53D6;&#x9501;&#xFF0C;&#x5E76;&#x5728;finally&#x4E2D;&#x91CA;&#x653E;&#x9501;&#xFF0C;&#x5426;&#x5219;&#x540E;&#x679C;&#x5F88;&#x4E25;&#x91CD;&#x3002;</li>
@@ -4089,7 +4077,7 @@ lock.lock();
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"深入理解ReentrantLock","level":"2.2.9","depth":2,"next":{"title":"Java并发集合——ArrayBlockingQueue","level":"2.2.10","depth":2,"path":"java/concurrence/ArrayBlockingQueue.md","ref":"java/concurrence/ArrayBlockingQueue.md","articles":[]},"previous":{"title":"AbstractQueuedSynchronizer详解","level":"2.2.8","depth":2,"path":"java/concurrence/AbstractQueuedSynchronizer.md","ref":"java/concurrence/AbstractQueuedSynchronizer.md","articles":[]},"dir":"ltr"},"config":{"plugins":["-lunr","-search","-livereload","search-plus@^0.0.11","github@^2.0.0","github-buttons@2.1.0","edit-link@^2.0.2","advanced-emoji@^0.2.1","anchors@^0.7.1","include-codeblock@^3.0.2","emphasize@^1.1.0","katex@^1.1.3","splitter@^0.0.8","tbfed-pagefooter@^0.0.1","expandable-chapters-small@^0.1.7","sectionx@^3.1.0","local-video@^1.0.1","anchor-navigation-ex@0.1.8","favicon@^0.0.2"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"tbfed-pagefooter":{"copyright":"Copyright © ruheng.com 2017","modify_label":"该文件修订时间：","modify_format":"YYYY-MM-DD HH:mm:ss"},"emphasize":{},"github":{"url":"https://github.com/LRH1993/android_interview"},"splitter":{},"katex":{},"fontsettings":{"theme":"white","family":"sans","size":2},"sectionx":{"tag":"b"},"highlight":{},"anchor-navigation-ex":{"isRewritePageTitle":false,"tocLevel1Icon":"fa fa-hand-o-right","tocLevel2Icon":"fa fa-hand-o-right","tocLevel3Icon":"fa fa-hand-o-right"},"favicon":{"shortcut":"favicon.ico","bookmark":"favicon.ico"},"github-buttons":{"repo":"LRH1993/android_interview","types":["star"],"size":"small"},"expandable-chapters-small":{},"local-video":{},"advanced-emoji":{"embedEmojis":false},"include-codeblock":{"check":false,"edit":false,"fixlang":false,"lang":"","template":"default","theme":"chrome","unindent":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":true,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"edit-link":{"label":"Edit This Page","base":"https://github.com/LRH1993/android_interview/edit/master"},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":true},"anchors":{},"search-plus":{}},"theme":"default","author":"ruheng","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"Android校招面试指南","language":"zh-hans","output.name":"site","links":{"sidebar":{"Home":"http://lruheng.com/"}},"gitbook":"3.2.3","description":"Android面试必备，记录自己的秋招之路"},"file":{"path":"java/concurrence/ReentrantLock.md","mtime":"2017-09-01T10:22:42.000Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2017-10-16T14:57:27.297Z"},"basePath":"../..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"深入理解ReentrantLock","level":"2.2.9","depth":2,"next":{"title":"Java并发集合——ArrayBlockingQueue","level":"2.2.10","depth":2,"path":"java/concurrence/ArrayBlockingQueue.md","ref":"java/concurrence/ArrayBlockingQueue.md","articles":[]},"previous":{"title":"AbstractQueuedSynchronizer详解","level":"2.2.8","depth":2,"path":"java/concurrence/AbstractQueuedSynchronizer.md","ref":"java/concurrence/AbstractQueuedSynchronizer.md","articles":[]},"dir":"ltr"},"config":{"plugins":["-lunr","-search","-livereload","search-plus@^0.0.11","github@^2.0.0","github-buttons@2.1.0","edit-link@^2.0.2","advanced-emoji@^0.2.1","anchors@^0.7.1","splitter@^0.0.8","tbfed-pagefooter@^0.0.1","expandable-chapters-small@^0.1.7","sectionx@^3.1.0","local-video@^1.0.1","favicon@^0.0.2"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"tbfed-pagefooter":{"copyright":"Copyright © ruheng.com 2017","modify_label":"该文件修订时间：","modify_format":"YYYY-MM-DD HH:mm:ss"},"github":{"url":"https://github.com/LRH1993/android_interview"},"splitter":{},"fontsettings":{"theme":"white","family":"sans","size":2},"sectionx":{"tag":"b"},"highlight":{},"favicon":{"shortcut":"favicon.ico","bookmark":"favicon.ico"},"github-buttons":{"repo":"LRH1993/android_interview","types":["star"],"size":"small"},"expandable-chapters-small":{},"local-video":{},"advanced-emoji":{"embedEmojis":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":true,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"edit-link":{"label":"Edit This Page","base":"https://github.com/LRH1993/android_interview/edit/master"},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":true},"anchors":{},"search-plus":{}},"theme":"default","author":"ruheng","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"Android校招面试指南","language":"zh-hans","output.name":"site","links":{"sidebar":{"Home":"http://lruheng.com/"}},"gitbook":"3.2.3","description":"Android面试必备，记录自己的秋招之路"},"file":{"path":"java/concurrence/ReentrantLock.md","mtime":"2017-09-01T10:22:42.000Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2017-10-16T23:10:00.749Z"},"basePath":"../..","book":{"language":""}});
         });
     </script>
 </div>
