@@ -46,7 +46,7 @@ position和limit的具体含义取决于当前buffer的模式。capacity在两�
 
 **位置（Position）**
 
-当写入数据到Buffer的时候需要中一个确定的位置开始，默认初始化时这个位置position为0，一旦写入了数据比如一个字节，整形数据，那么position的值就会指向数据之后的一个单元，position最大可以到capacity-1.  
+当写入数据到Buffer的时候需要中一个确定的位置开始，默认初始化时这个位置position为0，一旦写入了数据比如一个字节，整形数据，那么position的值就会指向数据之后的一个单元，position最大可以到capacity-1。  
 当从Buffer读取数据时，也需要从一个确定的位置开始。buffer从写入模式变为读取模式时，position会归零，每次读取后，position向后移动。
 
 **上限（Limit）**  
@@ -136,7 +136,7 @@ asynchronous IO。
 
 当一个read操作发生时，它会经历两个阶段：   
 **1 等待数据准备 \(Waiting for the data to be ready\) **  
-**2将数据从内核拷贝到进程中 \(Copying the data from the kernel to the process\)**
+**2 将数据从内核拷贝到进程中 \(Copying the data from the kernel to the process\)**
 
 记住这两点很重要，因为这些IO Model的区别就是在两个阶段上各有不同的情况。
 
