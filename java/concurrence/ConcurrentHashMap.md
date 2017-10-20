@@ -42,7 +42,7 @@ ConcurrentHashMap采用 分段锁的机制，实现并发的更新操作，底�
 
 1.8的实现已经抛弃了Segment分段锁机制，利用CAS+Synchronized来保证并发更新的安全，底层依然采用数组+链表+红黑树的存储结构。
 
-Paste_Image.png
+![](http://upload-images.jianshu.io/upload_images/2184951-3d2365ca5996274f.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
 
 ### 重要概念
 
