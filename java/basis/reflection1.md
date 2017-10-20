@@ -137,8 +137,8 @@ Method method = class1.getDeclaredMethod("setAge", int.class);
 method.invoke(obj, 28);
 ```
 
-**当通过Method的invoke\(\)方法来调用对应的方法时，Java会要求程序必须有调用该方法的权限。如果程序确实需要调用某个对象的private方法，则可以先调用Method对象的如下方法。  
-setAccessible\(boolean flag\)：将Method对象的acessible设置为指定的布尔值。值为true，指示该Method在使用时应该取消Java语言的访问权限检查；值为false，则知识该Method在使用时要实施Java语言的访问权限检查。**
+**当通过Method的invoke\(\)方法来调用对应的方法时，Java会要求程序必须有调用该方法的权限。如果程序确实需要调用某个对象的private方法，则可以先调用Method对象的如下方法。**  
+**setAccessible\(boolean flag\)：将Method对象的acessible设置为指定的布尔值。值为true，指示该Method在使用时应该取消Java语言的访问权限检查；值为false，则知识该Method在使用时要实施Java语言的访问权限检查。**
 
 **访问成员变量值**
 

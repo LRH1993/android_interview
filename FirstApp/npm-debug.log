@@ -1,0 +1,137 @@
+0 info it worked if it ends with ok
+1 verbose cli [ '/usr/local/bin/node',
+1 verbose cli   '/usr/local/bin/npm',
+1 verbose cli   'install',
+1 verbose cli   '--save',
+1 verbose cli   '--save-exact',
+1 verbose cli   'react-native@0.44.3' ]
+2 info using npm@3.10.10
+3 info using node@v6.11.4
+4 silly loadCurrentTree Starting
+5 silly install loadCurrentTree
+6 silly install readLocalPackageData
+7 silly fetchPackageMetaData react-native@0.44.3
+8 silly fetchNamedPackageData react-native
+9 silly mapToRegistry name react-native
+10 silly mapToRegistry using default registry
+11 silly mapToRegistry registry https://registry.npm.taobao.org/
+12 silly mapToRegistry data Result {
+12 silly mapToRegistry   raw: 'react-native',
+12 silly mapToRegistry   scope: null,
+12 silly mapToRegistry   escapedName: 'react-native',
+12 silly mapToRegistry   name: 'react-native',
+12 silly mapToRegistry   rawSpec: '',
+12 silly mapToRegistry   spec: 'latest',
+12 silly mapToRegistry   type: 'tag' }
+13 silly mapToRegistry uri https://registry.npm.taobao.org/react-native
+14 verbose request uri https://registry.npm.taobao.org/react-native
+15 verbose request no auth needed
+16 info attempt registry request try #1 at 10:02:48
+17 verbose request id a235ec67a6ce063d
+18 verbose etag "11a9dc-fSDbhGEt0UfXFc5pfOb0bnpiV2s"
+19 http request GET https://registry.npm.taobao.org/react-native
+20 http 200 https://registry.npm.taobao.org/react-native
+21 verbose headers { date: 'Fri, 20 Oct 2017 02:02:51 GMT',
+21 verbose headers   'content-type': 'application/json; charset=utf-8',
+21 verbose headers   'content-length': '1164288',
+21 verbose headers   connection: 'keep-alive',
+21 verbose headers   'x-current-requests': '1',
+21 verbose headers   etag: '"11c400-f8Lw1hfWBpTOo+uGRsXQtJCZrIA"',
+21 verbose headers   'x-readtime': '121' }
+22 silly get cb [ 200,
+22 silly get   { date: 'Fri, 20 Oct 2017 02:02:51 GMT',
+22 silly get     'content-type': 'application/json; charset=utf-8',
+22 silly get     'content-length': '1164288',
+22 silly get     connection: 'keep-alive',
+22 silly get     'x-current-requests': '1',
+22 silly get     etag: '"11c400-f8Lw1hfWBpTOo+uGRsXQtJCZrIA"',
+22 silly get     'x-readtime': '121' } ]
+23 verbose get saving react-native to /Users/lvruheng/.npm/registry.npm.taobao.org/react-native/.cache.json
+24 verbose correctMkdir /Users/lvruheng/.npm correctMkdir not in flight; initializing
+25 silly install normalizeTree
+26 silly loadCurrentTree Finishing
+27 silly loadIdealTree Starting
+28 silly install loadIdealTree
+29 silly cloneCurrentTree Starting
+30 silly install cloneCurrentTreeToIdealTree
+31 silly cloneCurrentTree Finishing
+32 silly loadShrinkwrap Starting
+33 silly install loadShrinkwrap
+34 silly loadShrinkwrap Finishing
+35 silly loadAllDepsIntoIdealTree Starting
+36 silly install loadAllDepsIntoIdealTree
+37 silly resolveWithNewModule react-native@0.44.3 checking installable status
+38 silly cache add args [ 'react-native@0.44.3', null ]
+39 verbose cache add spec react-native@0.44.3
+40 silly cache add parsed spec Result {
+40 silly cache add   raw: 'react-native@0.44.3',
+40 silly cache add   scope: null,
+40 silly cache add   escapedName: 'react-native',
+40 silly cache add   name: 'react-native',
+40 silly cache add   rawSpec: '0.44.3',
+40 silly cache add   spec: '0.44.3',
+40 silly cache add   type: 'version' }
+41 silly addNamed react-native@0.44.3
+42 verbose addNamed "0.44.3" is a plain semver version for react-native
+43 silly mapToRegistry name react-native
+44 silly mapToRegistry using default registry
+45 silly mapToRegistry registry https://registry.npm.taobao.org/
+46 silly mapToRegistry data Result {
+46 silly mapToRegistry   raw: 'react-native',
+46 silly mapToRegistry   scope: null,
+46 silly mapToRegistry   escapedName: 'react-native',
+46 silly mapToRegistry   name: 'react-native',
+46 silly mapToRegistry   rawSpec: '',
+46 silly mapToRegistry   spec: 'latest',
+46 silly mapToRegistry   type: 'tag' }
+47 silly mapToRegistry uri https://registry.npm.taobao.org/react-native
+48 verbose addNameVersion registry:https://registry.npm.taobao.org/react-native not in flight; fetching
+49 verbose get https://registry.npm.taobao.org/react-native not expired, no request
+50 silly mapToRegistry name react-native
+51 silly mapToRegistry using default registry
+52 silly mapToRegistry registry https://registry.npm.taobao.org/
+53 silly mapToRegistry data Result {
+53 silly mapToRegistry   raw: 'react-native',
+53 silly mapToRegistry   scope: null,
+53 silly mapToRegistry   escapedName: 'react-native',
+53 silly mapToRegistry   name: 'react-native',
+53 silly mapToRegistry   rawSpec: '',
+53 silly mapToRegistry   spec: 'latest',
+53 silly mapToRegistry   type: 'tag' }
+54 silly mapToRegistry uri https://registry.npm.taobao.org/react-native
+55 verbose addRemoteTarball https://registry.npm.taobao.org/react-native/download/react-native-0.44.3.tgz not in flight; adding
+56 verbose addRemoteTarball [ 'https://registry.npm.taobao.org/react-native/download/react-native-0.44.3.tgz',
+56 verbose addRemoteTarball   '04550e1cdfc619a712f3f5969d68cd7c2dc4c073' ]
+57 info retry fetch attempt 1 at 10:02:53
+58 info attempt registry request try #1 at 10:02:53
+59 http fetch GET https://registry.npm.taobao.org/react-native/download/react-native-0.44.3.tgz
+60 http fetch 200 https://registry.npm.taobao.org/react-native/download/react-native-0.44.3.tgz
+61 info retry will retry, error on last attempt: Error: read ETIMEDOUT
+62 silly fetchAndShaCheck shasum 04550e1cdfc619a712f3f5969d68cd7c2dc4c073
+63 silly rollbackFailedOptional Starting
+64 silly rollbackFailedOptional Finishing
+65 silly runTopLevelLifecycles Finishing
+66 silly install printInstalled
+67 verbose stack Error: shasum check failed for /var/folders/zk/rqrknq5j16vd3s9jk92jkvrc0000gn/T/npm-5743-3b1f0b16/registry.npm.taobao.org/react-native/download/react-native-0.44.3.tgz
+67 verbose stack Expected: 04550e1cdfc619a712f3f5969d68cd7c2dc4c073
+67 verbose stack Actual:   6bea1b68a90f649b13b75ba4bee720a9d40841e3
+67 verbose stack From:     https://registry.npm.taobao.org/react-native/download/react-native-0.44.3.tgz
+67 verbose stack     at /usr/local/lib/node_modules/npm/node_modules/sha/index.js:25:8
+67 verbose stack     at ReadStream.<anonymous> (/usr/local/lib/node_modules/npm/node_modules/sha/index.js:72:7)
+67 verbose stack     at emitNone (events.js:91:20)
+67 verbose stack     at ReadStream.emit (events.js:185:7)
+67 verbose stack     at endReadableNT (_stream_readable.js:974:12)
+67 verbose stack     at _combinedTickCallback (internal/process/next_tick.js:80:11)
+67 verbose stack     at process._tickCallback (internal/process/next_tick.js:104:9)
+68 verbose cwd /Users/lvruheng/android_interview/FirstApp
+69 error Darwin 16.7.0
+70 error argv "/usr/local/bin/node" "/usr/local/bin/npm" "install" "--save" "--save-exact" "react-native@0.44.3"
+71 error node v6.11.4
+72 error npm  v3.10.10
+73 error shasum check failed for /var/folders/zk/rqrknq5j16vd3s9jk92jkvrc0000gn/T/npm-5743-3b1f0b16/registry.npm.taobao.org/react-native/download/react-native-0.44.3.tgz
+73 error Expected: 04550e1cdfc619a712f3f5969d68cd7c2dc4c073
+73 error Actual:   6bea1b68a90f649b13b75ba4bee720a9d40841e3
+73 error From:     https://registry.npm.taobao.org/react-native/download/react-native-0.44.3.tgz
+74 error If you need help, you may report this error at:
+74 error     <https://github.com/npm/npm/issues>
+75 verbose exit [ 1, true ]
