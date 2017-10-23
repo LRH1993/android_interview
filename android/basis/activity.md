@@ -12,7 +12,7 @@
   
 
 
-  
+
 关于这张图片，我们可能在初学Android时就有接触，今天我们继续回顾一下。
 
 在正常情况下，一个Activity从启动到结束会以如下顺序经历整个生命周期：  
@@ -56,7 +56,7 @@ onCreate\(\)-&gt;onStart\(\)-&gt;onResume\(\)-&gt;onPause\(\)-&gt;onStop\(\)-&gt
 
 在了解这种情况下的生命周期时，首先应该了解这两个回调：**onSaveInstanceState和onRestoreInstanceState**。
 
-在Activity由于异常情况下终止时，系统会调用onSaveInstanceState来保存当前Activity的状态。这个方法的调用是在onStop之前，它和onPause没有既定的时序关系，该方法只在Activity被异常终止的情况下调用。当异常终止的Activity被重建以后，系统会调用onRestoreInstanceState，并且把Activity销毁时onSaveInstanceState方法所保存的Bundle对象参数同时传递给onSaveInstanceState和onCreate方法。因此，可以通过onRestoreInstanceState方法来恢复Activity的状态，该方法的调用时机是在onStart之后。**其中onCreate和onRestoreInstanceState方法来恢复Activity的状态的区别：**onRestoreInstanceState回调则表明其中Bundle对象非空，不用加非空判断。onCreate需要非空判断。建议使用onRestoreInstanceState。  
+在Activity由于异常情况下终止时，系统会调用onSaveInstanceState来保存当前Activity的状态。这个方法的调用是在onStop之前，它和onPause没有既定的时序关系，该方法只在Activity被异常终止的情况下调用。当异常终止的Activity被重建以后，系统会调用onRestoreInstanceState，并且把Activity销毁时onSaveInstanceState方法所保存的Bundle对象参数同时传递给onRestoreInstanceState和onCreate方法。因此，可以通过onRestoreInstanceState方法来恢复Activity的状态，该方法的调用时机是在onStart之后。**其中onCreate和onRestoreInstanceState方法来恢复Activity的状态的区别：**onRestoreInstanceState回调则表明其中Bundle对象非空，不用加非空判断。onCreate需要非空判断。建议使用onRestoreInstanceState。  
 
 
 ![](http://upload-images.jianshu.io/upload_images/3985563-23d90471fa7f12d2.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
@@ -64,7 +64,7 @@ onCreate\(\)-&gt;onStart\(\)-&gt;onResume\(\)-&gt;onPause\(\)-&gt;onStop\(\)-&gt
   
 
 
-  
+
 横竖屏切换的生命周期：onPause\(\)-&gt;onSaveInstanceState\(\)-&gt; onStop\(\)-&gt;onDestroy\(\)-&gt;onCreate\(\)-&gt;onStart\(\)-&gt;onRestoreInstanceState-&gt;onResume\(\)
 
 可以通过在AndroidManifest文件的Activity中指定如下属性：
@@ -142,7 +142,7 @@ Activity的管理是采用任务栈的形式，任务栈采用“后进先出”
   
 
 
-  
+
 **特殊情况，如果在Service或Application中启动一个Activity，其并没有所谓的任务栈，可以使用标记位Flag来解决。解决办法：为待启动的Activity指定FLAG\_ACTIVITY\_NEW\_TASK标记位，创建一个新栈。**
 
 **应用场景：**绝大多数Activity。如果以这种方式启动的Activity被跨进程调用，在5.0之前新启动的Activity实例会放入发送Intent的Task的栈的顶部，尽管它们属于不同的程序，这似乎有点费解看起来也不是那么合理，所以在5.0之后，上述情景会创建一个新的Task，新启动的Activity就会放入刚创建的Task中，这样就合理的多了。
@@ -167,7 +167,7 @@ Activity的管理是采用任务栈的形式，任务栈采用“后进先出”
   
 
 
-  
+
 **应用场景：**在通知栏点击收到的通知，然后需要启动一个Activity，这个Activity就可以用singleTop，否则每次点击都会新建一个Activity。当然实际的开发过程中，测试妹纸没准给你提过这样的bug：某个场景下连续快速点击，启动了两个Activity。如果这个时候待启动的Activity使用 singleTop模式也是可以避免这个Bug的。同standard模式，如果是外部程序启动singleTop的Activity，在Android 5.0之前新创建的Activity会位于调用者的Task中，5.0及以后会放入新的Task中。
 
 ##### \(3\)栈内复用模式（singleTask）
@@ -204,7 +204,7 @@ Activity的管理是采用任务栈的形式，任务栈采用“后进先出”
   
 
 
-  
+
 **应用场景：**大多数App的主页。对于大部分应用，当我们在主界面点击回退按钮的时候都是退出应用，那么当我们第一次进入主界面之后，主界面位于栈底，以后不管我们打开了多少个Activity，只要我们再次回到主界面，都应该使用将主界面Activity上所有的Activity移除的方式来让主界面Activity处于栈顶，而不是往栈顶新加一个主界面Activity的实例，通过这种方式能够保证退出应用时所有的Activity都能报销毁。在跨应用Intent传递时，如果系统中不存在singleTask Activity的实例，那么将创建一个新的Task，然后创建SingleTask Activity的实例，将其放入新的Task中。
 
 ##### \(4\)单例模式（singleInstance）
@@ -217,7 +217,7 @@ Activity的管理是采用任务栈的形式，任务栈采用“后进先出”
   
 
 
-  
+
 **应用场景：**呼叫来电界面。这种模式的使用情况比较罕见，在Launcher中可能使用。或者你确定你需要使Activity只有一个实例。建议谨慎使用。
 
 ### 3.特殊情况——前台栈和后台栈的交互
@@ -230,7 +230,7 @@ Activity的管理是采用任务栈的形式，任务栈采用“后进先出”
   
 
 
-  
+
 如果不是请求启动D而是启动C，那么情况又不一样，如下图。  
 
 
@@ -239,7 +239,7 @@ Activity的管理是采用任务栈的形式，任务栈采用“后进先出”
   
 
 
-  
+
 **调用SingleTask模式的后台任务栈中的Activity，会把整个栈的Actvity压入当前栈的栈顶。singleTask会具有clearTop特性，把之上的栈内Activity清除。**
 
 #### 4.Activity的Flags
