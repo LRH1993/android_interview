@@ -170,7 +170,7 @@ public class DoubleLink<T> {
         DNode<T> inode = getNode(index);
         DNode<T> tnode = new DNode<T>(t, inode.prev, inode);
         inode.prev.next = tnode;
-        inode.next = tnode;
+        inode.prev = tnode;
         mCount++;
         return ;
     }
