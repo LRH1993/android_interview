@@ -320,8 +320,6 @@ long personid = ContentUris.parseId(uri);
 
 - 实例说明：采用的数据源是`Android`中的`SQLite`数据库
 
-------
-
 ### 5.1 进程内通信
 
 - 步骤说明：
