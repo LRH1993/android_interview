@@ -340,6 +340,7 @@ localBroadcastManager.sendBroadcast(intent);
 ```
 
 **⑤. 粘性广播（Sticky Broadcast）**
+
 由于在Android5.0 & API 21中已经失效，所以不建议使用，在这里也不作过多的总结。
 
  
