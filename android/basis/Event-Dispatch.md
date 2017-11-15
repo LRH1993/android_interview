@@ -321,8 +321,6 @@ public boolean dispatchTouchEvent(MotionEvent ev) {
 - **如果你只是希望了解Android事件分发机制而不想深入了解，那么你可以离开这篇文章了**
 - 对于程序猿来说，知其然还需要知其所以然，接下来，**我将通过源码分析来深入了解Android事件分发机制**
 
-------
-
 ## 四、Android事件分发机制源码分析
 
 - Android中事件分发顺序：**Activity（Window） -> ViewGroup -> View**，再次贴出下图：
@@ -342,8 +340,6 @@ public boolean dispatchTouchEvent(MotionEvent ev) {
 - View对点击事件的分发机制
 
 接下来，我将通过源码分析详细介绍Activity、View和ViewGroup的事件分发机制
-
-------
 
 ### 4.1 Activity的事件分发机制
 
