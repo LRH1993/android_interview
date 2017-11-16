@@ -135,6 +135,7 @@ View的布局流程：
 ## 四、Draw过程
 
 View的绘制过程遵循如下几步：
+
 ①绘制背景 background.draw(canvas)
 
 ②绘制自己（onDraw）
