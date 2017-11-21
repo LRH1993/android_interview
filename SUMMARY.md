@@ -86,7 +86,7 @@
   - [VirtualApk解析](/android/advance/virtualapk.md)
   - [Android推送技术解析](/android/advance/push.md)
   - [Android Apk安装过程](/android/advance/apk-install.md)
-  - [PopupWindow和Dialog区别](/android/advance/dialog-popupwindow)
+  - [PopupWindow和Dialog区别](/android/advance/dialog-popupwindow.md)
 * [开源框架](/android/open-source-framework.md)
   * [OkHttp解析](/android/open-source-framework/okhttp.md)
   * [Retrofit解析](/android/open-source-framework/Retrofit.md)
