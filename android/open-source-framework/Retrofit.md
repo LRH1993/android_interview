@@ -205,8 +205,6 @@ private Converter<ResponseBody, T> createResponseConverter() {
 
 这不正是我们苦苦追求的**高内聚低耦合**效果吗？解耦的第一步就是**面向接口编程**，模块之间、类之间通过接口进行依赖，**创建怎样的实例，则交给工厂负责**，工厂同样也是接口，添加（Retrofit doc 中使用 install 安装一词，非常贴切）怎样的工厂，则在最初构造 `Retrofit` 对象时决定，各个模块之间完全解耦，**每个模块只专注于自己的职责**，全都是套路，值得反复玩味、学习与模仿。
 
-------
-
 除了上面重点分析的这四个成员，`ServiceMethod` 中还包含了 API 方法的 url 解析等逻辑，包含了众多关于泛型和反射相关的代码，有类似需求的时候，也非常值得学习模仿。
 
 ### 2.5 OkHttpCall
@@ -296,8 +294,6 @@ Response<T> parseResponse(okhttp3.Response rawResponse) throws IOException {
 ### 2.6 CallAdapter
 
 终于到了最后一步了，`CallAdapter<T>#adapt(Call<R> call)` 函数负责把 `retrofit2.Call<R>` 转为 `T`。这里 `T` 当然可以就是 `retrofit2.Call<R>`，这时我们直接返回参数就可以了，实际上这正是 `DefaultCallAdapterFactory` 创建的 `CallAdapter` 的行为。至于其他类型的工厂返回的 `CallAdapter` 的行为，这里暂且不表，后面再单独分析。
-
-------
 
 至此，一次对 API 方法的调用是如何构造并发起网络请求、以及解析返回数据，这整个过程大致是分析完毕了。对整个流程的概览非常重要，结合 stay 画的流程图，应该能够比较轻松地看清整个流程了。
 
