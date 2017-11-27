@@ -40,11 +40,11 @@ public int GetHashCode(string str)
 
 上面的哈希值是Horner计算字符串哈希值的方法，公式为:
 
-![屏幕快照 2017-09-04 下午3.04.03](/Users/lvruheng/Desktop/屏幕快照 2017-09-04 下午3.04.03.png)
+![](/assets/hash.png)
 
 举个例子，比如要获取”call”的哈希值，字符串c对应的unicode为99，a对应的unicode为97，L对应的unicode为108，所以字符串”call”的哈希值为
 
-![屏幕快照 2017-09-04 下午3.04.34](/Users/lvruheng/Desktop/屏幕快照 2017-09-04 下午3.04.34.png)
+![](/assets/hash-result.png)
 
 如果对每个字符去哈希值可能会比较耗时，所以可以通过间隔取N个字符来获取哈希值来节省时间，比如，可以 获取每8-9个字符来获取哈希值：
 
