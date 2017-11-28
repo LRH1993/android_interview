@@ -23,7 +23,7 @@
   
 
 
-  
+
 在上图中可以看出，Adaptee类并没有sampleOperation2\(\)方法，而客户端则期待这个方法。为使客户端能够使用Adaptee类，提供一个中间环节，即类Adapter，把Adaptee的API与Target类的API衔接起来。Adapter与Adaptee是继承关系，这决定了这个适配器模式是类的：
 
 模式所涉及的角色有：
@@ -82,7 +82,7 @@ public class Adapter extends Adaptee implements Target {
   
 
 
-  
+
 从上图可以看出，Adaptee类并没有sampleOperation2\(\)方法，而客户端则期待这个方法。为使客户端能够使用Adaptee类，需要提供一个包装\(Wrapper\)类Adapter。这个包装类包装了一个Adaptee的实例，从而此包装类能够把Adaptee的API与Target类的API衔接起来。Adapter与Adaptee是委派关系，这决定了适配器模式是对象的。
 
 ```java
@@ -168,8 +168,8 @@ JDK1.1 之前提供的容器有 Arrays,Vector,Stack,Hashtable,Properties,BitSet�
 ```java
 Vector v=new Vector();
 for (Enumeration enum =v.elements(); enum.hasMoreElements();) {
-Object o = enum.nextElement();
-processObject(o);
+  Object o = enum.nextElement();
+  processObject(o);
 }
 ```
 
@@ -177,44 +177,38 @@ JDK1.2 版本中引入了 Iterator 接口，新版本的集合对（HashSet,Hash
 
 ```java
 List list=new ArrayList();
-for(Iterator it=list.iterator();it.hasNext();)
-{
- System.out.println(it.next());
+for(Iterator it=list.iterator();it.hasNext();){
+   System.out.println(it.next());
 }
 ```
 
 这样，如果将老版本的程序运行在新的 Java 编译器上就会出错。因为 List 接口中已经没有 elements\(\)，而只有 iterator\(\) 了。那么如何将老版本的程序运行在新的 Java 编译器上呢? 如果不加修改，是肯定不行的，但是修改要遵循“开－闭”原则。我们可以用 Java 设计模式中的适配器模式解决这个问题。
 
 ```java
-public class NewEnumeration implements Enumeration
-{
+public class NewEnumeration implements Enumeration {
+    Iterator it;
 
- Iterator it;
- public NewEnumeration(Iterator it)
- {
- this.it=it;
- }
+    public NewEnumeration(Iterator it) {
+        this.it = it;
+    }
 
- public boolean hasMoreElements()
- {
- return it.hasNext();
- }
+    public boolean hasMoreElements() {
+        return it.hasNext();
+    }
 
- public Object nextElement()
- {
- return it.next();
- }
- public static void main(String[] args)
- {
- List list=new ArrayList();
- list.add("a");
- list.add("b");
- list.add("C");
- for(Enumeration e=new NewEnumeration(list.iterator());e.hasMoreElements();)
- {
- System.out.println(e.nextElement());
- }
- }
+    public Object nextElement() {
+        return it.next();
+    }
+
+    public static void main(String[] args) {
+        List list = new ArrayList();
+        list.add("a");
+        list.add("b");
+        list.add("C");
+        for (Enumeration e = new NewEnumeration(list.iterator()); e.hasMoreElements(); ) {
+            System.out.println(e.nextElement());
+        }
+    }
 }
 ```
 
@@ -225,63 +219,56 @@ NewEnumeration 是一个适配器类，通过它实现了从 Iterator 接口到 
 在开发过程中,ListView的Adapter是我们最为常见的类型之一。一般的用法大致如下:
 
 ```java
-// 代码省略
- ListView myListView = (ListView)findViewById(listview_id);
- // 设置适配器
- myListView.setAdapter(new MyAdapter(context, myDatas));
+ // 代码省略
+ ListView myListView = (ListView) findViewById(listview_id);
+// 设置适配器
+ myListView.setAdapter(new MyAdapter(context,myDatas));
 
 // 适配器
-public class MyAdapter extends BaseAdapter{
+public class MyAdapter extends BaseAdapter {
 
-        private LayoutInflater mInflater;
-        List
-<
-String
->
- mDatas ; 
+    private LayoutInflater mInflater;
+    List<String> mDatas;
 
-        public MyAdapter(Context context, List
-<
-String
->
- datas){
-            this.mInflater = LayoutInflater.from(context);
-            mDatas = datas ;
-        }
-        @Override
-        public int getCount() {
-            return mDatas.size();
-        }
-
-        @Override
-        public String getItem(int pos) {
-            return mDatas.get(pos);
-        }
-
-        @Override
-        public long getItemId(int pos) {
-            return pos;
-        }
-
-        // 解析、设置、缓存convertView以及相关内容
-        @Override
-        public View getView(int position, View convertView, ViewGroup parent) { 
-            ViewHolder holder = null;
-            // Item View的复用
-            if (convertView == null) {
-                holder = new ViewHolder();  
-                convertView = mInflater.inflate(R.layout.my_listview_item, null);
-                // 获取title
-                holder.title = (TextView)convertView.findViewById(R.id.title);
-                convertView.setTag(holder);
-            } else {
-                holder = (ViewHolder)convertView.getTag();
-            }
-            holder.title.setText(mDatas.get(position));
-            return convertView;
-        }
-
+    public MyAdapter(Context context, List<String> datas) {
+        this.mInflater = LayoutInflater.from(context);
+        mDatas = datas;
     }
+
+    @Override
+    public int getCount() {
+        return mDatas.size();
+    }
+
+    @Override
+    public String getItem(int pos) {
+        return mDatas.get(pos);
+    }
+
+    @Override
+    public long getItemId(int pos) {
+        return pos;
+    }
+
+    // 解析、设置、缓存convertView以及相关内容
+    @Override
+    public View getView(int position, View convertView, ViewGroup parent) {
+        ViewHolder holder = null;
+        // Item View的复用
+        if (convertView == null) {
+            holder = new ViewHolder();
+            convertView = mInflater.inflate(R.layout.my_listview_item, null);
+            // 获取title
+            holder.title = (TextView) convertView.findViewById(R.id.title);
+            convertView.setTag(holder);
+        } else {
+            holder = (ViewHolder) convertView.getTag();
+        }
+        holder.title.setText(mDatas.get(position));
+        return convertView;
+    }
+
+}
 ```
 
 我们知道，作为最重要的View，ListView需要能够显示各式各样的视图，每个人需要的显示效果各不相同，显示的数据类型、数量等也千变万化。那么如何隔离这种变化尤为重要。
@@ -294,16 +281,13 @@ Android的做法是增加一个Adapter层来应对变化，**将ListView需要�
 ListView继承自AbsListView，Adapter定义在AbsListView中，我们看一看这个类。
 
 ```java
-public abstract class AbsListView extends AdapterView
-<
-ListAdapter
->
- implements TextWatcher,
+public abstract class AbsListView extends AdapterView<ListAdapter>
+        implements TextWatcher,
         ViewTreeObserver.OnGlobalLayoutListener, Filter.FilterListener,
         ViewTreeObserver.OnTouchModeChangeListener,
         RemoteViewsAdapter.RemoteAdapterConnectionCallback {
 
-    ListAdapter mAdapter ;
+    ListAdapter mAdapter;
 
     // 关联到Window时调用的函数
     @Override
@@ -311,10 +295,8 @@ ListAdapter
         super.onAttachedToWindow();
         // 代码省略
         // 给适配器注册一个观察者。
-        if (mAdapter != null 
-&
-&
- mDataSetObserver == null) {
+        if (mAdapter != null&&
+        mDataSetObserver == null){
             mDataSetObserver = new AdapterDataSetObserver();
             mAdapter.registerDataSetObserver(mDataSetObserver);
 
@@ -327,7 +309,7 @@ ListAdapter
         mIsAttached = true;
     }
 
-  /**
+    /**
      * 子类需要覆写layoutChildren()函数来布局child view,也就是Item View
      */
     @Override
@@ -336,18 +318,14 @@ ListAdapter
         mInLayout = true;
         if (changed) {
             int childCount = getChildCount();
-            for (int i = 0; i 
-<
- childCount; i++) {
+            for (int i = 0; i<childCount; i++) {
                 getChildAt(i).forceLayout();
             }
             mRecycler.markChildrenDirty();
         }
 
-        if (mFastScroller != null 
-&
-&
- mItemCount != mOldItemCount) {
+        if (mFastScroller != null&&
+        mItemCount != mOldItemCount){
             mFastScroller.onItemCountChanged(mOldItemCount, mItemCount);
         }
         // 布局Child View
@@ -376,7 +354,7 @@ ListAdapter
 
         return child;
     }
-    }
+}
 ```
 
 通过增加Adapter一层来将Item View的操作抽象起来，ListView等集合视图通过Adapter对象获得Item的个数、数据元素、Item View等，从而达到适配各种数据、各种Item视图的效果。
