@@ -48,30 +48,45 @@ public class IteratorExample {
 
 }
 ```
-**注意：**当使用Iterator对集合元素进行迭代时，Iterator并不是把集合元素本身传给了迭代变量，而是把集合元素的值传给了迭代变量（就如同参数传递是值传递，基本数据类型传递的是值，引用类型传递的仅仅是对象的引用变量），所以修改迭代变量的值对集合元素本身没有任何影响。
+**注意：**当使用Iterator对集合元素进行迭代时，把集合元素的值传给了迭代变量（就如同参数传递是值传递，基本数据类型传递的是值，引用类型传递的仅仅是对象的引用变量。
 
 下面的程序演示了这一点：
 ```java
 public class IteratorExample {
-	public static void main(String[] args){
-		List<String> list =Arrays.asList("java语言","C语言","C++语言");
-		Iterator<String> iterator = list.iterator();
-		while(iterator.hasNext()){
-			String next = iterator.next();//集合元素的值传给了迭代变量，仅仅传递了对象引用。保存的仅仅是指向对象内存空间的地址
-			next ="修改后的";
-			System.out.println(next);
-			
-		}
-		System.out.println(list);
-	}
+  public static void main(String[] args) {
+            List<MyObject> list = new ArrayList<>();
+            for (int i = 0; i < 10; i++) {
+                list.add(new MyObject(i));
+            }
 
+            System.out.println(list.toString());
+
+            Iterator<MyObject> iterator = list.iterator();//集合元素的值传给了迭代变量，仅仅传递了对象引用。保存的仅仅是指向对象内存空间的地址
+            while (iterator.hasNext()) {
+                MyObject next = iterator.next();
+                next.num = 99;
+            }
+
+            System.out.println(list.toString());
+    }
+    static class MyObject {
+        int num;
+
+        MyObject(int num) {
+            this.num = num;
+        }
+
+        @Override
+        public String toString() {
+            return String.valueOf(num);
+        }
+    }
 }
 ```
 输出结果如下：
->修改后的
->修改后的
->修改后的
->[java语言, C语言, C++语言]
+>[0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
+>
+>[99, 99, 99, 99, 99, 99, 99, 99, 99, 99]
 
 下面具体介绍Collection接口的三个子接口Set，List，Queue。
 ### 2.Set集合
