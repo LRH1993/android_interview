@@ -392,7 +392,7 @@ public BSTNode<T> predecessor(BSTNode<T> x) {
     // (01) x是"一个右孩子"，则"x的前驱结点"为 "它的父结点"。
     // (02) x是"一个左孩子"，则查找"x的最低的父结点，并且该父结点要具有右孩子"，找到的这个"最低的父结点"就是"x的前驱结点"。
     BSTNode<T> y = x.parent;
-    while ((y!=null) && (x==y.left)) {
+    while ((y!=null) && (x==y.left)) {//满足条件，不断往上追溯，直到找到右祖先结点
         x = y;
         y = y.parent;
     }
@@ -416,7 +416,7 @@ public BSTNode<T> successor(BSTNode<T> x) {
     // (01) x是"一个左孩子"，则"x的后继结点"为 "它的父结点"。
     // (02) x是"一个右孩子"，则查找"x的最低的父结点，并且该父结点要具有左孩子"，找到的这个"最低的父结点"就是"x的后继结点"。
     BSTNode<T> y = x.parent;
-    while ((y!=null) && (x==y.right)) {
+    while ((y!=null) && (x==y.right)) {//满足条件，不断往上追溯，直到找到右祖先结点
         x = y;
         y = y.parent;
     }
