@@ -28,6 +28,7 @@
   * [Java transient关键字](/java/basis/transient.md)
   * [Java finally与return执行顺序](/java/basis/finally-return.md)
   * [Java 8 新特性](/java/basis/java-8.md)
+  * [CountDownLatch，CyclicBarrier，Samaphore用法](java/basis/CountDownLatch，CyclicBarrier，Samaphore用法.md)
 * [Java并发](/java/concurrence.md)
   * [Java创建线程的三种方式](/java/concurrence/CreateThread.md)
   * [Java线程池](/java/concurrence/thread-pool.md)
