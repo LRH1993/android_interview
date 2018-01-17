@@ -1,9 +1,9 @@
 ### 一、概述 {#1-_概述}
 
-> A **Red-Black tree **based NavigableMap implementation. The map is sorted according to the natural ordering of its keys, or by a Comparator provided at map creation time, depending on which constructor is used.  
+> A **Red-Black tree** based NavigableMap implementation. The map is sorted according to the natural ordering of its keys, or by a Comparator provided at map creation time, depending on which constructor is used.  
 > This implementation provides guaranteed **log\(n\) time cost **for the containsKey, get, put and remove operations. Algorithms are adaptations of those in Cormen, Leiserson, and Rivest’s Introduction to Algorithms.
 
-之前已经学习过HashMap和LinkedHashMap了，HashMap不保证数据有序，LinkedHashMap保证数据可以保持插入顺序，而如果我们希望Map可以保持key的大小顺序的时候，我们就需要利用TreeMap了。
+之前已经学习过HashMap和LinkedHashMap了，HashMap不保证数据有序，LinkedHashMap保证数据可以保持插入顺序，而如果我们希望Map可以**保持key的大小顺序**的时候，我们就需要利用TreeMap了。
 
 ```java
 TreeMap<Integer, String> tmap = new TreeMap<Integer, String>();
@@ -73,13 +73,14 @@ public V put(K key, V value) {
                 return t.setValue(value);
         } while (t != null);
     }
-        // 如果该节点未存在，则新建
+    // 如果该节点未存在，则新建
     Entry<K,V> e = new Entry<>(key, value, parent);
     if (cmp < 0)
         parent.left = e;
     else
         parent.right = e;
-        // 红黑树平衡调整
+    
+    // 红黑树平衡调整
     fixAfterInsertion(e);
     size++;
     modCount++;

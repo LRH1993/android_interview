@@ -8,7 +8,7 @@
 
 语法糖（Syntactic Sugar），也称糖衣语法，是由英国计算机学家Peter.J.Landin发明的一个术语，指在计算机语言中添加的某种语法，这种语法对语言的功能并没有影响，但是更方便程序员使用。Java中最常用的语法糖主要有泛型、变长参数、条件编译、自动拆装箱、内部类等。虚拟机并不支持这些语法，它们在编译阶段就被还原回了简单的基础语法结构，这个过程成为解语法糖。
 
-**泛型的目的：**Java 泛型就是把一种语法糖，通过泛型使得在编译阶段完成一些类型转换的工作，避免在运行时强制类型转换而出现ClassCastException，即类型转换异常。
+**泛型的目的：** Java 泛型就是把一种语法糖，通过泛型使得在编译阶段完成一些类型转换的工作，避免在运行时强制类型转换而出现`ClassCastException`，即类型转换异常。
 
 ##### 2.泛型初探
 
@@ -59,22 +59,20 @@ public static void main(String[] args)
 
 ### 二、泛型的使用
 
-###### 1.泛型类和泛型接口
+#### 1.泛型类和泛型接口
 
 下面是JDK 1.5 以后，List接口，以及ArrayList类的代码片段。
 
 ```java
 //定义接口时指定了一个类型形参，该形参名为E
-public interface List<E> extends Collection<E>
- {
+public interface List<E> extends Collection<E> {
    //在该接口里，E可以作为类型使用
    public E get(int index) {}
    public void add(E e) {} 
 }
 
 //定义类时指定了一个类型形参，该形参名为E
-public class ArrayList<E> extends AbstractList<E> implements List<E>
-{
+public class ArrayList<E> extends AbstractList<E> implements List<E> {
    //在该类里，E可以作为类型使用
    public void set(E e) {
    .......................
@@ -88,11 +86,10 @@ public class ArrayList<E> extends AbstractList<E> implements List<E>
 
 **泛型类**
 
-定义一个容器类，存放键值对key-value，键值对的类型不确定，可以使用泛型来定义，分别指定为K和V
+定义一个容器类，存放键值对key-value，键值对的类型不确定，可以使用泛型来定义，分别指定为K和V。
 
 ```java
-public class Container<K, V>
- {
+public class Container<K, V> {
 
     private K key;
     private V value;
@@ -124,7 +121,7 @@ public class Container<K, V>
 在使用Container类时，只需要指定K，V的具体类型即可，从而创建出逻辑上不同的Container实例，用来存放不同的数据类型。
 
 ```java
- public static void main(String[] args){
+ public static void main(String[] args) {
      Container<String,String>  c1=new Container<String ,String>("name","hello");
      Container<String,Integer> c2=new Container<String,Integer>("age",22);
      Container<Double,Double>  c3=new Container<Double,Double>(1.1,1.3);
@@ -165,7 +162,7 @@ public class A extends Container{}
 
 此时系统会把K,V形参当成Object类型处理。
 
-###### 2.泛型的方法
+#### 2.泛型的方法
 
 前面在介绍泛型类和泛型接口中提到，可以在泛型类、泛型接口的方法中，把泛型中声明的类型形参当成普通类型使用。 如下面的方式：
 
@@ -197,7 +194,7 @@ public class Main{
 }
 ```
 
-**所谓泛型方法，就是在声明方法时定义一个或多个类型形参。**泛型方法的用法格式如下：
+**所谓泛型方法，就是在声明方法时定义一个或多个类型形参。** 泛型方法的用法格式如下：
 
 ```java
 修饰符<T, S> 返回值类型 方法名（形参列表）｛
@@ -205,7 +202,7 @@ public class Main{
 ｝
 ```
 
-**注意：**方法声明中定义的形参只能在该方法里使用，而接口、类声明中定义的类型形参则可以在整个接口、类中使用。
+**注意：** 方法声明中定义的形参只能在该方法里使用，而接口、类声明中定义的类型形参则可以在整个接口、类中使用。
 
 ```java
 class Demo{  
@@ -226,7 +223,7 @@ public class GenericsDemo26{
 
 当调用`fun()`方法时，根据传入的实际对象，编译器就会判断出类型形参T所代表的实际类型。
 
-##### 3.泛型构造器
+#### 3.泛型构造器
 
 正如泛型方法允许在方法签名中声明类型形参一样，Java也允许在构造器签名中声明类型形参，这样就产生了所谓的泛型构造器。  
 和使用普通泛型方法一样没区别，一种是显式指定泛型参数，另一种是隐式推断，如果是显式指定则以显式指定的类型参数为准，如果传入的参数的类型和指定的类型实参不符，将会编译报错。
@@ -293,7 +290,7 @@ c.add(new Object());
 
 简单来讲，使用通配符的目的是来限制泛型的类型参数的类型，使其满足某种条件，固定为某些类。
 
-主要分为两类即：上限通配符和下限通配符。
+主要分为两类即：**上限通配符**和**下限通配符**。
 
 ##### 1.上限通配符
 
