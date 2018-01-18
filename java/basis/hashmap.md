@@ -58,7 +58,7 @@ for(Entry<String, Integer> entry : map.entrySet()) {
 >   **a measure of how full the hash table is allowed to get**
 >   before its capacity is automatically increased.
 
-简单的说，Capacity就是bucket的大小，Load factor就是bucket填满程度的最大比例。如果对迭代性能要求很高的话不要把`capacity`设置过大，也不要把`load factor`设置过小。当bucket中的entries的数目大于`capacity*load factor`时就需要调整bucket的大小为当前的2倍。
+简单的说，Capacity就是bucket的大小，Load factor就是bucket填满程度的最大比例。如果对迭代性能要求很高的话，不要把`capacity`设置过大，也不要把`load factor`设置过小。当bucket中的entries的数目大于`capacity*load factor`时就需要调整bucket的大小为当前的2倍。
 
 ## 三、put函数的实现
 
@@ -67,9 +67,9 @@ put函数大致的思路为：
 1. 对key的hashCode\(\)做hash，然后再计算index;
 2. 如果没碰撞直接放到bucket里；
 3. 如果碰撞了，以链表的形式存在buckets后；
-4. 如果碰撞导致链表过长\(大于等于TREEIFY\_THRESHOLD\)，就把链表转换成红黑树；
+4. 如果碰撞导致链表过长\(大于等于`TREEIFY_THRESHOLD`\)，就把链表转换成红黑树；
 5. 如果节点已经存在就替换old value\(保证key的唯一性\)
-6. 如果bucket满了\(超过load factor\*current capacity\)，就要resize。
+6. 如果bucket满了\(超过`load factor*current capacity`\)，就要resize。
 
 具体代码的实现如下：
 
@@ -326,14 +326,14 @@ final Node<K,V>[] resize() {
 是基于Map接口的实现，存储键值对时，它可以接收null的键值，是非同步的，HashMap存储着Entry\(hash, key, value, next\)对象。
 
 **2. 你知道HashMap的工作原理吗？**  
-通过hash的方法，通过put和get存储和获取对象。存储对象时，我们将K/V传给put方法时，它调用hashCode计算hash从而得到bucket位置，进一步存储，HashMap会根据当前bucket的占用情况自动调整容量\(超过Load Facotr则resize为原来的2倍\)。获取对象时，我们将K传给get，它调用hashCode计算hash从而得到bucket位置，并进一步调用equals\(\)方法确定键值对。如果发生碰撞的时候，Hashmap通过链表将产生碰撞冲突的元素组织起来，在Java 8中，如果一个bucket中碰撞冲突的元素超过某个限制\(默认是8\)，则使用红黑树来替换链表，从而提高速度。
+通过hash的方法，通过put和get存储和获取对象。存储对象时，我们将K/V传给put方法时，它调用hashCode计算hash从而得到bucket位置，进一步存储，HashMap会根据当前bucket的占用情况自动调整容量\(超过`Load Facotr`则resize为原来的2倍\)。获取对象时，我们将K传给get，它调用hashCode计算hash从而得到bucket位置，并进一步调用equals\(\)方法确定键值对。如果发生碰撞的时候，Hashmap通过链表将产生碰撞冲突的元素组织起来，在Java 8中，如果一个bucket中碰撞冲突的元素超过某个限制\(默认是8\)，则使用红黑树来替换链表，从而提高速度。
 
 **3. 你知道get和put的原理吗？equals\(\)和hashCode\(\)的都有什么作用？**  
-通过对key的hashCode\(\)进行hashing，并计算下标\( n-1 & hash\)，从而获得buckets的位置。如果产生碰撞，则利用key.equals\(\)方法去链表或树中去查找对应的节点
+通过对key的hashCode\(\)进行hashing，并计算下标\( `(n-1) & hash`\)，从而获得buckets的位置。如果产生碰撞，则利用key.equals\(\)方法去链表或树中去查找对应的节点
 
 **4. 你知道hash的实现吗？为什么要这样实现？**  
 在Java 1.8的实现中，是通过hashCode\(\)的高16位异或低16位实现的：`(h = k.hashCode()) ^ (h >>> 16)`，主要是从速度、功效、质量来考虑的，这么做可以在bucket的n比较小的时候，也能保证考虑到高低bit都参与到hash的计算中，同时不会有太大的开销。
 
-**5. 如果HashMap的大小超过了负载因子\(load factor\)定义的容量，怎么办？**  
-如果超过了负载因子\(默认0.75\)，则会重新resize一个原来长度两倍的HashMap，并且重新调用hash方法。
+**5. 如果HashMap的大小超过了负载因子\(`load factor`\)定义的容量，怎么办？**  
+如果超过了负载因子\(默认**0.75**\)，则会重新resize一个原来长度两倍的HashMap，并且重新调用hash方法。
 

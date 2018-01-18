@@ -72,7 +72,7 @@ private void grow(int minCapacity) {
 
 ### 三、set和get函数 {#3_set和get函数}
 
-Array的put和get函数就比较简单了，先做index检查，然后执行赋值或访问操作：
+Array的set和get函数就比较简单了，先做index检查，然后执行赋值或访问操作：
 
 ```java
 public E set(int index, E element) {

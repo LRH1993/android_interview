@@ -1,4 +1,4 @@
-### 一、元素据
+### 一、元数据
 
 要想理解注解（Annotation）的作用，就要先理解Java中元数据的概念。
 
@@ -37,10 +37,10 @@ Java提供了多种内建的注解，下面接下几个比较常用的注解：@
 
 @Override可适用元素为方法，仅仅保留在java源文件中。
 
-**@Deprecated **  
+**@Deprecated**  
 用途：使用这个注解，用于告知编译器，某一程序元素\(比如方法，成员变量\)不建议使用了（即过时了）。  
 例如：  
-Person类中的info\(\)方法使用@Deprecated表示该方法过时了。
+Person类中的info\(\)方法使用`@Deprecated`表示该方法过时了。
 
 ```java
 public class Person {
@@ -54,12 +54,12 @@ public class Person {
 调用info\(\)方法会编译器会出现警告，告知该方法已过时。
 
 ![](http://upload-images.jianshu.io/upload_images/3985563-4ec2d9c0b02330ee.png?imageMogr2/auto-orient/strip|imageView2/2/w/1240)  
-注解类型分析： @Deprecated可适合用于除注解类型声明之外的所有元素，保留时长为运行时。
+注解类型分析：` @Deprecated`可适合用于除注解类型声明之外的所有元素，保留时长为运行时。
 
 **@SuppressWarnings**  
 用途：用于告知编译器忽略特定的警告信息，例在泛型中使用原生数据类型，编译器会发出警告，当使用该注解后，则不会发出警告。
 
-注解类型分析： @SuppressWarnings可适合用于除注解类型声明和包名之外的所有元素，仅仅保留在java源文件中。
+注解类型分析： `@SuppressWarnings`可适合用于除注解类型声明和包名之外的所有元素，仅仅保留在java源文件中。
 
 该注解有方法value\(）,可支持多个字符串参数，用户指定忽略哪种警告，例如：
 
@@ -72,7 +72,7 @@ public class Person {
 **@FunctionalInterface**  
 用途：用户告知编译器，检查这个接口，保证该接口是函数式接口，即只能包含一个抽象方法，否则就会编译出错。
 
-注解类型分析： @FunctionalInterface可适合用于注解类型声明，保留时长为运行时。
+注解类型分析： `@FunctionalInterface`可适合用于注解类型声明，保留时长为运行时。
 
 ##### 3.元Annotation
 
@@ -84,7 +84,7 @@ JDK除了在java.lang提供了上述内建注解外，还在java.lang。annotati
 
 **@Documented**
 
-@Documented用户指定被该元Annotation修饰的Annotation类将会被javadoc工具提取成文档，如果定义Annotation类时使用了@Documented修饰，则所有使用该Annotation修饰的程序元素的API文档中将会包含该Annotation说明。
+`@Documented`用户指定被该元Annotation修饰的Annotation类将会被javadoc工具提取成文档，如果定义Annotation类时使用了`@Documented`修饰，则所有使用该Annotation修饰的程序元素的API文档中将会包含该Annotation说明。
 
 例如：
 
@@ -96,7 +96,7 @@ public @interface Deprecated {
 }
 ```
 
-定义@Deprecated 时使用了@Documented，则任何元素使用@Deprecated修饰时，在生成API文档时，将会包含 @Deprecated的说明  
+定义`@Deprecated`时使用了`@Documented`，则任何元素使用@Deprecated修饰时，在生成API文档时，将会包含`@Deprecated`的说明  
 以下是String的一个过时的构造方法：
 
 ```java
@@ -108,16 +108,16 @@ public String(byte[] ascii,int hibyte,int offset, int count)
 
 **@Inherited**
 
-@Inherited指定被它修饰的Annotation将具有继承性——如果某个类使用了@Xxx注解（定义该Annotation时使用了@Inherited修饰）修饰，则其子类将自动被@Xxx修饰。
+`@Inherited`指定被它修饰的Annotation将具有继承性——如果某个类使用了@Xxx注解（定义该Annotation时使用了`@Inherited`修饰）修饰，则其子类将自动被@Xxx修饰。
 
 **@Retention**
 
-@Retention：表示该注解类型的注解保留的时长。当注解类型声明中没有@Retention元注解，则默认保留策略为RetentionPolicy.CLASS。关于保留策略\(RetentionPolicy\)是枚举类型，共定义3种保留策略，如下表：  
+`@Retention`：表示该注解类型的注解保留的时长。当注解类型声明中没有`@Retention`元注解，则默认保留策略为RetentionPolicy.CLASS。关于保留策略\(RetentionPolicy\)是枚举类型，共定义3种保留策略，如下表：  
 ![](http://upload-images.jianshu.io/upload_images/3985563-828fe68fcdf834b4.png?imageMogr2/auto-orient/strip|imageView2/2/w/1240)
 
 **@Target**
 
-@Target：表示该注解类型的所适用的程序元素类型。当注解类型声明中没有@Target元注解，则默认为可适用所有的程序元素。如果存在指定的@Target元注解，则编译器强制实施相应的使用限制。关于程序元素\(ElementType\)是枚举类型，共定义8种程序元素，如下表：  
+`@Target`：表示该注解类型的所适用的程序元素类型。当注解类型声明中没有`@Target`元注解，则默认为可适用所有的程序元素。如果存在指定的`@Target`元注解，则编译器强制实施相应的使用限制。关于程序元素\(ElementType\)是枚举类型，共定义8种程序元素，如下表：  
 ![](http://upload-images.jianshu.io/upload_images/3985563-7b457df2143fa5dd.png?imageMogr2/auto-orient/strip|imageView2/2/w/1240)
 
 ### 三、自定义注解（Annotation）
@@ -160,12 +160,12 @@ public class AnnotationDemo {
 }
 ```
 
-由于该注解的保留策略为RetentionPolicy.RUNTIME，故可在运行期通过反射机制来使用，否则无法通过反射机制来获取。这时候注解实现的就是元数据的第二个作用：**代码分析**。  
+由于该注解的保留策略为`RetentionPolicy.RUNTIME`，故可在运行期通过反射机制来使用，否则无法通过反射机制来获取。这时候注解实现的就是元数据的第二个作用：**代码分析**。  
 下面来具体介绍如何通过反射机制来进行注解解析。
 
 ### 四、注解解析
 
-接下来，通过反射技术来解析自定义注解。关于反射类位于包java.lang.reflect，其中有一个接口AnnotatedElement，该接口主要有如下几个实现类：Class,Constructor,Field,Method,Package。除此之外，该接口定义了注释相关的几个核心方法，如下：  
+接下来，通过反射技术来解析自定义注解。关于反射类位于包java.lang.reflect，其中有一个接口AnnotatedElement，该接口主要有如下几个实现类：Class，Constructor，Field，Method，Package。除此之外，该接口定义了注释相关的几个核心方法，如下：  
 ![](http://upload-images.jianshu.io/upload_images/3985563-4077bbaef5b27a4b.png?imageMogr2/auto-orient/strip|imageView2/2/w/1240)  
 因此，当获取了某个类的Class对象，然后获取其Field,Method等对象，通过上述4个方法提取其中的注解，然后获得注解的详细信息。
 

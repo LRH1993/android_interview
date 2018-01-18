@@ -8,9 +8,9 @@ Java NIO\(New IO\)是一个可以替代标准Java IO API的IO API\(从Java1.4开
 
 Java NIO 由以下几个核心部分组成：
 
-Buffer  
-Channel  
-Selector
+ - Buffer  
+ - Channel  
+ - Selector
 
 传统的IO操作面向数据流，意味着每次从流中读一个或多个字节，直至完成，数据没有被缓存在任何地方。NIO操作面向缓冲区，数据从Channel读取到Buffer缓冲区，随后在Buffer中处理数据。
 
@@ -18,10 +18,10 @@ Selector
 
 ##### 利用Buffer读写数据，通常遵循四个步骤：
 
-1.把数据写入buffer；  
-2.调用flip；  
-3.从Buffer中读取数据；  
-4.调用buffer.clear\(\)
+1. 把数据写入buffer；  
+2. 调用flip；  
+3. 从Buffer中读取数据；  
+4. 调用buffer.clear\(\)
 
 当写入数据到buffer中时，buffer会记录已经写入的数据大小。当需要读数据时，通过flip\(\)方法把buffer从写模式调整为读模式；在读模式下，可以读取所有已经写入的数据。
 
@@ -32,9 +32,10 @@ Selector
 buffer缓冲区实质上就是一块内存，用于写入数据，也供后续再次读取数据。这块内存被NIO Buffer管理，并提供一系列的方法用于更简单的操作这块内存。
 
 一个Buffer有三个属性是必须掌握的，分别是：  
-capacity容量  
-position位置  
-limit限制
+
+ - capacity容量  
+ - position位置  
+ - limit限制
 
 position和limit的具体含义取决于当前buffer的模式。capacity在两种模式下都表示容量。  
 下面有张示例图，描诉了不同模式下position和limit的含义：  
@@ -77,18 +78,19 @@ CharBuffer buf = CharBuffer.allocate(1024);
 
 Java NIO Channel通道和流非常相似，主要有以下几点区别：
 
-通道可以读也可以写，流一般来说是单向的（只能读或者写）。  
-通道可以异步读写。  
-通道总是基于缓冲区Buffer来读写。  
-正如上面提到的，我们可以从通道中读取数据，写入到buffer；也可以中buffer内读数据，写入到通道中。下面有个示意图：  
+ - 通道可以读也可以写，流一般来说是单向的（只能读或者写）。  
+ - 通道可以异步读写。  
+ - 通道总是基于缓冲区Buffer来读写。  
+ - 正如上面提到的，我们可以从通道中读取数据，写入到buffer；也可以中buffer内读数据，写入到通道中。下面有个示意图：  
 ![](http://upload-images.jianshu.io/upload_images/3985563-5dcaaf9b7106a7d9.png?imageMogr2/auto-orient/strip|imageView2/2/w/1240)
 
 ##### Channel的实现类有：
 
-FileChannel  
-DatagramChannel  
-SocketChannel  
-ServerSocketChannel  
+ - FileChannel  
+ - DatagramChannel  
+ - SocketChannel  
+ - ServerSocketChannel  
+
 还有一些异步IO类，后面有介绍。
 
 FileChannel用于文件的数据读写。 DatagramChannel用于UDP的数据读写。 SocketChannel用于TCP的数据读写。 ServerSocketChannel允许我们监听TCP链接请求，每个请求会创建会一个SocketChannel。
@@ -126,16 +128,17 @@ RandomAccessFile aFile = new RandomAccessFile("data/nio-data.txt", "rw");
 本文讨论的背景是UNIX环境下的network IO。本文最重要的参考文献是Richard Stevens的“**UNIX® Network Programming Volume 1, Third Edition: The Sockets Networking** ”，6.2节“**I/O Models** ”，Stevens在这节中详细说明了各种IO的特点和区别。
 
 Stevens在文章中一共比较了五种IO Model：  
-blocking IO  
-nonblocking IO  
-IO multiplexing  
-signal driven IO  
-asynchronous IO。
+
+ - blocking IO  
+ - nonblocking IO  
+ - IO multiplexing  
+ - signal driven IO  
+ - asynchronous IO。
 
 由于signal driven IO在实际中并不常用，所以我这只提及剩下的四种IO Model。再说一下IO发生时涉及的对象和步骤。对于一个network IO \(这里我们以read举例\)，它会涉及到两个系统对象，一个是调用这个IO的process \(or thread\)，另一个就是系统内核\(kernel\)。
 
 当一个read操作发生时，它会经历两个阶段：   
-**1 等待数据准备 \(Waiting for the data to be ready\) **  
+**1 等待数据准备 \(Waiting for the data to be ready\)**  
 **2 将数据从内核拷贝到进程中 \(Copying the data from the kernel to the process\)**
 
 记住这两点很重要，因为这些IO Model的区别就是在两个阶段上各有不同的情况。
@@ -168,7 +171,7 @@ IO multiplexing这个词可能有点陌生，但是如果我说select，epoll，
 
 UNIX下的asynchronous IO其实用得很少。先看一下它的流程：  
 ![](http://upload-images.jianshu.io/upload_images/3985563-39b98967390db195.gif?imageMogr2/auto-orient/strip|imageView2/2/w/1240)  
-**用户进程发起read操作之后，立刻就可以开始去做其它的事。**而另一方面，从kernel的角度，当它受到一个asynchronous read之后，首先它会立刻返回，所以不会对用户进程产生任何block。**然后，kernel会等待数据准备完成，然后将数据拷贝到用户内存，当这一切都完成之后，kernel会给用户进程发送一个signal，告诉它read操作完成了。**
+**用户进程发起read操作之后，立刻就可以开始去做其它的事。** 而另一方面，从kernel的角度，当它受到一个asynchronous read之后，首先它会立刻返回，所以不会对用户进程产生任何block。**然后，kernel会等待数据准备完成，然后将数据拷贝到用户内存，当这一切都完成之后，kernel会给用户进程发送一个signal，告诉它read操作完成了。**
 
 到目前为止，已经将四个IO Model都介绍完了。现在回过头来回答最初的那几个问题：
 
@@ -236,10 +239,10 @@ Channel必须是非阻塞的。上面对IO multiplexing的图解中可以看出�
 
 **注意register的第二个参数，这个参数是一个“关注集合”，代表我们关注的channel状态，有四种基础类型可供监听：**
 
-Connect  
-Accept  
-Read  
-Write
+ - Connect  
+ - Accept  
+ - Read  
+ - Write
 
 **一个channel触发了一个事件也可视作该事件处于就绪状态。**
 
@@ -247,10 +250,10 @@ Write
 
 上述的四种就绪状态用SelectionKey中的常量表示如下：
 
-SelectionKey.OP\_CONNECT  
-SelectionKey.OP\_ACCEPT  
-SelectionKey.OP\_READ  
-SelectionKey.OP\_WRITE
+ - SelectionKey.OP\_CONNECT  
+ - SelectionKey.OP\_ACCEPT  
+ - SelectionKey.OP\_READ  
+ - SelectionKey.OP\_WRITE
 
 如果对多个事件感兴趣可利用位的或运算结合多个常量，比如：
 
