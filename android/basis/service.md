@@ -52,7 +52,7 @@ Service是Android中实现程序后台运行的解决方案，它非常适用于
 当前组件调用unbindService\(\)，想要解除与service的绑定时系统调用此方法（**一次调用**，一旦解除绑定后，下次再调用unbindService\(\)会抛出异常）。
 
 **OnDestory\(\)**  
-系统在service不再被使用并要销毁时调用此方法（**一次调用**）．service应在此方法中释放资源，比如线程，已注册的侦听器，接收器等等．这是service收到的最后一个调用。
+系统在service不再被使用并要销毁时调用此方法（**一次调用**）。service应在此方法中释放资源，比如线程，已注册的侦听器，接收器等等．这是service收到的最后一个调用。
 
 下面介绍三种不同情况下Service的生命周期情况。
 
@@ -249,7 +249,8 @@ private ServiceConnection con = new ServiceConnection() {
 
 由于后台服务优先级相对比较低，当系统出现内存不足的情况下，它就有可能会被回收掉，所以前台服务就是来弥补这个缺点的，它可以一直保持运行状态而不被系统回收。
 
-**创建服务类**  
+**创建服务类**
+
 前台服务创建很简单，其实就在Service的基础上创建一个Notification，然后使用Service的startForeground\(\)方法即可启动为前台服务。
 
 ```java
@@ -306,14 +307,13 @@ startService(new Intent(this, ForeService.class));
 首先是用一般的PendingIntent来进行跳转
 
 ```java
-mBuilder = new NotificationCompat.Builder(this).setContent(view)  
-        .setSmallIcon(R.drawable.icon).setTicker("新资讯")  
-        .setWhen(System.currentTimeMillis())  
-        .setOngoing(false)  
-        .setAutoCancel(true);  
-Intent intent = new Intent(this, NotificationShow.class);  
- PendingIntent pendingIntent = PendingIntent.getActivity(this, 0,  
- intent, PendingIntent.FLAG_UPDATE_CURRENT);  
+mBuilder = new NotificationCompat.Builder(this).setContent(view)
+        .setSmallIcon(R.drawable.icon).setTicker("新资讯")
+        .setWhen(System.currentTimeMillis())
+        .setOngoing(false)
+        .setAutoCancel(true);
+Intent intent = new Intent(this, NotificationShow.class);
+PendingIntent pendingIntent = PendingIntent.getActivity(this, 0, intent, PendingIntent.FLAG_UPDATE_CURRENT);
 mBuilder.setContentIntent(pendingIntent);
 ```
 
@@ -322,20 +322,19 @@ mBuilder.setContentIntent(pendingIntent);
 在运行效果上来看，首先发送了一条Notification到通知栏上，然后这时，退出程序，即MainActivity已经不存在了，回到home主菜单，看到Notification仍然存在，当然，我们还没有点击或者cancel它，现在去点击Notification，跳转到NotificationShow界面，然后我们按下Back键，发现直接回到home菜单了。现在大多数android应用都是在通知栏中如果有Notification通知的话，点击它，然后会直接跳转到对应的应用程序的某个界面，这时如果回退，即按下Back键，会返回到该应用程序的主界面，而不是系统的home菜单。所以用上面这种PendingIntent的做法达不到目的。这里我们使用TaskStackBuilder来做。
 
 ```java
-mBuilder = new NotificationCompat.Builder(this).setContent(view)  
-                .setSmallIcon(R.drawable.icon).setTicker("新资讯")  
-                .setWhen(System.currentTimeMillis())  
-                .setOngoing(false)  
-                .setAutoCancel(true);  
-        Intent intent = new Intent(this, NotificationShow.class);  
-        TaskStackBuilder stackBuilder = TaskStackBuilder.create(this);  
-        stackBuilder.addParentStack(NotificationShow.class);  
-        stackBuilder.addNextIntent(intent);  
-        PendingIntent pendingIntent = stackBuilder.getPendingIntent(0,  
-                PendingIntent.FLAG_UPDATE_CURRENT);  
-//       PendingIntent pendingIntent = PendingIntent.getActivity(this, 0,  
-//       intent, PendingIntent.FLAG_UPDATE_CURRENT);  
-        mBuilder.setContentIntent(pendingIntent);
+mBuilder = new NotificationCompat.Builder(this)
+        .setContent(view)
+        .setSmallIcon(R.drawable.icon).setTicker("新资讯")
+        .setWhen(System.currentTimeMillis())
+        .setOngoing(false)
+        .setAutoCancel(true);
+Intent intent = new Intent(this, NotificationShow.class);
+TaskStackBuilder stackBuilder = TaskStackBuilder.create(this);
+stackBuilder.addParentStack(NotificationShow.class);
+stackBuilder.addNextIntent(intent);
+PendingIntent pendingIntent = stackBuilder.getPendingIntent(0, PendingIntent.FLAG_UPDATE_CURRENT);
+//PendingIntent pendingIntent = PendingIntent.getActivity(this, 0, intent, PendingIntent.FLAG_UPDATE_CURRENT);
+mBuilder.setContentIntent(pendingIntent);
 ```
 
 显示用TaskStackBuilder.create\(this\)创建一个stackBuilder实例，接下来addParentStack\(\);
@@ -349,7 +348,7 @@ mBuilder = new NotificationCompat.Builder(this).setContent(view)
 那么我们就在manifest文件中添加这个属性
 
 ```java
-<activity  
+<activity
     android:name="com.lvr.service.NotificationShow"  
     android:parentActivityName=".MainActivity" >
 </activity>
