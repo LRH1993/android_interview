@@ -1,9 +1,7 @@
 ## 一、 定义
 
 - `BroadcastReceiver`（广播接收器），属于Android四大组件之一
-- 在Android开发中，BroadcastReceiver的应用场景非常多
-
-广播，是一个全局的监听器，属于`Android`四大组件之一
+- 在Android开发中，BroadcastReceiver的应用场景非常多广播，是一个全局的监听器，属于`Android`四大组件之一
 
 > `Android` 广播分为两个角色：广播发送者、广播接收者
 
@@ -79,7 +77,7 @@ public class mBroadcastReceiver extends BroadcastReceiver {
   //接收到广播后自动调用该方法
   @Override
   public void onReceive(Context context, Intent intent) {
-   //写入接收广播后的操作
+    //写入接收广播后的操作
     }
 }
 ```
@@ -90,38 +88,38 @@ public class mBroadcastReceiver extends BroadcastReceiver {
 
 #### 4.2.1 静态注册
 
-- 在AndroidManifest.xml里通过**<receive>**标签声明
+- 在AndroidManifest.xml里通过 **<receive\>** 标签声明
 - 属性说明：
 
 ```xml
-<receiver 
-    android:enabled=["true" | "false"]
-//此broadcastReceiver能否接收其他App的发出的广播
-//默认值是由receiver中有无intent-filter决定的：如果有intent-filter，默认值为true，否则为false
-    android:exported=["true" | "false"]
-    android:icon="drawable resource"
-    android:label="string resource"
-//继承BroadcastReceiver子类的类名
-    android:name=".mBroadcastReceiver"
-//具有相应权限的广播发送者发送的广播才能被此BroadcastReceiver所接收；
-    android:permission="string"
-//BroadcastReceiver运行所处的进程
-//默认为app的进程，可以指定独立的进程
-//注：Android四大基本组件都可以通过此属性指定自己的独立进程
-    android:process="string" >
+<receiver
+  android:enabled=["true" | "false"]
+  //此broadcastReceiver能否接收其他App的发出的广播
+  //默认值是由receiver中有无intent-filter决定的：如果有intent-filter，默认值为true，否则为false
+  android:exported=["true" | "false"]
+  android:icon="drawable resource"
+  android:label="string resource"
+  //继承BroadcastReceiver子类的类名
+  android:name=".mBroadcastReceiver"
+  //具有相应权限的广播发送者发送的广播才能被此BroadcastReceiver所接收；
+  android:permission="string"
+  //BroadcastReceiver运行所处的进程
+  //默认为app的进程，可以指定独立的进程
+  //注：Android四大基本组件都可以通过此属性指定自己的独立进程
+  android:process="string" >
 
-//用于指定此广播接收器将接收的广播类型
-//本示例中给出的是用于接收网络状态改变时发出的广播
- <intent-filter>
-<action android:name="android.net.conn.CONNECTIVITY_CHANGE" />
-    </intent-filter>
+  //用于指定此广播接收器将接收的广播类型
+  //本示例中给出的是用于接收网络状态改变时发出的广播
+  <intent-filter>
+    <action android:name="android.net.conn.CONNECTIVITY_CHANGE" />
+  </intent-filter>
 </receiver>
 ```
 
 - 注册示例
 
-  ```
-  <receiver 
+  ``` xml
+  <receiver
     //此广播接收者类是mBroadcastReceiver
     android:name=".mBroadcastReceiver" >
     //用于接收网络状态改变时发出的广播
@@ -139,31 +137,30 @@ public class mBroadcastReceiver extends BroadcastReceiver {
 
 ```Java
 @Override
-  protected void onResume(){
-      super.onResume();
+protected void onResume() {
+    super.onResume();
 
     //实例化BroadcastReceiver子类 &  IntentFilter
-     mBroadcastReceiver mBroadcastReceiver = new mBroadcastReceiver();
-     IntentFilter intentFilter = new IntentFilter();
+    mBroadcastReceiver mBroadcastReceiver = new mBroadcastReceiver();
+    IntentFilter intentFilter = new IntentFilter();
 
     //设置接收广播的类型
-     intentFilter.addAction(android.net.conn.CONNECTIVITY_CHANGE);
+    intentFilter.addAction(android.net.conn.CONNECTIVITY_CHANGE);
 
     //调用Context的registerReceiver（）方法进行动态注册
-     registerReceiver(mBroadcastReceiver, intentFilter);
- }
+    registerReceiver(mBroadcastReceiver, intentFilter);
+}
 
 
 //注册广播后，要在相应位置记得销毁广播
 //即在onPause() 中unregisterReceiver(mBroadcastReceiver)
 //当此Activity实例化时，会动态将MyBroadcastReceiver注册到系统中
 //当此Activity销毁时，动态注册的MyBroadcastReceiver将不再接收到相应的广播。
- @Override
- protected void onPause() {
-     super.onPause();
-      //销毁在onResume()方法中的广播
-     unregisterReceiver(mBroadcastReceiver);
-     }
+@Override
+protected void onPause() {
+    super.onPause();
+    //销毁在onResume()方法中的广播
+    unregisterReceiver(mBroadcastReceiver);
 }
 ```
 
@@ -308,7 +305,7 @@ sendBroadcast(intent);
 
   3. 发送广播时指定该广播接收器所在的包名，此广播将只会发送到此包中的App内与之相匹配的有效广播接收器中。
 
-     > 通过**intent.setPackage(packageName)**指定报名
+     > 通过 **intent.setPackage(packageName)** 指定报名
 
 - 具体使用2 - 使用封装好的LocalBroadcastManager类
   使用方式上与全局广播几乎相同，只是注册/取消注册广播接收器和发送广播时将参数的context变成了LocalBroadcastManager的单一实例
