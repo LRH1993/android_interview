@@ -1,11 +1,11 @@
 ## 乐观锁与悲观锁
 
 我们都知道，cpu是时分复用的，也就是把cpu的时间片，分配给不同的thread/process轮流执行，时间片与时间片之间，需要进行cpu切换，也就是会发生进程的切换。切换涉及到清空寄存器，缓存数据。然后重新加载新的thread所需数据。当一个线程被挂起时，加入到阻塞队列，在一定的时间或条件下，在通过notify()，notifyAll()唤醒回来。
-**在某个资源不可用的时候，就将cpu让出，把当前等待线程切换为阻塞状态。等到资源(比如一个共享数据）可用了，那么就将线程唤醒，让他进入runnable状态等待cpu调度。这就是典型的悲观锁的实现。**独占锁是一种悲观锁，synchronized就是一种独占锁，它假设最坏的情况，认为一个线程修改共享数据的时候其他线程也会修改该数据，因此只在确保其它线程不会造成干扰的情况下执行，会导致其它所有需要锁的线程挂起，等待持有锁的线程释放锁。
+ **在某个资源不可用的时候，就将cpu让出，把当前等待线程切换为阻塞状态。等到资源(比如一个共享数据）可用了，那么就将线程唤醒，让他进入runnable状态等待cpu调度。这就是典型的悲观锁的实现。** 独占锁是一种悲观锁，synchronized就是一种独占锁，它假设最坏的情况，认为一个线程修改共享数据的时候其他线程也会修改该数据，因此只在确保其它线程不会造成干扰的情况下执行，会导致其它所有需要锁的线程挂起，等待持有锁的线程释放锁。
 
 **但是，由于在进程挂起和恢复执行过程中存在着很大的开销**。当一个线程正在等待锁时，它不能做任何事，所以悲观锁有很大的缺点。举个例子，如果一个线程需要某个资源，但是这个资源的占用时间很短，当线程第一次抢占这个资源时，可能这个资源被占用，如果此时挂起这个线程，可能立刻就发现资源可用，然后又需要花费很长的时间重新抢占锁，时间代价就会非常的高。
 
-所以就有了乐观锁的概念，他的核心思路就是，**每次不加锁而是假设修改数据之前其他线程一定不会修改，如果因为修改过产生冲突就失败就重试，直到成功为止。**在上面的例子中，某个线程可以不让出cpu,而是一直while循环，如果失败就重试，直到成功为止。所以，当数据争用不严重时，乐观锁效果更好。比如CAS就是一种乐观锁思想的应用。
+所以就有了乐观锁的概念，他的核心思路就是，**每次不加锁而是假设修改数据之前其他线程一定不会修改，如果因为修改过产生冲突就失败就重试，直到成功为止。** 在上面的例子中，某个线程可以不让出cpu，而是一直while循环，如果失败就重试，直到成功为止。所以，当数据争用不严重时，乐观锁效果更好。比如CAS就是一种乐观锁思想的应用。
 
 ## CAS
 
@@ -13,42 +13,42 @@
 
 举个CAS操作的应用场景的一个例子，当一个线程需要修改共享变量的值。完成这个操作，先取出共享变量的值赋给A，然后基于A的基础进行计算，得到新值B，完了需要更新共享变量的值了，这个时候就可以调用CAS方法更新变量值了。
 
-在java中可以通过锁和循环CAS的方式来实现原子操作。Java中 java.util.concurrent.atomic包相关类就是 CAS的实现，atomic包里包括以下类： 
+在java中可以通过锁和循环CAS的方式来实现原子操作。Java中`java.util.concurrent.atomic`包相关类就是 CAS的实现，atomic包里包括以下类：
 
 | 类名                                   | 说明                                       |
 | ------------------------------------ | ---------------------------------------- |
 | **AtomicBoolean**                    | 可以用原子方式更新的 `boolean` 值。                  |
 | **AtomicInteger**                    | 可以用原子方式更新的 `int` 值。                      |
 | **AtomicIntegerArray**               | 可以用原子方式更新其元素的 `int` 数组。                  |
-| **AtomicIntegerFieldUpdater<T>**     | 基于反射的实用工具，可以对指定类的指定 `volatile int` 字段进行原子更新。 |
+| **AtomicIntegerFieldUpdater<T\>**     | 基于反射的实用工具，可以对指定类的指定 `volatile int` 字段进行原子更新。 |
 | **AtomicLong**                       | 可以用原子方式更新的 `long` 值。                     |
 | **AtomicLongArray**                  | 可以用原子方式更新其元素的 `long` 数组。                 |
-| **AtomicLongFieldUpdater<T>**        | 基于反射的实用工具，可以对指定类的指定 `volatile long` 字段进行原子更新。 |
-| **AtomicMarkableReference<V>**       | `AtomicMarkableReference` 维护带有标记位的对象引用，可以原子方式对其进行更新。 |
-| **AtomicReference<V>**               | 可以用原子方式更新的对象引用。                          |
-| **AtomicReferenceArray<E>**          | 可以用原子方式更新其元素的对象引用数组。                     |
-| **AtomicReferenceFieldUpdater<T,V>** | 基于反射的实用工具，可以对指定类的指定 `volatile` 字段进行原子更新。 |
-| **AtomicStampedReference<V>**        | `AtomicStampedReference` 维护带有整数“标志”的对象引用，可以用原子方式对其进行更新。 |
+| **AtomicLongFieldUpdater<T\>**        | 基于反射的实用工具，可以对指定类的指定 `volatile long` 字段进行原子更新。 |
+| **AtomicMarkableReference<V\>**       | `AtomicMarkableReference` 维护带有标记位的对象引用，可以原子方式对其进行更新。 |
+| **AtomicReference<V\>**               | 可以用原子方式更新的对象引用。                          |
+| **AtomicReferenceArray<E\>**          | 可以用原子方式更新其元素的对象引用数组。                     |
+| **AtomicReferenceFieldUpdater<T，V\>** | 基于反射的实用工具，可以对指定类的指定 `volatile` 字段进行原子更新。 |
+| **AtomicStampedReference<V\>**        | `AtomicStampedReference` 维护带有整数“标志”的对象引用，可以用原子方式对其进行更新。 |
 
 下面我们来已AtomicIneger的源码为例来看看CAS操作：
 
-```java
+``` java
 public final int getAndAdd(int delta) {
-        for (;;) {
-            int current = get();
-            int next = current + delta;
-            if (compareAndSet(current, next))
-                return current;
-        }
-    }
+	for (; ; ) {
+		int current = get();
+		int next = current + delta;
+		if (compareAndSet(current, next))
+			return current;
+	}
+}
 ```
 
 这里很显然使用CAS操作（for(;;)里面），他每次都从内存中读取数据，+1操作，然后两个值进行CAS操作。如果成功则返回，否则失败重试，直到修改成功为止。上面源码最关键的地方有两个，一个for循环，它代表着一种宁死不屈的精神，不成功誓不罢休。还有就是compareAndSet：
 
 ```java
 public final boolean compareAndSet(int expect, int update) {
-    return unsafe.compareAndSwapInt(this, valueOffset, expect, update);
-    }
+	return unsafe.compareAndSwapInt(this, valueOffset, expect, update);
+}
 ```
 
 compareAndSet方法内部是调用Java本地方法compareAndSwapInt来实现的，而compareAndSwapInt方法内部又是借助C来调用CPU的底层指令来保证在硬件层面上实现原子操作的。在intel处理器中，CAS是通过调用**cmpxchg**指令完成的。这就是我们常说的**CAS操作**（compare and swap）。
