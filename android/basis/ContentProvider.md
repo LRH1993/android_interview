@@ -52,6 +52,7 @@ content://com.example.app.provider/table/#
 
 ### 4.2  MIME数据类型
 
+- 解释：MIME：全称Multipurpose Internet Mail Extensions，多功能Internet 邮件扩充服务。它是一种多用途网际邮件扩充协议，在1992年最早应用于电子邮件系统，但后来也应用到浏览器。MIME类型就是设定某种扩展名的文件用一种应用程序来打开的方式类型，当该扩展名文件被访问的时候，浏览器会自动使用指定应用程序来打开。多用于指定一些客户端自定义的文件名，以及一些媒体文件打开方式。
 - 作用：指定某个扩展名的文件用某种应用程序来打开
   如指定`.html`文件采用`text`应用程序打开、指定`.pdf`文件采用`flash`应用程序打开
 - 具体使用：
@@ -241,40 +242,40 @@ long personid = ContentUris.parseId(uri);
 ### 4.6 UriMatcher类
 
 - 作用
-  1. 在`ContentProvider` 中注册`URI` 
+  1. 在`ContentProvider` 中注册`URI`
   2. 根据 `URI` 匹配 `ContentProvider` 中对应的数据表
 - 具体使用
 
 ```Java
 // 步骤1：初始化UriMatcher对象
-    UriMatcher matcher = new UriMatcher(UriMatcher.NO_MATCH); 
-    //常量UriMatcher.NO_MATCH  = 不匹配任何路径的返回码
-    // 即初始化时不匹配任何东西
+UriMatcher matcher = new UriMatcher(UriMatcher.NO_MATCH);
+//常量UriMatcher.NO_MATCH  = 不匹配任何路径的返回码
+// 即初始化时不匹配任何东西
 
 // 步骤2：在ContentProvider 中注册URI（addURI（））
-    int URI_CODE_a = 1；
-    int URI_CODE_b = 2；
-    matcher.addURI("cn.scu.myprovider", "user1", URI_CODE_a); 
-    matcher.addURI("cn.scu.myprovider", "user2", URI_CODE_b); 
-    // 若URI资源路径 = content://cn.scu.myprovider/user1 ，则返回注册码URI_CODE_a
-    // 若URI资源路径 = content://cn.scu.myprovider/user2 ，则返回注册码URI_CODE_b
+int URI_CODE_a = 1；
+int URI_CODE_b = 2；
+matcher.addURI("cn.scu.myprovider", "user1", URI_CODE_a);
+matcher.addURI("cn.scu.myprovider", "user2", URI_CODE_b);
+// 若URI资源路径 = content://cn.scu.myprovider/user1 ，则返回注册码URI_CODE_a
+// 若URI资源路径 = content://cn.scu.myprovider/user2 ，则返回注册码URI_CODE_b
 
 // 步骤3：根据URI 匹配 URI_CODE，从而匹配ContentProvider中相应的资源（match（））
 
-@Override   
-    public String getType(Uri uri) {   
-      Uri uri = Uri.parse(" content://cn.scu.myprovider/user1");   
+@Override
+public String getType (Uri uri){
+    Uri uri = Uri.parse(" content://cn.scu.myprovider/user1");
 
-      switch(matcher.match(uri)){   
-     // 根据URI匹配的返回码是URI_CODE_a
-     // 即matcher.match(uri) == URI_CODE_a
-      case URI_CODE_a:   
-        return tableNameUser1;   
+    switch (matcher.match(uri)) {
+        // 根据URI匹配的返回码是URI_CODE_a
+        // 即matcher.match(uri) == URI_CODE_a
+        case URI_CODE_a:
+            return tableNameUser1;
         // 如果根据URI匹配的返回码是URI_CODE_a，则返回ContentProvider中的名为tableNameUser1的表
-      case URI_CODE_b:   
-        return tableNameUser2;
+        case URI_CODE_b:
+            return tableNameUser2;
         // 如果根据URI匹配的返回码是URI_CODE_b，则返回ContentProvider中的名为tableNameUser2的表
-    }   
+    }
 }
 ```
 
@@ -290,21 +291,21 @@ long personid = ContentUris.parseId(uri);
 
 ```Java
 // 步骤1：注册内容观察者ContentObserver
-    getContentResolver().registerContentObserver（uri）；
-    // 通过ContentResolver类进行注册，并指定需要观察的URI
+getContentResolver().registerContentObserver（uri）；
+// 通过ContentResolver类进行注册，并指定需要观察的URI
 
 // 步骤2：当该URI的ContentProvider数据发生变化时，通知外界（即访问该ContentProvider数据的访问者）
-    public class UserContentProvider extends ContentProvider { 
-      public Uri insert(Uri uri, ContentValues values) { 
-      db.insert("user", "userid", values); 
-      getContext().getContentResolver().notifyChange(uri, null); 
-      // 通知访问者
-   } 
+public class UserContentProvider extends ContentProvider {
+    public Uri insert(Uri uri, ContentValues values) {
+        db.insert("user", "userid", values);
+        getContext().getContentResolver().notifyChange(uri, null);
+        // 通知访问者
+    }
 }
 
 // 步骤3：解除观察者
- getContentResolver().unregisterContentObserver（uri）；
-    // 同样需要通过ContentResolver类进行解除
+getContentResolver().unregisterContentObserver（uri）；
+// 同样需要通过ContentResolver类进行解除
 ```
 
 至此，关于`ContentProvider`的使用已经讲解完毕
@@ -381,10 +382,11 @@ public class MyProvider extends ContentProvider {
 
     // UriMatcher类使用:在ContentProvider 中注册URI
     private static final UriMatcher mMatcher;
-    static{
+
+    static {
         mMatcher = new UriMatcher(UriMatcher.NO_MATCH);
         // 初始化
-        mMatcher.addURI(AUTOHORITY,"user", User_Code);
+        mMatcher.addURI(AUTOHORITY, "user", User_Code);
         mMatcher.addURI(AUTOHORITY, "job", Job_Code);
         // 若URI资源路径 = content://cn.scu.myprovider/user ，则返回注册码User_Code
         // 若URI资源路径 = content://cn.scu.myprovider/job ，则返回注册码Job_Code
@@ -419,7 +421,6 @@ public class MyProvider extends ContentProvider {
     /**
      * 添加数据
      */
-
     @Override
     public Uri insert(Uri uri, ContentValues values) {
 
@@ -438,7 +439,7 @@ public class MyProvider extends ContentProvider {
 //        System.out.println(personid);
 
         return uri;
-        }
+    }
 
     /**
      * 查询数据
@@ -455,7 +456,7 @@ public class MyProvider extends ContentProvider {
 //        System.out.println(personid);
 
         // 查询数据
-        return db.query(table,projection,selection,selectionArgs,null,null,sortOrder,null);
+        return db.query(table, projection, selection, selectionArgs, null, null, sortOrder, null);
     }
 
     /**
@@ -487,7 +488,7 @@ public class MyProvider extends ContentProvider {
     /**
      * 根据URI匹配 URI_CODE，从而匹配ContentProvider中相应的表名
      */
-    private String getTableName(Uri uri){
+    private String getTableName(Uri uri) {
         String tableName = null;
         switch (mMatcher.match(uri)) {
             case User_Code:
@@ -498,17 +499,16 @@ public class MyProvider extends ContentProvider {
                 break;
         }
         return tableName;
-        }
     }
+}
 ```
 
 **步骤3：注册 创建的 ContentProvider类**
 **AndroidManifest.xml**
 
-```java
+``` xml
 <provider android:name="MyProvider"
-                android:authorities="cn.scu.myprovider"
-                    />
+  android:authorities="cn.scu.myprovider"/>
 ```
 
 **步骤4：进程内访问 ContentProvider中的数据**

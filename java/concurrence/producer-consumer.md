@@ -4,13 +4,13 @@
 
 Object类中相关的方法有notify方法和wait方法。因为wait和notify方法定义在Object类中，因此会被所有的类所继承。这些方法都是**final**的，即它们都是不能被重写的，不能通过子类覆写去改变它们的行为。
 
-**①wait\(\)方法：**让当前线程进入等待，并释放锁。
+**①wait\(\)方法：** 让当前线程进入等待，并释放锁。
 
-**②wait\(long\)方法：**让当前线程进入等待，并释放锁，不过等待时间为long，超过这个时间没有对当前线程进行唤醒，将自动唤醒。
+**②wait\(long\)方法：** 让当前线程进入等待，并释放锁，不过等待时间为long，超过这个时间没有对当前线程进行唤醒，将**自动唤醒**。
 
-**③notify\(\)方法：**让当前线程通知那些处于等待状态的线程，当前线程执行完毕后释放锁，并从其他线程中唤醒其中一个继续执行。
+**③notify\(\)方法：** 让当前线程通知那些处于等待状态的线程，当前线程执行完毕后释放锁，并从其他线程中唤醒其中一个继续执行。
 
-**④notifyAll\(\)方法：**让当前线程通知那些处于等待状态的线程，当前线程执行完毕后释放锁，将唤醒所有等待状态的线程。
+**④notifyAll\(\)方法：** 让当前线程通知那些处于等待状态的线程，当前线程执行完毕后释放锁，将唤醒所有等待状态的线程。
 
 ##### wait\(\)方法使用注意事项
 
@@ -18,7 +18,8 @@ Object类中相关的方法有notify方法和wait方法。因为wait和notify方
 
 ②线程调用wait\(\)方法，释放它对锁的拥有权，然后等待另外的线程来通知它（通知的方式是notify\(\)或者notifyAll\(\)方法），这样它才能重新获得锁的拥有权和恢复执行。
 
-③要确保调用wait\(\)方法的时候拥有锁，即，wait\(\)方法的调用必须放在synchronized方法或synchronized块中。  
+③要确保调用wait\(\)方法的时候拥有锁，即，wait\(\)方法的调用必须放在synchronized方法或synchronized块中。
+
 **wait\(\)与sleep\(\)比较**
 
 当线程调用了wait\(\)方法时，它会释放掉对象的锁。
@@ -135,7 +136,7 @@ public class Subtract {
 }
 ```
 
-**线程ThreadAdd **
+**线程ThreadAdd**
 
 ```java
 public class ThreadAdd extends Thread{
@@ -153,7 +154,7 @@ public class ThreadAdd extends Thread{
 }
 ```
 
-**线程ThreadSubtract **
+**线程ThreadSubtract**
 
 ```java
 public class ThreadSubtract extends Thread{
@@ -171,7 +172,7 @@ public class ThreadSubtract extends Thread{
 }
 ```
 
-**先开启两个ThreadSubtract线程，由于list中没有元素，进入等待状态。再开启一个ThreadAdd线程，向list中增加一个元素，然后唤醒两个ThreadSubtract线程**
+**先开启两个ThreadSubtract线程，由于list中没有元素，进入等待状态。再开启一个ThreadAdd线程，向list中增加一个元素，然后唤醒两个ThreadSubtract线程。**
 
 ```java
 public static void main(String[] args) throws InterruptedException {
@@ -388,13 +389,13 @@ Condition方式实现类似，篇幅有限不全部贴出来。
 
 ##### 2.多生产与多消费
 
-**特殊情况：**按照上述一生产与一消费的情况，通过创建多个生产者和消费者线程，实现多生产与多消费的情况，将会出现“假死”。
+**特殊情况：** 按照上述一生产与一消费的情况，通过创建多个生产者和消费者线程，实现多生产与多消费的情况，将会出现“假死”。
 
-**具体原因：**多个生产者和消费者线程。当全部运行后，生产者线程生产数据后，可能唤醒的同类即生产者线程。此时可能会出现如下情况：所有生产者线程进入等待状态，然后消费者线程消费完数据后，再次唤醒的还是消费者线程，直至所有消费者线程都进入等待状态，此时将进入“假死”。
+**具体原因：** 多个生产者和消费者线程。当全部运行后，生产者线程生产数据后，可能唤醒的同类即生产者线程。此时可能会出现如下情况：所有生产者线程进入等待状态，然后消费者线程消费完数据后，再次唤醒的还是消费者线程，直至所有消费者线程都进入等待状态，此时将进入“假死”。
 
-**解决方法：**将notify\(\)或signal\(\)方法改为notifyAll\(\)或signalAll\(\)方法，这样就不怕因为唤醒同类而进入“假死”状态了。
+**解决方法：** 将notify\(\)或signal\(\)方法改为notifyAll\(\)或signalAll\(\)方法，这样就不怕因为唤醒同类而进入“假死”状态了。
 
-**Condition方式实现**  
+**Condition方式实现**
 生产者
 
 ```java
@@ -489,7 +490,8 @@ public static void main(String[] args) throws InterruptedException {
 > set的值是：148827212374628960540810047  
 > get的值是：148827212374628960540810047
 
-可见交替地进行get/set实现多生产/多消费模式。  
+可见交替地进行get/set实现多生产/多消费模式。
+
 **注意：相比一生产一消费的模式，改动了两处。①signal\(\)--&gt;signalAll\(\)避免进入“假死”状态。②if\(\)判断--&gt;while\(\)循环，重新判断条件，避免逻辑混乱。**
 
 以上就是Java线程间通信的相关知识，以生产者/消费者模式为例，讲解线程间通信的使用以及注意事项。

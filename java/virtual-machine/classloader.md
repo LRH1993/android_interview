@@ -1,9 +1,13 @@
 ## 一、类加载机制
-###1.定义：
+
+### 1.定义：
+
 把描述类的数据从Class文件加载到内存，并对数据进行校验、转换解析和初始化，最终形成可以被虚拟机直接使用的Java类型。
+
 在Java语言里，类型的加载、连接和初始化过程都是在程序运行期间完成的，这种策略虽然会令类加载时稍微增加一些性能开销，但是会为Java应用程序提供高度的灵活性，Java里天生可以动态扩展的语言特性就是依赖运行期动态加载和动态连接这个特点来实现的。
 
-###2.类的生命周期：
+### 2.类的生命周期：
+
 加载，验证，准备，解析，初始化，使用和卸载。其中验证，准备，解析3个部分统称为连接。
 
 这7个阶段发生顺序如下图：
@@ -24,9 +28,10 @@
 
 ④.当虚拟机启动时，用户需要指定一个要执行的主类（包含main()方法的那个类），虚拟机会先初始化这个主类。
 
-⑤.当使用JDK1.7的动态语言支持时，如果一个java.lang.invoke.MethodHandle实例最后的解析结果REF_getStatic,REF_putStatic,REF_invokeStatic的方法句柄，并且这个方法句柄所对应的类没有进行初始化，则需要先出发初始化。
+⑤.当使用JDK1.7的动态语言支持时，如果一个`java.lang.invoke.MethodHandle`实例最后的解析结果`REF_getStatic,REF_putStatic,REF_invokeStatic`的方法句柄，并且这个方法句柄所对应的类没有进行初始化，则需要先出发初始化。
 
 ### 4.类加载的具体过程：
+
 **加载:**
 
 ①.通过一个类的全限定名来获取定义此类的二进制字节流
@@ -79,24 +84,29 @@ d.符号引用验证
 
 `<clinit>()`方法是由编译器自动收集类中的**所有类变量的赋值动作和静态语句块中的语句合并产生的**。
 
-<clinit>()与类的构造函数不同，它不需要显示地调用父类构造器，虚拟机会保证在子类的<clinit>()方法执行之前，父类的<clinit>()方法已经执行完毕。
+`<clinit>()`与类的构造函数不同，它不需要显示地调用父类构造器，虚拟机会保证在子类的`<clinit>()`方法执行之前，父类的`<clinit>()`方法已经执行完毕。
 
 **简单地说，初始化就是对类变量进行赋值及执行静态代码块。**
+
 ## 二、类加载器
 通过上述的了解，我们已经知道了类加载机制的大概流程及各个部分的功能。其中加载部分的功能是将类的class文件读入内存，并为之创建一个java.lang.Class对象。这部分功能就是由类加载器来实现的。
+
 ### 1.类加载器分类：
+
 不同的类加载器负责加载不同的类。主要分为两类。
 
-**启动类加载器（Bootstrap ClassLoader）：**由C++语言实现（针对HotSpot）,负责将存放在<JAVA_HOME>\lib目录或-Xbootclasspath参数指定的路径中的类库加载到内存中，即负责加载Java的核心类。
+**启动类加载器（Bootstrap ClassLoader）：** 由C++语言实现（针对HotSpot）,负责将存放在<JAVA_HOME>\lib目录或-Xbootclasspath参数指定的路径中的类库加载到内存中，即负责加载Java的核心类。
 
-**其他类加载器：**由Java语言实现，继承自抽象类ClassLoader。如：
+**其他类加载器：** 由Java语言实现，继承自抽象类ClassLoader。如：
 
-**扩展类加载器（Extension ClassLoader）：**负责加载<JAVA_HOME>\lib\ext目录或java.ext.dirs系统变量指定的路径中的所有类库，即负责加载Java扩展的核心类之外的类。
+**扩展类加载器（Extension ClassLoader）：** 负责加载<JAVA_HOME>\lib\ext目录或java.ext.dirs系统变量指定的路径中的所有类库，即负责加载Java扩展的核心类之外的类。
 
-**应用程序类加载器（Application ClassLoader）：**负责加载用户类路径（classpath）上的指定类库，我们可以直接使用这个类加载器，通过ClassLoader.getSystemClassLoader()方法直接获取。一般情况，如果我们没有自定义类加载器默认就是用这个加载器。
+**应用程序类加载器（Application ClassLoader）：** 负责加载用户类路径（classpath）上的指定类库，我们可以直接使用这个类加载器，通过ClassLoader.getSystemClassLoader()方法直接获取。一般情况，如果我们没有自定义类加载器默认就是用这个加载器。
 
 以上2大类，3小类类加载器基本上负责了所有Java类的加载。下面我们来具体了解上述几个类加载器实现类加载过程时相互配合协作的流程。
+
 ### 2.双亲委派模型
+
  双亲委派模型的工作流程是：如果一个类加载器收到了类加载的请求，它首先不会自己去尝试加载这个类，而是把请求委托给父加载器去完成，依次向上，因此，所有的类加载请求最终都应该被传递到顶层的启动类加载器中，只有当父加载器在它的搜索范围中没有找到所需的类时，即无法完成该加载，子加载器才会尝试自己去加载该类。
 
 ![](http://upload-images.jianshu.io/upload_images/3985563-eb333a271ec638ef.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
@@ -104,7 +114,9 @@ d.符号引用验证
 这样的好处是不同层次的类加载器具有不同优先级，比如所有Java对象的超级父类java.lang.Object，位于rt.jar，无论哪个类加载器加载该类，最终都是由启动类加载器进行加载，保证安全。即使用户自己编写一个java.lang.Object类并放入程序中，虽能正常编译，但不会被加载运行，保证不会出现混乱。
 
 ### 3.双亲委派模型的代码实现
+
 ClassLoader中loadClass方法实现了双亲委派模型
+
 ```java
 protected Class<?> loadClass(String name, boolean resolve)
     throws ClassNotFoundException
@@ -146,6 +158,7 @@ protected Class<?> loadClass(String name, boolean resolve)
     }
 }
 ```
+
 整个流程大致如下：
 
 a.首先，检查一下指定名称的类是否已经加载过，如果加载过了，就不需要再加载，直接返回。
