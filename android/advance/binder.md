@@ -2,7 +2,7 @@
 
 ### 1、概述
 
-Android系统中，涉及到多进程间的通信底层都是依赖于Binder IPC机制。例如当进程A中的Activity要向进程B中的Service通信，这便需要依赖于Binder IPC。不仅于此，整个Android系统架构中，大量采用了Binder机制作为IPC（进程间通信）方案。
+Android系统中，涉及到多进程间的通信底层都是依赖于Binder IPC机制。例如当进程A中的Activity要向进程B中的Service通信，这便需要依赖于Binder IPC。不仅于此，整个Android系统架构中，大量采用了Binder机制作为IPC（进程间通信，Interprocess Communication）方案。
 
 当然也存在部分其他的IPC方式，如管道、SystemV、Socket等。那么Android为什么不使用这些原有的技术，而是要使开发一种新的叫Binder的进程间通信机制呢？
 
@@ -10,25 +10,25 @@ Android系统中，涉及到多进程间的通信底层都是依赖于Binder IPC
 
 **性能方面**
 
-在移动设备上（性能受限制的设备，比如要省电），广泛地使用跨进程通信对通信机制的性能有严格的要求，Binder相对出传统的Socket方式，更加高效。Binder数据拷贝只需要一次，而管道、消息队列、Socket都需要2次，共享内存方式一次内存拷贝都不需要，但实现方式又比较复杂。
+在移动设备上（性能受限制的设备，比如要省电），广泛地使用跨进程通信对通信机制的性能有严格的要求，Binder相对于传统的Socket方式，更加高效。**Binder数据拷贝只需要一次，而管道、消息队列、Socket都需要2次，共享内存方式一次内存拷贝都不需要，但实现方式又比较复杂。**
 
 **安全方面**
 
-传统的进程通信方式对于通信双方的身份并没有做出严格的验证，比如Socket通信ip地址是客户端手动填入，很容易进行伪造，而Binder机制从协议本身就支持对通信双方做身份校检，因而大大提升了安全性。
+传统的进程通信方式对于通信双方的身份并没有做出严格的验证，比如Socket通信的IP地址是客户端手动填入，很容易进行伪造。然而，Binder机制从协议本身就支持对通信双方做身份校检，从而大大提升了安全性。
 
 ### 2、 Binder
 
 #### IPC原理
 
-从进程角度来看IPC机制
+从进程角度来看IPC（Interprocess Communication）机制
 
 ![img](http://upload-images.jianshu.io/upload_images/3985563-a3722ee387793114.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
 
-每个Android的进程，只能运行在自己进程所拥有的虚拟地址空间。对应一个4GB的虚拟地址空间，其中3GB是用户空间，1GB是内核空间，当然内核空间的大小是可以通过参数配置调整的。对于用户空间，不同进程之间彼此是不能共享的，而内核空间却是可共享的。Client进程向Server进程通信，恰恰是利用进程间可共享的内核内存空间来完成底层通信工作的，Client端与Server端进程往往采用ioctl等方法跟内核空间的驱动进行交互。
+每个Android的进程，只能运行在自己进程所拥有的虚拟地址空间。例如，对应一个4GB的虚拟地址空间，其中3GB是用户空间，1GB是内核空间。当然内核空间的大小是可以通过参数配置调整的。对于用户空间，不同进程之间是不能共享的，而内核空间却是可共享的。Client进程向Server进程通信，恰恰是利用进程间可共享的内核内存空间来完成底层通信工作的。Client端与Server端进程往往采用ioctl等方法与内核空间的驱动进行交互。
 
 #### Binder原理
 
-Binder通信采用C/S架构，从组件视角来说，包含Client、Server、ServiceManager以及binder驱动，其中ServiceManager用于管理系统中的各种服务。架构图如下所示：
+Binder通信采用C/S架构，从组件视角来说，包含Client、Server、ServiceManager以及Binder驱动，其中ServiceManager用于管理系统中的各种服务。架构图如下所示：
 
 ![img](http://upload-images.jianshu.io/upload_images/3985563-5ff2c4816543c433.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
 
@@ -50,9 +50,9 @@ Binder通信采用C/S架构，从组件视角来说，包含Client、Server、Se
 
 **获取服务(getService)**：Client进程使用某个Service前，须先向ServiceManager中获取相应的Service。该过程：Client是客户端，ServiceManager是服务端。
 
-**使用服务**：Client根据得到的Service信息建立与Service所在的Server进程通信的通路，然后就可以直接与Service交互。该过程：client是客户端，server是服务端。
+**使用服务**：Client根据得到的Service信息建立与Service所在的Server进程通信的通路，然后就可以直接与Service交互。该过程：Client是客户端，Server是服务端。
 
-图中的Client,Server,Service Manager之间交互都是虚线表示，是由于它们彼此之间不是直接交互的，而是都通过与Binder驱动进行交互的，从而实现IPC通信方式。其中Binder驱动位于内核空间，Client,Server,Service Manager位于用户空间。Binder驱动和Service Manager可以看做是Android平台的基础架构，而Client和Server是Android的应用层，开发人员只需自定义实现client、Server端，借助Android的基本平台架构便可以直接进行IPC通信。
+图中的Client，Server，Service Manager之间交互都是虚线表示，是由于它们彼此之间不是直接交互的，而是都通过与Binder驱动进行交互的，从而实现IPC通信（Interprocess Communication）方式。其中Binder驱动位于内核空间，Client，Server，Service Manager位于用户空间。Binder驱动和Service Manager可以看做是Android平台的基础架构，而Client和Server是Android的应用层，开发人员只需自定义实现Client、Server端，借助Android的基本平台架构便可以直接进行IPC通信。
 
 **Binder运行的实例解释**
 
@@ -60,35 +60,35 @@ Binder通信采用C/S架构，从组件视角来说，包含Client、Server、Se
 
 ```java
 //获取WindowManager服务引用
-WindowManager wm = (WindowManager)getSystemService(getApplication().WINDOW_SERVICE);  
+WindowManager wm = (WindowManager) getSystemService(getApplication().WINDOW_SERVICE);
 //布局参数layoutParams相关设置略...
-View view=LayoutInflater.from(getApplication()).inflate(R.layout.float_layout, null);  
+View view = LayoutInflater.from(getApplication()).inflate(R.layout.float_layout, null);
 //添加view
 wm.addView(view, layoutParams);
 ```
 
-**注册服务(addService)：**在Android开机启动过程中，Android会初始化系统的各种Service，并将这些Service向ServiceManager注册（即让ServiceManager管理）。这一步是系统自动完成的。
+**注册服务(addService)：** 在Android开机启动过程中，Android会初始化系统的各种Service，并将这些Service向ServiceManager注册（即让ServiceManager管理）。这一步是系统自动完成的。
 
-**获取服务(getService)：**客户端想要得到具体的Service直接向ServiceManager要即可。客户端首先向ServiceManager查询得到具体的Service引用，通常是Service引用的代理对象，对数据进行一些处理操作。即第2行代码中，得到的wm是WindowManager对象的引用。
+**获取服务(getService)：** 客户端想要得到具体的Service直接向ServiceManager要即可。客户端首先向ServiceManager查询得到具体的Service引用，通常是Service引用的代理对象，对数据进行一些处理操作。即第2行代码中，得到的wm是WindowManager对象的引用。
 
-**使用服务：**通过这个引用向具体的服务端发送请求，服务端执行完成后就返回。即第6行调用WindowManager的addView函数，将触发远程调用，调用的是运行在systemServer进程中的WindowManager的addView函数。
+**使用服务：** 通过这个引用向具体的服务端发送请求，服务端执行完成后就返回。即第6行调用WindowManager的addView函数，将触发远程调用，调用的是运行在systemServer进程中的WindowManager的addView函数。
 
 **使用服务的具体执行过程**
 
 ![img](http://upload-images.jianshu.io/upload_images/3985563-727dd63017d2113b.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
 
-1. client通过获得一个server的代理接口，对server进行调用。
-2. 代理接口中定义的方法与server中定义的方法是一一对应的。
-3. client调用某个代理接口中的方法时，代理接口的方法会将client传递的参数打包成Parcel对象。
-4. 代理接口将Parcel发送给内核中的binder driver。
-5. server会读取binder driver中的请求数据，如果是发送给自己的，解包Parcel对象，处理并将结果返回。
-6. 整个的调用过程是一个同步过程，在server处理的时候，client会block住。**因此client调用过程不应在主线程。**
+1. Client通过获得一个Server的代理接口，对Server进行调用。
+2. 代理接口中定义的方法与Server中定义的方法是一一对应的。
+3. Client调用某个代理接口中的方法时，代理接口的方法会将Client传递的参数打包成Parcel对象。
+4. 代理接口将Parcel发送给内核中的Binder Driver。
+5. Server会读取Binder Driver中的请求数据，如果是发送给自己的，解包Parcel对象，处理并将结果返回。
+6. 整个的调用过程是一个同步过程，在Server处理的时候，Client会Block住。**因此Client调用过程不应在主线程。**
 
 ## AIDL的使用
 
 ### 1.AIDL的简介
 
-AIDL (Android Interface Definition Language) 是一种接口定义语言，用于生成可以在Android设备上两个进程之间进行进程间通信(interprocess communication, IPC)的代码。如果在一个进程中（例如Activity）要调用另一个进程中（例如Service）对象的操作，就可以使用AIDL生成可序列化的参数，来完成进程间通信。
+AIDL (Android Interface Definition Language) 是一种接口定义语言，用于生成可以在Android设备上两个进程之间进行进程间通信(Interprocess Communication, IPC)的代码。如果在一个进程中（例如Activity）要调用另一个进程中（例如Service）对象的操作，就可以使用AIDL生成可序列化的参数，来完成进程间通信。
 
 **简言之，AIDL能够实现进程间通信，其内部是通过Binder机制来实现的，后面会具体介绍，现在先介绍AIDL的使用。**
 
@@ -179,7 +179,7 @@ public class Book implements Parcelable {
 }
 ```
 
-由于AIDL只支持数据类型:基本类型（int,long,char,boolean等）,String,CharSequence,List,Map，其他类型必须使用import导入，即使它们可能在同一个包里，比如上面的Book。
+由于AIDL只支持数据类型:基本类型（int，long，char，boolean等），String，CharSequence，List，Map，其他类型必须使用import导入，即使它们可能在同一个包里，比如上面的Book。
 
 **最终IBookManager.aidl 的实现**
 
@@ -233,47 +233,47 @@ public static abstract class Stub extends android.os.Binder implements com.lvr.a
 
 ```java
 //实现了AIDL的抽象函数
-    private IBookManager.Stub mbinder = new IBookManager.Stub() {
-        @Override
-        public void basicTypes(int anInt, long aLong, boolean aBoolean, float aFloat, double aDouble, String aString) throws RemoteException {
-            //什么也不做
-        }
+private IBookManager.Stub mbinder = new IBookManager.Stub() {
+    @Override
+    public void basicTypes(int anInt, long aLong, boolean aBoolean, float aFloat, double aDouble, String aString) throws RemoteException {
+        //什么也不做
+    }
 
-        @Override
-        public void addBook(Book book) throws RemoteException {
-            //添加书本
-            if(!mBookList.contains(book)){
-                mBookList.add(book);
-            }
+    @Override
+    public void addBook(Book book) throws RemoteException {
+        //添加书本
+        if (!mBookList.contains(book)) {
+            mBookList.add(book);
         }
+    }
 
-        @Override
-        public List<Book> getBookList() throws RemoteException {
-            return mBookList;
-        }
-    };
+    @Override
+    public List<Book> getBookList() throws RemoteException {
+        return mBookList;
+    }
+};
 ```
 
 当客户端连接服务端，服务端就会调用如下方法：
 
 ```java
- public IBinder onBind(Intent intent) {
-        return mbinder;
-    }
+public IBinder onBind(Intent intent) {
+    return mbinder;
+}
 ```
 
 就会把Stub实现对象返回给客户端，该对象是个Binder对象，可以实现进程间通信。
 本例就不真实模拟两个应用之间的通信，而是让Service另外开启一个进程来模拟进程间通信。
 
-```java
- <service
-            android:name=".MyService"
-            android:process=":remote">
-            <intent-filter>
-                <category android:name="android.intent.category.DEFAULT"/>
-                <action android:name="com.lvr.aidldemo.MyService"/>
-            </intent-filter>
-        </service>
+``` xml
+<service
+    android:name=".MyService"
+    android:process=":remote">
+    <intent-filter>
+        <category android:name="android.intent.category.DEFAULT" />
+        <action android:name="com.lvr.aidldemo.MyService" />
+    </intent-filter>
+</service>
 ```
 
 `android:process=":remote"`设置为另一个进程。`<action android:name="com.lvr.aidldemo.MyService"/>`是为了能让其他apk隐式bindService。**通过隐式调用的方式来连接service，需要把category设为default，这是因为，隐式调用的时候，intent中的category默认会被设置为default。**
@@ -285,25 +285,25 @@ public static abstract class Stub extends android.os.Binder implements com.lvr.a
 客户端需要做的事情比较简单，首先需要绑定服务端的Service。
 
 ```java
-                Intent intentService = new Intent();
-                intentService.setAction("com.lvr.aidldemo.MyService");
-                intentService.setPackage(getPackageName());
-                intentService.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
-                MyClient.this.bindService(intentService, mServiceConnection, BIND_AUTO_CREATE);
-                Toast.makeText(getApplicationContext(),"绑定了服务",Toast.LENGTH_SHORT).show();
+Intent intentService = new Intent();
+intentService.setAction("com.lvr.aidldemo.MyService");
+intentService.setPackage(getPackageName());
+intentService.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+MyClient.this.bindService(intentService, mServiceConnection, BIND_AUTO_CREATE);
+Toast.makeText(getApplicationContext(), "绑定了服务", Toast.LENGTH_SHORT).show();
 ```
 
 将服务端返回的Binder对象转换成AIDL接口所属的类型，接着就可以调用AIDL中的方法了。
 
 ```java
-              if(mIBookManager!=null){
-                    try {
-                        mIBookManager.addBook(new Book(18,"新添加的书"));
-                        Toast.makeText(getApplicationContext(),mIBookManager.getBookList().size()+"",Toast.LENGTH_SHORT).show();
-                    } catch (RemoteException e) {
-                        e.printStackTrace();
-                    }
-                }
+if (mIBookManager != null) {
+    try {
+        mIBookManager.addBook(new Book(18, "新添加的书"));
+        Toast.makeText(getApplicationContext(), mIBookManager.getBookList().size() + "", Toast.LENGTH_SHORT).show();
+    } catch (RemoteException e) {
+        e.printStackTrace();
+    }
+}
 ```
 
 ### 3.AIDL的工作原理
@@ -311,7 +311,7 @@ public static abstract class Stub extends android.os.Binder implements com.lvr.a
 Binder机制的运行主要包括三个部分：注册服务、获取服务和使用服务。
 其中注册服务和获取服务的流程涉及C的内容，由于个人能力有限，就不予介绍了。
 
-本篇文章主要介绍使用服务时,AIDL的工作原理。
+本篇文章主要介绍使用服务时，AIDL的工作原理。
 
 #### ①.Binder对象的获取
 
@@ -323,10 +323,11 @@ Binder是实现跨进程通信的基础，那么Binder对象在服务端和客�
 Binder中两个关键方法：
 
 ```java
- public class Binder implement IBinder{
-        void attachInterface(IInterface plus, String descriptor)
-        IInterface queryLocalInterface(Stringdescriptor) //从IBinder中继承而来
-      ..........................
+public class Binder implement IBinder {
+    void attachInterface(IInterface plus, String descriptor)
+
+    IInterface queryLocalInterface(Stringdescriptor) //从IBinder中继承而来
+    ..........................
 }
 ```
 
@@ -338,9 +339,8 @@ Binder具有被跨进程传输的能力是因为它实现了IBinder接口。系�
 并保存了IInterface对象。
 
 ```java
-public Stub()
-{
-this.attachInterface(this, DESCRIPTOR);
+public Stub() {
+    this.attachInterface(this, DESCRIPTOR);
 }
 ```
 
@@ -349,39 +349,38 @@ this.attachInterface(this, DESCRIPTOR);
 通过bindService获得Binder对象
 
 ```java
- MyClient.this.bindService(intentService, mServiceConnection, BIND_AUTO_CREATE);
+MyClient.this.bindService(intentService, mServiceConnection, BIND_AUTO_CREATE);
 ```
 
 然后通过Binder对象获得IInterface对象。
 
 ```java
 private ServiceConnection mServiceConnection = new ServiceConnection() {
-        @Override
-        public void onServiceConnected(ComponentName name, IBinder binder) {
-            //通过服务端onBind方法返回的binder对象得到IBookManager的实例，得到实例就可以调用它的方法了
-            mIBookManager = IBookManager.Stub.asInterface(binder);
-        }
+    @Override
+    public void onServiceConnected(ComponentName name, IBinder binder) {
+        //通过服务端onBind方法返回的binder对象得到IBookManager的实例，得到实例就可以调用它的方法了
+        mIBookManager = IBookManager.Stub.asInterface(binder);
+    }
 
-        @Override
-        public void onServiceDisconnected(ComponentName name) {
-            mIBookManager = null;
-        }
-    };
+    @Override
+    public void onServiceDisconnected(ComponentName name) {
+        mIBookManager = null;
+    }
+};
 ```
 
 其中`asInterface(binder)`方法如下：
 
 ```java
-public static com.lvr.aidldemo.IBookManager asInterface(android.os.IBinder obj)
-{
-if ((obj==null)) {
-return null;
-}
-android.os.IInterface iin = obj.queryLocalInterface(DESCRIPTOR);
-if (((iin!=null)&&(iin instanceof com.lvr.aidldemo.IBookManager))) {
-return ((com.lvr.aidldemo.IBookManager)iin);
-}
-return new com.lvr.aidldemo.IBookManager.Stub.Proxy(obj);
+public static com.lvr.aidldemo.IBookManager asInterface(android.os.IBinder obj) {
+    if ((obj == null)) {
+        return null;
+    }
+    android.os.IInterface iin = obj.queryLocalInterface(DESCRIPTOR);
+    if (((iin != null) && (iin instanceof com.lvr.aidldemo.IBookManager))) {
+        return ((com.lvr.aidldemo.IBookManager) iin);
+    }
+    return new com.lvr.aidldemo.IBookManager.Stub.Proxy(obj);
 }
 ```
 
@@ -394,17 +393,17 @@ return new com.lvr.aidldemo.IBookManager.Stub.Proxy(obj);
 以addBook方法为例，调用该方法后，客户端线程挂起，等待唤醒：
 
 ```java
-@Override public void addBook(com.lvr.aidldemo.Book book) throws android.os.RemoteException
-{
-..........
-//第一个参数：识别调用哪一个方法的ID
-//第二个参数：Book的序列化传入数据
-//第三个参数：调用方法后返回的数据
-//最后一个不用管
-mRemote.transact(Stub.TRANSACTION_addBook, _data, _reply, 0);
-_reply.readException();
-}
-..........
+    @Override public void addBook(com.lvr.aidldemo.Book book) throws android.os.RemoteException
+    {
+        ..........
+        //第一个参数：识别调用哪一个方法的ID
+        //第二个参数：Book的序列化传入数据
+        //第三个参数：调用方法后返回的数据
+        //最后一个不用管
+        mRemote.transact(Stub.TRANSACTION_addBook, _data, _reply, 0);
+        _reply.readException();
+    }
+    ..........
 }
 ```
 
@@ -413,20 +412,18 @@ _reply.readException();
 Proxy对象中的transact调用发生后，会引起系统的注意，系统意识到Proxy对象想找它的真身Binder对象（系统其实一直存着Binder和Proxy的对应关系）。于是系统将这个请求中的数据转发给Binder对象，Binder对象将会在onTransact中收到Proxy对象传来的数据，于是它从data中取出客户端进程传来的数据，又根据第一个参数确定想让它执行添加书本操作，于是它就执行了响应操作，并把结果写回reply。代码概略如下：
 
 ```java
-case TRANSACTION_addBook:
-{
-data.enforceInterface(DESCRIPTOR);
-com.lvr.aidldemo.Book _arg0;
-if ((0!=data.readInt())) {
-_arg0 = com.lvr.aidldemo.Book.CREATOR.createFromParcel(data);
-}
-else {
-_arg0 = null;
-}
-//这里调用服务端实现的addBook方法
-this.addBook(_arg0);
-reply.writeNoException();
-return true;
+case TRANSACTION_addBook: {
+    data.enforceInterface(DESCRIPTOR);
+    com.lvr.aidldemo.Book _arg0;
+    if ((0 != data.readInt())) {
+        _arg0 = com.lvr.aidldemo.Book.CREATOR.createFromParcel(data);
+    } else {
+        _arg0 = null;
+    }
+    //这里调用服务端实现的addBook方法
+    this.addBook(_arg0);
+    reply.writeNoException();
+    return true;
 }
 ```
 
