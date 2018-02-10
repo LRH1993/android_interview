@@ -4,7 +4,7 @@
 
 提到MVP，就必须要先介绍一下它的前辈MVC，因为MVP正是基于MVC的基础发展而来的。两个之间的关系也是源远流长。
 
-**MVC，全称Model-View-Controller，即模型-视图-控制器。**具体如下：
+**MVC，全称Model-View-Controller，即模型-视图-控制器。** 具体如下：
 
 **View：对应于布局文件**
 
