@@ -4,13 +4,13 @@ IntentService是Android里面的一个封装类，继承自四大组件之一的
 
 ## 二、作用
 
-处理异步请求，实现多线程
+处理异步请求，实现多线程。
 
 ## 三、 工作流程
 
 ![](http://upload-images.jianshu.io/upload_images/944365-fa5bfe6dffa531ce.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
 
-注意：若启动IntentService 多次，那么每个耗时操作则以队列的方式在 IntentService的onHandleIntent回调方法中依次执行，执行完自动结束。
+注意：若启动IntentService多次，那么每个耗时操作则以队列的方式在IntentService的onHandleIntent回调方法中依次执行，执行完自动结束。
 
 ## 四、实现步骤
 
@@ -87,46 +87,38 @@ public class myIntentService extends IntentService {
 
 ```xml
 <service android:name=".myIntentService">
-            <intent-filter >
-                <action android:name="cn.scu.finch"/>
-            </intent-filter>
-        </service>
+	<intent-filter>
+		<action android:name="cn.scu.finch"/>
+	</intent-filter>
+</service>
 ```
 
 - 步骤3：在Activity中开启Service服务
 
 ```java
-package com.example.carson_ho.demoforintentservice;
+@Override
+protected void onCreate(Bundle savedInstanceState) {
+    super.onCreate(savedInstanceState);
+    setContentView(R.layout.activity_main);
 
-import android.content.Intent;
-import android.os.Bundle;
-import android.support.v7.app.AppCompatActivity;
+        //同一服务只会开启一个工作线程
+        //在onHandleIntent函数里依次处理intent请求。
 
-public class MainActivity extends AppCompatActivity {
+        Intent i = new Intent("cn.scu.finch");
+        Bundle bundle = new Bundle();
+        bundle.putString("taskName", "task1");
+        i.putExtras(bundle);
+        startService(i);
 
-    @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        Intent i2 = new Intent("cn.scu.finch");
+        Bundle bundle2 = new Bundle();
+        bundle2.putString("taskName", "task2");
+        i2.putExtras(bundle2);
+        startService(i2);
 
-            //同一服务只会开启一个工作线程
-            //在onHandleIntent函数里依次处理intent请求。
-
-            Intent i = new Intent("cn.scu.finch");
-            Bundle bundle = new Bundle();
-            bundle.putString("taskName", "task1");
-            i.putExtras(bundle);
-            startService(i);
-
-            Intent i2 = new Intent("cn.scu.finch");
-            Bundle bundle2 = new Bundle();
-            bundle2.putString("taskName", "task2");
-            i2.putExtras(bundle2);
-            startService(i2);
-
-            startService(i);  //多次启动
-        }
+        startService(i);  //多次启动
     }
+}
 ```
 
 - 结果
@@ -161,22 +153,23 @@ public void onCreate() {
 }
 
 private final class ServiceHandler extends Handler {
+
     public ServiceHandler(Looper looper) {
         super(looper);
     }
 
-//IntentService的handleMessage方法把接收的消息交给onHandleIntent()处理
-//onHandleIntent()是一个抽象方法，使用时需要重写的方法
+    // IntentService的handleMessage方法把接收的消息交给onHandleIntent()处理
+    // onHandleIntent()是一个抽象方法，使用时需要重写的方法
     @Override
     public void handleMessage(Message msg) {
         // onHandleIntent 方法在工作线程中执行，执行完调用 stopSelf() 结束服务。
-        onHandleIntent((Intent)msg.obj);
-      //onHandleIntent 处理完成后 IntentService会调用 stopSelf() 自动停止。
+        onHandleIntent((Intent) msg.obj);
+        //onHandleIntent 处理完成后 IntentService会调用 stopSelf() 自动停止。
         stopSelf(msg.arg1);
     }
 }
 
-////onHandleIntent()是一个抽象方法，使用时需要重写的方法
+// onHandleIntent()是一个抽象方法，使用时需要重写的方法
 @WorkerThread
 protected abstract void onHandleIntent(Intent intent);
 ```
@@ -192,8 +185,8 @@ public int onStartCommand(Intent intent, int flags, int startId) {
 public void onStart(Intent intent, int startId) {
     Message msg = mServiceHandler.obtainMessage();
     msg.arg1 = startId;
-//把 intent 参数包装到 message 的 obj 中，然后发送消息，即添加到消息队列里
-//这里的Intent 就是启动服务时startService(Intent) 里的 Intent。
+    //把 intent 参数包装到 message 的 obj 中，然后发送消息，即添加到消息队列里
+    //这里的Intent 就是启动服务时startService(Intent) 里的 Intent。
     msg.obj = intent;
     mServiceHandler.sendMessage(msg);
 }
@@ -207,7 +200,6 @@ public void onDestroy() {
 
 - 总结
 
-  ​
 
   从上面源码可以看出，IntentService本质是采用Handler & HandlerThread方式：
 
@@ -219,14 +211,14 @@ public void onDestroy() {
 
 因此我们通过复写方法onHandleIntent()，再在里面根据Intent的不同进行不同的线程操作就可以了
 
-**注意事项 工作任务队列是顺序执行的。**
+**注意事项：工作任务队列是顺序执行的。**
 
-> 如果一个任务正在IntentService中执行，此时你再发送一个新的任务请求，这个新的任务会一直等待直到前面一个任务执行完毕才开始执行
+> 如果一个任务正在IntentService中执行，此时你再发送一个新的任务请求，这个新的任务会一直等待直到前面一个任务执行完毕才开始执行。
 
   原因：
 
 1. 由于onCreate() 方法只会调用一次，所以只会创建一个工作线程；
-2. 当多次调用 startService(Intent) 时（onStartCommand也会调用多次）其实并不会创建新的工作线程，只是把消息加入消息队列中等待执行，**所以，多次启动 IntentService 会按顺序执行事件**
+2. 当多次调用 startService(Intent) 时（onStartCommand也会调用多次）其实并不会创建新的工作线程，只是把消息加入消息队列中等待执行，**所以，多次启动 IntentService 会按顺序执行事件**；
 3. 如果服务停止，会清除消息队列中的消息，后续的事件得不到执行。
 
 ## 七、使用场景
@@ -254,12 +246,6 @@ public void onDestroy() {
 
 - IntentService内部采用了HandlerThread实现，作用类似于后台线程；
 
-- 与后台线程相比，
-
-  IntentService是一种后台服务
-
-  ，优势是：优先级高（不容易被系统杀死），从而保证任务的执行
+- 与后台线程相比，IntentService是一种后台服务，优势是：优先级高（不容易被系统杀死），从而保证任务的执行。
 
   > 对于后台线程，若进程中没有活动的四大组件，则该线程的优先级非常低，容易被系统杀死，无法保证任务的执行
-
-# 
