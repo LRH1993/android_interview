@@ -12,9 +12,9 @@
 
 为了更清晰地理解工厂方法模式，需要先引入两个概念：
 
-**产品等级结构 ：**产品等级结构即产品的继承结构，如一个抽象类是电视机，其子类有海尔电视机、海信电视机、TCL电视机，则抽象电视机与具体品牌的电视机之间构成了一个产品等级结构，抽象电视机是父类，而具体品牌的电视机是其子类。
+**产品等级结构：** 产品等级结构即产品的继承结构，如一个抽象类是电视机，其子类有海尔电视机、海信电视机、TCL电视机，则抽象电视机与具体品牌的电视机之间构成了一个产品等级结构，抽象电视机是父类，而具体品牌的电视机是其子类。
 
-**产品族 ：**在抽象工厂模式中，**产品族是指由同一个工厂生产的，位于不同产品等级结构中的一组产品**，如海尔电器工厂生产的海尔电视机、海尔电冰箱，海尔电视机位于电视机产品等级结构中，海尔电冰箱位于电冰箱产品等级结构中。
+**产品族：** 在抽象工厂模式中，**产品族是指由同一个工厂生产的，位于不同产品等级结构中的一组产品**，如海尔电器工厂生产的海尔电视机、海尔电冰箱，海尔电视机位于电视机产品等级结构中，海尔电冰箱位于电冰箱产品等级结构中。
 
 **当系统所提供的工厂所需生产的具体产品并不是一个简单的对象，而是多个位于不同产品等级结构中属于不同类型的具体产品时需要使用抽象工厂模式。**
 
@@ -59,136 +59,133 @@ Product：具体产品
 **抽象产品： 苹果系列**
 
 ```java
- public interface Apple
-     {
-        void AppleStyle();
-    }
+public interface Apple
+{
+    void AppleStyle();
+}
 ```
 
 **抽象产品： 三星系列**
 
 ```java
 public interface Sumsung
-     {
-        void BangziStyle();
-   }
+{
+    void BangziStyle();
+}
 ```
 
 **具体产品：iphone**
 
 ```java
- public class iphone implements Apple
-     {
-         public void AppleStyle()
-         {
-            Console.WriteLine("Apple's style: iPhone!");
-        }
-     }
+public class iphone implements Apple
+{
+    public void AppleStyle()
+    {
+        Console.WriteLine("Apple's style: iPhone!");
+    }
+}
 ```
 
 **具体产品：ipad**
 
 ```java
- public class ipad implements Apple
+public class ipad implements Apple
+{
+    public void AppleStyle()
     {
-
-         public void AppleStyle()
-        {
-             Console.WriteLine("Apple's style: iPad!");
-        }
-
-     }
+        Console.WriteLine("Apple's style: iPad!");
+    }
+}
 ```
 
 **具体产品：note2**
 
 ```java
- public class note2 implements Sumsung
-     {
-         public void BangziStyle()
-         {
-            Console.WriteLine("Bangzi's style : Note2!");
-         }
-
-     }
+public class note2 implements Sumsung
+{
+    public void BangziStyle()
+    {
+        Console.WriteLine("Bangzi's style : Note2!");
+    }
+}
 ```
 
 **具体产品：tabs**
 
 ```java
 public class Tabs implements Sumsung
-      {
-         public void BangziStyle()
-         {
-            Console.WriteLine("Bangzi's style : Tab!");
-       }
-     }
+{
+    public void BangziStyle()
+    {
+        Console.WriteLine("Bangzi's style : Tab!");
+    }
+}
 ```
 
 **抽象工厂**
 
 ```java
- public interface Factory
-     {
-         Apple createAppleProduct();
-         Sumsung createSumsungProduct();
-     }
+public interface Factory
+{
+    Apple createAppleProduct();
+    Sumsung createSumsungProduct();
+}
 ```
 
 **手机工厂**
 
 ```java
 public class Factory_Phone implements Factory
-     {
-         public Apple createAppleProduct()
-         {
-             return new iphone();
-         }
+{
+    public Apple createAppleProduct()
+    {
+        return new iphone();
+    }
 
-         public Sumsung createSumsungProduct()
-         {
-             return new note2();
-         }
-     }
+    public Sumsung createSumsungProduct()
+    {
+        return new note2();
+    }
+}
 ```
 
 **pad工厂**
 
 ```java
 public class Factory_Pad implements  Factory
-     {
-         public Apple createAppleProduct()
-         {
-             return new ipad();
-         }
+{
+    public Apple createAppleProduct()
+    {
+        return new ipad();
+    }
 
-         public Sumsung createSumsungProduct()
-         {
-             return new Tabs();
-         }
-     }
+    public Sumsung createSumsungProduct()
+    {
+        return new Tabs();
+    }
+}
 ```
 
 **客户端调用**
 
 ```java
 public static void Main(string[] args)
-         {
-             //采购商要一台iPad和一台Tab
-              Factory factory = new Factory_Pad();
-              Apple apple = factory.createAppleProduct();
-              apple.AppleStyle();
-              Sumsung sumsung = factory.createSumsungProduct();
-              sumsung.BangziStyle();
+{
+    //采购商要一台iPad和一台Tab
+    Factory factory = new Factory_Pad();
+    Apple apple = factory.createAppleProduct();
+    apple.AppleStyle();
+    Sumsung sumsung = factory.createSumsungProduct();
+    sumsung.BangziStyle();
 
-             //采购商又要一台iPhone和一台Note2
-            factory = new Factory_Phone();
-             apple = factory.createAppleProduct();
-             apple.AppleStyle();
-             sumsung = factory.createSumsungProduct();
-             sumsung.BangziStyle();
-            Console.ReadKey();
-         }
+    //采购商又要一台iPhone和一台Note2
+    factory = new Factory_Phone();
+    apple = factory.createAppleProduct();
+    apple.AppleStyle();
+    sumsung = factory.createSumsungProduct();
+    sumsung.BangziStyle();
+    Console.ReadKey();
+}
 ```
 
 抽象工厂可以通过多态，来动态设置不同的工厂，生产不同的产品，同时每个工厂中的产品又不属于同一个产品等级结构。
