@@ -190,32 +190,32 @@ public class Test {
 在Android源码中，我们最常用到的Builder模式就是AlertDialog.Builder， 使用该Builder来构建复杂的AlertDialog对象。简单示例如下 :
 
 ```java
-    //显示基本的AlertDialog  
-    private void showDialog(Context context) {  
-        AlertDialog.Builder builder = new AlertDialog.Builder(context);  
-        builder.setIcon(R.drawable.icon);  
-        builder.setTitle("Title");  
-        builder.setMessage("Message");  
-        builder.setPositiveButton("Button1",  
-                new DialogInterface.OnClickListener() {  
-                    public void onClick(DialogInterface dialog, int whichButton) {  
-                        setTitle("点击了对话框上的Button1");  
-                    }  
-                });  
-        builder.setNeutralButton("Button2",  
-                new DialogInterface.OnClickListener() {  
-                    public void onClick(DialogInterface dialog, int whichButton) {  
-                        setTitle("点击了对话框上的Button2");  
-                    }  
-                });  
-        builder.setNegativeButton("Button3",  
-                new DialogInterface.OnClickListener() {  
-                    public void onClick(DialogInterface dialog, int whichButton) {  
-                        setTitle("点击了对话框上的Button3");  
-                    }  
-                });  
-        builder.create().show();  // 构建AlertDialog， 并且显示
-    } 
+//显示基本的AlertDialog  
+private void showDialog(Context context) {  
+    AlertDialog.Builder builder = new AlertDialog.Builder(context);  
+    builder.setIcon(R.drawable.icon);  
+    builder.setTitle("Title");  
+    builder.setMessage("Message");  
+    builder.setPositiveButton("Button1",  
+            new DialogInterface.OnClickListener() {  
+                public void onClick(DialogInterface dialog, int whichButton) {  
+                    setTitle("点击了对话框上的Button1");  
+                }  
+            });  
+    builder.setNeutralButton("Button2",  
+            new DialogInterface.OnClickListener() {  
+                public void onClick(DialogInterface dialog, int whichButton) {  
+                    setTitle("点击了对话框上的Button2");  
+                }  
+            });  
+    builder.setNegativeButton("Button3",  
+            new DialogInterface.OnClickListener() {  
+                public void onClick(DialogInterface dialog, int whichButton) {  
+                    setTitle("点击了对话框上的Button3");  
+                }  
+            });  
+    builder.create().show();  // 构建AlertDialog， 并且显示
+} 
 ```
 
 结果 : [![result](https://github.com/simple-android-framework-exchange/android_design_patterns_analysis/raw/master/builder/mr.simple/images/result.png)](https://github.com/simple-android-framework-exchange/android_design_patterns_analysis/blob/master/builder/mr.simple/images/result.png)
@@ -334,55 +334,55 @@ public class AlertDialog extends Dialog implements DialogInterface {
 可以看到，通过Builder来设置AlertDialog中的title, message, button等参数， 这些参数都存储在类型为AlertController.AlertParams的成员变量P中，AlertController.AlertParams中包含了与之对应的成员变量。在调用Builder类的create函数时才创建AlertDialog, 并且将Builder成员变量P中保存的参数应用到AlertDialog的mAlert对象中，即P.apply(dialog.mAlert)代码段。我们看看apply函数的实现 :
 
 ```java
-        public void apply(AlertController dialog) {
-            if (mCustomTitleView != null) {
-                dialog.setCustomTitle(mCustomTitleView);
-            } else {
-                if (mTitle != null) {
-                    dialog.setTitle(mTitle);
-                }
-                if (mIcon != null) {
-                    dialog.setIcon(mIcon);
-                }
-                if (mIconId >= 0) {
-                    dialog.setIcon(mIconId);
-                }
-                if (mIconAttrId > 0) {
-                    dialog.setIcon(dialog.getIconAttributeResId(mIconAttrId));
-                }
-            }
-            if (mMessage != null) {
-                dialog.setMessage(mMessage);
-            }
-            if (mPositiveButtonText != null) {
-                dialog.setButton(DialogInterface.BUTTON_POSITIVE, mPositiveButtonText,
-                        mPositiveButtonListener, null);
-            }
-            if (mNegativeButtonText != null) {
-                dialog.setButton(DialogInterface.BUTTON_NEGATIVE, mNegativeButtonText,
-                        mNegativeButtonListener, null);
-            }
-            if (mNeutralButtonText != null) {
-                dialog.setButton(DialogInterface.BUTTON_NEUTRAL, mNeutralButtonText,
-                        mNeutralButtonListener, null);
-            }
-            if (mForceInverseBackground) {
-                dialog.setInverseBackgroundForced(true);
-            }
-            // For a list, the client can either supply an array of items or an
-            // adapter or a cursor
-            if ((mItems != null) || (mCursor != null) || (mAdapter != null)) {
-                createListView(dialog);
-            }
-            if (mView != null) {
-                if (mViewSpacingSpecified) {
-                    dialog.setView(mView, mViewSpacingLeft, mViewSpacingTop, mViewSpacingRight,
-                            mViewSpacingBottom);
-                } else {
-                    dialog.setView(mView);
-                }
-            }
+public void apply(AlertController dialog) {
+    if (mCustomTitleView != null) {
+        dialog.setCustomTitle(mCustomTitleView);
+    } else {
+        if (mTitle != null) {
+            dialog.setTitle(mTitle);
         }
+        if (mIcon != null) {
+            dialog.setIcon(mIcon);
+        }
+        if (mIconId >= 0) {
+            dialog.setIcon(mIconId);
+        }
+        if (mIconAttrId > 0) {
+            dialog.setIcon(dialog.getIconAttributeResId(mIconAttrId));
+        }
+    }
+    if (mMessage != null) {
+        dialog.setMessage(mMessage);
+    }
+    if (mPositiveButtonText != null) {
+        dialog.setButton(DialogInterface.BUTTON_POSITIVE, mPositiveButtonText,
+                mPositiveButtonListener, null);
+    }
+    if (mNegativeButtonText != null) {
+        dialog.setButton(DialogInterface.BUTTON_NEGATIVE, mNegativeButtonText,
+                mNegativeButtonListener, null);
+    }
+    if (mNeutralButtonText != null) {
+        dialog.setButton(DialogInterface.BUTTON_NEUTRAL, mNeutralButtonText,
+                mNeutralButtonListener, null);
+    }
+    if (mForceInverseBackground) {
+        dialog.setInverseBackgroundForced(true);
+    }
+    // For a list, the client can either supply an array of items or an
+    // adapter or a cursor
+    if ((mItems != null) || (mCursor != null) || (mAdapter != null)) {
+        createListView(dialog);
+    }
+    if (mView != null) {
+        if (mViewSpacingSpecified) {
+            dialog.setView(mView, mViewSpacingLeft, mViewSpacingTop, mViewSpacingRight,
+                    mViewSpacingBottom);
+        } else {
+            dialog.setView(mView);
+        }
+    }
+}
 ```
 
 实际上就是把P中的参数挨个的设置到AlertController中， 也就是AlertDialog中的mAlert对象。从AlertDialog的各个setter方法中我们也可以看到，实际上也都是调用了mAlert对应的setter方法。在这里，Builder同时扮演了上文中提到的builder、ConcreteBuilder、Director的角色，简化了Builder模式的设计。

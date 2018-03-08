@@ -62,99 +62,99 @@
 **抽象的产品接口ILight**
 
 ```java
- public interface ILight
-    {
-        void TurnOn();
-        void TurnOff();
-    }
+public interface ILight
+{
+    void TurnOn();
+    void TurnOff();
+}
 ```
 
 **具体的产品类：BulbLight**
 
 ```java
- public class BulbLight implements ILight
+public class BulbLight implements ILight
+{
+    public void TurnOn()
     {
-        public void TurnOn()
-        {
-            Console.WriteLine("BulbLight turns on.");
-        }
-        public void TurnOff()
-        {
-            Console.WriteLine("BulbLight turns off.");
-        }
+        Console.WriteLine("BulbLight turns on.");
     }
+    public void TurnOff()
+    {
+        Console.WriteLine("BulbLight turns off.");
+    }
+}
 ```
 
 **具体的产品类：TubeLight**
 
 ```java
- public class TubeLight implements ILight
+public class TubeLight implements ILight
+{
+    public void TurnOn()
     {
-        public void TurnOn()
-        {
-            Console.WriteLine("TubeLight turns on.");
-        }
-
-        public void TurnOff()
-        {
-            Console.WriteLine("TubeLight turns off.");
-        }
-
+        Console.WriteLine("TubeLight turns on.");
     }
+
+    public void TurnOff()
+    {
+        Console.WriteLine("TubeLight turns off.");
+    }
+
+}
 ```
 
 **抽象的工厂类**
 
 ```java
 public interface ICreator
-    {
-        ILight CreateLight();
-    }
+{
+    ILight CreateLight();
+}
 ```
 
 **具体的工厂类:BulbCreator**
 
 ```java
- public class BulbCreator implements ICreator
+public class BulbCreator implements ICreator
+{
+    public ILight CreateLight()
     {
-        public ILight CreateLight()
-        {
-            return new BulbLight();
-        }
-
+        return new BulbLight();
     }
+
+}
 ```
 
 **具体的工厂类:TubeCreator**
 
 ```java
- public class TubeCreator implements ICreator
+public class TubeCreator implements ICreator
+{
+    public ILight CreateLight()
     {
-        public ILight CreateLight()
-        {
-            return new TubeLight();
-        }
+        return new TubeLight();
     }
+}
 ```
 
 **客户端调用**
 
 ```java
 static void Main(string[] args)
-        {
-            //先给我来个灯泡
-            ICreator creator = new BulbCreator();
-            ILight light = creator.CreateLight();
-            light.TurnOn();
-            light.TurnOff();
+{
+    //先给我来个灯泡
+    ICreator creator = new BulbCreator();
+    ILight light = creator.CreateLight();
+    light.TurnOn();
+    light.TurnOff();
 
-            //再来个灯管看看
-            creator = new TubeCreator();
-            light = creator.CreateLight();
-            light.TurnOn();
-            light.TurnOff();
+    //再来个灯管看看
+    creator = new TubeCreator();
+    light = creator.CreateLight();
+    light.TurnOn();
+    light.TurnOff();
 
-        }
+}
 ```
 
 通过一个引用变量ICreator来创建产品对象，创建何种产品对象由指向的具体工厂类决定。通过工厂方法模式，将具体的应用逻辑和产品的创建分离开，促进松耦合。
@@ -196,6 +196,3 @@ Connection conn=DriverManager.getConnection("jdbc:microsoft:sqlserver://localhos
 Statement statement=conn.createStatement();
 ResultSet rs=statement.executeQuery("select * from UserInfo");
 ```
-
-
-
