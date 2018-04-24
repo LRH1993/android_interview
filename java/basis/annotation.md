@@ -129,7 +129,7 @@ public String(byte[] ascii,int hibyte,int offset, int count)
 @Target(ElementType.METHOD)
 @Inherited
 @Retention(RetentionPolicy.RUNTIME)
-public @interface MyAnnotataion{
+public @interface AuthorAnno{
     String name();
     String website() default "hello";
     int revision() default 1;
