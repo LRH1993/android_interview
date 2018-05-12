@@ -315,7 +315,7 @@ while(keyIterator.hasNext()) {
 
 上述循环会迭代key集合，针对每个key我们单独判断他是处于何种就绪状态。
 
-注意keyIterater.remove\(\)方法的调用，Selector本身并不会移除SelectionKey对象，这个操作需要我们收到执行。当下次channel处于就绪是，Selector任然会把这些key再次加入进来。
+注意keyIterater.remove\(\)方法的调用，Selector本身并不会移除SelectionKey对象，这个操作需要我们手动执行。当下次channel处于就绪是，Selector任然会把这些key再次加入进来。
 
 SelectionKey.channel返回的channel实例需要强转为我们实际使用的具体的channel类型，例如ServerSocketChannel或SocketChannel.
 
