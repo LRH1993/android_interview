@@ -142,7 +142,7 @@ method.invoke(obj, 28);
 
 **访问成员变量值**
 
-1.通过Class对象的getFields\(\)方法或者getField\(\)方法获得指定方法，返回Field数组或对象。
+1.通过Class对象的getFields\(\)方法或者getField\(\)方法获得成员变量，返回Field数组或对象。
 
 2.Field提供了两组方法来读取或设置成员变量的值：  
 getXXX\(Object obj\):获取obj对象的该成员变量的值。此处的XXX对应8种基本类型。如果该成员变量的类型是引用类型，则取消get后面的XXX。  
