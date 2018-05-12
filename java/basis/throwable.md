@@ -10,7 +10,7 @@ Java异常机制用到的几个关键字：**try、catch、finally、throw、thr
 
 • **catch**   -- 用于捕获异常。catch用来捕获try语句块中发生的异常。
 
-• **finally**  -- finally语句块总是会被执行。它主要用于回收在try块里打开的物力资源(如数据库连接、网络连接和磁盘文件)。只有finally块，执行完成之后，才会回来执行try或者catch块中的return或者throw语句，如果finally中使用了return或者throw等终止方法的语句，则就不会跳回执行，直接停止。
+• **finally**  -- finally语句块总是会被执行。它主要用于回收在try块里打开的物理资源(如数据库连接、网络连接和磁盘文件)。只有finally块，执行完成之后，才会回来执行try或者catch块中的return或者throw语句，如果finally中使用了return或者throw等终止方法的语句，则就不会跳回执行，直接停止。
 
 • **throw**   -- 用于抛出异常。
 
@@ -172,7 +172,7 @@ RuntimeException是那些可能在 Java 虚拟机正常运行期间抛出的异�
 **(01) 运行时异常**
 **定义**: RuntimeException及其子类都被称为运行时异常。
 
-**特点**: Java编译器不会检查它。也就是说，当程序中可能出现这类异常时，倘若既"没有通过throws声明抛出它"，也"没有用try-catch语句捕获它"，还是会编译通过。例如，除数为零时产生的ArithmeticException异常，数组越界时产生的IndexOutOfBoundsException异常，fail-fail机制产生的ConcurrentModificationException异常等，都属于运行时异常。
+**特点**: Java编译器不会检查它。也就是说，当程序中可能出现这类异常时，倘若既"没有通过throws声明抛出它"，也"没有用try-catch语句捕获它"，还是会编译通过。例如，除数为零时产生的ArithmeticException异常，数组越界时产生的IndexOutOfBoundsException异常，fail-fast机制产生的ConcurrentModificationException异常等，都属于运行时异常。
 
 虽然Java编译器不会检查运行时异常，但是我们也可以通过throws进行声明抛出，也可以通过try-catch对它进行捕获处理。
 
@@ -194,4 +194,4 @@ RuntimeException是那些可能在 Java 虚拟机正常运行期间抛出的异�
 
 当资源不足、约束失败、或是其它程序无法继续运行的条件发生时，就产生错误。程序本身无法修复这些错误的。例如，VirtualMachineError就属于错误。
 
-按照Java惯例，我们是不应该是实现任何新的Error子类的！
+按照Java惯例，我们是不应该实现任何新的Error子类的！
