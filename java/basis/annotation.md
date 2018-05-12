@@ -147,13 +147,13 @@ public @interface MyAnnotataion{
 
 ```java
 public class AnnotationDemo {
-    @AuthorAnno(name="lvr", website="hello", revision=1)
+    @MyAnnotataion(name="lvr", website="hello", revision=1)
     public static void main(String[] args) {
         System.out.println("I am main method");
     }
 
     @SuppressWarnings({ "unchecked", "deprecation" })
-    @AuthorAnno(name="lvr", website="hello", revision=2)
+    @MyAnnotataion(name="lvr", website="hello", revision=2)
     public void demo(){
         System.out.println("I am demo method");
     }
