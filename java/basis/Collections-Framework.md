@@ -138,7 +138,7 @@ List作为Collection接口的子接口，可以使用Collection接口里的全�
 
 ### 4.Queue集合
 #### 4.1.简介
-Queue用户模拟队列这种数据结构，队列通常是指“先进先出”(FIFO，first-in-first-out)的容器。队列的头部是在队列中存放时间最长的元素，队列的尾部是保存在队列中存放时间最短的元素。新元素插入（offer）到队列的尾部，访问元素（poll）操作会返回队列头部的元素。通常，队列不允许随机访问队列中的元素。
+Queue用于模拟队列这种数据结构，队列通常是指“先进先出”(FIFO，first-in-first-out)的容器。队列的头部是在队列中存放时间最长的元素，队列的尾部是保存在队列中存放时间最短的元素。新元素插入（offer）到队列的尾部，访问元素（poll）操作会返回队列头部的元素。通常，队列不允许随机访问队列中的元素。
 #### 4.2.接口中定义的方法
 
 ![](http://upload-images.jianshu.io/upload_images/3985563-0505554930ca982e.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
