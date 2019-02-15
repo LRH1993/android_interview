@@ -110,7 +110,7 @@ public class CallableThreadTest implements Callable<Integer> {
 
 ## 四、创建线程的三种方式的对比
 
-**采用实现Runnable、Callable接口的方式创见多线程时，优势是：**
+**采用实现Runnable、Callable接口的方式创建多线程时，优势是：**
 
 线程类只是实现了Runnable接口或Callable接口，还可以继承其他类。
 
