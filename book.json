@@ -25,6 +25,7 @@
         "expandable-chapters-small@^0.1.7",
         "sectionx@^3.1.0",
         "local-video@^1.0.1",
+        "page-treeview",
         "favicon@^0.0.2"
     ],
     "pluginsConfig":{
@@ -67,6 +68,10 @@
         },
         "sectionx":{
             "tag":"b"
+        },
+        "page-treeview": {
+            "copyright": "Copyright © LRH1993",
+            "style": "markdown"
         },
         "favicon":{
             "shortcut":"favicon.ico",
