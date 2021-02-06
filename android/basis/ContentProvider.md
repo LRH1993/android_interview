@@ -60,7 +60,7 @@ content://com.example.app.provider/table/#
 **4.2.1 ContentProvider根据 URI 返回MIME类型**
 
 ```java
-ContentProvider.geType(uri) ；
+ContentProvider.getType(uri) ；
 ```
 
 **4.2.2 MIME类型组成**
